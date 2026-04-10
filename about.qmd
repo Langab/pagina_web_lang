@@ -1,0 +1,95 @@
+---
+title: "Curriculum Vitae"
+toc: true
+toc-title: "Secciones"
+---
+
+## Sobre mí
+
+Breve párrafo sobre quién eres, tu área de trabajo y tus intereses intelectuales. Puedes hablar de tu institución, proyectos actuales y motivaciones.
+
+---
+
+## Formación académica
+
+**Doctor/a en [Disciplina]** · Año
+Universidad · País
+
+**Magíster en [Disciplina]** · Año
+Universidad · País
+
+**Licenciatura en [Disciplina]** · Año
+Universidad · País
+
+---
+
+## Posición actual
+
+**[Cargo]** · Año inicio – presente
+[Institución] · [Ciudad, País]
+
+Descripción breve de tus responsabilidades o proyecto actual.
+
+---
+
+## Publicaciones
+
+### Artículos en revistas
+
+- **Tu Nombre** (Año). "Título del artículo". *Nombre de la Revista*, Vol(N), pp–pp. [DOI](https://doi.org)
+- **Tu Nombre** & Coautor (Año). "Título del artículo". *Nombre de la Revista*. [DOI](https://doi.org)
+
+### Capítulos de libro
+
+- **Tu Nombre** (Año). "Título del capítulo". En Editor (Ed.), *Título del libro* (pp–pp). Editorial.
+
+### Working papers / preprints
+
+- **Tu Nombre** (Año). "Título". [Enlace](https://url)
+
+---
+
+## Proyectos de investigación
+
+**Nombre del Proyecto** · Año inicio – Año término
+Fuente de financiamiento · Rol: Investigador/a principal / colaborador/a
+
+Descripción breve del proyecto.
+
+---
+
+## Docencia
+
+| Curso | Institución | Año |
+|-------|------------|-----|
+| Nombre del curso | Universidad | 2025 |
+| Nombre del curso | Universidad | 2024 |
+
+---
+
+## Presentaciones y conferencias
+
+- **Tu Nombre** (Año). "Título de la ponencia". *Nombre del Congreso*. Ciudad, País.
+
+---
+
+## Habilidades
+
+**Análisis de datos:** R (tidyverse, ggplot2, Quarto), Python, SPSS
+**Métodos:** [Tus métodos: cualitativos, cuantitativos, mixtos]
+**Idiomas:** Español (nativo), Inglés (nivel), [otros]
+
+---
+
+## Contacto
+
+::: {.grid}
+::: {.g-col-6}
+📧 [tu@email.com](mailto:tu@email.com)
+🐙 [GitHub](https://github.com/tu-usuario)
+:::
+::: {.g-col-6}
+🏛️ Institución
+📍 Ciudad, País
+:::
+:::

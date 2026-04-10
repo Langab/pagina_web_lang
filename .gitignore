@@ -1,0 +1,9 @@
+/.quarto/
+/_freeze/
+# IMPORTANTE: docs/ NO está en .gitignore
+# porque GitHub Pages lo necesita para publicar el sitio
+*.Rproj.user
+*.Rhistory
+.DS_Store
+*.csv           # datos con info personal (ej: export de Goodreads)
+portadas/       # imágenes descargadas — opcionales en el repo

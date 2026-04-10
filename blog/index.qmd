@@ -1,0 +1,12 @@
+---
+title: "Blog"
+listing:
+  contents: posts          # busca los posts dentro de blog/posts/
+  sort: "date desc"        # ordena del más reciente al más antiguo
+  type: default            # tipo de listado: default, table, grid
+  categories: true         # muestra categorías como filtro
+  sort-ui: true            # permite ordenar desde la UI
+  filter-ui: true          # permite buscar/filtrar posts
+  feed: true               # genera RSS feed automáticamente
+page-layout: full
+---

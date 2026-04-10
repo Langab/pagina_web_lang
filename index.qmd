@@ -1,0 +1,68 @@
+---
+title: "Tu Nombre"
+subtitle: "Investigador · Área de investigación · Institución"
+image: img/perfil.jpg
+about:
+  template: trestles        # plantillas: jolla, trestles, solana, marquee, broadside
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/tu-usuario
+    - icon: envelope
+      text: Email
+      href: mailto:tu@email.com
+    - icon: file-earmark-person
+      text: CV
+      href: about.qmd
+
+page-layout: full
+---
+
+## Bienvenido/a
+
+Soy **Tu Nombre**, investigador/a en [Institución]. Me dedico a [describe brevemente tu área de trabajo e intereses].
+
+Mi investigación se centra en:
+
+- **Tema 1**: descripción breve
+- **Tema 2**: descripción breve
+- **Tema 3**: descripción breve
+
+En este sitio publico mis investigaciones, proyectos en R y reflexiones sobre [tus temas de interés].
+
+---
+
+## Últimas publicaciones
+
+```{r}
+#| echo: false
+
+# Este chunk muestra automáticamente los últimos 3 posts del blog
+# No necesitas editar esto manualmente
+
+library(dplyr)
+library(glue)
+library(htmltools)
+
+# Leer metadatos de posts (Quarto los genera en _freeze/)
+# Por ahora mostramos un placeholder hasta tener posts reales
+posts <- tibble::tribble(
+  ~titulo,           ~fecha,         ~descripcion,                         ~link,
+  "Bienvenida",      "2026-04-05",   "Primer post del sitio. ¡Bienvenido!", "blog/posts/bienvenida/"
+)
+
+div(class = "posts-recientes",
+  purrr::map(1:nrow(posts), \(i) {
+    post <- posts[i, ]
+    div(class = "post-card",
+      h3(a(href = post$link, post$titulo)),
+      p(class = "post-fecha", post$fecha),
+      p(post$descripcion),
+      a(href = post$link, class = "leer-mas", "Leer más →")
+    )
+  })
+)
+```
+
+[Ver todos los posts →](blog/index.qmd)

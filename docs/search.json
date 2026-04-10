@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Breve párrafo sobre quién eres, tu área de trabajo y tus intereses intelectuales. Puedes hablar de tu institución, proyectos actuales y motivaciones."
+  },
+  {
+    "objectID": "about.html#sobre-mí",
+    "href": "about.html#sobre-mí",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Breve párrafo sobre quién eres, tu área de trabajo y tus intereses intelectuales. Puedes hablar de tu institución, proyectos actuales y motivaciones."
+  },
+  {
+    "objectID": "about.html#formación-académica",
+    "href": "about.html#formación-académica",
+    "title": "Curriculum Vitae",
+    "section": "Formación académica",
+    "text": "Formación académica\nDoctor/a en [Disciplina] · Año Universidad · País\nMagíster en [Disciplina] · Año Universidad · País\nLicenciatura en [Disciplina] · Año Universidad · País"
+  },
+  {
+    "objectID": "about.html#posición-actual",
+    "href": "about.html#posición-actual",
+    "title": "Curriculum Vitae",
+    "section": "Posición actual",
+    "text": "Posición actual\n[Cargo] · Año inicio – presente [Institución] · [Ciudad, País]\nDescripción breve de tus responsabilidades o proyecto actual."
+  },
+  {
+    "objectID": "about.html#publicaciones",
+    "href": "about.html#publicaciones",
+    "title": "Curriculum Vitae",
+    "section": "Publicaciones",
+    "text": "Publicaciones\n\nArtículos en revistas\n\nTu Nombre (Año). “Título del artículo”. Nombre de la Revista, Vol(N), pp–pp. DOI\nTu Nombre & Coautor (Año). “Título del artículo”. Nombre de la Revista. DOI\n\n\n\nCapítulos de libro\n\nTu Nombre (Año). “Título del capítulo”. En Editor (Ed.), Título del libro (pp–pp). Editorial.\n\n\n\nWorking papers / preprints\n\nTu Nombre (Año). “Título”. Enlace"
+  },
+  {
+    "objectID": "about.html#proyectos-de-investigación",
+    "href": "about.html#proyectos-de-investigación",
+    "title": "Curriculum Vitae",
+    "section": "Proyectos de investigación",
+    "text": "Proyectos de investigación\nNombre del Proyecto · Año inicio – Año término Fuente de financiamiento · Rol: Investigador/a principal / colaborador/a\nDescripción breve del proyecto."
+  },
+  {
+    "objectID": "about.html#docencia",
+    "href": "about.html#docencia",
+    "title": "Curriculum Vitae",
+    "section": "Docencia",
+    "text": "Docencia\n\n\n\nCurso\nInstitución\nAño\n\n\n\n\nNombre del curso\nUniversidad\n2025\n\n\nNombre del curso\nUniversidad\n2024"
+  },
+  {
+    "objectID": "about.html#presentaciones-y-conferencias",
+    "href": "about.html#presentaciones-y-conferencias",
+    "title": "Curriculum Vitae",
+    "section": "Presentaciones y conferencias",
+    "text": "Presentaciones y conferencias\n\nTu Nombre (Año). “Título de la ponencia”. Nombre del Congreso. Ciudad, País."
+  },
+  {
+    "objectID": "about.html#habilidades",
+    "href": "about.html#habilidades",
+    "title": "Curriculum Vitae",
+    "section": "Habilidades",
+    "text": "Habilidades\nAnálisis de datos: R (tidyverse, ggplot2, Quarto), Python, SPSS Métodos: [Tus métodos: cualitativos, cuantitativos, mixtos] Idiomas: Español (nativo), Inglés (nivel), [otros]"
+  },
+  {
+    "objectID": "about.html#contacto",
+    "href": "about.html#contacto",
+    "title": "Curriculum Vitae",
+    "section": "Contacto",
+    "text": "Contacto\n\n\n📧 tu@email.com 🐙 GitHub\n\n\n🏛️ Institución 📍 Ciudad, País"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBienvenida al sitio\n\n\n\n\n\n\nmeta\n\n\npersonal\n\n\n\nPor qué creé este sitio y qué puedes esperar encontrar aquí.\n\n\n\n\n\nApr 5, 2026\n\n\nTu Nombre\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "investigacion.html",
+    "href": "investigacion.html",
+    "title": "Investigación",
+    "section": "",
+    "text": "Descripción general de tu línea de investigación. Cuáles son las preguntas que guían tu trabajo, el enfoque teórico o metodológico que usas."
+  },
+  {
+    "objectID": "investigacion.html#proyectos-actuales",
+    "href": "investigacion.html#proyectos-actuales",
+    "title": "Investigación",
+    "section": "Proyectos actuales",
+    "text": "Proyectos actuales\n\nNombre del proyecto principal\nPeríodo: 2024 – 2027 · Financiamiento: Fuente · Rol: Investigador/a principal\nDescripción del proyecto: qué estudias, por qué es relevante, qué metodología usas, cuáles son los resultados esperados.\n\n\n\n\n\n\n📄 Ver publicaciones relacionadas →\n\n\n\n\n\nNombre del proyecto 2\nPeríodo: 2023 – 2025 · Financiamiento: Fuente · Rol: Colaborador/a\nDescripción del proyecto."
+  },
+  {
+    "objectID": "investigacion.html#publicaciones-recientes",
+    "href": "investigacion.html#publicaciones-recientes",
+    "title": "Investigación",
+    "section": "Publicaciones recientes",
+    "text": "Publicaciones recientes\n\n\n\n\n\nTu Nombre\n (2025). \n\"Título del artículo\". \nNombre Revista\n. \nDOI →\n\n\n\n\nTu Nombre\n (2024). \n\"Otro artículo\". \nOtra Revista\n. \nDOI →"
+  },
+  {
+    "objectID": "investigacion.html#áreas-temáticas",
+    "href": "investigacion.html#áreas-temáticas",
+    "title": "Investigación",
+    "section": "Áreas temáticas",
+    "text": "Áreas temáticas\n\n\nÁrea 1\nDescripción breve de esta línea de trabajo, los autores o marcos teóricos que usas.\n\n\nÁrea 2\nDescripción breve de esta línea de trabajo.\n\n\nÁrea 3\nDescripción breve de esta línea de trabajo."
+  },
+  {
+    "objectID": "investigacion.html#datos-y-código",
+    "href": "investigacion.html#datos-y-código",
+    "title": "Investigación",
+    "section": "Datos y código",
+    "text": "Datos y código\nTodo el código y los datos abiertos de mis proyectos están disponibles en GitHub. Si usas alguno de mis materiales, por favor cita el repositorio correspondiente."
+  },
+  {
+    "objectID": "blog/posts/bienvenida/index.html",
+    "href": "blog/posts/bienvenida/index.html",
+    "title": "Bienvenida al sitio",
+    "section": "",
+    "text": "Este es el primer post de mi sitio personal. La idea es tener un espacio propio donde pueda compartir:\n\nInvestigación: resultados, reflexiones y materiales de mis proyectos\nAnálisis con R: visualizaciones, tutoriales y código reproducible\nLecturas: reseñas y notas sobre libros que voy leyendo\nOtras ideas: lo que se vaya ocurriendo"
+  },
+  {
+    "objectID": "blog/posts/bienvenida/index.html#por-qué-este-sitio",
+    "href": "blog/posts/bienvenida/index.html#por-qué-este-sitio",
+    "title": "Bienvenida al sitio",
+    "section": "",
+    "text": "Este es el primer post de mi sitio personal. La idea es tener un espacio propio donde pueda compartir:\n\nInvestigación: resultados, reflexiones y materiales de mis proyectos\nAnálisis con R: visualizaciones, tutoriales y código reproducible\nLecturas: reseñas y notas sobre libros que voy leyendo\nOtras ideas: lo que se vaya ocurriendo"
+  },
+  {
+    "objectID": "blog/posts/bienvenida/index.html#por-qué-quarto-r",
+    "href": "blog/posts/bienvenida/index.html#por-qué-quarto-r",
+    "title": "Bienvenida al sitio",
+    "section": "¿Por qué Quarto + R?",
+    "text": "¿Por qué Quarto + R?\nPorque me permite escribir texto, código y resultados en un solo documento. Nada de copiar y pegar gráficos a mano: el gráfico vive junto al código que lo genera.\nPor ejemplo, este gráfico se genera directamente desde R al renderizar el post:\n\n\nCode\nlibrary(ggplot2)\n\nggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +\n  geom_point(size = 3, alpha = 0.8) +\n  labs(\n    title = \"Peso vs. rendimiento de combustible\",\n    x = \"Peso (1000 lbs)\",\n    y = \"Millas por galón\",\n    color = \"Cilindros\"\n  ) +\n  theme_minimal(base_size = 14) +\n  scale_color_brewer(palette = \"Set2\")\n\n\n\n\n\n\n\n\nFigure 1: Un gráfico de ejemplo generado con R"
+  },
+  {
+    "objectID": "blog/posts/bienvenida/index.html#próximos-posts",
+    "href": "blog/posts/bienvenida/index.html#próximos-posts",
+    "title": "Bienvenida al sitio",
+    "section": "Próximos posts",
+    "text": "Próximos posts\nTengo pensado escribir sobre:\n\nCómo armé este sitio paso a paso\nUn análisis de [tu área de investigación]\nLos libros que leí en 2025, con galería de portadas desde Goodreads\n\n¡Bienvenido/a!"
+  }
+]

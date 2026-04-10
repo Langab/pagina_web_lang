@@ -1,0 +1,52 @@
+---
+title: "Bienvenida al sitio"
+author: "Tu Nombre"
+date: "2026-04-05"
+categories: [meta, personal]
+description: "Por qué creé este sitio y qué puedes esperar encontrar aquí."
+image: thumbnail.png      # imagen opcional para el listado del blog
+---
+
+## ¿Por qué este sitio?
+
+Este es el primer post de mi sitio personal. La idea es tener un espacio propio donde pueda compartir:
+
+- **Investigación**: resultados, reflexiones y materiales de mis proyectos
+- **Análisis con R**: visualizaciones, tutoriales y código reproducible
+- **Lecturas**: reseñas y notas sobre libros que voy leyendo
+- **Otras ideas**: lo que se vaya ocurriendo
+
+## ¿Por qué Quarto + R?
+
+Porque me permite escribir texto, código y resultados en un solo documento. Nada de copiar y pegar gráficos a mano: el gráfico vive junto al código que lo genera.
+
+Por ejemplo, este gráfico se genera directamente desde R al renderizar el post:
+
+```{r}
+#| label: fig-ejemplo
+#| fig-cap: "Un gráfico de ejemplo generado con R"
+#| fig-alt: "Gráfico de dispersión de ejemplo"
+
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
+  labs(
+    title = "Peso vs. rendimiento de combustible",
+    x = "Peso (1000 lbs)",
+    y = "Millas por galón",
+    color = "Cilindros"
+  ) +
+  theme_minimal(base_size = 14) +
+  scale_color_brewer(palette = "Set2")
+```
+
+## Próximos posts
+
+Tengo pensado escribir sobre:
+
+1. Cómo armé este sitio paso a paso
+2. Un análisis de [tu área de investigación]
+3. Los libros que leí en 2025, con galería de portadas desde Goodreads
+
+¡Bienvenido/a!

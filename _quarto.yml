@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Tu Nombre"
+  description: "Investigador | Blog personal"
+  favicon: img/favicon.png
+
+  navbar:
+    logo: img/logo.png
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: investigacion.qmd
+        text: Investigación
+      - href: blog/index.qmd
+        text: Blog
+      - href: about.qmd
+        text: CV
+    right:
+      - icon: github
+        href: https://github.com/tu-usuario
+      - icon: envelope
+        href: mailto:tu@email.com
+
+  page-footer:
+    left: "Hecho con [Quarto](https://quarto.org) y R"
+    right: "© 2026 Tu Nombre"
+
+  comments:
+    giscus:
+      repo: tu-usuario/tu-repo   # activar comentarios vía GitHub (opcional)
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: true          # los chunks de código quedan plegados por defecto
+    code-tools: true         # botón para copiar código
+    highlight-style: arrow
+    fig-align: center
+
+execute:
+  freeze: auto               # re-ejecuta sólo los .qmd que cambiaron
+  warning: false
+  message: false

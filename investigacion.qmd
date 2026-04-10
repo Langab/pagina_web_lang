@@ -1,0 +1,87 @@
+---
+title: "Investigación"
+toc: true
+toc-title: "Áreas"
+---
+
+Descripción general de tu línea de investigación. Cuáles son las preguntas que guían tu trabajo, el enfoque teórico o metodológico que usas.
+
+---
+
+## Proyectos actuales
+
+### Nombre del proyecto principal
+
+**Período:** 2024 – 2027 · **Financiamiento:** Fuente · **Rol:** Investigador/a principal
+
+Descripción del proyecto: qué estudias, por qué es relevante, qué metodología usas, cuáles son los resultados esperados.
+
+::: {.callout-note appearance="minimal"}
+📄 [Ver publicaciones relacionadas →](#publicaciones)
+:::
+
+### Nombre del proyecto 2
+
+**Período:** 2023 – 2025 · **Financiamiento:** Fuente · **Rol:** Colaborador/a
+
+Descripción del proyecto.
+
+---
+
+## Publicaciones recientes
+
+```{r}
+#| echo: false
+
+# Puedes manejar tus publicaciones como un data frame en R
+# y generar la lista automáticamente desde un .bib o un CSV
+
+library(dplyr)
+library(htmltools)
+library(glue)
+
+publicaciones <- tibble::tribble(
+  ~autores,       ~anio, ~titulo,                  ~revista,           ~doi,
+  "Tu Nombre",    2025,  "Título del artículo",    "Nombre Revista",   "https://doi.org/xxx",
+  "Tu Nombre",    2024,  "Otro artículo",           "Otra Revista",    "https://doi.org/yyy"
+)
+
+div(class = "publicaciones",
+  purrr::map(1:nrow(publicaciones), \(i) {
+    pub <- publicaciones[i, ]
+    div(class = "pub-item",
+      p(
+        strong(pub$autores), glue(" ({pub$anio}). "),
+        glue('"{pub$titulo}". '),
+        em(pub$revista), ". ",
+        a(href = pub$doi, "DOI →", target = "_blank")
+      )
+    )
+  })
+)
+```
+
+---
+
+## Áreas temáticas
+
+::: {.grid}
+::: {.g-col-4}
+### Área 1
+Descripción breve de esta línea de trabajo, los autores o marcos teóricos que usas.
+:::
+::: {.g-col-4}
+### Área 2
+Descripción breve de esta línea de trabajo.
+:::
+::: {.g-col-4}
+### Área 3
+Descripción breve de esta línea de trabajo.
+:::
+:::
+
+---
+
+## Datos y código
+
+Todo el código y los datos abiertos de mis proyectos están disponibles en [GitHub](https://github.com/tu-usuario). Si usas alguno de mis materiales, por favor cita el repositorio correspondiente.
