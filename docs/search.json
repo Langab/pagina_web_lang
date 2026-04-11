@@ -1,164 +1,80 @@
 [
   {
-    "objectID": "consultorias.html",
-    "href": "consultorias.html",
-    "title": "Consultoría",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "Ofrezco servicios de consultoría en análisis de datos, investigación social aplicada y visualización de información para organizaciones públicas, privadas y académicas. Mi experiencia en instituciones como el INE, el CEP y el SLEP me permite abordar problemas complejos con rigor metodológico y resultados prácticos.\nContactar →"
+    "text": "📄 Descargar CV en PDF"
   },
   {
-    "objectID": "consultorias.html#servicios",
-    "href": "consultorias.html#servicios",
-    "title": "Consultoría",
-    "section": "🛠️ Servicios",
-    "text": "🛠️ Servicios\n\n\n\n\n\n📊\nAnálisis de datos\nProcesamiento, limpieza y análisis estadístico de datos cuantitativos. Construcción de indicadores, modelos y reportes técnicos con R y Power BI.\n\n\n\n\n📈\nVisualización de datos\nDiseño de dashboards interactivos y reportes visuales que transforman datos complejos en información comprensible para la toma de decisiones.\n\n\n\n\n🔬\nInvestigación social aplicada\nDiseño y ejecución de investigaciones con metodologías cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto.\n\n\n\n\n🗳️\nAnálisis político y electoral\nAnálisis de datos electorales, seguimiento de procesos legislativos, construcción de indicadores de opinión pública y monitoreo de tendencias políticas.\n\n\n\n\n📚\nHumanidades digitales\nAplicación de métodos computacionales al análisis de textos, discursos y corpus documentales. Procesamiento de lenguaje natural y análisis de redes.\n\n\n\n\n🎓\nCapacitación y talleres\nTalleres de análisis de datos con R, Power BI y metodología cuantitativa. Diseñados para equipos de investigación, instituciones públicas y estudiantes."
+    "objectID": "about.html#sobre-mí",
+    "href": "about.html#sobre-mí",
+    "title": "Curriculum Vitae",
+    "section": "👤 Sobre mí",
+    "text": "👤 Sobre mí\nSoy sociólogo titulado con distinción máxima por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales.\nActualmente me desempeño como Analista de datos en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.\nMi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador en instituciones como el Instituto Nacional de Estadísticas (INE), el Centro de Estudios Públicos (CEP) y en proyectos Fondecyt enfocados en gobernanza económica y transiciones socio-ambientales."
   },
   {
-    "objectID": "consultorias.html#experiencia-relevante",
-    "href": "consultorias.html#experiencia-relevante",
-    "title": "Consultoría",
-    "section": "🏛️ Experiencia relevante",
-    "text": "🏛️ Experiencia relevante\n\n\n\n\n2025 – presente\nAnalista de datos — SLEP Santa Rosa\nServicio Local de Educación Pública\nDiseño de sistemas de información y dashboards para datos educacionales regionales.\n\n\n2024 – 2025\nAnalista metodológico Senior — INE\nInstituto Nacional de Estadísticas\nMetodología, validación y aseguramiento de calidad del Censo de Población y Vivienda 2024.\n\n\n2021 – 2023\nAnalista de asuntos públicos — Tironi y Asociados\nConsultoría estratégica\nAnálisis de datos para diagnóstico y diseño estratégico en proyectos de consultoría.\n\n\n2021 – 2024\nInvestigador — CEP C22\nCentro de Estudios Públicos\nHumanidades digitales y análisis computacional del proceso constitucional chileno."
+    "objectID": "about.html#formación-académica",
+    "href": "about.html#formación-académica",
+    "title": "Curriculum Vitae",
+    "section": "🎓 Formación académica",
+    "text": "🎓 Formación académica\n\n\nSociólogo titulado con distinción máxima · 2017–2021 Universidad Diego Portales · Santiago, Chile Primero en el ranking de egreso de la generación.\nDiplomado de honor en movilidad y transporte · 2019–2020 Universidad Diego Portales · Santiago, Chile"
   },
   {
-    "objectID": "consultorias.html#contacto",
-    "href": "consultorias.html#contacto",
-    "title": "Consultoría",
-    "section": "📩 Contacto",
-    "text": "📩 Contacto\n¿Tienes un proyecto en mente? Escríbeme y conversamos.\n\n\n📧 Email benjalang1997@gmail.com\n\n\n🔗 LinkedIn benjamin-lang-a78229207\n\n\n🐙 GitHub github.com/Langab"
+    "objectID": "about.html#trayectoria-laboral",
+    "href": "about.html#trayectoria-laboral",
+    "title": "Curriculum Vitae",
+    "section": "💼 Trayectoria laboral",
+    "text": "💼 Trayectoria laboral\n\nAnalista de datos\n\n\n\nServicio Local de Educación Pública Santa Rosa (SLEP) · Septiembre 2025 – presente\nResponsable de la sistematización, visualización y análisis de datos educacionales. Diseño de dashboards y reportes para la gestión educacional regional. Ver página del proyecto →\n\n\n\n\n\n\n\n\nAnalista metodológico Senior\n\n\n\nInstituto Nacional de Estadísticas (INE) · Mayo 2024 – Junio 2025\nResponsable del procesamiento, validación y análisis de datos en el Censo de Población y Vivienda 2024. Diseño y aplicación de metodologías estadísticas, aseguramiento de calidad de bases de datos a gran escala y elaboración de reportes técnicos para la toma de decisiones. Ver sitio oficial del Censo 2024 →\n\n\n\n\n\n\n\n\nInvestigador — Proyecto Fondecyt N°1231356\n\nUniversidad Diego Portales / Fondecyt · Mayo 2024 – Agosto 2025\n“Gobernar la incertidumbre: gramáticas, actores y dispositivos de producción de ‘estabilidad’ económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)”. Análisis de datos cualitativos y cuantitativos sobre políticas económicas; manejo de grandes volúmenes de información documental y construcción de indicadores para evaluar dispositivos institucionales de estabilidad económica.\n\n\n\nInvestigador asistente — Voces del CEP\n\n\n\nCentro de Estudios Públicos (CEP) · Abril 2023 – Abril 2024\nDesarrollo del boletín Voces del CEP, publicando sobre problemas públicos contemporáneos, con énfasis en el seguimiento del segundo proceso constitucional chileno (2023). Sistematización estadística de información electoral y opinión pública.\n\n\n\n\n\n\n\n\nAsistente de investigación — Proyecto C22\n\n\n\nCentro de Estudios Públicos (CEP) · Agosto 2021 – Abril 2024\nAnálisis socio-constitucional C22. Especializado en humanidades digitales del primer proceso constitucional chileno. Análisis de discursos, procesamiento de datos textuales y visualización de información política. Ver proyecto →\n\n\n\n\n\n\n\n\nAnalista de asuntos públicos\n\n\n\nTironi y Asociados · Agosto 2021 – Marzo 2023\nEncargado del boletín constitucional 2022, un producto de monitoreo semanal del proceso constituyente que sistematizaba información política e institucional para clientes corporativos y públicos. Recopilación, limpieza y análisis de información política, así como seguimiento legislativo y del debate público.\nContribuí en proyectos de consultoría estratégica con énfasis en análisis de datos para diagnóstico organizacional, monitoreo de opinión pública y diseño de estrategias comunicacionales. Participé en la elaboración de reportes para clientes del sector público y privado, integrando información cuantitativa y cualitativa para la toma de decisiones estratégicas.\n\n\n\n\n\n\n\n\nAsistente de investigación — Fondecyt N°1190295\n\nUniversidad Diego Portales · Marzo 2022 – Marzo 2023\n“Gobernando transiciones críticas en sistemas socio-ecológicos: el caso de Chiloé, Chile”. Procesamiento de información cualitativa y cuantitativa para la investigación de transiciones críticas en sistemas socio-ambientales."
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBienvenida al sitio\n\n\n\n\n\n\nmeta\n\n\npersonal\n\n\n\nPor qué creé este sitio y qué puedes esperar encontrar aquí.\n\n\n\n\n\nApr 5, 2026\n\n\nTu Nombre\n\n\n\n\n\n\nNo matching items"
+    "objectID": "about.html#paso-por-la-universidad",
+    "href": "about.html#paso-por-la-universidad",
+    "title": "Curriculum Vitae",
+    "section": "🎓 Paso por la universidad",
+    "text": "🎓 Paso por la universidad\n\nDurante mis estudios en la Universidad Diego Portales participé activamente como ayudante de cátedra y tesista en proyectos de investigación, consolidando mi formación en metodología, teoría social e investigación aplicada.\n\n\n\n\n\nAgosto 2020 – Agosto 2021\nTesista — Proyecto Fondecyt N°1181585\nUniversidad Diego Portales\nParticipación en proyecto Fondecyt de investigación sociológica, articulando el trabajo de tesis de pregrado con una línea de investigación financiada.\n\n\nMarzo – Julio 2021\nAyudante — Técnicas cuantitativas\nCátedra de Macarena Orchard · UDP\nApoyo docente en metodología cuantitativa: estadística descriptiva, inferencial y análisis de datos con software especializado.\n\n\nAgosto – Diciembre 2020\nAyudante — Lógica de investigación\nCátedra de Sara Correa · UDP\nApoyo en la enseñanza de diseño de investigación, formulación de preguntas, hipótesis y construcción de marcos teóricos.\n\n\nMarzo – Julio 2020\nAyudante — Teoría Sociológica IV\nCátedra de Modesto Gayo · UDP\nApoyo docente en teoría sociológica contemporánea: discusión de autores, ejercicios de análisis teórico y retroalimentación a estudiantes.\n\n\nMarzo – Julio 2020\nAyudante — Métodos cualitativos\nCátedras de Tomás Ariztía y Camila Peralta · UDP\nApoyo docente en diseño y análisis cualitativo: entrevistas, observación, etnografía y análisis de discurso.\n\n\nMarzo – Julio 2020\nAyudante — Problemas sociales\nCátedra de Jorge Atria · UDP\nApoyo en el análisis sociológico de problemas sociales contemporáneos: desigualdad, estratificación y políticas públicas."
   },
   {
-    "objectID": "investigacion.html",
-    "href": "investigacion.html",
-    "title": "Investigación y Proyectos",
-    "section": "",
-    "text": "Mi trabajo de investigación se centra en la intersección entre ciencia de datos, metodología cuantitativa y análisis de sistemas sociales complejos. A través de diferentes proyectos, he desarrollado expertise en:"
+    "objectID": "about.html#habilidades-técnicas",
+    "href": "about.html#habilidades-técnicas",
+    "title": "Curriculum Vitae",
+    "section": "🛠️ Habilidades técnicas",
+    "text": "🛠️ Habilidades técnicas\n\nSoftwares\n\nRStudio / R: avanzado (tidyverse, ggplot2, Quarto, análisis estadístico, modelación)\nPower BI: avanzado (dashboards interactivos, DAX, visualización corporativa)\nExcel: avanzado (análisis, macros, modelado financiero)\nGitLab / GitHub: avanzado (control de versiones, colaboración, CI/CD básico)\nAtlas.ti: intermedio (análisis cualitativo de textos y entrevistas)\nPython: básico (pandas, análisis exploratorio)\n\n\n\nIdiomas\n\n🇨🇱 Español: nativo\n🇬🇧 Inglés: C1 (fluido)\n🇮🇹 Italiano: C1 (fluido)"
   },
   {
-    "objectID": "investigacion.html#proyectos-actuales",
-    "href": "investigacion.html#proyectos-actuales",
-    "title": "Investigación y Proyectos",
-    "section": "💼 Proyectos actuales",
-    "text": "💼 Proyectos actuales\n\nSistematización de Datos Educacionales — SLEP Santa Rosa\nSeptiembre 2025 – presente\nComo Analista de datos en el Servicio Local de Educación Pública Santa Rosa (SLEP), dirijo la sistematización, visualización y análisis de datos educacionales para apoyar la toma de decisiones en educación pública regional.\nResponsabilidades clave: - Diseño de sistemas de información para recolección de datos educacionales - Visualización de indicadores de gestión y calidad educativa - Análisis estadístico para evaluación de políticas educacionales - Asesoría técnica en metodología de investigación\n📊 Ver página del proyecto\n\n\n\nGobernanza Económica del Banco Central de Chile (2006–2022)\nProyecto Fondecyt N°1231356\n“Gobernar la incertidumbre: gramáticas, actores y dispositivos de producción de ‘estabilidad’ económica en el capitalismo contemporáneo.”\nPeríodo: Mayo 2024 – Agosto 2025\nAnálisis de datos cualitativos y cuantitativos sobre políticas económicas del Banco Central de Chile. El proyecto combinó metodología documental, análisis de discursos y construcción de indicadores institucionales para evaluar dispositivos de estabilidad económica.\nContribuciones: - Procesamiento y análisis de grandes volúmenes de información documental - Construcción de indicadores para evaluar dispositivos institucionales - Análisis de tendencias en política monetaria y regulación financiera"
+    "objectID": "about.html#intereses-de-investigación",
+    "href": "about.html#intereses-de-investigación",
+    "title": "Curriculum Vitae",
+    "section": "🎯 Intereses de investigación",
+    "text": "🎯 Intereses de investigación\nInvestigación social y análisis de sistemas complejos · Ciencia de datos y análisis cuantitativo · Metodologías innovadoras en investigación social · Humanidades digitales · Gobernanza y políticas públicas · Análisis de discursos y datos textuales."
   },
   {
-    "objectID": "investigacion.html#líneas-de-investigación",
-    "href": "investigacion.html#líneas-de-investigación",
-    "title": "Investigación y Proyectos",
-    "section": "🔬 Líneas de investigación",
-    "text": "🔬 Líneas de investigación\n\nAnálisis de Sistemas Complejos\nEstudio de transiciones críticas en sistemas socio-ecológicos y análisis de gobernanza en contextos de incertidumbre y cambio.\nProyectos relacionados: - “Gobernando transiciones críticas en sistemas socio-ecológicos: el caso de Chiloé” (Fondecyt No1190295)\n\n\nHumanidades Digitales y Análisis Político\nAplicación de metodologías digitales para el análisis de procesos políticos, especialmente en contextos constitucionales y de cambio institucional.\nProyectos relacionados: - Análisis Socio Constitucional C22 (2021-2024): Humanidades digitales aplicadas al primer y segundo proceso constitucional chileno - Proyecto “Voces del CEP”: análisis de opinión pública y seguimiento electoral\n\n\nCiencia de Datos para Políticas Públicas\nDiseño e implementación de metodologías cuantitativas para evaluación de políticas públicas, análisis de datos censales y sistemas de información estadística.\nProyectos relacionados: - Censo de Población y Vivienda 2024 (INE): metodología, validación y aseguramiento de calidad"
+    "objectID": "about.html#publicaciones-destacadas",
+    "href": "about.html#publicaciones-destacadas",
+    "title": "Curriculum Vitae",
+    "section": "📰 Publicaciones destacadas",
+    "text": "📰 Publicaciones destacadas\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P. (2024). “Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile’s constitutional referendum”. Journal of Language and Politics, 23(5), 723–746. https://doi.org/10.1075/jlp.24097.fre\nVer todas las publicaciones →"
   },
   {
-    "objectID": "investigacion.html#publicaciones-por-área-temática",
-    "href": "investigacion.html#publicaciones-por-área-temática",
-    "title": "Investigación y Proyectos",
-    "section": "📚 Publicaciones por área temática",
-    "text": "📚 Publicaciones por área temática\n\nInstituciones y Gobernanza Económica\n\nMascareño, A., Rozas, J., Oteíza, B., Lang, B., & Henríquez, P.A. (2023). “Futuros presentes. Nuevas opciones y riesgos en escenarios complejos.” Puntos de Referencia 648, CEP. Ver\n\n\n\nProcesos Constitucionales y Cambio Político\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2023). “La Constitución pre-estallido de Michelle Bachelet. ¿Cuánto rinde hoy?” Puntos de Referencia 644, CEP. Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2023). “Apruebo y rechazo en septiembre 2022. Expectativas, decepciones y horizontes comunes para el nuevo proceso constitucional.” Puntos de Referencia 639, CEP. Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Polarización y fragmentación en la Cámara de Diputados. El escenario del Acuerdo por Chile.” Puntos de Referencia 637, CEP. Ver\n\n\n\nDerechos, Justicia Social y Vivienda\n\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P. (2024). “Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile’s constitutional referendum.” Journal of Language and Politics, 23(5), 723–746. DOI\n\n\n\nHumanidades Digitales — Research Notes C22\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Nuevo estilo de baile: 4/7.” Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Zona de curvas. La Convención y la Cámara en comparación.” Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Alphaville.” Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “La prueba de ADN.” Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “La ley de los grandes números.” Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Suma cero. Sentimientos convencionales.” Ver\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “La constitución de la Constitución.” Ver"
+    "objectID": "about.html#actividades-académicas",
+    "href": "about.html#actividades-académicas",
+    "title": "Curriculum Vitae",
+    "section": "🎤 Actividades académicas",
+    "text": "🎤 Actividades académicas\n\nJunio 2024 — Seminario “Inteligencia artificial y ciencias sociales: herramientas, expectativas y limitaciones” para estudiantes de Sociología, Universidad Diego Portales.\nAbril 2022 — Ponencia en el Congreso Chileno de Sociología PRE-ALAS (Concepción): “Estéticas constitucionales: una mirada desde los regímenes estéticos de la revuelta social chilena de 2019”.\nMarzo 2022 — Seminario “Metodologías visuales: una aproximación sociológica para trabajar con imágenes”, Universidad Diego Portales."
   },
   {
-    "objectID": "investigacion.html#herramientas-y-metodologías",
-    "href": "investigacion.html#herramientas-y-metodologías",
-    "title": "Investigación y Proyectos",
-    "section": "🛠️ Herramientas y Metodologías",
-    "text": "🛠️ Herramientas y Metodologías\nSoftwares especializados: - R (tidyverse, ggplot2, Quarto, análisis estadístico) — avanzado - Power BI (dashboards interactivos) — avanzado - Excel (modelado, análisis) — avanzado - GitLab/GitHub (control de versiones) — avanzado - Atlas Ti (análisis cualitativo) — intermedio\nMetodologías: - Análisis estadístico aplicado - Análisis cualitativos asistido por software - Minería de texto y análisis de discursos - Visualización de información - Diseño de indicadores"
+    "objectID": "about.html#referencias",
+    "href": "about.html#referencias",
+    "title": "Curriculum Vitae",
+    "section": "📞 Referencias",
+    "text": "📞 Referencias\n\n\n\nVerónica Canales Jefa de área de metodología y procesamiento — CENSO Población y Vivienda 2024 · INE. Magíster en Investigación Social (LSE). 📧 vacanalesg@ine.gob.cl\n\n\n\n\nAldo Mascareño Investigador Senior del CEP · Editor General de Estudios Públicos · Investigador principal C22. 📧 amascareno@cepchile.cl\n\n\n\n\nJosefina Abarzúa Jefa de área · Departamento de estudio, monitoreo y datos · SLEP Santa Rosa. Magíster en Gobierno y Gerencia (Universidad de Chile). 📧 josefina.abarzua@slepsantarosa.gob.cl\n\n\n\n\nFrancisco Espinoza Consultor · Tironi y Asociados. Magíster en Ciencia Política, Universidad de Chile. 📧 francisco.espinoza@tironi.cl"
   },
   {
-    "objectID": "investigacion.html#datos-y-código-abierto",
-    "href": "investigacion.html#datos-y-código-abierto",
-    "title": "Investigación y Proyectos",
-    "section": "📊 Datos y código abierto",
-    "text": "📊 Datos y código abierto\nTodo el código y los datos abiertos de mis proyectos están disponibles en GitHub. Si utilizas alguno de mis materiales o código, por favor cita el repositorio correspondiente.\nCreo en la ciencia abierta y en la reproducibilidad de la investigación."
-  },
-  {
-    "objectID": "proyectos.html",
-    "href": "proyectos.html",
-    "title": "Proyectos",
-    "section": "",
-    "text": "Actual · Educación pública\n\nSeptiembre 2025 – presente\nSistematización, visualización y análisis de datos educacionales para el Servicio Local de Educación Pública Santa Rosa.\n\nR\nPower BI\nDatos educacionales\n\n\n\n\n\n2024–2025 · Estadística oficial\n\nMayo 2024 – Junio 2025\nAnalista metodológico Senior en el INE. Procesamiento, validación y análisis de datos censales a gran escala. Diseño de metodologías estadísticas y aseguramiento de calidad.\n\nMetodología estadística\nBig data\nCensos"
-  },
-  {
-    "objectID": "proyectos.html#sector-público",
-    "href": "proyectos.html#sector-público",
-    "title": "Proyectos",
-    "section": "",
-    "text": "Actual · Educación pública\n\nSeptiembre 2025 – presente\nSistematización, visualización y análisis de datos educacionales para el Servicio Local de Educación Pública Santa Rosa.\n\nR\nPower BI\nDatos educacionales\n\n\n\n\n\n2024–2025 · Estadística oficial\n\nMayo 2024 – Junio 2025\nAnalista metodológico Senior en el INE. Procesamiento, validación y análisis de datos censales a gran escala. Diseño de metodologías estadísticas y aseguramiento de calidad.\n\nMetodología estadística\nBig data\nCensos"
-  },
-  {
-    "objectID": "proyectos.html#investigación-académica",
-    "href": "proyectos.html#investigación-académica",
-    "title": "Proyectos",
-    "section": "🔬 Investigación académica",
-    "text": "🔬 Investigación académica\n\n\n\n\n\nFondecyt · 2024–2025\nGobernar la incertidumbre — Banco Central de Chile\nMayo 2024 – Agosto 2025\n\nProyecto Fondecyt N°1231356: \n\"Gramáticas, actores y dispositivos de producción de estabilidad económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)\"\n.\n\n\nAnálisis cualitativo\nEconomía política\nIndicadores\n\n\n\n\n\nCEP · 2021–2024\n\nHumanidades digitales C22 — CEP\n\nAgosto 2021 – Abril 2024\nAnálisis computacional del primer y segundo proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política.\n\nHumanidades digitales\nAnálisis de texto\nConstitución\n\n\n\n\n\nFondecyt · 2022–2023\nTransiciones críticas en sistemas socio-ecológicos — Chiloé\nMarzo 2022 – Marzo 2023\nProyecto Fondecyt No1190295. Procesamiento de información cualitativa y cuantitativa sobre transiciones críticas en sistemas socio-ambientales en Chiloé, Chile.\n\nSistemas complejos\nSocio-ambiental\nMixta\n\n\n\n\n\nCEP · 2023–2024\nVoces del CEP — Análisis constitucional\nAbril 2023 – Abril 2024\nDesarrollo del boletín Voces del CEP. Seguimiento del segundo proceso constitucional chileno y sistematización estadística de información electoral y de opinión pública.\n\nOpinión pública\nAnálisis electoral\nComunicación"
-  },
-  {
-    "objectID": "publicaciones.html",
-    "href": "publicaciones.html",
-    "title": "Publicaciones",
-    "section": "",
-    "text": "Artículo académico\n\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.\n (2024). \n\"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum\". \nJournal of Language and Politics\n, 23(5), 723–746. \nVer publicación →"
-  },
-  {
-    "objectID": "publicaciones.html#artículos-académicos",
-    "href": "publicaciones.html#artículos-académicos",
-    "title": "Publicaciones",
-    "section": "",
-    "text": "Artículo académico\n\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.\n (2024). \n\"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum\". \nJournal of Language and Politics\n, 23(5), 723–746. \nVer publicación →"
-  },
-  {
-    "objectID": "publicaciones.html#policy-papers-centro-de-estudios-públicos",
-    "href": "publicaciones.html#policy-papers-centro-de-estudios-públicos",
-    "title": "Publicaciones",
-    "section": "📋 Policy Papers — Centro de Estudios Públicos",
-    "text": "📋 Policy Papers — Centro de Estudios Públicos\n\n\n\n\nPuntos de Referencia N°648 · CEP · 2023\n\nMascareño, A., Rozas, J., Oteíza, B., Lang, B., & Henríquez, P.A.\n (2023). \n\"Futuros presentes. Nuevas opciones y riesgos en escenarios complejos\". \nVer publicación →\n\n\n\nPuntos de Referencia N°644 · CEP · 2023\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2023). \n\"La Constitución pre-estallido de Michelle Bachelet. ¿Cuánto rinde hoy?\". \nVer publicación →\n\n\n\nPuntos de Referencia N°639 · CEP · 2023\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2023). \n\"Apruebo y rechazo en septiembre 2022. Expectativas, decepciones y horizontes comunes para el nuevo proceso constitucional\". \nVer publicación →\n\n\n\nPuntos de Referencia N°638 · CEP · 2023\n\nMascareño, A., Rozas, J., Lang, B., Henríquez, P.A., & Izquierdo, S.\n (2023). \n\"Mapuche en el sur: identidad, materialidad y expectativa\". \nVer publicación →\n\n\n\nPuntos de Referencia N°637 · CEP · 2022\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022). \n\"Polarización y fragmentación en la Cámara de Diputados. El escenario del Acuerdo por Chile\". \nVer publicación →\n\n\n\nPuntos de Referencia N°630 · CEP · 2022\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022). \n\"Partido de la Gente. La construcción del individualismo posdemocrático\". \nVer publicación →\n\n\n\nPuntos de Referencia N°598 · CEP · 2022\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022). \n\"Zona de curvas. La Convención y la Cámara en comparación\". \nVer publicación →"
-  },
-  {
-    "objectID": "publicaciones.html#research-notes-c22-cep",
-    "href": "publicaciones.html#research-notes-c22-cep",
-    "title": "Publicaciones",
-    "section": "🖥️ Research Notes — C22 · CEP",
-    "text": "🖥️ Research Notes — C22 · CEP\n\n\n\n\n\nResearch Note C22 · 2022\n\nNuevo estilo de baile: 4/7\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nAlphaville\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nLa prueba de ADN\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nLa ley de los grandes números\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nSuma cero. Sentimientos convencionales\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nLa constitución de la Constitución\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Benjamín Lang Bustos",
-    "section": "",
-    "text": "🎓 Sociólogo 📊 Analista de datos 🔬 Investigador 💻 Humanidades digitales\nSoy sociólogo titulado con distinción máxima por la Universidad Diego Portales, especializado en análisis de datos, ciencia de datos aplicada e investigación social. Actualmente soy Analista de datos en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización y visualización de datos educacionales.\nVer CV completo Ver investigación"
-  },
-  {
-    "objectID": "index.html#trayectoria-en-números",
-    "href": "index.html#trayectoria-en-números",
-    "title": "Benjamín Lang Bustos",
-    "section": "📈 Trayectoria en números",
-    "text": "📈 Trayectoria en números\n\n\n\n\n6+\nAños de experiencia\n\n\n13\nPolicy Papers\n\n\n1\nArtículo académico\n\n\n3\nIdiomas"
-  },
-  {
-    "objectID": "index.html#áreas-de-especialización",
-    "href": "index.html#áreas-de-especialización",
-    "title": "Benjamín Lang Bustos",
-    "section": "🔬 Áreas de especialización",
-    "text": "🔬 Áreas de especialización\n\n\n\n\n\n📊\nCiencia de datos\nR, Power BI, Python. Análisis estadístico y visualización para la toma de decisiones.\n\nR · avanzado\nPower BI\nEstadística\n\n\n\n\n\n💻\nHumanidades digitales\nAnálisis de discursos, procesamiento de texto y visualización de procesos políticos e institucionales.\n\nAnálisis de texto\nNLP\nVisualización\n\n\n\n\n\n🏛️\nPolíticas públicas\nInvestigación y análisis de procesos institucionales, electorales y de gobernanza.\n\nSistemas complejos\nGobernanza\nOpinión pública\n\n\n\n\n\n📐\nMetodología cuantitativa\nDiseño metodológico, procesamiento de datos censales y construcción de indicadores a gran escala.\n\nCensos\nIndicadores\nGran escala"
-  },
-  {
-    "objectID": "index.html#proyectos-destacados",
-    "href": "index.html#proyectos-destacados",
-    "title": "Benjamín Lang Bustos",
-    "section": "💼 Proyectos destacados",
-    "text": "💼 Proyectos destacados\n\n\n\n\n\nSector público\n\nDatos educacionales SLEP Santa Rosa\n\n2025 – presente\nSistematización y visualización de indicadores educacionales para educación pública regional.\n\n\n\n\nInvestigación\n\nHumanidades digitales C22 — CEP\n\n2021 – 2024\nAnálisis computacional del proceso constitucional chileno. Procesamiento de datos textuales y visualización política.\n\n\n\n\nEstadística pública\n\nCenso de Población y Vivienda 2024\n\n2024 – 2025\nAnalista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.\n\n\n\n\nInvestigación\n\nFondecyt N°1231356 — Banco Central de Chile\n\n2024 – 2025\nAnálisis de datos sobre políticas económicas y dispositivos de estabilidad institucional (2006–2022).\n\n\n\n\n\nVer todos los proyectos →"
-  },
-  {
-    "objectID": "index.html#última-publicación",
-    "href": "index.html#última-publicación",
-    "title": "Benjamín Lang Bustos",
-    "section": "📰 Última publicación",
-    "text": "📰 Última publicación\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P. (2024). “Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile’s constitutional referendum.” Journal of Language and Politics, 23(5), 723–746.\nLeer artículo → Ver todas las publicaciones →"
+    "objectID": "about.html#contacto",
+    "href": "about.html#contacto",
+    "title": "Curriculum Vitae",
+    "section": "📧 Contacto",
+    "text": "📧 Contacto\n\n\n📧 Email benjalang1997@gmail.com\n📱 Teléfono +56 9 6309 5562\n🔗 LinkedIn benjamin-lang-a78229207\n🐙 GitHub github.com/Langab\n\n\n🏛️ Institución Servicio Local de Educación Pública Santa Rosa\n📍 Ubicación Región de Los Lagos, Chile"
   },
   {
     "objectID": "blog/posts/bienvenida/index.html",
@@ -189,80 +105,115 @@
     "text": "Próximos posts\nTengo pensado escribir sobre:\n\nCómo armé este sitio paso a paso\nUn análisis de [tu área de investigación]\nLos libros que leí en 2025, con galería de portadas desde Goodreads\n\n¡Bienvenido/a!"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Curriculum Vitae",
+    "objectID": "publicaciones.html",
+    "href": "publicaciones.html",
+    "title": "Publicaciones",
     "section": "",
-    "text": "📄 Descargar CV en PDF"
+    "text": "Artículo académico\n\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.\n (2024). \n\"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum\". \nJournal of Language and Politics\n, 23(5), 723–746. \nVer publicación →"
   },
   {
-    "objectID": "about.html#sobre-mí",
-    "href": "about.html#sobre-mí",
-    "title": "Curriculum Vitae",
-    "section": "Sobre mí",
-    "text": "Sobre mí\nSoy sociólogo titulado con distinción máxima por la Universidad Diego Portales (2017-2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se enfoca en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales. Actualmente trabajo como Analista de datos en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde dirijo la sistematización, visualización y análisis de datos educacionales.\nMi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador. He trabajado en instituciones de alto nivel como el Instituto Nacional de Estadísticas (INE), el Centro de Estudios Públicos (CEP) y en proyectos Fondecyt enfocados en gobernanza económica y transiciones socio-ambientales."
+    "objectID": "publicaciones.html#artículos-académicos",
+    "href": "publicaciones.html#artículos-académicos",
+    "title": "Publicaciones",
+    "section": "",
+    "text": "Artículo académico\n\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.\n (2024). \n\"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum\". \nJournal of Language and Politics\n, 23(5), 723–746. \nVer publicación →"
   },
   {
-    "objectID": "about.html#formación-académica",
-    "href": "about.html#formación-académica",
-    "title": "Curriculum Vitae",
-    "section": "📚 Formación académica",
-    "text": "📚 Formación académica\nSociólogo titulado con distinción máxima · 2017–2021 Universidad Diego Portales · Santiago, Chile - Primero en el ranking de egreso\nDiplomado de honor en movilidad y transporte · 2019–2020 Universidad Diego Portales · Santiago, Chile"
+    "objectID": "publicaciones.html#policy-papers-centro-de-estudios-públicos",
+    "href": "publicaciones.html#policy-papers-centro-de-estudios-públicos",
+    "title": "Publicaciones",
+    "section": "📋 Policy Papers — Centro de Estudios Públicos",
+    "text": "📋 Policy Papers — Centro de Estudios Públicos\n\n\n\n\nPuntos de Referencia N°648 · CEP · 2023\n\nMascareño, A., Rozas, J., Oteíza, B., Lang, B., & Henríquez, P.A.\n (2023). \n\"Futuros presentes. Nuevas opciones y riesgos en escenarios complejos\". \nVer publicación →\n\n\n\nPuntos de Referencia N°644 · CEP · 2023\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2023). \n\"La Constitución pre-estallido de Michelle Bachelet. ¿Cuánto rinde hoy?\". \nVer publicación →\n\n\n\nPuntos de Referencia N°639 · CEP · 2023\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2023). \n\"Apruebo y rechazo en septiembre 2022. Expectativas, decepciones y horizontes comunes para el nuevo proceso constitucional\". \nVer publicación →\n\n\n\nPuntos de Referencia N°638 · CEP · 2023\n\nMascareño, A., Rozas, J., Lang, B., Henríquez, P.A., & Izquierdo, S.\n (2023). \n\"Mapuche en el sur: identidad, materialidad y expectativa\". \nVer publicación →\n\n\n\nPuntos de Referencia N°637 · CEP · 2022\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022). \n\"Polarización y fragmentación en la Cámara de Diputados. El escenario del Acuerdo por Chile\". \nVer publicación →\n\n\n\nPuntos de Referencia N°630 · CEP · 2022\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022). \n\"Partido de la Gente. La construcción del individualismo posdemocrático\". \nVer publicación →\n\n\n\nPuntos de Referencia N°598 · CEP · 2022\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022). \n\"Zona de curvas. La Convención y la Cámara en comparación\". \nVer publicación →"
   },
   {
-    "objectID": "about.html#posición-actual",
-    "href": "about.html#posición-actual",
-    "title": "Curriculum Vitae",
-    "section": "💼 Posición actual",
-    "text": "💼 Posición actual\nAnalista de datos · Septiembre 2025 – presente Servicio Local de Educación Pública Santa Rosa (SLEP) · Santa Rosa, Chile\nResponsable de la sistematización, visualización y análisis de datos educacionales. Ver página del proyecto →"
+    "objectID": "publicaciones.html#research-notes-c22-cep",
+    "href": "publicaciones.html#research-notes-c22-cep",
+    "title": "Publicaciones",
+    "section": "🖥️ Research Notes — C22 · CEP",
+    "text": "🖥️ Research Notes — C22 · CEP\n\n\n\n\n\nResearch Note C22 · 2022\n\nNuevo estilo de baile: 4/7\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nAlphaville\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nLa prueba de ADN\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nLa ley de los grandes números\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nSuma cero. Sentimientos convencionales\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022).\n\n\n\n\n\nResearch Note C22 · 2022\n\nLa constitución de la Constitución\n\n\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.\n (2022)."
   },
   {
-    "objectID": "about.html#trayectoria-laboral-completa",
-    "href": "about.html#trayectoria-laboral-completa",
-    "title": "Curriculum Vitae",
-    "section": "🔄 Trayectoria laboral completa",
-    "text": "🔄 Trayectoria laboral completa\n\nAnalista metodológico Senior\nInstituto Nacional de Estadísticas (INE) · Mayo 2024 – junio 2025\nResponsable del procesamiento, validación y análisis de datos en el Censo de Población y Vivienda 2024. Diseño y aplicación de metodologías estadísticas, aseguramiento de calidad de bases de datos a gran escala y elaboración de reportes técnicos para la toma de decisiones.\n\n\nInvestigador (Proyecto Fondecyt N°1231356)\nUniversidad Diego Portales / Fondecyt · Mayo 2024 – agosto 2025\n“Gobernar la incertidumbre: gramáticas, actores y dispositivos de producción de ‘estabilidad’ económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)”. Análisis de datos cualitativos y cuantitativos sobre políticas económicas. Manejo de grandes volúmenes de información documental y construcción de indicadores para evaluar dispositivos institucionales de estabilidad económica.\n\n\nInvestigador asistente\nCentro de Estudios Públicos (CEP) · Abril 2023 – abril 2024\nDesarrollo del boletín Voces del CEP, publicando sobre problemas públicos contemporáneos, con énfasis en el seguimiento del segundo proceso constitucional chileno (2023). Sistematización estadística de información electoral y opinión pública. Ver página del proyecto →\n\n\nAsistente de investigación — Proyecto Análisis Socio Constitucional C22\nCentro de Estudios Públicos (CEP) · Agosto 2021 – abril 2024\nEspecializado en humanidades digitales del primer proceso constitucional chileno. Análisis de discursos, procesamiento de datos textuales y visualización de información política.\n\n\nAnalista de asuntos públicos\nTironi y Asociados · Agosto 2021 – marzo 2023\nEncargado del boletín constitucional (2022). Recopilación, limpieza y análisis de información política e institucional. Contribución en proyectos de consultoría con énfasis en análisis de datos para diagnóstico y diseño estratégico.\n\n\nAsistente de investigación — Proyecto Fondecyt No1190295\nUniversidad Diego Portales · Marzo 2022 – marzo 2023\n“Gobernando transiciones críticas en sistemas socio-ecológicos: el caso de Chiloé, Chile”. Procesamiento de información cualitativa y cuantitativa para investigación de transiciones críticas en sistemas socio-ambientales."
+    "objectID": "trabajos.html",
+    "href": "trabajos.html",
+    "title": "Trabajos, proyectos y consultoría",
+    "section": "",
+    "text": "Una selección de los proyectos de investigación aplicada, análisis de datos y consultoría en los que he participado a lo largo de mi trayectoria profesional. Incluye trabajo en instituciones públicas, proyectos Fondecyt y consultorías independientes."
   },
   {
-    "objectID": "about.html#habilidades-técnicas",
-    "href": "about.html#habilidades-técnicas",
-    "title": "Curriculum Vitae",
-    "section": "🛠️ Habilidades técnicas",
-    "text": "🛠️ Habilidades técnicas\n\nSoftwares\n\nRStudio: avanzado (tidyverse, ggplot2, Quarto, análisis estadístico)\nPower BI: avanzado (dashboards, visualización interactiva)\nExcel: avanzado (análisis, macros, modelado)\nGitLab / GitHub: avanzado (control de versiones, colaboración)\nPython: básico\nAtlas Ti: intermedio (análisis cualitativo)\n\n\n\nIdiomas\n\nEspañol: nativo\nInglés: C1 (fluido)\nItaliano: C1 (fluido)"
+    "objectID": "trabajos.html#sector-público",
+    "href": "trabajos.html#sector-público",
+    "title": "Trabajos, proyectos y consultoría",
+    "section": "🏛️ Sector público",
+    "text": "🏛️ Sector público\n\n\n\n\n\nActual · Educación pública\n\nDatos educacionales SLEP Santa Rosa\n\nSeptiembre 2025 – presente\nSistematización, visualización y análisis de datos educacionales para el Servicio Local de Educación Pública Santa Rosa. Diseño de dashboards y reportes para la toma de decisiones en la gestión educacional regional.\n\nR\nPower BI\nDatos educacionales\n\n\n\n\n\n2024–2025 · Estadística oficial\n\nCenso de Población y Vivienda 2024 — INE\n\nMayo 2024 – Junio 2025\nAnalista metodológico Senior en el Instituto Nacional de Estadísticas. Procesamiento, validación y análisis de datos censales a gran escala. Diseño de metodologías estadísticas y aseguramiento de calidad de bases de datos.\n\nMetodología estadística\nBig data\nCensos"
   },
   {
-    "objectID": "about.html#intereses-de-investigación",
-    "href": "about.html#intereses-de-investigación",
-    "title": "Curriculum Vitae",
-    "section": "🎯 Intereses de investigación",
-    "text": "🎯 Intereses de investigación\n\nInvestigación social y análisis de sistemas complejos\nCiencia de datos y análisis cuantitativo\nMetodologías innovadoras en investigación social\nHumanidades digitales\nGobernanza y políticas públicas\nAnálisis de discursos y datos textuales"
+    "objectID": "trabajos.html#investigación-académica",
+    "href": "trabajos.html#investigación-académica",
+    "title": "Trabajos, proyectos y consultoría",
+    "section": "🔬 Investigación académica",
+    "text": "🔬 Investigación académica\n\n\n\n\n\nFondecyt · 2024–2025\nGobernar la incertidumbre — Banco Central de Chile\nMayo 2024 – Agosto 2025\n\nProyecto Fondecyt N°1231356: \n\"Gramáticas, actores y dispositivos de producción de estabilidad económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)\"\n. Análisis de datos cualitativos y cuantitativos sobre políticas económicas y dispositivos institucionales de estabilidad.\n\n\nAnálisis cualitativo\nEconomía política\nIndicadores\n\n\n\n\n\nCEP · 2021–2024\n\nHumanidades digitales C22 — CEP\n\nAgosto 2021 – Abril 2024\n\nAnálisis computacional del primer y segundo proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política. Desarrollo del boletín \nVoces del CEP\n.\n\n\nHumanidades digitales\nAnálisis de texto\nConstitución\n\n\n\n\n\nFondecyt · 2022–2023\nTransiciones críticas en sistemas socio-ecológicos — Chiloé\nMarzo 2022 – Marzo 2023\nProyecto Fondecyt N°1190295. Procesamiento de información cualitativa y cuantitativa sobre transiciones críticas en sistemas socio-ambientales en Chiloé, Chile.\n\nSistemas complejos\nSocio-ambiental\nMixta\n\n\n\n\n\nFondecyt · 2020–2021\nTesista — Proyecto Fondecyt N°1181585\nAgosto 2020 – Agosto 2021\nParticipación como tesista en proyecto Fondecyt, articulando el trabajo de tesis de pregrado con una línea de investigación financiada. Procesamiento y análisis de datos sociológicos.\n\nTesis\nInvestigación académica"
   },
   {
-    "objectID": "about.html#publicaciones",
-    "href": "about.html#publicaciones",
-    "title": "Curriculum Vitae",
-    "section": "📰 Publicaciones",
-    "text": "📰 Publicaciones\n\nArtículos académicos\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P. (2024). “Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile’s constitutional referendum.” Journal of Language and Politics, 23(5), 723–746. https://doi.org/10.1075/jlp.24097.fre\n\n\nPolicy Papers y Puntos de Referencia (CEP)\n\nMascareño, A., Rozas, J., Oteíza, B., Lang, B., & Henríquez, P.A. (2023). “Futuros presentes. Nuevas opciones y riesgos en escenarios complejos.” Puntos de Referencia 648. Ver en CEP\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2023). “La Constitución pre-estallido de Michelle Bachelet. ¿Cuánto rinde hoy?” Puntos de Referencia 644. Ver en CEP\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2023). “Apruebo y rechazo en septiembre 2022. Expectativas, decepciones y horizontes comunes para el nuevo proceso constitucional.” Puntos de Referencia 639. Ver en CEP\nMascareño, A., Rozas, J., Lang, B., Henríquez, P.A., & Izquierdo, S. (2023). “Mapuche en el sur: identidad, materialidad y expectativa.” Puntos de Referencia 638. Ver en CEP\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Polarización y fragmentación en la Cámara de Diputados. El escenario del Acuerdo por Chile.” Puntos de Referencia 637. Ver en CEP\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Partido de la Gente. La construcción del individualismo posdemocrático.” Puntos de Referencia 630. Ver en CEP\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Nuevo estilo de baile: 4/7.” Research Note C22. Ver en C22\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Zona de curvas. La Convención y la Cámara en comparación.” Puntos de Referencia 598. Ver en CEP\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Alphaville.” Research Note C22. Ver en C22\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “La prueba de ADN.” Research Note C22. Ver en C22\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “La ley de los grandes números.” Research Note C22. Ver en C22\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “Suma cero. Sentimientos convencionales.” Research Note C22. Ver en C22\nMascareño, A., Rozas, J., Lang, B., & Henríquez, P.A. (2022). “La constitución de la Constitución.” Research Note C22. Ver en C22"
+    "objectID": "trabajos.html#consultorías",
+    "href": "trabajos.html#consultorías",
+    "title": "Trabajos, proyectos y consultoría",
+    "section": "💼 Consultorías",
+    "text": "💼 Consultorías\n\n\n\n\n\nConsultoría · 2024\nRadiografía a la Equidad Puertas Adentro\nMayo 2024\n\nConsultoría desarrollada para \nFrancisca Bravo Cox\n. Análisis de datos y sistematización de información para el diagnóstico sobre equidad en el espacio doméstico.\n\n\nAnálisis cuantitativo\nGénero\nDiagnóstico\n\n\n\n\n\nFondo del Libro · 2023\nGobernanza de la lectura digital en Chile\n2023\n\nConsultoría desarrollada para \nChristian Anwandter\n en el marco de un proyecto financiado por el Fondo del Libro. Análisis y sistematización de información sobre políticas públicas del libro y la lectura digital en Chile.\n\n\nPolíticas culturales\nAnálisis mixto\nInvestigación aplicada\n\n\n\n\n\nTironi y Asociados · 2021–2023\nAnalista de asuntos públicos — Tironi y Asociados\nAgosto 2021 – Marzo 2023\nEncargado del boletín constitucional 2022. Recopilación, limpieza y análisis de información política e institucional. Contribución en proyectos de consultoría estratégica con énfasis en análisis de datos para diagnóstico, monitoreo de opinión pública y diseño de estrategias comunicacionales.\n\nConsultoría estratégica\nAnálisis político\nOpinión pública"
   },
   {
-    "objectID": "about.html#actividades-académicas",
-    "href": "about.html#actividades-académicas",
-    "title": "Curriculum Vitae",
-    "section": "🎓 Actividades académicas",
-    "text": "🎓 Actividades académicas\n\nJunio 2024: Seminario “Inteligencia artificial y ciencias sociales: herramientas, expectativas y limitaciones” para estudiantes de Sociología, Universidad Diego Portales\nAbril 2022: Ponencia en el Congreso Chileno de Sociología PRE-ALAS, Concepción. Título: “Estéticas constitucionales: una mirada desde los regímenes estéticos de la revuelta social chilena de 2019”\nMarzo 2022: Seminario “Metodologías visuales: una aproximación sociológica para trabajar con imágenes”, Universidad Diego Portales"
+    "objectID": "trabajos.html#servicios-de-consultoría",
+    "href": "trabajos.html#servicios-de-consultoría",
+    "title": "Trabajos, proyectos y consultoría",
+    "section": "🛠️ Servicios de consultoría",
+    "text": "🛠️ Servicios de consultoría\n\nOfrezco servicios de consultoría en análisis de datos, investigación social aplicada y visualización de información para organizaciones públicas, privadas y académicas.\n\n\n\n\n\n\n📊\nAnálisis de datos\nProcesamiento, limpieza y análisis estadístico de datos cuantitativos. Construcción de indicadores, modelos y reportes técnicos con R y Power BI.\n\n\n\n\n📈\nVisualización de datos\nDiseño de dashboards interactivos y reportes visuales que transforman datos complejos en información comprensible para la toma de decisiones.\n\n\n\n\n🔬\nInvestigación social aplicada\nDiseño y ejecución de investigaciones con metodologías cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto.\n\n\n\n\n🗳️\nAnálisis político y electoral\nAnálisis de datos electorales, seguimiento de procesos legislativos, construcción de indicadores de opinión pública y monitoreo de tendencias políticas.\n\n\n\n\n📚\nHumanidades digitales\nAplicación de métodos computacionales al análisis de textos, discursos y corpus documentales. Procesamiento de lenguaje natural y análisis de redes.\n\n\n\n\n🎓\nCapacitación y talleres\nTalleres de análisis de datos con R, Power BI y metodología cuantitativa. Diseñados para equipos de investigación, instituciones públicas y estudiantes."
   },
   {
-    "objectID": "about.html#referencias",
-    "href": "about.html#referencias",
-    "title": "Curriculum Vitae",
-    "section": "📞 Referencias",
-    "text": "📞 Referencias\n\nVerónica Canales — Jefa de área de metodología y procesamiento CENSO población y vivienda 2024, Magister en investigación social (LSE). vacanalesg@ine.gob.cl\nAldo Mascareño — Investigador Senior del CEP, Editor General de la revista Estudios Públicos, investigador principal del grupo de humanidades digitales C22. amascareno@cepchile.cl\nJosefina Abarzua — Jefa de área de departamento de estudio, monitoreo y datos del SLEP Santa Rosa. Magister en Gobierno y Gerencia (Universidad de Chile). josefina.abarzua@slepsantarosa.gob.cl"
+    "objectID": "trabajos.html#contacto-profesional",
+    "href": "trabajos.html#contacto-profesional",
+    "title": "Trabajos, proyectos y consultoría",
+    "section": "📩 Contacto profesional",
+    "text": "📩 Contacto profesional\n¿Tienes un proyecto en mente? Escríbeme y conversamos.\n\n\n📧 Email benjalang1997@gmail.com\n\n\n📱 Teléfono +56 9 6309 5562\n\n\n🔗 LinkedIn benjamin-lang-a78229207\n\n\n\n✉️ Contactar ahora"
   },
   {
-    "objectID": "about.html#contacto",
-    "href": "about.html#contacto",
-    "title": "Curriculum Vitae",
-    "section": "📧 Contacto",
-    "text": "📧 Contacto\n\n\n📧 benjalang1997@gmail.com 📱 +56 9 63095562 🔗 LinkedIn\n\n\n🏛️ Servicio Local de Educación Santa Rosa 📍 Santa Rosa, Los Lagos, Chile"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Benjamín Lang Bustos",
+    "section": "",
+    "text": "👋 Hola, soy\n\n\n\nSociólogo · Analista de datos · Investigador\n\n\nSociólogo titulado con distinción máxima por la Universidad Diego Portales. Especializado en análisis de datos, ciencia de datos aplicada e investigación social. Actualmente Analista de datos en el Servicio Local de Educación Pública Santa Rosa.\n\n\n🎓 Sociólogo UDP 📊 R · Power BI 🔬 Investigador 💻 Humanidades digitales\n\n\nVer CV completo → Trabajos y proyectos ✉️ Escribirme"
+  },
+  {
+    "objectID": "index.html#trayectoria-en-números",
+    "href": "index.html#trayectoria-en-números",
+    "title": "Benjamín Lang Bustos",
+    "section": "📈 Trayectoria en números",
+    "text": "📈 Trayectoria en números\n\n\n\n\n6+\nAños de experiencia\n\n\n13\nPolicy Papers\n\n\n4\nInstituciones\n\n\n3\nIdiomas"
+  },
+  {
+    "objectID": "index.html#áreas-de-especialización",
+    "href": "index.html#áreas-de-especialización",
+    "title": "Benjamín Lang Bustos",
+    "section": "🔬 Áreas de especialización",
+    "text": "🔬 Áreas de especialización\n\n\n\n\n\n📊\nCiencia de datos\nR, Power BI, Python. Análisis estadístico y visualización para la toma de decisiones.\n\nR · avanzado\nPower BI\nEstadística\n\n\n\n\n\n💻\nHumanidades digitales\nAnálisis de discursos, procesamiento de texto y visualización de procesos políticos e institucionales.\n\nAnálisis de texto\nNLP\nVisualización\n\n\n\n\n\n🏛️\nPolíticas públicas\nInvestigación y análisis de procesos institucionales, electorales y de gobernanza.\n\nSistemas complejos\nGobernanza\nOpinión pública\n\n\n\n\n\n📐\nMetodología cuantitativa\nDiseño metodológico, procesamiento de datos censales y construcción de indicadores a gran escala.\n\nCensos\nIndicadores\nGran escala"
+  },
+  {
+    "objectID": "index.html#proyectos-destacados",
+    "href": "index.html#proyectos-destacados",
+    "title": "Benjamín Lang Bustos",
+    "section": "💼 Proyectos destacados",
+    "text": "💼 Proyectos destacados\n\n\n\n\n\nSector público\n\nDatos educacionales SLEP Santa Rosa\n\n2025 – presente\nSistematización y visualización de indicadores educacionales para educación pública regional.\n\n\n\n\nInvestigación\n\nHumanidades digitales C22 — CEP\n\n2021 – 2024\nAnálisis computacional del proceso constitucional chileno. Procesamiento de datos textuales y visualización política.\n\n\n\n\nEstadística pública\n\nCenso de Población y Vivienda 2024\n\n2024 – 2025\nAnalista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.\n\n\n\n\nInvestigación\n\nFondecyt N°1231356 — Banco Central de Chile\n\n2024 – 2025\nAnálisis de datos sobre políticas económicas y dispositivos de estabilidad institucional (2006–2022).\n\n\n\n\n\n\nVer todos los trabajos →"
+  },
+  {
+    "objectID": "index.html#última-publicación",
+    "href": "index.html#última-publicación",
+    "title": "Benjamín Lang Bustos",
+    "section": "📰 Última publicación",
+    "text": "📰 Última publicación\n\nFrei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P. (2024). “Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile’s constitutional referendum”. Journal of Language and Politics, 23(5), 723–746.\nLeer artículo → Ver todas las publicaciones →"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBienvenida al sitio\n\n\n\n\n\n\nmeta\n\n\npersonal\n\n\n\nPor qué creé este sitio y qué puedes esperar encontrar aquí.\n\n\n\n\n\nApr 5, 2026\n\n\nTu Nombre\n\n\n\n\n\n\nNo matching items"
   }
 ]

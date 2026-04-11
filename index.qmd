@@ -1,62 +1,77 @@
 ---
-title: "Benjamín Lang Bustos"
-image: img/perfil.jpg
-about:
-  template: trestles
-  image-shape: round
-  links:
-    - icon: github
-      text: GitHub
-      href: https://github.com/Langab
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/benjamin-lang-a78229207/
-    - icon: envelope
-      text: Email
-      href: mailto:benjalang1997@gmail.com
-    - icon: file-earmark-pdf
-      text: Descargar CV
-      href: documentos/cv_Benjamin_Lang_2026.pdf
-
+title: ""
 page-layout: full
 toc: false
+anchor-sections: false
 ---
-
-<div class="hero-badges">
-<span class="badge-item">🎓 Sociólogo</span>
-<span class="badge-item">📊 Analista de datos</span>
-<span class="badge-item">🔬 Investigador</span>
-<span class="badge-item">💻 Humanidades digitales</span>
-</div>
-
-Soy **sociólogo** titulado con distinción máxima por la Universidad Diego Portales, especializado en **análisis de datos**, **ciencia de datos aplicada** e **investigación social**. Actualmente soy **Analista de datos** en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización y visualización de datos educacionales.
-
-<a href="about.qmd" class="btn-primario">Ver CV completo</a>
-<a href="investigacion.qmd" class="btn-secundario">Ver investigación</a>
-
----
-
-## 📈 Trayectoria en números
 
 ```{r}
 #| echo: false
 library(htmltools)
-
-div(class = "stats-grid",
-  div(class = "stat-item", div(class = "stat-numero", "6+"), div(class = "stat-label", "Años de experiencia")),
-  div(class = "stat-item", div(class = "stat-numero", "13"), div(class = "stat-label", "Policy Papers")),
-  div(class = "stat-item", div(class = "stat-numero", "1"),  div(class = "stat-label", "Artículo académico")),
-  div(class = "stat-item", div(class = "stat-numero", "3"),  div(class = "stat-label", "Idiomas"))
-)
+library(purrr)
 ```
 
----
+::: {.hero-principal}
 
-## 🔬 Áreas de especialización
+::: {.hero-contenido}
+
+::: {.hero-texto}
+<span class="hero-saludo">👋 Hola, soy</span>
+
+# Benjamín Lang Bustos
+
+<p class="hero-rol">Sociólogo · Analista de datos · Investigador</p>
+
+<p class="hero-descripcion">
+Sociólogo titulado con distinción máxima por la Universidad Diego Portales. Especializado en **análisis de datos**, **ciencia de datos aplicada** e **investigación social**. Actualmente **Analista de datos** en el Servicio Local de Educación Pública Santa Rosa.
+</p>
+
+<div class="hero-badges">
+<span class="badge-item">🎓 Sociólogo UDP</span>
+<span class="badge-item">📊 R · Power BI</span>
+<span class="badge-item">🔬 Investigador</span>
+<span class="badge-item">💻 Humanidades digitales</span>
+</div>
+
+<div class="hero-botones">
+<a href="about.qmd" class="btn-primario">Ver CV completo →</a>
+<a href="trabajos.qmd" class="btn-secundario">Trabajos y proyectos</a>
+<a href="mailto:benjalang1997@gmail.com" class="btn-ghost">✉️ Escribirme</a>
+</div>
+:::
+
+::: {.hero-imagen}
+![](img/perfil.jpg){.foto-hero fig-alt="Foto de Benjamín Lang"}
+:::
+
+:::
+
+:::
+
+## 📈 Trayectoria en números {.seccion-titulo}
 
 ```{r}
 #| echo: false
+div(class = "stats-grid",
+  div(class = "stat-item",
+    div(class = "stat-numero", "6+"),
+    div(class = "stat-label", "Años de experiencia")),
+  div(class = "stat-item",
+    div(class = "stat-numero", "13"),
+    div(class = "stat-label", "Policy Papers")),
+  div(class = "stat-item",
+    div(class = "stat-numero", "4"),
+    div(class = "stat-label", "Instituciones")),
+  div(class = "stat-item",
+    div(class = "stat-numero", "3"),
+    div(class = "stat-label", "Idiomas"))
+)
+```
 
+## 🔬 Áreas de especialización {.seccion-titulo}
+
+```{r}
+#| echo: false
 areas <- list(
   list(icono = "📊", titulo = "Ciencia de datos",
        desc = "R, Power BI, Python. Análisis estadístico y visualización para la toma de decisiones.",
@@ -73,14 +88,14 @@ areas <- list(
 )
 
 div(class = "grid",
-  purrr::map(areas, \(a) {
+  map(areas, \(a) {
     div(class = "g-col-12 g-col-md-6",
       div(class = "tarjeta",
         div(class = "tarjeta-icono", a$icono),
         tags$h3(a$titulo),
         tags$p(a$desc),
         div(class = "skill-tags",
-          purrr::map(a$tags, \(t) span(class = "skill-tag", t))
+          map(a$tags, \(t) span(class = "skill-tag", t))
         )
       )
     )
@@ -88,13 +103,10 @@ div(class = "grid",
 )
 ```
 
----
-
-## 💼 Proyectos destacados
+## 💼 Proyectos destacados {.seccion-titulo}
 
 ```{r}
 #| echo: false
-
 proyectos <- list(
   list(
     nombre  = "Datos educacionales SLEP Santa Rosa",
@@ -114,20 +126,20 @@ proyectos <- list(
     nombre  = "Censo de Población y Vivienda 2024",
     periodo = "2024 – 2025",
     desc    = "Analista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.",
-    link    = "proyectos.qmd",
+    link    = "https://censo2024.ine.gob.cl/",
     tipo    = "Estadística pública"
   ),
   list(
     nombre  = "Fondecyt N°1231356 — Banco Central de Chile",
     periodo = "2024 – 2025",
     desc    = "Análisis de datos sobre políticas económicas y dispositivos de estabilidad institucional (2006–2022).",
-    link    = "proyectos.qmd",
+    link    = "trabajos.qmd",
     tipo    = "Investigación"
   )
 )
 
 div(class = "grid",
-  purrr::map(proyectos, \(p) {
+  map(proyectos, \(p) {
     div(class = "g-col-12 g-col-md-6",
       div(class = "proyecto-card",
         div(class = "tarjeta-etiqueta", p$tipo),
@@ -140,13 +152,17 @@ div(class = "grid",
 )
 ```
 
-<a href="proyectos.qmd" class="btn-secundario">Ver todos los proyectos →</a>
+<div class="text-center" style="margin-top:1.5rem;">
+<a href="trabajos.qmd" class="btn-secundario">Ver todos los trabajos →</a>
+</div>
 
----
+## 📰 Última publicación {.seccion-titulo}
 
-## 📰 Última publicación
-
-**Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024). "Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum." *Journal of Language and Politics*, 23(5), 723–746.
+::: {.pub-destacada}
+**Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024).
+*"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"*.
+**Journal of Language and Politics**, 23(5), 723–746.
 
 <a href="https://doi.org/10.1075/jlp.24097.fre" class="btn-primario" target="_blank">Leer artículo →</a>
 <a href="publicaciones.qmd" class="btn-secundario">Ver todas las publicaciones →</a>
+:::

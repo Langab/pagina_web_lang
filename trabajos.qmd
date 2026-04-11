@@ -1,0 +1,260 @@
+---
+title: "Trabajos, proyectos y consultoría"
+subtitle: "Experiencia profesional en sector público, investigación académica y consultoría"
+toc: true
+toc-title: "Categorías"
+---
+
+```{r}
+#| echo: false
+library(htmltools)
+library(purrr)
+library(glue)
+```
+
+::: {.intro-pagina}
+Una selección de los proyectos de **investigación aplicada**, **análisis de datos** y **consultoría** en los que he participado a lo largo de mi trayectoria profesional. Incluye trabajo en instituciones públicas, proyectos Fondecyt y consultorías independientes.
+:::
+
+## 🏛️ Sector público {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Actual · Educación pública"),
+      tags$h3(tags$a(href = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
+                     "Datos educacionales SLEP Santa Rosa", target = "_blank")),
+      div(class = "proyecto-periodo", "Septiembre 2025 – presente"),
+      tags$p("Sistematización, visualización y análisis de datos educacionales para el Servicio Local de Educación Pública Santa Rosa. Diseño de dashboards y reportes para la toma de decisiones en la gestión educacional regional."),
+      div(class = "skill-tags",
+        span(class="skill-tag avanzado", "R"),
+        span(class="skill-tag avanzado", "Power BI"),
+        span(class="skill-tag", "Datos educacionales")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "2024–2025 · Estadística oficial"),
+      tags$h3(tags$a(href = "https://censo2024.ine.gob.cl/",
+                     "Censo de Población y Vivienda 2024 — INE", target = "_blank")),
+      div(class = "proyecto-periodo", "Mayo 2024 – Junio 2025"),
+      tags$p("Analista metodológico Senior en el Instituto Nacional de Estadísticas. Procesamiento, validación y análisis de datos censales a gran escala. Diseño de metodologías estadísticas y aseguramiento de calidad de bases de datos."),
+      div(class = "skill-tags",
+        span(class="skill-tag avanzado", "Metodología estadística"),
+        span(class="skill-tag avanzado", "Big data"),
+        span(class="skill-tag", "Censos")
+      )
+    )
+  )
+
+)
+```
+
+## 🔬 Investigación académica {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2024–2025"),
+      tags$h3("Gobernar la incertidumbre — Banco Central de Chile"),
+      div(class = "proyecto-periodo", "Mayo 2024 – Agosto 2025"),
+      tags$p(
+        "Proyecto Fondecyt N°1231356: ",
+        em('"Gramáticas, actores y dispositivos de producción de estabilidad económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)"'),
+        ". Análisis de datos cualitativos y cuantitativos sobre políticas económicas y dispositivos institucionales de estabilidad."
+      ),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Análisis cualitativo"),
+        span(class="skill-tag", "Economía política"),
+        span(class="skill-tag avanzado", "Indicadores")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "CEP · 2021–2024"),
+      tags$h3(tags$a(href = "https://c22cepchile.cl/", "Humanidades digitales C22 — CEP", target = "_blank")),
+      div(class = "proyecto-periodo", "Agosto 2021 – Abril 2024"),
+      tags$p("Análisis computacional del primer y segundo proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política. Desarrollo del boletín ", em("Voces del CEP"), "."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Humanidades digitales"),
+        span(class="skill-tag", "Análisis de texto"),
+        span(class="skill-tag", "Constitución")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2022–2023"),
+      tags$h3("Transiciones críticas en sistemas socio-ecológicos — Chiloé"),
+      div(class = "proyecto-periodo", "Marzo 2022 – Marzo 2023"),
+      tags$p(
+        "Proyecto Fondecyt N°1190295. Procesamiento de información cualitativa y cuantitativa sobre transiciones críticas en sistemas socio-ambientales en Chiloé, Chile."
+      ),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Sistemas complejos"),
+        span(class="skill-tag", "Socio-ambiental"),
+        span(class="skill-tag", "Mixta")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2020–2021"),
+      tags$h3("Tesista — Proyecto Fondecyt N°1181585"),
+      div(class = "proyecto-periodo", "Agosto 2020 – Agosto 2021"),
+      tags$p("Participación como tesista en proyecto Fondecyt, articulando el trabajo de tesis de pregrado con una línea de investigación financiada. Procesamiento y análisis de datos sociológicos."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Tesis"),
+        span(class="skill-tag", "Investigación académica")
+      )
+    )
+  )
+
+)
+```
+
+## 💼 Consultorías {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Consultoría · 2024"),
+      tags$h3("Radiografía a la Equidad Puertas Adentro"),
+      div(class = "proyecto-periodo", "Mayo 2024"),
+      tags$p("Consultoría desarrollada para ", strong("Francisca Bravo Cox"),
+             ". Análisis de datos y sistematización de información para el diagnóstico sobre equidad en el espacio doméstico."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Análisis cuantitativo"),
+        span(class="skill-tag", "Género"),
+        span(class="skill-tag", "Diagnóstico")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondo del Libro · 2023"),
+      tags$h3("Gobernanza de la lectura digital en Chile"),
+      div(class = "proyecto-periodo", "2023"),
+      tags$p("Consultoría desarrollada para ", strong("Christian Anwandter"),
+             " en el marco de un proyecto financiado por el Fondo del Libro. Análisis y sistematización de información sobre políticas públicas del libro y la lectura digital en Chile."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Políticas culturales"),
+        span(class="skill-tag", "Análisis mixto"),
+        span(class="skill-tag", "Investigación aplicada")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Tironi y Asociados · 2021–2023"),
+      tags$h3("Analista de asuntos públicos — Tironi y Asociados"),
+      div(class = "proyecto-periodo", "Agosto 2021 – Marzo 2023"),
+      tags$p("Encargado del boletín constitucional 2022. Recopilación, limpieza y análisis de información política e institucional. Contribución en proyectos de consultoría estratégica con énfasis en análisis de datos para diagnóstico, monitoreo de opinión pública y diseño de estrategias comunicacionales."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Consultoría estratégica"),
+        span(class="skill-tag", "Análisis político"),
+        span(class="skill-tag", "Opinión pública")
+      )
+    )
+  )
+
+)
+```
+
+## 🛠️ Servicios de consultoría {.seccion-titulo}
+
+::: {.intro-pagina}
+Ofrezco servicios de consultoría en **análisis de datos**, **investigación social aplicada** y **visualización de información** para organizaciones públicas, privadas y académicas.
+:::
+
+```{r}
+#| echo: false
+
+servicios <- list(
+  list(
+    icono = "📊",
+    titulo = "Análisis de datos",
+    desc = "Procesamiento, limpieza y análisis estadístico de datos cuantitativos. Construcción de indicadores, modelos y reportes técnicos con R y Power BI."
+  ),
+  list(
+    icono = "📈",
+    titulo = "Visualización de datos",
+    desc = "Diseño de dashboards interactivos y reportes visuales que transforman datos complejos en información comprensible para la toma de decisiones."
+  ),
+  list(
+    icono = "🔬",
+    titulo = "Investigación social aplicada",
+    desc = "Diseño y ejecución de investigaciones con metodologías cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto."
+  ),
+  list(
+    icono = "🗳️",
+    titulo = "Análisis político y electoral",
+    desc = "Análisis de datos electorales, seguimiento de procesos legislativos, construcción de indicadores de opinión pública y monitoreo de tendencias políticas."
+  ),
+  list(
+    icono = "📚",
+    titulo = "Humanidades digitales",
+    desc = "Aplicación de métodos computacionales al análisis de textos, discursos y corpus documentales. Procesamiento de lenguaje natural y análisis de redes."
+  ),
+  list(
+    icono = "🎓",
+    titulo = "Capacitación y talleres",
+    desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa. Diseñados para equipos de investigación, instituciones públicas y estudiantes."
+  )
+)
+
+div(class = "grid",
+  map(servicios, \(s) {
+    div(class = "g-col-12 g-col-md-6 g-col-lg-4",
+      div(class = "servicio-card",
+        div(class = "icono", s$icono),
+        tags$h3(s$titulo),
+        tags$p(s$desc)
+      )
+    )
+  })
+)
+```
+
+## 📩 Contacto profesional {.seccion-titulo}
+
+¿Tienes un proyecto en mente? Escríbeme y conversamos.
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+**📧 Email**
+[benjalang1997@gmail.com](mailto:benjalang1997@gmail.com)
+:::
+::: {.g-col-12 .g-col-md-4}
+**📱 Teléfono**
++56 9 6309 5562
+:::
+::: {.g-col-12 .g-col-md-4}
+**🔗 LinkedIn**
+[benjamin-lang-a78229207](https://www.linkedin.com/in/benjamin-lang-a78229207/)
+:::
+:::
+
+<div style="text-align:center; margin-top:2rem;">
+<a href="mailto:benjalang1997@gmail.com" class="btn-primario">✉️ Contactar ahora</a>
+</div>

@@ -71,8 +71,145 @@ h2 {
 }
 
 /* -------------------------------------------------------
-   🏠 HERO — PÁGINA DE INICIO
+   🏠 HERO PRINCIPAL — PÁGINA DE INICIO (FULL-BLEED)
 ------------------------------------------------------- */
+/* Elimina el espacio superior del título vacío en index */
+main#quarto-document-content > header.quarto-title-block,
+main#quarto-document-content > #title-block-header {
+  display: none !important;
+}
+
+.hero-principal {
+  background: linear-gradient(135deg, #0f1e33 0%, #1a2e4a 45%, #2c4a6e 100%);
+  color: white;
+  /* Full-bleed: rompe el contenedor para ocupar todo el ancho */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+  padding: 5rem 2rem 5rem 2rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.hero-principal::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(26,188,156,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-texto { color: white; }
+
+.hero-texto h1 {
+  color: white !important;
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 0.3rem 0 0.7rem 0;
+  border: none;
+  display: block;
+  letter-spacing: -0.02em;
+}
+
+.hero-saludo {
+  display: inline-block;
+  background: rgba(26,188,156,0.2);
+  color: #7ee8d0;
+  padding: 0.35rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(26,188,156,0.4);
+}
+
+.hero-rol {
+  font-size: 1.2rem;
+  color: #b8d4e8;
+  font-weight: 500;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: 0.01em;
+}
+
+.hero-descripcion {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 1.5rem;
+  max-width: 540px;
+}
+
+.hero-descripcion strong { color: #7ee8d0; font-weight: 600; }
+
+.hero-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 1.5rem 0;
+}
+
+.badge-item {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.hero-botones {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.hero-imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-hero,
+.hero-imagen img {
+  width: 280px !important;
+  height: 280px !important;
+  border-radius: 50% !important;
+  object-fit: cover;
+  border: 5px solid rgba(255,255,255,0.2);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.4),
+              0 0 0 2px rgba(26,188,156,0.5);
+  transition: var(--transicion);
+}
+
+.foto-hero:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5),
+              0 0 0 3px var(--color-acento-2);
+}
+
+/* Legacy hero-banner (mantenido por compatibilidad) */
 .hero-banner {
   background: linear-gradient(135deg, var(--color-primario) 0%, #2c4a6e 100%);
   color: white;
@@ -87,30 +224,6 @@ h2 {
   font-size: 2.4rem;
   border: none;
   margin-bottom: 0.5rem;
-}
-
-.hero-banner .subtitulo {
-  font-size: 1.1rem;
-  opacity: 0.85;
-  margin-bottom: 1.5rem;
-}
-
-.hero-badges {
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 1rem 0;
-}
-
-.badge-item {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: white;
-  padding: 0.3rem 0.9rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
 }
 
 /* -------------------------------------------------------
@@ -485,10 +598,187 @@ code { font-size: 0.875em; }
 }
 
 /* -------------------------------------------------------
+   🏷️ TÍTULOS DE SECCIÓN — separadores visuales
+------------------------------------------------------- */
+.seccion-titulo {
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.6rem !important;
+  border-bottom: 3px solid var(--color-acento) !important;
+  padding-bottom: 0.5rem !important;
+  display: inline-block !important;
+}
+
+.intro-pagina {
+  background: linear-gradient(135deg, #f4f9fd 0%, #eef9f6 100%);
+  border-left: 4px solid var(--color-acento);
+  padding: 1.1rem 1.5rem;
+  border-radius: 0 var(--radio-tarjeta) var(--radio-tarjeta) 0;
+  margin: 1.2rem 0 2rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-texto);
+}
+
+/* -------------------------------------------------------
+   💼 BLOQUES DE TRABAJO (CV) — con logo institucional
+------------------------------------------------------- */
+.trabajo-bloque {
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-left: 4px solid var(--color-acento);
+  border-radius: var(--radio-tarjeta);
+  padding: 1.3rem 1.6rem;
+  margin-bottom: 1.2rem;
+  transition: var(--transicion);
+}
+
+.trabajo-bloque:hover {
+  box-shadow: var(--sombra-hover);
+  border-left-color: var(--color-acento-2);
+  transform: translateX(3px);
+}
+
+h3.trabajo-titulo {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  color: var(--color-primario);
+  border-bottom: none;
+  display: block;
+}
+
+.logo-trabajo {
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid var(--color-borde);
+  display: block;
+  margin: 0 auto;
+}
+
+.logo-institucion {
+  max-width: 180px;
+  max-height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------
+   📋 REFERENCIAS — tarjetas
+------------------------------------------------------- */
+.referencia-card {
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-top: 3px solid var(--color-acento-2);
+  border-radius: var(--radio-tarjeta);
+  padding: 1.2rem 1.4rem;
+  height: 100%;
+  transition: var(--transicion);
+}
+
+.referencia-card:hover {
+  box-shadow: var(--sombra-hover);
+  border-top-color: var(--color-acento);
+}
+
+.referencia-card p { margin: 0.3rem 0; }
+
+/* -------------------------------------------------------
+   📰 PUBLICACIÓN DESTACADA (index)
+------------------------------------------------------- */
+.pub-destacada {
+  background: linear-gradient(135deg, #f4f9fd 0%, #eef9f6 100%);
+  border-left: 5px solid var(--color-acento);
+  padding: 1.5rem 1.8rem;
+  border-radius: 0 var(--radio-tarjeta) var(--radio-tarjeta) 0;
+  margin: 1rem 0 2rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* -------------------------------------------------------
+   👻 BOTÓN FANTASMA (terciario)
+------------------------------------------------------- */
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  color: white !important;
+  border: 2px solid rgba(255,255,255,0.4);
+  padding: 0.55rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: var(--transicion);
+  margin: 0.3rem;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--color-acento-2);
+  transform: translateY(-2px);
+}
+
+/* Centrado de texto auxiliar */
+.text-center { text-align: center; }
+
+/* -------------------------------------------------------
+   🌙 DARK MODE — complementos para nuevos componentes
+------------------------------------------------------- */
+[data-bs-theme="dark"] .intro-pagina,
+[data-bs-theme="dark"] .pub-destacada {
+  background: #1e2530;
+  color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .trabajo-bloque,
+[data-bs-theme="dark"] .referencia-card {
+  background: #242a35;
+  border-color: #2d3748;
+}
+
+[data-bs-theme="dark"] .logo-trabajo,
+[data-bs-theme="dark"] .logo-institucion {
+  background: #ffffff;
+}
+
+/* -------------------------------------------------------
    📱 RESPONSIVE — MÓVIL
 ------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-contenido {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-imagen { order: -1; }
+  .hero-descripcion { margin-left: auto; margin-right: auto; }
+  .hero-badges { justify-content: center; }
+  .hero-botones { justify-content: center; }
+  .hero-texto h1 { font-size: 2.2rem; }
+}
+
 @media (max-width: 768px) {
+  .hero-principal {
+    padding: 3rem 1.2rem;
+    margin-top: -1rem;
+  }
   .hero-banner h1 { font-size: 1.8rem; }
+  .hero-texto h1 { font-size: 1.9rem; }
+  .hero-rol { font-size: 1rem; }
+  .foto-hero,
+  .hero-imagen img {
+    width: 200px !important;
+    height: 200px !important;
+  }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-badges { justify-content: center; }
+  .seccion-titulo { font-size: 1.3rem !important; }
 }

@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://langab.github.io/pagina_web_lang/consultorias.html</loc>
-    <lastmod>2026-04-11T01:37:29.678Z</lastmod>
-  </url>
-  <url>
-    <loc>https://langab.github.io/pagina_web_lang/blog/index.html</loc>
-    <lastmod>2026-04-05T21:03:07.231Z</lastmod>
-  </url>
-  <url>
-    <loc>https://langab.github.io/pagina_web_lang/investigacion.html</loc>
-    <lastmod>2026-04-11T00:46:34.697Z</lastmod>
-  </url>
-  <url>
-    <loc>https://langab.github.io/pagina_web_lang/proyectos.html</loc>
-    <lastmod>2026-04-11T01:37:08.748Z</lastmod>
-  </url>
-  <url>
-    <loc>https://langab.github.io/pagina_web_lang/publicaciones.html</loc>
-    <lastmod>2026-04-11T01:36:41.983Z</lastmod>
-  </url>
-  <url>
-    <loc>https://langab.github.io/pagina_web_lang/index.html</loc>
-    <lastmod>2026-04-11T01:36:12.504Z</lastmod>
+    <loc>https://langab.github.io/pagina_web_lang/about.html</loc>
+    <lastmod>2026-04-11T16:05:39.961Z</lastmod>
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/blog/posts/bienvenida/index.html</loc>
     <lastmod>2026-04-05T21:03:23.937Z</lastmod>
   </url>
   <url>
-    <loc>https://langab.github.io/pagina_web_lang/about.html</loc>
-    <lastmod>2026-04-11T00:55:11.568Z</lastmod>
+    <loc>https://langab.github.io/pagina_web_lang/publicaciones.html</loc>
+    <lastmod>2026-04-11T01:36:41.983Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/trabajos.html</loc>
+    <lastmod>2026-04-11T16:04:18.449Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/index.html</loc>
+    <lastmod>2026-04-11T16:03:21.450Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/blog/index.html</loc>
+    <lastmod>2026-04-05T21:03:07.231Z</lastmod>
   </url>
 </urlset>
