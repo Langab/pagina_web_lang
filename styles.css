@@ -80,7 +80,7 @@ main#quarto-document-content > #title-block-header {
 }
 
 .hero-principal {
-  background: linear-gradient(135deg, #0f1e33 0%, #1a2e4a 45%, #2c4a6e 100%);
+  background: linear-gradient(160deg, #1e3a5f 0%, #245c8a 50%, #2d7ab5 100%);
   color: white;
   /* Full-bleed: rompe el contenedor para ocupar todo el ancho */
   width: 100vw;
@@ -94,6 +94,18 @@ main#quarto-document-content > #title-block-header {
   padding: 5rem 2rem 5rem 2rem;
   box-shadow: 0 8px 30px rgba(0,0,0,0.25);
   overflow: hidden;
+}
+
+/* línea de acento teal debajo del navbar para separar visualmente */
+.hero-principal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-acento-2), var(--color-acento));
+  z-index: 3;
 }
 
 .hero-principal::before {
@@ -176,6 +188,7 @@ main#quarto-document-content > #title-block-header {
   font-size: 0.82rem;
   font-weight: 500;
   backdrop-filter: blur(10px);
+  white-space: nowrap;   /* evita que el texto se parta en varias líneas */
 }
 
 .hero-botones {
@@ -804,6 +817,69 @@ h3.trabajo-titulo {
 .text-center { text-align: center; }
 
 /* -------------------------------------------------------
+   🪪 SOBRE MÍ — tarjeta de perfil
+------------------------------------------------------- */
+.sobre-mi-card {
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-left: 5px solid var(--color-acento);
+  border-radius: var(--radio-tarjeta);
+  padding: 1.5rem 1.8rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-texto);
+  margin-bottom: 1.5rem;
+}
+
+.sobre-mi-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0.8rem;
+}
+
+.sobre-mi-card p:last-child { margin-bottom: 0; }
+
+/* -------------------------------------------------------
+   📬 CONTACTO — grid en páginas internas
+------------------------------------------------------- */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.contacto-item {
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-top: 3px solid var(--color-acento);
+  border-radius: var(--radio-tarjeta);
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.contacto-item strong {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-gris);
+  margin-bottom: 0.4rem;
+}
+
+.contacto-item a {
+  color: var(--color-acento);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contacto-item a:hover { color: var(--color-acento-2); }
+
+@media (max-width: 768px) {
+  .contacto-grid { grid-template-columns: 1fr; }
+}
+
+/* -------------------------------------------------------
    🌙 DARK MODE — complementos para nuevos componentes
 ------------------------------------------------------- */
 [data-bs-theme="dark"] .intro-pagina,
@@ -813,9 +889,12 @@ h3.trabajo-titulo {
 }
 
 [data-bs-theme="dark"] .trabajo-bloque,
-[data-bs-theme="dark"] .referencia-card {
+[data-bs-theme="dark"] .referencia-card,
+[data-bs-theme="dark"] .sobre-mi-card,
+[data-bs-theme="dark"] .contacto-item {
   background: #242a35;
   border-color: #2d3748;
+  color: #e0e0e0;
 }
 
 [data-bs-theme="dark"] .logo-trabajo,

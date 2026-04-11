@@ -11,7 +11,7 @@
     "href": "about.html#sobre-mí",
     "title": "Curriculum Vitae",
     "section": "👤 Sobre mí",
-    "text": "👤 Sobre mí\nSoy sociólogo titulado con distinción máxima por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales.\nActualmente me desempeño como Analista de datos en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.\nMi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador en instituciones como el Instituto Nacional de Estadísticas (INE), el Centro de Estudios Públicos (CEP) y en proyectos Fondecyt enfocados en gobernanza económica y transiciones socio-ambientales."
+    "text": "👤 Sobre mí\n\nSoy sociólogo titulado con distinción máxima por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales.\nActualmente me desempeño como Analista de datos en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.\nMi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador en instituciones como el Instituto Nacional de Estadísticas (INE), el Centro de Estudios Públicos (CEP) y en proyectos Fondecyt enfocados en gobernanza económica y transiciones socio-ambientales."
   },
   {
     "objectID": "about.html#formación-académica",
@@ -74,35 +74,7 @@
     "href": "about.html#contacto",
     "title": "Curriculum Vitae",
     "section": "📧 Contacto",
-    "text": "📧 Contacto\n\n\n📧 Email benjalang1997@gmail.com\n📱 Teléfono +56 9 6309 5562\n🔗 LinkedIn benjamin-lang-a78229207\n🐙 GitHub github.com/Langab\n\n\n🏛️ Institución Servicio Local de Educación Pública Santa Rosa\n📍 Ubicación Región de Los Lagos, Chile"
-  },
-  {
-    "objectID": "blog/posts/bienvenida/index.html",
-    "href": "blog/posts/bienvenida/index.html",
-    "title": "Bienvenida al sitio",
-    "section": "",
-    "text": "Este es el primer post de mi sitio personal. La idea es tener un espacio propio donde pueda compartir:\n\nInvestigación: resultados, reflexiones y materiales de mis proyectos\nAnálisis con R: visualizaciones, tutoriales y código reproducible\nLecturas: reseñas y notas sobre libros que voy leyendo\nOtras ideas: lo que se vaya ocurriendo"
-  },
-  {
-    "objectID": "blog/posts/bienvenida/index.html#por-qué-este-sitio",
-    "href": "blog/posts/bienvenida/index.html#por-qué-este-sitio",
-    "title": "Bienvenida al sitio",
-    "section": "",
-    "text": "Este es el primer post de mi sitio personal. La idea es tener un espacio propio donde pueda compartir:\n\nInvestigación: resultados, reflexiones y materiales de mis proyectos\nAnálisis con R: visualizaciones, tutoriales y código reproducible\nLecturas: reseñas y notas sobre libros que voy leyendo\nOtras ideas: lo que se vaya ocurriendo"
-  },
-  {
-    "objectID": "blog/posts/bienvenida/index.html#por-qué-quarto-r",
-    "href": "blog/posts/bienvenida/index.html#por-qué-quarto-r",
-    "title": "Bienvenida al sitio",
-    "section": "¿Por qué Quarto + R?",
-    "text": "¿Por qué Quarto + R?\nPorque me permite escribir texto, código y resultados en un solo documento. Nada de copiar y pegar gráficos a mano: el gráfico vive junto al código que lo genera.\nPor ejemplo, este gráfico se genera directamente desde R al renderizar el post:\n\n\nCode\nlibrary(ggplot2)\n\nggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +\n  geom_point(size = 3, alpha = 0.8) +\n  labs(\n    title = \"Peso vs. rendimiento de combustible\",\n    x = \"Peso (1000 lbs)\",\n    y = \"Millas por galón\",\n    color = \"Cilindros\"\n  ) +\n  theme_minimal(base_size = 14) +\n  scale_color_brewer(palette = \"Set2\")\n\n\n\n\n\n\n\n\nFigure 1: Un gráfico de ejemplo generado con R"
-  },
-  {
-    "objectID": "blog/posts/bienvenida/index.html#próximos-posts",
-    "href": "blog/posts/bienvenida/index.html#próximos-posts",
-    "title": "Bienvenida al sitio",
-    "section": "Próximos posts",
-    "text": "Próximos posts\nTengo pensado escribir sobre:\n\nCómo armé este sitio paso a paso\nUn análisis de [tu área de investigación]\nLos libros que leí en 2025, con galería de portadas desde Goodreads\n\n¡Bienvenido/a!"
+    "text": "📧 Contacto\n\n\n\n\n📧 Email\nbenjalang1997@gmail.com\n\n\n📱 Teléfono\n+56 9 6309 5562\n\n\n🔗 LinkedIn\nbenjamin-lang-a78229207"
   },
   {
     "objectID": "publicaciones.html",
@@ -168,39 +140,39 @@
     "text": "🤝 Consultorías privadas\n\n\n\n\n\nConsultoría · Mayo 2024\nRadiografía a la Equidad Puertas Adentro\nMayo 2024\n\nConsultoría desarrollada para \nFrancisca Bravo Cox\n. Análisis de datos y sistematización de información para el diagnóstico sobre equidad en el espacio doméstico.\n\n\nAnálisis cuantitativo\nGénero\nDiagnóstico\n\n\n\n\n\nFondo del Libro · 2023\nGobernanza de la lectura digital en Chile\n2023\n\nConsultoría desarrollada para \nChristian Anwandter\n en el marco de un proyecto financiado por el Fondo del Libro. Análisis y sistematización de información sobre políticas públicas del libro y la lectura digital en Chile.\n\n\nPolíticas culturales\nAnálisis mixto\nInvestigación aplicada"
   },
   {
-    "objectID": "trabajos.html#servicios-que-ofrezco",
-    "href": "trabajos.html#servicios-que-ofrezco",
-    "title": "Trabajos, proyectos y consultoría",
-    "section": "🛠️ Servicios que ofrezco",
-    "text": "🛠️ Servicios que ofrezco\n\nOfrezco servicios de consultoría en análisis de datos, investigación social aplicada, gobernanza de datos y visualización de información para organizaciones públicas, privadas y académicas.\n\n\n\n\n\n\n📊\nAnálisis y modelamiento de datos\nProcesamiento, limpieza y análisis estadístico de datos cuantitativos. Construcción de indicadores, modelos y reportes técnicos con R, Python y Power BI.\n\n\n\n\n📈\nDashboards e informes ejecutivos\nDiseño de dashboards interactivos y reportes visuales que transforman datos complejos en información comprensible para equipos directivos.\n\n\n\n\n🏛️\nGobernanza de datos organizacionales\nDiseño de ecosistemas de datos institucionales: estandarización, automatización, capacitación a equipos y generación de transparencia en el manejo de la información.\n\n\n\n\n🗳️\nAnálisis político y electoral\nAnálisis de datos electorales, seguimiento legislativo, construcción de indicadores de opinión pública y monitoreo de tendencias políticas.\n\n\n\n\n🔬\nInvestigación social aplicada\nDiseño y ejecución de investigaciones con metodologías cuantitativas, cualitativas o mixtas para diagnóstico, evaluación de programas y análisis de contexto.\n\n\n\n\n🎓\nCapacitación y talleres\nTalleres de análisis de datos con R, Power BI y metodología cuantitativa. Diseñados para equipos de investigación, instituciones públicas y estudiantes."
-  },
-  {
     "objectID": "trabajos.html#contacto-profesional",
     "href": "trabajos.html#contacto-profesional",
     "title": "Trabajos, proyectos y consultoría",
     "section": "📩 Contacto profesional",
-    "text": "📩 Contacto profesional\n¿Tienes un proyecto en mente? Escríbeme y conversamos.\n\n\n📧 Email benjalang1997@gmail.com\n\n\n📱 Teléfono +56 9 6309 5562\n\n\n🔗 LinkedIn benjamin-lang-a78229207\n\n\n\n✉️ Contactar ahora"
+    "text": "📩 Contacto profesional\n¿Tienes un proyecto en mente? Escríbeme y conversamos.\n\n\n\n\n📧 Email\nbenjalang1997@gmail.com\n\n\n📱 Teléfono\n+56 9 6309 5562\n\n\n🔗 LinkedIn\nbenjamin-lang-a78229207\n\n\n\n\n\n✉️ Contactar ahora"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Benjamín Lang Bustos",
     "section": "",
-    "text": "👋 Hola, soy\n\n\n\nSociólogo · Analista de datos · Investigador\n\n\nSociólogo titulado con distinción máxima y 6 años de experiencia en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e inteligencia artificial. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad de bases de datos e indicadores para la toma de decisiones basada en evidencia. Dominio de Git/GitLab para control de versiones y trabajo colaborativo.\n\n\nR · Python · Power BI R Markdown · Quarto ⚙️ Automatización 🤖 Herramientas de AI\n\n\nVer CV completo → Trabajos y proyectos ✉️ Escribirme\n\n\n\n\n\n\n\n\n\n\n\n\n6+\nAños de experiencia\n\n\n13\nPolicy Papers\n\n\n4\nSectores\n\n\n3\nIdiomas"
+    "text": "👋 Hola, soy\n\n\n\nSociólogo · Analista de datos · Investigador\n\n\nSociólogo titulado con distinción máxima y 6 años de experiencia en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e IA. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad y elaboración de indicadores para decisiones basadas en evidencia.\n\n\nR · Python · Power BI R Markdown · Quarto ⚙️ Automatización 🤖 IA aplicada\n\n\nVer CV completo → Trabajos y proyectos ✉️ Escribirme\n\n\n\n\n\n\n\n\n\n\n\n\n6+\nAños de experiencia\n\n\n13\nPolicy Papers\n\n\n4\nSectores\n\n\n3\nIdiomas"
   },
   {
     "objectID": "index.html#áreas-de-especialización",
     "href": "index.html#áreas-de-especialización",
     "title": "Benjamín Lang Bustos",
     "section": "🔬 Áreas de especialización",
-    "text": "🔬 Áreas de especialización\n\n\n\n\n\n📊\nCiencia de datos y análisis cuantitativo\nAnálisis estadístico avanzado, modelamiento y visualización de datos a gran escala. Manejo de bases de datos complejas, construcción de indicadores y reportes técnicos para la toma de decisiones. Experiencia en R, Python, Power BI y SQL aplicados a sectores público, privado y académico.\n\nR · avanzado\nPython\nPower BI\nSQL\n\n\n\n\n\n🏛️\nGobernanza de datos en organizaciones\nDiseño e implementación de ecosistemas de datos institucionales: desde la captura y validación hasta la visualización y comunicación. Trabajo con equipos mediante capacitaciones, automatización de procesos y generación de transparencia en el manejo de la información para la toma de decisiones basada en evidencia.\n\nDashboards\nAutomatización\nCapacitación\nTransparencia\n\n\n\n\n\n🗳️\nAnálisis político e investigación social\nInvestigación y análisis de procesos institucionales, electorales y de gobernanza. Seguimiento de procesos legislativos y constitucionales, construcción de indicadores de opinión pública y análisis de texto aplicado a política. Experiencia en proyectos Fondecyt y centros de pensamiento.\n\nSistemas complejos\nOpinión pública\nAnálisis de texto\n\n\n\n\n\n📐\nDiseño metodológico y estadística aplicada\nDiseño de investigaciones cuantitativas, cualitativas y mixtas. Procesamiento de datos censales y encuestas de gran escala (ELSOC, EBS, Censo 2024). Aseguramiento de calidad de bases de datos, construcción de instrumentos y elaboración de reportes metodológicos.\n\nCensos\nEncuestas\nIndicadores\nMetodología mixta"
+    "text": "🔬 Áreas de especialización\n\n\n\n\n\n📊\nCiencia de datos y análisis cuantitativo\nAnálisis estadístico avanzado, modelamiento y visualización de datos a gran escala. Manejo de bases de datos complejas, construcción de indicadores y reportes técnicos. R, Python, Power BI y SQL aplicados al sector público, privado y académico.\n\nR · avanzado\nPython\nPower BI\nSQL\n\n\n\n\n\n🏛️\nGobernanza de datos en organizaciones\nDiseño e implementación de ecosistemas de datos institucionales: captura, validación, visualización y comunicación. Trabajo con equipos mediante capacitaciones, automatización de procesos y generación de transparencia para la toma de decisiones.\n\nDashboards\nAutomatización\nCapacitación\nTransparencia\n\n\n\n\n\n🗳️\nAnálisis político e investigación social\nInvestigación de procesos institucionales, electorales y de gobernanza. Análisis de texto aplicado a política, seguimiento constitucional y legislativo, indicadores de opinión pública. Proyectos Fondecyt y centros de pensamiento.\n\nOpinión pública\nConstitucional\nAnálisis de texto\n\n\n\n\n\n📐\nDiseño metodológico y estadística aplicada\nDiseño de investigaciones cuantitativas, cualitativas y mixtas. Procesamiento de censos, encuestas de gran escala (ELSOC, EBS, Censo 2024) y aseguramiento de calidad de bases de datos complejas.\n\nCensos\nEncuestas\nIndicadores\nMixta"
   },
   {
     "objectID": "index.html#proyectos-destacados",
     "href": "index.html#proyectos-destacados",
     "title": "Benjamín Lang Bustos",
     "section": "💼 Proyectos destacados",
-    "text": "💼 Proyectos destacados\n\n\n\n\n\nSector público\n\nDatos educacionales SLEP Santa Rosa\n\n2025 – presente\nSistematización y visualización de indicadores educacionales para educación pública regional.\n\n\n\n\nInvestigación\n\nHumanidades digitales C22 — CEP\n\n2021 – 2024\nAnálisis computacional del proceso constitucional chileno. Procesamiento de datos textuales y visualización política.\n\n\n\n\nEstadística pública\n\nCenso de Población y Vivienda 2024\n\n2024 – 2025\nAnalista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.\n\n\n\n\nInvestigación académica\n\nInsecurity amid Recovery / Economic Insecurity\n\n2025 – presente\nAsesor metodológico cuantitativo en proyectos de investigación con encuestas ELSOC (COES) y EBS (INE), junto a Joaquín Prieto.\n\n\n\n\n\n\nVer todos los trabajos →"
+    "text": "💼 Proyectos destacados\n\n\n\n\n\nSector público\n\nDatos educacionales SLEP Santa Rosa\n\n2025 – presente\nSistematización y visualización de indicadores educacionales para educación pública regional con R y Power BI.\n\n\n\n\nInvestigación\n\nHumanidades digitales C22 — CEP\n\n2021 – 2024\nAnálisis computacional del proceso constitucional chileno. Procesamiento de datos textuales y visualización política.\n\n\n\n\nEstadística pública\n\nCenso de Población y Vivienda 2024\n\n2024 – 2025\nAnalista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.\n\n\n\n\nSector privado\n\nTironi y Asociados\n\n2021 – 2023\nConsultoría estratégica de asuntos públicos. Boletín constitucional 2022, análisis político y proyectos de comunicación estratégica.\n\n\n\n\n\n\nVer todos los trabajos →"
+  },
+  {
+    "objectID": "index.html#servicios-que-ofrezco",
+    "href": "index.html#servicios-que-ofrezco",
+    "title": "Benjamín Lang Bustos",
+    "section": "🛠️ Servicios que ofrezco",
+    "text": "🛠️ Servicios que ofrezco\n\n\n\n\n\n📊\nAnálisis y modelamiento de datos\nProcesamiento, limpieza y análisis estadístico con R, Python y Power BI. Construcción de indicadores y reportes técnicos.\n\n\n\n\n📈\nDashboards e informes ejecutivos\nDiseño de dashboards interactivos y reportes visuales que transforman datos complejos en información clara para la toma de decisiones.\n\n\n\n\n🏛️\nGobernanza de datos organizacionales\nDiseño de ecosistemas de datos: estandarización, automatización de procesos, capacitación a equipos y transparencia institucional.\n\n\n\n\n🗳️\nAnálisis político y electoral\nDatos electorales, seguimiento legislativo, indicadores de opinión pública y monitoreo de tendencias políticas.\n\n\n\n\n🔬\nInvestigación social aplicada\nInvestigaciones cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto.\n\n\n\n\n🎓\nCapacitación en datos\nTalleres de análisis de datos con R, Power BI y metodología cuantitativa para equipos de investigación e instituciones.\n\n\n\n\n\n\n✉️ Consultar disponibilidad"
   },
   {
     "objectID": "index.html#última-publicación",
@@ -214,6 +186,6 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBienvenida al sitio\n\n\n\n\n\n\nmeta\n\n\npersonal\n\n\n\nPor qué creé este sitio y qué puedes esperar encontrar aquí.\n\n\n\n\n\nApr 5, 2026\n\n\nTu Nombre\n\n\n\n\n\n\nNo matching items"
+    "text": "📝 Próximamente — Aún no hay notas publicadas. Aquí compartiré análisis con R, reflexiones sobre metodología, visualizaciones y notas de investigación. ¡Vuelve pronto!\n\n\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
   }
 ]

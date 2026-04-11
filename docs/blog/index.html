@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -202,7 +202,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWV0YQ==">meta <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGVyc29uYWw=">personal <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -225,73 +225,29 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>📝 <strong>Próximamente</strong> — Aún no hay notas publicadas. Aquí compartiré análisis con R, reflexiones sobre metodología, visualizaciones y notas de investigación. ¡Vuelve pronto!</p>
+</div>
+</div>
+</div>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bWV0YSUyQ3BlcnNvbmFs" data-listing-date-sort="1775361600000" data-listing-file-modified-sort="1775423003937" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="207">
-<div class="thumbnail">
-<p><a href="../blog/posts/bienvenida/index.html" class="no-external"></a></p><a href="../blog/posts/bienvenida/index.html" class="no-external">
-<p><img loading="lazy" src="../blog/posts/bienvenida/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/posts/bienvenida/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/bienvenida/index.html" class="no-external">Bienvenida al sitio</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/posts/bienvenida/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('bWV0YQ=='); return false;">
-meta
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cGVyc29uYWw='); return false;">
-personal
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/posts/bienvenida/index.html" class="no-external">Por qué creé este sitio y qué puedes esperar encontrar aquí.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/bienvenida/index.html" class="no-external">
-<div class="listing-date">
-Apr 5, 2026
-</div>
-<div class="listing-author">
-Tu Nombre
-</div>
-</a>
-</div>
-</div>
+
 </div>
 <div class="listing-no-matching d-none">
 No matching items

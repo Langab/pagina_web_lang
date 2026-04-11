@@ -17,11 +17,13 @@ library(purrr)
 
 ## 👤 Sobre mí {.seccion-titulo}
 
+::: {.sobre-mi-card}
 Soy sociólogo titulado con **distinción máxima** por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales.
 
 Actualmente me desempeño como **Analista de datos** en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.
 
 Mi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador en instituciones como el **Instituto Nacional de Estadísticas (INE)**, el **Centro de Estudios Públicos (CEP)** y en proyectos **Fondecyt** enfocados en gobernanza económica y transiciones socio-ambientales.
+:::
 
 ---
 
@@ -306,25 +308,21 @@ Magíster en Ciencia Política, Universidad de Chile.
 
 ## 📧 Contacto {.seccion-titulo}
 
-::: {.grid}
-::: {.g-col-12 .g-col-md-6}
-**📧 Email**
-[benjalang1997@gmail.com](mailto:benjalang1997@gmail.com)
-
-**📱 Teléfono**
-+56 9 6309 5562
-
-**🔗 LinkedIn**
-[benjamin-lang-a78229207](https://www.linkedin.com/in/benjamin-lang-a78229207/)
-
-**🐙 GitHub**
-[github.com/Langab](https://github.com/Langab)
-:::
-::: {.g-col-12 .g-col-md-6}
-**🏛️ Institución**
-Servicio Local de Educación Pública Santa Rosa
-
-**📍 Ubicación**
-Región de Los Lagos, Chile
-:::
-:::
+```{r}
+#| echo: false
+div(class = "contacto-grid",
+  div(class = "contacto-item",
+    tags$strong("📧 Email"),
+    tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
+  ),
+  div(class = "contacto-item",
+    tags$strong("📱 Teléfono"),
+    tags$span("+56 9 6309 5562")
+  ),
+  div(class = "contacto-item",
+    tags$strong("🔗 LinkedIn"),
+    tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
+           target = "_blank", "benjamin-lang-a78229207")
+  )
+)
+```

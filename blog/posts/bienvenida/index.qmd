@@ -1,8 +1,9 @@
 ---
 title: "Bienvenida al sitio"
-author: "Tu Nombre"
+author: "Benjamín Lang"
 date: "2026-04-05"
 categories: [meta, personal]
+draft: true
 description: "Por qué creé este sitio y qué puedes esperar encontrar aquí."
 image: thumbnail.png      # imagen opcional para el listado del blog
 ---

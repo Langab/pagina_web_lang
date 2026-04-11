@@ -226,64 +226,29 @@ div(class = "grid",
 
 ---
 
-## 🛠️ Servicios que ofrezco {.seccion-titulo}
-
-::: {.intro-pagina}
-Ofrezco servicios de consultoría en **análisis de datos**, **investigación social aplicada**, **gobernanza de datos** y **visualización de información** para organizaciones públicas, privadas y académicas.
-:::
-
-```{r}
-#| echo: false
-
-servicios <- list(
-  list(icono = "📊", titulo = "Análisis y modelamiento de datos",
-       desc = "Procesamiento, limpieza y análisis estadístico de datos cuantitativos. Construcción de indicadores, modelos y reportes técnicos con R, Python y Power BI."),
-  list(icono = "📈", titulo = "Dashboards e informes ejecutivos",
-       desc = "Diseño de dashboards interactivos y reportes visuales que transforman datos complejos en información comprensible para equipos directivos."),
-  list(icono = "🏛️", titulo = "Gobernanza de datos organizacionales",
-       desc = "Diseño de ecosistemas de datos institucionales: estandarización, automatización, capacitación a equipos y generación de transparencia en el manejo de la información."),
-  list(icono = "🗳️", titulo = "Análisis político y electoral",
-       desc = "Análisis de datos electorales, seguimiento legislativo, construcción de indicadores de opinión pública y monitoreo de tendencias políticas."),
-  list(icono = "🔬", titulo = "Investigación social aplicada",
-       desc = "Diseño y ejecución de investigaciones con metodologías cuantitativas, cualitativas o mixtas para diagnóstico, evaluación de programas y análisis de contexto."),
-  list(icono = "🎓", titulo = "Capacitación y talleres",
-       desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa. Diseñados para equipos de investigación, instituciones públicas y estudiantes.")
-)
-
-div(class = "grid",
-  map(servicios, \(s) {
-    div(class = "g-col-12 g-col-md-6 g-col-lg-4",
-      div(class = "servicio-card",
-        div(class = "icono", s$icono),
-        tags$h3(s$titulo),
-        tags$p(s$desc)
-      )
-    )
-  })
-)
-```
-
----
-
 ## 📩 Contacto profesional {.seccion-titulo}
 
 ¿Tienes un proyecto en mente? Escríbeme y conversamos.
 
-::: {.grid}
-::: {.g-col-12 .g-col-md-4}
-**📧 Email**
-[benjalang1997@gmail.com](mailto:benjalang1997@gmail.com)
-:::
-::: {.g-col-12 .g-col-md-4}
-**📱 Teléfono**
-+56 9 6309 5562
-:::
-::: {.g-col-12 .g-col-md-4}
-**🔗 LinkedIn**
-[benjamin-lang-a78229207](https://www.linkedin.com/in/benjamin-lang-a78229207/)
-:::
-:::
+```{r}
+#| echo: false
+div(class = "contacto-grid",
+  div(class = "contacto-item",
+    tags$strong("📧 Email"),
+    tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
+  ),
+  div(class = "contacto-item",
+    tags$strong("📱 Teléfono"),
+    tags$span("+56 9 6309 5562")
+  ),
+  div(class = "contacto-item",
+    tags$strong("🔗 LinkedIn"),
+    tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
+           target = "_blank", "benjamin-lang-a78229207")
+  )
+)
+```
 
-<div style="text-align:center; margin-top:2rem;">
+<div style="text-align:center; margin-top:1.5rem;">
 <a href="mailto:benjalang1997@gmail.com" class="btn-primario">✉️ Contactar ahora</a>
 </div>

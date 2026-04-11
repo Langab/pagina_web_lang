@@ -23,14 +23,14 @@ library(purrr)
 <p class="hero-rol">Sociólogo · Analista de datos · Investigador</p>
 
 <p class="hero-descripcion">
-Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</strong> en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e inteligencia artificial. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad de bases de datos e indicadores para la toma de decisiones basada en evidencia. Dominio de Git/GitLab para control de versiones y trabajo colaborativo.
+Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</strong> en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e IA. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad y elaboración de indicadores para decisiones basadas en evidencia.
 </p>
 
 <div class="hero-badges">
 <span class="badge-item">R · Python · Power BI</span>
 <span class="badge-item">R Markdown · Quarto</span>
 <span class="badge-item">⚙️ Automatización</span>
-<span class="badge-item">🤖 Herramientas de AI</span>
+<span class="badge-item">🤖 IA aplicada</span>
 </div>
 
 <div class="hero-botones">
@@ -79,26 +79,26 @@ areas <- list(
   list(
     icono = "📊",
     titulo = "Ciencia de datos y análisis cuantitativo",
-    desc = "Análisis estadístico avanzado, modelamiento y visualización de datos a gran escala. Manejo de bases de datos complejas, construcción de indicadores y reportes técnicos para la toma de decisiones. Experiencia en R, Python, Power BI y SQL aplicados a sectores público, privado y académico.",
+    desc = "Análisis estadístico avanzado, modelamiento y visualización de datos a gran escala. Manejo de bases de datos complejas, construcción de indicadores y reportes técnicos. R, Python, Power BI y SQL aplicados al sector público, privado y académico.",
     tags = c("R · avanzado", "Python", "Power BI", "SQL")
   ),
   list(
     icono = "🏛️",
     titulo = "Gobernanza de datos en organizaciones",
-    desc = "Diseño e implementación de ecosistemas de datos institucionales: desde la captura y validación hasta la visualización y comunicación. Trabajo con equipos mediante capacitaciones, automatización de procesos y generación de transparencia en el manejo de la información para la toma de decisiones basada en evidencia.",
+    desc = "Diseño e implementación de ecosistemas de datos institucionales: captura, validación, visualización y comunicación. Trabajo con equipos mediante capacitaciones, automatización de procesos y generación de transparencia para la toma de decisiones.",
     tags = c("Dashboards", "Automatización", "Capacitación", "Transparencia")
   ),
   list(
     icono = "🗳️",
     titulo = "Análisis político e investigación social",
-    desc = "Investigación y análisis de procesos institucionales, electorales y de gobernanza. Seguimiento de procesos legislativos y constitucionales, construcción de indicadores de opinión pública y análisis de texto aplicado a política. Experiencia en proyectos Fondecyt y centros de pensamiento.",
-    tags = c("Sistemas complejos", "Opinión pública", "Análisis de texto")
+    desc = "Investigación de procesos institucionales, electorales y de gobernanza. Análisis de texto aplicado a política, seguimiento constitucional y legislativo, indicadores de opinión pública. Proyectos Fondecyt y centros de pensamiento.",
+    tags = c("Opinión pública", "Constitucional", "Análisis de texto")
   ),
   list(
     icono = "📐",
     titulo = "Diseño metodológico y estadística aplicada",
-    desc = "Diseño de investigaciones cuantitativas, cualitativas y mixtas. Procesamiento de datos censales y encuestas de gran escala (ELSOC, EBS, Censo 2024). Aseguramiento de calidad de bases de datos, construcción de instrumentos y elaboración de reportes metodológicos.",
-    tags = c("Censos", "Encuestas", "Indicadores", "Metodología mixta")
+    desc = "Diseño de investigaciones cuantitativas, cualitativas y mixtas. Procesamiento de censos, encuestas de gran escala (ELSOC, EBS, Censo 2024) y aseguramiento de calidad de bases de datos complejas.",
+    tags = c("Censos", "Encuestas", "Indicadores", "Mixta")
   )
 )
 
@@ -126,7 +126,7 @@ proyectos <- list(
   list(
     nombre  = "Datos educacionales SLEP Santa Rosa",
     periodo = "2025 – presente",
-    desc    = "Sistematización y visualización de indicadores educacionales para educación pública regional.",
+    desc    = "Sistematización y visualización de indicadores educacionales para educación pública regional con R y Power BI.",
     link    = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
     tipo    = "Sector público"
   ),
@@ -145,11 +145,11 @@ proyectos <- list(
     tipo    = "Estadística pública"
   ),
   list(
-    nombre  = "Insecurity amid Recovery / Economic Insecurity",
-    periodo = "2025 – presente",
-    desc    = "Asesor metodológico cuantitativo en proyectos de investigación con encuestas ELSOC (COES) y EBS (INE), junto a Joaquín Prieto.",
-    link    = "trabajos.qmd",
-    tipo    = "Investigación académica"
+    nombre  = "Tironi y Asociados",
+    periodo = "2021 – 2023",
+    desc    = "Consultoría estratégica de asuntos públicos. Boletín constitucional 2022, análisis político y proyectos de comunicación estratégica.",
+    link    = "https://tironi.cl/home",
+    tipo    = "Sector privado"
   )
 )
 
@@ -169,6 +169,43 @@ div(class = "grid",
 
 <div class="text-center" style="margin-top:1.5rem;">
 <a href="trabajos.qmd" class="btn-secundario">Ver todos los trabajos →</a>
+</div>
+
+## 🛠️ Servicios que ofrezco {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+servicios <- list(
+  list(icono = "📊", titulo = "Análisis y modelamiento de datos",
+       desc = "Procesamiento, limpieza y análisis estadístico con R, Python y Power BI. Construcción de indicadores y reportes técnicos."),
+  list(icono = "📈", titulo = "Dashboards e informes ejecutivos",
+       desc = "Diseño de dashboards interactivos y reportes visuales que transforman datos complejos en información clara para la toma de decisiones."),
+  list(icono = "🏛️", titulo = "Gobernanza de datos organizacionales",
+       desc = "Diseño de ecosistemas de datos: estandarización, automatización de procesos, capacitación a equipos y transparencia institucional."),
+  list(icono = "🗳️", titulo = "Análisis político y electoral",
+       desc = "Datos electorales, seguimiento legislativo, indicadores de opinión pública y monitoreo de tendencias políticas."),
+  list(icono = "🔬", titulo = "Investigación social aplicada",
+       desc = "Investigaciones cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto."),
+  list(icono = "🎓", titulo = "Capacitación en datos",
+       desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa para equipos de investigación e instituciones.")
+)
+
+div(class = "grid",
+  map(servicios, \(s) {
+    div(class = "g-col-12 g-col-md-6 g-col-lg-4",
+      div(class = "servicio-card",
+        div(class = "icono", s$icono),
+        tags$h3(s$titulo),
+        tags$p(s$desc)
+      )
+    )
+  })
+)
+```
+
+<div class="text-center" style="margin-top:0.5rem;">
+<a href="mailto:benjalang1997@gmail.com" class="btn-primario">✉️ Consultar disponibilidad</a>
 </div>
 
 ## 📰 Última publicación {.seccion-titulo}
