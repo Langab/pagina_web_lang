@@ -1,0 +1,123 @@
+---
+title: "Proyectos"
+toc: true
+toc-title: "Categorías"
+---
+
+```{r}
+#| echo: false
+library(htmltools)
+library(purrr)
+library(glue)
+```
+
+## 🏛️ Sector público
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Actual · Educación pública"),
+      tags$h3(tags$a(href = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
+                     "Datos educacionales SLEP Santa Rosa", target = "_blank")),
+      div(class = "proyecto-periodo", "Septiembre 2025 – presente"),
+      tags$p("Sistematización, visualización y análisis de datos educacionales para el Servicio Local de Educación Pública Santa Rosa."),
+      div(class = "skill-tags",
+        span(class="skill-tag avanzado", "R"),
+        span(class="skill-tag avanzado", "Power BI"),
+        span(class="skill-tag", "Datos educacionales")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "2024–2025 · Estadística oficial"),
+      tags$h3("Censo de Población y Vivienda 2024 — INE"),
+      div(class = "proyecto-periodo", "Mayo 2024 – Junio 2025"),
+      tags$p("Analista metodológico Senior en el INE. Procesamiento, validación y análisis de datos censales a gran escala. Diseño de metodologías estadísticas y aseguramiento de calidad."),
+      div(class = "skill-tags",
+        span(class="skill-tag avanzado", "Metodología estadística"),
+        span(class="skill-tag avanzado", "Big data"),
+        span(class="skill-tag", "Censos")
+      )
+    )
+  )
+
+)
+```
+
+---
+
+## 🔬 Investigación académica
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2024–2025"),
+      tags$h3("Gobernar la incertidumbre — Banco Central de Chile"),
+      div(class = "proyecto-periodo", "Mayo 2024 – Agosto 2025"),
+      tags$p(
+        "Proyecto Fondecyt N°1231356: ", em('"Gramáticas, actores y dispositivos de producción de estabilidad económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)"'), "."
+      ),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Análisis cualitativo"),
+        span(class="skill-tag", "Economía política"),
+        span(class="skill-tag avanzado", "Indicadores")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "CEP · 2021–2024"),
+      tags$h3(tags$a(href = "https://c22cepchile.cl/", "Humanidades digitales C22 — CEP", target = "_blank")),
+      div(class = "proyecto-periodo", "Agosto 2021 – Abril 2024"),
+      tags$p("Análisis computacional del primer y segundo proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Humanidades digitales"),
+        span(class="skill-tag", "Análisis de texto"),
+        span(class="skill-tag", "Constitución")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2022–2023"),
+      tags$h3("Transiciones críticas en sistemas socio-ecológicos — Chiloé"),
+      div(class = "proyecto-periodo", "Marzo 2022 – Marzo 2023"),
+      tags$p(
+        "Proyecto Fondecyt No1190295. Procesamiento de información cualitativa y cuantitativa sobre transiciones críticas en sistemas socio-ambientales en Chiloé, Chile."
+      ),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Sistemas complejos"),
+        span(class="skill-tag", "Socio-ambiental"),
+        span(class="skill-tag", "Mixta")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "CEP · 2023–2024"),
+      tags$h3("Voces del CEP — Análisis constitucional"),
+      div(class = "proyecto-periodo", "Abril 2023 – Abril 2024"),
+      tags$p("Desarrollo del boletín Voces del CEP. Seguimiento del segundo proceso constitucional chileno y sistematización estadística de información electoral y de opinión pública."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Opinión pública"),
+        span(class="skill-tag", "Análisis electoral"),
+        span(class="skill-tag", "Comunicación")
+      )
+    )
+  )
+
+)
+```
