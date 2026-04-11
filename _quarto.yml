@@ -51,8 +51,9 @@ website:
 format:
   html:
     theme:
-      light: [flatly, styles.css]
-      dark: [darkly, styles.css]
+      light: flatly
+      dark: darkly
+    css: styles.css
     toc: true
     toc-depth: 3
     code-fold: true

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Benjamín Lang</title>
+<link>https://langab.github.io/pagina_web_lang/blog/</link>
+<atom:link href="https://langab.github.io/pagina_web_lang/blog/index.xml" rel="self" type="application/rss+xml"/>
+<description>Sociólogo · Analista de datos · Investigador</description>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Sun, 05 Apr 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Bienvenida al sitio</title>
+  <dc:creator>Tu Nombre</dc:creator>
+  <link>https://langab.github.io/pagina_web_lang/blog/posts/bienvenida/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="por-qué-este-sitio" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-este-sitio">¿Por qué este sitio?</h2>
+<p>Este es el primer post de mi sitio personal. La idea es tener un espacio propio donde pueda compartir:</p>
+<ul>
+<li><strong>Investigación</strong>: resultados, reflexiones y materiales de mis proyectos</li>
+<li><strong>Análisis con R</strong>: visualizaciones, tutoriales y código reproducible</li>
+<li><strong>Lecturas</strong>: reseñas y notas sobre libros que voy leyendo</li>
+<li><strong>Otras ideas</strong>: lo que se vaya ocurriendo</li>
+</ul>
+</section>
+<section id="por-qué-quarto-r" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-quarto-r">¿Por qué Quarto + R?</h2>
+<p>Porque me permite escribir texto, código y resultados en un solo documento. Nada de copiar y pegar gráficos a mano: el gráfico vive junto al código que lo genera.</p>
+<p>Por ejemplo, este gráfico se genera directamente desde R al renderizar el post:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(mtcars, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> wt, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> mpg, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">factor</span>(cyl))) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">alpha =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb1-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Peso vs. rendimiento de combustible"</span>,</span>
+<span id="cb1-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Peso (1000 lbs)"</span>,</span>
+<span id="cb1-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Millas por galón"</span>,</span>
+<span id="cb1-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Cilindros"</span></span>
+<span id="cb1-10">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">base_size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">14</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_color_brewer</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">palette =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Set2"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-ejemplo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Gráfico de dispersión de ejemplo">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemplo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://langab.github.io/pagina_web_lang/blog/posts/bienvenida/index_files/figure-html/fig-ejemplo-1.png" class="img-fluid figure-img" alt="Gráfico de dispersión de ejemplo" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemplo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Un gráfico de ejemplo generado con R
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="próximos-posts" class="level2">
+<h2 class="anchored" data-anchor-id="próximos-posts">Próximos posts</h2>
+<p>Tengo pensado escribir sobre:</p>
+<ol type="1">
+<li>Cómo armé este sitio paso a paso</li>
+<li>Un análisis de [tu área de investigación]</li>
+<li>Los libros que leí en 2025, con galería de portadas desde Goodreads</li>
+</ol>
+<p>¡Bienvenido/a!</p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>meta</category>
+  <category>personal</category>
+  <guid>https://langab.github.io/pagina_web_lang/blog/posts/bienvenida/</guid>
+  <pubDate>Sun, 05 Apr 2026 04:00:00 GMT</pubDate>
+  <media:content url="https://langab.github.io/pagina_web_lang/blog/posts/bienvenida/thumbnail.png" medium="image" type="image/png"/>
+</item>
+</channel>
+</rss>
