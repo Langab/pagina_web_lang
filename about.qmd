@@ -1,6 +1,5 @@
 ---
-title: "Curriculum Vitae"
-subtitle: "Benjamín Lang Bustos · Sociólogo · Analista de datos"
+title: ""
 toc: true
 toc-title: "Índice"
 ---
@@ -11,33 +10,69 @@ library(htmltools)
 library(purrr)
 ```
 
-::: {.callout-note appearance="simple"}
-📄 **[Descargar CV en PDF](documentos/cv_Benjamin_Lang_2026.pdf)**
+<!-- ====================================================
+     🎯 ENCABEZADO CV — hero con contacto + idiomas
+======================================================= -->
+
+::: {.cv-header}
+
+<h1>Benjamín Lang Bustos</h1>
+<p class="cv-header-subtitulo" data-i18n="cv.rol">Sociólogo · Analista de datos · Investigador</p>
+
+<div class="cv-idiomas">
+<span class="idioma-badge" data-i18n="cv.lang.es">🇨🇱 Español — Nativo</span>
+<span class="idioma-badge" data-i18n="cv.lang.en">🇬🇧 Inglés — B2</span>
+<span class="idioma-badge" data-i18n="cv.lang.it">🇮🇹 Italiano — C1</span>
+</div>
+
+```{r}
+#| echo: false
+div(class = "cv-contacto-header",
+  div(class = "cv-contacto-item",
+    tags$strong("📧 Email"),
+    tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
+  ),
+  div(class = "cv-contacto-item",
+    tags$strong("📱 Teléfono"),
+    tags$span("+56 9 6309 5562")
+  ),
+  div(class = "cv-contacto-item",
+    tags$strong("🔗 LinkedIn"),
+    tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
+           target = "_blank", "benjamin-lang-a78229207")
+  )
+)
+```
+
+<a href="documentos/cv_Benjamin_Lang_2026.pdf" class="cv-download-btn" data-i18n="cv.download">📄 Descargar CV en PDF</a>
+
 :::
 
-## 👤 Sobre mí {.seccion-titulo}
+## 👤 Sobre mí {.seccion-titulo data-i18n="cv.sec.sobre"}
 
 ::: {.sobre-mi-card}
-Soy sociólogo titulado con **distinción máxima** por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales.
 
-Actualmente me desempeño como **Analista de datos** en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.
+<p data-i18n="cv.sobre.1">Soy sociólogo titulado con <strong>distinción máxima</strong> por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales.</p>
 
-Mi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador en instituciones como el **Instituto Nacional de Estadísticas (INE)**, el **Centro de Estudios Públicos (CEP)** y en proyectos **Fondecyt** enfocados en gobernanza económica y transiciones socio-ambientales.
+<p data-i18n="cv.sobre.2">Actualmente me desempeño como <strong>Analista de datos</strong> en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.</p>
+
+<p data-i18n="cv.sobre.3">Mi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador en instituciones como el <strong>Instituto Nacional de Estadísticas (INE)</strong>, el <strong>Centro de Estudios Públicos (CEP)</strong> y en proyectos <strong>Fondecyt</strong> enfocados en gobernanza económica y transiciones socio-ambientales.</p>
+
 :::
 
 ---
 
-## 🎓 Formación académica {.seccion-titulo}
+## 🎓 Formación académica {.seccion-titulo data-i18n="cv.sec.formacion"}
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-8}
-**Sociólogo titulado con distinción máxima** · 2017–2021
-Universidad Diego Portales · Santiago, Chile
-*Primero en el ranking de egreso de la generación.*
+<p data-i18n="cv.form.titulo"><strong>Sociólogo titulado con distinción máxima</strong> · 2017–2021</p>
+<p data-i18n="cv.form.inst">Universidad Diego Portales · Santiago, Chile</p>
+<p data-i18n="cv.form.nota"><em>Primero en el ranking de egreso de la generación.</em></p>
 
-**Diplomado de honor en movilidad y transporte** · 2019–2020
-Universidad Diego Portales · Santiago, Chile
+<p data-i18n="cv.form.dip"><strong>Diplomado de honor en movilidad y transporte</strong> · 2019–2020</p>
+<p data-i18n="cv.form.dip.inst">Universidad Diego Portales · Santiago, Chile</p>
 :::
 
 ::: {.g-col-12 .g-col-md-4}
@@ -48,17 +83,16 @@ Universidad Diego Portales · Santiago, Chile
 
 ---
 
-## 💼 Trayectoria laboral {.seccion-titulo}
+## 💼 Trayectoria laboral {.seccion-titulo data-i18n="cv.sec.trayectoria"}
 
-### Analista de datos {.trabajo-titulo}
+### Analista de datos {.trabajo-titulo data-i18n="cv.slep.puesto"}
 
 ::: {.trabajo-bloque}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-9}
-**Servicio Local de Educación Pública Santa Rosa (SLEP)** · Septiembre 2025 – presente
-
-Responsable de la sistematización, visualización y análisis de datos educacionales. Diseño de dashboards y reportes para la gestión educacional regional. [Ver página del proyecto →](https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2)
+<p><strong data-i18n="cv.slep.inst">Servicio Local de Educación Pública Santa Rosa (SLEP) · Septiembre 2025 – presente</strong></p>
+<p data-i18n="cv.slep.desc">Responsable de la sistematización, visualización y análisis de datos educacionales. Diseño de dashboards y reportes para la gestión educacional regional. <a href="https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2" target="_blank">Ver página del proyecto →</a></p>
 :::
 ::: {.g-col-12 .g-col-md-3}
 ![](img/slep_santa_rosa.jpg){.logo-trabajo fig-alt="Logo SLEP Santa Rosa"}
@@ -67,15 +101,14 @@ Responsable de la sistematización, visualización y análisis de datos educacio
 
 :::
 
-### Analista metodológico Senior {.trabajo-titulo}
+### Analista metodológico Senior {.trabajo-titulo data-i18n="cv.ine.puesto"}
 
 ::: {.trabajo-bloque}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-9}
-**Instituto Nacional de Estadísticas (INE)** · Mayo 2024 – Junio 2025
-
-Responsable del procesamiento, validación y análisis de datos en el **Censo de Población y Vivienda 2024**. Diseño y aplicación de metodologías estadísticas, aseguramiento de calidad de bases de datos a gran escala y elaboración de reportes técnicos para la toma de decisiones. [Ver sitio oficial del Censo 2024 →](https://censo2024.ine.gob.cl/)
+<p><strong data-i18n="cv.ine.inst">Instituto Nacional de Estadísticas (INE) · Mayo 2024 – Junio 2025</strong></p>
+<p data-i18n="cv.ine.desc">Responsable del procesamiento, validación y análisis de datos en el <strong>Censo de Población y Vivienda 2024</strong>. Diseño y aplicación de metodologías estadísticas, aseguramiento de calidad de bases de datos a gran escala y elaboración de reportes técnicos para la toma de decisiones. <a href="https://censo2024.ine.gob.cl/" target="_blank">Ver sitio oficial del Censo 2024 →</a></p>
 :::
 ::: {.g-col-12 .g-col-md-3}
 ![](img/censo_2024.svg){.logo-trabajo fig-alt="Logo Censo 2024 INE"}
@@ -84,25 +117,23 @@ Responsable del procesamiento, validación y análisis de datos en el **Censo de
 
 :::
 
-### Investigador — Proyecto Fondecyt N°1231356 {.trabajo-titulo}
+### Investigador — Proyecto Fondecyt N°1231356 {.trabajo-titulo data-i18n="cv.fon2.puesto"}
 
 ::: {.trabajo-bloque}
 
-**Universidad Diego Portales / Fondecyt** · Mayo 2024 – Agosto 2025
-
-*"Gobernar la incertidumbre: gramáticas, actores y dispositivos de producción de 'estabilidad' económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)"*. Análisis de datos cualitativos y cuantitativos sobre políticas económicas; manejo de grandes volúmenes de información documental y construcción de indicadores para evaluar dispositivos institucionales de estabilidad económica.
+<p><strong data-i18n="cv.fon2.inst">Universidad Diego Portales / Fondecyt · Mayo 2024 – Agosto 2025</strong></p>
+<p>*"Gobernar la incertidumbre: gramáticas, actores y dispositivos de producción de 'estabilidad' económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)"*. Análisis de datos cualitativos y cuantitativos sobre políticas económicas; construcción de indicadores para evaluar dispositivos institucionales de estabilidad económica.</p>
 
 :::
 
-### Investigador asistente — *Voces del CEP* {.trabajo-titulo}
+### Investigador asistente — *Voces del CEP* {.trabajo-titulo data-i18n="cv.cep1.puesto"}
 
 ::: {.trabajo-bloque}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-9}
-**Centro de Estudios Públicos (CEP)** · Abril 2023 – Abril 2024
-
-Responsable de la gestión editorial del boletín [*Voces del CEP*](https://www.cepchile.cl/categoria-de-investigacion/voces-del-cep/), incluyendo la **coordinación, organización y publicación de artículos** de análisis sobre problemas públicos contemporáneos. Me encargué del flujo completo de publicación: coordinación con autores, edición, estructuración de contenidos y gestión de la plataforma. Seguimiento del segundo proceso constitucional chileno (2023). Sistematización estadística de información electoral y opinión pública.
+<p><strong data-i18n="cv.cep1.inst">Centro de Estudios Públicos (CEP) · Abril 2023 – Abril 2024</strong></p>
+<p data-i18n="cv.cep1.desc">Responsable de la gestión editorial del boletín <a href="https://www.cepchile.cl/categoria-de-investigacion/voces-del-cep/" target="_blank"><em>Voces del CEP</em></a>, incluyendo la <strong>coordinación, organización y publicación de artículos</strong> de análisis sobre problemas públicos contemporáneos. Gestión del flujo completo de publicación: coordinación con autores, edición y estructuración de contenidos. Seguimiento del segundo proceso constitucional chileno (2023). Sistematización estadística de información electoral y opinión pública.</p>
 :::
 ::: {.g-col-12 .g-col-md-3}
 ![](img/cep.png){.logo-trabajo fig-alt="Logo CEP"}
@@ -111,15 +142,14 @@ Responsable de la gestión editorial del boletín [*Voces del CEP*](https://www.
 
 :::
 
-### Asistente de investigación — Proyecto C22 {.trabajo-titulo}
+### Asistente de investigación — Proyecto C22 {.trabajo-titulo data-i18n="cv.c22.puesto"}
 
 ::: {.trabajo-bloque}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-9}
-**Centro de Estudios Públicos (CEP)** · Agosto 2021 – Abril 2024
-
-Análisis socio-constitucional C22. Especializado en humanidades digitales del primer proceso constitucional chileno. Análisis de discursos, procesamiento de datos textuales y visualización de información política. [Ver proyecto →](https://c22cepchile.cl/)
+<p><strong data-i18n="cv.c22.inst">Centro de Estudios Públicos (CEP) · Agosto 2021 – Abril 2024</strong></p>
+<p data-i18n="cv.c22.desc">Análisis socio-constitucional C22. Especializado en humanidades digitales del primer proceso constitucional chileno. Análisis de discursos, procesamiento de datos textuales y visualización de información política. <a href="https://c22cepchile.cl/" target="_blank">Ver proyecto →</a></p>
 :::
 ::: {.g-col-12 .g-col-md-3}
 ![](img/c22.png){.logo-trabajo fig-alt="Logo C22 CEP"}
@@ -128,17 +158,24 @@ Análisis socio-constitucional C22. Especializado en humanidades digitales del p
 
 :::
 
-### Analista de asuntos públicos {.trabajo-titulo}
+### Asesor metodológico — Proyectos Joaquín Prieto {.trabajo-titulo data-i18n="cv.prieto.puesto"}
+
+::: {.trabajo-bloque}
+
+<p><strong data-i18n="cv.prieto.inst">Investigación académica independiente · 2025 – presente</strong></p>
+<p data-i18n="cv.prieto.desc">Asesoría en investigación cuantitativa en los proyectos ***Insecurity amid Recovery*** y ***Economic Insecurity, Not Inequality?*** del investigador **Joaquín Prieto**. Análisis con la **Encuesta ELSOC del COES** y la **Encuesta de Bienestar Social (EBS) del INE**. Procesamiento y modelamiento estadístico con R, apoyo en el diseño metodológico y análisis de datos de panel.</p>
+
+:::
+
+### Analista de asuntos públicos {.trabajo-titulo data-i18n="cv.tironi.puesto"}
 
 ::: {.trabajo-bloque}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-9}
-**Tironi y Asociados** · Agosto 2021 – Marzo 2023
-
-Encargado del **boletín constitucional 2022**, un producto de monitoreo semanal del proceso constituyente que sistematizaba información política e institucional para clientes corporativos y públicos. Recopilación, limpieza y análisis de información política, así como seguimiento legislativo y del debate público.
-
-Contribuí en proyectos de **consultoría estratégica** con énfasis en análisis de datos para diagnóstico organizacional, monitoreo de opinión pública y diseño de estrategias comunicacionales. Participé en la elaboración de reportes para clientes del sector público y privado, integrando información cuantitativa y cualitativa para la toma de decisiones estratégicas.
+<p><strong data-i18n="cv.tironi.inst">Tironi y Asociados · Agosto 2021 – Marzo 2023</strong></p>
+<p data-i18n="cv.tironi.desc1">Encargado del <strong>boletín constitucional 2022</strong>, un producto de monitoreo semanal del proceso constituyente que sistematizaba información política e institucional para clientes corporativos y públicos. Recopilación, limpieza y análisis de información política e institucional.</p>
+<p data-i18n="cv.tironi.desc2">Contribuí en proyectos de <strong>consultoría estratégica</strong> con énfasis en análisis de datos para diagnóstico organizacional, monitoreo de opinión pública y diseño de estrategias comunicacionales. Elaboración de reportes para clientes del sector público y privado.</p>
 :::
 ::: {.g-col-12 .g-col-md-3}
 ![](img/tironi.jpg){.logo-trabajo fig-alt="Logo Tironi y Asociados"}
@@ -147,83 +184,63 @@ Contribuí en proyectos de **consultoría estratégica** con énfasis en anális
 
 :::
 
-### Asesor metodológico — Proyectos Joaquín Prieto {.trabajo-titulo}
+### Asistente de investigación — Fondecyt N°1190295 {.trabajo-titulo data-i18n="cv.fon3.puesto"}
 
 ::: {.trabajo-bloque}
 
-**Investigación académica independiente** · 2025 – presente
-
-Asesoría en investigación cuantitativa en los proyectos ***Insecurity amid Recovery*** y ***Economic Insecurity, Not Inequality?*** del investigador **Joaquín Prieto**. Análisis con la **Encuesta ELSOC del COES** (panel longitudinal) y la **Encuesta de Bienestar Social (EBS) del INE**. Procesamiento y modelamiento estadístico con R, apoyo en el diseño metodológico y análisis de datos de panel.
-
-:::
-
-### Asistente de investigación — Fondecyt N°1190295 {.trabajo-titulo}
-
-::: {.trabajo-bloque}
-
-**Universidad Diego Portales** · Marzo 2022 – Marzo 2023
-
-*"Gobernando transiciones críticas en sistemas socio-ecológicos: el caso de Chiloé, Chile"*. Procesamiento de información cualitativa y cuantitativa para la investigación de transiciones críticas en sistemas socio-ambientales.
+<p><strong data-i18n="cv.fon3.inst">Universidad Diego Portales · Marzo 2022 – Marzo 2023</strong></p>
+<p data-i18n="cv.fon3.desc">*"Gobernando transiciones críticas en sistemas socio-ecológicos: el caso de Chiloé, Chile"*. Procesamiento de información cualitativa y cuantitativa para la investigación de transiciones críticas en sistemas socio-ambientales.</p>
 
 :::
 
 ---
 
-## 🎓 Paso por la universidad {.seccion-titulo}
+## 🎓 Paso por la universidad {.seccion-titulo data-i18n="cv.sec.universidad"}
 
 ::: {.intro-pagina}
-Durante mis estudios en la Universidad Diego Portales participé activamente como **ayudante de cátedra** y **tesista** en proyectos de investigación, consolidando mi formación en metodología, teoría social e investigación aplicada.
+<span data-i18n="cv.uni.intro">Durante mis estudios en la Universidad Diego Portales participé activamente como **ayudante de cátedra** y **tesista** en proyectos de investigación, consolidando mi formación en metodología, teoría social e investigación aplicada.</span>
 :::
 
 ```{r}
 #| echo: false
 
 ayudantias <- list(
-  list(
-    fecha   = "Agosto 2020 – Agosto 2021",
-    titulo  = "Tesista — Proyecto Fondecyt N°1181585",
-    lugar   = "Universidad Diego Portales",
-    desc    = "Participación en proyecto Fondecyt de investigación sociológica, articulando el trabajo de tesis de pregrado con una línea de investigación financiada."
-  ),
-  list(
-    fecha   = "Marzo – Julio 2021",
-    titulo  = "Ayudante — Técnicas cuantitativas",
-    lugar   = "Cátedra de Macarena Orchard · UDP",
-    desc    = "Apoyo docente en metodología cuantitativa: estadística descriptiva, inferencial y análisis de datos con software especializado."
-  ),
-  list(
-    fecha   = "Agosto – Diciembre 2020",
-    titulo  = "Ayudante — Lógica de investigación",
-    lugar   = "Cátedra de Sara Correa · UDP",
-    desc    = "Apoyo en la enseñanza de diseño de investigación, formulación de preguntas, hipótesis y construcción de marcos teóricos."
-  ),
-  list(
-    fecha   = "Marzo – Julio 2020",
-    titulo  = "Ayudante — Teoría Sociológica IV",
-    lugar   = "Cátedra de Modesto Gayo · UDP",
-    desc    = "Apoyo docente en teoría sociológica contemporánea: discusión de autores, ejercicios de análisis teórico y retroalimentación a estudiantes."
-  ),
-  list(
-    fecha   = "Marzo – Julio 2020",
-    titulo  = "Ayudante — Métodos cualitativos",
-    lugar   = "Cátedras de Tomás Ariztía y Camila Peralta · UDP",
-    desc    = "Apoyo docente en diseño y análisis cualitativo: entrevistas, observación, etnografía y análisis de discurso."
-  ),
-  list(
-    fecha   = "Marzo – Julio 2020",
-    titulo  = "Ayudante — Problemas sociales",
-    lugar   = "Cátedra de Jorge Atria · UDP",
-    desc    = "Apoyo en el análisis sociológico de problemas sociales contemporáneos: desigualdad, estratificación y políticas públicas."
-  )
+  list(key="uni.1", fecha="Agosto 2020 – Agosto 2021",
+       titulo="Tesista — Proyecto Fondecyt N°1181585",
+       lugar="Universidad Diego Portales",
+       desc="Participación en proyecto Fondecyt de investigación sociológica, articulando el trabajo de tesis de pregrado con una línea de investigación financiada."),
+  list(key="uni.2", fecha="Marzo – Julio 2021",
+       titulo="Ayudante — Técnicas cuantitativas",
+       lugar="Cátedra de Macarena Orchard · UDP",
+       desc="Apoyo docente en metodología cuantitativa: estadística descriptiva, inferencial y análisis de datos con software especializado."),
+  list(key="uni.3", fecha="Agosto – Diciembre 2020",
+       titulo="Ayudante — Lógica de investigación",
+       lugar="Cátedra de Sara Correa · UDP",
+       desc="Apoyo en la enseñanza de diseño de investigación, formulación de preguntas, hipótesis y construcción de marcos teóricos."),
+  list(key="uni.4", fecha="Marzo – Julio 2020",
+       titulo="Ayudante — Teoría Sociológica IV",
+       lugar="Cátedra de Modesto Gayo · UDP",
+       desc="Apoyo docente en teoría sociológica contemporánea: discusión de autores, ejercicios de análisis teórico y retroalimentación a estudiantes."),
+  list(key="uni.5", fecha="Marzo – Julio 2020",
+       titulo="Ayudante — Métodos cualitativos",
+       lugar="Cátedras de Tomás Ariztía y Camila Peralta · UDP",
+       desc="Apoyo docente en diseño y análisis cualitativo: entrevistas, observación, etnografía y análisis de discurso."),
+  list(key="uni.6", fecha="Marzo – Julio 2020",
+       titulo="Ayudante — Problemas sociales",
+       lugar="Cátedra de Jorge Atria · UDP",
+       desc="Apoyo en el análisis sociológico de problemas sociales contemporáneos: desigualdad, estratificación y políticas públicas.")
 )
 
 div(class = "timeline",
   map(ayudantias, \(a) {
     div(class = "timeline-item",
-      div(class = "timeline-fecha", a$fecha),
-      div(class = "timeline-titulo", a$titulo),
-      div(class = "timeline-lugar", a$lugar),
-      tags$p(a$desc)
+      div(class = "timeline-fecha",
+          `data-i18n` = paste0("cv.", a$key, ".fecha"), a$fecha),
+      div(class = "timeline-titulo",
+          `data-i18n` = paste0("cv.", a$key, ".titulo"), a$titulo),
+      div(class = "timeline-lugar",
+          `data-i18n` = paste0("cv.", a$key, ".lugar"), a$lugar),
+      tags$p(`data-i18n` = paste0("cv.", a$key, ".desc"), a$desc)
     )
   })
 )
@@ -231,9 +248,7 @@ div(class = "timeline",
 
 ---
 
-## 🛠️ Habilidades técnicas {.seccion-titulo}
-
-### Softwares
+## 🛠️ Habilidades técnicas {.seccion-titulo data-i18n="cv.sec.habilidades"}
 
 - **RStudio / R:** avanzado (tidyverse, ggplot2, Quarto, análisis estadístico, modelación)
 - **Power BI:** avanzado (dashboards interactivos, DAX, visualización corporativa)
@@ -242,21 +257,15 @@ div(class = "timeline",
 - **Atlas.ti:** intermedio (análisis cualitativo de textos y entrevistas)
 - **Python:** básico (pandas, análisis exploratorio)
 
-### Idiomas
+---
 
-- 🇨🇱 **Español:** nativo
-- 🇬🇧 **Inglés:** C1 (fluido)
-- 🇮🇹 **Italiano:** C1 (fluido)
+## 🎯 Intereses de investigación {.seccion-titulo data-i18n="cv.sec.intereses"}
+
+<p data-i18n="cv.intereses">Investigación social y análisis de sistemas complejos · Ciencia de datos y análisis cuantitativo · Metodologías innovadoras en investigación social · Humanidades digitales · Gobernanza y políticas públicas · Análisis de discursos y datos textuales.</p>
 
 ---
 
-## 🎯 Intereses de investigación {.seccion-titulo}
-
-Investigación social y análisis de sistemas complejos · Ciencia de datos y análisis cuantitativo · Metodologías innovadoras en investigación social · Humanidades digitales · Gobernanza y políticas públicas · Análisis de discursos y datos textuales.
-
----
-
-## 📰 Publicaciones destacadas {.seccion-titulo}
+## 📰 Publicaciones destacadas {.seccion-titulo data-i18n="cv.sec.publicaciones"}
 
 **Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024). *"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"*. **Journal of Language and Politics**, 23(5), 723–746. [https://doi.org/10.1075/jlp.24097.fre](https://doi.org/10.1075/jlp.24097.fre)
 
@@ -264,63 +273,56 @@ Investigación social y análisis de sistemas complejos · Ciencia de datos y an
 
 ---
 
-## 🎤 Actividades académicas {.seccion-titulo}
+## 🎤 Actividades académicas {.seccion-titulo data-i18n="cv.sec.actividades"}
 
-- **Junio 2024** — Seminario *"Inteligencia artificial y ciencias sociales: herramientas, expectativas y limitaciones"* para estudiantes de Sociología, Universidad Diego Portales.
-- **Abril 2022** — Ponencia en el Congreso Chileno de Sociología **PRE-ALAS** (Concepción): *"Estéticas constitucionales: una mirada desde los regímenes estéticos de la revuelta social chilena de 2019"*.
-- **Marzo 2022** — Seminario *"Metodologías visuales: una aproximación sociológica para trabajar con imágenes"*, Universidad Diego Portales.
-
----
-
-## 📞 Referencias {.seccion-titulo}
-
-::: {.grid}
-
-::: {.g-col-12 .g-col-md-6}
-::: {.referencia-card}
-**Verónica Canales**
-*Jefa de área de metodología y procesamiento — CENSO Población y Vivienda 2024 · INE.*
-Magíster en Investigación Social (LSE).
-📧 [vacanalesg@ine.gob.cl](mailto:vacanalesg@ine.gob.cl)
-:::
-:::
-
-::: {.g-col-12 .g-col-md-6}
-::: {.referencia-card}
-**Aldo Mascareño**
-*Investigador Senior del CEP · Editor General de Estudios Públicos · Investigador principal C22.*
-📧 [amascareno@cepchile.cl](mailto:amascareno@cepchile.cl)
-:::
-:::
-
-::: {.g-col-12 .g-col-md-6}
-::: {.referencia-card}
-**Francisco Espinoza**
-*Consultor · Tironi y Asociados.*
-Magíster en Ciencia Política, Universidad de Chile.
-📧 [francisco.espinoza@tironi.cl](mailto:francisco.espinoza@tironi.cl)
-:::
-:::
-
-:::
+<ul>
+<li data-i18n="cv.act1"><strong>Junio 2024</strong> — Seminario <em>"Inteligencia artificial y ciencias sociales: herramientas, expectativas y limitaciones"</em> para estudiantes de Sociología, Universidad Diego Portales.</li>
+<li data-i18n="cv.act2"><strong>Abril 2022</strong> — Ponencia en el Congreso Chileno de Sociología PRE-ALAS (Concepción): <em>"Estéticas constitucionales: una mirada desde los regímenes estéticos de la revuelta social chilena de 2019"</em>.</li>
+<li data-i18n="cv.act3"><strong>Marzo 2022</strong> — Seminario <em>"Metodologías visuales: una aproximación sociológica para trabajar con imágenes"</em>, Universidad Diego Portales.</li>
+</ul>
 
 ---
 
-## 📧 Contacto {.seccion-titulo}
+## 📞 Referencias {.seccion-titulo data-i18n="cv.sec.referencias"}
+
+```{r}
+#| echo: false
+
+refs <- list(
+  list(key = "ref1", txt = "<strong>Verónica Canales</strong><br><em>Jefa de área de metodología y procesamiento — CENSO Población y Vivienda 2024 · INE.</em><br>Magíster en Investigación Social (LSE).<br>📧 <a href='mailto:vacanalesg@ine.gob.cl'>vacanalesg@ine.gob.cl</a>"),
+  list(key = "ref2", txt = "<strong>Aldo Mascareño</strong><br><em>Investigador Senior del CEP · Editor General de Estudios Públicos · Investigador principal C22.</em><br>📧 <a href='mailto:amascareno@cepchile.cl'>amascareno@cepchile.cl</a>"),
+  list(key = "ref3", txt = "<strong>Francisco Espinoza</strong><br><em>Consultor · Tironi y Asociados.</em><br>Magíster en Ciencia Política, Universidad de Chile.<br>📧 <a href='mailto:francisco.espinoza@tironi.cl'>francisco.espinoza@tironi.cl</a>")
+)
+
+div(class = "grid",
+  map(refs, \(r) {
+    div(class = "g-col-12 g-col-md-4",
+      div(class = "referencia-card",
+        tags$p(`data-i18n` = paste0("cv.", r$key, ".txt"),
+               HTML(r$txt))
+      )
+    )
+  })
+)
+```
+
+---
+
+## 📧 Contacto {.seccion-titulo data-i18n="cv.sec.contacto"}
 
 ```{r}
 #| echo: false
 div(class = "contacto-grid",
   div(class = "contacto-item",
-    tags$strong("📧 Email"),
+    tags$strong(`data-i18n` = "contacto.email.lbl", "📧 Email"),
     tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
   ),
   div(class = "contacto-item",
-    tags$strong("📱 Teléfono"),
+    tags$strong(`data-i18n` = "contacto.tel.lbl", "📱 Teléfono"),
     tags$span("+56 9 6309 5562")
   ),
   div(class = "contacto-item",
-    tags$strong("🔗 LinkedIn"),
+    tags$strong(`data-i18n` = "contacto.li.lbl", "🔗 LinkedIn"),
     tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
            target = "_blank", "benjamin-lang-a78229207")
   )

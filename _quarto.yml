@@ -33,6 +33,8 @@ website:
         href: mailto:benjalang1997@gmail.com
         aria-label: Email
 
+  include-after-body: includes/lang-init.html
+
   page-footer:
     background: dark
     left: "Hecho con [Quarto](https://quarto.org) y R · © 2026 Benjamín Lang"
@@ -44,9 +46,7 @@ website:
 
 format:
   html:
-    theme:
-      light: flatly
-      dark: darkly
+    theme: flatly
     css: styles.css
     toc: true
     toc-depth: 3

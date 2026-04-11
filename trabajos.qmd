@@ -12,12 +12,12 @@ library(purrr)
 ```
 
 ::: {.intro-pagina}
-Una selección de los proyectos de **investigación aplicada**, **análisis de datos** y **consultoría** en los que he participado a lo largo de mi trayectoria profesional en sector público, privado, investigación académica y consultorías independientes.
+<span data-i18n="trab.intro">Una selección de los proyectos de **investigación aplicada**, **análisis de datos** y **consultoría** en los que he participado a lo largo de mi trayectoria profesional en sector público, privado, investigación académica y consultorías independientes.</span>
 :::
 
 ---
 
-## 🏛️ Sector público {.seccion-titulo}
+## 🏛️ Sector público {.seccion-titulo data-i18n="trab.sec.publico"}
 
 ```{r}
 #| echo: false
@@ -26,71 +26,83 @@ div(class = "grid",
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Actual · Educación pública"),
-      tags$h3(tags$a(href = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
-                     "Datos educacionales SLEP Santa Rosa", target = "_blank")),
-      div(class = "proyecto-periodo", "Septiembre 2025 – presente"),
-      tags$p("Sistematización, visualización y análisis de datos educacionales para el Servicio Local de Educación Pública Santa Rosa. Diseño de dashboards y reportes para la toma de decisiones en la gestión educacional regional."),
-      div(class = "skill-tags",
-        span(class="skill-tag avanzado", "R"),
-        span(class="skill-tag avanzado", "Power BI"),
-        span(class="skill-tag", "Datos educacionales")
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.slep.tipo", "Actual · Educación pública"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3(tags$a(href = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
+                         target = "_blank",
+                         `data-i18n` = "trab.slep.title", "Datos educacionales SLEP Santa Rosa")),
+          div(class = "proyecto-periodo", `data-i18n` = "trab.slep.period", "Septiembre 2025 – presente"),
+          tags$p(`data-i18n` = "trab.slep.desc",
+                 "Sistematización, visualización y análisis de datos educacionales para el SLEP Santa Rosa. Diseño de dashboards y reportes para la toma de decisiones en la gestión educacional regional."),
+          div(class = "skill-tags",
+            span(class="skill-tag avanzado", "R"),
+            span(class="skill-tag avanzado", "Power BI"),
+            span(class="skill-tag", "Datos educacionales"))
+        ),
+        tags$img(src = "img/slep_santa_rosa.jpg", class = "card-logo-lateral",
+                 alt = "Logo SLEP Santa Rosa")
       )
     )
   ),
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "2024–2025 · Estadística oficial"),
-      tags$h3(tags$a(href = "https://censo2024.ine.gob.cl/",
-                     "Censo de Población y Vivienda 2024 — INE", target = "_blank")),
-      div(class = "proyecto-periodo", "Mayo 2024 – Junio 2025"),
-      tags$p("Analista metodológico Senior en el Instituto Nacional de Estadísticas. Procesamiento, validación y análisis de datos censales a gran escala. Diseño de metodologías estadísticas y aseguramiento de calidad de bases de datos."),
-      div(class = "skill-tags",
-        span(class="skill-tag avanzado", "Metodología estadística"),
-        span(class="skill-tag avanzado", "Big data"),
-        span(class="skill-tag", "Censos")
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.censo.tipo", "2024–2025 · Estadística oficial"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3(tags$a(href = "https://censo2024.ine.gob.cl/", target = "_blank",
+                         `data-i18n` = "trab.censo.title",
+                         "Censo de Población y Vivienda 2024 — INE")),
+          div(class = "proyecto-periodo", `data-i18n` = "trab.censo.period", "Mayo 2024 – Junio 2025"),
+          tags$p(`data-i18n` = "trab.censo.desc",
+                 "Analista metodológico Senior en el INE. Procesamiento, validación y análisis de datos censales a gran escala. Diseño de metodologías estadísticas y aseguramiento de calidad de bases de datos."),
+          div(class = "skill-tags",
+            span(class="skill-tag avanzado", "Metodología estadística"),
+            span(class="skill-tag avanzado", "Big data"),
+            span(class="skill-tag", "Censos"))
+        ),
+        tags$img(src = "img/censo_2024.svg", class = "card-logo-lateral",
+                 alt = "Logo Censo 2024 INE")
       )
     )
   )
-
 )
 ```
 
 ---
 
-## 🏢 Sector privado {.seccion-titulo}
+## 🏢 Sector privado {.seccion-titulo data-i18n="trab.sec.privado"}
 
 ```{r}
 #| echo: false
 
-div(class = "g-col-12",
-  div(class = "proyecto-card",
-    div(class = "tarjeta-etiqueta", "2021–2023 · Consultoría estratégica"),
-    tags$h3(tags$a(href = "https://tironi.cl/home",
-                   "Tironi y Asociados", target = "_blank")),
-    div(class = "proyecto-periodo", "Agosto 2021 – Marzo 2023"),
-    tags$p(
-      "Analista de asuntos públicos. Encargado del ",
-      strong("boletín constitucional 2022"),
-      ", un producto de monitoreo semanal del proceso constituyente que sistematizaba información política e institucional para clientes corporativos y públicos."
+div(class = "proyecto-card",
+  div(class = "tarjeta-etiqueta", `data-i18n` = "trab.tironi.tipo", "2021–2023 · Consultoría estratégica"),
+  div(class = "card-con-logo",
+    div(
+      tags$h3(tags$a(href = "https://tironi.cl/home", target = "_blank",
+                     `data-i18n` = "trab.tironi.title", "Tironi y Asociados")),
+      div(class = "proyecto-periodo", `data-i18n` = "trab.tironi.period", "Agosto 2021 – Marzo 2023"),
+      tags$p(`data-i18n` = "trab.tironi.desc1",
+             "Analista de asuntos públicos. Encargado del ", tags$strong("boletín constitucional 2022"),
+             ", un producto de monitoreo semanal del proceso constituyente que sistematizaba información política e institucional para clientes corporativos y públicos."),
+      tags$p(`data-i18n` = "trab.tironi.desc2",
+             "Contribución en proyectos de consultoría estratégica con énfasis en análisis de datos para diagnóstico organizacional, monitoreo de opinión pública y diseño de estrategias comunicacionales."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Consultoría estratégica"),
+        span(class="skill-tag", "Análisis político"),
+        span(class="skill-tag", "Opinión pública"))
     ),
-    tags$p(
-      "Contribución en proyectos de consultoría estratégica con énfasis en análisis de datos para diagnóstico organizacional, monitoreo de opinión pública y diseño de estrategias comunicacionales. Elaboración de reportes para clientes del sector público y privado, integrando información cuantitativa y cualitativa."
-    ),
-    div(class = "skill-tags",
-      span(class="skill-tag", "Consultoría estratégica"),
-      span(class="skill-tag", "Análisis político"),
-      span(class="skill-tag", "Opinión pública"),
-      span(class="skill-tag", "Comunicaciones")
-    )
+    tags$img(src = "img/tironi.jpg", class = "card-logo-lateral",
+             alt = "Logo Tironi y Asociados")
   )
 )
 ```
 
 ---
 
-## 🔬 Investigación académica {.seccion-titulo}
+## 🔬 Investigación académica {.seccion-titulo data-i18n="trab.sec.academico"}
 
 ```{r}
 #| echo: false
@@ -99,92 +111,90 @@ div(class = "grid",
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Actual · Investigación cuantitativa"),
-      tags$h3("Asesor metodológico — Proyectos Joaquín Prieto"),
-      div(class = "proyecto-periodo", "2025 – presente"),
-      tags$p(
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.prieto.tipo", "Actual · Investigación cuantitativa"),
+      tags$h3(`data-i18n` = "trab.prieto.title", "Asesor metodológico — Proyectos Joaquín Prieto"),
+      div(class = "proyecto-periodo", `data-i18n` = "trab.prieto.period", "2025 – presente"),
+      tags$p(`data-i18n` = "trab.prieto.desc",
         "Asesoría en investigación cuantitativa en los proyectos ",
-        strong(em("Insecurity amid Recovery")),
-        " y ",
-        strong(em("Economic Insecurity, Not Inequality?")),
-        " del investigador Joaquín Prieto. Análisis con la Encuesta ELSOC del COES y la Encuesta de Bienestar Social (EBS) del INE. Procesamiento, modelamiento estadístico y apoyo en el diseño metodológico de análisis con datos de panel y encuestas representativas."
+        tags$em(tags$strong("Insecurity amid Recovery")), " y ",
+        tags$em(tags$strong("Economic Insecurity, Not Inequality?")),
+        " del investigador Joaquín Prieto. Análisis con la Encuesta ELSOC del COES y la Encuesta de Bienestar Social (EBS) del INE. Procesamiento y modelamiento estadístico con R."
       ),
       div(class = "skill-tags",
         span(class="skill-tag avanzado", "R"),
         span(class="skill-tag", "ELSOC · COES"),
-        span(class="skill-tag", "EBS · INE"),
-        span(class="skill-tag", "Datos de panel")
+        span(class="skill-tag", "EBS · INE"))
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.fon1.tipo", "Fondecyt · 2024–2025"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3(`data-i18n` = "trab.fon1.title", "Gobernar la incertidumbre — Banco Central de Chile"),
+          div(class = "proyecto-periodo", `data-i18n` = "trab.fon1.period", "Mayo 2024 – Agosto 2025"),
+          tags$p("Proyecto Fondecyt N°1231356: ",
+            tags$em('"Gramáticas, actores y dispositivos de producción de estabilidad económica en el capitalismo contemporáneo"'),
+            ". Análisis de datos cualitativos y cuantitativos sobre políticas económicas e indicadores de estabilidad institucional."),
+          div(class = "skill-tags",
+            span(class="skill-tag", "Análisis cualitativo"),
+            span(class="skill-tag", "Economía política"))
+        ),
+        tags$img(src = "img/udp.png", class = "card-logo-lateral", alt = "Logo UDP")
       )
     )
   ),
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Fondecyt · 2024–2025"),
-      tags$h3("Gobernar la incertidumbre — Banco Central de Chile"),
-      div(class = "proyecto-periodo", "Mayo 2024 – Agosto 2025"),
-      tags$p(
-        "Proyecto Fondecyt N°1231356: ",
-        em('"Gramáticas, actores y dispositivos de producción de estabilidad económica en el capitalismo contemporáneo. Un estudio sobre el Banco Central de Chile (2006–2022)"'),
-        ". Análisis de datos cualitativos y cuantitativos sobre políticas económicas y dispositivos institucionales de estabilidad."
-      ),
-      div(class = "skill-tags",
-        span(class="skill-tag", "Análisis cualitativo"),
-        span(class="skill-tag", "Economía política"),
-        span(class="skill-tag", "Indicadores")
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.c22.tipo", "CEP · 2021–2024"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3(tags$a(href = "https://c22cepchile.cl/", target = "_blank",
+                         `data-i18n` = "trab.c22.title", "Humanidades digitales C22 — CEP")),
+          div(class = "proyecto-periodo", `data-i18n` = "trab.c22.period", "Agosto 2021 – Abril 2024"),
+          tags$p(`data-i18n` = "trab.c22.desc",
+                 "Análisis computacional del proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política. Boletín ", tags$em("Voces del CEP"), ": gestión editorial y publicación."),
+          div(class = "skill-tags",
+            span(class="skill-tag", "Humanidades digitales"),
+            span(class="skill-tag", "Análisis de texto"))
+        ),
+        tags$img(src = "img/c22.png", class = "card-logo-lateral", alt = "Logo C22")
       )
     )
   ),
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "CEP · 2021–2024"),
-      tags$h3(tags$a(href = "https://c22cepchile.cl/", "Humanidades digitales C22 — CEP", target = "_blank")),
-      div(class = "proyecto-periodo", "Agosto 2021 – Abril 2024"),
-      tags$p("Análisis computacional del primer y segundo proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política. Boletín ", em("Voces del CEP"), ": organización editorial y publicación de análisis sobre problemas públicos contemporáneos."),
-      div(class = "skill-tags",
-        span(class="skill-tag", "Humanidades digitales"),
-        span(class="skill-tag", "Análisis de texto"),
-        span(class="skill-tag", "Constitución")
-      )
-    )
-  ),
-
-  div(class = "g-col-12 g-col-md-6",
-    div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Fondecyt · 2022–2023"),
-      tags$h3("Transiciones críticas en sistemas socio-ecológicos — Chiloé"),
-      div(class = "proyecto-periodo", "Marzo 2022 – Marzo 2023"),
-      tags$p(
-        "Proyecto Fondecyt N°1190295. Procesamiento de información cualitativa y cuantitativa sobre transiciones críticas en sistemas socio-ambientales en Chiloé, Chile."
-      ),
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.chiloe.tipo", "Fondecyt · 2022–2023"),
+      tags$h3(`data-i18n` = "trab.chiloe.title", "Transiciones críticas en sistemas socio-ecológicos — Chiloé"),
+      div(class = "proyecto-periodo", `data-i18n` = "trab.chiloe.period", "Marzo 2022 – Marzo 2023"),
+      tags$p(`data-i18n` = "trab.chiloe.desc",
+             "Fondecyt N°1190295. Procesamiento de información cualitativa y cuantitativa sobre transiciones críticas en sistemas socio-ambientales en Chiloé, Chile."),
       div(class = "skill-tags",
         span(class="skill-tag", "Sistemas complejos"),
-        span(class="skill-tag", "Socio-ambiental"),
-        span(class="skill-tag", "Mixta")
-      )
+        span(class="skill-tag", "Mixta"))
     )
   ),
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Fondecyt · 2020–2021"),
-      tags$h3("Tesista — Proyecto Fondecyt N°1181585"),
-      div(class = "proyecto-periodo", "Agosto 2020 – Agosto 2021"),
-      tags$p("Participación como tesista en proyecto Fondecyt, articulando el trabajo de tesis de pregrado con una línea de investigación financiada."),
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.tesista.tipo", "Fondecyt · 2020–2021"),
+      tags$h3(`data-i18n` = "trab.tesista.title", "Tesista — Proyecto Fondecyt N°1181585"),
+      div(class = "proyecto-periodo", `data-i18n` = "trab.tesista.period", "Agosto 2020 – Agosto 2021"),
+      tags$p(`data-i18n` = "trab.tesista.desc",
+             "Participación como tesista en proyecto Fondecyt, articulando el trabajo de tesis de pregrado con una línea de investigación financiada."),
       div(class = "skill-tags",
-        span(class="skill-tag", "Tesis"),
-        span(class="skill-tag", "Investigación académica")
-      )
+        span(class="skill-tag", "Investigación académica"))
     )
   )
-
 )
 ```
 
 ---
 
-## 🤝 Consultorías privadas {.seccion-titulo}
+## 🤝 Consultorías privadas {.seccion-titulo data-i18n="trab.sec.consultorias"}
 
 ```{r}
 #| echo: false
@@ -193,56 +203,53 @@ div(class = "grid",
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Consultoría · Mayo 2024"),
-      tags$h3("Radiografía a la Equidad Puertas Adentro"),
-      div(class = "proyecto-periodo", "Mayo 2024"),
-      tags$p("Consultoría desarrollada para ", strong("Francisca Bravo Cox"),
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.radio.tipo", "Consultoría · Mayo 2024"),
+      tags$h3(`data-i18n` = "trab.radio.title", "Radiografía a la Equidad Puertas Adentro"),
+      div(class = "proyecto-periodo", `data-i18n` = "trab.radio.period", "Mayo 2024"),
+      tags$p(`data-i18n` = "trab.radio.desc",
+             "Consultoría desarrollada para ", tags$strong("Francisca Bravo Cox"),
              ". Análisis de datos y sistematización de información para el diagnóstico sobre equidad en el espacio doméstico."),
       div(class = "skill-tags",
         span(class="skill-tag", "Análisis cuantitativo"),
-        span(class="skill-tag", "Género"),
-        span(class="skill-tag", "Diagnóstico")
-      )
+        span(class="skill-tag", "Género"))
     )
   ),
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Fondo del Libro · 2023"),
-      tags$h3("Gobernanza de la lectura digital en Chile"),
-      div(class = "proyecto-periodo", "2023"),
-      tags$p("Consultoría desarrollada para ", strong("Christian Anwandter"),
-             " en el marco de un proyecto financiado por el Fondo del Libro. Análisis y sistematización de información sobre políticas públicas del libro y la lectura digital en Chile."),
+      div(class = "tarjeta-etiqueta", `data-i18n` = "trab.libro.tipo", "Fondo del Libro · 2023"),
+      tags$h3(`data-i18n` = "trab.libro.title", "Gobernanza de la lectura digital en Chile"),
+      div(class = "proyecto-periodo", `data-i18n` = "trab.libro.period", "2023"),
+      tags$p(`data-i18n` = "trab.libro.desc",
+             "Consultoría para ", tags$strong("Christian Anwandter"),
+             " en el marco de un proyecto financiado por el Fondo del Libro. Análisis de políticas del libro y la lectura digital en Chile."),
       div(class = "skill-tags",
         span(class="skill-tag", "Políticas culturales"),
-        span(class="skill-tag", "Análisis mixto"),
-        span(class="skill-tag", "Investigación aplicada")
-      )
+        span(class="skill-tag", "Investigación aplicada"))
     )
   )
-
 )
 ```
 
 ---
 
-## 📩 Contacto profesional {.seccion-titulo}
+## 📩 Contacto profesional {.seccion-titulo data-i18n="trab.sec.contact"}
 
-¿Tienes un proyecto en mente? Escríbeme y conversamos.
+<p data-i18n="trab.contact.intro">¿Tienes un proyecto en mente? Escríbeme y conversamos.</p>
 
 ```{r}
 #| echo: false
 div(class = "contacto-grid",
   div(class = "contacto-item",
-    tags$strong("📧 Email"),
+    tags$strong(`data-i18n` = "contacto.email.lbl", "📧 Email"),
     tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
   ),
   div(class = "contacto-item",
-    tags$strong("📱 Teléfono"),
+    tags$strong(`data-i18n` = "contacto.tel.lbl", "📱 Teléfono"),
     tags$span("+56 9 6309 5562")
   ),
   div(class = "contacto-item",
-    tags$strong("🔗 LinkedIn"),
+    tags$strong(`data-i18n` = "contacto.li.lbl", "🔗 LinkedIn"),
     tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
            target = "_blank", "benjamin-lang-a78229207")
   )
@@ -250,5 +257,5 @@ div(class = "contacto-grid",
 ```
 
 <div style="text-align:center; margin-top:1.5rem;">
-<a href="mailto:benjalang1997@gmail.com" class="btn-primario">✉️ Contactar ahora</a>
+<a href="mailto:benjalang1997@gmail.com" class="btn-primario" data-i18n="trab.contact.btn">✉️ Contactar ahora</a>
 </div>

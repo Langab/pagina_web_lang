@@ -16,27 +16,27 @@ library(purrr)
 ::: {.hero-contenido}
 
 ::: {.hero-texto}
-<span class="hero-saludo">👋 Hola, soy</span>
+<span class="hero-saludo" data-i18n="hero.saludo">👋 Hola, soy</span>
 
 # Benjamín Lang Bustos
 
-<p class="hero-rol">Sociólogo · Analista de datos · Investigador</p>
+<p class="hero-rol" data-i18n="hero.rol">Sociólogo · Analista de datos · Investigador</p>
 
-<p class="hero-descripcion">
+<p class="hero-descripcion" data-i18n="hero.desc">
 Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</strong> en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e IA. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad y elaboración de indicadores para decisiones basadas en evidencia.
 </p>
 
 <div class="hero-badges">
 <span class="badge-item">R · Python · Power BI</span>
 <span class="badge-item">R Markdown · Quarto</span>
-<span class="badge-item">⚙️ Automatización</span>
-<span class="badge-item">🤖 IA aplicada</span>
+<span class="badge-item" data-i18n="hero.badge3">⚙️ Automatización</span>
+<span class="badge-item" data-i18n="hero.badge4">🤖 IA aplicada</span>
 </div>
 
 <div class="hero-botones">
-<a href="about.qmd" class="btn-primario">Ver CV completo →</a>
-<a href="trabajos.qmd" class="btn-secundario">Trabajos y proyectos</a>
-<a href="mailto:benjalang1997@gmail.com" class="btn-ghost">✉️ Escribirme</a>
+<a href="about.qmd" class="btn-primario" data-i18n="hero.btn.cv">Ver CV completo →</a>
+<a href="trabajos.qmd" class="btn-secundario" data-i18n="hero.btn.work">Trabajos y proyectos</a>
+<a href="mailto:benjalang1997@gmail.com" class="btn-ghost" data-i18n="hero.btn.contact">✉️ Escribirme</a>
 </div>
 
 :::
@@ -54,16 +54,16 @@ Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</st
 div(class = "stats-hero",
   div(class = "stat-hero-item",
     div(class = "stat-hero-numero", "6+"),
-    div(class = "stat-hero-label", "Años de experiencia")),
+    div(class = "stat-hero-label", `data-i18n` = "stat.years", "Años de experiencia")),
   div(class = "stat-hero-item",
     div(class = "stat-hero-numero", "13"),
-    div(class = "stat-hero-label", "Policy Papers")),
+    div(class = "stat-hero-label", `data-i18n` = "stat.papers", "Policy Papers")),
   div(class = "stat-hero-item",
     div(class = "stat-hero-numero", "4"),
-    div(class = "stat-hero-label", "Sectores")),
+    div(class = "stat-hero-label", `data-i18n` = "stat.sectors", "Sectores")),
   div(class = "stat-hero-item",
     div(class = "stat-hero-numero", "3"),
-    div(class = "stat-hero-label", "Idiomas"))
+    div(class = "stat-hero-label", `data-i18n` = "stat.langs", "Idiomas"))
 )
 ```
 
@@ -71,32 +71,40 @@ div(class = "stats-hero",
 
 :::
 
-## 🔬 Áreas de especialización {.seccion-titulo}
+## 🔬 Áreas de especialización {.seccion-titulo data-i18n="sec.areas"}
 
 ```{r}
 #| echo: false
 areas <- list(
   list(
     icono = "📊",
+    key_titulo = "area1.title",
     titulo = "Ciencia de datos y análisis cuantitativo",
+    key_desc = "area1.desc",
     desc = "Análisis estadístico avanzado, modelamiento y visualización de datos a gran escala. Manejo de bases de datos complejas, construcción de indicadores y reportes técnicos. R, Python, Power BI y SQL aplicados al sector público, privado y académico.",
     tags = c("R · avanzado", "Python", "Power BI", "SQL")
   ),
   list(
     icono = "🏛️",
+    key_titulo = "area2.title",
     titulo = "Gobernanza de datos en organizaciones",
+    key_desc = "area2.desc",
     desc = "Diseño e implementación de ecosistemas de datos institucionales: captura, validación, visualización y comunicación. Trabajo con equipos mediante capacitaciones, automatización de procesos y generación de transparencia para la toma de decisiones.",
     tags = c("Dashboards", "Automatización", "Capacitación", "Transparencia")
   ),
   list(
     icono = "🗳️",
+    key_titulo = "area3.title",
     titulo = "Análisis político e investigación social",
+    key_desc = "area3.desc",
     desc = "Investigación de procesos institucionales, electorales y de gobernanza. Análisis de texto aplicado a política, seguimiento constitucional y legislativo, indicadores de opinión pública. Proyectos Fondecyt y centros de pensamiento.",
     tags = c("Opinión pública", "Constitucional", "Análisis de texto")
   ),
   list(
     icono = "📐",
+    key_titulo = "area4.title",
     titulo = "Diseño metodológico y estadística aplicada",
+    key_desc = "area4.desc",
     desc = "Diseño de investigaciones cuantitativas, cualitativas y mixtas. Procesamiento de censos, encuestas de gran escala (ELSOC, EBS, Censo 2024) y aseguramiento de calidad de bases de datos complejas.",
     tags = c("Censos", "Encuestas", "Indicadores", "Mixta")
   )
@@ -107,8 +115,8 @@ div(class = "grid",
     div(class = "g-col-12 g-col-md-6",
       div(class = "tarjeta",
         div(class = "tarjeta-icono", a$icono),
-        tags$h3(a$titulo),
-        tags$p(a$desc),
+        tags$h3(`data-i18n` = a$key_titulo, a$titulo),
+        tags$p(`data-i18n` = a$key_desc, a$desc),
         div(class = "skill-tags",
           map(a$tags, \(t) span(class = "skill-tag", t))
         )
@@ -118,38 +126,54 @@ div(class = "grid",
 )
 ```
 
-## 💼 Proyectos destacados {.seccion-titulo}
+## 💼 Proyectos destacados {.seccion-titulo data-i18n="sec.projects"}
 
 ```{r}
 #| echo: false
 proyectos <- list(
   list(
-    nombre  = "Datos educacionales SLEP Santa Rosa",
-    periodo = "2025 – presente",
-    desc    = "Sistematización y visualización de indicadores educacionales para educación pública regional con R y Power BI.",
-    link    = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
-    tipo    = "Sector público"
+    key_tipo   = "proj1.tipo",
+    tipo       = "Sector público",
+    key_nombre = "proj1.title",
+    nombre     = "Datos educacionales SLEP Santa Rosa",
+    key_period = "proj1.period",
+    periodo    = "2025 – presente",
+    key_desc   = "proj1.desc",
+    desc       = "Sistematización y visualización de indicadores educacionales para educación pública regional con R y Power BI.",
+    link       = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2"
   ),
   list(
-    nombre  = "Humanidades digitales C22 — CEP",
-    periodo = "2021 – 2024",
-    desc    = "Análisis computacional del proceso constitucional chileno. Procesamiento de datos textuales y visualización política.",
-    link    = "https://c22cepchile.cl/",
-    tipo    = "Investigación"
+    key_tipo   = "proj2.tipo",
+    tipo       = "Investigación",
+    key_nombre = "proj2.title",
+    nombre     = "Humanidades digitales C22 — CEP",
+    key_period = "proj2.period",
+    periodo    = "2021 – 2024",
+    key_desc   = "proj2.desc",
+    desc       = "Análisis computacional del proceso constitucional chileno. Procesamiento de datos textuales y visualización política.",
+    link       = "https://c22cepchile.cl/"
   ),
   list(
-    nombre  = "Censo de Población y Vivienda 2024",
-    periodo = "2024 – 2025",
-    desc    = "Analista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.",
-    link    = "https://censo2024.ine.gob.cl/",
-    tipo    = "Estadística pública"
+    key_tipo   = "proj3.tipo",
+    tipo       = "Estadística pública",
+    key_nombre = "proj3.title",
+    nombre     = "Censo de Población y Vivienda 2024",
+    key_period = "proj3.period",
+    periodo    = "2024 – 2025",
+    key_desc   = "proj3.desc",
+    desc       = "Analista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.",
+    link       = "https://censo2024.ine.gob.cl/"
   ),
   list(
-    nombre  = "Tironi y Asociados",
-    periodo = "2021 – 2023",
-    desc    = "Consultoría estratégica de asuntos públicos. Boletín constitucional 2022, análisis político y proyectos de comunicación estratégica.",
-    link    = "https://tironi.cl/home",
-    tipo    = "Sector privado"
+    key_tipo   = "proj4.tipo",
+    tipo       = "Sector privado",
+    key_nombre = "proj4.title",
+    nombre     = "Tironi y Asociados",
+    key_period = "proj4.period",
+    periodo    = "2021 – 2023",
+    key_desc   = "proj4.desc",
+    desc       = "Consultoría estratégica de asuntos públicos. Boletín constitucional 2022, análisis político y proyectos de comunicación estratégica.",
+    link       = "https://tironi.cl/home"
   )
 )
 
@@ -157,10 +181,11 @@ div(class = "grid",
   map(proyectos, \(p) {
     div(class = "g-col-12 g-col-md-6",
       div(class = "proyecto-card",
-        div(class = "tarjeta-etiqueta", p$tipo),
-        tags$h3(tags$a(href = p$link, p$nombre, target = "_blank")),
-        div(class = "proyecto-periodo", p$periodo),
-        tags$p(p$desc)
+        div(class = "tarjeta-etiqueta", `data-i18n` = p$key_tipo, p$tipo),
+        tags$h3(tags$a(href = p$link, target = "_blank",
+                       `data-i18n` = p$key_nombre, p$nombre)),
+        div(class = "proyecto-periodo", `data-i18n` = p$key_period, p$periodo),
+        tags$p(`data-i18n` = p$key_desc, p$desc)
       )
     )
   })
@@ -168,26 +193,32 @@ div(class = "grid",
 ```
 
 <div class="text-center" style="margin-top:1.5rem;">
-<a href="trabajos.qmd" class="btn-secundario">Ver todos los trabajos →</a>
+<a href="trabajos.qmd" class="btn-secundario" data-i18n="sec.btn.allwork">Ver todos los trabajos →</a>
 </div>
 
-## 🛠️ Servicios que ofrezco {.seccion-titulo}
+## 🛠️ Servicios que ofrezco {.seccion-titulo data-i18n="sec.services"}
 
 ```{r}
 #| echo: false
 
 servicios <- list(
-  list(icono = "📊", titulo = "Análisis y modelamiento de datos",
+  list(icono = "📊", key_titulo = "srv1.title", titulo = "Análisis y modelamiento de datos",
+       key_desc = "srv1.desc",
        desc = "Procesamiento, limpieza y análisis estadístico con R, Python y Power BI. Construcción de indicadores y reportes técnicos."),
-  list(icono = "📈", titulo = "Dashboards e informes ejecutivos",
+  list(icono = "📈", key_titulo = "srv2.title", titulo = "Dashboards e informes ejecutivos",
+       key_desc = "srv2.desc",
        desc = "Diseño de dashboards interactivos y reportes visuales que transforman datos complejos en información clara para la toma de decisiones."),
-  list(icono = "🏛️", titulo = "Gobernanza de datos organizacionales",
+  list(icono = "🏛️", key_titulo = "srv3.title", titulo = "Gobernanza de datos organizacionales",
+       key_desc = "srv3.desc",
        desc = "Diseño de ecosistemas de datos: estandarización, automatización de procesos, capacitación a equipos y transparencia institucional."),
-  list(icono = "🗳️", titulo = "Análisis político y electoral",
+  list(icono = "🗳️", key_titulo = "srv4.title", titulo = "Análisis político y electoral",
+       key_desc = "srv4.desc",
        desc = "Datos electorales, seguimiento legislativo, indicadores de opinión pública y monitoreo de tendencias políticas."),
-  list(icono = "🔬", titulo = "Investigación social aplicada",
+  list(icono = "🔬", key_titulo = "srv5.title", titulo = "Investigación social aplicada",
+       key_desc = "srv5.desc",
        desc = "Investigaciones cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto."),
-  list(icono = "🎓", titulo = "Capacitación en datos",
+  list(icono = "🎓", key_titulo = "srv6.title", titulo = "Capacitación en datos",
+       key_desc = "srv6.desc",
        desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa para equipos de investigación e instituciones.")
 )
 
@@ -196,8 +227,8 @@ div(class = "grid",
     div(class = "g-col-12 g-col-md-6 g-col-lg-4",
       div(class = "servicio-card",
         div(class = "icono", s$icono),
-        tags$h3(s$titulo),
-        tags$p(s$desc)
+        tags$h3(`data-i18n` = s$key_titulo, s$titulo),
+        tags$p(`data-i18n` = s$key_desc, s$desc)
       )
     )
   })
@@ -205,16 +236,16 @@ div(class = "grid",
 ```
 
 <div class="text-center" style="margin-top:0.5rem;">
-<a href="mailto:benjalang1997@gmail.com" class="btn-primario">✉️ Consultar disponibilidad</a>
+<a href="mailto:benjalang1997@gmail.com" class="btn-primario" data-i18n="sec.btn.consult">✉️ Consultar disponibilidad</a>
 </div>
 
-## 📰 Última publicación {.seccion-titulo}
+## 📰 Última publicación {.seccion-titulo data-i18n="sec.lastpub"}
 
 ::: {.pub-destacada}
 **Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024).
 *"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"*.
 **Journal of Language and Politics**, 23(5), 723–746.
 
-<a href="https://doi.org/10.1075/jlp.24097.fre" class="btn-primario" target="_blank">Leer artículo →</a>
-<a href="publicaciones.qmd" class="btn-secundario">Ver todas las publicaciones →</a>
+<a href="https://doi.org/10.1075/jlp.24097.fre" class="btn-primario" target="_blank" data-i18n="pub.featured.btn">Leer artículo →</a>
+<a href="publicaciones.qmd" class="btn-secundario" data-i18n="pub.featured.all">Ver todas las publicaciones →</a>
 :::
