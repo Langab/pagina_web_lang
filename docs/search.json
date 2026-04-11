@@ -138,5 +138,26 @@
     "title": "Bienvenida al sitio",
     "section": "Próximos posts",
     "text": "Próximos posts\nTengo pensado escribir sobre:\n\nCómo armé este sitio paso a paso\nUn análisis de [tu área de investigación]\nLos libros que leí en 2025, con galería de portadas desde Goodreads\n\n¡Bienvenido/a!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tu Nombre",
+    "section": "",
+    "text": "Soy Tu Nombre, investigador/a en [Institución]. Me dedico a [describe brevemente tu área de trabajo e intereses].\nMi investigación se centra en:\n\nTema 1: descripción breve\nTema 2: descripción breve\nTema 3: descripción breve\n\nEn este sitio publico mis investigaciones, proyectos en R y reflexiones sobre [tus temas de interés]."
+  },
+  {
+    "objectID": "index.html#bienvenidoa",
+    "href": "index.html#bienvenidoa",
+    "title": "Tu Nombre",
+    "section": "",
+    "text": "Soy Tu Nombre, investigador/a en [Institución]. Me dedico a [describe brevemente tu área de trabajo e intereses].\nMi investigación se centra en:\n\nTema 1: descripción breve\nTema 2: descripción breve\nTema 3: descripción breve\n\nEn este sitio publico mis investigaciones, proyectos en R y reflexiones sobre [tus temas de interés]."
+  },
+  {
+    "objectID": "index.html#últimas-publicaciones",
+    "href": "index.html#últimas-publicaciones",
+    "title": "Tu Nombre",
+    "section": "Últimas publicaciones",
+    "text": "Últimas publicaciones\n\n\n\n\n\nBienvenida\n\n2026-04-05\nPrimer post del sitio. ¡Bienvenido!\nLeer más →\n\n\n\n\nVer todos los posts →"
   }
 ]

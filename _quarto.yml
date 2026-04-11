@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 website:
+  site-url: "https://langab.github.io/pagina_web_lang"
   title: "Tu Nombre"
   description: "Investigador | Blog personal"
   favicon: img/favicon.png
