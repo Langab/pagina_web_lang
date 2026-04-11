@@ -11,18 +11,25 @@ library(purrr)
 ```
 
 <!-- ====================================================
-     🎯 ENCABEZADO CV — hero con contacto + idiomas
+     🎯 ENCABEZADO CV — hero rediseñado (2 columnas)
 ======================================================= -->
 
 ::: {.cv-header}
 
+<span class="cv-titulo-chip">📄 Curriculum Vitae</span>
+
+<div class="cv-header-grid">
+
+<div class="cv-header-left">
 <h1>Benjamín Lang Bustos</h1>
 <p class="cv-header-subtitulo" data-i18n="cv.rol">Sociólogo · Analista de datos · Investigador</p>
-
+<hr class="cv-header-divider">
 <div class="cv-idiomas">
 <span class="idioma-badge" data-i18n="cv.lang.es">🇨🇱 Español — Nativo</span>
 <span class="idioma-badge" data-i18n="cv.lang.en">🇬🇧 Inglés — B2</span>
 <span class="idioma-badge" data-i18n="cv.lang.it">🇮🇹 Italiano — C1</span>
+</div>
+<a href="documentos/cv_Benjamin_Lang_2026.pdf" class="cv-download-btn" data-i18n="cv.download">📄 Descargar CV en PDF</a>
 </div>
 
 ```{r}
@@ -44,7 +51,7 @@ div(class = "cv-contacto-header",
 )
 ```
 
-<a href="documentos/cv_Benjamin_Lang_2026.pdf" class="cv-download-btn" data-i18n="cv.download">📄 Descargar CV en PDF</a>
+</div>
 
 :::
 
@@ -64,22 +71,61 @@ div(class = "cv-contacto-header",
 
 ## 🎓 Formación académica {.seccion-titulo data-i18n="cv.sec.formacion"}
 
-::: {.grid}
+```{r}
+#| echo: false
 
-::: {.g-col-12 .g-col-md-8}
-<p data-i18n="cv.form.titulo"><strong>Sociólogo titulado con distinción máxima</strong> · 2017–2021</p>
-<p data-i18n="cv.form.inst">Universidad Diego Portales · Santiago, Chile</p>
-<p data-i18n="cv.form.nota"><em>Primero en el ranking de egreso de la generación.</em></p>
+# ── Título universitario ──────────────────────────────
+div(class = "formacion-card",
+  div(class = "formacion-header",
+    tags$img(src = "img/udp.png", class = "formacion-logo",
+             alt = "Logo Universidad Diego Portales"),
+    div(class = "formacion-header-texto",
+      div(class = "formacion-titulo",
+          `data-i18n` = "cv.form.titulo",
+          "Sociólogo · Titulado con distinción máxima · 2017–2021"),
+      div(class = "formacion-inst",
+          `data-i18n` = "cv.form.inst",
+          "Universidad Diego Portales · Santiago, Chile"),
+      div(class = "formacion-nota",
+          `data-i18n` = "cv.form.nota",
+          "Primero en el ranking de egreso de la generación.")
+    )
+  ),
+  div(class = "formacion-item",
+    div(class = "formacion-titulo",
+        `data-i18n` = "cv.form.dip",
+        "Diplomado de honor en movilidad y transporte · 2019–2020"),
+    div(class = "formacion-inst",
+        `data-i18n` = "cv.form.dip.inst",
+        "Universidad Diego Portales · Santiago, Chile")
+  )
+)
+```
 
-<p data-i18n="cv.form.dip"><strong>Diplomado de honor en movilidad y transporte</strong> · 2019–2020</p>
-<p data-i18n="cv.form.dip.inst">Universidad Diego Portales · Santiago, Chile</p>
-:::
+```{r}
+#| echo: false
 
-::: {.g-col-12 .g-col-md-4}
-![](img/udp.png){.logo-institucion fig-alt="Logo Universidad Diego Portales"}
-:::
-
-:::
+# ── Formación complementaria ──────────────────────────
+div(class = "formacion-card",
+  div(class = "formacion-header",
+    tags$img(src = "img/censo_2024.svg", class = "formacion-logo",
+             alt = "Logo INE Chile"),
+    div(class = "formacion-header-texto",
+      div(class = "formacion-titulo",
+          `data-i18n` = "cv.form.ine.titulo",
+          "Curso de R avanzado"),
+      div(class = "formacion-inst",
+          `data-i18n` = "cv.form.ine.inst",
+          "Instituto Nacional de Estadísticas (INE) · Chile")
+    )
+  ),
+  div(class = "formacion-item",
+    div(class = "formacion-inst",
+        `data-i18n` = "cv.form.ine.desc",
+        "Capacitación impartida por el INE en el contexto del Censo de Población y Vivienda 2024. Procesamiento, visualización y modelamiento estadístico con R.")
+  )
+)
+```
 
 ---
 
