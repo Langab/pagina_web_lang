@@ -419,14 +419,36 @@ Contribuí en proyectos de <strong>consultoría estratégica</strong> con énfas
 </section>
 <section id="habilidades-técnicas" class="level2 seccion-titulo" data-i18n="cv.sec.habilidades">
 <h2 class="seccion-titulo anchored" data-i18n="cv.sec.habilidades" data-anchor-id="habilidades-técnicas">🛠️ Habilidades técnicas</h2>
-<ul>
-<li><strong>RStudio / R:</strong> avanzado (tidyverse, ggplot2, Quarto, análisis estadístico, modelación)</li>
-<li><strong>Power BI:</strong> avanzado (dashboards interactivos, DAX, visualización corporativa)</li>
-<li><strong>Excel:</strong> avanzado (análisis, macros, modelado financiero)</li>
-<li><strong>GitLab / GitHub:</strong> avanzado (control de versiones, colaboración, CI/CD básico)</li>
-<li><strong>Atlas.ti:</strong> intermedio (análisis cualitativo de textos y entrevistas)</li>
-<li><strong>Python:</strong> básico (pandas, análisis exploratorio)</li>
-</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="habilidades-lista">
+<div class="hab-item">
+<span class="hab-nivel nivel-avanzado" style="background:var(--color-acento-2)"></span>
+<span data-i18n="cv.hab.r"><strong>RStudio / R:</strong> avanzado — tidyverse, ggplot2, Quarto, análisis estadístico, modelación</span>
+</div>
+<div class="hab-item">
+<span class="hab-nivel nivel-avanzado" style="background:var(--color-acento-2)"></span>
+<span data-i18n="cv.hab.pbi"><strong>Power BI:</strong> avanzado — dashboards interactivos, DAX, visualización corporativa</span>
+</div>
+<div class="hab-item">
+<span class="hab-nivel nivel-avanzado" style="background:var(--color-acento-2)"></span>
+<span data-i18n="cv.hab.excel"><strong>Excel:</strong> avanzado — análisis, macros, modelado de datos</span>
+</div>
+<div class="hab-item">
+<span class="hab-nivel nivel-avanzado" style="background:var(--color-acento-2)"></span>
+<span data-i18n="cv.hab.git"><strong>GitLab / GitHub:</strong> avanzado — control de versiones, colaboración, CI/CD básico</span>
+</div>
+<div class="hab-item">
+<span class="hab-nivel nivel-intermedio" style="background:var(--color-acento)"></span>
+<span data-i18n="cv.hab.atlas"><strong>Atlas.ti:</strong> intermedio — análisis cualitativo de textos y entrevistas</span>
+</div>
+<div class="hab-item">
+<span class="hab-nivel nivel-basico" style="background:var(--color-gris)"></span>
+<span data-i18n="cv.hab.python"><strong>Python:</strong> básico — pandas, análisis exploratorio</span>
+</div>
+</div>
+</div>
+</div>
 <hr>
 </section>
 <section id="intereses-de-investigación" class="level2 seccion-titulo" data-i18n="cv.sec.intereses">
@@ -439,7 +461,7 @@ Investigación social y análisis de sistemas complejos · Ciencia de datos y an
 <section id="publicaciones-destacadas" class="level2 seccion-titulo" data-i18n="cv.sec.publicaciones">
 <h2 class="seccion-titulo anchored" data-i18n="cv.sec.publicaciones" data-anchor-id="publicaciones-destacadas">📰 Publicaciones destacadas</h2>
 <p><strong>Frei, R., Cordero, R., Lang, B., Rozas, J., &amp; Rodríguez, J. P.</strong> (2024). <em>“Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile’s constitutional referendum”</em>. <strong>Journal of Language and Politics</strong>, 23(5), 723–746. <a href="https://doi.org/10.1075/jlp.24097.fre">https://doi.org/10.1075/jlp.24097.fre</a></p>
-<p><a href="./publicaciones.html" class="btn-secundario">Ver todas las publicaciones →</a></p>
+<p><a href="./publicaciones.html" class="btn-secundario" data-i18n="pub.featured.all">Ver todas las publicaciones →</a></p>
 <hr>
 </section>
 <section id="actividades-académicas" class="level2 seccion-titulo" data-i18n="cv.sec.actividades">
@@ -521,6 +543,8 @@ Investigación social y análisis de sistemas complejos · Ciencia de datos y an
    - Al activar EN: se guarda el contenido ES en data-es,
      luego se reemplaza con la traducción inglesa
    - Al volver a ES: se restaura desde data-es
+   - Patrones repetidos (.pub-ver-link, .pub-tipo-policy, etc.)
+     se traducen por lotes via selectores CSS
    - La preferencia se guarda en localStorage
 ============================================================ */
 
@@ -529,256 +553,300 @@ Investigación social y análisis de sistemas complejos · Ciencia de datos y an
 // -------------------------------------------------------
 const i18n = {
   en: {
+    // ---------------------------------------------------
     // === NAVEGACIÓN ===
-    "nav.home": "Home",
-    "nav.pubs": "Publications",
-    "nav.work": "Work, Projects & Consulting",
-    "nav.blog": "Blog",
-    "nav.cv": "CV",
+    // ---------------------------------------------------
+    "nav.home":  "Home",
+    "nav.pubs":  "Publications",
+    "nav.work":  "Work, Projects & Consulting",
+    "nav.blog":  "Blog",
+    "nav.cv":    "CV",
 
-    // === HERO (index) ===
-    "hero.saludo": "👋 Hi, I'm",
-    "hero.rol": "Sociologist · Data Analyst · Researcher",
-    "hero.desc": "Sociologist graduated with highest distinction and <strong>6 years of experience</strong> in data analysis, data science, and applied statistics across the public sector, private sector, and academic research. Specialized in processing, visualizing, and modeling large-scale data using R, Python, Power BI, advanced Excel, and AI tools. Proven experience in dashboards, automated reporting, database quality assurance, and KPI development for evidence-based decision making. Proficient in Git/GitLab for version control and collaborative work.",
-    "hero.badge3": "⚙️ Automation",
-    "hero.badge4": "🤖 Applied AI",
-    "hero.btn.cv": "View full CV →",
-    "hero.btn.work": "Work & projects",
+    // ---------------------------------------------------
+    // === HERO — inicio ===
+    // ---------------------------------------------------
+    "hero.saludo":      "👋 Hi, I'm",
+    "hero.rol":         "Sociologist · Data Analyst · Researcher",
+    "hero.desc":        "Sociologist graduated with highest distinction and <strong>6 years of experience</strong> in data analysis, data science, and applied statistics across the public sector, private sector, and academic research. Specialized in processing, visualizing, and modeling large-scale data using R, Python, Power BI, advanced Excel, and AI tools. Proven experience in dashboards, automated reporting, database quality assurance, and KPI development for evidence-based decision making.",
+    "hero.badge3":      "⚙️ Automation",
+    "hero.badge4":      "🤖 Applied AI",
+    "hero.btn.cv":      "View full CV →",
+    "hero.btn.work":    "Work & projects",
     "hero.btn.contact": "✉️ Get in touch",
 
-    // === STATS (index hero) ===
-    "stat.years": "Years of experience",
-    "stat.papers": "Policy Papers",
+    // ---------------------------------------------------
+    // === STATS — inicio ===
+    // ---------------------------------------------------
+    "stat.years":   "Years of experience",
+    "stat.papers":  "Policy Papers",
     "stat.sectors": "Sectors",
-    "stat.langs": "Languages",
+    "stat.langs":   "Languages",
 
-    // === SECCIONES (headings) ===
-    "sec.areas": "🔬 Areas of Expertise",
-    "sec.projects": "💼 Featured Projects",
-    "sec.services": "🛠️ Services I Offer",
-    "sec.lastpub": "📰 Latest Publication",
+    // ---------------------------------------------------
+    // === SECCIONES — headings generales ===
+    // ---------------------------------------------------
+    "sec.areas":       "🔬 Areas of Expertise",
+    "sec.projects":    "💼 Featured Projects",
+    "sec.services":    "🛠️ Services I Offer",
+    "sec.lastpub":     "📰 Latest Publication",
     "sec.btn.allwork": "View all work →",
     "sec.btn.consult": "✉️ Check availability",
 
-    // === ÁREAS DE ESPECIALIZACIÓN ===
+    // ---------------------------------------------------
+    // === ÁREAS DE ESPECIALIZACIÓN — inicio ===
+    // ---------------------------------------------------
     "area1.title": "Data Science & Quantitative Analysis",
-    "area1.desc": "Advanced statistical analysis, modeling, and large-scale data visualization. Complex database management, KPI development, and technical reports for decision making. R, Python, Power BI, and SQL applied across the public, private, and academic sectors.",
+    "area1.desc":  "Advanced statistical analysis, modeling, and large-scale data visualization. Complex database management, KPI development, and technical reports for decision making. R, Python, Power BI, and SQL applied across the public, private, and academic sectors.",
     "area2.title": "Data Governance in Organizations",
-    "area2.desc": "Design and implementation of institutional data ecosystems: from collection and validation to visualization and communication. Team collaboration through training, process automation, and generating transparency in information management for evidence-based decisions.",
+    "area2.desc":  "Design and implementation of institutional data ecosystems: from collection and validation to visualization and communication. Team collaboration through training, process automation, and generating transparency in information management for evidence-based decisions.",
     "area3.title": "Political Analysis & Social Research",
-    "area3.desc": "Research and analysis of institutional, electoral, and governance processes. Text analysis applied to politics, constitutional and legislative tracking, and public opinion indicators. Experience in Fondecyt projects and think tanks.",
+    "area3.desc":  "Research and analysis of institutional, electoral, and governance processes. Text analysis applied to politics, constitutional and legislative tracking, and public opinion indicators. Experience in Fondecyt projects and think tanks.",
     "area4.title": "Methodological Design & Applied Statistics",
-    "area4.desc": "Design of quantitative, qualitative, and mixed research studies. Processing of censuses and large-scale surveys (ELSOC, EBS, Census 2024). Database quality assurance, instrument construction, and methodological reporting.",
+    "area4.desc":  "Design of quantitative, qualitative, and mixed research studies. Processing of censuses and large-scale surveys (ELSOC, EBS, Census 2024). Database quality assurance, instrument construction, and methodological reporting.",
 
-    // === PROYECTOS DESTACADOS (index) ===
-    "proj1.tipo": "Public sector",
-    "proj1.title": "Educational Data SLEP Santa Rosa",
+    // ---------------------------------------------------
+    // === PROYECTOS DESTACADOS — inicio ===
+    // ---------------------------------------------------
+    "proj1.tipo":   "Public sector",
+    "proj1.title":  "Educational Data SLEP Santa Rosa",
     "proj1.period": "2025 – present",
-    "proj1.desc": "Systematization and visualization of educational indicators for regional public education using R and Power BI.",
-    "proj2.tipo": "Research",
-    "proj2.title": "Digital Humanities C22 — CEP",
+    "proj1.desc":   "Systematization and visualization of educational indicators for regional public education using R and Power BI.",
+    "proj2.tipo":   "Research",
+    "proj2.title":  "Digital Humanities C22 — CEP",
     "proj2.period": "2021 – 2024",
-    "proj2.desc": "Computational analysis of the Chilean constitutional process. Text data processing and political visualization.",
-    "proj3.tipo": "Public statistics",
-    "proj3.title": "Population & Housing Census 2024",
+    "proj2.desc":   "Computational analysis of the Chilean constitutional process. Text data processing and political visualization.",
+    "proj3.tipo":   "Public statistics",
+    "proj3.title":  "Population & Housing Census 2024",
     "proj3.period": "2024 – 2025",
-    "proj3.desc": "Senior Methodological Analyst at INE. Validation and quality assurance of census data at large scale.",
-    "proj4.tipo": "Private sector",
-    "proj4.title": "Tironi & Associates",
+    "proj3.desc":   "Senior Methodological Analyst at INE. Validation and quality assurance of census data at large scale.",
+    "proj4.tipo":   "Private sector",
+    "proj4.title":  "Tironi & Associates",
     "proj4.period": "2021 – 2023",
-    "proj4.desc": "Strategic public affairs consulting. Constitutional bulletin 2022, political analysis, and strategic communications.",
-    "proj.see.all": "View all work →",
+    "proj4.desc":   "Strategic public affairs consulting. Constitutional bulletin 2022, political analysis, and strategic communications.",
 
-    // === SERVICIOS (index) ===
+    // ---------------------------------------------------
+    // === SERVICIOS — inicio ===
+    // ---------------------------------------------------
     "srv1.title": "Data Analysis & Modeling",
-    "srv1.desc": "Data processing, cleaning, and statistical analysis with R, Python, and Power BI. KPI development and technical reports.",
+    "srv1.desc":  "Data processing, cleaning, and statistical analysis with R, Python, and Power BI. KPI development and technical reports.",
     "srv2.title": "Dashboards & Executive Reports",
-    "srv2.desc": "Design of interactive dashboards and visual reports that transform complex data into clear information for decision making.",
+    "srv2.desc":  "Design of interactive dashboards and visual reports that transform complex data into clear information for decision making.",
     "srv3.title": "Organizational Data Governance",
-    "srv3.desc": "Design of data ecosystems: process standardization, automation, team training, and institutional transparency.",
+    "srv3.desc":  "Design of data ecosystems: process standardization, automation, team training, and institutional transparency.",
     "srv4.title": "Political & Electoral Analysis",
-    "srv4.desc": "Electoral data, legislative tracking, public opinion indicators, and political trend monitoring.",
+    "srv4.desc":  "Electoral data, legislative tracking, public opinion indicators, and political trend monitoring.",
     "srv5.title": "Applied Social Research",
-    "srv5.desc": "Quantitative, qualitative, or mixed research for organizational diagnosis, program evaluation, and context analysis.",
+    "srv5.desc":  "Quantitative, qualitative, or mixed research for organizational diagnosis, program evaluation, and context analysis.",
     "srv6.title": "Data Training",
-    "srv6.desc": "Workshops on data analysis with R, Power BI, and quantitative methodology for research teams and institutions.",
+    "srv6.desc":  "Workshops on data analysis with R, Power BI, and quantitative methodology for research teams and institutions.",
 
-    // === PUBLICACIÓN DESTACADA (index) ===
+    // ---------------------------------------------------
+    // === PUBLICACIÓN DESTACADA — inicio ===
+    // ---------------------------------------------------
     "pub.featured.btn": "Read article →",
     "pub.featured.all": "View all publications →",
 
-    // === TRABAJOS PAGE ===
-    "trab.intro": "A selection of <strong>applied research</strong>, <strong>data analysis</strong>, and <strong>consulting</strong> projects throughout my professional career in the public sector, private sector, academic research, and independent consulting.",
-    "trab.sec.publico": "🏛️ Public Sector",
-    "trab.sec.privado": "🏢 Private Sector",
-    "trab.sec.academico": "🔬 Academic Research",
+    // ---------------------------------------------------
+    // === PUBLICACIONES — encabezados y etiquetas ===
+    // ---------------------------------------------------
+    "pub.sec.articulos": "📄 Academic Articles",
+    "pub.sec.policy":    "📋 Policy Papers — Centre for Public Studies (CEP)",
+    "pub.sec.notas":     "📝 Research Notes C22",
+    "pub.tipo.articulo": "Academic article",
+    // Batch: "Ver publicación →" / "Ver en C22 →" se traducen por clase en el JS
+
+    // ---------------------------------------------------
+    // === TRABAJOS — secciones y tarjetas ===
+    // ---------------------------------------------------
+    "trab.intro":            "A selection of <strong>applied research</strong>, <strong>data analysis</strong>, and <strong>consulting</strong> projects throughout my professional career in the public sector, private sector, academic research, and independent consulting.",
+    "trab.sec.publico":      "🏛️ Public Sector",
+    "trab.sec.privado":      "🏢 Private Sector",
+    "trab.sec.academico":    "🔬 Academic Research",
     "trab.sec.consultorias": "🤝 Private Consulting",
-    "trab.sec.contact": "📩 Professional Contact",
-    "trab.contact.intro": "Have a project in mind? Write to me and let's talk.",
-    "trab.contact.btn": "✉️ Contact now",
+    "trab.sec.contact":      "📩 Professional Contact",
+    "trab.contact.intro":    "Have a project in mind? Write to me and let's talk.",
+    "trab.contact.btn":      "✉️ Contact now",
+    // Subtítulo de página trabajos (batch por clase)
 
     // SLEP
-    "trab.slep.tipo": "Current · Public education",
-    "trab.slep.title": "Educational Data SLEP Santa Rosa",
+    "trab.slep.tipo":   "Current · Public education",
+    "trab.slep.title":  "Educational Data SLEP Santa Rosa",
     "trab.slep.period": "September 2025 – present",
-    "trab.slep.desc": "Systematization, visualization, and analysis of educational data for Santa Rosa SLEP. Dashboard and report design for decision making in regional educational management.",
+    "trab.slep.desc":   "Systematization, visualization, and analysis of educational data for Santa Rosa SLEP. Dashboard and report design for decision making in regional educational management.",
     // Censo
-    "trab.censo.tipo": "2024–2025 · Official statistics",
-    "trab.censo.title": "Population & Housing Census 2024 — INE",
+    "trab.censo.tipo":   "2024–2025 · Official statistics",
+    "trab.censo.title":  "Population & Housing Census 2024 — INE",
     "trab.censo.period": "May 2024 – June 2025",
-    "trab.censo.desc": "Senior Methodological Analyst at INE. Large-scale census data processing, validation, and analysis. Statistical methodology design and database quality assurance.",
+    "trab.censo.desc":   "Senior Methodological Analyst at INE. Large-scale census data processing, validation, and analysis. Statistical methodology design and database quality assurance.",
     // Tironi
-    "trab.tironi.tipo": "2021–2023 · Strategic consulting",
-    "trab.tironi.title": "Tironi & Associates",
+    "trab.tironi.tipo":   "2021–2023 · Strategic consulting",
+    "trab.tironi.title":  "Tironi & Associates",
     "trab.tironi.period": "August 2021 – March 2023",
-    "trab.tironi.desc1": "Public affairs analyst. In charge of the <strong>constitutional bulletin 2022</strong>, a weekly monitoring product systematizing political and institutional information for corporate and public clients.",
-    "trab.tironi.desc2": "Contributed to strategic consulting projects focused on data analysis for organizational diagnosis, public opinion monitoring, and communications strategy design.",
+    "trab.tironi.desc1":  "Public affairs analyst. In charge of the <strong>constitutional bulletin 2022</strong>, a weekly monitoring product systematizing political and institutional information for corporate and public clients.",
+    "trab.tironi.desc2":  "Contributed to strategic consulting projects focused on data analysis for organizational diagnosis, public opinion monitoring, and communications strategy design.",
     // Prieto
-    "trab.prieto.tipo": "Current · Quantitative research",
-    "trab.prieto.title": "Methodological Advisor — Joaquín Prieto Projects",
+    "trab.prieto.tipo":   "Current · Quantitative research",
+    "trab.prieto.title":  "Methodological Advisor — Joaquín Prieto Projects",
     "trab.prieto.period": "2025 – present",
-    "trab.prieto.desc": "Quantitative research advisory on projects <em>Insecurity amid Recovery</em> and <em>Economic Insecurity, Not Inequality?</em> by Joaquín Prieto. Analysis using the ELSOC survey (COES) and the Social Welfare Survey (EBS, INE). Statistical modeling with R and methodological design support for panel and representative survey analysis.",
-    // Fondecyt BC
-    "trab.fon1.tipo": "Fondecyt · 2024–2025",
-    "trab.fon1.title": "Governing Uncertainty — Central Bank of Chile",
+    "trab.prieto.desc":   "Quantitative research advisory on projects <em>Insecurity amid Recovery</em> and <em>Economic Insecurity, Not Inequality?</em> by Joaquín Prieto. Analysis using the ELSOC survey (COES) and the Social Welfare Survey (EBS, INE). Statistical modeling with R and methodological design support for panel and representative survey analysis.",
+    // Fondecyt
+    "trab.fon1.tipo":   "Fondecyt · 2024–2025",
+    "trab.fon1.title":  "Governing Uncertainty — Central Bank of Chile",
     "trab.fon1.period": "May 2024 – August 2025",
     // C22
-    "trab.c22.tipo": "CEP · 2021–2024",
-    "trab.c22.title": "Digital Humanities C22 — CEP",
+    "trab.c22.tipo":   "CEP · 2021–2024",
+    "trab.c22.title":  "Digital Humanities C22 — CEP",
     "trab.c22.period": "August 2021 – April 2024",
-    "trab.c22.desc": "Computational analysis of the first and second Chilean constitutional processes. Text data processing, discourse analysis, and political visualization. Editorial management of the <em>Voces del CEP</em> bulletin.",
+    "trab.c22.desc":   "Computational analysis of the first and second Chilean constitutional processes. Text data processing, discourse analysis, and political visualization. Editorial management of the <em>Voces del CEP</em> bulletin.",
     // Chiloé
-    "trab.chiloe.tipo": "Fondecyt · 2022–2023",
-    "trab.chiloe.title": "Critical Transitions in Socio-ecological Systems — Chiloé",
+    "trab.chiloe.tipo":   "Fondecyt · 2022–2023",
+    "trab.chiloe.title":  "Critical Transitions in Socio-ecological Systems — Chiloé",
     "trab.chiloe.period": "March 2022 – March 2023",
-    "trab.chiloe.desc": "Fondecyt Project N°1190295. Processing of qualitative and quantitative data on critical transitions in socio-environmental systems in Chiloé, Chile.",
+    "trab.chiloe.desc":   "Fondecyt Project N°1190295. Processing of qualitative and quantitative data on critical transitions in socio-environmental systems in Chiloé, Chile.",
     // Tesista
-    "trab.tesista.tipo": "Fondecyt · 2020–2021",
-    "trab.tesista.title": "Graduate Researcher — Fondecyt Project N°1181585",
+    "trab.tesista.tipo":   "Fondecyt · 2020–2021",
+    "trab.tesista.title":  "Graduate Researcher — Fondecyt Project N°1181585",
     "trab.tesista.period": "August 2020 – August 2021",
-    "trab.tesista.desc": "Participation as thesis researcher in a Fondecyt project, linking undergraduate thesis work with a funded research line.",
+    "trab.tesista.desc":   "Participation as thesis researcher in a Fondecyt project, linking undergraduate thesis work with a funded research line.",
     // Consultorías
-    "trab.radio.tipo": "Consulting · May 2024",
-    "trab.radio.title": "Radiography of Domestic Equity",
+    "trab.radio.tipo":   "Consulting · May 2024",
+    "trab.radio.title":  "Radiography of Domestic Equity",
     "trab.radio.period": "May 2024",
-    "trab.radio.desc": "Consulting project developed for <strong>Francisca Bravo Cox</strong>. Data analysis and systematization for a diagnostic on equity in the domestic space.",
-    "trab.libro.tipo": "Fondo del Libro · 2023",
-    "trab.libro.title": "Digital Reading Governance in Chile",
+    "trab.radio.desc":   "Consulting project developed for <strong>Francisca Bravo Cox</strong>. Data analysis and systematization for a diagnostic on equity in the domestic space.",
+    "trab.libro.tipo":   "Fondo del Libro · 2023",
+    "trab.libro.title":  "Digital Reading Governance in Chile",
     "trab.libro.period": "2023",
-    "trab.libro.desc": "Consulting project for <strong>Christian Anwandter</strong> within a Fondo del Libro-funded project. Analysis of public policies for books and digital reading in Chile.",
-    // Contacto items
+    "trab.libro.desc":   "Consulting project for <strong>Christian Anwandter</strong> within a Fondo del Libro-funded project. Analysis of public policies for books and digital reading in Chile.",
+    // Contacto
     "contacto.email.lbl": "📧 Email",
-    "contacto.tel.lbl": "📱 Phone",
-    "contacto.li.lbl": "🔗 LinkedIn",
+    "contacto.tel.lbl":   "📱 Phone",
+    "contacto.li.lbl":    "🔗 LinkedIn",
 
-    // === CV (about) — encabezado ===
-    "cv.rol": "Sociologist · Data Analyst · Researcher",
-    "cv.lang.es": "🇨🇱 Spanish — Native",
-    "cv.lang.en": "🇬🇧 English — B2",
-    "cv.lang.it": "🇮🇹 Italian — C1",
+    // ---------------------------------------------------
+    // === CV — encabezado ===
+    // ---------------------------------------------------
+    "cv.rol":      "Sociologist · Data Analyst · Researcher",
+    "cv.lang.es":  "🇨🇱 Spanish — Native",
+    "cv.lang.en":  "🇬🇧 English — B2",
+    "cv.lang.it":  "🇮🇹 Italian — C1",
     "cv.download": "📄 Download CV (PDF)",
 
+    // ---------------------------------------------------
     // === CV — secciones ===
-    "cv.sec.sobre": "👤 About me",
-    "cv.sec.formacion": "🎓 Academic background",
-    "cv.sec.trayectoria": "💼 Work experience",
-    "cv.sec.universidad": "🎓 University experience",
-    "cv.sec.habilidades": "🛠️ Technical skills",
-    "cv.sec.intereses": "🎯 Research interests",
-    "cv.sec.publicaciones": "📰 Featured publications",
-    "cv.sec.actividades": "🎤 Academic activities",
-    "cv.sec.referencias": "📞 References",
-    "cv.sec.contacto": "📧 Contact",
+    // ---------------------------------------------------
+    "cv.sec.sobre":        "👤 About me",
+    "cv.sec.formacion":    "🎓 Academic background",
+    "cv.sec.trayectoria":  "💼 Work experience",
+    "cv.sec.universidad":  "🎓 University experience",
+    "cv.sec.habilidades":  "🛠️ Technical skills",
+    "cv.sec.intereses":    "🎯 Research interests",
+    "cv.sec.publicaciones":"📰 Featured publications",
+    "cv.sec.actividades":  "🎤 Academic activities",
+    "cv.sec.referencias":  "📞 References",
+    "cv.sec.contacto":     "📧 Contact",
 
-    // Sobre mí
+    // ---------------------------------------------------
+    // === CV — Sobre mí ===
+    // ---------------------------------------------------
     "cv.sobre.1": "I am a sociologist graduated with <strong>highest distinction</strong> from Universidad Diego Portales (2017–2021), specializing in data analysis, social research, and data science. My work sits at the intersection of quantitative methodology, complex systems analysis, and digital humanities.",
     "cv.sobre.2": "I currently work as a <strong>Data Analyst</strong> at the Santa Rosa Local Public Education Service (SLEP), where I lead the systematization, visualization, and analysis of educational data for decision making.",
     "cv.sobre.3": "My experience combines rigorous academic research, large-scale data processing, and innovative methodological design at institutions such as the <strong>National Statistics Institute (INE)</strong>, the <strong>Centre for Public Studies (CEP)</strong>, and in <strong>Fondecyt</strong> projects focused on economic governance and socio-environmental transitions.",
 
-    // Formación
-    "cv.form.titulo": "Sociologist — graduated with highest distinction · 2017–2021",
-    "cv.form.inst": "Universidad Diego Portales · Santiago, Chile",
-    "cv.form.nota": "First in graduating class ranking.",
-    "cv.form.dip": "Diploma of Honour in Mobility and Transport · 2019–2020",
-    "cv.form.dip.inst": "Universidad Diego Portales · Santiago, Chile",
-    "cv.form.ine.titulo": "Advanced R Course",
-    "cv.form.ine.inst": "National Statistics Institute (INE) · Chile",
-    "cv.form.ine.desc": "Training course delivered by INE in the context of the 2024 Population & Housing Census. Data processing, visualization, and statistical modeling with R.",
+    // ---------------------------------------------------
+    // === CV — Formación ===
+    // ---------------------------------------------------
+    "cv.form.titulo":    "Sociologist — graduated with highest distinction · 2017–2021",
+    "cv.form.inst":      "Universidad Diego Portales · Santiago, Chile",
+    "cv.form.nota":      "First in graduating class ranking.",
+    "cv.form.dip":       "Diploma of Honour in Mobility and Transport · 2019–2020",
+    "cv.form.dip.inst":  "Universidad Diego Portales · Santiago, Chile",
+    "cv.form.ine.titulo":"Advanced R Course",
+    "cv.form.ine.inst":  "National Statistics Institute (INE) · Chile",
+    "cv.form.ine.desc":  "Training course delivered by INE in the context of the 2024 Population & Housing Census. Data processing, visualization, and statistical modeling with R.",
 
-    // Trabajos CV
+    // ---------------------------------------------------
+    // === CV — Trayectoria laboral ===
+    // ---------------------------------------------------
     "cv.slep.puesto": "Data Analyst",
-    "cv.slep.inst": "Santa Rosa Local Public Education Service (SLEP) · September 2025 – present",
-    "cv.slep.desc": "Responsible for the systematization, visualization, and analysis of educational data. Dashboard and report design for regional educational management.",
-    "cv.ine.puesto": "Senior Methodological Analyst",
-    "cv.ine.inst": "National Statistics Institute (INE) · May 2024 – June 2025",
-    "cv.ine.desc": "Responsible for processing, validation, and analysis of data for the <strong>2024 Population and Housing Census</strong>. Statistical methodology design, large-scale database quality assurance, and technical reporting for decision making.",
+    "cv.slep.inst":   "Santa Rosa Local Public Education Service (SLEP) · September 2025 – present",
+    "cv.slep.desc":   "Responsible for the systematization, visualization, and analysis of educational data. Dashboard and report design for regional educational management.",
+    "cv.ine.puesto":  "Senior Methodological Analyst",
+    "cv.ine.inst":    "National Statistics Institute (INE) · May 2024 – June 2025",
+    "cv.ine.desc":    "Responsible for processing, validation, and analysis of data for the <strong>2024 Population and Housing Census</strong>. Statistical methodology design, large-scale database quality assurance, and technical reporting for decision making.",
     "cv.fon2.puesto": "Researcher — Fondecyt Project N°1231356",
-    "cv.fon2.inst": "Universidad Diego Portales / Fondecyt · May 2024 – August 2025",
+    "cv.fon2.inst":   "Universidad Diego Portales / Fondecyt · May 2024 – August 2025",
     "cv.cep1.puesto": "Research Assistant — Voces del CEP",
-    "cv.cep1.inst": "Centre for Public Studies (CEP) · April 2023 – April 2024",
-    "cv.cep1.desc": "Responsible for editorial management of the <a href='https://www.cepchile.cl/categoria-de-investigacion/voces-del-cep/' target='_blank'><em>Voces del CEP</em></a> bulletin, including coordination, organization, and publication of analysis articles on contemporary public issues. Full publication workflow management. Tracking of the second Chilean constitutional process (2023). Statistical systematization of electoral data and public opinion.",
-    "cv.c22.puesto": "Research Assistant — C22 Project",
-    "cv.c22.inst": "Centre for Public Studies (CEP) · August 2021 – April 2024",
-    "cv.c22.desc": "Socio-constitutional analysis C22. Digital humanities specialization in Chile's first constitutional process. Discourse analysis, text data processing, and political information visualization.",
+    "cv.cep1.inst":   "Centre for Public Studies (CEP) · April 2023 – April 2024",
+    "cv.cep1.desc":   "Responsible for editorial management of the <a href='https://www.cepchile.cl/categoria-de-investigacion/voces-del-cep/' target='_blank'><em>Voces del CEP</em></a> bulletin, including coordination, organization, and publication of analysis articles on contemporary public issues. Full publication workflow management. Tracking of the second Chilean constitutional process (2023). Statistical systematization of electoral data and public opinion.",
+    "cv.c22.puesto":  "Research Assistant — C22 Project",
+    "cv.c22.inst":    "Centre for Public Studies (CEP) · August 2021 – April 2024",
+    "cv.c22.desc":    "Socio-constitutional analysis C22. Digital humanities specialization in Chile's first constitutional process. Discourse analysis, text data processing, and political information visualization.",
     "cv.prieto.puesto": "Methodological Advisor — Joaquín Prieto Projects",
-    "cv.prieto.inst": "Independent academic research · 2025 – present",
-    "cv.prieto.desc": "Quantitative research advisory on <em>Insecurity amid Recovery</em> and <em>Economic Insecurity, Not Inequality?</em> Analysis using ELSOC (COES) and EBS (INE). R modeling and methodological design support for panel data analysis.",
+    "cv.prieto.inst":   "Independent academic research · 2025 – present",
+    "cv.prieto.desc":   "Quantitative research advisory on <em>Insecurity amid Recovery</em> and <em>Economic Insecurity, Not Inequality?</em> Analysis using ELSOC (COES) and EBS (INE). R modeling and methodological design support for panel data analysis.",
     "cv.tironi.puesto": "Public Affairs Analyst",
-    "cv.tironi.inst": "Tironi & Associates · August 2021 – March 2023",
-    "cv.tironi.desc1": "In charge of the <strong>constitutional bulletin 2022</strong>, a weekly monitoring product for corporate and public clients. Political and institutional information collection, cleaning, and analysis.",
-    "cv.tironi.desc2": "Contribution to <strong>strategic consulting</strong> projects: data analysis for organizational diagnosis, public opinion monitoring, and communications strategy. Reports for public and private sector clients integrating quantitative and qualitative data.",
+    "cv.tironi.inst":   "Tironi & Associates · August 2021 – March 2023",
+    "cv.tironi.desc1":  "In charge of the <strong>constitutional bulletin 2022</strong>, a weekly monitoring product for corporate and public clients. Political and institutional information collection, cleaning, and analysis.",
+    "cv.tironi.desc2":  "Contribution to <strong>strategic consulting</strong> projects: data analysis for organizational diagnosis, public opinion monitoring, and communications strategy. Reports for public and private sector clients integrating quantitative and qualitative data.",
     "cv.fon3.puesto": "Research Assistant — Fondecyt N°1190295",
-    "cv.fon3.inst": "Universidad Diego Portales · March 2022 – March 2023",
-    "cv.fon3.desc": "<em>'Governing critical transitions in socio-ecological systems: the case of Chiloé, Chile'</em>. Processing of qualitative and quantitative data for research on critical transitions in socio-environmental systems.",
+    "cv.fon3.inst":   "Universidad Diego Portales · March 2022 – March 2023",
+    "cv.fon3.desc":   "<em>'Governing critical transitions in socio-ecological systems: the case of Chiloé, Chile'</em>. Processing of qualitative and quantitative data for research on critical transitions in socio-environmental systems.",
 
-    // Universidad
-    "cv.uni.intro": "During my studies at Universidad Diego Portales I actively participated as a <strong>teaching assistant</strong> and <strong>thesis researcher</strong>, strengthening my training in methodology, social theory, and applied research.",
-    "cv.uni.1.fecha": "August 2020 – August 2021",
-    "cv.uni.1.titulo": "Graduate Researcher — Fondecyt Project N°1181585",
-    "cv.uni.1.lugar": "Universidad Diego Portales",
-    "cv.uni.1.desc": "Participation in a Fondecyt sociological research project, linking undergraduate thesis work with a funded research line.",
-    "cv.uni.2.fecha": "March – July 2021",
-    "cv.uni.2.titulo": "Teaching Assistant — Quantitative Techniques",
-    "cv.uni.2.lugar": "Macarena Orchard's course · UDP",
-    "cv.uni.2.desc": "Teaching support in quantitative methodology: descriptive and inferential statistics, and data analysis with specialized software.",
-    "cv.uni.3.fecha": "August – December 2020",
-    "cv.uni.3.titulo": "Teaching Assistant — Research Logic",
-    "cv.uni.3.lugar": "Sara Correa's course · UDP",
-    "cv.uni.3.desc": "Teaching support in research design, formulation of questions, hypotheses, and construction of theoretical frameworks.",
-    "cv.uni.4.fecha": "March – July 2020",
-    "cv.uni.4.titulo": "Teaching Assistant — Sociological Theory IV",
-    "cv.uni.4.lugar": "Modesto Gayo's course · UDP",
-    "cv.uni.4.desc": "Teaching support in contemporary sociological theory: author discussions, theoretical analysis exercises, and student feedback.",
-    "cv.uni.5.fecha": "March – July 2020",
-    "cv.uni.5.titulo": "Teaching Assistant — Qualitative Methods",
-    "cv.uni.5.lugar": "Tomás Ariztía and Camila Peralta's courses · UDP",
-    "cv.uni.5.desc": "Teaching support in qualitative design and analysis: interviews, observation, ethnography, and discourse analysis.",
-    "cv.uni.6.fecha": "March – July 2020",
-    "cv.uni.6.titulo": "Teaching Assistant — Social Problems",
-    "cv.uni.6.lugar": "Jorge Atria's course · UDP",
-    "cv.uni.6.desc": "Support in sociological analysis of contemporary social problems: inequality, stratification, and public policy.",
+    // ---------------------------------------------------
+    // === CV — Universidad (timeline) ===
+    // ---------------------------------------------------
+    "cv.uni.intro":       "During my studies at Universidad Diego Portales I actively participated as a <strong>teaching assistant</strong> and <strong>thesis researcher</strong>, strengthening my training in methodology, social theory, and applied research.",
+    "cv.uni.1.fecha":     "August 2020 – August 2021",
+    "cv.uni.1.titulo":    "Graduate Researcher — Fondecyt Project N°1181585",
+    "cv.uni.1.lugar":     "Universidad Diego Portales",
+    "cv.uni.1.desc":      "Participation in a Fondecyt sociological research project, linking undergraduate thesis work with a funded research line.",
+    "cv.uni.2.fecha":     "March – July 2021",
+    "cv.uni.2.titulo":    "Teaching Assistant — Quantitative Techniques",
+    "cv.uni.2.lugar":     "Macarena Orchard's course · UDP",
+    "cv.uni.2.desc":      "Teaching support in quantitative methodology: descriptive and inferential statistics, and data analysis with specialized software.",
+    "cv.uni.3.fecha":     "August – December 2020",
+    "cv.uni.3.titulo":    "Teaching Assistant — Research Logic",
+    "cv.uni.3.lugar":     "Sara Correa's course · UDP",
+    "cv.uni.3.desc":      "Teaching support in research design, formulation of questions, hypotheses, and construction of theoretical frameworks.",
+    "cv.uni.4.fecha":     "March – July 2020",
+    "cv.uni.4.titulo":    "Teaching Assistant — Sociological Theory IV",
+    "cv.uni.4.lugar":     "Modesto Gayo's course · UDP",
+    "cv.uni.4.desc":      "Teaching support in contemporary sociological theory: author discussions, theoretical analysis exercises, and student feedback.",
+    "cv.uni.5.fecha":     "March – July 2020",
+    "cv.uni.5.titulo":    "Teaching Assistant — Qualitative Methods",
+    "cv.uni.5.lugar":     "Tomás Ariztía and Camila Peralta's courses · UDP",
+    "cv.uni.5.desc":      "Teaching support in qualitative design and analysis: interviews, observation, ethnography, and discourse analysis.",
+    "cv.uni.6.fecha":     "March – July 2020",
+    "cv.uni.6.titulo":    "Teaching Assistant — Social Problems",
+    "cv.uni.6.lugar":     "Jorge Atria's course · UDP",
+    "cv.uni.6.desc":      "Support in sociological analysis of contemporary social problems: inequality, stratification, and public policy.",
 
-    // Intereses
+    // ---------------------------------------------------
+    // === CV — Habilidades técnicas ===
+    // ---------------------------------------------------
+    "cv.hab.r":      "<strong>RStudio / R:</strong> advanced — tidyverse, ggplot2, Quarto, statistical analysis, modeling",
+    "cv.hab.pbi":    "<strong>Power BI:</strong> advanced — interactive dashboards, DAX, corporate visualization",
+    "cv.hab.excel":  "<strong>Excel:</strong> advanced — analysis, macros, data modeling",
+    "cv.hab.git":    "<strong>GitLab / GitHub:</strong> advanced — version control, collaboration, basic CI/CD",
+    "cv.hab.atlas":  "<strong>Atlas.ti:</strong> intermediate — qualitative analysis of texts and interviews",
+    "cv.hab.python": "<strong>Python:</strong> basic — pandas, exploratory analysis",
+
+    // ---------------------------------------------------
+    // === CV — Intereses, actividades, referencias ===
+    // ---------------------------------------------------
     "cv.intereses": "Social research and complex systems analysis · Data science and quantitative analysis · Innovative methodologies in social research · Digital humanities · Governance and public policy · Discourse analysis and text data",
 
-    // Actividades
     "cv.act1": "<strong>June 2024</strong> — Seminar <em>'Artificial intelligence and social sciences: tools, expectations, and limitations'</em> for Sociology students, Universidad Diego Portales.",
     "cv.act2": "<strong>April 2022</strong> — Paper at the Chilean Sociology Congress PRE-ALAS (Concepción): <em>'Constitutional aesthetics: a look from the aesthetic regimes of the Chilean social uprising of 2019'</em>.",
     "cv.act3": "<strong>March 2022</strong> — Seminar <em>'Visual methodologies: a sociological approach to working with images'</em>, Universidad Diego Portales.",
 
-    // Referencias
     "cv.ref1.txt": "<strong>Verónica Canales</strong><br><em>Head of methodology and processing — 2024 Population & Housing Census · INE.</em><br>Master in Social Research (LSE).",
     "cv.ref2.txt": "<strong>Aldo Mascareño</strong><br><em>Senior Researcher at CEP · Editor-in-Chief of Estudios Públicos · Principal Investigator C22.</em>",
     "cv.ref3.txt": "<strong>Francisco Espinoza</strong><br><em>Consultant · Tironi & Associates.</em><br>Master in Political Science, Universidad de Chile.",
 
-    // === PUBLICACIONES PAGE ===
-    "pub.sec.articulos": "📄 Academic Articles",
-    "pub.sec.policy": "📋 Policy Papers & Puntos de Referencia (CEP)",
-    "pub.sec.notas": "📝 Research Notes C22",
-    "pub.link.cep": "View at CEP",
-    "pub.link.c22": "View at C22",
-
+    // ---------------------------------------------------
     // === BLOG ===
+    // ---------------------------------------------------
     "blog.nopost": "📝 <strong>Coming soon</strong> — No posts published yet. I'll be sharing R analysis, methodology reflections, visualizations, and research notes. Check back soon!"
   }
 };
@@ -787,7 +855,8 @@ const i18n = {
 // 🔄 FUNCIÓN PRINCIPAL: aplicar traducciones
 // -------------------------------------------------------
 function applyTranslations(lang) {
-  // 1. Elementos con data-i18n="clave"
+
+  // ── 1. Elementos con data-i18n="clave" ──────────────
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
     var key = el.getAttribute('data-i18n');
     if (lang === 'en' && i18n.en[key] !== undefined) {
@@ -799,13 +868,12 @@ function applyTranslations(lang) {
     }
   });
 
-  // 2. Navbar links (generados por Quarto YAML, no tienen data-i18n)
+  // ── 2. Navbar links (generados por Quarto YAML) ──────
   var navMap = {
     'Inicio': 'Home',
     'Publicaciones': 'Publications',
     'Trabajos, proyectos y consultoría': 'Work, Projects & Consulting',
-    'Blog': 'Blog',
-    'CV': 'CV'
+    'Blog': 'Blog', 'CV': 'CV'
   };
   document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
     var txt = link.textContent.trim();
@@ -819,9 +887,72 @@ function applyTranslations(lang) {
     }
   });
 
-  // 3. Blog callout (si existe)
+  // ── 3. Título del TOC lateral (#toc-title) ───────────
+  var tocTitle = document.getElementById('toc-title');
+  if (tocTitle) {
+    var tocMap = { 'Índice': 'Index', 'Secciones': 'Sections', 'Categorías': 'Categories' };
+    if (lang === 'en') {
+      if (!tocTitle.getAttribute('data-es')) tocTitle.setAttribute('data-es', tocTitle.textContent.trim());
+      var esVal = tocTitle.getAttribute('data-es');
+      if (tocMap[esVal]) tocTitle.textContent = tocMap[esVal];
+    } else {
+      var orig = tocTitle.getAttribute('data-es');
+      if (orig) tocTitle.textContent = orig;
+    }
+  }
+
+  // ── 4. Subtítulo de página (.subtitle.lead) ──────────
+  var subtitle = document.querySelector('p.subtitle.lead');
+  if (subtitle) {
+    var subtitleMap = {
+      'Experiencia profesional en sector público, privado, investigación académica y consultoría':
+        'Professional experience in the public sector, private sector, academic research, and independent consulting.'
+    };
+    if (lang === 'en') {
+      if (!subtitle.getAttribute('data-es')) subtitle.setAttribute('data-es', subtitle.textContent.trim());
+      var esVal = subtitle.getAttribute('data-es');
+      if (subtitleMap[esVal]) subtitle.textContent = subtitleMap[esVal];
+    } else {
+      var orig = subtitle.getAttribute('data-es');
+      if (orig) subtitle.textContent = orig;
+    }
+  }
+
+  // ── 5. Links "Ver publicación →" / "Ver en C22 →" ───
+  document.querySelectorAll('.pub-ver-link').forEach(function(el) {
+    var txt = el.textContent.trim();
+    var enMap = {
+      'Ver publicación →': 'View publication →',
+      'Ver en C22 →':      'View at C22 →',
+      'Ver en CEP →':      'View at CEP →'
+    };
+    if (lang === 'en') {
+      if (!el.getAttribute('data-es')) el.setAttribute('data-es', el.innerHTML.trim());
+      var esVal = el.getAttribute('data-es');
+      if (enMap[esVal]) el.innerHTML = enMap[esVal];
+    } else {
+      var orig = el.getAttribute('data-es');
+      if (orig) el.innerHTML = orig;
+    }
+  });
+
+  // ── 6. Etiquetas tipo-policy (Puntos de Referencia) ──
+  // Formato: "Puntos de Referencia N°NNN · CEP · AAAA"
+  document.querySelectorAll('.pub-tipo-policy').forEach(function(el) {
+    if (lang === 'en') {
+      if (!el.getAttribute('data-es')) el.setAttribute('data-es', el.textContent.trim());
+      var esVal = el.getAttribute('data-es');
+      // "Puntos de Referencia N°648 · CEP · 2023" → "Reference Points N°648 · CEP · 2023"
+      el.textContent = esVal.replace('Puntos de Referencia', 'Reference Points');
+    } else {
+      var orig = el.getAttribute('data-es');
+      if (orig) el.textContent = orig;
+    }
+  });
+
+  // ── 7. Blog callout (si existe) ──────────────────────
   var blogCallout = document.querySelector('.callout-note .callout-body p');
-  if (blogCallout && i18n.en['blog.nopost']) {
+  if (blogCallout) {
     if (lang === 'en') {
       if (!blogCallout.getAttribute('data-es')) blogCallout.setAttribute('data-es', blogCallout.innerHTML);
       blogCallout.innerHTML = i18n.en['blog.nopost'];
@@ -831,8 +962,8 @@ function applyTranslations(lang) {
     }
   }
 
-  // 4. Footer text
-  var footer = document.querySelector('.nav-footer-center p, .nav-footer p');
+  // ── 8. Footer ────────────────────────────────────────
+  var footer = document.querySelector('.nav-footer-left p');
   if (footer) {
     if (lang === 'en') {
       if (!footer.getAttribute('data-es')) footer.setAttribute('data-es', footer.innerHTML);
@@ -845,13 +976,13 @@ function applyTranslations(lang) {
     }
   }
 
-  // 5. Actualizar botones del toggle
+  // ── 9. Botones del toggle ─────────────────────────────
   var btnEs = document.getElementById('lang-btn-es');
   var btnEn = document.getElementById('lang-btn-en');
   if (btnEs) btnEs.classList.toggle('active', lang === 'es');
   if (btnEn) btnEn.classList.toggle('active', lang === 'en');
 
-  // 6. Guardar preferencia
+  // ── 10. Guardar preferencia ───────────────────────────
   try { localStorage.setItem('bl-lang', lang); } catch(e) {}
   window._blLang = lang;
 }
@@ -860,7 +991,6 @@ function applyTranslations(lang) {
 // 🔘 INYECTAR BOTÓN EN NAVBAR
 // -------------------------------------------------------
 function injectLangToggle() {
-  // Quarto pone los íconos de la derecha en .navbar-nav.ms-auto o similar
   var navRight = document.querySelector('.navbar-nav.ms-auto');
   if (!navRight) navRight = document.querySelector('.navbar-nav:last-of-type');
   if (!navRight) return;
@@ -869,10 +999,10 @@ function injectLangToggle() {
   li.className = 'nav-item lang-toggle-item';
   li.innerHTML = [
     '<div class="lang-toggle">',
-    '  <button id="lang-btn-es" class="lang-btn active" ',
+    '  <button id="lang-btn-es" class="lang-btn active"',
     '    onclick="applyTranslations(\'es\')">ES</button>',
     '  <span class="lang-sep">|</span>',
-    '  <button id="lang-btn-en" class="lang-btn" ',
+    '  <button id="lang-btn-en" class="lang-btn"',
     '    onclick="applyTranslations(\'en\')">EN</button>',
     '</div>'
   ].join('');
@@ -884,12 +1014,9 @@ function injectLangToggle() {
 // -------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   injectLangToggle();
-  // Restaurar preferencia guardada
   try {
     var saved = localStorage.getItem('bl-lang');
-    if (saved && saved === 'en') {
-      setTimeout(function() { applyTranslations('en'); }, 50);
-    }
+    if (saved === 'en') setTimeout(function() { applyTranslations('en'); }, 60);
   } catch(e) {}
 });
 </script>

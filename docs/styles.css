@@ -864,37 +864,18 @@ h3.trabajo-titulo {
 .text-center { text-align: center; }
 
 /* -------------------------------------------------------
-   🪪 CV HEADER — encabezado hero del CV (diseño 2 columnas)
+   🪪 CV HEADER — encabezado minimalista claro (2 columnas)
 ------------------------------------------------------- */
 .cv-header {
-  background: linear-gradient(140deg, #1e3a5f 0%, #245c8a 55%, #2d7ab5 100%);
-  color: white;
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-top: 4px solid var(--color-acento);
   padding: 2.5rem 2.5rem 2rem 2.5rem;
   border-radius: var(--radio-tarjeta);
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-}
-
-/* Glow decorativo fondo */
-.cv-header::before {
-  content: "";
-  position: absolute;
-  bottom: -80px; right: -80px;
-  width: 320px; height: 320px;
-  background: radial-gradient(circle, rgba(26,188,156,0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-/* Línea teal superior */
-.cv-header::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-acento-2), var(--color-acento));
-  border-radius: var(--radio-tarjeta) var(--radio-tarjeta) 0 0;
+  box-shadow: var(--sombra-suave);
 }
 
 /* Chip "CURRICULUM VITAE" encima del nombre */
@@ -902,9 +883,8 @@ h3.trabajo-titulo {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(26,188,156,0.22);
-  border: 1px solid rgba(26,188,156,0.45);
-  color: #7ee8d0;
+  background: var(--color-acento-2);
+  color: white;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -920,12 +900,10 @@ h3.trabajo-titulo {
   grid-template-columns: 1.3fr 1fr;
   gap: 2.5rem;
   align-items: start;
-  position: relative;
-  z-index: 1;
 }
 
 .cv-header h1 {
-  color: white !important;
+  color: var(--color-primario) !important;
   font-size: 2.1rem;
   margin: 0 0 0.25rem 0;
   border: none;
@@ -934,7 +912,7 @@ h3.trabajo-titulo {
 
 .cv-header-subtitulo {
   font-size: 1rem;
-  color: #b8d4e8;
+  color: var(--color-gris);
   font-weight: 500;
   margin: 0 0 1.2rem 0;
   letter-spacing: 0.01em;
@@ -942,7 +920,7 @@ h3.trabajo-titulo {
 
 .cv-header-divider {
   border: none;
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid var(--color-borde);
   margin: 1rem 0;
 }
 
@@ -954,9 +932,9 @@ h3.trabajo-titulo {
 }
 
 .idioma-badge {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
-  color: white;
+  background: #eaf4fb;
+  border: 1px solid #c3dff0;
+  color: var(--color-acento);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.82rem;
@@ -973,8 +951,8 @@ h3.trabajo-titulo {
 }
 
 .cv-contacto-item {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.16);
+  background: #f8f9fa;
+  border: 1px solid var(--color-borde);
   border-radius: 8px;
   padding: 0.6rem 1rem;
   display: flex;
@@ -985,24 +963,24 @@ h3.trabajo-titulo {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: rgba(255,255,255,0.55);
+  color: var(--color-gris);
   margin-bottom: 0.2rem;
 }
 
 .cv-contacto-item a,
 .cv-contacto-item span {
-  color: #7ee8d0;
+  color: var(--color-acento);
   text-decoration: none;
   font-size: 0.87rem;
   font-weight: 500;
 }
 
-.cv-contacto-item a:hover { color: white; }
+.cv-contacto-item a:hover { color: var(--color-primario); }
 
 .cv-download-btn {
   display: inline-block;
-  background: rgba(255,255,255,0.12);
-  border: 1.5px solid rgba(255,255,255,0.35);
+  background: var(--color-acento);
+  border: none;
   color: white !important;
   padding: 0.5rem 1.3rem;
   border-radius: 8px;
@@ -1013,9 +991,9 @@ h3.trabajo-titulo {
 }
 
 .cv-download-btn:hover {
-  background: rgba(255,255,255,0.22);
-  border-color: var(--color-acento-2);
+  background: var(--color-primario);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26,46,74,0.2);
 }
 
 /* Responsive */
@@ -1098,6 +1076,43 @@ h3.trabajo-titulo {
   font-size: 0.88rem;
   line-height: 1.6;
   color: #4a5568;
+}
+
+/* -------------------------------------------------------
+   🛠️ HABILIDADES TÉCNICAS — lista con indicador de nivel
+------------------------------------------------------- */
+.habilidades-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.hab-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  transition: var(--transicion);
+}
+
+.hab-item:hover {
+  border-color: var(--color-acento);
+  box-shadow: var(--sombra-suave);
+}
+
+.hab-nivel {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.45rem;
 }
 
 /* -------------------------------------------------------
