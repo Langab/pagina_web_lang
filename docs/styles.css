@@ -45,6 +45,54 @@ h2 {
 }
 
 /* -------------------------------------------------------
+   🌐 LANG TOGGLE — botón ES | EN en la navbar
+------------------------------------------------------- */
+.lang-toggle-item {
+  display: flex;
+  align-items: center;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  margin-left: 0.4rem;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1.4;
+}
+
+.lang-btn:hover {
+  color: white;
+  background: rgba(255,255,255,0.15);
+}
+
+.lang-btn.active {
+  background: var(--color-acento-2);
+  color: white;
+}
+
+.lang-sep {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+/* -------------------------------------------------------
    🧭 NAVBAR
 ------------------------------------------------------- */
 .navbar {
@@ -815,6 +863,146 @@ h3.trabajo-titulo {
 
 /* Centrado de texto auxiliar */
 .text-center { text-align: center; }
+
+/* -------------------------------------------------------
+   🪪 CV HEADER — encabezado hero del CV
+------------------------------------------------------- */
+.cv-header {
+  background: linear-gradient(140deg, #1e3a5f 0%, #245c8a 55%, #2d7ab5 100%);
+  color: white;
+  padding: 2.8rem 2.5rem 2rem 2.5rem;
+  border-radius: var(--radio-tarjeta);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-header::before {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(26,188,156,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cv-header h1 {
+  color: white !important;
+  font-size: 2rem;
+  margin: 0 0 0.2rem 0;
+  border: none;
+  line-height: 1.1;
+}
+
+.cv-header-subtitulo {
+  font-size: 1.05rem;
+  color: #b8d4e8;
+  font-weight: 500;
+  margin: 0 0 1.4rem 0;
+}
+
+.cv-idiomas {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.idioma-badge {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.83rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cv-contacto-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.cv-contacto-item {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+}
+
+.cv-contacto-item strong {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.3rem;
+}
+
+.cv-contacto-item a,
+.cv-contacto-item span {
+  color: #7ee8d0;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.cv-contacto-item a:hover { color: white; }
+
+.cv-download-btn {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.4);
+  color: white !important;
+  padding: 0.55rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: var(--transicion);
+}
+
+.cv-download-btn:hover {
+  background: rgba(255,255,255,0.25);
+  border-color: var(--color-acento-2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cv-header { padding: 2rem 1.2rem 1.5rem; }
+  .cv-header h1 { font-size: 1.6rem; }
+  .cv-contacto-header { grid-template-columns: 1fr; }
+  .cv-idiomas { flex-direction: column; }
+}
+
+/* -------------------------------------------------------
+   🖼️ LOGO EN TARJETAS — logo de org dentro de proyecto-card
+------------------------------------------------------- */
+.card-con-logo {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.card-logo-lateral {
+  max-width: 80px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--color-borde);
+  padding: 0.4rem;
+  display: block;
+  margin-top: 0.3rem;
+}
 
 /* -------------------------------------------------------
    🪪 SOBRE MÍ — tarjeta de perfil
