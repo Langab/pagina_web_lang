@@ -209,6 +209,50 @@ main#quarto-document-content > #title-block-header {
               0 0 0 3px var(--color-acento-2);
 }
 
+/* -------------------------------------------------------
+   📊 STATS DENTRO DEL HERO (franja oscura inferior)
+------------------------------------------------------- */
+.hero-stats {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 1.8rem 0 0.5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.stats-hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  text-align: center;
+}
+
+.stat-hero-item {
+  padding: 0.8rem 1rem;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+
+.stat-hero-item:last-child { border-right: none; }
+
+.stat-hero-numero {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-acento-2);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-hero-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.65);
+  margin-top: 0.3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* Legacy hero-banner (mantenido por compatibilidad) */
 .hero-banner {
   background: linear-gradient(135deg, var(--color-primario) 0%, #2c4a6e 100%);
@@ -598,6 +642,36 @@ code { font-size: 0.875em; }
 }
 
 /* -------------------------------------------------------
+   📏 TAMAÑO DE TEXTO EN TARJETAS — estandarizado
+   (evita que el line-height 1.8 del body agrande todo)
+------------------------------------------------------- */
+.tarjeta p,
+.tarjeta h3,
+.proyecto-card p,
+.proyecto-card h3,
+.servicio-card p,
+.servicio-card h3,
+.trabajo-bloque p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.tarjeta h3,
+.proyecto-card h3,
+.servicio-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Tamaño base uniforme para todo el contenido de páginas internas */
+.quarto-document-content p:not(.hero-descripcion):not(.hero-rol) {
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+/* -------------------------------------------------------
    🏷️ TÍTULOS DE SECCIÓN — separadores visuales
 ------------------------------------------------------- */
 .seccion-titulo {
@@ -763,6 +837,10 @@ h3.trabajo-titulo {
   .hero-badges { justify-content: center; }
   .hero-botones { justify-content: center; }
   .hero-texto h1 { font-size: 2.2rem; }
+  .stats-hero { grid-template-columns: repeat(2, 1fr); }
+  .stat-hero-item:nth-child(2) { border-right: none; }
+  .stat-hero-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.12); }
+  .stat-hero-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.12); }
 }
 
 @media (max-width: 768px) {
@@ -778,6 +856,7 @@ h3.trabajo-titulo {
     width: 200px !important;
     height: 200px !important;
   }
+  .stats-hero { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-badges { justify-content: center; }
   .seccion-titulo { font-size: 1.3rem !important; }

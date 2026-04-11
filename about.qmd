@@ -100,7 +100,7 @@ Responsable del procesamiento, validación y análisis de datos en el **Censo de
 ::: {.g-col-12 .g-col-md-9}
 **Centro de Estudios Públicos (CEP)** · Abril 2023 – Abril 2024
 
-Desarrollo del boletín *Voces del CEP*, publicando sobre problemas públicos contemporáneos, con énfasis en el seguimiento del segundo proceso constitucional chileno (2023). Sistematización estadística de información electoral y opinión pública.
+Responsable de la gestión editorial del boletín [*Voces del CEP*](https://www.cepchile.cl/categoria-de-investigacion/voces-del-cep/), incluyendo la **coordinación, organización y publicación de artículos** de análisis sobre problemas públicos contemporáneos. Me encargué del flujo completo de publicación: coordinación con autores, edición, estructuración de contenidos y gestión de la plataforma. Seguimiento del segundo proceso constitucional chileno (2023). Sistematización estadística de información electoral y opinión pública.
 :::
 ::: {.g-col-12 .g-col-md-3}
 ![](img/cep.png){.logo-trabajo fig-alt="Logo CEP"}
@@ -142,6 +142,16 @@ Contribuí en proyectos de **consultoría estratégica** con énfasis en anális
 ![](img/tironi.jpg){.logo-trabajo fig-alt="Logo Tironi y Asociados"}
 :::
 :::
+
+:::
+
+### Asesor metodológico — Proyectos Joaquín Prieto {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+**Investigación académica independiente** · 2025 – presente
+
+Asesoría en investigación cuantitativa en los proyectos ***Insecurity amid Recovery*** y ***Economic Insecurity, Not Inequality?*** del investigador **Joaquín Prieto**. Análisis con la **Encuesta ELSOC del COES** (panel longitudinal) y la **Encuesta de Bienestar Social (EBS) del INE**. Procesamiento y modelamiento estadístico con R, apoyo en el diseño metodológico y análisis de datos de panel.
 
 :::
 
@@ -278,15 +288,6 @@ Magíster en Investigación Social (LSE).
 **Aldo Mascareño**
 *Investigador Senior del CEP · Editor General de Estudios Públicos · Investigador principal C22.*
 📧 [amascareno@cepchile.cl](mailto:amascareno@cepchile.cl)
-:::
-:::
-
-::: {.g-col-12 .g-col-md-6}
-::: {.referencia-card}
-**Josefina Abarzúa**
-*Jefa de área · Departamento de estudio, monitoreo y datos · SLEP Santa Rosa.*
-Magíster en Gobierno y Gerencia (Universidad de Chile).
-📧 [josefina.abarzua@slepsantarosa.gob.cl](mailto:josefina.abarzua@slepsantarosa.gob.cl)
 :::
 :::
 

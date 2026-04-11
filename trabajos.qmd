@@ -1,20 +1,21 @@
 ---
 title: "Trabajos, proyectos y consultoría"
-subtitle: "Experiencia profesional en sector público, investigación académica y consultoría"
+subtitle: "Experiencia profesional en sector público, privado, investigación académica y consultoría"
 toc: true
-toc-title: "Categorías"
+toc-title: "Secciones"
 ---
 
 ```{r}
 #| echo: false
 library(htmltools)
 library(purrr)
-library(glue)
 ```
 
 ::: {.intro-pagina}
-Una selección de los proyectos de **investigación aplicada**, **análisis de datos** y **consultoría** en los que he participado a lo largo de mi trayectoria profesional. Incluye trabajo en instituciones públicas, proyectos Fondecyt y consultorías independientes.
+Una selección de los proyectos de **investigación aplicada**, **análisis de datos** y **consultoría** en los que he participado a lo largo de mi trayectoria profesional en sector público, privado, investigación académica y consultorías independientes.
 :::
+
+---
 
 ## 🏛️ Sector público {.seccion-titulo}
 
@@ -56,12 +57,66 @@ div(class = "grid",
 )
 ```
 
+---
+
+## 🏢 Sector privado {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "g-col-12",
+  div(class = "proyecto-card",
+    div(class = "tarjeta-etiqueta", "2021–2023 · Consultoría estratégica"),
+    tags$h3(tags$a(href = "https://tironi.cl/home",
+                   "Tironi y Asociados", target = "_blank")),
+    div(class = "proyecto-periodo", "Agosto 2021 – Marzo 2023"),
+    tags$p(
+      "Analista de asuntos públicos. Encargado del ",
+      strong("boletín constitucional 2022"),
+      ", un producto de monitoreo semanal del proceso constituyente que sistematizaba información política e institucional para clientes corporativos y públicos."
+    ),
+    tags$p(
+      "Contribución en proyectos de consultoría estratégica con énfasis en análisis de datos para diagnóstico organizacional, monitoreo de opinión pública y diseño de estrategias comunicacionales. Elaboración de reportes para clientes del sector público y privado, integrando información cuantitativa y cualitativa."
+    ),
+    div(class = "skill-tags",
+      span(class="skill-tag", "Consultoría estratégica"),
+      span(class="skill-tag", "Análisis político"),
+      span(class="skill-tag", "Opinión pública"),
+      span(class="skill-tag", "Comunicaciones")
+    )
+  )
+)
+```
+
+---
+
 ## 🔬 Investigación académica {.seccion-titulo}
 
 ```{r}
 #| echo: false
 
 div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Actual · Investigación cuantitativa"),
+      tags$h3("Asesor metodológico — Proyectos Joaquín Prieto"),
+      div(class = "proyecto-periodo", "2025 – presente"),
+      tags$p(
+        "Asesoría en investigación cuantitativa en los proyectos ",
+        strong(em("Insecurity amid Recovery")),
+        " y ",
+        strong(em("Economic Insecurity, Not Inequality?")),
+        " del investigador Joaquín Prieto. Análisis con la Encuesta ELSOC del COES y la Encuesta de Bienestar Social (EBS) del INE. Procesamiento, modelamiento estadístico y apoyo en el diseño metodológico de análisis con datos de panel y encuestas representativas."
+      ),
+      div(class = "skill-tags",
+        span(class="skill-tag avanzado", "R"),
+        span(class="skill-tag", "ELSOC · COES"),
+        span(class="skill-tag", "EBS · INE"),
+        span(class="skill-tag", "Datos de panel")
+      )
+    )
+  ),
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
@@ -76,7 +131,7 @@ div(class = "grid",
       div(class = "skill-tags",
         span(class="skill-tag", "Análisis cualitativo"),
         span(class="skill-tag", "Economía política"),
-        span(class="skill-tag avanzado", "Indicadores")
+        span(class="skill-tag", "Indicadores")
       )
     )
   ),
@@ -86,7 +141,7 @@ div(class = "grid",
       div(class = "tarjeta-etiqueta", "CEP · 2021–2024"),
       tags$h3(tags$a(href = "https://c22cepchile.cl/", "Humanidades digitales C22 — CEP", target = "_blank")),
       div(class = "proyecto-periodo", "Agosto 2021 – Abril 2024"),
-      tags$p("Análisis computacional del primer y segundo proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política. Desarrollo del boletín ", em("Voces del CEP"), "."),
+      tags$p("Análisis computacional del primer y segundo proceso constitucional chileno. Procesamiento de datos textuales, análisis de discursos y visualización política. Boletín ", em("Voces del CEP"), ": organización editorial y publicación de análisis sobre problemas públicos contemporáneos."),
       div(class = "skill-tags",
         span(class="skill-tag", "Humanidades digitales"),
         span(class="skill-tag", "Análisis de texto"),
@@ -116,7 +171,7 @@ div(class = "grid",
       div(class = "tarjeta-etiqueta", "Fondecyt · 2020–2021"),
       tags$h3("Tesista — Proyecto Fondecyt N°1181585"),
       div(class = "proyecto-periodo", "Agosto 2020 – Agosto 2021"),
-      tags$p("Participación como tesista en proyecto Fondecyt, articulando el trabajo de tesis de pregrado con una línea de investigación financiada. Procesamiento y análisis de datos sociológicos."),
+      tags$p("Participación como tesista en proyecto Fondecyt, articulando el trabajo de tesis de pregrado con una línea de investigación financiada."),
       div(class = "skill-tags",
         span(class="skill-tag", "Tesis"),
         span(class="skill-tag", "Investigación académica")
@@ -127,7 +182,9 @@ div(class = "grid",
 )
 ```
 
-## 💼 Consultorías {.seccion-titulo}
+---
+
+## 🤝 Consultorías privadas {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -136,7 +193,7 @@ div(class = "grid",
 
   div(class = "g-col-12 g-col-md-6",
     div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Consultoría · 2024"),
+      div(class = "tarjeta-etiqueta", "Consultoría · Mayo 2024"),
       tags$h3("Radiografía a la Equidad Puertas Adentro"),
       div(class = "proyecto-periodo", "Mayo 2024"),
       tags$p("Consultoría desarrollada para ", strong("Francisca Bravo Cox"),
@@ -162,65 +219,35 @@ div(class = "grid",
         span(class="skill-tag", "Investigación aplicada")
       )
     )
-  ),
-
-  div(class = "g-col-12 g-col-md-6",
-    div(class = "proyecto-card",
-      div(class = "tarjeta-etiqueta", "Tironi y Asociados · 2021–2023"),
-      tags$h3("Analista de asuntos públicos — Tironi y Asociados"),
-      div(class = "proyecto-periodo", "Agosto 2021 – Marzo 2023"),
-      tags$p("Encargado del boletín constitucional 2022. Recopilación, limpieza y análisis de información política e institucional. Contribución en proyectos de consultoría estratégica con énfasis en análisis de datos para diagnóstico, monitoreo de opinión pública y diseño de estrategias comunicacionales."),
-      div(class = "skill-tags",
-        span(class="skill-tag", "Consultoría estratégica"),
-        span(class="skill-tag", "Análisis político"),
-        span(class="skill-tag", "Opinión pública")
-      )
-    )
   )
 
 )
 ```
 
-## 🛠️ Servicios de consultoría {.seccion-titulo}
+---
+
+## 🛠️ Servicios que ofrezco {.seccion-titulo}
 
 ::: {.intro-pagina}
-Ofrezco servicios de consultoría en **análisis de datos**, **investigación social aplicada** y **visualización de información** para organizaciones públicas, privadas y académicas.
+Ofrezco servicios de consultoría en **análisis de datos**, **investigación social aplicada**, **gobernanza de datos** y **visualización de información** para organizaciones públicas, privadas y académicas.
 :::
 
 ```{r}
 #| echo: false
 
 servicios <- list(
-  list(
-    icono = "📊",
-    titulo = "Análisis de datos",
-    desc = "Procesamiento, limpieza y análisis estadístico de datos cuantitativos. Construcción de indicadores, modelos y reportes técnicos con R y Power BI."
-  ),
-  list(
-    icono = "📈",
-    titulo = "Visualización de datos",
-    desc = "Diseño de dashboards interactivos y reportes visuales que transforman datos complejos en información comprensible para la toma de decisiones."
-  ),
-  list(
-    icono = "🔬",
-    titulo = "Investigación social aplicada",
-    desc = "Diseño y ejecución de investigaciones con metodologías cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto."
-  ),
-  list(
-    icono = "🗳️",
-    titulo = "Análisis político y electoral",
-    desc = "Análisis de datos electorales, seguimiento de procesos legislativos, construcción de indicadores de opinión pública y monitoreo de tendencias políticas."
-  ),
-  list(
-    icono = "📚",
-    titulo = "Humanidades digitales",
-    desc = "Aplicación de métodos computacionales al análisis de textos, discursos y corpus documentales. Procesamiento de lenguaje natural y análisis de redes."
-  ),
-  list(
-    icono = "🎓",
-    titulo = "Capacitación y talleres",
-    desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa. Diseñados para equipos de investigación, instituciones públicas y estudiantes."
-  )
+  list(icono = "📊", titulo = "Análisis y modelamiento de datos",
+       desc = "Procesamiento, limpieza y análisis estadístico de datos cuantitativos. Construcción de indicadores, modelos y reportes técnicos con R, Python y Power BI."),
+  list(icono = "📈", titulo = "Dashboards e informes ejecutivos",
+       desc = "Diseño de dashboards interactivos y reportes visuales que transforman datos complejos en información comprensible para equipos directivos."),
+  list(icono = "🏛️", titulo = "Gobernanza de datos organizacionales",
+       desc = "Diseño de ecosistemas de datos institucionales: estandarización, automatización, capacitación a equipos y generación de transparencia en el manejo de la información."),
+  list(icono = "🗳️", titulo = "Análisis político y electoral",
+       desc = "Análisis de datos electorales, seguimiento legislativo, construcción de indicadores de opinión pública y monitoreo de tendencias políticas."),
+  list(icono = "🔬", titulo = "Investigación social aplicada",
+       desc = "Diseño y ejecución de investigaciones con metodologías cuantitativas, cualitativas o mixtas para diagnóstico, evaluación de programas y análisis de contexto."),
+  list(icono = "🎓", titulo = "Capacitación y talleres",
+       desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa. Diseñados para equipos de investigación, instituciones públicas y estudiantes.")
 )
 
 div(class = "grid",
@@ -235,6 +262,8 @@ div(class = "grid",
   })
 )
 ```
+
+---
 
 ## 📩 Contacto profesional {.seccion-titulo}
 
