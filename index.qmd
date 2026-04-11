@@ -1,17 +1,20 @@
 ---
-title: "Tu Nombre"
-subtitle: "Investigador · Área de investigación · Institución"
+title: "Benjamín Lang Bustos"
+subtitle: "Sociólogo | Analista de datos | Investigador en ciencia de datos"
 image: img/perfil.jpg
 about:
-  template: trestles        # plantillas: jolla, trestles, solana, marquee, broadside
+  template: trestles
   image-shape: round
   links:
     - icon: github
       text: GitHub
-      href: https://github.com/tu-usuario
+      href: https://github.com/Langab
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/benjamin-lang-a78229207/
     - icon: envelope
       text: Email
-      href: mailto:tu@email.com
+      href: mailto:benjalang1997@gmail.com
     - icon: file-earmark-person
       text: CV
       href: about.qmd
@@ -19,50 +22,85 @@ about:
 page-layout: full
 ---
 
-## Bienvenido/a
+## Bienvenido
 
-Soy **Tu Nombre**, investigador/a en [Institución]. Me dedico a [describe brevemente tu área de trabajo e intereses].
+Soy **Benjamín Lang**, sociólogo titulado con distinción máxima por la Universidad Diego Portales (2017-2021) y especialista en **análisis de datos**, **investigación social** y **ciencia de datos**.
 
-Mi investigación se centra en:
+Actualmente trabajo como **Analista de datos** en el Servicio Local de Educación Pública Santa Rosa (SLEP), liderando proyectos de sistematización, visualización y análisis de datos educacionales.
 
-- **Tema 1**: descripción breve
-- **Tema 2**: descripción breve
-- **Tema 3**: descripción breve
-
-En este sitio publico mis investigaciones, proyectos en R y reflexiones sobre [tus temas de interés].
+Mi trayectoria combina experiencia en investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador. He colaborado con instituciones de referencia como el **Instituto Nacional de Estadísticas (INE)**, el **Centro de Estudios Públicos (CEP)** y en proyectos Fondecyt sobre gobernanza económica y transiciones socio-ambientales.
 
 ---
 
-## Últimas publicaciones
+## 🎯 Áreas de trabajo
+
+- **Análisis cuantitativo y ciencia de datos:** R, Power BI, estadística aplicada
+- **Humanidades digitales:** análisis de discursos, procesamiento de texto, visualización de información
+- **Metodologías innovadoras:** diseño metodológico para investigación social y sistemas complejos
+- **Políticas públicas y gobernanza:** análisis de procesos institucionales y políticos
+
+---
+
+## 🔗 Proyectos destacados
+
+::: {.grid}
+::: {.g-col-6}
+### SLEP Santa Rosa
+Sistematización y análisis de datos educacionales para la toma de decisiones en educación pública.
+
+[Ver proyecto →](https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2)
+:::
+::: {.g-col-6}
+### Humanidades Digitales C22
+Participación en el análisis del primer y segundo proceso constitucional chileno mediante metodologías digitales y visualización de datos políticos.
+
+[Ver proyecto →](https://c22cepchile.cl/)
+:::
+:::
+
+---
+
+## 📰 Últimas publicaciones
 
 ```{r}
 #| echo: false
 
-# Este chunk muestra automáticamente los últimos 3 posts del blog
-# No necesitas editar esto manualmente
-
+# Tabla de las publicaciones recientes
 library(dplyr)
-library(glue)
 library(htmltools)
 
-# Leer metadatos de posts (Quarto los genera en _freeze/)
-# Por ahora mostramos un placeholder hasta tener posts reales
-posts <- tibble::tribble(
-  ~titulo,           ~fecha,         ~descripcion,                         ~link,
-  "Bienvenida",      "2026-04-05",   "Primer post del sitio. ¡Bienvenido!", "blog/posts/bienvenida/"
+publicaciones <- tibble::tribble(
+  ~titulo,                                          ~fecha,      ~tipo,
+  "Claims of ownership, claims of dignity",         "2024",      "Artículo académico",
+  "Futuros presentes: nuevas opciones y riesgos",  "2023",      "Policy Paper (CEP)",
+  "Nuevos estilos de baile: análisis C22",         "2022",      "Research Note"
 )
 
-div(class = "posts-recientes",
-  purrr::map(1:nrow(posts), \(i) {
-    post <- posts[i, ]
-    div(class = "post-card",
-      h3(a(href = post$link, post$titulo)),
-      p(class = "post-fecha", post$fecha),
-      p(post$descripcion),
-      a(href = post$link, class = "leer-mas", "Leer más →")
+div(class = "publicaciones-recientes",
+  purrr::map(1:nrow(publicaciones), \(i) {
+    pub <- publicaciones[i, ]
+    div(class = "pub-card",
+      p(class = "pub-titulo", strong(pub$titulo)),
+      p(class = "pub-meta", glue::glue("{pub$fecha} · {pub$tipo}"))
     )
   })
 )
 ```
 
-[Ver todos los posts →](blog/index.qmd)
+[Ver todas las publicaciones →](about.qmd#publicaciones)
+
+---
+
+## 📊 Habilidades técnicas
+
+**Softwares avanzados:** R (tidyverse, ggplot2, Quarto), Power BI, Excel, GitLab/GitHub
+**Análisis:** Estadística aplicada, análisis cualitativo (Atlas Ti), procesamiento de datos a gran escala
+**Idiomas:** Español (nativo), Inglés (C1), Italiano (C1)
+
+---
+
+## 💬 Últimas novedades
+
+En este sitio voy a ir publicando sobre mis líneas de investigación, análisis de datos, metodologías y reflexiones sobre ciencia de datos en contextos de investigación social. Puedes seguir el blog para estar al día.
+
+[Ver blog →](blog/index.qmd)

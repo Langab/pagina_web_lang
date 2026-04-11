@@ -4,8 +4,8 @@ project:
 
 website:
   site-url: "https://langab.github.io/pagina_web_lang"
-  title: "Tu Nombre"
-  description: "Investigador | Blog personal"
+  title: "Benjamín Lang"
+  description: "Sociólogo | Analista de datos | Investigador en ciencia de datos"
   favicon: img/favicon.png
 
   navbar:
@@ -21,17 +21,19 @@ website:
         text: CV
     right:
       - icon: github
-        href: https://github.com/tu-usuario
+        href: https://github.com/Langab
+      - icon: linkedin
+        href: https://www.linkedin.com/in/benjamin-lang-a78229207/
       - icon: envelope
-        href: mailto:tu@email.com
+        href: mailto:benjalang1997@gmail.com
 
   page-footer:
     left: "Hecho con [Quarto](https://quarto.org) y R"
-    right: "© 2026 Tu Nombre"
+    right: "© 2026 Benjamín Lang"
 
   comments:
     giscus:
-      repo: tu-usuario/tu-repo   # activar comentarios vía GitHub (opcional)
+      repo: Langab/pagina_web_lang   # comentarios vía GitHub (opcional)
 
 format:
   html:
