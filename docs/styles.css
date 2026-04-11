@@ -822,7 +822,30 @@ h3.trabajo-titulo {
   border-top-color: var(--color-acento);
 }
 
-.referencia-card p { margin: 0.3rem 0; }
+.referencia-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--color-texto);
+}
+
+.referencia-card p strong {
+  display: block;
+  font-size: 0.93rem;
+  color: var(--color-primario);
+  margin-bottom: 0.3rem;
+}
+
+.referencia-card p em {
+  color: var(--color-gris);
+  font-style: italic;
+}
+
+.referencia-card p a {
+  color: var(--color-acento);
+  word-break: break-all;
+  font-size: 0.8rem;
+}
 
 /* -------------------------------------------------------
    📰 PUBLICACIÓN DESTACADA (index)
