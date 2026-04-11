@@ -7,3 +7,4 @@
 .DS_Store
 *.csv           # datos con info personal (ej: export de Goodreads)
 portadas/       # imágenes descargadas — opcionales en el repo
+fotos/          # carpeta de fotos no necesaria en el repositorio

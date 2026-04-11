@@ -1,68 +1,152 @@
 ---
-title: "Tu Nombre"
-subtitle: "Investigador · Área de investigación · Institución"
+title: "Benjamín Lang Bustos"
 image: img/perfil.jpg
 about:
-  template: trestles        # plantillas: jolla, trestles, solana, marquee, broadside
+  template: trestles
   image-shape: round
   links:
     - icon: github
       text: GitHub
-      href: https://github.com/tu-usuario
+      href: https://github.com/Langab
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/benjamin-lang-a78229207/
     - icon: envelope
       text: Email
-      href: mailto:tu@email.com
-    - icon: file-earmark-person
-      text: CV
-      href: about.qmd
+      href: mailto:benjalang1997@gmail.com
+    - icon: file-earmark-pdf
+      text: Descargar CV
+      href: documentos/cv_Benjamin_Lang_2026.pdf
 
 page-layout: full
+toc: false
 ---
 
-## Bienvenido/a
+<div class="hero-badges">
+<span class="badge-item">🎓 Sociólogo</span>
+<span class="badge-item">📊 Analista de datos</span>
+<span class="badge-item">🔬 Investigador</span>
+<span class="badge-item">💻 Humanidades digitales</span>
+</div>
 
-Soy **Tu Nombre**, investigador/a en [Institución]. Me dedico a [describe brevemente tu área de trabajo e intereses].
+Soy **sociólogo** titulado con distinción máxima por la Universidad Diego Portales, especializado en **análisis de datos**, **ciencia de datos aplicada** e **investigación social**. Actualmente soy **Analista de datos** en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización y visualización de datos educacionales.
 
-Mi investigación se centra en:
-
-- **Tema 1**: descripción breve
-- **Tema 2**: descripción breve
-- **Tema 3**: descripción breve
-
-En este sitio publico mis investigaciones, proyectos en R y reflexiones sobre [tus temas de interés].
+<a href="about.qmd" class="btn-primario">Ver CV completo</a>
+<a href="investigacion.qmd" class="btn-secundario">Ver investigación</a>
 
 ---
 
-## Últimas publicaciones
+## 📈 Trayectoria en números
+
+```{r}
+#| echo: false
+library(htmltools)
+
+div(class = "stats-grid",
+  div(class = "stat-item", div(class = "stat-numero", "6+"), div(class = "stat-label", "Años de experiencia")),
+  div(class = "stat-item", div(class = "stat-numero", "13"), div(class = "stat-label", "Policy Papers")),
+  div(class = "stat-item", div(class = "stat-numero", "1"),  div(class = "stat-label", "Artículo académico")),
+  div(class = "stat-item", div(class = "stat-numero", "3"),  div(class = "stat-label", "Idiomas"))
+)
+```
+
+---
+
+## 🔬 Áreas de especialización
 
 ```{r}
 #| echo: false
 
-# Este chunk muestra automáticamente los últimos 3 posts del blog
-# No necesitas editar esto manualmente
-
-library(dplyr)
-library(glue)
-library(htmltools)
-
-# Leer metadatos de posts (Quarto los genera en _freeze/)
-# Por ahora mostramos un placeholder hasta tener posts reales
-posts <- tibble::tribble(
-  ~titulo,           ~fecha,         ~descripcion,                         ~link,
-  "Bienvenida",      "2026-04-05",   "Primer post del sitio. ¡Bienvenido!", "blog/posts/bienvenida/"
+areas <- list(
+  list(icono = "📊", titulo = "Ciencia de datos",
+       desc = "R, Power BI, Python. Análisis estadístico y visualización para la toma de decisiones.",
+       tags = c("R · avanzado", "Power BI", "Estadística")),
+  list(icono = "💻", titulo = "Humanidades digitales",
+       desc = "Análisis de discursos, procesamiento de texto y visualización de procesos políticos e institucionales.",
+       tags = c("Análisis de texto", "NLP", "Visualización")),
+  list(icono = "🏛️", titulo = "Políticas públicas",
+       desc = "Investigación y análisis de procesos institucionales, electorales y de gobernanza.",
+       tags = c("Sistemas complejos", "Gobernanza", "Opinión pública")),
+  list(icono = "📐", titulo = "Metodología cuantitativa",
+       desc = "Diseño metodológico, procesamiento de datos censales y construcción de indicadores a gran escala.",
+       tags = c("Censos", "Indicadores", "Gran escala"))
 )
 
-div(class = "posts-recientes",
-  purrr::map(1:nrow(posts), \(i) {
-    post <- posts[i, ]
-    div(class = "post-card",
-      h3(a(href = post$link, post$titulo)),
-      p(class = "post-fecha", post$fecha),
-      p(post$descripcion),
-      a(href = post$link, class = "leer-mas", "Leer más →")
+div(class = "grid",
+  purrr::map(areas, \(a) {
+    div(class = "g-col-12 g-col-md-6",
+      div(class = "tarjeta",
+        div(class = "tarjeta-icono", a$icono),
+        tags$h3(a$titulo),
+        tags$p(a$desc),
+        div(class = "skill-tags",
+          purrr::map(a$tags, \(t) span(class = "skill-tag", t))
+        )
+      )
     )
   })
 )
 ```
 
-[Ver todos los posts →](blog/index.qmd)
+---
+
+## 💼 Proyectos destacados
+
+```{r}
+#| echo: false
+
+proyectos <- list(
+  list(
+    nombre  = "Datos educacionales SLEP Santa Rosa",
+    periodo = "2025 – presente",
+    desc    = "Sistematización y visualización de indicadores educacionales para educación pública regional.",
+    link    = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
+    tipo    = "Sector público"
+  ),
+  list(
+    nombre  = "Humanidades digitales C22 — CEP",
+    periodo = "2021 – 2024",
+    desc    = "Análisis computacional del proceso constitucional chileno. Procesamiento de datos textuales y visualización política.",
+    link    = "https://c22cepchile.cl/",
+    tipo    = "Investigación"
+  ),
+  list(
+    nombre  = "Censo de Población y Vivienda 2024",
+    periodo = "2024 – 2025",
+    desc    = "Analista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.",
+    link    = "proyectos.qmd",
+    tipo    = "Estadística pública"
+  ),
+  list(
+    nombre  = "Fondecyt N°1231356 — Banco Central de Chile",
+    periodo = "2024 – 2025",
+    desc    = "Análisis de datos sobre políticas económicas y dispositivos de estabilidad institucional (2006–2022).",
+    link    = "proyectos.qmd",
+    tipo    = "Investigación"
+  )
+)
+
+div(class = "grid",
+  purrr::map(proyectos, \(p) {
+    div(class = "g-col-12 g-col-md-6",
+      div(class = "proyecto-card",
+        div(class = "tarjeta-etiqueta", p$tipo),
+        tags$h3(tags$a(href = p$link, p$nombre, target = "_blank")),
+        div(class = "proyecto-periodo", p$periodo),
+        tags$p(p$desc)
+      )
+    )
+  })
+)
+```
+
+<a href="proyectos.qmd" class="btn-secundario">Ver todos los proyectos →</a>
+
+---
+
+## 📰 Última publicación
+
+**Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024). "Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum." *Journal of Language and Politics*, 23(5), 723–746.
+
+<a href="https://doi.org/10.1075/jlp.24097.fre" class="btn-primario" target="_blank">Leer artículo →</a>
+<a href="publicaciones.qmd" class="btn-secundario">Ver todas las publicaciones →</a>

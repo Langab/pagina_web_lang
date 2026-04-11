@@ -1,87 +1,125 @@
 ---
-title: "Investigación"
+title: "Investigación y Proyectos"
 toc: true
-toc-title: "Áreas"
+toc-title: "Secciones"
 ---
 
-Descripción general de tu línea de investigación. Cuáles son las preguntas que guían tu trabajo, el enfoque teórico o metodológico que usas.
+Mi trabajo de investigación se centra en la intersección entre **ciencia de datos**, **metodología cuantitativa** y **análisis de sistemas sociales complejos**. A través de diferentes proyectos, he desarrollado expertise en:
 
----
-
-## Proyectos actuales
-
-### Nombre del proyecto principal
-
-**Período:** 2024 – 2027 · **Financiamiento:** Fuente · **Rol:** Investigador/a principal
-
-Descripción del proyecto: qué estudias, por qué es relevante, qué metodología usas, cuáles son los resultados esperados.
-
-::: {.callout-note appearance="minimal"}
-📄 [Ver publicaciones relacionadas →](#publicaciones)
-:::
-
-### Nombre del proyecto 2
-
-**Período:** 2023 – 2025 · **Financiamiento:** Fuente · **Rol:** Colaborador/a
-
-Descripción del proyecto.
+- Procesamiento y análisis de grandes volúmenes de datos
+- Diseño metodológico innovador para investigación social
+- Humanidades digitales y análisis de discursos
+- Visualización de información compleja
+- Políticas públicas y gobernanza institucional
 
 ---
 
-## Publicaciones recientes
+## 💼 Proyectos actuales
 
-```{r}
-#| echo: false
+### Sistematización de Datos Educacionales — SLEP Santa Rosa
+**Septiembre 2025 – presente**
 
-# Puedes manejar tus publicaciones como un data frame en R
-# y generar la lista automáticamente desde un .bib o un CSV
+Como Analista de datos en el Servicio Local de Educación Pública Santa Rosa (SLEP), dirijo la sistematización, visualización y análisis de datos educacionales para apoyar la toma de decisiones en educación pública regional.
 
-library(dplyr)
-library(htmltools)
-library(glue)
+**Responsabilidades clave:**
+- Diseño de sistemas de información para recolección de datos educacionales
+- Visualización de indicadores de gestión y calidad educativa
+- Análisis estadístico para evaluación de políticas educacionales
+- Asesoría técnica en metodología de investigación
 
-publicaciones <- tibble::tribble(
-  ~autores,       ~anio, ~titulo,                  ~revista,           ~doi,
-  "Tu Nombre",    2025,  "Título del artículo",    "Nombre Revista",   "https://doi.org/xxx",
-  "Tu Nombre",    2024,  "Otro artículo",           "Otra Revista",    "https://doi.org/yyy"
-)
-
-div(class = "publicaciones",
-  purrr::map(1:nrow(publicaciones), \(i) {
-    pub <- publicaciones[i, ]
-    div(class = "pub-item",
-      p(
-        strong(pub$autores), glue(" ({pub$anio}). "),
-        glue('"{pub$titulo}". '),
-        em(pub$revista), ". ",
-        a(href = pub$doi, "DOI →", target = "_blank")
-      )
-    )
-  })
-)
-```
+[📊 Ver página del proyecto](https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2)
 
 ---
 
-## Áreas temáticas
+### Gobernanza Económica del Banco Central de Chile (2006–2022)
+**Proyecto Fondecyt N°1231356**
 
-::: {.grid}
-::: {.g-col-4}
-### Área 1
-Descripción breve de esta línea de trabajo, los autores o marcos teóricos que usas.
-:::
-::: {.g-col-4}
-### Área 2
-Descripción breve de esta línea de trabajo.
-:::
-::: {.g-col-4}
-### Área 3
-Descripción breve de esta línea de trabajo.
-:::
-:::
+"Gobernar la incertidumbre: gramáticas, actores y dispositivos de producción de 'estabilidad' económica en el capitalismo contemporáneo."
+
+**Período:** Mayo 2024 – Agosto 2025
+
+Análisis de datos cualitativos y cuantitativos sobre políticas económicas del Banco Central de Chile. El proyecto combinó metodología documental, análisis de discursos y construcción de indicadores institucionales para evaluar dispositivos de estabilidad económica.
+
+**Contribuciones:**
+- Procesamiento y análisis de grandes volúmenes de información documental
+- Construcción de indicadores para evaluar dispositivos institucionales
+- Análisis de tendencias en política monetaria y regulación financiera
 
 ---
 
-## Datos y código
+## 🔬 Líneas de investigación
 
-Todo el código y los datos abiertos de mis proyectos están disponibles en [GitHub](https://github.com/tu-usuario). Si usas alguno de mis materiales, por favor cita el repositorio correspondiente.
+### Análisis de Sistemas Complejos
+Estudio de transiciones críticas en sistemas socio-ecológicos y análisis de gobernanza en contextos de incertidumbre y cambio.
+
+**Proyectos relacionados:**
+- "Gobernando transiciones críticas en sistemas socio-ecológicos: el caso de Chiloé" (Fondecyt No1190295)
+
+### Humanidades Digitales y Análisis Político
+Aplicación de metodologías digitales para el análisis de procesos políticos, especialmente en contextos constitucionales y de cambio institucional.
+
+**Proyectos relacionados:**
+- Análisis Socio Constitucional C22 (2021-2024): Humanidades digitales aplicadas al primer y segundo proceso constitucional chileno
+- Proyecto "Voces del CEP": análisis de opinión pública y seguimiento electoral
+
+### Ciencia de Datos para Políticas Públicas
+Diseño e implementación de metodologías cuantitativas para evaluación de políticas públicas, análisis de datos censales y sistemas de información estadística.
+
+**Proyectos relacionados:**
+- Censo de Población y Vivienda 2024 (INE): metodología, validación y aseguramiento de calidad
+
+---
+
+## 📚 Publicaciones por área temática
+
+### Instituciones y Gobernanza Económica
+
+- **Mascareño, A., Rozas, J., Oteíza, B., Lang, B., & Henríquez, P.A.** (2023). "Futuros presentes. Nuevas opciones y riesgos en escenarios complejos." *Puntos de Referencia* 648, CEP. [Ver](https://www.cepchile.cl/investigacion/futuros-presentes-nuevas-opciones-riesgos-en-escenarios-complejos/)
+
+### Procesos Constitucionales y Cambio Político
+
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2023). "La Constitución pre-estallido de Michelle Bachelet. ¿Cuánto rinde hoy?" *Puntos de Referencia* 644, CEP. [Ver](https://www.cepchile.cl/investigacion/constitucion-pre-estallido-michelle-bachelet-cuanto-rinde-hoy/)
+
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2023). "Apruebo y rechazo en septiembre 2022. Expectativas, decepciones y horizontes comunes para el nuevo proceso constitucional." *Puntos de Referencia* 639, CEP. [Ver](https://www.cepchile.cl/investigacion/apruebo-rechazo-septiembre-2023-expectativas-decepciones-horizontes-para-el-nuevo-procesoconstitucional/)
+
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "Polarización y fragmentación en la Cámara de Diputados. El escenario del Acuerdo por Chile." *Puntos de Referencia* 637, CEP. [Ver](https://www.cepchile.cl/investigacion/polarizacion-y-fragmentacion-camara-diputados-escenario-del-acuerdo-por-chile/)
+
+### Derechos, Justicia Social y Vivienda
+
+- **Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024). "Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum." *Journal of Language and Politics*, 23(5), 723–746. [DOI](https://doi.org/10.1075/jlp.24097.fre)
+
+### Humanidades Digitales — Research Notes C22
+
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "Nuevo estilo de baile: 4/7." [Ver](https://c22cepchile.cl/publicaciones/nuevo-estilo-de-baile-4-7/)
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "Zona de curvas. La Convención y la Cámara en comparación." [Ver](https://www.cepchile.cl/cep/puntos-de-referencia/puntos-de-referencia2010-2021/zona-de-curvas-la-convencion-y-la-camara-en-comparacion)
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "Alphaville." [Ver](https://c22cepchile.cl/publicaciones/alphaville/)
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "La prueba de ADN." [Ver](https://c22cepchile.cl/publicaciones/la-prueba-de-adn/)
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "La ley de los grandes números." [Ver](https://c22cepchile.cl/publicaciones/la-ley-de-los-grandes-numeros/)
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "Suma cero. Sentimientos convencionales." [Ver](https://c22cepchile.cl/publicaciones/suma-cero-sentimientos-convencionales/)
+- **Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.** (2022). "La constitución de la Constitución." [Ver](https://c22cepchile.cl/publicaciones/la-constitucion-de-la-constitucion/)
+
+---
+
+## 🛠️ Herramientas y Metodologías
+
+**Softwares especializados:**
+- R (tidyverse, ggplot2, Quarto, análisis estadístico) — avanzado
+- Power BI (dashboards interactivos) — avanzado
+- Excel (modelado, análisis) — avanzado
+- GitLab/GitHub (control de versiones) — avanzado
+- Atlas Ti (análisis cualitativo) — intermedio
+
+**Metodologías:**
+- Análisis estadístico aplicado
+- Análisis cualitativos asistido por software
+- Minería de texto y análisis de discursos
+- Visualización de información
+- Diseño de indicadores
+
+---
+
+## 📊 Datos y código abierto
+
+Todo el código y los datos abiertos de mis proyectos están disponibles en [GitHub](https://github.com/Langab). Si utilizas alguno de mis materiales o código, por favor cita el repositorio correspondiente.
+
+Creo en la **ciencia abierta** y en la **reproducibilidad** de la investigación.

@@ -1,0 +1,131 @@
+---
+title: "Publicaciones"
+toc: true
+toc-title: "Categorías"
+---
+
+```{r}
+#| echo: false
+library(htmltools)
+library(purrr)
+```
+
+## 📄 Artículos académicos
+
+```{r}
+#| echo: false
+
+articulos <- list(
+  list(
+    autores = "Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.",
+    anio    = "2024",
+    titulo  = "Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum",
+    revista = "Journal of Language and Politics",
+    detalle = "23(5), 723–746",
+    link    = "https://doi.org/10.1075/jlp.24097.fre",
+    tipo    = "Artículo académico"
+  )
+)
+
+div(class = "publicaciones",
+  map(articulos, \(p) {
+    div(class = "pub-item",
+      div(class = "pub-tipo", p$tipo),
+      tags$p(
+        strong(p$autores), glue::glue(" ({p$anio}). "),
+        em(glue::glue('"{p$titulo}". ')),
+        strong(p$revista), glue::glue(", {p$detalle}. "),
+        tags$a(href = p$link, "Ver publicación →", target = "_blank")
+      )
+    )
+  })
+)
+```
+
+---
+
+## 📋 Policy Papers — Centro de Estudios Públicos
+
+```{r}
+#| echo: false
+
+policy <- list(
+  list(anio="2023", n="648",
+       titulo="Futuros presentes. Nuevas opciones y riesgos en escenarios complejos",
+       autores="Mascareño, A., Rozas, J., Oteíza, B., Lang, B., & Henríquez, P.A.",
+       link="https://www.cepchile.cl/investigacion/futuros-presentes-nuevas-opciones-riesgos-en-escenarios-complejos/"),
+  list(anio="2023", n="644",
+       titulo="La Constitución pre-estallido de Michelle Bachelet. ¿Cuánto rinde hoy?",
+       autores="Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.",
+       link="https://www.cepchile.cl/investigacion/constitucion-pre-estallido-michelle-bachelet-cuanto-rinde-hoy/"),
+  list(anio="2023", n="639",
+       titulo="Apruebo y rechazo en septiembre 2022. Expectativas, decepciones y horizontes comunes para el nuevo proceso constitucional",
+       autores="Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.",
+       link="https://www.cepchile.cl/investigacion/apruebo-rechazo-septiembre-2023-expectativas-decepciones-horizontes-para-el-nuevo-procesoconstitucional/"),
+  list(anio="2023", n="638",
+       titulo="Mapuche en el sur: identidad, materialidad y expectativa",
+       autores="Mascareño, A., Rozas, J., Lang, B., Henríquez, P.A., & Izquierdo, S.",
+       link="https://www.cepchile.cl/investigacion/mapuche-en-el-sur-identidad-materialidad-expectativa/"),
+  list(anio="2022", n="637",
+       titulo="Polarización y fragmentación en la Cámara de Diputados. El escenario del Acuerdo por Chile",
+       autores="Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.",
+       link="https://www.cepchile.cl/investigacion/polarizacion-y-fragmentacion-camara-diputados-escenario-del-acuerdo-por-chile/"),
+  list(anio="2022", n="630",
+       titulo="Partido de la Gente. La construcción del individualismo posdemocrático",
+       autores="Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.",
+       link="https://www.cepchile.cl/investigacion/partido-de-la-gente-la-construccion-del-individualismo-posdemocratico/"),
+  list(anio="2022", n="598",
+       titulo="Zona de curvas. La Convención y la Cámara en comparación",
+       autores="Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A.",
+       link="https://www.cepchile.cl/cep/puntos-de-referencia/puntos-de-referencia2010-2021/zona-de-curvas-la-convencion-y-la-camara-en-comparacion")
+)
+
+div(class = "publicaciones",
+  map(policy, \(p) {
+    div(class = "pub-item",
+      div(class = "pub-tipo", glue::glue("Puntos de Referencia N°{p$n} · CEP · {p$anio}")),
+      tags$p(
+        strong(p$autores), glue::glue(" ({p$anio}). "),
+        em(glue::glue('"{p$titulo}". ')),
+        tags$a(href = p$link, "Ver publicación →", target = "_blank")
+      )
+    )
+  })
+)
+```
+
+---
+
+## 🖥️ Research Notes — C22 · CEP
+
+```{r}
+#| echo: false
+
+c22 <- list(
+  list(anio="2022", titulo="Nuevo estilo de baile: 4/7",
+       link="https://c22cepchile.cl/publicaciones/nuevo-estilo-de-baile-4-7/"),
+  list(anio="2022", titulo="Alphaville",
+       link="https://c22cepchile.cl/publicaciones/alphaville/"),
+  list(anio="2022", titulo="La prueba de ADN",
+       link="https://c22cepchile.cl/publicaciones/la-prueba-de-adn/"),
+  list(anio="2022", titulo="La ley de los grandes números",
+       link="https://c22cepchile.cl/publicaciones/la-ley-de-los-grandes-numeros/"),
+  list(anio="2022", titulo="Suma cero. Sentimientos convencionales",
+       link="https://c22cepchile.cl/publicaciones/suma-cero-sentimientos-convencionales/"),
+  list(anio="2022", titulo="La constitución de la Constitución",
+       link="https://c22cepchile.cl/publicaciones/la-constitucion-de-la-constitucion/")
+)
+
+div(class = "grid",
+  map(c22, \(p) {
+    div(class = "g-col-12 g-col-md-6",
+      div(class = "tarjeta",
+        div(class = "tarjeta-etiqueta", glue::glue("Research Note C22 · {p$anio}")),
+        tags$h3(tags$a(href = p$link, p$titulo, target = "_blank")),
+        tags$p(strong("Mascareño, A., Rozas, J., Lang, B., & Henríquez, P.A."),
+               glue::glue(" ({p$anio})."))
+      )
+    )
+  })
+)
+```

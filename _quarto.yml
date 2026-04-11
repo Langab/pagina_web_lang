@@ -4,49 +4,65 @@ project:
 
 website:
   site-url: "https://langab.github.io/pagina_web_lang"
-  title: "Tu Nombre"
-  description: "Investigador | Blog personal"
+  title: "Benjamín Lang"
+  description: "Sociólogo · Analista de datos · Investigador"
   favicon: img/favicon.png
 
   navbar:
-    logo: img/logo.png
+    background: dark
+    foreground: light
     left:
       - href: index.qmd
         text: Inicio
-      - href: investigacion.qmd
-        text: Investigación
+      - text: "Investigación"
+        menu:
+          - href: investigacion.qmd
+            text: Líneas de investigación
+          - href: publicaciones.qmd
+            text: Publicaciones
+          - href: proyectos.qmd
+            text: Proyectos
       - href: blog/index.qmd
         text: Blog
+      - href: consultorias.qmd
+        text: Consultoría
       - href: about.qmd
         text: CV
     right:
       - icon: github
-        href: https://github.com/tu-usuario
-      - icon: envelope
-        href: mailto:tu@email.com
+        href: https://github.com/Langab
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/benjamin-lang-a78229207/
+        aria-label: LinkedIn
+      - icon: envelope-fill
+        href: mailto:benjalang1997@gmail.com
+        aria-label: Email
 
   page-footer:
-    left: "Hecho con [Quarto](https://quarto.org) y R"
-    right: "© 2026 Tu Nombre"
-
-  comments:
-    giscus:
-      repo: tu-usuario/tu-repo   # activar comentarios vía GitHub (opcional)
+    background: dark
+    left: "Hecho con [Quarto](https://quarto.org) y R · © 2026 Benjamín Lang"
+    right:
+      - icon: github
+        href: https://github.com/Langab
+      - icon: linkedin
+        href: https://www.linkedin.com/in/benjamin-lang-a78229207/
 
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
-    css: styles.css
+      light: [flatly, styles.css]
+      dark: [darkly, styles.css]
     toc: true
     toc-depth: 3
-    code-fold: true          # los chunks de código quedan plegados por defecto
-    code-tools: true         # botón para copiar código
+    code-fold: true
+    code-tools: true
     highlight-style: arrow
     fig-align: center
+    link-external-icon: true
+    link-external-newwindow: true
 
 execute:
-  freeze: auto               # re-ejecuta sólo los .qmd que cambiaron
+  freeze: auto
   warning: false
   message: false
