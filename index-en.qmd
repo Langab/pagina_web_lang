@@ -16,6 +16,8 @@ library(purrr)
 ::: {.hero-contenido}
 
 ::: {.hero-texto}
+<span class="hero-disponible">Available for projects</span>
+
 <span class="hero-saludo">👋 Hi, I'm</span>
 
 # Benjamín Lang Bustos
@@ -23,7 +25,7 @@ library(purrr)
 <p class="hero-rol">Sociologist · Data Analyst · Researcher</p>
 
 <p class="hero-descripcion">
-Sociologist graduated with highest distinction and <strong>6 years of experience</strong> in data analysis, data science, and applied statistics across the public sector, private sector, and academic research. Specialized in processing, visualizing, and modeling large-scale data using R, Python, Power BI, advanced Excel, and AI tools. I bring <strong>analytical and strategic communication expertise</strong> to transform complex data into clear, actionable insights. Proven experience in dashboards, automated reporting, database quality assurance, and KPI development for evidence-based decision making.
+<strong>6 years turning data into decisions</strong> across the public sector, private industry, and academia. Specialized in large-scale data processing and visualization with R, Python, and Power BI, with an analytical and strategic communication approach. Dashboards, automated reporting, and evidence-based KPI development.
 </p>
 
 <div class="hero-badges">
@@ -43,6 +45,27 @@ Sociologist graduated with highest distinction and <strong>6 years of experience
 
 ::: {.hero-imagen}
 ![](img/perfil.jpg){.foto-hero fig-alt="Photo of Benjamín Lang"}
+
+```{r}
+#| echo: false
+logos <- list(
+  list(src = "img/censo_2024.svg", alt = "INE Chile"),
+  list(src = "img/cep.png",        alt = "CEP"),
+  list(src = "img/udp.png",        alt = "UDP")
+)
+
+div(class = "hero-logos-foto",
+  div(class = "hero-logos-foto-label", "Experience at"),
+  div(class = "hero-logos-foto-row",
+    map(logos, \(l)
+      div(class = "hero-logo-wrapper",
+        tags$img(src = l$src, class = "hero-logo-item", alt = l$alt)
+      )
+    )
+  )
+)
+```
+
 :::
 
 :::
