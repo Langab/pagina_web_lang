@@ -249,8 +249,10 @@ main#quarto-document-content > #title-block-header {
 
 .hero-imagen {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1.8rem;
 }
 
 .foto-hero,
@@ -349,47 +351,49 @@ main#quarto-document-content > #title-block-header {
 }
 
 /* -------------------------------------------------------
-   🏢 BARRA DE LOGOS INSTITUCIONALES
+   🏢 LOGOS INSTITUCIONALES — bajo la foto de perfil
 ------------------------------------------------------- */
-.hero-logos {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 0 0.5rem 0;
-  position: relative;
-  z-index: 2;
-  border-top: 1px solid rgba(255,255,255,0.08);
+.hero-logos-foto {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
 }
 
-.hero-logos-label {
-  font-size: 0.68rem;
+.hero-logos-foto-label {
+  font-size: 0.62rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.35);
-  text-align: center;
-  margin-bottom: 1rem;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 0.9rem;
 }
 
-.hero-logos-row {
+.hero-logos-foto-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
   flex-wrap: wrap;
+  gap: 0.9rem 1.4rem;
 }
 
 .hero-logo-item {
-  height: 32px;
-  max-width: 100px;
+  height: 26px;
+  width: auto;
+  max-width: 82px;
+  flex-shrink: 0;
   object-fit: contain;
   filter: brightness(0) invert(1);
-  opacity: 0.4;
+  opacity: 0.45;
   transition: opacity 0.3s ease;
+  display: block;
 }
 
 .hero-logo-item:hover {
-  opacity: 0.75;
+  opacity: 0.8;
 }
+
+/* Mantiene la clase vieja por si hay referencias — redirige a la nueva */
+.hero-logos { display: none; }
 
 /* -------------------------------------------------------
    ✨ MICRO-ANIMACIONES DE ENTRADA
@@ -438,7 +442,8 @@ main#quarto-document-content > #title-block-header {
   animation: fadeInUp 0.6s ease-out 0.75s both;
 }
 
-.hero-imagen img {
+.hero-imagen img,
+.hero-logos-foto {
   animation: fadeIn 0.8s ease-out 0.5s both;
 }
 
@@ -1420,8 +1425,8 @@ h3.trabajo-titulo {
   .stat-hero-item:nth-child(2) { border-right: none; }
   .stat-hero-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.12); }
   .stat-hero-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.12); }
-  .hero-logos-row { gap: 1.5rem; }
-  .hero-logo-item { height: 26px; max-width: 80px; }
+  .hero-logos-foto { max-width: 260px; }
+  .hero-logo-item { height: 22px; max-width: 70px; }
 }
 
 @media (max-width: 768px) {
