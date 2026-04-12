@@ -1,0 +1,375 @@
+---
+title: ""
+toc: true
+toc-title: "Index"
+---
+
+```{r}
+#| echo: false
+library(htmltools)
+library(purrr)
+```
+
+<!-- CV Header -->
+
+```{r}
+#| echo: false
+div(class = "cv-header",
+  tags$span(class = "cv-titulo-chip", "📄 Curriculum Vitae"),
+  div(class = "cv-header-grid",
+    div(class = "cv-header-left",
+      tags$h1("Benjamín Lang Bustos"),
+      tags$p(class = "cv-header-subtitulo", "Sociologist · Data Analyst · Researcher"),
+      tags$hr(class = "cv-header-divider"),
+      div(class = "cv-idiomas",
+        tags$span(class = "idioma-badge", "🇨🇱 Spanish — Native"),
+        tags$span(class = "idioma-badge", "🇬🇧 English — B2"),
+        tags$span(class = "idioma-badge", "🇮🇹 Italian — C1")
+      ),
+      tags$a(href = "documentos/cv_Benjamin_Lang_2026.pdf",
+             class = "cv-download-btn", "📄 Download CV (PDF)")
+    ),
+    div(class = "cv-contacto-header",
+      div(class = "cv-contacto-item",
+        tags$strong("📧 Email"),
+        tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
+      ),
+      div(class = "cv-contacto-item",
+        tags$strong("📱 Phone"),
+        tags$span("+56 9 6309 5562")
+      ),
+      div(class = "cv-contacto-item",
+        tags$strong("🔗 LinkedIn"),
+        tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
+               target = "_blank", "benjamin-lang-a78229207")
+      )
+    )
+  )
+)
+```
+
+## 👤 About me {.seccion-titulo}
+
+::: {.sobre-mi-card}
+
+<p>I am a sociologist graduated with <strong>highest distinction</strong> from Universidad Diego Portales (2017–2021), specializing in data analysis, social research, and data science. My work sits at the intersection of quantitative methodology and digital humanities.</p>
+
+<p>I currently work as a <strong>Data Analyst</strong> at the Santa Rosa Local Public Education Service (SLEP), where I am part of the systematization, visualization, and analysis of educational data for decision making.</p>
+
+<p>My experience combines rigorous academic research, large-scale data processing, and innovative methodological design at institutions such as the <strong>National Statistics Institute (INE)</strong>, the <strong>Centre for Public Studies (CEP)</strong>, and in <strong>Fondecyt</strong> projects focused on economic governance and socio-environmental transitions.</p>
+
+:::
+
+---
+
+## 🎓 Academic background {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "formacion-card",
+  div(class = "formacion-header",
+    tags$img(src = "img/udp.png", class = "formacion-logo",
+             alt = "Logo Universidad Diego Portales"),
+    div(class = "formacion-header-texto",
+      div(class = "formacion-titulo",
+          "Sociologist — graduated with highest distinction · 2017–2021"),
+      div(class = "formacion-inst",
+          "Universidad Diego Portales · Santiago, Chile"),
+      div(class = "formacion-nota",
+          "First in graduating class ranking.")
+    )
+  ),
+  div(class = "formacion-item",
+    div(class = "formacion-titulo",
+        "Diploma of Honour in Mobility and Transport · 2019–2020"),
+    div(class = "formacion-inst",
+        "Universidad Diego Portales · Santiago, Chile")
+  )
+)
+```
+
+```{r}
+#| echo: false
+
+div(class = "formacion-card",
+  div(class = "formacion-header",
+    tags$img(src = "img/censo_2024.svg", class = "formacion-logo",
+             alt = "Logo INE Chile"),
+    div(class = "formacion-header-texto",
+      div(class = "formacion-titulo", "Advanced R Course"),
+      div(class = "formacion-inst",
+          "National Statistics Institute (INE) · Chile")
+    )
+  ),
+  div(class = "formacion-item",
+    div(class = "formacion-inst",
+        "Training course delivered by INE in the context of the 2024 Population & Housing Census. Data processing, visualization, and statistical modeling with R.")
+  )
+)
+```
+
+---
+
+## 💼 Work experience {.seccion-titulo}
+
+### Data Analyst {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-9}
+<p><strong>Santa Rosa Local Public Education Service (SLEP) · September 2025 – present</strong></p>
+<p>Responsible for the systematization, visualization, and analysis of educational data. Dashboard and report design for regional educational management. <a href="https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2" target="_blank">View project page →</a></p>
+:::
+::: {.g-col-12 .g-col-md-3}
+![](img/slep_santa_rosa.jpg){.logo-trabajo fig-alt="Logo SLEP Santa Rosa"}
+:::
+:::
+
+:::
+
+### Senior Methodological Analyst {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-9}
+<p><strong>National Statistics Institute (INE) · May 2024 – June 2025</strong></p>
+<p>Responsible for processing, validation, and analysis of data for the <strong>2024 Population and Housing Census</strong>. Statistical methodology design, large-scale database quality assurance, and technical reporting for decision making. <a href="https://censo2024.ine.gob.cl/" target="_blank">View official Census 2024 site →</a></p>
+:::
+::: {.g-col-12 .g-col-md-3}
+![](img/censo_2024.svg){.logo-trabajo fig-alt="Logo Censo 2024 INE"}
+:::
+:::
+
+:::
+
+### Researcher — Fondecyt Project N°1231356 {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+<p><strong>Universidad Diego Portales / Fondecyt · May 2024 – August 2025</strong></p>
+<p>*"Governing uncertainty: grammars, actors, and devices for producing economic 'stability' in contemporary capitalism. A study on the Central Bank of Chile (2006–2022)"*. Qualitative and quantitative data analysis on economic policies; construction of indicators to evaluate institutional stability devices.</p>
+
+:::
+
+### Research Assistant — *Voces del CEP* {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-9}
+<p><strong>Centre for Public Studies (CEP) · April 2023 – April 2024</strong></p>
+<p>Responsible for editorial management of the <a href="https://www.cepchile.cl/categoria-de-investigacion/voces-del-cep/" target="_blank"><em>Voces del CEP</em></a> bulletin, including <strong>coordination, organization, and publication of analysis articles</strong> on contemporary public issues. Full publication workflow management. Tracking of the second Chilean constitutional process (2023). Statistical systematization of electoral data and public opinion.</p>
+:::
+::: {.g-col-12 .g-col-md-3}
+![](img/cep.png){.logo-trabajo fig-alt="Logo CEP"}
+:::
+:::
+
+:::
+
+### Research Assistant — C22 Project {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-9}
+<p><strong>Centre for Public Studies (CEP) · August 2021 – April 2024</strong></p>
+<p>Socio-constitutional analysis C22. Digital humanities specialization in Chile's first constitutional process. Discourse analysis, text data processing, and political information visualization. <a href="https://c22cepchile.cl/" target="_blank">View project →</a></p>
+:::
+::: {.g-col-12 .g-col-md-3}
+![](img/c22.png){.logo-trabajo fig-alt="Logo C22 CEP"}
+:::
+:::
+
+:::
+
+### Methodological Advisor — Joaquín Prieto Projects {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+<p><strong>Independent academic research · 2025 – present</strong></p>
+<p>Quantitative research advisory on projects ***Insecurity amid Recovery*** and ***Economic Insecurity, Not Inequality?*** by **Joaquín Prieto**. Analysis using the **ELSOC survey (COES)** and the **Social Welfare Survey (EBS, INE)**. Statistical modeling with R, methodological design support, and panel data analysis.</p>
+
+:::
+
+### Public Affairs Analyst {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-9}
+<p><strong>Tironi & Associates · August 2021 – March 2023</strong></p>
+<p>In charge of the <strong>constitutional bulletin 2022</strong>, a weekly monitoring product systematizing political and institutional information for corporate and public clients. Collection, cleaning, and analysis of political and institutional data.</p>
+<p>Contributed to <strong>strategic consulting</strong> projects focused on data analysis for organizational diagnosis, public opinion monitoring, and communications strategy. Reports for public and private sector clients.</p>
+:::
+::: {.g-col-12 .g-col-md-3}
+![](img/tironi.jpg){.logo-trabajo fig-alt="Logo Tironi y Asociados"}
+:::
+:::
+
+:::
+
+### Research Assistant — Fondecyt N°1190295 {.trabajo-titulo}
+
+::: {.trabajo-bloque}
+
+<p><strong>Universidad Diego Portales · March 2022 – March 2023</strong></p>
+<p>*"Governing critical transitions in socio-ecological systems: the case of Chiloé, Chile"*. Processing of qualitative and quantitative data for research on critical transitions in socio-environmental systems.</p>
+
+:::
+
+---
+
+## 🎓 University experience {.seccion-titulo}
+
+::: {.intro-pagina}
+During my studies at Universidad Diego Portales I actively participated as a **teaching assistant** and **thesis researcher**, strengthening my training in methodology, social theory, and applied research.
+:::
+
+```{r}
+#| echo: false
+
+ayudantias <- list(
+  list(fecha="August 2020 – August 2021",
+       titulo="Graduate Researcher — Fondecyt Project N°1181585",
+       lugar="Universidad Diego Portales",
+       desc="Participation in a Fondecyt sociological research project, linking undergraduate thesis work with a funded research line."),
+  list(fecha="March – July 2021",
+       titulo="Teaching Assistant — Quantitative Techniques",
+       lugar="Macarena Orchard's course · UDP",
+       desc="Teaching support in quantitative methodology: descriptive and inferential statistics, and data analysis with specialized software."),
+  list(fecha="August – December 2020",
+       titulo="Teaching Assistant — Research Logic",
+       lugar="Sara Correa's course · UDP",
+       desc="Teaching support in research design, formulation of questions, hypotheses, and construction of theoretical frameworks."),
+  list(fecha="March – July 2020",
+       titulo="Teaching Assistant — Sociological Theory IV",
+       lugar="Modesto Gayo's course · UDP",
+       desc="Teaching support in contemporary sociological theory: author discussions, theoretical analysis exercises, and student feedback."),
+  list(fecha="March – July 2020",
+       titulo="Teaching Assistant — Qualitative Methods",
+       lugar="Tomás Ariztía and Camila Peralta's courses · UDP",
+       desc="Teaching support in qualitative design and analysis: interviews, observation, ethnography, and discourse analysis."),
+  list(fecha="March – July 2020",
+       titulo="Teaching Assistant — Social Problems",
+       lugar="Jorge Atria's course · UDP",
+       desc="Support in sociological analysis of contemporary social problems: inequality, stratification, and public policy.")
+)
+
+div(class = "timeline",
+  map(ayudantias, \(a) {
+    div(class = "timeline-item",
+      div(class = "timeline-fecha",  a$fecha),
+      div(class = "timeline-titulo", a$titulo),
+      div(class = "timeline-lugar",  a$lugar),
+      tags$p(a$desc)
+    )
+  })
+)
+```
+
+---
+
+## 🛠️ Technical skills {.seccion-titulo}
+
+```{r}
+#| echo: false
+habilidades <- list(
+  list(en="<strong>RStudio / R:</strong> advanced — tidyverse, ggplot2, Quarto, statistical analysis, modeling",
+       nivel="avanzado"),
+  list(en="<strong>Power BI:</strong> advanced — interactive dashboards, DAX, corporate visualization",
+       nivel="avanzado"),
+  list(en="<strong>Excel:</strong> advanced — analysis, macros, data modeling",
+       nivel="avanzado"),
+  list(en="<strong>GitLab / GitHub:</strong> advanced — version control, collaboration, basic CI/CD",
+       nivel="avanzado"),
+  list(en="<strong>Atlas.ti:</strong> intermediate — qualitative analysis of texts and interviews",
+       nivel="intermedio"),
+  list(en="<strong>Python:</strong> basic — pandas, exploratory analysis, web scraping",
+       nivel="basico"),
+  list(en="<strong>Cloud & DevOps:</strong> basic — Claude, Cowork, Claude Code, workflow automation",
+       nivel="basico")
+)
+
+nivel_color <- list(avanzado="var(--color-acento-2)", intermedio="var(--color-acento)", basico="var(--color-gris)")
+
+div(class = "habilidades-lista",
+  map(habilidades, \(h) {
+    tags$div(class = "hab-item",
+      tags$span(class = paste0("hab-nivel nivel-", h$nivel),
+                style = paste0("background:", nivel_color[[h$nivel]])),
+      tags$span(HTML(h$en))
+    )
+  })
+)
+```
+
+---
+
+## 📰 Featured publications {.seccion-titulo}
+
+::: {.cv-seccion-texto}
+**Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024). *"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"*. **Journal of Language and Politics**, 23(5), 723–746. [https://doi.org/10.1075/jlp.24097.fre](https://doi.org/10.1075/jlp.24097.fre)
+:::
+
+<a href="publicaciones-en.html" class="btn-secundario">View all publications →</a>
+
+---
+
+## 🎤 Academic activities {.seccion-titulo}
+
+<ul class="cv-seccion-texto">
+<li><strong>June 2024</strong> — Seminar <em>"Artificial intelligence and social sciences: tools, expectations, and limitations"</em> for Sociology students, Universidad Diego Portales.</li>
+<li><strong>April 2022</strong> — Paper at the Chilean Sociology Congress PRE-ALAS (Concepción): <em>"Constitutional aesthetics: a look from the aesthetic regimes of the Chilean social uprising of 2019"</em>.</li>
+<li><strong>March 2022</strong> — Seminar <em>"Visual methodologies: a sociological approach to working with images"</em>, Universidad Diego Portales.</li>
+</ul>
+
+---
+
+## 📞 References {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+refs <- list(
+  list(txt = "<strong>Verónica Canales</strong><br><em>Head of methodology and processing — 2024 Population & Housing Census · INE.</em><br>Master in Social Research (LSE).<br>📧 <a href='mailto:vacanalesg@ine.gob.cl'>vacanalesg@ine.gob.cl</a>"),
+  list(txt = "<strong>Aldo Mascareño</strong><br><em>Senior Researcher at CEP · Editor-in-Chief of Estudios Públicos · Principal Investigator C22.</em><br>📧 <a href='mailto:amascareno@cepchile.cl'>amascareno@cepchile.cl</a>"),
+  list(txt = "<strong>Francisco Espinoza</strong><br><em>Consultant · Tironi & Associates.</em><br>Master in Political Science, Universidad de Chile.<br>📧 <a href='mailto:francisco.espinoza@tironi.cl'>francisco.espinoza@tironi.cl</a>")
+)
+
+div(class = "grid",
+  map(refs, \(r) {
+    div(class = "g-col-12 g-col-md-4",
+      div(class = "referencia-card",
+        tags$p(HTML(r$txt))
+      )
+    )
+  })
+)
+```
+
+---
+
+## 📧 Contact {.seccion-titulo}
+
+```{r}
+#| echo: false
+div(class = "contacto-grid",
+  div(class = "contacto-item",
+    tags$strong("📧 Email"),
+    tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
+  ),
+  div(class = "contacto-item",
+    tags$strong("📱 Phone"),
+    tags$span("+56 9 6309 5562")
+  ),
+  div(class = "contacto-item",
+    tags$strong("🔗 LinkedIn"),
+    tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
+           target = "_blank", "benjamin-lang-a78229207")
+  )
+)
+```

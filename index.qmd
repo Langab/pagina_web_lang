@@ -23,7 +23,7 @@ library(purrr)
 <p class="hero-rol" data-i18n="hero.rol">Sociólogo · Analista de datos · Investigador</p>
 
 <p class="hero-descripcion" data-i18n="hero.desc">
-Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</strong> en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e IA. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad y elaboración de indicadores para decisiones basadas en evidencia.
+Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</strong> en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e IA. Aporto una <strong>visión analítica y de comunicación estratégica</strong> para transformar datos complejos en información clara. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad y elaboración de indicadores para decisiones basadas en evidencia.
 </p>
 
 <div class="hero-badges">
@@ -79,10 +79,10 @@ areas <- list(
   list(
     icono = "📊",
     key_titulo = "area1.title",
-    titulo = "Ciencia de datos y análisis cuantitativo",
+    titulo = "Ciencia de datos y estadística aplicada",
     key_desc = "area1.desc",
-    desc = "Análisis estadístico avanzado, modelamiento y visualización de datos a gran escala. Manejo de bases de datos complejas, construcción de indicadores y reportes técnicos. R, Python, Power BI y SQL aplicados al sector público, privado y académico.",
-    tags = c("R · avanzado", "Python", "Power BI", "SQL")
+    desc = "Procesamiento, validación y análisis estadístico de datos complejos y a gran escala. Construcción de indicadores, modelamiento y visualización orientada a la toma de decisiones. R, Python y Power BI aplicados al sector público, privado y académico.",
+    tags = c("R · avanzado", "Python", "Power BI")
   ),
   list(
     icono = "🏛️",
@@ -93,20 +93,20 @@ areas <- list(
     tags = c("Dashboards", "Automatización", "Capacitación", "Transparencia")
   ),
   list(
-    icono = "🗳️",
+    icono = "🔬",
     key_titulo = "area3.title",
-    titulo = "Análisis político e investigación social",
+    titulo = "Técnicas y metodologías de investigación",
     key_desc = "area3.desc",
-    desc = "Investigación de procesos institucionales, electorales y de gobernanza. Análisis de texto aplicado a política, seguimiento constitucional y legislativo, indicadores de opinión pública. Proyectos Fondecyt y centros de pensamiento.",
-    tags = c("Opinión pública", "Constitucional", "Análisis de texto")
+    desc = "Formulación y diseño de proyectos de investigación cuantitativos, cualitativos y mixtos. Aplicación de metodologías adecuadas, validación de instrumentos, revisión crítica de bibliografía y selección de estrategias óptimas. Procesamiento de censos y encuestas de gran escala con aseguramiento de calidad.",
+    tags = c("Diseño metodológico", "Validación", "Censos y encuestas", "Análisis crítico")
   ),
   list(
-    icono = "📐",
+    icono = "📋",
     key_titulo = "area4.title",
-    titulo = "Diseño metodológico y estadística aplicada",
+    titulo = "Informes estratégicos",
     key_desc = "area4.desc",
-    desc = "Diseño de investigaciones cuantitativas, cualitativas y mixtas. Procesamiento de censos, encuestas de gran escala (ELSOC, EBS, Censo 2024) y aseguramiento de calidad de bases de datos complejas.",
-    tags = c("Censos", "Encuestas", "Indicadores", "Mixta")
+    desc = "Elaboración de informes y reportes orientados a la asesoría y toma de decisiones basada en evidencia. Síntesis de investigación aplicada para instituciones públicas, privadas y centros de pensamiento.",
+    tags = c("Evidencia", "Asesoría", "Think tanks", "Reportes")
   )
 )
 
@@ -139,7 +139,7 @@ proyectos <- list(
     key_period = "proj1.period",
     periodo    = "2025 – presente",
     key_desc   = "proj1.desc",
-    desc       = "Sistematización y visualización de indicadores educacionales para educación pública regional con R y Power BI.",
+    desc       = "Sistematización y visualización de indicadores educacionales para educación pública regional con R y Power BI. Diseño de gobernanza de datos institucional y construcción de un ecosistema de procesamientos y análisis de datos que permitieron reportería clara, ordenada y auditable mediante R Markdown y Power BI.",
     link       = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2"
   ),
   list(
@@ -161,7 +161,7 @@ proyectos <- list(
     key_period = "proj3.period",
     periodo    = "2024 – 2025",
     key_desc   = "proj3.desc",
-    desc       = "Analista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala.",
+    desc       = "Analista metodológico Senior en el INE. Validación y aseguramiento de calidad de datos censales a gran escala. Análisis preliminares de datos, elaboración de informes regionales y análisis demográficos.",
     link       = "https://censo2024.ine.gob.cl/"
   ),
   list(
@@ -172,7 +172,7 @@ proyectos <- list(
     key_period = "proj4.period",
     periodo    = "2021 – 2023",
     key_desc   = "proj4.desc",
-    desc       = "Consultoría estratégica de asuntos públicos. Boletín constitucional 2022, análisis político y proyectos de comunicación estratégica.",
+    desc       = "Consultoría estratégica de asuntos públicos. Boletín constitucional 2022, análisis político y proyectos de comunicación estratégica. Apoyo en distintos proyectos de consultoría con énfasis en análisis de datos para diagnóstico organizacional y estrategia.",
     link       = "https://tironi.cl/home"
   )
 )
@@ -219,7 +219,16 @@ servicios <- list(
        desc = "Investigaciones cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto."),
   list(icono = "🎓", key_titulo = "srv6.title", titulo = "Capacitación en datos",
        key_desc = "srv6.desc",
-       desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa para equipos de investigación e instituciones.")
+       desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa para equipos de investigación e instituciones."),
+  list(icono = "📝", key_titulo = "srv7.title", titulo = "Diseño de encuestas sociales",
+       key_desc = "srv7.desc",
+       desc = "Diseño, validación y pilotaje de instrumentos de medición cuantitativa. Construcción de cuestionarios con escalas validadas, muestreo y estrategias de levantamiento para estudios de opinión y diagnóstico social."),
+  list(icono = "🎯", key_titulo = "srv8.title", titulo = "Asesoría estratégica basada en evidencia",
+       key_desc = "srv8.desc",
+       desc = "Apoyo técnico en procesos de toma de decisiones para instituciones públicas y privadas. Síntesis de evidencia, análisis de escenarios y elaboración de recomendaciones fundamentadas en datos."),
+  list(icono = "🔍", key_titulo = "srv9.title", titulo = "Revisión de procesamientos estadísticos",
+       key_desc = "srv9.desc",
+       desc = "Auditoría y validación de análisis estadísticos: revisión de bases de datos, supuestos de modelos, consistencia de resultados e identificación de errores metodológicos en informes y estudios.")
 )
 
 div(class = "grid",

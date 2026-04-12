@@ -1,0 +1,225 @@
+---
+title: ""
+page-layout: full
+toc: false
+anchor-sections: false
+---
+
+```{r}
+#| echo: false
+library(htmltools)
+library(purrr)
+```
+
+::: {.hero-principal}
+
+::: {.hero-contenido}
+
+::: {.hero-texto}
+<span class="hero-saludo">👋 Hi, I'm</span>
+
+# Benjamín Lang Bustos
+
+<p class="hero-rol">Sociologist · Data Analyst · Researcher</p>
+
+<p class="hero-descripcion">
+Sociologist graduated with highest distinction and <strong>6 years of experience</strong> in data analysis, data science, and applied statistics across the public sector, private sector, and academic research. Specialized in processing, visualizing, and modeling large-scale data using R, Python, Power BI, advanced Excel, and AI tools. I bring <strong>analytical and strategic communication expertise</strong> to transform complex data into clear, actionable insights. Proven experience in dashboards, automated reporting, database quality assurance, and KPI development for evidence-based decision making.
+</p>
+
+<div class="hero-badges">
+<span class="badge-item">R · Python · Power BI</span>
+<span class="badge-item">R Markdown · Quarto</span>
+<span class="badge-item">⚙️ Automation</span>
+<span class="badge-item">🤖 Applied AI</span>
+</div>
+
+<div class="hero-botones">
+<a href="about-en.html" class="btn-primario">View full CV →</a>
+<a href="trabajos-en.html" class="btn-secundario">Work & projects</a>
+<a href="mailto:benjalang1997@gmail.com" class="btn-ghost">✉️ Get in touch</a>
+</div>
+
+:::
+
+::: {.hero-imagen}
+![](img/perfil.jpg){.foto-hero fig-alt="Photo of Benjamín Lang"}
+:::
+
+:::
+
+::: {.hero-stats}
+
+```{r}
+#| echo: false
+div(class = "stats-hero",
+  div(class = "stat-hero-item",
+    div(class = "stat-hero-numero", "6+"),
+    div(class = "stat-hero-label", "Years of experience")),
+  div(class = "stat-hero-item",
+    div(class = "stat-hero-numero", "13"),
+    div(class = "stat-hero-label", "Policy Papers")),
+  div(class = "stat-hero-item",
+    div(class = "stat-hero-numero", "4"),
+    div(class = "stat-hero-label", "Sectors")),
+  div(class = "stat-hero-item",
+    div(class = "stat-hero-numero", "3"),
+    div(class = "stat-hero-label", "Languages"))
+)
+```
+
+:::
+
+:::
+
+## 🔬 Areas of Expertise {.seccion-titulo}
+
+```{r}
+#| echo: false
+areas <- list(
+  list(
+    icono = "📊",
+    titulo = "Data Science & Applied Statistics",
+    desc = "Processing, validation, and statistical analysis of complex large-scale data. Building indicators, modeling, and visualization oriented toward decision-making. R, Python, and Power BI applied across the public, private, and academic sectors.",
+    tags = c("R · advanced", "Python", "Power BI")
+  ),
+  list(
+    icono = "🏛️",
+    titulo = "Data Governance in Organizations",
+    desc = "Design and implementation of institutional data ecosystems: from collection and validation to visualization and communication. Team collaboration through training, process automation, and generating transparency for evidence-based decisions.",
+    tags = c("Dashboards", "Automation", "Training", "Transparency")
+  ),
+  list(
+    icono = "🔬",
+    titulo = "Research Methodologies & Techniques",
+    desc = "Research project formulation and design for quantitative, qualitative, and mixed-methods approaches. Applying appropriate methodologies, instrument validation, critical literature review, and selection of optimal research strategies. Large-scale census and survey processing with quality assurance.",
+    tags = c("Research design", "Validation", "Censuses & surveys", "Critical analysis")
+  ),
+  list(
+    icono = "📋",
+    titulo = "Strategic Reports",
+    desc = "Preparation of reports and briefings for advisory and evidence-based decision-making. Applied research synthesis for public institutions, private organizations, and think tanks.",
+    tags = c("Evidence", "Advisory", "Think tanks", "Reports")
+  )
+)
+
+div(class = "grid",
+  map(areas, \(a) {
+    div(class = "g-col-12 g-col-md-6",
+      div(class = "tarjeta",
+        div(class = "tarjeta-icono", a$icono),
+        tags$h3(a$titulo),
+        tags$p(a$desc),
+        div(class = "skill-tags",
+          map(a$tags, \(t) span(class = "skill-tag", t))
+        )
+      )
+    )
+  })
+)
+```
+
+## 💼 Featured Projects {.seccion-titulo}
+
+```{r}
+#| echo: false
+proyectos <- list(
+  list(
+    tipo   = "Public sector",
+    nombre = "Educational Data SLEP Santa Rosa",
+    periodo = "2025 – present",
+    desc   = "Systematization and visualization of educational indicators for regional public education using R and Power BI. Institutional data governance design and construction of a data processing and analysis ecosystem enabling clear, organized, and auditable reporting through R Markdown and Power BI.",
+    link   = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2"
+  ),
+  list(
+    tipo   = "Research",
+    nombre = "Digital Humanities C22 — CEP",
+    periodo = "2021 – 2024",
+    desc   = "Computational analysis of the Chilean constitutional process. Text data processing and political visualization.",
+    link   = "https://c22cepchile.cl/"
+  ),
+  list(
+    tipo   = "Public statistics",
+    nombre = "Population & Housing Census 2024",
+    periodo = "2024 – 2025",
+    desc   = "Senior Methodological Analyst at INE. Validation and quality assurance of census data at large scale. Preliminary data analysis, regional reports, and demographic analysis.",
+    link   = "https://censo2024.ine.gob.cl/"
+  ),
+  list(
+    tipo   = "Private sector",
+    nombre = "Tironi & Associates",
+    periodo = "2021 – 2023",
+    desc   = "Strategic public affairs consulting. Constitutional bulletin 2022, political analysis, and strategic communications. Support on various consulting projects with emphasis on data analysis for organizational diagnosis and strategy.",
+    link   = "https://tironi.cl/home"
+  )
+)
+
+div(class = "grid",
+  map(proyectos, \(p) {
+    div(class = "g-col-12 g-col-md-6",
+      div(class = "proyecto-card",
+        div(class = "tarjeta-etiqueta", p$tipo),
+        tags$h3(tags$a(href = p$link, target = "_blank", p$nombre)),
+        div(class = "proyecto-periodo", p$periodo),
+        tags$p(p$desc)
+      )
+    )
+  })
+)
+```
+
+<div class="text-center" style="margin-top:1.5rem;">
+<a href="trabajos-en.html" class="btn-secundario">View all work →</a>
+</div>
+
+## 🛠️ Services I Offer {.seccion-titulo}
+
+```{r}
+#| echo: false
+servicios <- list(
+  list(icono = "📊", titulo = "Data Analysis & Modeling",
+       desc = "Data processing, cleaning, and statistical analysis with R, Python, and Power BI. KPI development and technical reports."),
+  list(icono = "📈", titulo = "Dashboards & Executive Reports",
+       desc = "Design of interactive dashboards and visual reports that transform complex data into clear information for decision making."),
+  list(icono = "🏛️", titulo = "Organizational Data Governance",
+       desc = "Design of data ecosystems: process standardization, automation, team training, and institutional transparency."),
+  list(icono = "🗳️", titulo = "Political & Electoral Analysis",
+       desc = "Electoral data, legislative tracking, public opinion indicators, and political trend monitoring."),
+  list(icono = "🔬", titulo = "Applied Social Research",
+       desc = "Quantitative, qualitative, or mixed research for organizational diagnosis, program evaluation, and context analysis."),
+  list(icono = "🎓", titulo = "Data Training",
+       desc = "Workshops on data analysis with R, Power BI, and quantitative methodology for research teams and institutions."),
+  list(icono = "📝", titulo = "Social Survey Design",
+       desc = "Design, validation, and piloting of quantitative measurement instruments. Questionnaire construction with validated scales, sampling strategies, and fieldwork planning."),
+  list(icono = "🎯", titulo = "Evidence-Based Strategic Advisory",
+       desc = "Technical support for decision-making processes in public and private institutions. Evidence synthesis, scenario analysis, and data-driven recommendations."),
+  list(icono = "🔍", titulo = "Statistical Processing Review",
+       desc = "Audit and validation of statistical analyses: database review, model assumption checks, result consistency, and identification of methodological errors.")
+)
+
+div(class = "grid",
+  map(servicios, \(s) {
+    div(class = "g-col-12 g-col-md-6 g-col-lg-4",
+      div(class = "servicio-card",
+        div(class = "icono", s$icono),
+        tags$h3(s$titulo),
+        tags$p(s$desc)
+      )
+    )
+  })
+)
+```
+
+<div class="text-center" style="margin-top:0.5rem;">
+<a href="mailto:benjalang1997@gmail.com" class="btn-primario">✉️ Check availability</a>
+</div>
+
+## 📰 Latest Publication {.seccion-titulo}
+
+::: {.pub-destacada}
+**Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024).
+*"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"*.
+**Journal of Language and Politics**, 23(5), 723–746.
+
+<a href="https://doi.org/10.1075/jlp.24097.fre" class="btn-primario" target="_blank">Read article →</a>
+<a href="publicaciones-en.html" class="btn-secundario">View all publications →</a>
+:::

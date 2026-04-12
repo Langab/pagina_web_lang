@@ -11,57 +11,65 @@ library(purrr)
 ```
 
 <!-- ====================================================
-     🎯 ENCABEZADO CV — hero rediseñado (2 columnas)
+     🎯 ENCABEZADO CV — hero minimalista claro (2 columnas)
 ======================================================= -->
-
-::: {.cv-header}
-
-<span class="cv-titulo-chip">📄 Curriculum Vitae</span>
-
-<div class="cv-header-grid">
-
-<div class="cv-header-left">
-<h1>Benjamín Lang Bustos</h1>
-<p class="cv-header-subtitulo" data-i18n="cv.rol">Sociólogo · Analista de datos · Investigador</p>
-<hr class="cv-header-divider">
-<div class="cv-idiomas">
-<span class="idioma-badge" data-i18n="cv.lang.es">🇨🇱 Español — Nativo</span>
-<span class="idioma-badge" data-i18n="cv.lang.en">🇬🇧 Inglés — B2</span>
-<span class="idioma-badge" data-i18n="cv.lang.it">🇮🇹 Italiano — C1</span>
-</div>
-<a href="documentos/cv_Benjamin_Lang_2026.pdf" class="cv-download-btn" data-i18n="cv.download">📄 Descargar CV en PDF</a>
-</div>
 
 ```{r}
 #| echo: false
-div(class = "cv-contacto-header",
-  div(class = "cv-contacto-item",
-    tags$strong("📧 Email"),
-    tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
-  ),
-  div(class = "cv-contacto-item",
-    tags$strong("📱 Teléfono"),
-    tags$span("+56 9 6309 5562")
-  ),
-  div(class = "cv-contacto-item",
-    tags$strong("🔗 LinkedIn"),
-    tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
-           target = "_blank", "benjamin-lang-a78229207")
+
+# ── Header completo como htmltools (evita mezcla HTML/Quarto) ────
+div(class = "cv-header",
+  tags$span(class = "cv-titulo-chip", "📄 Curriculum Vitae"),
+  div(class = "cv-header-grid",
+
+    # Columna izquierda: identidad
+    div(class = "cv-header-left",
+      tags$h1("Benjamín Lang Bustos"),
+      tags$p(class = "cv-header-subtitulo",
+             `data-i18n` = "cv.rol",
+             "Sociólogo · Analista de datos · Investigador"),
+      tags$hr(class = "cv-header-divider"),
+      div(class = "cv-idiomas",
+        tags$span(class = "idioma-badge",
+                  `data-i18n` = "cv.lang.es", "🇨🇱 Español — Nativo"),
+        tags$span(class = "idioma-badge",
+                  `data-i18n` = "cv.lang.en", "🇬🇧 Inglés — B2"),
+        tags$span(class = "idioma-badge",
+                  `data-i18n` = "cv.lang.it", "🇮🇹 Italiano — C1")
+      ),
+      tags$a(href = "documentos/cv_Benjamin_Lang_2026.pdf",
+             class = "cv-download-btn",
+             `data-i18n` = "cv.download",
+             "📄 Descargar CV en PDF")
+    ),
+
+    # Columna derecha: contacto
+    div(class = "cv-contacto-header",
+      div(class = "cv-contacto-item",
+        tags$strong("📧 Email"),
+        tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
+      ),
+      div(class = "cv-contacto-item",
+        tags$strong("📱 Teléfono"),
+        tags$span("+56 9 6309 5562")
+      ),
+      div(class = "cv-contacto-item",
+        tags$strong("🔗 LinkedIn"),
+        tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
+               target = "_blank", "benjamin-lang-a78229207")
+      )
+    )
   )
 )
 ```
-
-</div>
-
-:::
 
 ## 👤 Sobre mí {.seccion-titulo data-i18n="cv.sec.sobre"}
 
 ::: {.sobre-mi-card}
 
-<p data-i18n="cv.sobre.1">Soy sociólogo titulado con <strong>distinción máxima</strong> por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa, análisis de sistemas complejos y humanidades digitales.</p>
+<p data-i18n="cv.sobre.1">Soy sociólogo titulado con <strong>distinción máxima</strong> por la Universidad Diego Portales (2017–2021), especializado en análisis de datos, investigación social y ciencia de datos. Mi trabajo se sitúa en la intersección entre metodología cuantitativa y humanidades digitales.</p>
 
-<p data-i18n="cv.sobre.2">Actualmente me desempeño como <strong>Analista de datos</strong> en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde lidero la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.</p>
+<p data-i18n="cv.sobre.2">Actualmente me desempeño como <strong>Analista de datos</strong> en el Servicio Local de Educación Pública Santa Rosa (SLEP), donde soy parte de la sistematización, visualización y análisis de datos educacionales para la toma de decisiones.</p>
 
 <p data-i18n="cv.sobre.3">Mi experiencia combina investigación académica rigurosa, procesamiento de grandes volúmenes de información y diseño metodológico innovador en instituciones como el <strong>Instituto Nacional de Estadísticas (INE)</strong>, el <strong>Centro de Estudios Públicos (CEP)</strong> y en proyectos <strong>Fondecyt</strong> enfocados en gobernanza económica y transiciones socio-ambientales.</p>
 
@@ -296,32 +304,60 @@ div(class = "timeline",
 
 ## 🛠️ Habilidades técnicas {.seccion-titulo data-i18n="cv.sec.habilidades"}
 
-- **RStudio / R:** avanzado (tidyverse, ggplot2, Quarto, análisis estadístico, modelación)
-- **Power BI:** avanzado (dashboards interactivos, DAX, visualización corporativa)
-- **Excel:** avanzado (análisis, macros, modelado financiero)
-- **GitLab / GitHub:** avanzado (control de versiones, colaboración, CI/CD básico)
-- **Atlas.ti:** intermedio (análisis cualitativo de textos y entrevistas)
-- **Python:** básico (pandas, análisis exploratorio)
+```{r}
+#| echo: false
+habilidades <- list(
+  list(key="cv.hab.r",
+       es="<strong>RStudio / R:</strong> avanzado — tidyverse, ggplot2, Quarto, análisis estadístico, modelación",
+       nivel="avanzado"),
+  list(key="cv.hab.pbi",
+       es="<strong>Power BI:</strong> avanzado — dashboards interactivos, DAX, visualización corporativa",
+       nivel="avanzado"),
+  list(key="cv.hab.excel",
+       es="<strong>Excel:</strong> avanzado — análisis, macros, modelado de datos",
+       nivel="avanzado"),
+  list(key="cv.hab.git",
+       es="<strong>GitLab / GitHub:</strong> avanzado — control de versiones, colaboración, CI/CD básico",
+       nivel="avanzado"),
+  list(key="cv.hab.atlas",
+       es="<strong>Atlas.ti:</strong> intermedio — análisis cualitativo de textos y entrevistas",
+       nivel="intermedio"),
+  list(key="cv.hab.python",
+       es="<strong>Python:</strong> básico — pandas, análisis exploratorio, web scraping",
+       nivel="basico"),
+  list(key="cv.hab.cloud",
+       es="<strong>Cloud & DevOps:</strong> básico — Claude, Cowork, Claude Code, automatización de workflows",
+       nivel="basico")
+)
 
----
+nivel_color <- list(avanzado="var(--color-acento-2)", intermedio="var(--color-acento)", basico="var(--color-gris)")
 
-## 🎯 Intereses de investigación {.seccion-titulo data-i18n="cv.sec.intereses"}
-
-<p data-i18n="cv.intereses">Investigación social y análisis de sistemas complejos · Ciencia de datos y análisis cuantitativo · Metodologías innovadoras en investigación social · Humanidades digitales · Gobernanza y políticas públicas · Análisis de discursos y datos textuales.</p>
+div(class = "habilidades-lista",
+  map(habilidades, \(h) {
+    tags$div(class = "hab-item",
+      tags$span(class = paste0("hab-nivel nivel-", h$nivel),
+                style = paste0("background:", nivel_color[[h$nivel]])),
+      tags$span(`data-i18n` = h$key, HTML(h$es))
+    )
+  })
+)
+```
 
 ---
 
 ## 📰 Publicaciones destacadas {.seccion-titulo data-i18n="cv.sec.publicaciones"}
 
+::: {.cv-seccion-texto}
 **Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024). *"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"*. **Journal of Language and Politics**, 23(5), 723–746. [https://doi.org/10.1075/jlp.24097.fre](https://doi.org/10.1075/jlp.24097.fre)
+:::
 
-<a href="publicaciones.qmd" class="btn-secundario">Ver todas las publicaciones →</a>
+<a href="publicaciones.qmd" class="btn-secundario" data-i18n="pub.featured.all">Ver todas las publicaciones →</a>
 
 ---
 
 ## 🎤 Actividades académicas {.seccion-titulo data-i18n="cv.sec.actividades"}
 
-<ul>
+<ul class="cv-seccion-texto">
 <li data-i18n="cv.act1"><strong>Junio 2024</strong> — Seminario <em>"Inteligencia artificial y ciencias sociales: herramientas, expectativas y limitaciones"</em> para estudiantes de Sociología, Universidad Diego Portales.</li>
 <li data-i18n="cv.act2"><strong>Abril 2022</strong> — Ponencia en el Congreso Chileno de Sociología PRE-ALAS (Concepción): <em>"Estéticas constitucionales: una mirada desde los regímenes estéticos de la revuelta social chilena de 2019"</em>.</li>
 <li data-i18n="cv.act3"><strong>Marzo 2022</strong> — Seminario <em>"Metodologías visuales: una aproximación sociológica para trabajar con imágenes"</em>, Universidad Diego Portales.</li>

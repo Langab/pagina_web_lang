@@ -1,0 +1,247 @@
+---
+title: "Work, Projects & Consulting"
+subtitle: "Professional experience in the public sector, private sector, academic research, and independent consulting"
+toc: true
+toc-title: "Sections"
+---
+
+```{r}
+#| echo: false
+library(htmltools)
+library(purrr)
+```
+
+::: {.intro-pagina}
+A selection of **applied research**, **data analysis**, and **consulting** projects throughout my professional career in the public sector, private sector, academic research, and independent consulting.
+:::
+
+---
+
+## 🏛️ Public Sector {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Current · Public education"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3(tags$a(href = "https://sites.google.com/slepsantarosa.cl/datos-usointerno/inicio?authuser=2",
+                         target = "_blank",
+                         "Educational Data SLEP Santa Rosa")),
+          div(class = "proyecto-periodo", "September 2025 – present"),
+          tags$p("Systematization, visualization, and analysis of educational data for Santa Rosa SLEP. Dashboard and report design for decision making in regional educational management."),
+          div(class = "skill-tags",
+            span(class="skill-tag avanzado", "R"),
+            span(class="skill-tag avanzado", "Power BI"),
+            span(class="skill-tag", "Educational data"))
+        ),
+        tags$img(src = "img/slep_santa_rosa.jpg", class = "card-logo-lateral",
+                 alt = "Logo SLEP Santa Rosa")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "2024–2025 · Official statistics"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3(tags$a(href = "https://censo2024.ine.gob.cl/", target = "_blank",
+                         "Population & Housing Census 2024 — INE")),
+          div(class = "proyecto-periodo", "May 2024 – June 2025"),
+          tags$p("Senior Methodological Analyst at INE. Large-scale census data processing, validation, and analysis. Statistical methodology design and database quality assurance."),
+          div(class = "skill-tags",
+            span(class="skill-tag avanzado", "Statistical methodology"),
+            span(class="skill-tag avanzado", "Big data"),
+            span(class="skill-tag", "Censuses"))
+        ),
+        tags$img(src = "img/censo_2024.svg", class = "card-logo-lateral",
+                 alt = "Logo Censo 2024 INE")
+      )
+    )
+  )
+)
+```
+
+---
+
+## 🏢 Private Sector {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "proyecto-card",
+  div(class = "tarjeta-etiqueta", "2021–2023 · Strategic consulting"),
+  div(class = "card-con-logo",
+    div(
+      tags$h3(tags$a(href = "https://tironi.cl/home", target = "_blank",
+                     "Tironi & Associates")),
+      div(class = "proyecto-periodo", "August 2021 – March 2023"),
+      tags$p("Public affairs analyst. In charge of the ", tags$strong("constitutional bulletin 2022"),
+             ", a weekly monitoring product systematizing political and institutional information for corporate and public clients."),
+      tags$p("Contribution to strategic consulting projects focused on data analysis for organizational diagnosis, public opinion monitoring, and communications strategy design."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Strategic consulting"),
+        span(class="skill-tag", "Political analysis"),
+        span(class="skill-tag", "Public opinion"))
+    ),
+    tags$img(src = "img/tironi.jpg", class = "card-logo-lateral",
+             alt = "Logo Tironi y Asociados")
+  )
+)
+```
+
+---
+
+## 🔬 Academic Research {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Current · Quantitative research"),
+      tags$h3("Methodological Advisor — Joaquín Prieto Projects"),
+      div(class = "proyecto-periodo", "2025 – present"),
+      tags$p(
+        "Quantitative research advisory on projects ",
+        tags$em(tags$strong("Insecurity amid Recovery")), " and ",
+        tags$em(tags$strong("Economic Insecurity, Not Inequality?")),
+        " by researcher Joaquín Prieto. Analysis using the ELSOC survey (COES) and the Social Welfare Survey (EBS, INE). Statistical modeling with R."
+      ),
+      div(class = "skill-tags",
+        span(class="skill-tag avanzado", "R"),
+        span(class="skill-tag", "ELSOC · COES"),
+        span(class="skill-tag", "EBS · INE"))
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2024–2025"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3("Governing Uncertainty — Central Bank of Chile"),
+          div(class = "proyecto-periodo", "May 2024 – August 2025"),
+          tags$p("Fondecyt Project N°1231356: ",
+            tags$em('"Grammars, actors, and devices for producing economic stability in contemporary capitalism"'),
+            ". Qualitative and quantitative data analysis on economic policies and institutional stability indicators."),
+          div(class = "skill-tags",
+            span(class="skill-tag", "Qualitative analysis"),
+            span(class="skill-tag", "Political economy"))
+        ),
+        tags$img(src = "img/udp.png", class = "card-logo-lateral", alt = "Logo UDP")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "CEP · 2021–2024"),
+      div(class = "card-con-logo",
+        div(
+          tags$h3(tags$a(href = "https://c22cepchile.cl/", target = "_blank",
+                         "Digital Humanities C22 — CEP")),
+          div(class = "proyecto-periodo", "August 2021 – April 2024"),
+          tags$p("Computational analysis of the Chilean constitutional process. Text data processing, discourse analysis, and political visualization. ", tags$em("Voces del CEP"), " bulletin: editorial management and publication."),
+          div(class = "skill-tags",
+            span(class="skill-tag", "Digital humanities"),
+            span(class="skill-tag", "Text analysis"))
+        ),
+        tags$img(src = "img/c22.png", class = "card-logo-lateral", alt = "Logo C22")
+      )
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2022–2023"),
+      tags$h3("Critical Transitions in Socio-ecological Systems — Chiloé"),
+      div(class = "proyecto-periodo", "March 2022 – March 2023"),
+      tags$p("Fondecyt N°1190295. Processing of qualitative and quantitative data on critical transitions in socio-environmental systems in Chiloé, Chile."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Complex systems"),
+        span(class="skill-tag", "Mixed methods"))
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondecyt · 2020–2021"),
+      tags$h3("Graduate Researcher — Fondecyt Project N°1181585"),
+      div(class = "proyecto-periodo", "August 2020 – August 2021"),
+      tags$p("Participation as thesis researcher in a Fondecyt project, linking undergraduate thesis work with a funded research line."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Academic research"))
+    )
+  )
+)
+```
+
+---
+
+## 🤝 Private Consulting {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "grid",
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Consulting · May 2024"),
+      tags$h3("Radiography of Domestic Equity"),
+      div(class = "proyecto-periodo", "May 2024"),
+      tags$p("Consulting project developed for ", tags$strong("Francisca Bravo Cox"),
+             ". Data analysis and systematization for a diagnostic on equity in the domestic space."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Quantitative analysis"),
+        span(class="skill-tag", "Gender"))
+    )
+  ),
+
+  div(class = "g-col-12 g-col-md-6",
+    div(class = "proyecto-card",
+      div(class = "tarjeta-etiqueta", "Fondo del Libro · 2023"),
+      tags$h3("Digital Reading Governance in Chile"),
+      div(class = "proyecto-periodo", "2023"),
+      tags$p("Consulting project for ", tags$strong("Christian Anwandter"),
+             " within a Fondo del Libro-funded project. Analysis of public policies for books and digital reading in Chile."),
+      div(class = "skill-tags",
+        span(class="skill-tag", "Cultural policy"),
+        span(class="skill-tag", "Applied research"))
+    )
+  )
+)
+```
+
+---
+
+## 📩 Professional Contact {.seccion-titulo}
+
+<p>Have a project in mind? Write to me and let's talk.</p>
+
+```{r}
+#| echo: false
+div(class = "contacto-grid",
+  div(class = "contacto-item",
+    tags$strong("📧 Email"),
+    tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
+  ),
+  div(class = "contacto-item",
+    tags$strong("📱 Phone"),
+    tags$span("+56 9 6309 5562")
+  ),
+  div(class = "contacto-item",
+    tags$strong("🔗 LinkedIn"),
+    tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
+           target = "_blank", "benjamin-lang-a78229207")
+  )
+)
+```

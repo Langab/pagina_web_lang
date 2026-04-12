@@ -1,7 +1,7 @@
 ---
-title: "Publicaciones"
+title: "Publications"
 toc: true
-toc-title: "Categorías"
+toc-title: "Categories"
 ---
 
 ```{r}
@@ -11,7 +11,7 @@ library(purrr)
 library(glue)
 ```
 
-## 📄 Artículos académicos {.seccion-titulo data-i18n="pub.sec.articulos"}
+## 📄 Academic Articles {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -24,21 +24,20 @@ articulos <- list(
     revista = "Journal of Language and Politics",
     detalle = "23(5), 723–746",
     link    = "https://doi.org/10.1075/jlp.24097.fre",
-    tipo    = "Artículo académico",
-    tipo_key = "pub.tipo.articulo"
+    tipo    = "Academic article"
   )
 )
 
 div(class = "publicaciones",
   map(articulos, \(p) {
     div(class = "pub-item",
-      div(class = "pub-tipo", `data-i18n` = p$tipo_key, p$tipo),
+      div(class = "pub-tipo", p$tipo),
       tags$p(
         strong(p$autores), glue(" ({p$anio}). "),
         em(glue('"{p$titulo}". ')),
         strong(p$revista), glue(", {p$detalle}. "),
         tags$a(href = p$link, class = "pub-ver-link", target = "_blank",
-               "Ver publicación →")
+               "View publication →")
       )
     )
   })
@@ -47,7 +46,7 @@ div(class = "publicaciones",
 
 ---
 
-## 📋 Policy Papers — Centro de Estudios Públicos {.seccion-titulo data-i18n="pub.sec.policy"}
+## 📋 Policy Papers — Centre for Public Studies (CEP) {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -87,12 +86,12 @@ div(class = "publicaciones",
   map(policy, \(p) {
     div(class = "pub-item",
       div(class = "pub-tipo pub-tipo-policy",
-          glue("Puntos de Referencia N°{p$n} · CEP · {p$anio}")),
+          glue("Reference Points N°{p$n} · CEP · {p$anio}")),
       tags$p(
         strong(p$autores), glue(" ({p$anio}). "),
         em(glue('"{p$titulo}". ')),
         tags$a(href = p$link, class = "pub-ver-link", target = "_blank",
-               "Ver publicación →")
+               "View publication →")
       )
     )
   })
@@ -101,7 +100,7 @@ div(class = "publicaciones",
 
 ---
 
-## 🖥️ Research Notes — C22 · CEP {.seccion-titulo data-i18n="pub.sec.notas"}
+## 🖥️ Research Notes — C22 · CEP {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -132,7 +131,7 @@ div(class = "grid",
                glue(" ({p$anio})."),
                tags$br(),
                tags$a(href = p$link, class = "pub-ver-link", target = "_blank",
-                      "Ver en C22 →"))
+                      "View at C22 →"))
       )
     )
   })
