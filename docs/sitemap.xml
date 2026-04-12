@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://langab.github.io/pagina_web_lang/about-en.html</loc>
+    <lastmod>2026-04-12T01:22:42.897Z</lastmod>
+  </url>
+  <url>
     <loc>https://langab.github.io/pagina_web_lang/about.html</loc>
     <lastmod>2026-04-11T21:02:58.669Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/blog/index.html</loc>
+    <lastmod>2026-04-11T16:58:13.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/index.html</loc>
+    <lastmod>2026-04-11T21:17:44.201Z</lastmod>
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/publicaciones.html</loc>
@@ -13,11 +25,15 @@
     <lastmod>2026-04-11T21:21:01.543Z</lastmod>
   </url>
   <url>
-    <loc>https://langab.github.io/pagina_web_lang/index.html</loc>
-    <lastmod>2026-04-11T21:17:44.201Z</lastmod>
+    <loc>https://langab.github.io/pagina_web_lang/index-en.html</loc>
+    <lastmod>2026-04-12T01:21:30.644Z</lastmod>
   </url>
   <url>
-    <loc>https://langab.github.io/pagina_web_lang/blog/index.html</loc>
-    <lastmod>2026-04-11T16:58:13.159Z</lastmod>
+    <loc>https://langab.github.io/pagina_web_lang/publicaciones-en.html</loc>
+    <lastmod>2026-04-12T01:24:01.033Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/trabajos-en.html</loc>
+    <lastmod>2026-04-12T01:23:36.890Z</lastmod>
   </url>
 </urlset>

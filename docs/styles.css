@@ -75,20 +75,22 @@ h2 {
   cursor: pointer;
   transition: all 0.2s ease;
   line-height: 1.4;
+  text-decoration: none !important;
 }
 
 .lang-btn:hover {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.9) !important;
   background: rgba(255,255,255,0.12);
+  text-decoration: none !important;
 }
 
 .lang-btn.active {
   background: var(--color-acento-2);
-  color: white;
+  color: white !important;
   box-shadow: 0 1px 6px rgba(26,188,156,0.45);
 }
 
-/* Ocultar el separador "|" */
+/* Ocultar el separador "|" (legacy) */
 .lang-sep { display: none; }
 
 /* -------------------------------------------------------
