@@ -1015,35 +1015,62 @@ function applyTranslations(lang) {
 
 // -------------------------------------------------------
 // 🔘 INYECTAR BOTÓN EN NAVBAR
+// Intenta varios selectores; devuelve true si tuvo éxito.
+// Evita duplicados revisando si el botón ya existe.
 // -------------------------------------------------------
 function injectLangToggle() {
-  var navRight = document.querySelector('.navbar-nav.ms-auto');
-  if (!navRight) navRight = document.querySelector('.navbar-nav:last-of-type');
-  if (!navRight) return;
+  if (document.getElementById('lang-btn-es')) return true; // ya inyectado
+
+  // Quarto/Bootstrap 5 puede usar varias clases en el nav derecho
+  var navRight =
+    document.querySelector('.navbar-nav.ms-auto') ||
+    document.querySelector('.navbar-nav-scroll.ms-auto') ||
+    document.querySelector('#navbarCollapse .navbar-nav') ||
+    document.querySelector('.navbar-collapse .navbar-nav') ||
+    document.querySelector('.navbar-nav:last-of-type');
+
+  if (!navRight) return false;
 
   var li = document.createElement('li');
   li.className = 'nav-item lang-toggle-item';
-  li.innerHTML = [
-    '<div class="lang-toggle">',
-    '  <button id="lang-btn-es" class="lang-btn active"',
-    '    onclick="applyTranslations(\'es\')">ES</button>',
-    '  <span class="lang-sep">|</span>',
-    '  <button id="lang-btn-en" class="lang-btn"',
-    '    onclick="applyTranslations(\'en\')">EN</button>',
-    '</div>'
-  ].join('');
+  li.innerHTML =
+    '<div class="lang-toggle">' +
+    '<button id="lang-btn-es" class="lang-btn active" onclick="applyTranslations(\'es\')">ES</button>' +
+    '<button id="lang-btn-en" class="lang-btn" onclick="applyTranslations(\'en\')">EN</button>' +
+    '</div>';
   navRight.appendChild(li);
+  return true;
 }
 
 // -------------------------------------------------------
 // 🚀 INICIALIZAR
+// Inyecta el toggle con reintentos cada 100 ms (hasta 2 s)
+// para asegurar que el navbar de Bootstrap esté listo.
+// Luego aplica el idioma guardado en localStorage.
 // -------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
-  injectLangToggle();
-  try {
-    var saved = localStorage.getItem('bl-lang');
-    if (saved === 'en') setTimeout(function() { applyTranslations('en'); }, 60);
-  } catch(e) {}
+
+  // — Inyección con reintentos ——————————————————————————
+  var injected = injectLangToggle();
+  if (!injected) {
+    var attempts = 0;
+    var retryTimer = setInterval(function() {
+      attempts++;
+      if (injectLangToggle() || attempts >= 20) {
+        clearInterval(retryTimer);
+      }
+    }, 100);
+  }
+
+  // — Aplicar idioma guardado ——————————————————————————
+  // Esperamos 250 ms para que Bootstrap y Quarto terminen
+  // de pintar todos los elementos del DOM antes de traducir.
+  setTimeout(function() {
+    try {
+      var saved = localStorage.getItem('bl-lang');
+      if (saved === 'en') applyTranslations('en');
+    } catch(e) {}
+  }, 250);
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
