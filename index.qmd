@@ -16,6 +16,8 @@ library(purrr)
 ::: {.hero-contenido}
 
 ::: {.hero-texto}
+<span class="hero-disponible" data-i18n="hero.available">Disponible para proyectos</span>
+
 <span class="hero-saludo" data-i18n="hero.saludo">👋 Hola, soy</span>
 
 # Benjamín Lang Bustos
@@ -23,7 +25,7 @@ library(purrr)
 <p class="hero-rol" data-i18n="hero.rol">Sociólogo · Analista de datos · Investigador</p>
 
 <p class="hero-descripcion" data-i18n="hero.desc">
-Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</strong> en análisis de datos, ciencia de datos y estadística aplicada en el sector público, privado e investigación académica. Especializado en procesamiento, visualización y modelamiento de datos a gran escala con R, Python, Power BI, Excel avanzado e IA. Aporto una <strong>visión analítica y de comunicación estratégica</strong> para transformar datos complejos en información clara. Experiencia comprobada en dashboards, automatización de reportes, aseguramiento de calidad y elaboración de indicadores para decisiones basadas en evidencia.
+<strong>6 años transformando datos en decisiones</strong> para el sector público, privado y academia. Especializado en procesamiento y visualización de datos a gran escala con R, Python y Power BI, con una visión analítica y de comunicación estratégica. Dashboards, automatización de reportes y elaboración de indicadores basados en evidencia.
 </p>
 
 <div class="hero-badges">
@@ -43,6 +45,31 @@ Sociólogo titulado con distinción máxima y <strong>6 años de experiencia</st
 
 ::: {.hero-imagen}
 ![](img/perfil.jpg){.foto-hero fig-alt="Foto de Benjamín Lang"}
+
+```{r}
+#| echo: false
+logos <- list(
+  list(src = "img/portada/ine.png",        alt = "INE Censo 2024",  tipo = "wide"),
+  list(src = "img/portada/cep.png",        alt = "CEP",             tipo = "wide"),
+  list(src = "img/portada/santa_rosa.png", alt = "SLEP Santa Rosa", tipo = "wide"),
+  list(src = "img/portada/c22.png",        alt = "C22",             tipo = "square"),
+  list(src = "img/portada/tironi.png",     alt = "Tironi",          tipo = "square")
+)
+
+div(class = "hero-logos-foto",
+  div(class = "hero-logos-foto-label", `data-i18n` = "hero.logos", "Experiencia en"),
+  div(class = "hero-logos-foto-row",
+    map(logos, \(l)
+      tags$img(
+        src   = l$src,
+        alt   = l$alt,
+        class = paste("hero-logo-item", if (l$tipo == "square") "hero-logo-square" else "")
+      )
+    )
+  )
+)
+```
+
 :::
 
 :::

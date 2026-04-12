@@ -56,7 +56,7 @@ div(class = "cv-header",
       div(class = "cv-contacto-item",
         tags$strong("🔗 LinkedIn"),
         tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
-               target = "_blank", "benjamin-lang-a78229207")
+               target = "_blank", "Ver perfil →")
       )
     )
   )
@@ -406,7 +406,7 @@ div(class = "contacto-grid",
   div(class = "contacto-item",
     tags$strong(`data-i18n` = "contacto.li.lbl", "🔗 LinkedIn"),
     tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
-           target = "_blank", "benjamin-lang-a78229207")
+           target = "_blank", "Ver perfil →")
   )
 )
 ```
