@@ -252,7 +252,7 @@ main#quarto-document-content > #title-block-header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.2rem;
 }
 
 .foto-hero,
@@ -355,17 +355,17 @@ main#quarto-document-content > #title-block-header {
 ------------------------------------------------------- */
 .hero-logos-foto {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   text-align: center;
 }
 
 .hero-logos-foto-label {
-  font-size: 0.62rem;
-  font-weight: 600;
+  font-size: 0.6rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 0.9rem;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.28);
+  margin-bottom: 0.75rem;
 }
 
 .hero-logos-foto-row {
@@ -373,26 +373,36 @@ main#quarto-document-content > #title-block-header {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.9rem 1.4rem;
+  gap: 0.5rem 1.1rem;
+}
+
+/* Caja fija por logo: contiene la imagen sin importar sus proporciones */
+.hero-logo-wrapper {
+  width: 52px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .hero-logo-item {
-  height: 26px;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
-  max-width: 82px;
-  flex-shrink: 0;
+  height: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
-  opacity: 0.45;
-  transition: opacity 0.3s ease;
+  opacity: 0.42;
+  transition: opacity 0.25s ease;
   display: block;
 }
 
-.hero-logo-item:hover {
-  opacity: 0.8;
+.hero-logo-wrapper:hover .hero-logo-item {
+  opacity: 0.78;
 }
 
-/* Mantiene la clase vieja por si hay referencias — redirige a la nueva */
+/* Mantiene la clase vieja — oculta */
 .hero-logos { display: none; }
 
 /* -------------------------------------------------------
