@@ -404,7 +404,7 @@ main#quarto-document-content > #title-block-header {
   background: #eef9f6;
 }
 
-.pub-item p { margin: 0; line-height: 1.6; }
+.pub-item p { margin: 0; line-height: 1.6; font-size: 0.9rem; }
 
 .pub-tipo {
   font-size: 0.78rem;
@@ -743,6 +743,23 @@ code { font-size: 0.875em; }
   border-bottom: 3px solid var(--color-acento) !important;
   padding-bottom: 0.5rem !important;
   display: inline-block !important;
+}
+
+/* Reduce espacio entre el <hr> (separador ---) y el siguiente título de sección */
+hr {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0 !important;
+  border-color: var(--color-borde);
+  opacity: 0.6;
+}
+
+/* Texto de secciones simples del CV (Intereses, Actividades, etc.) */
+.cv-seccion-texto,
+.cv-seccion-texto p,
+.cv-seccion-texto li {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--color-texto);
 }
 
 .intro-pagina {
