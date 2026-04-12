@@ -38,7 +38,7 @@ library(purrr)
 <div class="hero-botones">
 <a href="about.qmd" class="btn-primario" data-i18n="hero.btn.cv">Ver CV completo →</a>
 <a href="trabajos.qmd" class="btn-secundario" data-i18n="hero.btn.work">Trabajos y proyectos</a>
-<a href="mailto:benjalang1997@gmail.com" class="btn-ghost" data-i18n="hero.btn.contact">✉️ Escribirme</a>
+<a href="#contacto" class="btn-ghost" data-i18n="hero.btn.contact">✉️ Contactarme</a>
 </div>
 
 :::
@@ -284,4 +284,36 @@ div(class = "grid",
 
 <a href="https://doi.org/10.1075/jlp.24097.fre" class="btn-primario" target="_blank" data-i18n="pub.featured.btn">Leer artículo →</a>
 <a href="publicaciones.qmd" class="btn-secundario" data-i18n="pub.featured.all">Ver todas las publicaciones →</a>
+:::
+
+## Contacto {#contacto .seccion-titulo-contacto}
+
+::: {.contacto-hero-wrap}
+
+::: {.contacto-hero-intro}
+**¿Tienes un proyecto en mente?** Estoy disponible para consultoría, análisis de datos e investigación. Escríbeme y conversamos.
+:::
+
+::: {.contacto-hero-grid}
+
+<a href="mailto:benjalang1997@gmail.com" class="contacto-hero-card">
+<span class="contacto-hero-icono">📧</span>
+<span class="contacto-hero-label">Email</span>
+<span class="contacto-hero-valor">benjalang1997@gmail.com</span>
+</a>
+
+<a href="tel:+56963095562" class="contacto-hero-card">
+<span class="contacto-hero-icono">📱</span>
+<span class="contacto-hero-label">Teléfono</span>
+<span class="contacto-hero-valor">+56 9 6309 5562</span>
+</a>
+
+<a href="https://www.linkedin.com/in/benjamin-lang-a78229207/" target="_blank" class="contacto-hero-card">
+<span class="contacto-hero-icono">🔗</span>
+<span class="contacto-hero-label">LinkedIn</span>
+<span class="contacto-hero-valor">Ver perfil →</span>
+</a>
+
+:::
+
 :::
