@@ -1440,8 +1440,7 @@ h3.trabajo-titulo {
   .hero-banner h1 { font-size: 1.8rem; }
   .hero-texto h1 { font-size: 1.9rem; }
   .hero-rol { font-size: 1rem; }
-  .foto-hero,
-  .hero-imagen img {
+  .foto-hero {
     width: 200px !important;
     height: 200px !important;
   }

@@ -255,8 +255,7 @@ main#quarto-document-content > #title-block-header {
   gap: 1.2rem;
 }
 
-.foto-hero,
-.hero-imagen img {
+.foto-hero {
   width: 280px !important;
   height: 280px !important;
   border-radius: 50% !important;
@@ -376,31 +375,24 @@ main#quarto-document-content > #title-block-header {
   gap: 0.6rem 1.1rem;
 }
 
-/* Logos horizontales (CEP, INE, Santa Rosa) — fondo transparente */
+/* Logos experiencia — pequeños, sutiles, sin border-radius */
 .hero-logo-item {
-  height: 36px;
-  width: auto;
-  max-width: 130px;
-  object-fit: contain;
-  display: block;
-  opacity: 0.82;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  height: 22px !important;
+  width: auto !important;
+  max-width: 80px;
+  min-width: 0;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  display: inline-block;
+  opacity: 0.55;
+  filter: brightness(1.6) saturate(0.5);
+  transition: opacity 0.3s ease, filter 0.3s ease;
   flex-shrink: 0;
 }
 
-/* Logos cuadrados (C22, Tironi) — fondo sólido, se muestran como badge */
-.hero-logo-square {
-  height: 36px;
-  width: 36px;
-  object-fit: cover;
-  border-radius: 8px;
-  opacity: 0.82;
-}
-
-.hero-logo-item:hover,
-.hero-logo-square:hover {
-  opacity: 1;
-  transform: scale(1.07);
+.hero-logo-item:hover {
+  opacity: 0.9;
+  filter: brightness(1.1) saturate(1);
 }
 
 /* Mantiene la clase vieja — oculta */
@@ -1437,7 +1429,7 @@ h3.trabajo-titulo {
   .stat-hero-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.12); }
   .stat-hero-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.12); }
   .hero-logos-foto { max-width: 260px; }
-  .hero-logo-item { height: 26px; max-width: 100px; }
+  .hero-logo-item { height: 18px !important; max-width: 70px; }
 }
 
 @media (max-width: 768px) {
@@ -1448,8 +1440,7 @@ h3.trabajo-titulo {
   .hero-banner h1 { font-size: 1.8rem; }
   .hero-texto h1 { font-size: 1.9rem; }
   .hero-rol { font-size: 1rem; }
-  .foto-hero,
-  .hero-imagen img {
+  .foto-hero {
     width: 200px !important;
     height: 200px !important;
   }
@@ -1459,4 +1450,83 @@ h3.trabajo-titulo {
   .seccion-titulo { font-size: 1.3rem !important; }
   .hero-logos-row { gap: 1.2rem; }
   .hero-logo-item { height: 22px; max-width: 90px; }
+}
+
+/* -------------------------------------------------------
+   📧 SECCIÓN CONTACTO PORTADA
+------------------------------------------------------- */
+.seccion-titulo-contacto {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding-top: 1rem;
+}
+
+.contacto-hero-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.contacto-hero-intro {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contacto-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.contacto-hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.6rem 1rem;
+  border-radius: 16px;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.contacto-hero-card:hover {
+  border-color: var(--color-acento-2, #1abc9c);
+  box-shadow: 0 8px 28px rgba(26,188,156,0.15);
+  transform: translateY(-3px);
+  text-decoration: none !important;
+}
+
+.contacto-hero-icono {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.contacto-hero-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
+}
+
+.contacto-hero-valor {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-primario, #1e3a5f);
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .contacto-hero-grid { grid-template-columns: 1fr; }
+  .contacto-hero-wrap { padding: 1rem 1rem 2rem; }
 }
