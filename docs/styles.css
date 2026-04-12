@@ -373,13 +373,13 @@ main#quarto-document-content > #title-block-header {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem 1.1rem;
+  gap: 0.5rem 1.3rem;
 }
 
 /* Caja fija por logo: contiene la imagen sin importar sus proporciones */
 .hero-logo-wrapper {
-  width: 52px;
-  height: 22px;
+  width: 72px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,13 +393,13 @@ main#quarto-document-content > #title-block-header {
   height: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
-  opacity: 0.42;
+  opacity: 0.55;
   transition: opacity 0.25s ease;
   display: block;
 }
 
 .hero-logo-wrapper:hover .hero-logo-item {
-  opacity: 0.78;
+  opacity: 0.85;
 }
 
 /* Mantiene la clase vieja — oculta */
