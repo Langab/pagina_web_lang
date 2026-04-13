@@ -378,9 +378,9 @@ main#quarto-document-content > #title-block-header {
 /* Logos experiencia — color natural, línea única */
 .hero-logo-item,
 .hero-logos-foto-row img {
-  height: 30px !important;
+  height: 34px !important;
   width: auto !important;
-  max-width: 72px !important;
+  max-width: 76px !important;
   min-width: 0 !important;
   border-radius: 0 !important;
   object-fit: contain !important;
