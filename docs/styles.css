@@ -129,7 +129,7 @@ main#quarto-document-content > #title-block-header {
 }
 
 .hero-principal {
-  background: linear-gradient(160deg, #1e3a5f 0%, #245c8a 50%, #2d7ab5 100%);
+  background: linear-gradient(150deg, #172e4e 0%, #1e4878 40%, #245c8a 100%);
   color: white;
   /* Full-bleed: rompe el contenedor para ocupar todo el ancho */
   width: 100vw;
@@ -140,8 +140,8 @@ main#quarto-document-content > #title-block-header {
   margin-right: -50vw;
   margin-top: -2rem;
   margin-bottom: 3rem;
-  padding: 5rem 2rem 5rem 2rem;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  padding: 5rem 4rem 5rem 4rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
   overflow: hidden;
 }
 
@@ -172,9 +172,9 @@ main#quarto-document-content > #title-block-header {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
-  align-items: center;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 5rem;
+  align-items: start;
   position: relative;
   z-index: 2;
 }
@@ -183,86 +183,91 @@ main#quarto-document-content > #title-block-header {
 
 .hero-texto h1 {
   color: white !important;
-  font-size: 3rem;
-  line-height: 1.1;
-  margin: 0.3rem 0 0.7rem 0;
+  font-size: 3.2rem;
+  line-height: 1.08;
+  margin: 0.5rem 0 0.6rem 0;
   border: none;
   display: block;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  font-weight: 800;
 }
 
 .hero-saludo {
   display: inline-block;
-  background: rgba(26,188,156,0.2);
+  background: rgba(26,188,156,0.15);
   color: #7ee8d0;
-  padding: 0.35rem 0.9rem;
+  padding: 0.3rem 0.85rem;
   border-radius: 30px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  border: 1px solid rgba(26,188,156,0.4);
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(26,188,156,0.35);
 }
 
 .hero-rol {
-  font-size: 1.2rem;
-  color: #b8d4e8;
-  font-weight: 500;
-  margin: 0 0 1.2rem 0;
-  letter-spacing: 0.01em;
+  font-size: 1.15rem;
+  color: rgba(184,212,232,0.85);
+  font-weight: 400;
+  margin: 0 0 1.4rem 0;
+  letter-spacing: 0.02em;
 }
 
 .hero-descripcion {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.92);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.78);
   margin-bottom: 1.5rem;
-  max-width: 540px;
+  max-width: 520px;
 }
 
 .hero-descripcion strong { color: #7ee8d0; font-weight: 600; }
 
 .hero-badges {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
-  margin: 1.2rem 0 1.5rem 0;
+  margin: 1rem 0 1.6rem 0;
 }
 
 .badge-item {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.25);
-  color: white;
-  padding: 0.35rem 0.85rem;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.88);
+  padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  font-size: 0.82rem;
+  font-size: 0.79rem;
   font-weight: 500;
   backdrop-filter: blur(10px);
-  white-space: nowrap;   /* evita que el texto se parta en varias líneas */
+  white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 .hero-botones {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.7rem;
   flex-wrap: wrap;
-  margin-top: 1.2rem;
+  margin-top: 0.5rem;
 }
 
 .hero-imagen {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.6rem;
+  padding-top: 2.8rem;   /* baja la foto para alinear con el nombre */
+  padding-left: 1.5rem;  /* empuja a la derecha dentro de la columna */
 }
 
 .foto-hero {
-  width: 280px !important;
-  height: 280px !important;
+  width: 300px !important;
+  height: 300px !important;
   border-radius: 50% !important;
   object-fit: cover;
-  border: 5px solid rgba(255,255,255,0.2);
-  box-shadow: 0 15px 50px rgba(0,0,0,0.4),
-              0 0 0 2px rgba(26,188,156,0.5);
+  border: 4px solid rgba(255,255,255,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5),
+              0 0 0 1px rgba(26,188,156,0.4),
+              inset 0 0 0 1px rgba(255,255,255,0.05);
   transition: var(--transicion);
 }
 
@@ -1433,7 +1438,7 @@ h3.trabajo-titulo {
     text-align: center;
     gap: 2rem;
   }
-  .hero-imagen { order: -1; }
+  .hero-imagen { order: -1; padding-top: 0; padding-left: 0; }
   .hero-descripcion { margin-left: auto; margin-right: auto; }
   .hero-badges { justify-content: center; }
   .hero-botones { justify-content: center; }
