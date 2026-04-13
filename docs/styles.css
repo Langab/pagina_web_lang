@@ -354,7 +354,7 @@ main#quarto-document-content > #title-block-header {
 ------------------------------------------------------- */
 .hero-logos-foto {
   width: 100%;
-  max-width: 620px;
+  max-width: 380px;
   text-align: center;
 }
 
@@ -371,8 +371,8 @@ main#quarto-document-content > #title-block-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 1.4rem;
+  flex-wrap: wrap;
+  gap: 1.2rem 1.6rem;
 }
 
 /* Logos experiencia — color natural, línea única, clicables */
