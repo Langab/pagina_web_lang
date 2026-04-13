@@ -375,17 +375,25 @@ main#quarto-document-content > #title-block-header {
   gap: 1.2rem;
 }
 
-/* Logos experiencia — color natural, línea única */
+/* Logos experiencia — color natural, línea única, clicables */
+.hero-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none !important;
+  outline: none;
+  flex-shrink: 1;
+}
+
 .hero-logo-item,
 .hero-logos-foto-row img {
-  height: 44px !important;
+  height: 50px !important;
   width: auto !important;
-  max-width: 90px !important;
+  max-width: 100px !important;
   min-width: 0 !important;
   border-radius: 0 !important;
   object-fit: contain !important;
   display: inline-block !important;
-  opacity: 0.82;
+  opacity: 0.88;
   filter: brightness(1.05) saturate(1.1);
   transition: opacity 0.3s ease, filter 0.3s ease, transform 0.2s ease;
   flex-shrink: 1;
@@ -394,11 +402,12 @@ main#quarto-document-content > #title-block-header {
   border: none !important;
 }
 
+.hero-logo-link:hover .hero-logo-item,
 .hero-logo-item:hover,
 .hero-logos-foto-row img:hover {
   opacity: 1;
-  filter: brightness(1.1) saturate(1.2);
-  transform: translateY(-2px);
+  filter: brightness(1.1) saturate(1.25);
+  transform: translateY(-3px);
 }
 
 /* Mantiene la clase vieja — oculta */
