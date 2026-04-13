@@ -354,7 +354,7 @@ main#quarto-document-content > #title-block-header {
 ------------------------------------------------------- */
 .hero-logos-foto {
   width: 100%;
-  max-width: 320px;
+  max-width: 620px;
   text-align: center;
 }
 
@@ -372,7 +372,7 @@ main#quarto-document-content > #title-block-header {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
 /* Logos experiencia — color natural, línea única, clicables */
@@ -1443,8 +1443,9 @@ h3.trabajo-titulo {
   .stat-hero-item:nth-child(2) { border-right: none; }
   .stat-hero-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.12); }
   .stat-hero-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.12); }
-  .hero-logos-foto { max-width: 260px; }
-  .hero-logo-item { height: 18px !important; max-width: 70px; }
+  .hero-logos-foto { max-width: 100%; }
+  .hero-logos-foto-row { flex-wrap: wrap; gap: 1rem; }
+  .hero-logo-item { height: 32px !important; max-width: 80px !important; }
 }
 
 @media (max-width: 768px) {
