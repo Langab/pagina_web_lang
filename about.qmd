@@ -37,7 +37,7 @@ div(class = "cv-header",
         tags$span(class = "idioma-badge",
                   `data-i18n` = "cv.lang.it", "🇮🇹 Italiano — C1")
       ),
-      tags$a(href = "documentos/CV_Lang_DataAnalyst_ES.pdf",
+      tags$a(href = "https://raw.githubusercontent.com/Langab/pagina_web_lang/main/CV_Lang_DataAnalyst_ES.pdf",
              class = "cv-download-btn",
              `data-i18n` = "cv.download",
              "📄 Descargar CV en PDF")

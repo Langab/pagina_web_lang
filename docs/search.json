@@ -4,35 +4,7 @@
     "href": "portafolio-en/index.html",
     "title": "Portfolio",
     "section": "",
-    "text": "📊 Scripts Portfolio\n\nA collection of practical R scripts on data processing, statistical analysis, and information visualization that I have developed in research and institutional projects.\n\n\n\n\n\n\n\n📌 Status: Under construction\nI’m preparing a collection of R scripts featuring: - Data Processing: cleaning, transformation, and normalization with tidyverse - Statistical Analysis: exploratory analysis, statistical models, and hypothesis testing - Visualization: plots with ggplot2, interactive dashboards, and dynamic reports\nEach script will include: - 📝 Detailed code explanation - 🎯 Use cases and practical applications - 💾 Available downloads - 🔗 GitHub repository\nCome back soon to explore the scripts! 🎉\n\n\n\n\n\n\n\n\n\n\n\n📥\n\n\nScripts for data cleaning, transformation, and normalization with tidyverse. Handling missing values, deduplication, and database restructuring.\nComing Soon\n\n\n\n\n\n📈\n\n\nExploratory data analysis (EDA), analysis of variance, regressions, linear models, and statistical inference tools.\n\n\n\n\n\n\n🎯\n\n\nAdvanced plots with ggplot2, thematic maps, interactive dashboards with Shiny, and dynamic reports with Quarto.\nComing Soon\n\n\n\n\n\n⚙️\n\n\nText mining, network analysis, time series analysis, predictive modeling, and applied machine learning.\nComing Soon\n\n\n\n\n\n\n\n\n\n\n\n\n⏳\n\nWe are preparing a carefully curated selection of scripts ready to share.\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf you have questions about methodology, data processing, or statistical analysis with R, you can:\n📧 Email me: benjalang1997@gmail.com 🔗 LinkedIn: View profile\nI’d love to help you with your analysis! 🙌"
-  },
-  {
-    "objectID": "portafolio-en/index.html#coming-soon",
-    "href": "portafolio-en/index.html#coming-soon",
-    "title": "Portfolio",
-    "section": "",
-    "text": "📌 Status: Under construction\nI’m preparing a collection of R scripts featuring: - Data Processing: cleaning, transformation, and normalization with tidyverse - Statistical Analysis: exploratory analysis, statistical models, and hypothesis testing - Visualization: plots with ggplot2, interactive dashboards, and dynamic reports\nEach script will include: - 📝 Detailed code explanation - 🎯 Use cases and practical applications - 💾 Available downloads - 🔗 GitHub repository\nCome back soon to explore the scripts! 🎉"
-  },
-  {
-    "objectID": "portafolio-en/index.html#categories",
-    "href": "portafolio-en/index.html#categories",
-    "title": "Portfolio",
-    "section": "",
-    "text": "📥\n\n\nScripts for data cleaning, transformation, and normalization with tidyverse. Handling missing values, deduplication, and database restructuring.\nComing Soon\n\n\n\n\n\n📈\n\n\nExploratory data analysis (EDA), analysis of variance, regressions, linear models, and statistical inference tools.\n\n\n\n\n\n\n🎯\n\n\nAdvanced plots with ggplot2, thematic maps, interactive dashboards with Shiny, and dynamic reports with Quarto.\nComing Soon\n\n\n\n\n\n⚙️\n\n\nText mining, network analysis, time series analysis, predictive modeling, and applied machine learning.\nComing Soon"
-  },
-  {
-    "objectID": "portafolio-en/index.html#latest-scripts-added",
-    "href": "portafolio-en/index.html#latest-scripts-added",
-    "title": "Portfolio",
-    "section": "",
-    "text": "⏳\n\nWe are preparing a carefully curated selection of scripts ready to share."
-  },
-  {
-    "objectID": "portafolio-en/index.html#do-you-have-a-question",
-    "href": "portafolio-en/index.html#do-you-have-a-question",
-    "title": "Portfolio",
-    "section": "",
-    "text": "If you have questions about methodology, data processing, or statistical analysis with R, you can:\n📧 Email me: benjalang1997@gmail.com 🔗 LinkedIn: View profile\nI’d love to help you with your analysis! 🙌"
+    "text": "📊 Scripts Portfolio\n\nR Scripts · Data Processing, Analysis & Visualization\n\nA collection of practical R scripts on data processing, statistical analysis, and information visualization developed in research and institutional projects.\n\n\n\n\n\n\n\n\n\n📌 Under construction — I’m preparing a collection of R scripts on data processing, statistical analysis, and visualization. Come back soon!"
   },
   {
     "objectID": "trabajos-en.html",
@@ -333,35 +305,7 @@
     "href": "portafolio/index.html",
     "title": "Portafolio",
     "section": "",
-    "text": "📊 Portafolio de Scripts\n\nColección de scripts prácticos sobre procesamiento de datos, análisis estadístico y visualización de información que he desarrollado en proyectos de investigación e institucionales.\n\n\n\n\n\n\n\n📌 Estado: En construcción\nEstoy preparando una colección de scripts en R sobre: - Procesamiento de datos: limpieza, transformación y normalización con tidyverse - Análisis estadístico: análisis exploratorio, modelos estadísticos y testing - Visualización: gráficas con ggplot2, dashboards interactivos y reportes dinámicos\nCada script incluirá: - 📝 Explicación detallada del código - 🎯 Casos de uso y aplicaciones prácticas - 💾 Descargas disponibles - 🔗 Repositorio en GitHub\n¡Vuelve pronto para explorar los scripts! 🎉\n\n\n\n\n\n\n\n\n\n\n\n📥\n\n\nScripts para limpieza, transformación y normalización de datos con tidyverse. Manejo de valores faltantes, deduplicación y restructuración de bases de datos.\nPróximamente\n\n\n\n\n\n📈\n\n\nAnálisis exploratorio de datos (EDA), análisis de varianza, regresiones, modelos lineales y herramientas de inferencia estadística.\nPróximamente\n\n\n\n\n\n🎯\n\n\nGráficos avanzados con ggplot2, mapas temáticos, dashboards interactivos con Shiny y reportes dinámicos con Quarto.\nPróximamente\n\n\n\n\n\n⚙️\n\n\nText mining, análisis de redes, análisis de series de tiempo, modelamiento predictivo y machine learning aplicado.\nPróximamente\n\n\n\n\n\n\n\n\n\n\n\n\n⏳\n\nEstamos preparando una selección cuidada de scripts listos para compartir.\n\n\n\n\n\n\n\n\n\n\n\n\n\nSi tienes dudas sobre metodología, procesamiento de datos o análisis estadístico con R, puedes:\n📧 Contactarme por email: benjalang1997@gmail.com 🔗 LinkedIn: Ver perfil\n¡Me encantaría ayudarte con tus análisis! 🙌"
-  },
-  {
-    "objectID": "portafolio/index.html#próximamente",
-    "href": "portafolio/index.html#próximamente",
-    "title": "Portafolio",
-    "section": "",
-    "text": "📌 Estado: En construcción\nEstoy preparando una colección de scripts en R sobre: - Procesamiento de datos: limpieza, transformación y normalización con tidyverse - Análisis estadístico: análisis exploratorio, modelos estadísticos y testing - Visualización: gráficas con ggplot2, dashboards interactivos y reportes dinámicos\nCada script incluirá: - 📝 Explicación detallada del código - 🎯 Casos de uso y aplicaciones prácticas - 💾 Descargas disponibles - 🔗 Repositorio en GitHub\n¡Vuelve pronto para explorar los scripts! 🎉"
-  },
-  {
-    "objectID": "portafolio/index.html#categorías",
-    "href": "portafolio/index.html#categorías",
-    "title": "Portafolio",
-    "section": "",
-    "text": "📥\n\n\nScripts para limpieza, transformación y normalización de datos con tidyverse. Manejo de valores faltantes, deduplicación y restructuración de bases de datos.\nPróximamente\n\n\n\n\n\n📈\n\n\nAnálisis exploratorio de datos (EDA), análisis de varianza, regresiones, modelos lineales y herramientas de inferencia estadística.\nPróximamente\n\n\n\n\n\n🎯\n\n\nGráficos avanzados con ggplot2, mapas temáticos, dashboards interactivos con Shiny y reportes dinámicos con Quarto.\nPróximamente\n\n\n\n\n\n⚙️\n\n\nText mining, análisis de redes, análisis de series de tiempo, modelamiento predictivo y machine learning aplicado.\nPróximamente"
-  },
-  {
-    "objectID": "portafolio/index.html#últimos-scripts-agregados",
-    "href": "portafolio/index.html#últimos-scripts-agregados",
-    "title": "Portafolio",
-    "section": "",
-    "text": "⏳\n\nEstamos preparando una selección cuidada de scripts listos para compartir."
-  },
-  {
-    "objectID": "portafolio/index.html#tienes-una-pregunta",
-    "href": "portafolio/index.html#tienes-una-pregunta",
-    "title": "Portafolio",
-    "section": "",
-    "text": "Si tienes dudas sobre metodología, procesamiento de datos o análisis estadístico con R, puedes:\n📧 Contactarme por email: benjalang1997@gmail.com 🔗 LinkedIn: Ver perfil\n¡Me encantaría ayudarte con tus análisis! 🙌"
+    "text": "📊 Portafolio de Scripts\n\nScripts de R · Procesamiento, Análisis y Visualización\n\nColección de scripts prácticos sobre procesamiento de datos, análisis estadístico y visualización de información desarrollados en proyectos de investigación e institucionales.\n\n\n\n\n\n\n\n\n\n📌 En construcción — Estoy preparando una colección de scripts en R sobre procesamiento de datos, análisis estadístico y visualización. ¡Vuelve pronto!"
   },
   {
     "objectID": "index-en.html",

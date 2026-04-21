@@ -1,123 +1,21 @@
 ---
 title: "Portfolio"
-toc: true
-toc-title: "Contents"
+toc: false
 ---
 
 ```{r}
 #| echo: false
 library(htmltools)
-library(purrr)
 ```
 
-<!-- ====================================================
-     📁 PORTFOLIO HEADER
-======================================================= -->
+::: {.portafolio-header}
+<span class="portafolio-titulo-chip">📊 Scripts Portfolio</span>
 
-```{r}
-#| echo: false
+# R Scripts · Data Processing, Analysis & Visualization
 
-div(class = "portafolio-header",
-  tags$span(class = "portafolio-titulo-chip", "📊 Scripts Portfolio"),
-  tags$h1("R Scripts · Data Processing, Analysis & Visualization"),
-  tags$p(class = "portafolio-descripcion",
-         "A collection of practical R scripts on data processing, statistical analysis, and information visualization that I have developed in research and institutional projects.")
-)
-```
-
----
-
-## 🚀 Coming Soon {.seccion-titulo}
-
-::: {.callout-info appearance="simple"}
-📌 **Status:** Under construction
-
-I'm preparing a collection of **R scripts** featuring:
-- **Data Processing:** cleaning, transformation, and normalization with `tidyverse`
-- **Statistical Analysis:** exploratory analysis, statistical models, and hypothesis testing
-- **Visualization:** plots with `ggplot2`, interactive dashboards, and dynamic reports
-
-Each script will include:
-- 📝 Detailed code explanation
-- 🎯 Use cases and practical applications
-- 💾 Available downloads
-- 🔗 GitHub repository
-
-Come back soon to explore the scripts! 🎉
+<p class="portafolio-descripcion">A collection of practical R scripts on data processing, statistical analysis, and information visualization developed in research and institutional projects.</p>
 :::
 
----
-
-## 📂 Categories {.seccion-titulo}
-
-```{r}
-#| echo: false
-
-categorias <- list(
-  list(
-    titulo = "🔄 Data Processing",
-    icon = "📥",
-    desc = "Scripts for data cleaning, transformation, and normalization with tidyverse. Handling missing values, deduplication, and database restructuring.",
-    count = "Coming Soon"
-  ),
-  list(
-    titulo = "📊 Statistical Analysis",
-    icon = "📈",
-    desc = "Exploratory data analysis (EDA), analysis of variance, regressions, linear models, and statistical inference tools."
-  ),
-  list(
-    titulo = "🎨 Visualization & Infographics",
-    icon = "🎯",
-    desc = "Advanced plots with ggplot2, thematic maps, interactive dashboards with Shiny, and dynamic reports with Quarto.",
-    count = "Coming Soon"
-  ),
-  list(
-    titulo = "🤖 Special Techniques",
-    icon = "⚙️",
-    desc = "Text mining, network analysis, time series analysis, predictive modeling, and applied machine learning.",
-    count = "Coming Soon"
-  )
-)
-
-div(class = "grid portafolio-grid",
-  map(categorias, \(cat) {
-    div(class = "g-col-12 g-col-md-6",
-      div(class = "portafolio-card-categoria",
-        div(class = "portafolio-card-header",
-          tags$span(class = "portafolio-icon", cat$icon),
-          tags$h3(class = "portafolio-card-titulo", cat$titulo)
-        ),
-        tags$p(class = "portafolio-card-desc", cat$desc),
-        tags$div(class = "portafolio-card-badge", cat$count)
-      )
-    )
-  })
-)
-```
-
----
-
-## 📚 Latest Scripts Added {.seccion-titulo}
-
-```{r}
-#| echo: false
-
-div(class = "portafolio-empty",
-  tags$span(class = "portafolio-empty-icon", "⏳"),
-  tags$h4("Scripts will be available very soon"),
-  tags$p("We are preparing a carefully curated selection of scripts ready to share.")
-)
-```
-
----
-
-## 💬 Do you have a question? {.seccion-titulo}
-
 ::: {.callout-note appearance="simple"}
-If you have questions about methodology, data processing, or statistical analysis with R, you can:
-
-📧 **Email me:** [benjalang1997@gmail.com](mailto:benjalang1997@gmail.com)
-🔗 **LinkedIn:** [View profile](https://www.linkedin.com/in/benjamin-lang-a78229207/)
-
-I'd love to help you with your analysis! 🙌
+📌 **Under construction** — I'm preparing a collection of **R scripts** on data processing, statistical analysis, and visualization. Come back soon!
 :::
