@@ -122,10 +122,20 @@ h2 {
 /* -------------------------------------------------------
    🏠 HERO PRINCIPAL — PÁGINA DE INICIO (FULL-BLEED)
 ------------------------------------------------------- */
-/* Elimina el espacio superior del título vacío en index */
+/* Elimina el espacio del bloque de título vacío (title: "") en index y CV */
 main#quarto-document-content > header.quarto-title-block,
 main#quarto-document-content > #title-block-header {
   display: none !important;
+}
+
+/* Suprimir bloque de título vacío en cualquier layout (ej: CV con toc) */
+header.quarto-title-block:has(.title:empty),
+#title-block-header:has(.title:empty),
+header.quarto-title-block:has(h1:empty),
+#title-block-header:has(h1:empty) {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .hero-principal {
@@ -359,12 +369,12 @@ main#quarto-document-content > #title-block-header {
 }
 
 .hero-logos-foto-label {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: rgba(255,255,255,0.28);
-  margin-bottom: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.9rem;
 }
 
 .hero-logos-foto-row {
@@ -372,27 +382,28 @@ main#quarto-document-content > #title-block-header {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.6rem 1.1rem;
+  gap: 0.8rem 1.4rem;
 }
 
-/* Logos experiencia — pequeños, sutiles, sin border-radius */
+/* Logos experiencia — tamaño visible, colores vivos */
 .hero-logo-item {
-  height: 22px !important;
+  height: 38px !important;
   width: auto !important;
-  max-width: 80px;
+  max-width: 120px;
   min-width: 0;
   border-radius: 0 !important;
   object-fit: contain !important;
   display: inline-block;
-  opacity: 0.55;
-  filter: brightness(1.6) saturate(0.5);
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  opacity: 0.92;
+  filter: brightness(1.05) saturate(1.15) drop-shadow(0 1px 4px rgba(0,0,0,0.18));
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
   flex-shrink: 0;
 }
 
 .hero-logo-item:hover {
-  opacity: 0.9;
-  filter: brightness(1.1) saturate(1);
+  opacity: 1;
+  filter: brightness(1.1) saturate(1.3) drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+  transform: scale(1.08);
 }
 
 /* Mantiene la clase vieja — oculta */
@@ -880,12 +891,18 @@ code { font-size: 0.875em; }
    🏷️ TÍTULOS DE SECCIÓN — separadores visuales
 ------------------------------------------------------- */
 .seccion-titulo {
-  margin-top: 3rem !important;
-  margin-bottom: 1.5rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1.2rem !important;
   font-size: 1.6rem !important;
   border-bottom: 3px solid var(--color-acento) !important;
   padding-bottom: 0.5rem !important;
   display: inline-block !important;
+}
+
+/* CV: primera sección justo después del header — menos espacio */
+.cv-header + h2.seccion-titulo,
+.cv-header ~ h2.seccion-titulo:first-of-type {
+  margin-top: 0.5rem !important;
 }
 
 /* Reduce espacio entre el <hr> (separador ---) y el siguiente título de sección */
@@ -1057,7 +1074,7 @@ h3.trabajo-titulo {
   border-top: 4px solid var(--color-acento);
   padding: 2.5rem 2.5rem 2rem 2.5rem;
   border-radius: var(--radio-tarjeta);
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   position: relative;
   overflow: hidden;
   box-shadow: var(--sombra-suave);
@@ -1428,8 +1445,8 @@ h3.trabajo-titulo {
   .stat-hero-item:nth-child(2) { border-right: none; }
   .stat-hero-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.12); }
   .stat-hero-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.12); }
-  .hero-logos-foto { max-width: 260px; }
-  .hero-logo-item { height: 18px !important; max-width: 70px; }
+  .hero-logos-foto { max-width: 280px; }
+  .hero-logo-item { height: 30px !important; max-width: 100px; }
 }
 
 @media (max-width: 768px) {
@@ -1448,8 +1465,8 @@ h3.trabajo-titulo {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-badges { justify-content: center; }
   .seccion-titulo { font-size: 1.3rem !important; }
-  .hero-logos-row { gap: 1.2rem; }
-  .hero-logo-item { height: 22px; max-width: 90px; }
+  .hero-logos-row { gap: 1.4rem; }
+  .hero-logo-item { height: 30px !important; max-width: 100px; }
 }
 
 /* -------------------------------------------------------

@@ -372,47 +372,77 @@ ul.task-list li input[type="checkbox"] {
    SISTEMA BILINGÜE — Navegación por páginas separadas
    ES: index.html, about.html, trabajos.html, publicaciones.html
    EN: index-en.html, about-en.html, trabajos-en.html, publicaciones-en.html
+       portafolio-en/index.html
 
-   El toggle ES|EN es simplemente un <a href> que apunta a la
-   contrapartida de la página actual.
-
-   ✨ NUEVO: Traducción dinámica del navbar cuando cambias idioma.
+   ✅ FIXES:
+   1. isCurrentPage() usa resolución de pathname absoluto (fix bug
+      de index.html == blog/index.html == portafolio/index.html)
+   2. Mapeo portafolio ES→EN corregido: portafolio-en/index.html
+   3. getCounterpart() maneja portafolio correctamente
+   4. Detección de isEn incluye /portafolio-en/
 ============================================================ */
 
 (function () {
 
-  // ── Detectar idioma actual ─────────────────────────────
   var path = window.location.pathname;
-  var isEn = path.indexOf('-en.html') !== -1 || path.indexOf('-en/') !== -1;
 
-  // ── Diccionario de traducciones del navbar ─────────────
+  // Detectar idioma actual (incluye portafolio-en)
+  var isEn = path.indexOf('-en.html') !== -1 || path.indexOf('/portafolio-en/') !== -1;
+
+  // ── Diccionario de textos del navbar ──────────────────
   var navbarTexts = {
     es: {
-      'index.html':          'Inicio',
-      'publicaciones.html':  'Publicaciones',
-      'trabajos.html':       'Trabajos, proyectos y consultoría',
-      'blog/index.html':     'Blog',
+      'index.html':            'Inicio',
+      'publicaciones.html':    'Publicaciones',
+      'trabajos.html':         'Trabajos, proyectos y consultoría',
+      'blog/index.html':       'Blog',
       'portafolio/index.html': 'Portafolio',
-      'about.html':          'CV'
+      'about.html':            'CV'
     },
     en: {
-      'index.html':          'Home',
-      'publicaciones.html':  'Publications',
-      'trabajos.html':       'Works, Projects & Consulting',
-      'blog/index.html':     'Blog',
+      'index.html':            'Home',
+      'publicaciones.html':    'Publications',
+      'trabajos.html':         'Works, Projects & Consulting',
+      'blog/index.html':       'Blog',
       'portafolio/index.html': 'Portfolio',
-      'about.html':          'CV'
+      'about.html':            'CV'
     }
   };
 
-  // ── Calcular URL de la contrapartida ──────────────────
+  // ── Mapa ES → EN (rutas completas) ────────────────────
+  var enPageMap = {
+    'index.html':            'index-en.html',
+    'publicaciones.html':    'publicaciones-en.html',
+    'trabajos.html':         'trabajos-en.html',
+    'blog/index.html':       'blog/index.html',
+    'portafolio/index.html': 'portafolio-en/index.html',
+    'about.html':            'about-en.html'
+  };
+
+  // ── Resolver href relativo → pathname absoluto ────────
+  // Usa un <a> temporal para que el navegador resuelva la URL
+  // correctamente sin importar la profundidad de la página actual.
+  function resolveHref(href) {
+    var a = document.createElement('a');
+    a.href = href;
+    var p = a.pathname;
+    if (p.endsWith('/')) p += 'index.html';
+    return p;
+  }
+
+  // ── Calcular URL de la contraparte de idioma ──────────
   function getCounterpart() {
     if (isEn) {
-      // EN → ES: quitar "-en"
-      return path.replace('-en.html', '.html').replace('-en/', '/');
+      // EN → ES: portafolio-en/ → portafolio/ | quitar -en.html
+      return path
+        .replace('/portafolio-en/', '/portafolio/')
+        .replace('-en.html', '.html');
     } else {
-      // ES → EN: agregar "-en" antes de ".html"
-      // Caso especial: ruta raíz "/" → "/index-en.html"
+      // ES → EN
+      if (path.indexOf('/portafolio/') !== -1) {
+        // portafolio/index.html → portafolio-en/index.html
+        return path.replace('/portafolio/', '/portafolio-en/');
+      }
       if (path === '/' || path.endsWith('/')) {
         return path.replace(/\/$/, '') + '/index-en.html';
       }
@@ -422,76 +452,61 @@ ul.task-list li input[type="checkbox"] {
 
   var counterpart = getCounterpart();
 
-  // ── Map de páginas EN ──────────────────────────────────
-  var enPageMap = {
-    'index.html':         'index-en.html',
-    'publicaciones.html': 'publicaciones-en.html',
-    'trabajos.html':      'trabajos-en.html',
-    'blog/index.html':    'blog/index.html',           // Blog no cambia de nombre
-    'portafolio/index.html': 'portafolio-en/index.html', // Portafolio ES → EN
-    'about.html':         'about-en.html'
-  };
+  // ── Encontrar clave ES de navbarTexts para un pathname ─
+  // Itera en orden de inserción; claves más específicas (blog/index.html,
+  // portafolio/index.html) vienen después de index.html, así el último
+  // match más específico gana.
+  function findEsKey(pathname) {
+    var matched = null;
 
-  // ── Detectar si un link es la página actual ──────────
-  function isCurrentPage(linkHref) {
-    // Limpiar la ruta actual
-    var currentPath = path;
-    if (currentPath.endsWith('/')) {
-      currentPath = currentPath.replace(/\/$/, '/index.html');
+    // 1. Buscar entre rutas ES conocidas
+    Object.keys(navbarTexts.es).forEach(function (k) {
+      if (pathname.endsWith('/' + k)) matched = k;
+    });
+
+    // 2. Si no encontró, buscar por ruta EN conocida (mapeo inverso)
+    if (!matched) {
+      Object.keys(enPageMap).forEach(function (k) {
+        var enVal = enPageMap[k];
+        if (pathname.endsWith('/' + enVal)) matched = k;
+      });
     }
 
-    // Limpiar el href del link
-    var cleanHref = linkHref;
-    if (cleanHref.endsWith('/')) {
-      cleanHref = cleanHref.replace(/\/$/, '/index.html');
-    }
-
-    // Extraer el nombre del archivo
-    var currentFile = currentPath.split('/').pop();
-    var linkFile = cleanHref.split('/').pop();
-
-    // Casos especiales
-    if (currentFile === '' || currentFile === '/') currentFile = 'index.html';
-    if (linkFile === '' || linkFile === '/') linkFile = 'index.html';
-
-    return currentFile === linkFile;
+    return matched;
   }
 
-  // ── Actualizar links y TEXTOS del navbar ──────────────
+  // ── Actualizar links, textos y estado activo ──────────
   function fixNavbarLinks() {
+    var currentNorm = path.replace(/\/$/, '/index.html');
+
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
       var href = link.getAttribute('href');
-      if (!href) return;
+      if (!href || href.match(/^(https?:|mailto:|#)/)) return;
 
-      var file = href.split('/').pop();
-      var langDict = isEn ? navbarTexts.es : navbarTexts.en;
+      // Resolver a pathname absoluto para comparaciones fiables
+      var resolvedPath = resolveHref(href);
+      var esKey = findEsKey(resolvedPath);
 
-      // Buscar en el diccionario con la ruta completa
-      var fullPath = href.replace(path.split('/').slice(0, -1).join('/'), '').replace(/^\//, '');
+      if (esKey) {
+        // 1. Actualizar texto al idioma actual
+        link.textContent = isEn ? navbarTexts.en[esKey] : navbarTexts.es[esKey];
 
-      // Actualizar el href si estamos en EN
-      if (isEn && enPageMap[file]) {
-        link.setAttribute('href', href.replace(file, enPageMap[file]));
-      } else if (!isEn) {
-        // Si estamos en ES y el link apunta a EN, actualizarlo a ES
-        var currentFile = link.getAttribute('href').split('/').pop();
-        var esFile = Object.keys(enPageMap).find(k => enPageMap[k] === currentFile);
-        if (esFile) {
-          link.setAttribute('href', link.getAttribute('href').replace(currentFile, esFile));
+        // 2. Actualizar href al idioma actual usando ruta completa
+        if (isEn && enPageMap[esKey]) {
+          var enPath = enPageMap[esKey];
+          link.setAttribute('href', resolvedPath.replace('/' + esKey, '/' + enPath));
+        } else if (!isEn) {
+          // Restaurar a ES si el link ya apuntaba a EN
+          var enVal = enPageMap[esKey];
+          if (enVal && resolvedPath.endsWith('/' + enVal)) {
+            link.setAttribute('href', resolvedPath.replace('/' + enVal, '/' + esKey));
+          }
         }
       }
 
-      // Actualizar TEXTO del link
-      Object.keys(navbarTexts.es).forEach(function (page) {
-        if (href.includes(page.replace('.html', '')) || (page === 'index.html' && (href === '/' || href === 'index.html'))) {
-          var textoES = navbarTexts.es[page];
-          var textoEN = navbarTexts.en[page];
-          link.textContent = isEn ? textoEN : textoES;
-        }
-      });
-
-      // ✨ RESALTAR ENLACE ACTIVO
-      if (isCurrentPage(href)) {
+      // 3. Marcar como activo SOLO si es exactamente la página actual
+      var finalResolved = resolveHref(link.getAttribute('href'));
+      if (finalResolved === currentNorm) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
@@ -499,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
     });
   }
 
-  // ── Inyectar toggle en el navbar ──────────────────────
+  // ── Inyectar toggle ES|EN en el navbar ────────────────
   function injectToggle() {
     if (document.getElementById('lang-toggle-wrap')) return true;
 
@@ -522,7 +537,7 @@ ul.task-list li input[type="checkbox"] {
     return true;
   }
 
-  // ── Inicializar con reintentos ─────────────────────────
+  // ── Inicializar ───────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function () {
     fixNavbarLinks();
 
