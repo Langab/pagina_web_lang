@@ -191,12 +191,13 @@ header.quarto-title-block:has(h1:empty),
 
 .hero-texto { color: white; }
 
-.hero-texto h1 {
+.hero-texto h1,
+.hero-nombre {
   color: white !important;
   font-size: 3rem;
   line-height: 1.1;
   margin: 0.3rem 0 0.7rem 0;
-  border: none;
+  border: none !important;
   display: block;
   letter-spacing: -0.02em;
 }
@@ -366,6 +367,7 @@ header.quarto-title-block:has(h1:empty),
   width: 100%;
   max-width: 280px;
   text-align: center;
+  padding-bottom: 1.8rem;
 }
 
 .hero-logos-foto-label {
@@ -436,7 +438,8 @@ header.quarto-title-block:has(h1:empty),
   animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
-.hero-texto h1 {
+.hero-texto h1,
+.hero-nombre {
   animation: fadeInUp 0.6s ease-out 0.35s both;
 }
 
