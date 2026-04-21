@@ -22,7 +22,7 @@ library(purrr)
 <p class="hero-rol">Sociologist · Data Analyst · Researcher</p>
 
 <p class="hero-descripcion">
-<strong>6 years turning data into decisions</strong> across the public sector, private industry, and academia. Specialized in large-scale data processing and visualization with R, Python, and Power BI, with an analytical and strategic communication approach. Dashboards, automated reporting, and evidence-based KPI development.
+<strong>5 years turning data into decisions</strong> across the public sector, private industry, and academia. Specialized in large-scale data processing and visualization with R, Python, and Power BI, with an analytical and strategic communication approach. Dashboards, automated reporting, and evidence-based KPI development.
 </p>
 
 <div class="hero-badges">
@@ -77,7 +77,7 @@ div(class = "hero-logos-foto",
 #| echo: false
 div(class = "stats-hero",
   div(class = "stat-hero-item",
-    div(class = "stat-hero-numero", "6+"),
+    div(class = "stat-hero-numero", "5+"),
     div(class = "stat-hero-label", "Years of experience")),
   div(class = "stat-hero-item",
     div(class = "stat-hero-numero", "13"),

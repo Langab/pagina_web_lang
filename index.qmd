@@ -22,7 +22,7 @@ library(purrr)
 <p class="hero-rol" data-i18n="hero.rol">Sociólogo · Analista de datos · Investigador</p>
 
 <p class="hero-descripcion" data-i18n="hero.desc">
-<strong>6 años transformando datos en decisiones</strong> para el sector público, privado y academia. Especializado en procesamiento y visualización de datos a gran escala con R, Python y Power BI, con una visión analítica y de comunicación estratégica. Dashboards, automatización de reportes y elaboración de indicadores basados en evidencia.
+<strong>5 años transformando datos en decisiones</strong> para el sector público, privado y academia. Especializado en procesamiento y visualización de datos a gran escala con R, Python y Power BI, con una visión analítica y de comunicación estratégica. Dashboards, automatización de reportes y elaboración de indicadores basados en evidencia.
 </p>
 
 <div class="hero-badges">
@@ -77,7 +77,7 @@ div(class = "hero-logos-foto",
 #| echo: false
 div(class = "stats-hero",
   div(class = "stat-hero-item",
-    div(class = "stat-hero-numero", "6+"),
+    div(class = "stat-hero-numero", "5+"),
     div(class = "stat-hero-label", `data-i18n` = "stat.years", "Años de experiencia")),
   div(class = "stat-hero-item",
     div(class = "stat-hero-numero", "13"),
