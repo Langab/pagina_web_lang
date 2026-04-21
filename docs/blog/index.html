@@ -166,6 +166,10 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../portafolio/index.html"> 
+<span class="menu-text">Portafolio</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
@@ -202,6 +206,7 @@ window.Quarto = {
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
+<div class="page-container">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -236,7 +241,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+</div><div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
@@ -250,6 +255,7 @@ window.Quarto = {
 No matching items
 </div>
 </div></main> <!-- /main -->
+</div>
 <script>
 /* ============================================================
    SISTEMA BILINGÜE — Navegación por páginas separadas
@@ -257,8 +263,9 @@ No matching items
    EN: index-en.html, about-en.html, trabajos-en.html, publicaciones-en.html
 
    El toggle ES|EN es simplemente un <a href> que apunta a la
-   contrapartida de la página actual. No hay traducción JS,
-   no hay localStorage, no hay diccionario.
+   contrapartida de la página actual.
+
+   ✨ NUEVO: Traducción dinámica del navbar cuando cambias idioma.
 ============================================================ */
 
 (function () {
@@ -266,6 +273,26 @@ No matching items
   // ── Detectar idioma actual ─────────────────────────────
   var path = window.location.pathname;
   var isEn = path.indexOf('-en.html') !== -1 || path.indexOf('-en/') !== -1;
+
+  // ── Diccionario de traducciones del navbar ─────────────
+  var navbarTexts = {
+    es: {
+      'index.html':          'Inicio',
+      'publicaciones.html':  'Publicaciones',
+      'trabajos.html':       'Trabajos, proyectos y consultoría',
+      'blog/index.html':     'Blog',
+      'portafolio/index.html': 'Portafolio',
+      'about.html':          'CV'
+    },
+    en: {
+      'index.html':          'Home',
+      'publicaciones.html':  'Publications',
+      'trabajos.html':       'Works, Projects & Consulting',
+      'blog/index.html':     'Blog',
+      'portafolio/index.html': 'Portfolio',
+      'about.html':          'CV'
+    }
+  };
 
   // ── Calcular URL de la contrapartida ──────────────────
   function getCounterpart() {
@@ -284,24 +311,79 @@ No matching items
 
   var counterpart = getCounterpart();
 
-  // ── Si estamos en EN: actualizar links del navbar ─────
-  // Los links del navbar apuntan a las páginas ES por defecto.
-  // En páginas EN los actualizamos para mantener el idioma.
+  // ── Map de páginas EN ──────────────────────────────────
   var enPageMap = {
     'index.html':         'index-en.html',
     'publicaciones.html': 'publicaciones-en.html',
     'trabajos.html':      'trabajos-en.html',
+    'blog/index.html':    'blog/index.html',           // Blog no cambia de nombre
+    'portafolio/index.html': 'portafolio-en/index.html', // Portafolio ES → EN
     'about.html':         'about-en.html'
   };
 
+  // ── Detectar si un link es la página actual ──────────
+  function isCurrentPage(linkHref) {
+    // Limpiar la ruta actual
+    var currentPath = path;
+    if (currentPath.endsWith('/')) {
+      currentPath = currentPath.replace(/\/$/, '/index.html');
+    }
+
+    // Limpiar el href del link
+    var cleanHref = linkHref;
+    if (cleanHref.endsWith('/')) {
+      cleanHref = cleanHref.replace(/\/$/, '/index.html');
+    }
+
+    // Extraer el nombre del archivo
+    var currentFile = currentPath.split('/').pop();
+    var linkFile = cleanHref.split('/').pop();
+
+    // Casos especiales
+    if (currentFile === '' || currentFile === '/') currentFile = 'index.html';
+    if (linkFile === '' || linkFile === '/') linkFile = 'index.html';
+
+    return currentFile === linkFile;
+  }
+
+  // ── Actualizar links y TEXTOS del navbar ──────────────
   function fixNavbarLinks() {
-    if (!isEn) return;
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
       var href = link.getAttribute('href');
       if (!href) return;
+
       var file = href.split('/').pop();
-      if (enPageMap[file]) {
+      var langDict = isEn ? navbarTexts.es : navbarTexts.en;
+
+      // Buscar en el diccionario con la ruta completa
+      var fullPath = href.replace(path.split('/').slice(0, -1).join('/'), '').replace(/^\//, '');
+
+      // Actualizar el href si estamos en EN
+      if (isEn && enPageMap[file]) {
         link.setAttribute('href', href.replace(file, enPageMap[file]));
+      } else if (!isEn) {
+        // Si estamos en ES y el link apunta a EN, actualizarlo a ES
+        var currentFile = link.getAttribute('href').split('/').pop();
+        var esFile = Object.keys(enPageMap).find(k => enPageMap[k] === currentFile);
+        if (esFile) {
+          link.setAttribute('href', link.getAttribute('href').replace(currentFile, esFile));
+        }
+      }
+
+      // Actualizar TEXTO del link
+      Object.keys(navbarTexts.es).forEach(function (page) {
+        if (href.includes(page.replace('.html', '')) || (page === 'index.html' && (href === '/' || href === 'index.html'))) {
+          var textoES = navbarTexts.es[page];
+          var textoEN = navbarTexts.en[page];
+          link.textContent = isEn ? textoEN : textoES;
+        }
+      });
+
+      // ✨ RESALTAR ENLACE ACTIVO
+      if (isCurrentPage(href)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   }
@@ -766,7 +848,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+ <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">

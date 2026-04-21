@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://langab.github.io/pagina_web_lang/about-en.html</loc>
-    <lastmod>2026-04-12T03:31:18.146Z</lastmod>
+    <loc>https://langab.github.io/pagina_web_lang/portafolio-en/index.html</loc>
+    <lastmod>2026-04-21T14:05:05.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/trabajos-en.html</loc>
+    <lastmod>2026-04-12T01:23:36.890Z</lastmod>
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/about.html</loc>
-    <lastmod>2026-04-12T14:57:59.508Z</lastmod>
+    <lastmod>2026-04-21T14:01:19.533Z</lastmod>
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/blog/index.html</loc>
@@ -14,15 +18,23 @@
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/index.html</loc>
-    <lastmod>2026-04-12T15:21:19.763Z</lastmod>
+    <lastmod>2026-04-12T19:58:22.674Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/CAMBIOS_PORTAFOLIO.html</loc>
+    <lastmod>2026-04-21T14:06:35.978Z</lastmod>
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/publicaciones.html</loc>
-    <lastmod>2026-04-11T20:52:30.798Z</lastmod>
+    <lastmod>2026-04-21T15:23:35.274Z</lastmod>
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/trabajos.html</loc>
     <lastmod>2026-04-11T21:21:01.543Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/portafolio/index.html</loc>
+    <lastmod>2026-04-21T14:04:56.999Z</lastmod>
   </url>
   <url>
     <loc>https://langab.github.io/pagina_web_lang/index-en.html</loc>
@@ -33,7 +45,11 @@
     <lastmod>2026-04-12T01:24:01.033Z</lastmod>
   </url>
   <url>
-    <loc>https://langab.github.io/pagina_web_lang/trabajos-en.html</loc>
-    <lastmod>2026-04-12T01:23:36.890Z</lastmod>
+    <loc>https://langab.github.io/pagina_web_lang/CAMBIOS_ANIMACIONES_NAVBAR.html</loc>
+    <lastmod>2026-04-21T14:12:41.411Z</lastmod>
+  </url>
+  <url>
+    <loc>https://langab.github.io/pagina_web_lang/about-en.html</loc>
+    <lastmod>2026-04-21T15:25:06.593Z</lastmod>
   </url>
 </urlset>

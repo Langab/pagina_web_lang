@@ -18,7 +18,7 @@ library(glue)
 
 articulos <- list(
   list(
-    autores = "Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.",
+    autores = "Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez,  J. P.",
     anio    = "2024",
     titulo  = "Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum",
     revista = "Journal of Language and Politics",
