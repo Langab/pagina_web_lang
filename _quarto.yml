@@ -48,7 +48,10 @@ format:
   html:
     theme: flatly
     css: styles.css
-    include-after-body: includes/lang-init.html
+    include-before-body: includes/page-wrapper-open.html
+    include-after-body:
+      - includes/page-wrapper-close.html
+      - includes/lang-init.html
     toc: true
     toc-depth: 3
     code-fold: true

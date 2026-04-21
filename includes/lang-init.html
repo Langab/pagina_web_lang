@@ -63,6 +63,31 @@
     'about.html':         'about-en.html'
   };
 
+  // ── Detectar si un link es la página actual ──────────
+  function isCurrentPage(linkHref) {
+    // Limpiar la ruta actual
+    var currentPath = path;
+    if (currentPath.endsWith('/')) {
+      currentPath = currentPath.replace(/\/$/, '/index.html');
+    }
+
+    // Limpiar el href del link
+    var cleanHref = linkHref;
+    if (cleanHref.endsWith('/')) {
+      cleanHref = cleanHref.replace(/\/$/, '/index.html');
+    }
+
+    // Extraer el nombre del archivo
+    var currentFile = currentPath.split('/').pop();
+    var linkFile = cleanHref.split('/').pop();
+
+    // Casos especiales
+    if (currentFile === '' || currentFile === '/') currentFile = 'index.html';
+    if (linkFile === '' || linkFile === '/') linkFile = 'index.html';
+
+    return currentFile === linkFile;
+  }
+
   // ── Actualizar links y TEXTOS del navbar ──────────────
   function fixNavbarLinks() {
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
@@ -95,6 +120,13 @@
           link.textContent = isEn ? textoEN : textoES;
         }
       });
+
+      // ✨ RESALTAR ENLACE ACTIVO
+      if (isCurrentPage(href)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
     });
   }
 
