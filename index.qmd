@@ -17,7 +17,7 @@ library(purrr)
 
 ::: {.hero-texto}
 
-<h1 class="hero-nombre">Benjamín Lang Bustos</h1>
+<p class="hero-nombre">Benjamín Lang Bustos</p>
 
 <p class="hero-rol" data-i18n="hero.rol">Sociólogo · Analista de datos · Investigador</p>
 

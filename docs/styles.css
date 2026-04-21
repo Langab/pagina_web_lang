@@ -191,15 +191,29 @@ header.quarto-title-block:has(h1:empty),
 
 .hero-texto { color: white; }
 
-.hero-texto h1,
+/* Nombre principal en el hero — usa <p> para evitar que Quarto
+   lo eleve al title-block-header (que está oculto) */
 .hero-nombre {
   color: white !important;
-  font-size: 3rem;
+  font-size: 3.1rem;
+  font-weight: 800;
   line-height: 1.1;
-  margin: 0.3rem 0 0.7rem 0;
+  margin: 0.2rem 0 0.7rem 0;
   border: none !important;
   display: block;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Legacy selector por compatibilidad */
+.hero-texto h1 {
+  color: white !important;
+  font-size: 3.1rem;
+  line-height: 1.1;
+  margin: 0.2rem 0 0.7rem 0;
+  border: none !important;
+  display: block;
+  letter-spacing: -0.03em;
 }
 
 .hero-saludo {
@@ -440,7 +454,7 @@ header.quarto-title-block:has(h1:empty),
 
 .hero-texto h1,
 .hero-nombre {
-  animation: fadeInUp 0.6s ease-out 0.35s both;
+  animation: fadeInUp 0.6s ease-out 0.3s both;
 }
 
 .hero-texto .hero-rol {
