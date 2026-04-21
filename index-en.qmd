@@ -16,9 +16,6 @@ library(purrr)
 ::: {.hero-contenido}
 
 ::: {.hero-texto}
-<span class="hero-disponible">Available for projects</span>
-
-<span class="hero-saludo">👋 Hi, I'm</span>
 
 # Benjamín Lang Bustos
 
@@ -49,17 +46,21 @@ library(purrr)
 ```{r}
 #| echo: false
 logos <- list(
-  list(src = "img/censo_2024.svg", alt = "INE Chile"),
-  list(src = "img/cep.png",        alt = "CEP"),
-  list(src = "img/udp.png",        alt = "UDP")
+  list(src = "img/portada/ine.png",        alt = "INE Censo 2024",  tipo = "wide"),
+  list(src = "img/portada/cep.png",        alt = "CEP",             tipo = "wide"),
+  list(src = "img/portada/santa_rosa.png", alt = "SLEP Santa Rosa", tipo = "wide"),
+  list(src = "img/portada/c22.png",        alt = "C22",             tipo = "square"),
+  list(src = "img/portada/tironi.png",     alt = "Tironi",          tipo = "square")
 )
 
 div(class = "hero-logos-foto",
   div(class = "hero-logos-foto-label", "Experience at"),
   div(class = "hero-logos-foto-row",
     map(logos, \(l)
-      div(class = "hero-logo-wrapper",
-        tags$img(src = l$src, class = "hero-logo-item", alt = l$alt)
+      tags$img(
+        src   = l$src,
+        alt   = l$alt,
+        class = paste("hero-logo-item", if (l$tipo == "square") "hero-logo-square" else "")
       )
     )
   )

@@ -16,9 +16,6 @@ library(purrr)
 ::: {.hero-contenido}
 
 ::: {.hero-texto}
-<span class="hero-disponible" data-i18n="hero.available">Disponible para proyectos</span>
-
-<span class="hero-saludo" data-i18n="hero.saludo">👋 Hola, soy</span>
 
 # Benjamín Lang Bustos
 
