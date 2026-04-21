@@ -26,7 +26,7 @@ div(class = "cv-header",
         tags$span(class = "idioma-badge", "🇬🇧 English — B2"),
         tags$span(class = "idioma-badge", "🇮🇹 Italian — C1")
       ),
-      tags$a(href = "documentos/cv_Benjamin_Lang_2026.pdf",
+      tags$a(href = "documentos/CV_Lang_DataAnalyst_EN.pdf",
              class = "cv-download-btn", "📄 Download CV (PDF)")
     ),
     div(class = "cv-contacto-header",

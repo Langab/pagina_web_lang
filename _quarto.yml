@@ -20,6 +20,8 @@ website:
         text: "Trabajos, proyectos y consultoría"
       - href: blog/index.qmd
         text: Blog
+      - href: portafolio/index.qmd
+        text: Portafolio
       - href: about.qmd
         text: CV
     right:

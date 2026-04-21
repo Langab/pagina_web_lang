@@ -1,0 +1,124 @@
+---
+title: "Portafolio"
+toc: true
+toc-title: "Contenido"
+---
+
+```{r}
+#| echo: false
+library(htmltools)
+library(purrr)
+```
+
+<!-- ====================================================
+     📁 ENCABEZADO PORTAFOLIO
+======================================================= -->
+
+```{r}
+#| echo: false
+
+div(class = "portafolio-header",
+  tags$span(class = "portafolio-titulo-chip", "📊 Portafolio de Scripts"),
+  tags$h1("Scripts de R · Procesamiento, Análisis y Visualización"),
+  tags$p(class = "portafolio-descripcion",
+         "Colección de scripts prácticos sobre procesamiento de datos, análisis estadístico y visualización de información que he desarrollado en proyectos de investigación e institucionales.")
+)
+```
+
+---
+
+## 🚀 Próximamente {.seccion-titulo}
+
+::: {.callout-info appearance="simple"}
+📌 **Estado:** En construcción
+
+Estoy preparando una colección de **scripts en R** sobre:
+- **Procesamiento de datos:** limpieza, transformación y normalización con `tidyverse`
+- **Análisis estadístico:** análisis exploratorio, modelos estadísticos y testing
+- **Visualización:** gráficas con `ggplot2`, dashboards interactivos y reportes dinámicos
+
+Cada script incluirá:
+- 📝 Explicación detallada del código
+- 🎯 Casos de uso y aplicaciones prácticas
+- 💾 Descargas disponibles
+- 🔗 Repositorio en GitHub
+
+¡Vuelve pronto para explorar los scripts! 🎉
+:::
+
+---
+
+## 📂 Categorías {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+categorias <- list(
+  list(
+    titulo = "🔄 Procesamiento de Datos",
+    icon = "📥",
+    desc = "Scripts para limpieza, transformación y normalización de datos con tidyverse. Manejo de valores faltantes, deduplicación y restructuración de bases de datos.",
+    count = "Próximamente"
+  ),
+  list(
+    titulo = "📊 Análisis Estadístico",
+    icon = "📈",
+    desc = "Análisis exploratorio de datos (EDA), análisis de varianza, regresiones, modelos lineales y herramientas de inferencia estadística.",
+    count = "Próximamente"
+  ),
+  list(
+    titulo = "🎨 Visualización e Infografía",
+    icon = "🎯",
+    desc = "Gráficos avanzados con ggplot2, mapas temáticos, dashboards interactivos con Shiny y reportes dinámicos con Quarto.",
+    count = "Próximamente"
+  ),
+  list(
+    titulo = "🤖 Técnicas Especiales",
+    icon = "⚙️",
+    desc = "Text mining, análisis de redes, análisis de series de tiempo, modelamiento predictivo y machine learning aplicado.",
+    count = "Próximamente"
+  )
+)
+
+div(class = "grid portafolio-grid",
+  map(categorias, \(cat) {
+    div(class = "g-col-12 g-col-md-6",
+      div(class = "portafolio-card-categoria",
+        div(class = "portafolio-card-header",
+          tags$span(class = "portafolio-icon", cat$icon),
+          tags$h3(class = "portafolio-card-titulo", cat$titulo)
+        ),
+        tags$p(class = "portafolio-card-desc", cat$desc),
+        tags$div(class = "portafolio-card-badge", cat$count)
+      )
+    )
+  })
+)
+```
+
+---
+
+## 📚 Últimos Scripts Agregados {.seccion-titulo}
+
+```{r}
+#| echo: false
+
+div(class = "portafolio-empty",
+  tags$span(class = "portafolio-empty-icon", "⏳"),
+  tags$h4("Los scripts estarán disponibles muy pronto"),
+  tags$p("Estamos preparando una selección cuidada de scripts listos para compartir.")
+)
+```
+
+---
+
+## 💬 ¿Tienes una pregunta? {.seccion-titulo}
+
+::: {.callout-note appearance="simple"}
+Si tienes dudas sobre metodología, procesamiento de datos o análisis estadístico con R, puedes:
+
+📧 **Contactarme por email:** [benjalang1997@gmail.com](mailto:benjalang1997@gmail.com)
+🔗 **LinkedIn:** [Ver perfil](https://www.linkedin.com/in/benjamin-lang-a78229207/)
+
+¡Me encantaría ayudarte con tus análisis! 🙌
+:::
