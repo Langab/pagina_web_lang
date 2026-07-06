@@ -23,7 +23,15 @@
       "Bash(pkill -f \"http.server 8765\")",
       "Bash(git add *)",
       "Bash(git reset *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git -c http.postBuffer=157286400 push origin main)",
+      "Bash(curl -s -o /dev/null -w \"home:%{http_code}\\\\n\" \"https://langab.github.io/pagina_web_lang/\")",
+      "Bash(curl -s -o /dev/null -w \"post:%{http_code}\\\\n\" \"https://langab.github.io/pagina_web_lang/blog/posts/visor-arriendos/\")",
+      "Bash(gh api *)",
+      "Bash(curl -s -o /dev/null -w \"img_mapa:%{http_code}\\\\n\" \"https://langab.github.io/pagina_web_lang/blog/posts/visor-arriendos/img/vista_mapa.jpg\")",
+      "Bash(claude mcp *)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
