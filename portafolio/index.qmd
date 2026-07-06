@@ -9,7 +9,7 @@ library(htmltools)
 ```
 
 ::: {.portafolio-header}
-<span class="portafolio-titulo-chip">📊 Portafolio de Proyectos</span>
+<span class="portafolio-titulo-chip">Portafolio de Proyectos</span>
 
 # Proyectos de datos de punta a punta
 
@@ -27,7 +27,7 @@ div(class = "proyecto-destacado",
   ),
   div(class = "proyecto-destacado-body",
     div(class = "tarjeta-etiqueta", "Proyecto personal · Python · En producción"),
-    tags$h3("🏠 Visor de Arriendos · Santiago"),
+    tags$h3(HTML("<img src='../img/icons/housing.svg' class='icono-inline' alt=''> Visor de Arriendos · Santiago")),
     tags$p(
       "Pipeline completo de datos para encontrar departamento en Santiago: ",
       "scrapers multi-portal, deduplicación, geocodificación con OpenStreetMap, ",
@@ -47,16 +47,16 @@ div(class = "proyecto-destacado",
       tags$a(href = "https://langab.github.io/visor_arriendos/viewer/",
              target = "_blank", class = "btn-primario", "Ver el visor en vivo →"),
       tags$a(href = "../blog/posts/visor-arriendos/index.html",
-             class = "btn-secundario", "📝 Leer cómo lo construí"),
+             class = "btn-secundario", "Leer cómo lo construí"),
       tags$a(href = "https://github.com/Langab/visor_arriendos",
-             target = "_blank", class = "btn-ghost", "Código en GitHub")
+             target = "_blank", class = "btn-secundario", "Código en GitHub")
     )
   )
 )
 ```
 
-## 🧰 Scripts y análisis en R {.seccion-titulo}
+## <img src="../img/icons/toolbox.svg" class="icono-titulo" alt=""/> Scripts y análisis en R {.seccion-titulo}
 
 ::: {.callout-note appearance="simple"}
-📌 **En preparación** — Estoy ordenando una colección de **scripts en R** sobre procesamiento de datos, análisis estadístico y visualización, desarrollados en proyectos de investigación e institucionales. Mientras tanto, puedes ver los proyectos y publicaciones en el [blog](../blog/index.qmd).
+**En preparación** — Estoy ordenando una colección de **scripts en R** sobre procesamiento de datos, análisis estadístico y visualización, desarrollados en proyectos de investigación e institucionales. Mientras tanto, puedes ver los proyectos y publicaciones en el [blog](../blog/index.qmd).
 :::

@@ -9,7 +9,7 @@ library(htmltools)
 ```
 
 ::: {.portafolio-header}
-<span class="portafolio-titulo-chip">📊 Project Portfolio</span>
+<span class="portafolio-titulo-chip">Project Portfolio</span>
 
 # End-to-end data projects
 
@@ -27,7 +27,7 @@ div(class = "proyecto-destacado",
   ),
   div(class = "proyecto-destacado-body",
     div(class = "tarjeta-etiqueta", "Personal project · Python · In production"),
-    tags$h3("🏠 Rental Viewer · Santiago"),
+    tags$h3(HTML("<img src='../img/icons/housing.svg' class='icono-inline' alt=''> Rental Viewer · Santiago")),
     tags$p(
       "A complete data pipeline to find an apartment in Santiago: multi-portal ",
       "scrapers, deduplication, geocoding with OpenStreetMap, price analysis by ",
@@ -47,16 +47,16 @@ div(class = "proyecto-destacado",
       tags$a(href = "https://langab.github.io/visor_arriendos/viewer/",
              target = "_blank", class = "btn-primario", "See it live →"),
       tags$a(href = "../blog/posts/visor-arriendos/index.html",
-             class = "btn-secundario", "📝 Read how I built it (Spanish)"),
+             class = "btn-secundario", "Read how I built it (Spanish)"),
       tags$a(href = "https://github.com/Langab/visor_arriendos",
-             target = "_blank", class = "btn-ghost", "Code on GitHub")
+             target = "_blank", class = "btn-secundario", "Code on GitHub")
     )
   )
 )
 ```
 
-## 🧰 R scripts & analyses {.seccion-titulo}
+## <img src="../img/icons/toolbox.svg" class="icono-titulo" alt=""/> R scripts & analyses {.seccion-titulo}
 
 ::: {.callout-note appearance="simple"}
-📌 **In preparation** — I'm curating a collection of **R scripts** on data processing, statistical analysis and visualization developed in research and institutional projects. In the meantime, check the projects and posts on the [blog](../blog/index.qmd).
+**In preparation** — I'm curating a collection of **R scripts** on data processing, statistical analysis and visualization developed in research and institutional projects. In the meantime, check the projects and posts on the [blog](../blog/index.qmd).
 :::

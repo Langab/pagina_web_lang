@@ -17,7 +17,7 @@ A selection of **applied research**, **data analysis**, and **consulting** proje
 
 ---
 
-## 🏛️ Public Sector {.seccion-titulo}
+## <img src="img/icons/governance.svg" class="icono-titulo" alt=""/> Public Sector {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -69,7 +69,7 @@ div(class = "grid",
 
 ---
 
-## 🏢 Private Sector {.seccion-titulo}
+## <img src="img/icons/company.svg" class="icono-titulo" alt=""/> Private Sector {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -97,7 +97,7 @@ div(class = "proyecto-card",
 
 ---
 
-## 🔬 Academic Research {.seccion-titulo}
+## <img src="img/icons/research.svg" class="icono-titulo" alt=""/> Academic Research {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -186,7 +186,7 @@ div(class = "grid",
 
 ---
 
-## 🤝 Private Consulting {.seccion-titulo}
+## <img src="img/icons/consulting.svg" class="icono-titulo" alt=""/> Private Consulting {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -223,7 +223,7 @@ div(class = "grid",
 
 ---
 
-## 📩 Professional Contact {.seccion-titulo}
+## <img src="img/icons/email.svg" class="icono-titulo" alt=""/> Professional Contact {.seccion-titulo}
 
 <p>Have a project in mind? Write to me and let's talk.</p>
 
@@ -231,15 +231,15 @@ div(class = "grid",
 #| echo: false
 div(class = "contacto-grid",
   div(class = "contacto-item",
-    tags$strong("📧 Email"),
+    tags$strong(HTML("<img src='img/icons/email.svg' class='icono-inline' alt=''> Email")),
     tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
   ),
   div(class = "contacto-item",
-    tags$strong("📱 Phone"),
+    tags$strong(HTML("<img src='img/icons/phone.svg' class='icono-inline' alt=''> Phone")),
     tags$span("+56 9 6309 5562")
   ),
   div(class = "contacto-item",
-    tags$strong("🔗 LinkedIn"),
+    tags$strong(HTML("<img src='img/icons/link.svg' class='icono-inline' alt=''> LinkedIn")),
     tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
            target = "_blank", "benjamin-lang-a78229207")
   )

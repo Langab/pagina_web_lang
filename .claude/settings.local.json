@@ -31,7 +31,18 @@
       "Bash(gh api *)",
       "Bash(curl -s -o /dev/null -w \"img_mapa:%{http_code}\\\\n\" \"https://langab.github.io/pagina_web_lang/blog/posts/visor-arriendos/img/vista_mapa.jpg\")",
       "Bash(claude mcp *)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -i https://mcp.magnific.com/.well-known/oauth-protected-resource)",
+      "Bash(curl -s https://mcp.magnific.com/.well-known/oauth-authorization-server)",
+      "Bash(python3 magnific_oauth.py register)",
+      "Bash(python3 magnific_oauth.py serve)",
+      "Bash(python3 -)",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-langa-Library-Mobile-Documents-com-apple-CloudDocs-Proyectos-propios-Pagina-web-BL/fcd6540c-937e-4232-8fa9-3f5920d6e3aa/scratchpad/mcp_client.py\")",
+      "Bash(python3 gen_icon.py \"a bar chart with three ascending bars representing data analysis\" test_stats.svg)",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-langa-Library-Mobile-Documents-com-apple-CloudDocs-Proyectos-propios-Pagina-web-BL/fcd6540c-937e-4232-8fa9-3f5920d6e3aa/scratchpad/gen_all_icons.py\")",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-langa-Library-Mobile-Documents-com-apple-CloudDocs-Proyectos-propios-Pagina-web-BL/fcd6540c-937e-4232-8fa9-3f5920d6e3aa/scratchpad/recover_icons.py\")",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-langa-Library-Mobile-Documents-com-apple-CloudDocs-Proyectos-propios-Pagina-web-BL/fcd6540c-937e-4232-8fa9-3f5920d6e3aa/scratchpad/replace_emojis.py\")",
+      "Bash(grep -n 'tags$h3' portafolio/index.qmd portafolio-en/index.qmd)"
     ]
   }
 }

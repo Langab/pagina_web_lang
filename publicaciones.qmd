@@ -11,7 +11,7 @@ library(purrr)
 library(glue)
 ```
 
-## 📄 Artículos académicos {.seccion-titulo data-i18n="pub.sec.articulos"}
+## <img src="img/icons/document.svg" class="icono-titulo" alt=""/> Artículos académicos {.seccion-titulo data-i18n="pub.sec.articulos"}
 
 ```{r}
 #| echo: false
@@ -47,7 +47,7 @@ div(class = "publicaciones",
 
 ---
 
-## 📋 Policy Papers — Centro de Estudios Públicos {.seccion-titulo data-i18n="pub.sec.policy"}
+## <img src="img/icons/reports.svg" class="icono-titulo" alt=""/> Policy Papers — Centro de Estudios Públicos {.seccion-titulo data-i18n="pub.sec.policy"}
 
 ```{r}
 #| echo: false
@@ -101,7 +101,7 @@ div(class = "publicaciones",
 
 ---
 
-## 🖥️ Research Notes — C22 · CEP {.seccion-titulo data-i18n="pub.sec.notas"}
+## <img src="img/icons/desktop.svg" class="icono-titulo" alt=""/> Research Notes — C22 · CEP {.seccion-titulo data-i18n="pub.sec.notas"}
 
 ```{r}
 #| echo: false

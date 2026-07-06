@@ -15,7 +15,7 @@ library(purrr)
 ```{r}
 #| echo: false
 div(class = "cv-header",
-  tags$span(class = "cv-titulo-chip", "📄 Curriculum Vitae"),
+  tags$span(class = "cv-titulo-chip", "Curriculum Vitae"),
   div(class = "cv-header-grid",
     div(class = "cv-header-left",
       tags$h1("Benjamín Lang Bustos"),
@@ -27,19 +27,19 @@ div(class = "cv-header",
         tags$span(class = "idioma-badge", "🇮🇹 Italian — C1")
       ),
       tags$a(href = "CV_Lang_DataAnalyst_EN.pdf", target = "_blank",
-             class = "cv-download-btn", "📄 Download CV (PDF)")
+             class = "cv-download-btn", "Download CV (PDF)")
     ),
     div(class = "cv-contacto-header",
       div(class = "cv-contacto-item",
-        tags$strong("📧 Email"),
+        tags$strong(HTML("<img src='img/icons/email.svg' class='icono-inline' alt=''> Email")),
         tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
       ),
       div(class = "cv-contacto-item",
-        tags$strong("📱 Phone"),
+        tags$strong(HTML("<img src='img/icons/phone.svg' class='icono-inline' alt=''> Phone")),
         tags$span("+56 9 6309 5562")
       ),
       div(class = "cv-contacto-item",
-        tags$strong("🔗 LinkedIn"),
+        tags$strong(HTML("<img src='img/icons/link.svg' class='icono-inline' alt=''> LinkedIn")),
         tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
                target = "_blank", "benjamin-lang-a78229207")
       )
@@ -48,7 +48,7 @@ div(class = "cv-header",
 )
 ```
 
-## 👤 About me {.seccion-titulo}
+## <img src="img/icons/profile.svg" class="icono-titulo" alt=""/> About me {.seccion-titulo}
 
 ::: {.sobre-mi-card}
 
@@ -62,7 +62,7 @@ div(class = "cv-header",
 
 ---
 
-## 🎓 Academic background {.seccion-titulo}
+## <img src="img/icons/training.svg" class="icono-titulo" alt=""/> Academic background {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -111,7 +111,7 @@ div(class = "formacion-card",
 
 ---
 
-## 💼 Work experience {.seccion-titulo}
+## <img src="img/icons/briefcase.svg" class="icono-titulo" alt=""/> Work experience {.seccion-titulo}
 
 ### Data Analyst {.trabajo-titulo}
 
@@ -223,7 +223,7 @@ div(class = "formacion-card",
 
 ---
 
-## 🎓 University experience {.seccion-titulo}
+## <img src="img/icons/training.svg" class="icono-titulo" alt=""/> University experience {.seccion-titulo}
 
 ::: {.intro-pagina}
 During my studies at Universidad Diego Portales I actively participated as a **teaching assistant** and **thesis researcher**, strengthening my training in methodology, social theory, and applied research.
@@ -273,7 +273,7 @@ div(class = "timeline",
 
 ---
 
-## 🛠️ Technical skills {.seccion-titulo}
+## <img src="img/icons/services.svg" class="icono-titulo" alt=""/> Technical skills {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -309,7 +309,7 @@ div(class = "habilidades-lista",
 
 ---
 
-## 📰 Featured publications {.seccion-titulo}
+## <img src="img/icons/publications.svg" class="icono-titulo" alt=""/> Featured publications {.seccion-titulo}
 
 ::: {.cv-seccion-texto}
 **Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024). *"Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"*. **Journal of Language and Politics**, 23(5), 723–746. [https://doi.org/10.1075/jlp.24097.fre](https://doi.org/10.1075/jlp.24097.fre)
@@ -319,7 +319,7 @@ div(class = "habilidades-lista",
 
 ---
 
-## 🎤 Academic activities {.seccion-titulo}
+## <img src="img/icons/talks.svg" class="icono-titulo" alt=""/> Academic activities {.seccion-titulo}
 
 <ul class="cv-seccion-texto">
 <li><strong>June 2024</strong> — Seminar <em>"Artificial intelligence and social sciences: tools, expectations, and limitations"</em> for Sociology students, Universidad Diego Portales.</li>
@@ -329,15 +329,15 @@ div(class = "habilidades-lista",
 
 ---
 
-## 📞 References {.seccion-titulo}
+## <img src="img/icons/phone.svg" class="icono-titulo" alt=""/> References {.seccion-titulo}
 
 ```{r}
 #| echo: false
 
 refs <- list(
-  list(txt = "<strong>Verónica Canales</strong><br><em>Head of methodology and processing — 2024 Population & Housing Census · INE.</em><br>Master in Social Research (LSE).<br>📧 <a href='mailto:vacanalesg@ine.gob.cl'>vacanalesg@ine.gob.cl</a>"),
-  list(txt = "<strong>Aldo Mascareño</strong><br><em>Senior Researcher at CEP · Editor-in-Chief of Estudios Públicos · Principal Investigator C22.</em><br>📧 <a href='mailto:amascareno@cepchile.cl'>amascareno@cepchile.cl</a>"),
-  list(txt = "<strong>Francisco Espinoza</strong><br><em>Consultant · Tironi & Associates.</em><br>Master in Political Science, Universidad de Chile.<br>📧 <a href='mailto:francisco.espinoza@tironi.cl'>francisco.espinoza@tironi.cl</a>")
+  list(txt = "<strong>Verónica Canales</strong><br><em>Head of methodology and processing — 2024 Population & Housing Census · INE.</em><br>Master in Social Research (LSE).<br><img src='img/icons/email.svg' class='icono-inline' alt=''> <a href='mailto:vacanalesg@ine.gob.cl'>vacanalesg@ine.gob.cl</a>"),
+  list(txt = "<strong>Aldo Mascareño</strong><br><em>Senior Researcher at CEP · Editor-in-Chief of Estudios Públicos · Principal Investigator C22.</em><br><img src='img/icons/email.svg' class='icono-inline' alt=''> <a href='mailto:amascareno@cepchile.cl'>amascareno@cepchile.cl</a>"),
+  list(txt = "<strong>Francisco Espinoza</strong><br><em>Consultant · Tironi & Associates.</em><br>Master in Political Science, Universidad de Chile.<br><img src='img/icons/email.svg' class='icono-inline' alt=''> <a href='mailto:francisco.espinoza@tironi.cl'>francisco.espinoza@tironi.cl</a>")
 )
 
 div(class = "grid",
@@ -353,21 +353,21 @@ div(class = "grid",
 
 ---
 
-## 📧 Contact {.seccion-titulo}
+## <img src="img/icons/email.svg" class="icono-titulo" alt=""/> Contact {.seccion-titulo}
 
 ```{r}
 #| echo: false
 div(class = "contacto-grid",
   div(class = "contacto-item",
-    tags$strong("📧 Email"),
+    tags$strong(HTML("<img src='img/icons/email.svg' class='icono-inline' alt=''> Email")),
     tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
   ),
   div(class = "contacto-item",
-    tags$strong("📱 Phone"),
+    tags$strong(HTML("<img src='img/icons/phone.svg' class='icono-inline' alt=''> Phone")),
     tags$span("+56 9 6309 5562")
   ),
   div(class = "contacto-item",
-    tags$strong("🔗 LinkedIn"),
+    tags$strong(HTML("<img src='img/icons/link.svg' class='icono-inline' alt=''> LinkedIn")),
     tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
            target = "_blank", "benjamin-lang-a78229207")
   )

@@ -17,7 +17,7 @@ library(purrr)
 
 ---
 
-## 🏛️ Sector público {.seccion-titulo data-i18n="trab.sec.publico"}
+## <img src="img/icons/governance.svg" class="icono-titulo" alt=""/> Sector público {.seccion-titulo data-i18n="trab.sec.publico"}
 
 ```{r}
 #| echo: false
@@ -72,7 +72,7 @@ div(class = "grid",
 
 ---
 
-## 🏢 Sector privado {.seccion-titulo data-i18n="trab.sec.privado"}
+## <img src="img/icons/company.svg" class="icono-titulo" alt=""/> Sector privado {.seccion-titulo data-i18n="trab.sec.privado"}
 
 ```{r}
 #| echo: false
@@ -102,7 +102,7 @@ div(class = "proyecto-card",
 
 ---
 
-## 🔬 Investigación académica {.seccion-titulo data-i18n="trab.sec.academico"}
+## <img src="img/icons/research.svg" class="icono-titulo" alt=""/> Investigación académica {.seccion-titulo data-i18n="trab.sec.academico"}
 
 ```{r}
 #| echo: false
@@ -194,7 +194,7 @@ div(class = "grid",
 
 ---
 
-## 🤝 Consultorías privadas {.seccion-titulo data-i18n="trab.sec.consultorias"}
+## <img src="img/icons/consulting.svg" class="icono-titulo" alt=""/> Consultorías privadas {.seccion-titulo data-i18n="trab.sec.consultorias"}
 
 ```{r}
 #| echo: false
@@ -233,7 +233,7 @@ div(class = "grid",
 
 ---
 
-## 📩 Contacto profesional {.seccion-titulo data-i18n="trab.sec.contact"}
+## <img src="img/icons/email.svg" class="icono-titulo" alt=""/> Contacto profesional {.seccion-titulo data-i18n="trab.sec.contact"}
 
 <p data-i18n="trab.contact.intro">¿Tienes un proyecto en mente? Escríbeme y conversamos.</p>
 
@@ -241,15 +241,15 @@ div(class = "grid",
 #| echo: false
 div(class = "contacto-grid",
   div(class = "contacto-item",
-    tags$strong(`data-i18n` = "contacto.email.lbl", "📧 Email"),
+    tags$strong(`data-i18n` = "contacto.email.lbl", HTML("<img src='img/icons/email.svg' class='icono-inline' alt=''> Email")),
     tags$a(href = "mailto:benjalang1997@gmail.com", "benjalang1997@gmail.com")
   ),
   div(class = "contacto-item",
-    tags$strong(`data-i18n` = "contacto.tel.lbl", "📱 Teléfono"),
+    tags$strong(`data-i18n` = "contacto.tel.lbl", HTML("<img src='img/icons/phone.svg' class='icono-inline' alt=''> Teléfono")),
     tags$span("+56 9 6309 5562")
   ),
   div(class = "contacto-item",
-    tags$strong(`data-i18n` = "contacto.li.lbl", "🔗 LinkedIn"),
+    tags$strong(`data-i18n` = "contacto.li.lbl", HTML("<img src='img/icons/link.svg' class='icono-inline' alt=''> LinkedIn")),
     tags$a(href = "https://www.linkedin.com/in/benjamin-lang-a78229207/",
            target = "_blank", "benjamin-lang-a78229207")
   )
@@ -257,5 +257,5 @@ div(class = "contacto-grid",
 ```
 
 <div style="text-align:center; margin-top:1.5rem;">
-<a href="mailto:benjalang1997@gmail.com" class="btn-primario" data-i18n="trab.contact.btn">✉️ Contactar ahora</a>
+<a href="mailto:benjalang1997@gmail.com" class="btn-primario" data-i18n="trab.contact.btn">Contactar ahora</a>
 </div>

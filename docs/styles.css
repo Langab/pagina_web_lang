@@ -1865,3 +1865,40 @@ h3.trabajo-titulo {
     padding: 1.4rem 1.4rem 1.6rem;
   }
 }
+
+/* -------------------------------------------------------
+   🎨 ICONOS SVG (Magnific) — reemplazo de emojis
+------------------------------------------------------- */
+.icono-titulo {
+  width: 1.35em;
+  height: 1.35em;
+  vertical-align: -0.26em;
+  margin-right: 0.15em;
+  display: inline-block;
+}
+
+.icono-inline {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+  margin-right: 0.15em;
+  display: inline-block;
+}
+
+.icono-card {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.tarjeta-icono,
+.servicio-card .icono {
+  line-height: 1;
+}
+
+.contacto-hero-icono img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}

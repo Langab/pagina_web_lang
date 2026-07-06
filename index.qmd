@@ -28,14 +28,14 @@ library(purrr)
 <div class="hero-badges">
 <span class="badge-item">R · Python · SQL · Power BI</span>
 <span class="badge-item">R Markdown · Quarto</span>
-<span class="badge-item" data-i18n="hero.badge3">⚙️ Automatización</span>
-<span class="badge-item" data-i18n="hero.badge4">🤖 IA aplicada</span>
+<span class="badge-item" data-i18n="hero.badge3">Automatización</span>
+<span class="badge-item" data-i18n="hero.badge4">IA aplicada</span>
 </div>
 
 <div class="hero-botones">
 <a href="about.qmd" class="btn-primario" data-i18n="hero.btn.cv">Ver CV completo →</a>
 <a href="trabajos.qmd" class="btn-secundario" data-i18n="hero.btn.work">Trabajos y proyectos</a>
-<a href="#contacto" class="btn-ghost" data-i18n="hero.btn.contact">✉️ Contactarme</a>
+<a href="#contacto" class="btn-ghost" data-i18n="hero.btn.contact">Contactarme</a>
 </div>
 
 :::
@@ -95,13 +95,13 @@ div(class = "stats-hero",
 
 :::
 
-## 🔬 Áreas de especialización {.seccion-titulo data-i18n="sec.areas"}
+## <img src="img/icons/research.svg" class="icono-titulo" alt=""/> Áreas de especialización {.seccion-titulo data-i18n="sec.areas"}
 
 ```{r}
 #| echo: false
 areas <- list(
   list(
-    icono = "📊",
+    icono = "stats.svg",
     key_titulo = "area1.title",
     titulo = "Ciencia de datos y estadística aplicada",
     key_desc = "area1.desc",
@@ -109,7 +109,7 @@ areas <- list(
     tags = c("R · avanzado", "Python", "Power BI")
   ),
   list(
-    icono = "🏛️",
+    icono = "governance.svg",
     key_titulo = "area2.title",
     titulo = "Gobernanza de datos en organizaciones",
     key_desc = "area2.desc",
@@ -117,7 +117,7 @@ areas <- list(
     tags = c("Dashboards", "Automatización", "Capacitación", "Transparencia")
   ),
   list(
-    icono = "🔬",
+    icono = "research.svg",
     key_titulo = "area3.title",
     titulo = "Técnicas y metodologías de investigación",
     key_desc = "area3.desc",
@@ -125,7 +125,7 @@ areas <- list(
     tags = c("Diseño metodológico", "Validación", "Censos y encuestas", "Análisis crítico")
   ),
   list(
-    icono = "📋",
+    icono = "reports.svg",
     key_titulo = "area4.title",
     titulo = "Informes estratégicos",
     key_desc = "area4.desc",
@@ -138,7 +138,7 @@ div(class = "grid",
   map(areas, \(a) {
     div(class = "g-col-12 g-col-md-6",
       div(class = "tarjeta",
-        div(class = "tarjeta-icono", a$icono),
+        div(class = "tarjeta-icono", tags$img(src = paste0("img/icons/", a$icono), alt = "", class = "icono-card")),
         tags$h3(`data-i18n` = a$key_titulo, a$titulo),
         tags$p(`data-i18n` = a$key_desc, a$desc),
         div(class = "skill-tags",
@@ -150,7 +150,7 @@ div(class = "grid",
 )
 ```
 
-## 💼 Proyectos destacados {.seccion-titulo data-i18n="sec.projects"}
+## <img src="img/icons/briefcase.svg" class="icono-titulo" alt=""/> Proyectos destacados {.seccion-titulo data-i18n="sec.projects"}
 
 ```{r}
 #| echo: false
@@ -231,37 +231,37 @@ div(class = "grid",
 <a href="trabajos.qmd" class="btn-secundario" data-i18n="sec.btn.allwork">Ver todos los trabajos →</a>
 </div>
 
-## 🛠️ Servicios que ofrezco {.seccion-titulo data-i18n="sec.services"}
+## <img src="img/icons/services.svg" class="icono-titulo" alt=""/> Servicios que ofrezco {.seccion-titulo data-i18n="sec.services"}
 
 ```{r}
 #| echo: false
 
 servicios <- list(
-  list(icono = "📊", key_titulo = "srv1.title", titulo = "Análisis y modelamiento de datos",
+  list(icono = "stats.svg", key_titulo = "srv1.title", titulo = "Análisis y modelamiento de datos",
        key_desc = "srv1.desc",
        desc = "Procesamiento, limpieza y análisis estadístico con R, Python y Power BI. Construcción de indicadores y reportes técnicos."),
-  list(icono = "📈", key_titulo = "srv2.title", titulo = "Dashboards e informes ejecutivos",
+  list(icono = "dashboard.svg", key_titulo = "srv2.title", titulo = "Dashboards e informes ejecutivos",
        key_desc = "srv2.desc",
        desc = "Diseño de dashboards interactivos y reportes visuales que transforman datos complejos en información clara para la toma de decisiones."),
-  list(icono = "🏛️", key_titulo = "srv3.title", titulo = "Gobernanza de datos organizacionales",
+  list(icono = "governance.svg", key_titulo = "srv3.title", titulo = "Gobernanza de datos organizacionales",
        key_desc = "srv3.desc",
        desc = "Diseño de ecosistemas de datos: estandarización, automatización de procesos, capacitación a equipos y transparencia institucional."),
-  list(icono = "🗳️", key_titulo = "srv4.title", titulo = "Análisis político y electoral",
+  list(icono = "electoral.svg", key_titulo = "srv4.title", titulo = "Análisis político y electoral",
        key_desc = "srv4.desc",
        desc = "Datos electorales, seguimiento legislativo, indicadores de opinión pública y monitoreo de tendencias políticas."),
-  list(icono = "🔬", key_titulo = "srv5.title", titulo = "Investigación social aplicada",
+  list(icono = "research.svg", key_titulo = "srv5.title", titulo = "Investigación social aplicada",
        key_desc = "srv5.desc",
        desc = "Investigaciones cuantitativas, cualitativas o mixtas para diagnóstico organizacional, evaluación de programas y análisis de contexto."),
-  list(icono = "🎓", key_titulo = "srv6.title", titulo = "Capacitación en datos",
+  list(icono = "training.svg", key_titulo = "srv6.title", titulo = "Capacitación en datos",
        key_desc = "srv6.desc",
        desc = "Talleres de análisis de datos con R, Power BI y metodología cuantitativa para equipos de investigación e instituciones."),
-  list(icono = "📝", key_titulo = "srv7.title", titulo = "Diseño de encuestas sociales",
+  list(icono = "survey.svg", key_titulo = "srv7.title", titulo = "Diseño de encuestas sociales",
        key_desc = "srv7.desc",
        desc = "Diseño, validación y pilotaje de instrumentos de medición cuantitativa. Construcción de cuestionarios con escalas validadas, muestreo y estrategias de levantamiento para estudios de opinión y diagnóstico social."),
-  list(icono = "🎯", key_titulo = "srv8.title", titulo = "Asesoría estratégica basada en evidencia",
+  list(icono = "strategy.svg", key_titulo = "srv8.title", titulo = "Asesoría estratégica basada en evidencia",
        key_desc = "srv8.desc",
        desc = "Apoyo técnico en procesos de toma de decisiones para instituciones públicas y privadas. Síntesis de evidencia, análisis de escenarios y elaboración de recomendaciones fundamentadas en datos."),
-  list(icono = "🔍", key_titulo = "srv9.title", titulo = "Revisión de procesamientos estadísticos",
+  list(icono = "audit.svg", key_titulo = "srv9.title", titulo = "Revisión de procesamientos estadísticos",
        key_desc = "srv9.desc",
        desc = "Auditoría y validación de análisis estadísticos: revisión de bases de datos, supuestos de modelos, consistencia de resultados e identificación de errores metodológicos en informes y estudios.")
 )
@@ -270,7 +270,7 @@ div(class = "grid",
   map(servicios, \(s) {
     div(class = "g-col-12 g-col-md-6 g-col-lg-4",
       div(class = "servicio-card",
-        div(class = "icono", s$icono),
+        div(class = "icono", tags$img(src = paste0("img/icons/", s$icono), alt = "", class = "icono-card")),
         tags$h3(`data-i18n` = s$key_titulo, s$titulo),
         tags$p(`data-i18n` = s$key_desc, s$desc)
       )
@@ -280,10 +280,10 @@ div(class = "grid",
 ```
 
 <div class="text-center" style="margin-top:0.5rem;">
-<a href="mailto:benjalang1997@gmail.com" class="btn-primario" data-i18n="sec.btn.consult">✉️ Consultar disponibilidad</a>
+<a href="mailto:benjalang1997@gmail.com" class="btn-primario" data-i18n="sec.btn.consult">Consultar disponibilidad</a>
 </div>
 
-## 📰 Última publicación {.seccion-titulo data-i18n="sec.lastpub"}
+## <img src="img/icons/publications.svg" class="icono-titulo" alt=""/> Última publicación {.seccion-titulo data-i18n="sec.lastpub"}
 
 ::: {.pub-destacada}
 **Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.** (2024).
@@ -305,19 +305,19 @@ div(class = "grid",
 ::: {.contacto-hero-grid}
 
 <a href="mailto:benjalang1997@gmail.com" class="contacto-hero-card">
-<span class="contacto-hero-icono">📧</span>
+<span class="contacto-hero-icono"><img src="img/icons/email.svg" alt=""/></span>
 <span class="contacto-hero-label">Email</span>
 <span class="contacto-hero-valor">benjalang1997@gmail.com</span>
 </a>
 
 <a href="tel:+56963095562" class="contacto-hero-card">
-<span class="contacto-hero-icono">📱</span>
+<span class="contacto-hero-icono"><img src="img/icons/phone.svg" alt=""/></span>
 <span class="contacto-hero-label">Teléfono</span>
 <span class="contacto-hero-valor">+56 9 6309 5562</span>
 </a>
 
 <a href="https://www.linkedin.com/in/benjamin-lang-a78229207/" target="_blank" class="contacto-hero-card">
-<span class="contacto-hero-icono">🔗</span>
+<span class="contacto-hero-icono"><img src="img/icons/link.svg" alt=""/></span>
 <span class="contacto-hero-label">LinkedIn</span>
 <span class="contacto-hero-valor">Ver perfil →</span>
 </a>

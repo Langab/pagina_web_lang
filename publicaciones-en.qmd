@@ -11,7 +11,7 @@ library(purrr)
 library(glue)
 ```
 
-## 📄 Academic Articles {.seccion-titulo}
+## <img src="img/icons/document.svg" class="icono-titulo" alt=""/> Academic Articles {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -46,7 +46,7 @@ div(class = "publicaciones",
 
 ---
 
-## 📋 Policy Papers — Centre for Public Studies (CEP) {.seccion-titulo}
+## <img src="img/icons/reports.svg" class="icono-titulo" alt=""/> Policy Papers — Centre for Public Studies (CEP) {.seccion-titulo}
 
 ```{r}
 #| echo: false
@@ -100,7 +100,7 @@ div(class = "publicaciones",
 
 ---
 
-## 🖥️ Research Notes — C22 · CEP {.seccion-titulo}
+## <img src="img/icons/desktop.svg" class="icono-titulo" alt=""/> Research Notes — C22 · CEP {.seccion-titulo}
 
 ```{r}
 #| echo: false
