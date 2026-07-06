@@ -58,5 +58,5 @@ div(class = "proyecto-destacado",
 ## <img src="../img/icons/toolbox.svg" class="icono-titulo" alt=""/> Scripts y análisis en R {.seccion-titulo}
 
 ::: {.callout-note appearance="simple"}
-**En preparación** — Estoy ordenando una colección de **scripts en R** sobre procesamiento de datos, análisis estadístico y visualización, desarrollados en proyectos de investigación e institucionales. Mientras tanto, puedes ver los proyectos y publicaciones en el [blog](../blog/index.qmd).
+**En preparación** — Estoy ordenando una colección de **scripts en R** sobre procesamiento de datos, análisis estadístico y visualización, desarrollados en proyectos de investigación e institucionales. Mientras tanto, puedes ver mis [publicaciones](../publicaciones.qmd) y [trabajos](../trabajos.qmd).
 :::

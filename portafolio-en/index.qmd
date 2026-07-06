@@ -58,5 +58,5 @@ div(class = "proyecto-destacado",
 ## <img src="../img/icons/toolbox.svg" class="icono-titulo" alt=""/> R scripts & analyses {.seccion-titulo}
 
 ::: {.callout-note appearance="simple"}
-**In preparation** — I'm curating a collection of **R scripts** on data processing, statistical analysis and visualization developed in research and institutional projects. In the meantime, check the projects and posts on the [blog](../blog/index.qmd).
+**In preparation** — I'm curating a collection of **R scripts** on data processing, statistical analysis and visualization developed in research and institutional projects. In the meantime, check my [publications](../publicaciones-en.qmd) and [work](../trabajos-en.qmd).
 :::
