@@ -9,13 +9,54 @@ library(htmltools)
 ```
 
 ::: {.portafolio-header}
-<span class="portafolio-titulo-chip">📊 Portafolio de Scripts</span>
+<span class="portafolio-titulo-chip">📊 Portafolio de Proyectos</span>
 
-# Scripts de R · Procesamiento, Análisis y Visualización
+# Proyectos de datos de punta a punta
 
-<p class="portafolio-descripcion">Colección de scripts prácticos sobre procesamiento de datos, análisis estadístico y visualización de información desarrollados en proyectos de investigación e institucionales.</p>
+<p class="portafolio-descripcion">Proyectos personales que resuelven problemas reales: desde la pregunta inicial hasta la herramienta funcionando, pasando por scraping, procesamiento, análisis y visualización.</p>
 :::
 
+```{r}
+#| echo: false
+div(class = "proyecto-destacado",
+  div(class = "proyecto-destacado-img",
+    tags$a(href = "https://langab.github.io/visor_arriendos/viewer/", target = "_blank",
+      tags$img(src = "../blog/posts/visor-arriendos/img/vista_mapa.jpg",
+               alt = "Mapa del visor de arriendos con propiedades en Santiago")
+    )
+  ),
+  div(class = "proyecto-destacado-body",
+    div(class = "tarjeta-etiqueta", "Proyecto personal · Python · En producción"),
+    tags$h3("🏠 Visor de Arriendos · Santiago"),
+    tags$p(
+      "Pipeline completo de datos para encontrar departamento en Santiago: ",
+      "scrapers multi-portal, deduplicación, geocodificación con OpenStreetMap, ",
+      "análisis de precios por grupos comparables y un visor interactivo con mapa ",
+      "(Leaflet), métricas y análisis temporal. Se actualiza solo todos los días ",
+      "y se publica en GitHub Pages."
+    ),
+    div(class = "skill-tags",
+      span(class = "skill-tag", "Python"),
+      span(class = "skill-tag", "Web scraping"),
+      span(class = "skill-tag", "Playwright"),
+      span(class = "skill-tag", "Leaflet · OSM"),
+      span(class = "skill-tag", "GitHub Pages"),
+      span(class = "skill-tag", "Automatización")
+    ),
+    div(class = "proyecto-destacado-botones",
+      tags$a(href = "https://langab.github.io/visor_arriendos/viewer/",
+             target = "_blank", class = "btn-primario", "Ver el visor en vivo →"),
+      tags$a(href = "../blog/posts/visor-arriendos/index.html",
+             class = "btn-secundario", "📝 Leer cómo lo construí"),
+      tags$a(href = "https://github.com/Langab/visor_arriendos",
+             target = "_blank", class = "btn-ghost", "Código en GitHub")
+    )
+  )
+)
+```
+
+## 🧰 Scripts y análisis en R {.seccion-titulo}
+
 ::: {.callout-note appearance="simple"}
-📌 **En construcción** — Estoy preparando una colección de **scripts en R** sobre procesamiento de datos, análisis estadístico y visualización. ¡Vuelve pronto!
+📌 **En preparación** — Estoy ordenando una colección de **scripts en R** sobre procesamiento de datos, análisis estadístico y visualización, desarrollados en proyectos de investigación e institucionales. Mientras tanto, puedes ver los proyectos y publicaciones en el [blog](../blog/index.qmd).
 :::

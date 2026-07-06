@@ -1,5 +1,6 @@
 ---
 title: "Blog"
+description: "Notas técnicas, proyectos de datos, análisis con R y Python, y reflexiones sobre metodología."
 listing:
   contents: posts
   sort: "date desc"
@@ -8,9 +9,6 @@ listing:
   sort-ui: true
   filter-ui: true
   feed: true
+  image-height: 220px
 page-layout: full
 ---
-
-::: {.callout-note appearance="simple"}
-📝 **Próximamente** — Aún no hay notas publicadas. Aquí compartiré análisis con R, reflexiones sobre metodología, visualizaciones y notas de investigación. ¡Vuelve pronto!
-:::

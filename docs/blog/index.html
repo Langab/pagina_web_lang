@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Notas técnicas, proyectos de datos, análisis con R y Python, y reflexiones sobre metodología.">
 
 <title>Blog – Benjamín Lang</title>
 <style>
@@ -79,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -203,7 +204,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QXV0b21hdGl6YWNpJUMzJUIzbg==">Automatización <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJveWVjdG9z">Proyectos <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VmlzdWFsaXphY2klQzMlQjNu">Visualización <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2ViJTIwc2NyYXBpbmc=">Web scraping <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 <div class="page-container">
@@ -213,6 +214,11 @@ window.Quarto = {
 <h1 class="title">Blog</h1>
 </div>
 
+<div>
+  <div class="description">
+    Notas técnicas, proyectos de datos, análisis con R y Python, y reflexiones sobre metodología.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta column-page-left">
@@ -227,29 +233,82 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>📝 <strong>Próximamente</strong> — Aún no hay notas publicadas. Aquí compartiré análisis con R, reflexiones sobre metodología, visualizaciones y notas de investigación. ¡Vuelve pronto!</p>
-</div>
-</div>
-</div>
 
 
 
 
 </div><div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
 <div class="list quarto-listing-default">
-
+<div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDV2ViJTIwc2NyYXBpbmclMkNWaXN1YWxpemFjaSVDMyVCM24lMkNBdXRvbWF0aXphY2klQzMlQjNuJTJDUHJveWVjdG9z" data-listing-date-sort="1783310400000" data-listing-file-modified-sort="1783344282192" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2542">
+<div class="thumbnail">
+<p><a href="../blog/posts/visor-arriendos/index.html" class="no-external"></a></p><a href="../blog/posts/visor-arriendos/index.html" class="no-external">
+<p><img loading="lazy" src="../blog/posts/visor-arriendos/img/vista_mapa.jpg" class="thumbnail-image" style="height: 220px;"></p>
+</a><p><a href="../blog/posts/visor-arriendos/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/visor-arriendos/index.html" class="no-external">Cómo construí un visor de arriendos para encontrar departamento en Santiago</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blog/posts/visor-arriendos/index.html" class="no-external">De una pregunta doméstica a un pipeline de datos completo: scraping multi-portal, geocodificación, análisis de precios y un visor interactivo con mapa</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwc2NyYXBpbmc='); return false;">
+Web scraping
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('VmlzdWFsaXphY2klQzMlQjNu'); return false;">
+Visualización
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QXV0b21hdGl6YWNpJUMzJUIzbg=='); return false;">
+Automatización
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UHJveWVjdG9z'); return false;">
+Proyectos
+</div>
+</div>
+<div class="listing-description">
+<a href="../blog/posts/visor-arriendos/index.html" class="no-external">La historia técnica de un proyecto real: scrapers en Python, deduplicación, Nominatim, Leaflet y automatización diaria con launchd, todo para responder una pregunta simple: ¿dónde hay un arriendo que nos convenga?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/visor-arriendos/index.html" class="no-external">
+<div class="listing-date">
+Jul 6, 2026
+</div>
+<div class="listing-author">
+Benjamín Lang
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items

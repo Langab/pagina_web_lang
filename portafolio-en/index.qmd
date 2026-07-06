@@ -9,13 +9,54 @@ library(htmltools)
 ```
 
 ::: {.portafolio-header}
-<span class="portafolio-titulo-chip">📊 Scripts Portfolio</span>
+<span class="portafolio-titulo-chip">📊 Project Portfolio</span>
 
-# R Scripts · Data Processing, Analysis & Visualization
+# End-to-end data projects
 
-<p class="portafolio-descripcion">A collection of practical R scripts on data processing, statistical analysis, and information visualization developed in research and institutional projects.</p>
+<p class="portafolio-descripcion">Personal projects that solve real problems: from the initial question to the working tool — scraping, processing, analysis and visualization included.</p>
 :::
 
+```{r}
+#| echo: false
+div(class = "proyecto-destacado",
+  div(class = "proyecto-destacado-img",
+    tags$a(href = "https://langab.github.io/visor_arriendos/viewer/", target = "_blank",
+      tags$img(src = "../blog/posts/visor-arriendos/img/vista_mapa.jpg",
+               alt = "Rental viewer map with properties across Santiago")
+    )
+  ),
+  div(class = "proyecto-destacado-body",
+    div(class = "tarjeta-etiqueta", "Personal project · Python · In production"),
+    tags$h3("🏠 Rental Viewer · Santiago"),
+    tags$p(
+      "A complete data pipeline to find an apartment in Santiago: multi-portal ",
+      "scrapers, deduplication, geocoding with OpenStreetMap, price analysis by ",
+      "comparable groups, and an interactive viewer with map (Leaflet), metrics ",
+      "and temporal analysis. It updates itself daily and is published on ",
+      "GitHub Pages."
+    ),
+    div(class = "skill-tags",
+      span(class = "skill-tag", "Python"),
+      span(class = "skill-tag", "Web scraping"),
+      span(class = "skill-tag", "Playwright"),
+      span(class = "skill-tag", "Leaflet · OSM"),
+      span(class = "skill-tag", "GitHub Pages"),
+      span(class = "skill-tag", "Automation")
+    ),
+    div(class = "proyecto-destacado-botones",
+      tags$a(href = "https://langab.github.io/visor_arriendos/viewer/",
+             target = "_blank", class = "btn-primario", "See it live →"),
+      tags$a(href = "../blog/posts/visor-arriendos/index.html",
+             class = "btn-secundario", "📝 Read how I built it (Spanish)"),
+      tags$a(href = "https://github.com/Langab/visor_arriendos",
+             target = "_blank", class = "btn-ghost", "Code on GitHub")
+    )
+  )
+)
+```
+
+## 🧰 R scripts & analyses {.seccion-titulo}
+
 ::: {.callout-note appearance="simple"}
-📌 **Under construction** — I'm preparing a collection of **R scripts** on data processing, statistical analysis, and visualization. Come back soon!
+📌 **In preparation** — I'm curating a collection of **R scripts** on data processing, statistical analysis and visualization developed in research and institutional projects. In the meantime, check the projects and posts on the [blog](../blog/index.qmd).
 :::

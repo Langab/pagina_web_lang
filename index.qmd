@@ -156,6 +156,17 @@ div(class = "grid",
 #| echo: false
 proyectos <- list(
   list(
+    key_tipo   = "proj0.tipo",
+    tipo       = "Proyecto personal",
+    key_nombre = "proj0.title",
+    nombre     = "Visor de Arriendos · Santiago",
+    key_period = "proj0.period",
+    periodo    = "2026",
+    key_desc   = "proj0.desc",
+    desc       = "Pipeline de datos de punta a punta: scraping multi-portal, deduplicación, geocodificación y un visor interactivo con mapa que se actualiza solo cada día. De una pregunta real —encontrar departamento— a una herramienta publicada y automatizada.",
+    link       = "https://langab.github.io/visor_arriendos/viewer/"
+  ),
+  list(
     key_tipo   = "proj1.tipo",
     tipo       = "Sector público",
     key_nombre = "proj1.title",

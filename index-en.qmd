@@ -148,6 +148,13 @@ div(class = "grid",
 #| echo: false
 proyectos <- list(
   list(
+    tipo   = "Personal project",
+    nombre = "Rental Viewer · Santiago",
+    periodo = "2026",
+    desc   = "End-to-end data pipeline: multi-portal scraping, deduplication, geocoding, and an interactive map viewer that updates itself daily. From a real question — finding an apartment — to a published, automated tool.",
+    link   = "https://langab.github.io/visor_arriendos/viewer/"
+  ),
+  list(
     tipo   = "Public sector",
     nombre = "Educational Data SLEP Santa Rosa",
     periodo = "2025 – present",

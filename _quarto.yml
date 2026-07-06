@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - CV_Lang_DataAnalyst_ES.pdf
+    - CV_Lang_DataAnalyst_EN.pdf
 
 website:
   site-url: "https://langab.github.io/pagina_web_lang"

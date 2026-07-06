@@ -1783,3 +1783,85 @@ h3.trabajo-titulo {
     left: 0;
   }
 }
+
+/* -------------------------------------------------------
+   🏠 PROYECTO DESTACADO (Portafolio) — tarjeta con imagen
+------------------------------------------------------- */
+.proyecto-destacado {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  background: white;
+  border: 1.5px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion);
+  margin-bottom: 2.5rem;
+}
+
+.proyecto-destacado:hover {
+  box-shadow: var(--sombra-hover);
+  border-color: var(--color-acento);
+  transform: translateY(-3px);
+}
+
+.proyecto-destacado-img {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.proyecto-destacado-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.proyecto-destacado:hover .proyecto-destacado-img img {
+  transform: scale(1.03);
+}
+
+.proyecto-destacado-body {
+  padding: 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.proyecto-destacado-body h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  color: var(--color-primario);
+}
+
+.proyecto-destacado-body p {
+  margin: 0;
+  color: var(--color-texto);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.proyecto-destacado-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+@media (max-width: 900px) {
+  .proyecto-destacado {
+    grid-template-columns: 1fr;
+  }
+  .proyecto-destacado-img {
+    min-height: 200px;
+    max-height: 260px;
+  }
+  .proyecto-destacado-body {
+    padding: 1.4rem 1.4rem 1.6rem;
+  }
+}

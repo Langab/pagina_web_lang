@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"/Users/langa/Library/Mobile Documents/com~apple~CloudDocs/Proyectos_propios/visor_arriendos\")",
+      "Bash(md5 CV_Lang_DataAnalyst_ES.pdf documentos/CV_Lang_DataAnalyst_ES.pdf CV_Lang_DataAnalyst_EN.pdf documentos/CV_Lang_DataAnalyst_EN.pdf)",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__claude-in-chrome__navigate",
+      "mcp__claude-in-chrome__computer",
+      "mcp__claude-in-chrome__browser_batch",
+      "Bash(python3 -c \"import playwright; print\\('ok'\\)\")",
+      "Bash(python3 shots.py)",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-langa-Library-Mobile-Documents-com-apple-CloudDocs-Proyectos-propios-Pagina-web-BL/fcd6540c-937e-4232-8fa9-3f5920d6e3aa/scratchpad/shot_mapa.py\")",
+      "Bash(quarto --version)",
+      "Bash(quarto render *)",
+      "Bash(python3 \"/private/tmp/claude-501/-Users-langa-Library-Mobile-Documents-com-apple-CloudDocs-Proyectos-propios-Pagina-web-BL/fcd6540c-937e-4232-8fa9-3f5920d6e3aa/scratchpad/verify.py\")",
+      "Bash(Rscript -e 'Sys.getlocale\\(\\)')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/blog/posts/visor-arriendos/index.html)",
+      "Bash(rm -f docs/blog/posts/visor-arriendos/img/*.png)",
+      "Bash(curl -s -o /dev/null -w \"post:%{http_code} \" http://localhost:8765/blog/posts/visor-arriendos/index.html)",
+      "Bash(curl -s -o /dev/null -w \"img:%{http_code} \" http://localhost:8765/blog/posts/visor-arriendos/img/vista_mapa.jpg)",
+      "Bash(curl -s -o /dev/null -w \"cv:%{http_code}\\\\n\" http://localhost:8765/CV_Lang_DataAnalyst_ES.pdf)",
+      "Bash(cp styles.css docs/styles.css)",
+      "Bash(pkill -f \"http.server 8765\")",
+      "Bash(git add *)",
+      "Bash(git reset *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
