@@ -1,0 +1,94 @@
+{% set es = lang == 'es' %}
+
+<section id="{{ 'el-favor' if es else 'the-favor' }}">
+  <h2>{{ 'El favor' if es else 'The favor' }}</h2>
+  {% if es %}
+  <p>Un amigo apuesta al fútbol. Un día me pidió una app para anotar sus boletos, ver cuánta plata tenía y, sobre todo, confirmar lo que él ya sabía: que iba ganando.</p>
+  <p>Le dije que sí, con una condición. La app le iba a decir la verdad, aunque la verdad fuera incómoda. Las plataformas de apuestas muestran el saldo y los boletos ganadores. No muestran cuánto rinde de verdad cada peso apostado ni si una buena racha es habilidad o suerte.</p>
+  {% else %}
+  <p>A friend of mine bets on football. One day he asked me for an app to log his tickets, see how much money he had and, above all, confirm what he already knew: that he was winning.</p>
+  <p>I said yes, on one condition. The app would tell him the truth, even if the truth was awkward. Betting platforms show your balance and your winning tickets. They don't show what each peso you bet actually returns, or whether a hot streak is skill or luck.</p>
+  {% endif %}
+  <div class="callout">
+    <p>{{ 'Aclaración necesaria: no estoy a favor de las casas de apuestas. Este proyecto existe justamente para mirar sus números sin romanticismo. Si el juego te está costando más de lo que quieres, habla con alguien.' if es else "A needed disclaimer: I'm not in favor of betting companies. This project exists precisely to look at their numbers without romance. If gambling is costing you more than you want, talk to someone." }}</p>
+  </div>
+</section>
+
+<section id="{{ 'margen' if es else 'margin' }}">
+  <h2>{{ 'Por qué la casa siempre gana' if es else 'Why the house always wins' }}</h2>
+  {% if es %}
+  <p>No es mala suerte, es diseño. Imagina un partido parejo donde cada equipo tiene 50% de probabilidad. Una cuota justa sería 2,00. La casa ofrece 1,90 a cada lado. Si sumas las probabilidades implícitas (1 ÷ 1,90) da <strong>105,3%</strong>. Ese 5% extra es su margen, y lo cobra en cada apuesta, ganes o pierdas.</p>
+  <p>El truco se pone mejor con las apuestas combinadas. Cada selección que agregas multiplica el margen:</p>
+  {% else %}
+  <p>It isn't bad luck, it's design. Picture an even match where each team has a 50% chance. A fair price would be 2.00. The house offers 1.90 on each side. Add up the implied probabilities (1 ÷ 1.90) and you get <strong>105.3%</strong>. That extra 5% is its margin, and it collects it on every bet, win or lose.</p>
+  <p>The trick gets better with parlays. Every selection you add compounds the margin:</p>
+  {% endif %}
+  <div style="overflow-x:auto">
+    <table class="margin-table">
+      <thead><tr><th>{{ 'Selecciones en el boleto' if es else 'Selections on the ticket' }}</th><th style="width:45%">{{ 'Margen de la casa' if es else 'House margin' }}</th><th>%</th></tr></thead>
+      <tbody>
+        {% for n in range(1, 6) %}
+        {% set margin = (1 - 0.95 ** n) * 100 %}
+        <tr><td>{{ n }}</td><td><div class="meter" style="--v: {{ margin / 22.6 * 100 }}%"></div></td><td>{{ ('%.1f' | format(margin)) | replace('.', ',' if es else '.') }}%</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="pull">{{ 'Con cinco partidos en un boleto, la casa se queda con más de uno de cada cinco pesos antes de que ruede la pelota.' if es else 'With five matches on one ticket, the house keeps more than one in every five pesos before the ball even rolls.' }}</p>
+</section>
+
+<section id="{{ 'simulador' if es else 'simulator' }}">
+  <h2>{{ 'Pruébalo tú' if es else 'Try it yourself' }}</h2>
+  <p>{{ 'Este simulador crea 600 apostadores que no son ni buenos ni malos: aciertan exactamente lo que dicen las probabilidades. Mueve los controles y mira qué les pasa.' if es else "This simulator creates 600 bettors who are neither good nor bad: they win exactly as often as the odds say. Move the controls and watch what happens to them." }}</p>
+  <div class="sim" data-sim data-lang="{{ lang }}">
+    <div class="sim-controls">
+      <label>{{ 'Apuestas por persona' if es else 'Bets per person' }} <output data-out="bets">200</output>
+        <input type="range" min="20" max="500" step="10" value="200" data-in="bets"></label>
+      <label>{{ 'Selecciones por boleto' if es else 'Selections per ticket' }} <output data-out="legs">2</output>
+        <input type="range" min="1" max="5" step="1" value="2" data-in="legs"></label>
+      <label>{{ 'Margen por selección' if es else 'Margin per selection' }} <output data-out="margin">5%</output>
+        <input type="range" min="0" max="10" step="0.5" value="5" data-in="margin"></label>
+    </div>
+    <canvas aria-label="{{ 'Gráfico de la plata acumulada de 600 apostadores simulados' if es else 'Chart of cumulative money for 600 simulated bettors' }}" role="img"></canvas>
+    <div class="sim-legend" aria-hidden="true">
+      <span><i style="background:rgba(147,160,255,.45)"></i>{{ '90% de los apostadores' if es else '90% of bettors' }}</span>
+      <span><i style="background:#E6E8F5"></i>{{ 'Apostador típico' if es else 'Typical bettor' }}</span>
+      <span><i style="background:#FF8A8E"></i>{{ 'Lo que dice la matemática' if es else 'What the math says' }}</span>
+    </div>
+    <div class="sim-result" aria-live="polite">
+      <div><b data-res="median">–</b>{{ 'le queda al apostador típico tras apostar $10.000 cada vez' if es else 'left for the typical bettor after betting 10,000 each time' }}</div>
+      <div><b data-res="winners">–</b>{{ 'termina con ganancia' if es else 'end up in profit' }}</div>
+      <div><b data-res="house">–</b>{{ 'de todo lo apostado se lo queda la casa' if es else 'of everything wagered stays with the house' }}</div>
+    </div>
+  </div>
+  <p>{{ 'Con margen cero, la mitad gana y la otra mitad pierde: es una moneda. Con el margen real, la nube completa se va hacia abajo. Algunos ganan, y son justo los que después cuentan su historia.' if es else "With zero margin, half win and half lose: it's a coin flip. With a real margin, the whole cloud drifts down. Some people win, and they're exactly the ones who tell their story afterwards." }}</p>
+</section>
+
+<section id="{{ 'la-app' if es else 'the-app' }}">
+  <h2>{{ 'Lo que construí para él' if es else 'What I built for him' }}</h2>
+  <ul>
+    {% if es %}
+    <li><strong>Rendimiento con margen de error.</strong> Cuánto gana o pierde por cada peso apostado, con un intervalo de 95%. Con menos de 15 apuestas ni siquiera lo muestra.</li>
+    <li><strong>La tasa de acierto que necesita.</strong> Sale de las cuotas que juega, ponderadas por la plata. Si acierta menos que eso, pierde, aunque gane seguido.</li>
+    <li><strong>La banda del azar.</strong> 600 simulaciones de su propio historial, con las mismas cuotas y sin ninguna ventaja. Si su curva real cae dentro de la banda, lo que ve es suerte.</li>
+    <li><strong>Hábitos.</strong> Qué porcentaje de su caja arriesga, si sube el monto en sus peores apuestas y si persigue pérdidas con cuotas altas o apuestas en vivo.</li>
+    {% else %}
+    <li><strong>Returns with a margin of error.</strong> How much he wins or loses per peso bet, with a 95% interval. Under 15 bets it doesn't even show it.</li>
+    <li><strong>The hit rate he needs.</strong> Derived from the odds he plays, weighted by money. If he hits less than that, he loses, even on a winning streak.</li>
+    <li><strong>The band of chance.</strong> 600 simulations of his own history, same odds, zero edge. If his real curve falls inside the band, what he's seeing is luck.</li>
+    <li><strong>Habits.</strong> What share of his bankroll he risks, whether he stakes more on his worst bets and whether he chases losses with long odds or live bets.</li>
+    {% endif %}
+  </ul>
+  <p>{{ 'Todo es HTML, CSS y JavaScript sin librerías, con gráficos SVG dibujados a mano. Se instala en la pantalla del celular, guarda los datos en el teléfono y se sincroniza con una planilla de Google.' if es else 'It’s all HTML, CSS and JavaScript with no libraries, and hand-drawn SVG charts. It installs to the phone’s home screen, stores data on the device and syncs with a Google Sheet.' }}</p>
+
+  <h3>{{ 'Con datos de prueba' if es else 'With test data' }}</h3>
+  <p>{{ 'Para probar la app armé 140 apuestas inventadas con las costumbres típicas de un apostador. No son las de mi amigo, pero se parecen bastante a lo que uno escucha en un asado:' if es else "To test the app I made up 140 bets with the typical habits of a bettor. They're not my friend's, but they sound a lot like what you hear at a barbecue:" }}</p>
+  <div class="live">
+    <div><b style="color:var(--alerta)">−25,8%</b><span>{{ 'rendimiento total' if es else 'overall return' }}</span></div>
+    <div><b>21%</b><span>{{ 'de acierto real' if es else 'actual hit rate' }}</span></div>
+    <div><b>29%</b><span>{{ 'de acierto necesario para no perder' if es else 'hit rate needed to break even' }}</span></div>
+    <div><b style="color:var(--alerta)">−61,5%</b><span>{{ 'rendimiento en apuestas en vivo' if es else 'return on live bets' }}</span></div>
+  </div>
+  <p class="live-note">{{ 'Datos sintéticos de demostración.' if es else 'Synthetic demo data.' }}</p>
+  <p class="pull">{{ 'La app no le dice cuándo apostar. Le dice cuánto le cuesta.' if es else "The app doesn't tell him when to bet. It tells him what it costs." }}</p>
+</section>

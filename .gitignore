@@ -1,10 +1,13 @@
-/.quarto/
-/_freeze/
-# IMPORTANTE: docs/ NO está en .gitignore
-# porque GitHub Pages lo necesita para publicar el sitio
-*.Rproj.user
-*.Rhistory
+# Sitio construido: lo genera build.py y lo publica GitHub Actions
+_site.nosync/
+_site-tmp.nosync/
+
+# Sistema y Python
 .DS_Store
-*.csv           # datos con info personal (ej: export de Goodreads)
-portadas/       # imágenes descargadas — opcionales en el repo
-fotos/          # carpeta de fotos no necesaria en el repositorio
+__pycache__/
+*.pyc
+.Rhistory
+
+# Duplicados que crea iCloud ("archivo 2.html", "carpeta 2/")
+* 2.*
+* 2/

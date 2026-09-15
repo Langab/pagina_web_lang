@@ -44,7 +44,11 @@
       "Bash(python3 \"/private/tmp/claude-501/-Users-langa-Library-Mobile-Documents-com-apple-CloudDocs-Proyectos-propios-Pagina-web-BL/fcd6540c-937e-4232-8fa9-3f5920d6e3aa/scratchpad/replace_emojis.py\")",
       "Bash(grep -n 'tags$h3' portafolio/index.qmd portafolio-en/index.qmd)",
       "Bash(curl -s \"https://langab.github.io/pagina_web_lang/img/icons/stats.svg\")",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' \"https://langab.github.io/pagina_web_lang/styles.css\")",
+      "Bash(curl -s \"https://langab.github.io/pagina_web_lang/\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}\\\\n' \"https://langab.github.io/pagina_web_lang/blog/posts/visor-arriendos/index.html\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}\\\\n' \"https://langab.github.io/pagina_web_lang/img/icons/stats.svg\")"
     ]
   }
 }

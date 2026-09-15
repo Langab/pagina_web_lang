@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% set page_title = page.title | t %}
+  <title>{% if route.id == 'home' %}{{ site.name }} | {{ site.tagline | t }}{% else %}{{ page_title }} | {{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | t }}">
+  <link rel="canonical" href="{{ canonical }}">
+  {% for l, href in alternates.items() %}
+  <link rel="alternate" hreflang="{{ l }}" href="{{ href }}">
+  {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ alternates.es }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if route.id == 'home' %}{{ site.name }}{% else %}{{ page_title }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | t }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ site.url }}assets/img/photos/og.jpg">
+  <meta property="og:locale" content="{{ 'es_CL' if lang == 'es' else 'en_US' }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#ECEDF0">
+  <link rel="icon" href="{{ asset('img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="{{ asset('css/site.css') }}">
+  {% block head %}{% endblock %}
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"{{ site.full_name }}","jobTitle":"{{ site.tagline | t }}","url":"{{ site.url }}","email":"mailto:{{ site.contact.email }}","sameAs":["{{ site.contact.linkedin }}","{{ site.contact.github }}"],"alumniOf":"Universidad Diego Portales","address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"}}
+  </script>
+</head>
+<body class="page-{{ route.id | replace(':', '-') }}{% block body_class %}{% endblock %}">
+  <a class="skip" href="#main">{{ ui.skip }}</a>
+
+  <header class="site-header" data-header>
+    <div class="wrap header-row">
+      <a class="brand" href="{{ url('home') }}" aria-label="{{ site.name }}, {{ ui.home }}">
+        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">{% for y in range(3) %}{% for x in range(3) %}<circle cx="{{ 4 + x * 8 }}" cy="{{ 4 + y * 8 }}" r="{{ 3 if (x + y) % 2 == 0 else 1.6 }}"/>{% endfor %}{% endfor %}</svg>
+        <span>{{ site.name }}</span>
+      </a>
+
+      <nav class="nav" aria-label="{{ ui.menu }}">
+        <ul class="nav-list">
+          {% for item in site.nav %}
+          {% set active = route.id == item.id or (item.id == 'projects' and route.id.startswith('project:')) %}
+          <li><a href="{{ url(item.id, item.anchor | default('')) }}"{% if active %} aria-current="page"{% endif %}>{{ item.label | t }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="lang-switch" href="{{ switch_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-lang-switch aria-label="{{ ui.switch_label }}">
+          <span{% if lang == 'es' %} class="is-on"{% endif %}>ES</span><span{% if lang == 'en' %} class="is-on"{% endif %}>EN</span>
+        </a>
+        <a class="btn btn-small btn-solid header-cta" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" data-menu-toggle>
+          <span class="sr-only">{{ ui.menu }}</span><span class="menu-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><span data-progress></span></div>
+  </header>
+
+  <div class="menu-overlay" id="menu-overlay" hidden data-menu>
+    <nav class="wrap" aria-label="{{ ui.menu }}">
+      <ul>
+        <li><a href="{{ url('home') }}">{{ ui.home }}</a></li>
+        {% for item in site.nav %}
+        <li><a href="{{ url(item.id, item.anchor | default('')) }}">{{ item.label | t }}</a></li>
+        {% endfor %}
+      </ul>
+      <a class="lang-switch lang-switch-big" href="{{ switch_url }}" hreflang="{{ other_lang }}">{{ ui.switch_label }}</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  {% include "partials/contact.html" %}
+
+  {% block dialogs %}{% endblock %}
+  <script src="{{ asset('js/site.js') }}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

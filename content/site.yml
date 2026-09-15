@@ -1,0 +1,109 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Datos generales del sitio. Todo texto visible va en {es, en}.
+# Si falta una traducción, `python build.py` se detiene y dice dónde.
+# ─────────────────────────────────────────────────────────────────────────
+
+name: Benjamín Lang
+full_name: Benjamín Lang Bustos
+url: https://langab.github.io/pagina_web_lang/
+tagline:
+  es: Sociólogo y analista de datos
+  en: Sociologist and data analyst
+description:
+  es: Sociólogo y analista de datos en Santiago de Chile. Censo 2024 en el INE, investigación en el CEP y la UDP, datos de educación pública y herramientas propias con Python y agentes de IA.
+  en: Sociologist and data analyst based in Santiago, Chile. 2024 Census at INE, research at CEP and UDP, public education data, and self-built tools with Python and AI agents.
+
+contact:
+  email: benjalang1997@gmail.com
+  phone: "+56 9 6309 5562"
+  phone_href: "+56963095562"
+  linkedin: https://www.linkedin.com/in/benjamin-lang-a78229207/
+  github: https://github.com/Langab
+  cv:
+    es: CV_Lang_DataAnalyst_ES.pdf
+    en: CV_Lang_DataAnalyst_EN.pdf
+
+# Páginas: la misma página existe en ambos idiomas con su propia URL.
+pages:
+  - id: home
+    template: pages/home.html
+    path: { es: "", en: "en/" }
+    title: { es: Inicio, en: Home }
+    description:
+      es: Sociólogo y analista de datos en Santiago de Chile. Censo 2024 en el INE, investigación en el CEP y la UDP, datos de educación pública y herramientas propias con Python y agentes de IA.
+      en: Sociologist and data analyst based in Santiago, Chile. 2024 Census at INE, research at CEP and UDP, public education data, and self-built tools with Python and AI agents.
+  - id: projects
+    template: pages/projects.html
+    path: { es: proyectos/, en: en/projects/ }
+    title: { es: Proyectos, en: Projects }
+    description:
+      es: Herramientas que construí por mi cuenta y proyectos de investigación, sector público y consultoría en los que participé.
+      en: Tools I built on my own, plus the research, public-sector and consulting projects I worked on.
+  - id: cv
+    template: pages/cv.html
+    path: { es: trayectoria/, en: en/experience/ }
+    title: { es: Trayectoria, en: Experience }
+    description:
+      es: Experiencia laboral, formación, habilidades técnicas y docencia de Benjamín Lang.
+      en: Work experience, education, technical skills and teaching of Benjamín Lang.
+  - id: publications
+    template: pages/publications.html
+    path: { es: publicaciones/, en: en/publications/ }
+    title: { es: Publicaciones, en: Publications }
+    description:
+      es: Artículo académico, policy papers del Centro de Estudios Públicos y notas de investigación de C22.
+      en: Peer-reviewed article, policy papers for Centro de Estudios Públicos and C22 research notes.
+
+nav:
+  - { id: projects, label: { es: Proyectos, en: Projects } }
+  - { id: cv, label: { es: Trayectoria, en: Experience } }
+  - { id: publications, label: { es: Publicaciones, en: Publications } }
+
+# URL del sitio anterior (Quarto) → página nueva. Así no se rompen enlaces viejos.
+legacy_redirects:
+  - [index-en.html, home, en]
+  - [about.html, cv, es]
+  - [about-en.html, cv, en]
+  - [trabajos.html, projects, es]
+  - [trabajos-en.html, projects, en]
+  - [publicaciones.html, publications, es]
+  - [publicaciones-en.html, publications, en]
+  - [portafolio/index.html, projects, es]
+  - [portafolio-en/index.html, projects, en]
+  - [blog/index.html, projects, es]
+  - [blog/posts/visor-arriendos/index.html, "project:visor-arriendos", es]
+
+# Textos cortos de interfaz
+ui:
+  skip: { es: Saltar al contenido, en: Skip to content }
+  home: { es: Inicio, en: Home }
+  menu: { es: Menú, en: Menu }
+  switch_label: { es: Read in English, en: Leer en español }
+  cta_contact: { es: Escríbeme, en: Get in touch }
+  contact_anchor: { es: contacto, en: contact }
+  close: { es: Cerrar, en: Close }
+  see_what_i_did: { es: Ver qué hice, en: See what I did }
+  read_story: { es: Leer cómo lo hice, en: Read how I built it }
+  all_projects: { es: Ver todos los proyectos, en: See all projects }
+  filter_all: { es: Todos, en: All }
+  what_i_did: { es: Qué hice, en: What I did }
+  how_it_works: { es: Cómo funciona, en: How it works }
+  tools: { es: Herramientas, en: Tools }
+  in_numbers: { es: En números, en: In numbers }
+  period: { es: Período, en: Period }
+  role: { es: Rol, en: Role }
+  stack: { es: Herramientas, en: Stack }
+  status: { es: Estado, en: Status }
+  on_this_page: { es: En esta página, en: On this page }
+  next_project: { es: Siguiente proyecto, en: Next project }
+  download_cv: { es: Descargar CV (PDF), en: Download CV (PDF) }
+  copy_email: { es: Copiar correo, en: Copy email }
+  copied: { es: Copiado, en: Copied }
+  email: { es: Correo, en: Email }
+  phone: { es: Teléfono, en: Phone }
+  footer_note: { es: "Sitio hecho a mano con Python, Jinja y bastante café. Se publica solo con GitHub Actions.", en: "Hand-built with Python, Jinja and plenty of coffee. Deployed automatically with GitHub Actions." }
+  source_code: { es: Código del sitio, en: Site source }
+  back_home: { es: Volver al inicio, en: Back to home }
+  read_article: { es: Leer artículo, en: Read article }
+  year: { es: Año, en: Year }
+  filter_label: { es: Filtrar proyectos, en: Filter projects }

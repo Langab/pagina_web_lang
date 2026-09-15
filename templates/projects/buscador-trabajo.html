@@ -1,0 +1,122 @@
+{% import "partials/macros.html" as m with context %}
+{% set es = lang == 'es' %}
+
+<section id="{{ 'problema' if es else 'problem' }}">
+  <h2>{{ 'Esta vez el problema era yo' if es else 'This time the problem was me' }}</h2>
+  {% if es %}
+  <p>Ya tenía la costumbre de convertir problemas cotidianos en visores, como el del arriendo. Cuando me tocó buscar trabajo, me di cuenta de que era el mismo tipo de problema. Cientos de ofertas repartidas en portales, la mayoría que no calza, y cada postulación que pide adaptar el CV y escribir una carta.</p>
+  <p>Buscar trabajo mientras trabajas es, además, una cuestión de tiempo. No podía revisar LinkedIn todas las noches. Así que lo traté como lo que es, <strong>un embudo de datos</strong>, y le pedí a Claude Code que hiciera la parte repetitiva conmigo.</p>
+  {% else %}
+  <p>I already had a habit of turning everyday problems into viewers, like the rental search. When it was my turn to look for a job, I realized it was the same kind of problem. Hundreds of openings spread across sites, most of them a poor fit, and every application asking for a tailored CV and a cover letter.</p>
+  <p>Job hunting while you have a job is also a matter of time. I couldn't go through LinkedIn every night. So I treated it as what it is, <strong>a data funnel</strong>, and had Claude Code do the repetitive part with me.</p>
+  {% endif %}
+</section>
+
+<section id="{{ 'base' if es else 'foundation' }}">
+  <h2>{{ 'No partí de cero (y está bien)' if es else "I didn't start from scratch (and that's fine)" }}</h2>
+  {% if es %}
+  <p>La base es <a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">ai-job-search</a>, un framework abierto de Mads Lorentzen pensado para el mercado danés. Lo tomé y lo adapté a Chile:</p>
+  <ul>
+    <li>Traduje las instrucciones, los criterios y las plantillas al español.</li>
+    <li>Cambié los CV de LaTeX a Word, que es lo que piden los reclutadores acá.</li>
+    <li>Escribí scrapers propios para <strong>Empleos Públicos</strong> (usando un endpoint JSON que el sitio ocupa internamente) y para centros de estudio y think tanks.</li>
+    <li>Agregué una regla que me importa: cada postulación guarda el aviso textual y lo que declaré, para que ningún agente invente experiencia.</li>
+  </ul>
+  {% else %}
+  <p>The foundation is <a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">ai-job-search</a>, an open framework by Mads Lorentzen built for the Danish market. I took it and adapted it to Chile:</p>
+  <ul>
+    <li>Translated the instructions, criteria and templates into Spanish.</li>
+    <li>Switched CVs from LaTeX to Word, which is what recruiters here ask for.</li>
+    <li>Wrote my own scrapers for <strong>Empleos Públicos</strong>, Chile's public-sector job board (through a JSON endpoint the site uses internally), and for research centers and think tanks.</li>
+    <li>Added a rule I care about: every application stores the exact job ad and what I declared, so no agent ever invents experience.</li>
+  </ul>
+  {% endif %}
+</section>
+
+<section id="{{ 'flujo' if es else 'flow' }}">
+  <h2>{{ 'De la oferta al PDF' if es else 'From job ad to PDF' }}</h2>
+  <ol class="pipeline">
+    <li><span class="node">/scrape</span><div><b>{{ 'Buscar' if es else 'Search' }}</b><span>{{ 'Búsquedas guardadas en cinco grupos: datos y BI, sector público, investigación aplicada y académica.' if es else 'Saved searches in five groups: data and BI, public sector, applied and academic research.' }}</span></div></li>
+    <li><span class="node">seen</span><div><b>{{ 'No repetir' if es else 'Skip repeats' }}</b><span>{{ 'Lo ya visto queda en seen_jobs.json y se omite en la siguiente pasada.' if es else 'Anything already seen goes into seen_jobs.json and is skipped next time.' }}</span></div></li>
+    <li><span class="node">0–100</span><div><b>{{ 'Puntuar' if es else 'Score' }}</b><span>{{ 'Primero un calce rápido (alto, medio, bajo) y después un puntaje detallado.' if es else 'First a quick fit rating (high, medium, low), then a detailed score.' }}</span></div></li>
+    <li><span class="node">/apply</span><div><b>{{ 'Postular' if es else 'Apply' }}</b><span>{{ 'Un agente redacta CV y carta a medida; otro revisa. LibreOffice los pasa a PDF y el CV no puede pasar de dos páginas.' if es else 'One agent drafts a tailored CV and cover letter; another reviews them. LibreOffice converts them to PDF and the CV can’t exceed two pages.' }}</span></div></li>
+    <li><span class="node">csv</span><div><b>{{ 'Seguir' if es else 'Track' }}</b><span>{{ 'Registro por oferta, planilla de seguimiento y fichas para preparar entrevistas.' if es else 'One record per opening, a tracking sheet and interview prep notes.' }}</span></div></li>
+    <li><span class="node">push</span><div><b>{{ 'Publicar' if es else 'Publish' }}</b><span>{{ 'Un script junta todo en un JSON y actualiza mi visor en GitHub Pages.' if es else 'A script merges everything into JSON and updates my viewer on GitHub Pages.' }}</span></div></li>
+  </ol>
+
+  <div class="terminal" data-type='{{ [
+    {"c": "p", "t": "> /scrape"},
+    {"c": "dim", "t": "  LinkedIn, Get on Board, Laborum, Empleos Públicos…"},
+    {"c": "", "t": ("  23 ofertas nuevas, las repetidas se omiten" if es else "  23 new openings, repeats skipped")},
+    {"c": "ok", "t": ("  ✓ 5 de calce alto" if es else "  ✓ 5 high-fit openings")},
+    {"c": "p", "t": "> /apply <url>"},
+    {"c": "dim", "t": ("  redactor: CV y carta en .docx" if es else "  drafter: CV and cover letter in .docx")},
+    {"c": "dim", "t": ("  revisor: verifica cada afirmación contra mi perfil" if es else "  reviewer: checks every claim against my profile")},
+    {"c": "ok", "t": ("  ✓ PDF de 2 páginas y registro guardado" if es else "  ✓ 2-page PDF and application record saved")}
+  ] | tojson }}'>
+    <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="terminal-body" aria-label="{{ 'Ejemplo de sesión en Claude Code' if es else 'Example Claude Code session' }}"></div>
+  </div>
+
+  <h3>{{ '¿Cómo se puntúa una oferta?' if es else 'How is an opening scored?' }}</h3>
+  <div class="bars reveal-bars">
+    {% for w, l_es, l_en in [(30, 'Habilidades técnicas', 'Technical skills'), (30, 'Proyección de carrera', 'Career direction'), (25, 'Experiencia', 'Experience'), (15, 'Calce de estilo de trabajo', 'Work-style fit')] %}
+    <div class="bar"><span>{{ l_es if es else l_en }}</span><span class="bar-track"><span class="bar-fill" style="--v: {{ w / 30 * 100 }}%"></span></span><b>{{ w }}%</b></div>
+    {% endfor %}
+  </div>
+  <p style="margin-top:1rem">{{ 'Sobre 75 puntos es un «calce fuerte». Tener un número me obliga a descartar ofertas que me entusiasman pero no me convienen.' if es else 'Above 75 is a "strong fit". Having a number forces me to drop openings that excite me but aren’t right for me.' }}</p>
+</section>
+
+<section id="{{ 'arquitectura' if es else 'architecture' }}">
+  <h2>{{ 'Las piezas' if es else 'The pieces' }}</h2>
+  <div class="arch">
+    <div class="arch-card is-core"><b>Claude Code</b><span>{{ 'Orquesta todo desde la terminal con comandos propios.' if es else 'Orchestrates everything from the terminal with custom commands.' }}</span></div>
+    <div class="arch-card"><b>Skills</b><span>{{ 'Instrucciones reutilizables: cómo buscar, cómo puntuar, cómo escribir.' if es else 'Reusable instructions: how to search, how to score, how to write.' }} <code>job-scraper</code></span></div>
+    <div class="arch-card"><b>{{ 'Subagentes' if es else 'Subagents' }}</b><span>{{ 'Uno redacta y otro revisa, cada uno con su propio contexto.' if es else 'One drafts and one reviews, each with its own context.' }}</span></div>
+    <div class="arch-card"><b>{{ 'Scripts' if es else 'Scripts' }}</b><span>{{ 'Python para scrapers y PDF; TypeScript con Bun para LinkedIn.' if es else 'Python for scrapers and PDFs; TypeScript on Bun for LinkedIn.' }}</span></div>
+    <div class="arch-card"><b>{{ 'Memoria' if es else 'Memory' }}</b><span>{{ 'Ofertas vistas, planilla de seguimiento y un registro por postulación.' if es else 'Seen openings, a tracking sheet and one record per application.' }}</span></div>
+    <div class="arch-card"><b>{{ 'Visor' if es else 'Viewer' }}</b><span>{{ 'HTML hecho a mano con cuatro vistas: ofertas, análisis, histórico y seguimiento.' if es else 'Hand-made HTML with four views: openings, analysis, history and tracking.' }}</span></div>
+  </div>
+</section>
+
+<section id="{{ 'numeros' if es else 'numbers' }}">
+  <h2>{{ 'Diez semanas en números' if es else 'Ten weeks in numbers' }}</h2>
+  <p>{{ 'Del 6 de julio al 15 de septiembre de 2026.' if es else 'From July 6 to September 15, 2026.' }}</p>
+  <div class="live">
+    <div><b data-count="468">468</b><span>{{ 'ofertas revisadas' if es else 'openings reviewed' }}</span></div>
+    <div><b data-count="311">311</b><span>{{ 'empresas distintas' if es else 'different companies' }}</span></div>
+    <div><b data-count="29">29</b><span>{{ 'pasadas de búsqueda' if es else 'search runs' }}</span></div>
+    <div><b data-count="34">34</b><span>{{ 'CV adaptados' if es else 'tailored CVs' }}</span></div>
+  </div>
+  <h3>{{ 'Cuántas calzan de verdad' if es else 'How many actually fit' }}</h3>
+  <div class="bars reveal-bars">
+    <div class="bar"><span>{{ 'Calce alto' if es else 'High fit' }}</span><span class="bar-track"><span class="bar-fill" style="--v: {{ 76 / 213 * 100 }}%"></span></span><b>76</b></div>
+    <div class="bar"><span>{{ 'Calce medio' if es else 'Medium fit' }}</span><span class="bar-track"><span class="bar-fill" style="--v: {{ 179 / 213 * 100 }}%"></span></span><b>179</b></div>
+    <div class="bar"><span>{{ 'Calce bajo' if es else 'Low fit' }}</span><span class="bar-track"><span class="bar-fill" style="--v: 100%"></span></span><b>213</b></div>
+  </div>
+  <p style="margin-top:1rem">{{ 'Menos de una de cada seis ofertas calza bien. Sin el filtro, habría gastado la mayor parte del tiempo en postulaciones que no iban a ninguna parte.' if es else 'Fewer than one in six openings is a good fit. Without the filter, I would have spent most of my time on applications going nowhere.' }}</p>
+  <div class="gallery" style="margin-top:2rem">
+    <figure>{{ m.picture('projects/buscador-trabajo/historico', '') }}<figcaption>{{ 'Ofertas nuevas por pasada. El primer día encontró 110.' if es else 'New openings per run. The first day found 110.' }}</figcaption></figure>
+    <figure>{{ m.picture('projects/buscador-trabajo/visor', '') }}<figcaption>{{ 'La vista de ofertas, con empresas y notas desenfocadas a propósito.' if es else 'The openings view, with companies and notes blurred on purpose.' }}</figcaption></figure>
+  </div>
+</section>
+
+<section id="{{ 'aprendizajes' if es else 'lessons' }}">
+  <h2>{{ 'Lo que aprendí' if es else 'What I learned' }}</h2>
+  <ul>
+    {% if es %}
+    <li><strong>La IA escribe rápido, pero hay que atarla a los hechos.</strong> Por eso cada postulación guarda el aviso y lo que declaré, y un segundo agente revisa el CV contra mi perfil real.</li>
+    <li><strong>Un puntaje explícito ordena las decisiones.</strong> Cuando menos de una de cada seis ofertas calza, el filtro es lo que más tiempo ahorra.</li>
+    <li><strong>Adaptar es más útil que inventar.</strong> Tomar un buen framework abierto y ajustarlo a mi contexto fue más rápido y mejor que empezar de cero.</li>
+    <li><strong>Automatizar lo repetitivo deja tiempo para lo que importa</strong>, como preparar bien cada entrevista.</li>
+    {% else %}
+    <li><strong>AI writes fast, but it has to be tied to facts.</strong> That's why every application stores the job ad and what I declared, and a second agent checks the CV against my real profile.</li>
+    <li><strong>An explicit score organizes decisions.</strong> When fewer than one in six openings fits, the filter is what saves the most time.</li>
+    <li><strong>Adapting beats inventing.</strong> Taking a good open framework and fitting it to my context was faster and better than starting from zero.</li>
+    <li><strong>Automating the repetitive part frees time for what matters</strong>, like preparing properly for each interview.</li>
+    {% endif %}
+  </ul>
+  <div class="callout callout-cobalto">
+    <p>{{ 'Si llegaste a esta página desde una de esas postulaciones: hola. Ya viste cómo trabajo.' if es else 'If you landed here from one of those applications: hi. Now you know how I work.' }}</p>
+  </div>
+</section>

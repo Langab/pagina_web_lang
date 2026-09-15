@@ -1,0 +1,121 @@
+{% import "partials/macros.html" as m with context %}
+{% set es = lang == 'es' %}
+
+<section id="{{ 'curiosidad' if es else 'curiosity' }}">
+  <h2>{{ 'Una pregunta de domingo' if es else 'A Sunday question' }}</h2>
+  {% if es %}
+  <p>La app Salud del iPhone guarda todo lo que mide, desde 2017 en mi caso. Pero te lo muestra por día, por semana o por mes. Nunca los nueve años juntos. Un domingo de septiembre me ganó la curiosidad: ¿qué pasa si miro todo de una vez, como miraría una encuesta?</p>
+  <p>Pedí la exportación completa. Llegó un zip con un archivo XML de <strong>1,24 GB</strong>. Ningún Excel lo abre. Con Claude Code de copiloto, en unas horas lo convertimos en un informe.</p>
+  {% else %}
+  <p>The iPhone Health app stores everything it measures, since 2017 in my case. But it shows it to you by day, week or month. Never all nine years together. One Sunday in September curiosity won: what happens if I look at all of it at once, the way I'd look at a survey?</p>
+  <p>I requested the full export. A zip arrived with a <strong>1.24 GB</strong> XML file. No spreadsheet opens that. With Claude Code as copilot, we turned it into a report within a few hours.</p>
+  {% endif %}
+  <div class="live">
+    <div><b data-count="2.74" data-suffix="{{ ' M' }}">2,74 M</b><span>{{ 'registros' if es else 'records' }}</span></div>
+    <div><b data-count="45">45</b><span>{{ 'tipos de datos distintos' if es else 'different data types' }}</span></div>
+    <div><b data-count="5">5</b><span>{{ 'dispositivos (teléfonos y relojes)' if es else 'devices (phones and watches)' }}</span></div>
+    <div><b data-count="1004">1.004</b><span>{{ 'rutas GPS que decidí no tocar' if es else 'GPS routes I chose not to touch' }}</span></div>
+  </div>
+</section>
+
+<section id="{{ 'proceso' if es else 'process' }}">
+  <h2>{{ 'De 1,2 GB a un informe de 234 KB' if es else 'From 1.2 GB to a 234 KB report' }}</h2>
+  <ol class="pipeline">
+    <li><span class="node">xml</span><div><b>{{ 'Leer sin ahogarse' if es else 'Read without choking' }}</b><span>{{ 'parse.py recorre el XML línea a línea con expresiones regulares y escribe un CSV por tipo de dato.' if es else 'parse.py walks the XML line by line with regular expressions and writes one CSV per data type.' }}</span></div></li>
+    <li><span class="node">csv</span><div><b>{{ 'Resumir' if es else 'Summarize' }}</b><span>{{ 'build_data.py usa pandas para medianas, meses y promedios móviles de 30 días.' if es else 'build_data.py uses pandas for medians, months and 30-day rolling values.' }}</span></div></li>
+    <li><span class="node">json</span><div><b>{{ 'Compactar' if es else 'Compact' }}</b><span>{{ 'Todo lo necesario para los gráficos cabe en un JSON de 145 KB.' if es else 'Everything the charts need fits in a 145 KB JSON.' }}</span></div></li>
+    <li><span class="node">svg</span><div><b>{{ 'Dibujar' if es else 'Draw' }}</b><span>{{ 'Una pequeña librería propia de gráficos SVG, sin dependencias.' if es else 'A tiny home-made SVG chart library with no dependencies.' }}</span></div></li>
+    <li><span class="node">html</span><div><b>{{ 'Explicar' if es else 'Explain' }}</b><span>{{ 'Un informe que funciona sin internet. Cada gráfico dice cómo leerlo y compara con rangos de referencia publicados.' if es else 'A report that works offline. Every chart explains how to read it and compares against published reference ranges.' }}</span></div></li>
+  </ol>
+  <p>{{ 'El detalle que más me gustó: el iPhone y el reloj cuentan los mismos pasos. Si los sumas, caminaste el doble. La solución fue quedarse, hora por hora, con el dispositivo que más contó.' if es else 'My favorite detail: the iPhone and the watch count the same steps. Add them up and you walked twice as much. The fix was keeping, hour by hour, whichever device counted more.' }}</p>
+<pre class="code"><code><span class="c"># pasos por hora y por dispositivo → el máximo de cada hora → suma del día</span>
+por_hora = df.groupby([<span class="s">"hora"</span>, <span class="s">"fuente"</span>]).pasos.sum()
+pasos_dia = por_hora.groupby(<span class="s">"hora"</span>).max().resample(<span class="s">"D"</span>).sum()</code></pre>
+</section>
+
+<section id="{{ 'pasos' if es else 'steps' }}">
+  <h2>{{ 'Nueve años caminando' if es else 'Nine years of walking' }}</h2>
+  <p>{{ 'Mediana de pasos diarios por año. La mediana, y no el promedio, para que un día de trekking no infle el año.' if es else 'Median daily steps per year. The median, not the mean, so one hiking day doesn’t inflate the whole year.' }}</p>
+  {% set years = [('2017', 6133, ''), ('2018', 8010, ''), ('2019', 8524, ''), ('2020', 3591, 'low'), ('2021', 0, 'gap'), ('2022', 9686, 'thin'), ('2023', 9040, ''), ('2024', 9604, ''), ('2025', 13867, 'top'), ('2026', 9395, '')] %}
+  <div class="vbars reveal-bars" role="img" aria-label="{{ 'Pasos diarios por año: 2017 6.133; 2018 8.010; 2019 8.524; 2020 3.591; 2021 sin datos; 2022 9.686; 2023 9.040; 2024 9.604; 2025 13.867; 2026 9.395' if es else 'Daily steps per year: 2017 6,133; 2018 8,010; 2019 8,524; 2020 3,591; 2021 no data; 2022 9,686; 2023 9,040; 2024 9,604; 2025 13,867; 2026 9,395' }}">
+    {% for y, v, flag in years %}
+    <div class="vbar {{ flag }}"><b>{{ (v | num) if v else '?' }}</b><span class="vbar-track"><span class="bar-fill" style="--v: {{ (v / 13867 * 100) if v else 100 }}%"></span></span><em>{{ y }}</em></div>
+    {% endfor %}
+  </div>
+  <ul>
+    {% if es %}
+    <li><strong>2020 es la pandemia en un solo número:</strong> 3.591 pasos al día, menos de la mitad del año anterior.</li>
+    <li><strong>2021 no existe.</strong> No hay un solo registro de ese año. Un buen recordatorio de que los datos faltantes también cuentan algo, aunque no siempre sepamos qué.</li>
+    <li><strong>2025 fue mi mejor año:</strong> 13.867 pasos de mediana y 85% de los días sobre 8.000.</li>
+    <li>En total, unos <strong>25,3 millones de pasos y 18.300 km</strong>. Más que la distancia en línea recta entre Santiago y Tokio.</li>
+    {% else %}
+    <li><strong>2020 is the pandemic in a single number:</strong> 3,591 steps a day, less than half the year before.</li>
+    <li><strong>2021 doesn't exist.</strong> There isn't a single record from that year. A good reminder that missing data says something too, even when we don't know what.</li>
+    <li><strong>2025 was my best year:</strong> a median of 13,867 steps and 85% of days above 8,000.</li>
+    <li>All told, about <strong>25.3 million steps and 18,300 km</strong>. Farther than a straight line from Santiago to Tokyo.</li>
+    {% endif %}
+  </ul>
+  <p class="live-note">{{ '2022 tiene solo 37 días con datos y 2026 llega hasta septiembre.' if es else '2022 has only 37 days of data and 2026 runs through September.' }}</p>
+</section>
+
+<section id="{{ 'bici' if es else 'bike' }}">
+  <h2>{{ 'El año de la bicicleta' if es else 'The year of the bike' }}</h2>
+  <p>{{ '1.183 entrenamientos registrados, unas 535 horas. El reloj llegó a fines de 2022 y desde ahí se ve cómo cambian las costumbres:' if es else '1,183 recorded workouts, about 535 hours. The watch arrived in late 2022 and from then on you can see habits change:' }}</p>
+  {% set wk = [('2022', 15, 7, 2, 0), ('2023', 132, 243, 12, 0), ('2024', 180, 112, 11, 1), ('2025', 349, 17, 2, 2), ('2026', 78, 18, 0, 2)] %}
+  <div class="bars">
+    {% for y, walk, bike, run, other in wk %}
+    {% set total = walk + bike + run + other %}
+    <div class="bar"><span>{{ y }}</span><span class="bar-track stack">
+      <span class="seg seg-Walking" style="width: {{ walk / 387 * 100 }}%"></span><span class="seg seg-Cycling" style="width: {{ bike / 387 * 100 }}%"></span><span class="seg seg-Running" style="width: {{ run / 387 * 100 }}%"></span><span class="seg seg-Other" style="width: {{ other / 387 * 100 }}%"></span>
+    </span><b>{{ total }}</b></div>
+    {% endfor %}
+  </div>
+  <p class="sim-legend" style="color:var(--grafito)"><span><i class="seg-Walking"></i>{{ 'Caminata' if es else 'Walking' }}</span><span><i class="seg-Cycling"></i>{{ 'Bicicleta' if es else 'Cycling' }}</span><span><i class="seg-Running"></i>{{ 'Carrera' if es else 'Running' }}</span><span><i class="seg-Other"></i>{{ 'Otros' if es else 'Other' }}</span></p>
+  <p>{{ 'En 2023 salí en bicicleta 243 veces. En 2025 la bici casi desaparece y la reemplazan 349 caminatas. No hace falta un modelo para ver una mudanza, un cambio de trabajo o simplemente otra rutina.' if es else 'In 2023 I went cycling 243 times. By 2025 the bike almost disappears and 349 walks take its place. You don’t need a model to see a move, a new job or simply a new routine.' }}</p>
+</section>
+
+<section id="{{ 'privacidad' if es else 'privacy' }}">
+  <h2>{{ 'Lo que no voy a mostrar' if es else "What I'm not going to show" }}</h2>
+  {% if es %}
+  <p>El informe completo también habla de corazón, sueño, oxígeno y ruido. Esos gráficos se quedan entre mi reloj y yo. Las rutas GPS tampoco se usaron, porque dibujan dónde vivo y por dónde me muevo.</p>
+  <p class="pull">Trabajar con datos de personas también es decidir qué no publicar. Eso vale para un censo y para mi propio teléfono.</p>
+  {% else %}
+  <p>The full report also covers heart, sleep, blood oxygen and noise. Those charts stay between my watch and me. The GPS routes weren’t used either, because they draw where I live and how I move around.</p>
+  <p class="pull">Working with people’s data also means deciding what not to publish. That goes for a census and for my own phone.</p>
+  {% endif %}
+</section>
+
+<section id="{{ 'pruebalo' if es else 'try-it' }}">
+  <h2>{{ 'Pruébalo con tus datos' if es else 'Try it with your data' }}</h2>
+  <ol>
+    {% if es %}
+    <li>En el iPhone abre <strong>Salud</strong>, toca tu foto de perfil y elige <strong>Exportar todos los datos de salud</strong>.</li>
+    <li>Pasa el archivo <code>exportar.zip</code> a tu computador.</li>
+    <li>Arrástralo aquí abajo. Puede tardar un par de minutos si tienes años de datos.</li>
+    {% else %}
+    <li>On your iPhone open <strong>Health</strong>, tap your profile picture and choose <strong>Export All Health Data</strong>.</li>
+    <li>Move the <code>export.zip</code> file to your computer.</li>
+    <li>Drop it below. It can take a couple of minutes if you have years of data.</li>
+    {% endif %}
+  </ol>
+  <div class="health-tool" data-health data-lang="{{ lang }}">
+    <label class="drop" data-drop>
+      <input type="file" accept=".zip,.xml" class="sr-only">
+      <b>{{ 'Suelta aquí tu exportar.zip o export.xml' if es else 'Drop your export.zip or export.xml here' }}</b>
+      <span>{{ 'o haz clic para elegirlo' if es else 'or click to choose it' }}</span>
+      <span class="drop-lock">{{ 'Se procesa en tu navegador. Nada se sube a internet.' if es else 'It runs in your browser. Nothing is uploaded.' }}</span>
+      <span class="drop-progress" aria-hidden="true"><span data-bar></span></span>
+      <span class="drop-status" data-status aria-live="polite"></span>
+    </label>
+    <div class="health-out" data-out hidden></div>
+  </div>
+  <div class="callout">
+    <p>{{ '¿Prefieres Python? Estos son los scripts, listos para correr en tu computador.' if es else 'Prefer Python? Here are the scripts, ready to run on your computer.' }}</p>
+    <div class="actions" style="margin-top:1rem">
+      <a class="btn btn-small btn-solid" href="{{ asset('code/salud-apple.zip') }}" download>{{ m.icon('down') }}{{ 'Descargar código' if es else 'Download code' }}</a>
+      <a class="btn btn-small" href="{{ asset('code/salud-apple/parse.py') }}" target="_blank">parse.py</a>
+      <a class="btn btn-small" href="{{ asset('code/salud-apple/resumen.py') }}" target="_blank">resumen.py</a>
+      <a class="btn btn-small" href="{{ asset('code/salud-apple/README.md') }}" target="_blank">README</a>
+    </div>
+  </div>
+</section>

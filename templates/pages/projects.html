@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% import "partials/macros.html" as m with context %}
+
+{% block main %}
+<header class="page-intro wrap">
+  <p class="kicker">{{ page.title | t }}</p>
+  <h1>{{ home.lab.title | t }}</h1>
+  <p>{{ home.lab.lede | t }}</p>
+</header>
+
+<section class="wrap section-tight" style="padding-top:0">
+  <div class="lab-cards">
+    {% for p in projects.lab %}
+    <a class="lab-card" href="{{ project_url(p) }}" data-reveal style="--d: {{ loop.index0 * 0.06 }}s">
+      <div class="cover">{{ m.picture(p.image, '') }}</div>
+      <div class="body">
+        <span class="kicker" style="margin:0">{{ p.status | t }}</span>
+        <h3>{{ p.title | t }}</h3>
+        <p>{{ p.hook | t }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div class="more-experiments more-on-light">
+    <h3>{{ home.lab.more_title | t }}</h3>
+    <p>{{ home.lab.more_text | t }}</p>
+    <div class="mini-grid">
+      {% for e in projects.experiments %}
+      <a href="{{ e.url }}" target="_blank" rel="noopener"><b>{{ e.title | t }}</b><span>{{ e.text | t }}</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section on-paper" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ home.work.kicker | t }}</p>
+        <h2 id="work-title">{{ home.work.title | t }}</h2>
+      </div>
+      <p>{{ home.work.lede | t }}</p>
+    </div>
+    {% include "partials/work_index.html" %}
+  </div>
+</section>
+{% endblock %}
+
+{% block dialogs %}
+{% for w in projects.work %}{{ m.work_modal(w) }}{% endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% import "partials/macros.html" as m with context %}
+<footer class="contact" id="{{ ui.contact_anchor }}">
+  <canvas class="contact-dots" data-contact-dots aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h2>{{ home.contact.title | t }}</h2>
+    <p class="contact-lede">{{ home.contact.lede | t }}</p>
+    <div class="mail-big">
+      <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+      <button class="copy-btn" type="button" data-copy="{{ site.contact.email }}" data-done="{{ ui.copied }}">{{ ui.copy_email }}</button>
+    </div>
+    <div class="contact-grid">
+      <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener"><span>LinkedIn</span><b>benjamin-lang</b></a>
+      <a href="{{ site.contact.github }}" target="_blank" rel="noopener"><span>GitHub</span><b>Langab</b></a>
+      <a href="tel:{{ site.contact.phone_href }}"><span>{{ ui.phone }}</span><b>{{ site.contact.phone }}</b></a>
+      <a href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener"><span>CV</span><b>{{ ui.download_cv }}</b></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ year }} {{ site.full_name }}. {{ ui.footer_note }}</span>
+      <a href="https://github.com/Langab/pagina_web_lang" target="_blank" rel="noopener">{{ ui.source_code }}</a>
+    </div>
+  </div>
+</footer>

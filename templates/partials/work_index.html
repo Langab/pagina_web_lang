@@ -1,0 +1,13 @@
+{% import "partials/macros.html" as m with context %}
+{% set list_id = "work-list-" ~ route.id | replace(':', '-') %}
+<div class="filters" role="group" aria-label="{{ ui.filter_label }}" data-filters="{{ list_id }}">
+  <button class="filter" type="button" data-filter="all" aria-pressed="true">{{ ui.filter_all }}<sup>{{ projects.work | length }}</sup></button>
+  {% for key, label in projects.areas.items() %}
+  {% set ns = namespace(n=0) %}{% for w in projects.work %}{% if key in w.area %}{% set ns.n = ns.n + 1 %}{% endif %}{% endfor %}
+  <button class="filter" type="button" data-filter="{{ key }}" aria-pressed="false">{{ label | t }}<sup>{{ ns.n }}</sup></button>
+  {% endfor %}
+</div>
+<ul class="work-index" id="{{ list_id }}">
+  {% for w in projects.work %}{{ m.work_row(w) }}{% endfor %}
+</ul>
+<div class="work-preview" data-preview-box aria-hidden="true"><img alt=""></div>

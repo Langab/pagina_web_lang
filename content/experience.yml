@@ -1,0 +1,163 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Trayectoria: trabajos, formación, habilidades, idiomas, docencia.
+# `current: true` marca lo que sigue en curso. `home: true` lo muestra en la portada.
+# ─────────────────────────────────────────────────────────────────────────
+
+summary:
+  es: |
+    Soy sociólogo de la Universidad Diego Portales, titulado con distinción máxima y primero de mi generación. Me muevo entre la metodología cuantitativa, la investigación cualitativa y el código.
+
+    Hoy trabajo como analista de datos en el Servicio Local de Educación Pública Santa Rosa. Antes validé datos del Censo 2024 en el INE, analicé el proceso constitucional en el CEP y codifiqué actas del Banco Central para un Fondecyt. Me gusta que un análisis termine en algo que otra persona pueda usar el lunes.
+  en: |
+    I'm a sociologist from Universidad Diego Portales, graduated with highest honors and first in my class. I work where quantitative methods, qualitative research and code meet.
+
+    Today I'm a data analyst at Servicio Local de Educación Pública Santa Rosa, a public school district in southern Santiago. Before that I validated 2024 Census data at INE, analyzed Chile's constitutional process at CEP and coded Central Bank minutes for a Fondecyt research grant. I like analysis that ends in something another person can use on Monday.
+
+jobs:
+  - id: slep
+    current: true
+    home: true
+    when: { es: "2025 – hoy", en: "2025 – now" }
+    role: { es: Analista de datos, en: Data analyst }
+    org: Servicio Local de Educación Pública Santa Rosa
+    desc:
+      es: Ordeno, cruzo y visualizo los datos de 5 comunas y sus escuelas públicas. Armé la gobernanza de datos del servicio y reportes en R Markdown y Power BI que se pueden auditar.
+      en: I clean, join and visualize data for the public schools of 5 municipalities. I set up the service's data governance and built R Markdown and Power BI reports that can be audited.
+  - id: aldeas
+    current: true
+    home: true
+    when: { es: "2025 – hoy", en: "2025 – now" }
+    role: { es: Consultor en habilidades digitales, en: Digital skills consultant }
+    org: Aldeas Infantiles SOS Chile con MICELIA
+    desc:
+      es: Diagnóstico mixto de brechas digitales y plan de formación 2026. Lidero los talleres de la sede Quilpué.
+      en: Mixed-methods assessment of digital skills gaps and a 2026 training plan. I lead the workshops at the Quilpué site.
+  - id: prieto
+    current: true
+    when: { es: "2025 – hoy", en: "2025 – now" }
+    role: { es: Asesor metodológico, en: Methods advisor }
+    org: Proyectos de Joaquín Prieto
+    desc:
+      es: Análisis cuantitativo para *Insecurity amid Recovery* y *Economic Insecurity, Not Inequality?* con datos de panel de ELSOC (COES) y la Encuesta de Bienestar Social (INE).
+      en: Quantitative analysis for *Insecurity amid Recovery* and *Economic Insecurity, Not Inequality?* using ELSOC panel data (COES) and INE's Social Wellbeing Survey.
+  - id: ine
+    home: true
+    when: { es: "2024 – 2025", en: "2024 – 2025" }
+    role: { es: "Analista metodológico senior, Censo 2024", en: "Senior methods analyst, 2024 Census" }
+    org: Instituto Nacional de Estadísticas (INE)
+    desc:
+      es: Procesamiento, validación y control de calidad de los datos del Censo de Población y Vivienda 2024.
+      en: Processing, validation and quality control of Chile's 2024 Population and Housing Census data.
+  - id: fondecyt-bc
+    home: true
+    when: { es: "2024 – 2025", en: "2024 – 2025" }
+    role: { es: "Investigador, Fondecyt N° 1231356", en: "Researcher, Fondecyt grant 1231356" }
+    org: Universidad Diego Portales
+    desc:
+      es: Cómo el Banco Central de Chile gobierna la incertidumbre. Diseñé el procesamiento con modelos de lenguaje de las actas de la crisis de 1982.
+      en: How Chile's Central Bank governs uncertainty. I designed the language-model pipeline that coded the minutes from the 1982 crisis.
+  - id: voces
+    when: { es: "2023 – 2024", en: "2023 – 2024" }
+    role: { es: "Investigador asistente, Voces del CEP", en: "Research assistant, Voces del CEP" }
+    org: Centro de Estudios Públicos (CEP)
+    desc:
+      es: Edición y publicación del boletín *Voces del CEP*, seguimiento del segundo proceso constitucional y datos electorales y de opinión pública.
+      en: Editing and publishing the *Voces del CEP* bulletin, tracking the second constitutional process, plus electoral and public opinion data.
+  - id: c22
+    home: true
+    when: { es: "2021 – 2024", en: "2021 – 2024" }
+    role: { es: "Asistente de investigación, C22", en: "Research assistant, C22" }
+    org: Centro de Estudios Públicos (CEP)
+    desc:
+      es: Humanidades digitales sobre el primer proceso constitucional. Análisis de discursos y visualización de datos políticos.
+      en: Digital humanities on Chile's first constitutional process. Discourse analysis and political data visualization.
+  - id: tironi
+    home: true
+    when: { es: "2021 – 2023", en: "2021 – 2023" }
+    role: { es: Analista de asuntos públicos, en: Public affairs analyst }
+    org: Tironi y Asociados
+    desc:
+      es: A cargo del boletín constitucional semanal de 2022 para clientes corporativos. Datos para diagnósticos organizacionales y estrategia.
+      en: Ran the weekly constitutional bulletin for corporate clients in 2022. Data for organizational diagnostics and strategy.
+  - id: chiloe
+    when: { es: "2022 – 2023", en: "2022 – 2023" }
+    role: { es: "Asistente de investigación, Fondecyt N° 1190295", en: "Research assistant, Fondecyt grant 1190295" }
+    org: Universidad Diego Portales
+    desc:
+      es: Transiciones críticas en sistemas socioecológicos en Chiloé. Procesamiento de información cualitativa y cuantitativa.
+      en: Critical transitions in social-ecological systems in Chiloé. Qualitative and quantitative data processing.
+  - id: tesista
+    when: { es: "2020 – 2021", en: "2020 – 2021" }
+    role: { es: "Tesista, Fondecyt N° 1181585", en: "Thesis researcher, Fondecyt grant 1181585" }
+    org: Universidad Diego Portales
+    desc:
+      es: Tesis de pregrado dentro de un proyecto Fondecyt de investigación sociológica.
+      en: Undergraduate thesis within a funded Fondecyt sociology project.
+
+education:
+  - title: { es: "Sociólogo, distinción máxima", en: "B.A. in Sociology, highest honors" }
+    org: Universidad Diego Portales
+    when: "2017 – 2021"
+    note: { es: Primer lugar en el ranking de egreso de mi generación., en: Ranked first in my graduating class. }
+  - title: { es: Diplomado de honor en movilidad y transporte, en: Honors diploma in mobility and transport }
+    org: Universidad Diego Portales
+    when: "2019 – 2020"
+    note: { es: Programa de honor para estudiantes destacados., en: Honors program for top students. }
+  - title: { es: Curso de R avanzado, en: Advanced R course }
+    org: Instituto Nacional de Estadísticas (INE)
+    when: "2024"
+    note: { es: "Procesamiento, visualización y modelamiento para el Censo 2024.", en: "Processing, visualization and modeling for the 2024 Census." }
+
+skills:
+  - name: R
+    level: 5
+    note: { es: "tidyverse, ggplot2, modelos estadísticos, R Markdown y Quarto", en: "tidyverse, ggplot2, statistical models, R Markdown and Quarto" }
+  - name: Power BI
+    level: 5
+    note: { es: "Dashboards, DAX y reportería institucional", en: "Dashboards, DAX and institutional reporting" }
+  - name: Excel
+    level: 5
+    note: { es: "Modelado de datos, tablas dinámicas y macros", en: "Data modeling, pivot tables and macros" }
+  - name: Git y GitHub
+    level: 4
+    note: { es: "Control de versiones, GitHub Pages y Actions", en: "Version control, GitHub Pages and Actions" }
+  - name: Claude Code
+    level: 4
+    note: { es: "Skills, agentes, tareas programadas y automatización de flujos", en: "Skills, agents, scheduled tasks and workflow automation" }
+  - name: Python
+    level: 3
+    note: { es: "pandas, scraping con Playwright y pipelines que corren solos", en: "pandas, Playwright scraping and self-running pipelines" }
+  - name: SQL
+    level: 3
+    note: { es: "Consultas, joins y agregaciones para análisis", en: "Queries, joins and aggregations for analysis" }
+  - name: Atlas.ti
+    level: 3
+    note: { es: Codificación cualitativa de entrevistas y documentos, en: Qualitative coding of interviews and documents }
+
+languages:
+  - { name: { es: Español, en: Spanish }, level: { es: Nativo, en: Native } }
+  - { name: { es: Italiano, en: Italian }, level: C1 }
+  - { name: { es: Inglés, en: English }, level: B2 }
+
+teaching:
+  - when: "2020 – 2021"
+    title: { es: Ayudante de cátedra en cinco cursos de Sociología, en: Teaching assistant in five sociology courses }
+    org: Universidad Diego Portales
+    note: { es: "Técnicas cuantitativas, lógica de investigación, teoría sociológica, métodos cualitativos y problemas sociales.", en: "Quantitative techniques, research logic, sociological theory, qualitative methods and social problems." }
+
+talks:
+  - when: { es: Abril 2022, en: April 2022 }
+    title: { es: "Ponencia «Estéticas constitucionales», Congreso Chileno de Sociología Pre-ALAS, Concepción", en: "Talk «Constitutional aesthetics», Chilean Sociology Congress Pre-ALAS, Concepción" }
+  - when: { es: Marzo 2022, en: March 2022 }
+    title: { es: "Seminario «Metodologías visuales: una aproximación sociológica para trabajar con imágenes», UDP", en: "Seminar «Visual methods: a sociological approach to working with images», UDP" }
+
+references:
+  - name: Verónica Canales
+    role: { es: "Jefa de metodología y procesamiento, Censo 2024, INE. Magíster en Investigación Social (LSE).", en: "Head of methods and processing, 2024 Census, INE. MSc in Social Research (LSE)." }
+    email: vacanalesg@ine.gob.cl
+  - name: Aldo Mascareño
+    role: { es: "Investigador senior del CEP, editor de Estudios Públicos e investigador principal de C22.", en: "Senior researcher at CEP, editor of Estudios Públicos and principal investigator of C22." }
+    email: amascareno@cepchile.cl
+  - name: Francisco Espinoza
+    role: { es: "Consultor en Tironi y Asociados. Magíster en Ciencia Política, Universidad de Chile.", en: "Consultant at Tironi y Asociados. MA in Political Science, Universidad de Chile." }
+    email: francisco.espinoza@tironi.cl

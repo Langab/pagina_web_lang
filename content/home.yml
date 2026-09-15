@@ -1,0 +1,110 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Portada: textos de cada sección, en el orden en que aparecen.
+# ─────────────────────────────────────────────────────────────────────────
+
+hero:
+  status: { es: Abierto a nuevos desafíos en datos, en: Open to new data roles }
+  title:
+    es: ["Del Censo 2024", "a Claude Code."]
+    en: ["From the 2024 Census", "to Claude Code."]
+  lede:
+    es: Soy **Benjamín Lang**, sociólogo y analista de datos en Santiago. Validé datos del Censo en el INE, analicé el proceso constitucional en el CEP y hoy ordeno los datos de la educación pública en Santa Rosa. Cuando un problema me intriga, armo la herramienta que lo resuelve.
+    en: I'm **Benjamín Lang**, a sociologist and data analyst in Santiago, Chile. I validated Census data at INE, analyzed the constitutional process at CEP, and today I organize public education data in Santa Rosa. When a problem gets under my skin, I build the tool that solves it.
+  cta_primary: { es: Ver proyectos, en: See projects }
+  cta_secondary: { es: Descargar CV, en: Download CV }
+  photo_alt: { es: Benjamín Lang presentando frente a un pendón del SLEP Santa Rosa, en: Benjamín Lang presenting next to an SLEP Santa Rosa banner }
+  photo_caption: { es: "Presentando en el SLEP Santa Rosa", en: "Presenting at SLEP Santa Rosa" }
+  meta:
+    - value: "5"
+      label: { es: "años con datos públicos, académicos y privados", en: "years working with public, academic and private data" }
+    - value: live_total
+      label: { es: avisos de arriendo que mi visor revisó esta mañana, en: rental listings my finder checked this morning }
+    - value: "14"
+      label: { es: publicaciones con el CEP y C22, en: publications with CEP and C22 }
+
+logos:
+  label: { es: He trabajado con, en: I've worked with }
+  items:
+    - { name: INE, src: logos/ine.png, url: "https://censo2024.ine.gob.cl/" }
+    - { name: Centro de Estudios Públicos, src: logos/cep.png, url: "https://www.cepchile.cl/", square: true }
+    - { name: SLEP Santa Rosa, src: logos/santa_rosa.png, url: "https://slepsantarosa.gob.cl/", dark: true }
+    - { name: Universidad Diego Portales, src: logos/udp.png, url: "https://www.udp.cl/" }
+    - { name: C22, src: logos/c22.png, url: "https://c22cepchile.cl/", square: true }
+    - { name: Tironi, src: logos/tironi.png, url: "https://tironi.cl/", square: true }
+
+story:
+  kicker: { es: Cómo trabajo, en: How I work }
+  title: { es: De una pregunta a una decisión, en: From a question to a decision }
+  lede: { es: "Cada punto es una persona, un aviso o un documento. Mi trabajo es ordenarlos hasta que digan algo útil.", en: "Every dot is a person, a listing or a document. My job is to arrange them until they say something useful." }
+  steps:
+    - label: { es: "720 puntos sueltos", en: "720 loose dots" }
+      title: { es: Empieza con una pregunta, en: It starts with a question }
+      text:
+        es: "¿Por qué las escuelas rurales casi no usan la biblioteca digital? ¿Qué discutía el Banco Central en plena crisis? Antes de abrir R, me siento a entender **qué decisión depende de la respuesta**."
+        en: "Why do rural schools barely use the digital library? What was the Central Bank arguing about in the middle of a crisis? Before opening R, I sit down to understand **which decision depends on the answer**."
+      tools: [{ es: Diseño metodológico, en: Research design }, { es: Encuestas, en: Surveys }, { es: Entrevistas, en: Interviews }]
+    - label: { es: "Una grilla ordenada", en: "An ordered grid" }
+      title: { es: "Luego, datos en los que se puede confiar", en: "Then, data you can trust" }
+      text:
+        es: Validar el Censo me enseñó que el 80% del trabajo es limpiar, cruzar y documentar. **Reglas explícitas, código que otro puede volver a correr** y nada de planillas mágicas.
+        en: Validating the Census taught me that 80% of the work is cleaning, joining and documenting. **Explicit rules, code someone else can rerun**, no magic spreadsheets.
+      tools: [R, SQL, Python, Git]
+    - label: { es: "Dos grupos que se comparan", en: "Two groups compared" }
+      title: { es: El análisis busca diferencias que importan, en: Analysis looks for differences that matter }
+      text:
+        es: Modelos estadísticos, redes, análisis de texto o modelos de lenguaje cuando hay miles de documentos. **La técnica sale de la pregunta**, no al revés.
+        en: Statistical models, networks, text analysis, or language models when there are thousands of documents. **The method follows the question**, not the other way around.
+      tools: [{ es: Modelos estadísticos, en: Statistical models }, GPT-4o, { es: Análisis de redes, en: Network analysis }, STM]
+    - label: { es: "{match} puntos que importan", en: "{match} dots that matter" }
+      title: { es: Y termina en algo que alguien usa, en: And it ends in something someone uses }
+      text:
+        es: Un dashboard, un informe o una herramienta que se actualiza sola. Mi visor de arriendos parte con más de mil avisos cada mañana y **hoy me dejó {match} para visitar**.
+        en: A dashboard, a report, or a tool that updates itself. My rental finder starts with over a thousand listings every morning and **today it left me {match} to visit**.
+      tools: [Power BI, Quarto, GitHub Actions, Claude Code]
+
+lab:
+  kicker: { es: Laboratorio personal, en: Personal lab }
+  title: { es: Cosas que construí porque las necesitaba, en: Things I built because I needed them }
+  more_title: { es: Y otros experimentos, en: And a few more experiments }
+  more_text: { es: "Cuando alguien me cuenta un problema, muchas veces termino armando un visor. Estos están publicados.", en: "When someone tells me about a problem, I often end up building a viewer for it. These are live." }
+  lede: { es: "Proyectos propios, de punta a punta: la pregunta, los datos, el código y la herramienta publicada. Algunos para mí, otros porque un amigo me pidió un favor.", en: "End-to-end side projects: the question, the data, the code and the published tool. Some for me, some because a friend asked for a favor." }
+
+work:
+  kicker: { es: Proyectos en los que participé, en: Projects I worked on }
+  title: { es: "Investigación, sector público y consultoría", en: "Research, public sector and consulting" }
+  lede: { es: "Toca cualquier proyecto para ver qué hice, con qué herramientas y qué salió.", en: "Tap any project to see what I did, the tools I used and what came out of it." }
+
+career:
+  kicker: { es: Trayectoria, en: Experience }
+  title: { es: "Cinco años, cuatro mundos", en: "Five years, four worlds" }
+  lede: { es: "Estadística oficial, centros de estudio, consultoría estratégica y educación pública. Cada uno me enseñó a hablarle a un público distinto.", en: "Official statistics, think tanks, strategy consulting and public education. Each one taught me to talk to a different audience." }
+  cta: { es: Ver trayectoria completa, en: See full experience }
+
+teaching:
+  kicker: { es: Enseñar lo que uso, en: Teaching what I use }
+  title: { es: "IA para científicos sociales, sin humo", en: "AI for social scientists, minus the hype" }
+  text:
+    es: En mayo de 2024, cuando ChatGPT todavía asustaba en las salas de clases, preparé un taller para estudiantes de Sociología de la UDP. La idea era simple. Entender cómo aprende una máquina, qué puede hacer por una investigación y dónde se equivoca.
+    en: In May 2024, when ChatGPT still scared people in classrooms, I prepared a workshop for sociology students at UDP. The goal was simple. Understand how a machine learns, what it can do for research and where it gets things wrong.
+  slides_label: { es: "El taller en siete láminas", en: "The workshop in seven slides" }
+  slides:
+    - { title: { es: Una historia con inviernos, en: A history with winters }, text: { es: De los inviernos de la IA al boom de 2022., en: From the AI winters to the 2022 boom. } }
+    - { title: { es: Cómo aprende una máquina, en: How a machine learns }, text: { es: Aprendizaje supervisado y no supervisado., en: Supervised and unsupervised learning. } }
+    - { title: { es: Entrenar un algoritmo, en: Training an algorithm }, text: { es: Datos de entrenamiento y de prueba con fotos de perros., en: Training and test data with dog photos. } }
+    - { title: { es: Modelos de lenguaje, en: Language models }, text: { es: Por qué son tan grandes y qué significa «generativa»., en: Why they are so big and what "generative" means. } }
+    - { title: { es: Herramientas para investigar, en: Tools for research }, text: { es: "Transcribir con Whisper, clasificar texto, revisar literatura y conversar con tus documentos.", en: "Transcribing with Whisper, classifying text, reviewing literature and chatting with your documents." } }
+    - { title: { es: Los límites, en: The limits }, text: { es: "Nivel de análisis, trabajo humano-máquina y sesgos.", en: "Level of analysis, human-machine work and bias." } }
+    - { title: { es: Manos a la obra, en: Hands on }, text: { es: Segunda parte práctica con las herramientas., en: A hands-on second half with the tools. } }
+
+publications:
+  kicker: { es: Publicaciones, en: Publications }
+  title: { es: Lo que escribimos con esos datos, en: What we wrote with that data }
+  counts:
+    - { value: 1, label: { es: artículo en revista académica, en: peer-reviewed article } }
+    - { value: 7, label: { es: policy papers del CEP, en: CEP policy papers } }
+    - { value: 6, label: { es: research notes de C22, en: C22 research notes } }
+  cta: { es: Ver todas las publicaciones, en: See all publications }
+
+contact:
+  title: { es: "¿Conversamos?", en: "Let's talk." }
+  lede: { es: "Busco un equipo donde los datos se usen para decidir. Si tienes un cargo, un proyecto o solo una pregunta difícil, escríbeme.", en: "I'm looking for a team where data actually drives decisions. If you have a role, a project or just a hard question, write to me." }
