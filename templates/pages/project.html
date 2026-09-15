@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% set p = project %}
+
+{% block main %}
+<article>
+  <header class="p-hero wrap">
+    <p class="crumbs"><a href="{{ url('projects') }}">{{ ui.all_projects }}</a></p>
+    <h1>{{ p.title | t }}</h1>
+    <p class="hook">{{ p.hook | t }}</p>
+    {% if p.links is defined %}
+    <div class="actions" style="margin-top:1.75rem">
+      {% for l in p.links %}<a class="btn{{ ' btn-solid' if loop.first }}" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | t }} {{ m.icon('out') }}</a>{% endfor %}
+    </div>
+    {% endif %}
+    <dl class="p-meta">
+      <div><dt>{{ ui.year }}</dt><dd>{{ p.year }}</dd></div>
+      <div><dt>{{ ui.status }}</dt><dd>{{ p.status | t }}</dd></div>
+      <div style="grid-column: span 2"><dt>{{ ui.stack }}</dt><dd>{% for tag in p.tags %}{{ tag | t }}{{ ', ' if not loop.last }}{% endfor %}</dd></div>
+    </dl>
+  </header>
+
+  <div class="wrap p-cover">
+    {{ m.browser(p.image, p.address, p.title | t, "eager") }}
+  </div>
+
+  <div class="wrap prose">
+    <nav class="toc" aria-label="{{ ui.on_this_page }}" data-toc>
+      <p>{{ ui.on_this_page }}</p>
+      <ol></ol>
+    </nav>
+    <div class="article">
+      {% include "projects/" ~ p.id ~ ".html" %}
+    </div>
+  </div>
+
+  {% set ids = projects.lab | map(attribute='id') | list %}
+  {% set next = projects.lab[(ids.index(p.id) + 1) % ids | length] %}
+  <div class="wrap section-tight">
+    <a class="p-next" href="{{ project_url(next) }}" style="text-decoration:none">
+      <div>
+        <p class="kicker" style="margin:0 0 .5rem">{{ ui.next_project }}</p>
+        <h2>{{ next.title | t }}</h2>
+        <p>{{ next.hook | t }}</p>
+      </div>
+      <span class="btn btn-solid">{{ ui.read_story }}</span>
+    </a>
+  </div>
+</article>
+{% endblock %}
+
+{% block scripts %}
+{% if p.id == 'casa-siempre-gana' %}<script src="{{ asset('js/casa.js') }}" defer></script>{% endif %}
+{% if p.id == 'visor-salud' %}<script src="{{ asset('js/salud.js') }}" defer></script>{% endif %}
+{% endblock %}

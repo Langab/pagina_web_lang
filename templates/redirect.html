@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Redirigiendo…</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ absolute }}">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <script>location.replace({{ target | tojson }} + location.hash)</script>
+</head>
+<body>
+  <p>Esta página se movió. <a href="{{ target }}">Ir a la nueva dirección</a>.</p>
+</body>
+</html>

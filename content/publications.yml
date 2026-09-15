@@ -1,0 +1,90 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Publicaciones. Para agregar una, copia un bloque y cambia los datos.
+# ─────────────────────────────────────────────────────────────────────────
+
+intro:
+  es: Entre 2021 y 2024 escribí con el equipo de Aldo Mascareño en el CEP sobre el proceso constitucional, la polarización y el voto. Casi todo nació de bases de datos de texto y encuestas que había que ordenar primero.
+  en: Between 2021 and 2024 I co-wrote with Aldo Mascareño's team at CEP about Chile's constitutional process, polarization and voting. Almost everything started from text and survey data that had to be cleaned first.
+
+groups:
+  - id: articles
+    title: { es: Artículo en revista académica, en: Peer-reviewed article }
+    items:
+      - year: 2024
+        title: "Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"
+        authors: Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.
+        venue: Journal of Language and Politics, 23(5), 723–746
+        url: https://doi.org/10.1075/jlp.24097.fre
+
+  - id: policy
+    title: { es: "Puntos de Referencia, Centro de Estudios Públicos", en: "Puntos de Referencia policy papers, Centro de Estudios Públicos" }
+    items:
+      - year: 2023
+        title: "Futuros presentes. Nuevas opciones y riesgos en escenarios complejos"
+        authors: Mascareño, A., Rozas, J., Oteíza, B., Lang, B., & Henríquez, P. A.
+        venue: CEP, N° 648
+        url: https://www.cepchile.cl/investigacion/futuros-presentes-nuevas-opciones-riesgos-en-escenarios-complejos/
+      - year: 2023
+        title: "La Constitución pre-estallido de Michelle Bachelet. ¿Cuánto rinde hoy?"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: CEP, N° 644
+        url: https://www.cepchile.cl/investigacion/constitucion-pre-estallido-michelle-bachelet-cuanto-rinde-hoy/
+      - year: 2023
+        title: "Apruebo y rechazo en septiembre 2022. Expectativas, decepciones y horizontes comunes para el nuevo proceso constitucional"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: CEP, N° 639
+        url: https://www.cepchile.cl/investigacion/apruebo-rechazo-septiembre-2023-expectativas-decepciones-horizontes-para-el-nuevo-procesoconstitucional/
+      - year: 2023
+        title: "Mapuche en el sur: identidad, materialidad y expectativa"
+        authors: Mascareño, A., Rozas, J., Lang, B., Henríquez, P. A., & Izquierdo, S.
+        venue: CEP, N° 638
+        url: https://www.cepchile.cl/investigacion/mapuche-en-el-sur-identidad-materialidad-expectativa/
+      - year: 2022
+        title: "Polarización y fragmentación en la Cámara de Diputados. El escenario del Acuerdo por Chile"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: CEP, N° 637
+        url: https://www.cepchile.cl/investigacion/polarizacion-y-fragmentacion-camara-diputados-escenario-del-acuerdo-por-chile/
+      - year: 2022
+        title: "Partido de la Gente. La construcción del individualismo posdemocrático"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: CEP, N° 630
+        url: https://www.cepchile.cl/investigacion/partido-de-la-gente-la-construccion-del-individualismo-posdemocratico/
+      - year: 2022
+        title: "Zona de curvas. La Convención y la Cámara en comparación"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: CEP, N° 598
+        url: https://www.cepchile.cl/cep/puntos-de-referencia/puntos-de-referencia2010-2021/zona-de-curvas-la-convencion-y-la-camara-en-comparacion
+
+  - id: notes
+    title: { es: Research Notes de C22, en: C22 research notes }
+    items:
+      - year: 2022
+        title: "Nuevo estilo de baile: 4/7"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: C22, CEP
+        url: https://c22cepchile.cl/publicaciones/nuevo-estilo-de-baile-4-7/
+      - year: 2022
+        title: "Alphaville"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: C22, CEP
+        url: https://c22cepchile.cl/publicaciones/alphaville/
+      - year: 2022
+        title: "La prueba de ADN"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: C22, CEP
+        url: https://c22cepchile.cl/publicaciones/la-prueba-de-adn/
+      - year: 2022
+        title: "La ley de los grandes números"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: C22, CEP
+        url: https://c22cepchile.cl/publicaciones/la-ley-de-los-grandes-numeros/
+      - year: 2022
+        title: "Suma cero. Sentimientos convencionales"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: C22, CEP
+        url: https://c22cepchile.cl/publicaciones/suma-cero-sentimientos-convencionales/
+      - year: 2022
+        title: "La constitución de la Constitución"
+        authors: Mascareño, A., Rozas, J., Lang, B., & Henríquez, P. A.
+        venue: C22, CEP
+        url: https://c22cepchile.cl/publicaciones/la-constitucion-de-la-constitucion/

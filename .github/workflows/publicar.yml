@@ -1,0 +1,47 @@
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Todos los días a las 14:30 UTC, después de que el visor de arriendos se actualiza,
+    # para que las cifras del día aparezcan en la página.
+    - cron: "30 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Construir
+        run: python build.py
+      - name: Revisar enlaces internos
+        run: python scripts/revisar_enlaces.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site.nosync
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

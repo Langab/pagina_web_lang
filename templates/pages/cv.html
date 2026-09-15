@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% set es = lang == 'es' %}
+
+{% block main %}
+<header class="page-intro wrap">
+  <p class="kicker">{{ page.title | t }}</p>
+  <h1>{{ site.full_name }}</h1>
+  <div class="measure" style="font-size:var(--t-lg);color:var(--grafito)">{{ experience.summary | md }}</div>
+  <div class="actions" style="margin-top:1.75rem">
+    <a class="btn btn-solid" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
+    <a class="btn" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
+  </div>
+</header>
+
+<section class="section-tight wrap" aria-labelledby="jobs">
+  <div class="split">
+    <div class="split-sticky">
+      <h2 id="jobs" style="font-size:var(--t-2xl)">{{ 'Experiencia' if es else 'Work experience' }}</h2>
+    </div>
+    <ol class="timeline">
+      {% for job in experience.jobs %}
+      <li class="tl-item{{ ' is-current' if job.current is defined }}">
+        <span class="tl-when">{{ job.when | t }}</span>
+        <div class="tl-what">
+          <h3>{{ job.role | t }}</h3>
+          <p class="org">{{ job.org }}</p>
+          <p>{{ job.desc | md }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section-tight on-paper">
+  <div class="wrap split">
+    <div class="split-sticky"><h2 style="font-size:var(--t-2xl)">{{ 'Formación' if es else 'Education' }}</h2></div>
+    <div class="cv-grid">
+      {% for ed in experience.education %}
+      <div class="cv-card"><p style="margin-bottom:.4rem">{{ ed.when }}</p><h3>{{ ed.title | t }}</h3><p>{{ ed.org }}. {{ ed.note | t }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap split">
+    <div class="split-sticky">
+      <h2 style="font-size:var(--t-2xl)">{{ 'Herramientas' if es else 'Tools' }}</h2>
+      <p style="color:var(--grafito);margin-top:.75rem">{{ 'Cinco puntos es uso diario y avanzado.' if es else 'Five dots means daily, advanced use.' }}</p>
+    </div>
+    <div>
+      <div class="skills">
+        {% for sk in experience.skills %}
+        <div class="skill">
+          <b>{{ sk.name }}</b>
+          <span class="skill-dots" role="img" aria-label="{{ sk.level }} / 5">{% for i in range(5) %}<i class="{{ 'on' if i < sk.level }}"></i>{% endfor %}</span>
+          <small>{{ sk.note | t }}</small>
+        </div>
+        {% endfor %}
+      </div>
+      <h3 style="font-size:var(--t-lg);margin:2.5rem 0 1rem">{{ 'Idiomas' if es else 'Languages' }}</h3>
+      <ul class="chips">{% for l in experience.languages %}<li>{{ l.name | t }}, {{ l.level | t }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight on-paper">
+  <div class="wrap split">
+    <div class="split-sticky"><h2 style="font-size:var(--t-2xl)">{{ 'Docencia y charlas' if es else 'Teaching and talks' }}</h2></div>
+    <ul class="talk-list" style="margin:0">
+      <li><time>{{ 'Mayo 2024' if es else 'May 2024' }}</time><span><strong>{{ home.teaching.title | t }}.</strong> {{ 'Taller para estudiantes de Sociología, UDP.' if es else 'Workshop for sociology students, UDP.' }}</span></li>
+      {% for tk in experience.talks %}<li><time>{{ tk.when | t }}</time><span>{{ tk.title | t }}</span></li>{% endfor %}
+      {% for te in experience.teaching %}<li><time>{{ te.when }}</time><span><strong>{{ te.title | t }}</strong>, {{ te.org }}. {{ te.note | t }}</span></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap split">
+    <div class="split-sticky"><h2 style="font-size:var(--t-2xl)">{{ 'Referencias' if es else 'References' }}</h2></div>
+    <div class="refs">
+      {% for r in experience.references %}
+      <div><b>{{ r.name }}</b>{{ r.role | t }}<br><a href="mailto:{{ r.email }}">{{ r.email }}</a></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

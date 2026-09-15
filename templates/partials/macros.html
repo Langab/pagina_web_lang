@@ -1,0 +1,126 @@
+{# Piezas reutilizables. Se importan con: {% import "partials/macros.html" as m with context %} #}
+
+{% macro picture(src, alt="", cls="", loading="lazy", sizes="100vw", width=1600, height=1000) %}
+<picture>
+  <source srcset="{{ asset('img/' ~ src ~ '.webp') }}" type="image/webp">
+  <img src="{{ asset('img/' ~ src ~ '.jpg') }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %} loading="{{ loading }}" decoding="async" width="{{ width }}" height="{{ height }}">
+</picture>
+{% endmacro %}
+
+{% macro img(src, alt="", cls="", loading="lazy") %}
+{% if src.endswith('.png') or src.endswith('.svg') or src.endswith('.jpg') %}
+<img src="{{ asset('img/' ~ src) }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %} loading="{{ loading }}" decoding="async">
+{% else %}
+{{ picture(src, alt, cls, loading) }}
+{% endif %}
+{% endmacro %}
+
+{% macro browser(src, address, alt="", loading="lazy") %}
+<div class="browser">
+  <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ address }}</span></div>
+  {{ picture(src, alt, "", loading) }}
+</div>
+{% endmacro %}
+
+{% macro icon(name) %}
+{% if name == 'plus' %}<svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12"/></svg>
+{% elif name == 'close' %}<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
+{% elif name == 'out' %}<svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12"/></svg>
+{% elif name == 'down' %}<svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v10M3.5 7.5L8 12l4.5-4.5M3 14h10"/></svg>
+{% endif %}
+{% endmacro %}
+
+{# Fila del índice de proyectos en los que participé #}
+{% macro work_row(w) %}
+<li class="work-row" data-area="{{ w.area | join(' ') }}">
+  <button class="work-open" type="button" data-modal="p-{{ w.id }}"{% if w.preview is defined %} data-preview="{{ asset('img/' ~ w.preview) }}"{% endif %} aria-haspopup="dialog">
+    <span class="work-years">{{ w.years | t }}</span>
+    <span class="work-title">{{ w.title | t }}<small>{{ w.org | t }}</small></span>
+    <span class="work-role">{{ w.role | t }}</span>
+    <span class="work-plus">{{ icon('plus') }}<span class="sr-only">{{ ui.see_what_i_did }}</span></span>
+  </button>
+</li>
+{% endmacro %}
+
+{# Ventana emergente con el detalle de un proyecto #}
+{% macro work_modal(w) %}
+{% set d = w.modal %}
+<dialog class="modal" id="p-{{ w.id }}" aria-labelledby="p-{{ w.id }}-title">
+  <div class="modal-inner">
+    <button class="modal-close" type="button" data-close>{{ icon('close') }}<span class="sr-only">{{ ui.close }}</span></button>
+    <header class="modal-head">
+      <span class="work-years">{{ w.years | t }}</span>
+      <h2 id="p-{{ w.id }}-title">{{ w.title | t }}</h2>
+      <p class="org">{{ w.org | t }}. {{ w.role | t }}.</p>
+    </header>
+    {% if d.cover is defined %}
+    <figure class="modal-cover">
+      {{ img(d.cover.src, d.cover.alt | t if d.cover.alt is defined else "") }}
+      {% if d.cover.caption is defined %}<figcaption>{{ d.cover.caption | md }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+    <div class="modal-body">
+      <p class="intro">{{ d.intro | md }}</p>
+
+      {% if d.numbers is defined %}
+      <div class="numbers">
+        {% for n in d.numbers %}
+        <div><b data-count="{{ n.value }}"{% if n.suffix is defined %} data-suffix="{{ n.suffix }}"{% endif %}>{{ n.value }}{{ n.suffix | default('') }}</b><span>{{ n.label | t }}</span></div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if d.flow is defined %}
+      <div>
+        <h3>{{ d.flow_title | t if d.flow_title is defined else ui.how_it_works }}</h3>
+        <ol class="flow">
+          {% for s in d.flow %}<li><b>{{ s.title | t }}</b>{{ s.text | md }}</li>{% endfor %}
+        </ol>
+      </div>
+      {% endif %}
+
+      {% if d.did is defined %}
+      <div class="did">
+        <h3>{{ ui.what_i_did }}</h3>
+        <ul class="did-list">
+          {% for item in d.did %}<li><b>{{ item.title | t }}</b>{{ item.text | md }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if d.bars is defined %}
+      <div>
+        <h3>{{ d.bars.title | t }}</h3>
+        <div class="bars reveal-bars">
+          {% set top = d.bars['items'] | map(attribute='value') | max %}
+          {% for b in d.bars['items'] %}
+          <div class="bar"><span>{{ b.label | t }}</span><span class="bar-track"><span class="bar-fill" style="--v: {{ (b.value / top * 100) | round(1) }}%"></span></span><b>{{ b.display | default(b.value) }}</b></div>
+          {% endfor %}
+        </div>
+        {% if d.bars.note is defined %}<p class="note" style="margin-top:.75rem">{{ d.bars.note | md }}</p>{% endif %}
+      </div>
+      {% endif %}
+
+      {% if d.gallery is defined %}
+      <div class="gallery">
+        {% for g in d.gallery %}
+        <figure>{{ img(g.src, g.caption | t) }}<figcaption>{{ g.caption | md }}</figcaption></figure>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="modal-foot">
+        <div>
+          {% if d.tools is defined %}<ul class="chips" aria-label="{{ ui.tools }}">{% for tool in d.tools %}<li>{{ tool | t }}</li>{% endfor %}</ul>{% endif %}
+          {% if d.note is defined %}<p class="note" style="margin-top:.75rem">{{ d.note | md }}</p>{% endif %}
+        </div>
+        {% if d.links is defined %}
+        <div class="actions">
+          {% for l in d.links %}<a class="btn btn-small" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | t }} {{ icon('out') }}</a>{% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</dialog>
+{% endmacro %}

@@ -1,0 +1,172 @@
+{% import "partials/macros.html" as m with context %}
+{% set es = lang == 'es' %}
+
+<section id="{{ 'problema' if es else 'problem' }}">
+  <h2>{{ 'El problema: buscar arriendo es un segundo trabajo' if es else 'The problem: apartment hunting is a second job' }}</h2>
+  {% if es %}
+  <p>Todo partió con una conversación nada técnica. Con mi compañero de casa decidimos mudarnos y teníamos claro lo que queríamos: <strong>tres dormitorios</strong> (dos para dormir y uno de oficina), cerca de <strong>Parque Bustamante, Lastarria, Barrio Italia o Manuel Montt</strong>, y un tope de <strong>$800.000 al mes con gastos comunes incluidos</strong>.</p>
+  <p>Suena razonable. Buscarlo a mano, no tanto:</p>
+  <ul>
+    <li>Los avisos están repartidos en varios portales y el mismo departamento aparece dos o tres veces.</li>
+    <li>Casi nadie publica los gastos comunes, así que un arriendo de $700.000 puede terminar costando $850.000.</li>
+    <li>Unos precios vienen en UF y otros en pesos.</li>
+    <li>Ningún buscador entiende «cerca del metro» ni «un dos dormitorios grande que sirva de tres».</li>
+  </ul>
+  <p>Después de una semana de pestañas abiertas y planillas a medio llenar hice lo que haría cualquier analista. Convertí la pregunta en un problema de datos y construí la herramienta que quería usar.</p>
+  {% else %}
+  <p>It started with a very non-technical conversation. My flatmate and I decided to move and we knew exactly what we wanted: <strong>three bedrooms</strong> (two to sleep in, one as an office), near <strong>Parque Bustamante, Lastarria, Barrio Italia or Manuel Montt</strong>, and a cap of <strong>CLP 800,000 a month including building fees</strong>.</p>
+  <p>Sounds reasonable. Searching for it by hand, less so:</p>
+  <ul>
+    <li>Listings are spread across several sites and the same apartment shows up two or three times.</li>
+    <li>Almost nobody publishes building fees, so a CLP 700,000 rent can end up costing 850,000.</li>
+    <li>Some prices come in UF (an inflation-indexed unit) and others in pesos.</li>
+    <li>No search engine understands "close to the metro" or "a big two-bedroom that works as a three".</li>
+  </ul>
+  <p>After a week of open tabs and half-filled spreadsheets I did what any analyst would do. I turned the question into a data problem and built the tool I wanted to use.</p>
+  {% endif %}
+</section>
+
+<section id="{{ 'hoy' if es else 'today' }}">
+  <h2>{{ 'Lo que encontró esta mañana' if es else 'What it found this morning' }}</h2>
+  <p>{{ 'Estas cifras se leen del visor real cada vez que se publica este sitio.' if es else 'These numbers are read from the live finder every time this site is published.' }}</p>
+  <div class="live">
+    <div><b data-count="{{ live.total }}">{{ live.total | num }}</b><span>{{ 'avisos revisados' if es else 'listings checked' }}</span></div>
+    <div><b data-count="{{ live.new }}">{{ live.new | num }}</b><span>{{ 'nuevos desde la corrida anterior' if es else 'new since the previous run' }}</span></div>
+    <div><b data-count="{{ live.days }}">{{ live.days }}</b><span>{{ 'días de historia guardados' if es else 'days of history kept' }}</span></div>
+    <div><b data-count="{{ live.match }}" style="color:#1FA971">{{ live.match }}</b><span>{{ 'match perfecto' if es else 'perfect matches' }}</span></div>
+  </div>
+  <p class="live-note"><i aria-hidden="true"></i>{{ 'Actualizado' if es else 'Updated' }} {{ live.generated }}</p>
+
+  <div class="embed">
+    <div class="embed-cover">
+      {{ m.picture('projects/visor-arriendos/lista', '') }}
+      <div>
+        <button class="btn btn-solid" type="button" data-embed="https://langab.github.io/visor_arriendos/viewer/" data-title="{{ 'Visor de arriendos en vivo' if es else 'Live rental finder' }}">{{ 'Cargar el visor aquí' if es else 'Load the finder here' }}</button>
+        <p>{{ 'Es la versión real. Prueba el botón «Match perfecto» y la pestaña de ofertas.' if es else "It's the real thing. Try the Perfect match button and the deals tab." }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="{{ 'arquitectura' if es else 'architecture' }}">
+  <h2>{{ 'Un pipeline de punta a punta' if es else 'An end-to-end pipeline' }}</h2>
+  <p>{{ 'El diseño es simple a propósito. Cada pieza hace una sola cosa y se puede correr por separado.' if es else 'The design is deliberately simple. Each piece does one thing and can run on its own.' }}</p>
+  <ol class="pipeline">
+    <li><span class="node">01</span><div><b>Scrapers</b><span>{{ 'Un archivo por portal, todos con la misma salida.' if es else 'One file per site, all with the same output.' }} <code>scrapers/*.py</code></span></div></li>
+    <li><span class="node">02</span><div><b>{{ 'Consolidar' if es else 'Consolidate' }}</b><span>{{ 'Une fuentes, elimina duplicados y calcula el total con gastos comunes.' if es else 'Merges sources, removes duplicates and computes the total cost with fees.' }} <code>consolidate.py</code></span></div></li>
+    <li><span class="node">03</span><div><b>{{ 'Geocodificar' if es else 'Geocode' }}</b><span>{{ 'Direcciones a coordenadas con OpenStreetMap y caché.' if es else 'Addresses to coordinates with OpenStreetMap and a cache.' }} <code>geocode.py</code></span></div></li>
+    <li><span class="node">04</span><div><b>{{ 'Enriquecer' if es else 'Enrich' }}</b><span>{{ 'Playwright abre las fichas importantes para sacar gastos reales, antigüedad y mascotas.' if es else 'Playwright opens key listings to extract real fees, building age and pet policy.' }} <code>enrich_pi.py</code></span></div></li>
+    <li><span class="node">05</span><div><b>{{ 'Visor estático' if es else 'Static viewer' }}</b><span>{{ 'HTML, CSS y JavaScript con Leaflet. Sin servidor ni base de datos.' if es else 'HTML, CSS and JavaScript with Leaflet. No server, no database.' }} <code>viewer/</code></span></div></li>
+    <li><span class="node">06</span><div><b>{{ 'Todos los días' if es else 'Every day' }}</b><span>{{ 'launchd lo corre a las 10:00, guarda la foto del día y publica en GitHub Pages.' if es else 'launchd runs it at 10:00, saves the daily snapshot and publishes to GitHub Pages.' }}</span></div></li>
+  </ol>
+  <div class="terminal" data-type='{{ [
+    {"c": "p", "t": "$ python run_all.py"},
+    {"c": "dim", "t": "→ portalinmobiliario   " ~ ("barrios objetivo" if es else "target neighborhoods")},
+    {"c": "dim", "t": "→ chilepropiedades     ok"},
+    {"c": "dim", "t": "→ yapo (camoufox)      ok"},
+    {"c": "", "t": ("consolidando " if es else "consolidating ") ~ (live.total | num) ~ (" avisos, deduplicando…" if es else " listings, deduplicating…")},
+    {"c": "", "t": ("geocodificando con caché… " if es else "geocoding with cache… ") ~ "ok"},
+    {"c": "ok", "t": "✓ " ~ live.match ~ (" match perfecto · visor publicado" if es else " perfect matches · viewer published")}
+  ] | tojson }}'>
+    <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="terminal-body" aria-label="{{ 'Salida del comando run_all.py' if es else 'Output of run_all.py' }}"></div>
+  </div>
+  <p>{{ 'La decisión más importante fue definir un esquema común antes de escribir el primer scraper. Cada portal tiene su HTML, pero todos devuelven la misma estructura. Agregar un portal nuevo es escribir un archivo que devuelva una lista de avisos y nada más.' if es else 'The most important decision was defining a shared schema before writing the first scraper. Every site has its own HTML, but all of them return the same structure. Adding a new site means writing one file that returns a list of listings, nothing else.' }}</p>
+</section>
+
+<section id="scraping">
+  <h2>{{ 'Scraping: cada portal es un mundo' if es else 'Scraping: every site is its own world' }}</h2>
+  <div style="overflow-x:auto">
+    <table class="margin-table">
+      <thead><tr><th>{{ 'Portal' if es else 'Site' }}</th><th>{{ 'Técnica' if es else 'Technique' }}</th><th>{{ 'Resultado' if es else 'Result' }}</th></tr></thead>
+      <tbody>
+        <tr><td>Portal Inmobiliario</td><td>requests + HTML</td><td>{{ 'Fuente principal, por barrio' if es else 'Main source, by neighborhood' }}</td></tr>
+        <tr><td>Chilepropiedades</td><td>requests + HTML</td><td>{{ 'Rápido y completo' if es else 'Fast and complete' }}</td></tr>
+        <tr><td>Yapo</td><td>Scrapling / Camoufox</td><td>{{ 'Bloquea bots, unos 40 s por página' if es else 'Blocks bots, about 40 s per page' }}</td></tr>
+        <tr><td>Facebook Marketplace</td><td>{{ 'CSV manual' if es else 'Manual CSV' }}</td><td>{{ 'Scrapearlo viola sus términos' if es else 'Scraping it breaks their terms' }}</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>{{ 'Un clásico chileno: los precios llegan como «$ 750.000», «UF 13,5» o «13,5 UF». La conversión usa el valor de la UF del día desde mindicador.cl, con un respaldo si la API no responde.' if es else 'A Chilean classic: prices arrive as "$ 750.000", "UF 13,5" or "13,5 UF". The conversion uses that day’s UF value from mindicador.cl, with a fallback if the API is down.' }}</p>
+<pre class="code"><code><span class="k">def</span> parse_precio(texto: str) -&gt; int:
+    t = texto.upper().replace(<span class="s">"\xa0"</span>, <span class="s">" "</span>)
+    num = re.sub(<span class="s">r"[^\d.,]"</span>, <span class="s">""</span>, t)   <span class="c"># solo dígitos, comas y puntos</span>
+    <span class="k">if</span> <span class="s">"UF"</span> <span class="k">in</span> t:                      <span class="c"># la UF usa coma decimal</span>
+        <span class="k">return</span> round(float(num.replace(<span class="s">"."</span>, <span class="s">""</span>).replace(<span class="s">","</span>, <span class="s">"."</span>)) * uf_hoy())
+    <span class="k">return</span> int(num.replace(<span class="s">"."</span>, <span class="s">""</span>))</code></pre>
+  <p>{{ 'Entre los arriendos se colaban avisos de venta. La regla para detectarlos fue simple: ningún arriendo mensual cuesta 158 millones de pesos.' if es else 'Sale listings kept sneaking in among the rentals. The rule to catch them was simple: no monthly rent costs 158 million pesos.' }}</p>
+</section>
+
+<section id="{{ 'limpieza' if es else 'cleaning' }}">
+  <h2>{{ 'El mismo departamento con tres caras' if es else 'Same apartment, three faces' }}</h2>
+  {% if es %}
+  <p>Con más de mil avisos de varias fuentes, los duplicados son inevitables. La deduplicación va en dos pasos: primero un <strong>id estable</strong> (el hash de la URL) y después una clave de <strong>dirección normalizada más precio</strong>, que atrapa el mismo aviso publicado por dos corredoras.</p>
+  <p>Para el mapa hacían falta coordenadas. Nominatim, de OpenStreetMap, es gratis pero acepta una consulta por segundo. Por eso todo pasa por un <strong>caché</strong> que solo consulta direcciones nuevas. Si una dirección no se encuentra, cae en cascada al centro del barrio y luego al de la comuna, con un pequeño desplazamiento para que los pins no se apilen. Esos avisos quedan marcados como ubicación aproximada.</p>
+  <p>Y «cerca del metro» no requirió scraping. Con las coordenadas de cada aviso y de 23 estaciones, la fórmula de haversine da la distancia. Cada tarjeta dice, por ejemplo, «Santa Isabel, 257 m».</p>
+  {% else %}
+  <p>With over a thousand listings from several sources, duplicates are inevitable. Deduplication happens in two passes: first a <strong>stable id</strong> (a hash of the URL), then a key made of the <strong>normalized address plus price</strong>, which catches the same listing posted by two agencies.</p>
+  <p>The map needed coordinates. OpenStreetMap's Nominatim is free but allows one request per second, so everything goes through a <strong>cache</strong> that only looks up new addresses. If an address can't be found, it falls back to the neighborhood center and then the municipality center, with a small offset so pins don't stack. Those listings are flagged as approximate.</p>
+  <p>And "close to the metro" needed no scraping at all. With each listing's coordinates and those of 23 stations, the haversine formula gives the distance. Every card says, for example, "Santa Isabel, 257 m".</p>
+  {% endif %}
+</section>
+
+<section id="match">
+  <h2>{{ 'Codificar lo que de verdad buscábamos' if es else 'Encoding what we actually wanted' }}</h2>
+  <p>{{ 'No bastaba con «tres dormitorios bajo $800.000». Un dos dormitorios de 68 m² o más también servía. Esa búsqueda humana se volvió una regla:' if es else 'It wasn’t just "three bedrooms under 800,000". A two-bedroom of 68 m² or more also worked. That human criterion became a rule:' }}</p>
+<pre class="code"><code><span class="c"># un 2D amplio sirve como oficina y también califica</span>
+sirve = dorm &gt;= <span class="s">3</span> <span class="k">or</span> (dorm &gt;= <span class="s">2</span> <span class="k">and</span> m2 &gt;= <span class="s">68</span>)
+match_perfecto = sirve <span class="k">and</span> total_con_gastos &lt;= <span class="s">800_000</span> <span class="k">and</span> en_barrio_objetivo</code></pre>
+  <p>{{ 'El resultado es un embudo. Así se veía el 15 de septiembre de 2026:' if es else 'The result is a funnel. This is how it looked on September 15, 2026:' }}</p>
+  <div class="funnel" role="img" aria-label="{{ 'Embudo: 1.273 avisos, 1.003 en presupuesto, 759 en barrio objetivo, 72 con tres dormitorios o más, 24 match perfecto' if es else 'Funnel: 1,273 listings, 1,003 within budget, 759 in a target neighborhood, 72 with three or more bedrooms, 24 perfect matches' }}">
+    {% set steps = [(1273, 'Avisos revisados', 'Listings checked'), (1003, 'Dentro del presupuesto', 'Within budget'), (759, 'En un barrio objetivo', 'In a target neighborhood'), (72, 'Tres dormitorios o más', 'Three bedrooms or more'), (24, 'Match perfecto', 'Perfect match')] %}
+    {% for n, l_es, l_en in steps %}
+    <div class="funnel-step"><em>{{ l_es if es else l_en }}</em><div class="funnel-bar"><span style="--v: {{ [n / 1273 * 100, 1.5] | max }}%"></span></div><b>{{ n | num }}</b></div>
+    {% endfor %}
+  </div>
+  <p>{{ 'Cada aviso recibe además un puntaje de 0 a 100 que pondera presupuesto, dormitorios, barrio y metro. Lo más prometedor siempre queda arriba.' if es else 'Each listing also gets a 0–100 score weighing budget, bedrooms, neighborhood and metro distance. The most promising ones always float to the top.' }}</p>
+</section>
+
+<section id="{{ 'ofertas' if es else 'deals' }}">
+  <h2>{{ '¿Está caro o es una oferta?' if es else 'Is it expensive or a deal?' }}</h2>
+  <p>{{ 'Un precio solo es caro comparado con algo parecido. El pipeline compara cada arriendo con la mediana de su grupo, y si el grupo tiene menos de cinco avisos, sube a uno más amplio:' if es else 'A price is only expensive compared with something similar. The pipeline compares each rent with the median of its group, and if the group has fewer than five listings, it moves up to a broader one:' }}</p>
+  <ol class="flow" style="margin:1.5rem 0">
+    <li><b>{{ 'Barrio' if es else 'Neighborhood' }}</b>{{ '+ dormitorios + baños + m²' if es else '+ bedrooms + bathrooms + m²' }}</li>
+    <li><b>{{ 'Barrio' if es else 'Neighborhood' }}</b>{{ '+ dormitorios + m²' if es else '+ bedrooms + m²' }}</li>
+    <li><b>{{ 'Comuna' if es else 'Municipality' }}</b>{{ '+ dormitorios + m²' if es else '+ bedrooms + m²' }}</li>
+    <li><b>{{ 'Comuna' if es else 'Municipality' }}</b>{{ '+ dormitorios' if es else '+ bedrooms' }}</li>
+  </ol>
+  <p>{{ 'Un aviso 10% bajo la mediana de su grupo se marca como oferta y tiene su propia pestaña. Ahí el visor dejó de mostrar solo qué hay y empezó a mostrar qué conviene.' if es else 'A listing 10% below its group median is flagged as a deal and gets its own tab. That’s when the finder stopped showing what exists and started showing what’s worth it.' }}</p>
+  <div class="gallery" style="margin-top:2rem">
+    <figure>{{ m.picture('projects/visor-arriendos/lista', '') }}<figcaption>{{ 'La lista: precio, total con gastos, m², antigüedad, mascotas y metro.' if es else 'The list: price, total with fees, m², building age, pets and metro.' }}</figcaption></figure>
+    <figure>{{ m.picture('projects/visor-arriendos/metricas', '') }}<figcaption>{{ 'Las métricas: el embudo y precios promedio por barrio.' if es else 'Metrics: the funnel and average prices by neighborhood.' }}</figcaption></figure>
+  </div>
+</section>
+
+<section id="{{ 'tiempo' if es else 'time' }}">
+  <h2>{{ 'Se actualiza solo y recuerda' if es else 'It updates itself and remembers' }}</h2>
+  <p>{{ 'Un LaunchAgent de macOS corre todo cada mañana y hace push a GitHub Pages. Cada corrida guarda una foto completa del mercado, y con 30 días de fotos el visor sabe qué avisos son nuevos, cuáles bajaron de precio y cuáles desaparecieron (probablemente se arrendaron). Hay un selector para ver el mercado de cualquier día del último mes.' if es else 'A macOS LaunchAgent runs everything each morning and pushes to GitHub Pages. Every run stores a full snapshot of the market, and with 30 days of snapshots the finder knows which listings are new, which dropped in price and which disappeared (probably rented). A date picker shows the market on any day of the past month.' }}</p>
+  <p class="pull">{{ 'De mil pestañas abiertas a un par de docenas de candidatos concretos cada mañana.' if es else 'From a thousand open tabs to a couple dozen real candidates every morning.' }}</p>
+</section>
+
+<section id="{{ 'aprendizajes' if es else 'lessons' }}">
+  <h2>{{ 'Lo que me llevo' if es else 'What I took away' }}</h2>
+  <ul>
+    {% if es %}
+    <li><strong>Esquema común primero</strong>, scrapers después. Sumar fuentes pasa a ser trivial.</li>
+    <li><strong>Caché en todo lo caro.</strong> Volver a correr es barato y amable con los servicios externos.</li>
+    <li><strong>Respaldos en cascada.</strong> El pipeline no se cae por un dato faltante.</li>
+    <li><strong>Salida estática.</strong> Hosting gratis y cero mantención.</li>
+    <li><strong>Automatizar desde el día uno.</strong> Los datos se mantienen frescos sin acordarse.</li>
+    {% else %}
+    <li><strong>Shared schema first</strong>, scrapers second. Adding sources becomes trivial.</li>
+    <li><strong>Cache everything expensive.</strong> Reruns are cheap and polite to external services.</li>
+    <li><strong>Cascading fallbacks.</strong> The pipeline never breaks over one missing value.</li>
+    <li><strong>Static output.</strong> Free hosting, zero maintenance.</li>
+    <li><strong>Automate from day one.</strong> The data stays fresh without anyone remembering to run it.</li>
+    {% endif %}
+  </ul>
+  <div class="callout callout-cobalto">
+    <p>{{ '¿Lo quieres para tu búsqueda? Todos los criterios viven en config.py: cambia comunas, presupuesto y barrios, corre python run_all.py y tienes tu propio visor.' if es else 'Want it for your own search? All the criteria live in config.py: change the municipalities, budget and neighborhoods, run python run_all.py and you have your own finder.' }}</p>
+    <div class="actions" style="margin-top:1rem"><a class="btn btn-small btn-solid" href="https://github.com/Langab/visor_arriendos" target="_blank" rel="noopener">{{ 'Ver el código' if es else 'See the code' }} {{ m.icon('out') }}</a></div>
+  </div>
+</section>

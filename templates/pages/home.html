@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% import "partials/macros.html" as m with context %}
+
+{% block head %}
+<link rel="preload" as="image" href="{{ asset('img/photos/hero.webp') }}" type="image/webp">
+{% endblock %}
+
+{% block main %}
+{% set h = home.hero %}
+
+{# ── Hero ─────────────────────────────────────────────────────────── #}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="status"><i aria-hidden="true"></i>{{ h.status | t }}</p>
+      <h1>{% for line in h.title | t %}<span class="line"><span>{{ line }}</span></span>{% endfor %}</h1>
+      <p class="hero-lede">{{ h.lede | md }}</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#{{ 'proyectos' if lang == 'es' else 'projects' }}">{{ h.cta_primary | t }}</a>
+        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ h.cta_secondary | t }}</a>
+      </div>
+      <div class="hero-meta">
+        {% for item in h.meta %}
+        {% set value = live.total if item.value == 'live_total' else item.value | int %}
+        <div><b data-count="{{ value }}">{{ value | num }}</b>{{ item.label | t }}</div>
+        {% endfor %}
+      </div>
+    </div>
+    <figure class="hero-photo" data-dots-photo>
+      <picture>
+        <source srcset="{{ asset('img/photos/hero.webp') }}" type="image/webp">
+        <img src="{{ asset('img/photos/hero.jpg') }}" alt="{{ h.photo_alt | t }}" width="1100" height="1375" fetchpriority="high">
+      </picture>
+      <canvas aria-hidden="true"></canvas>
+      <figcaption><span><b>{{ site.full_name }}</b>{{ h.photo_caption | t }}</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+{# ── Instituciones ────────────────────────────────────────────────── #}
+<section class="logos" aria-label="{{ home.logos.label | t }}">
+  <div class="wrap logos-row">
+    <p>{{ home.logos.label | t }}</p>
+    <ul class="logos-list">
+      {% for logo in home.logos['items'] %}
+      <li class="{{ 'is-square' if logo.square is defined }}{{ ' is-dark' if logo.dark is defined }}"><a href="{{ logo.url }}" target="_blank" rel="noopener" title="{{ logo.name }}"><img src="{{ asset('img/' ~ logo.src) }}" alt="{{ logo.name }}" loading="lazy"></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ── Relato con puntos ────────────────────────────────────────────── #}
+{% set s = home.story %}
+<section class="section on-dark" aria-labelledby="story-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ s.kicker | t }}</p>
+        <h2 id="story-title">{{ s.title | t }}</h2>
+      </div>
+      <p>{{ s.lede | t }}</p>
+    </div>
+    <div class="story">
+      <div class="story-stage" data-story>
+        <canvas aria-hidden="true"></canvas>
+        <div class="stage-label"><span data-story-label>{{ s.steps[0].label | t }}</span><span aria-hidden="true">●</span></div>
+      </div>
+      <ol class="story-steps">
+        {% for step in s.steps %}
+        <li class="story-step{{ ' is-active' if loop.first }}" data-step data-label="{{ step.label | t }}">
+          <span class="step-n" aria-hidden="true"></span>
+          <h3>{{ step.title | t }}</h3>
+          <p>{{ step.text | md }}</p>
+          <ul class="chips">{% for tool in step.tools %}<li>{{ tool | t }}</li>{% endfor %}</ul>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+{# ── Laboratorio personal ─────────────────────────────────────────── #}
+<section class="section" id="{{ 'proyectos' if lang == 'es' else 'projects' }}" aria-labelledby="lab-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ home.lab.kicker | t }}</p>
+        <h2 id="lab-title">{{ home.lab.title | t }}</h2>
+      </div>
+      <p>{{ home.lab.lede | t }}</p>
+    </div>
+    <div class="lab-list">
+      {% for p in projects.lab %}
+      <article class="lab-item" data-reveal>
+        <a class="lab-visual" href="{{ project_url(p) }}" data-tilt tabindex="-1" aria-hidden="true">
+          {{ m.browser(p.image, p.address) }}
+        </a>
+        <div class="lab-body">
+          <p class="kicker">{{ p.status | t }}</p>
+          <h3><a href="{{ project_url(p) }}">{{ p.title | t }}</a></h3>
+          <p class="hook">{{ p.hook | t }}</p>
+          <ul class="facts">{% for f in p.facts %}<li>{{ f | md }}</li>{% endfor %}</ul>
+          <ul class="chips">{% for tag in p.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
+          <div class="actions">
+            <a class="btn btn-solid" href="{{ project_url(p) }}">{{ ui.read_story }}</a>
+            {% if p.links is defined %}<a class="btn" href="{{ p.links[0].url }}" target="_blank" rel="noopener">{{ p.links[0].label | t }} {{ m.icon('out') }}</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="more-experiments" data-reveal>
+      <h3>{{ home.lab.more_title | t }}</h3>
+      <p>{{ home.lab.more_text | t }}</p>
+      <div class="mini-grid">
+        {% for e in projects.experiments %}
+        <a href="{{ e.url }}" target="_blank" rel="noopener"><b>{{ e.title | t }}</b><span>{{ e.text | t }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── Proyectos en los que participé ───────────────────────────────── #}
+<section class="section on-paper" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ home.work.kicker | t }}</p>
+        <h2 id="work-title">{{ home.work.title | t }}</h2>
+      </div>
+      <p>{{ home.work.lede | t }}</p>
+    </div>
+    {% include "partials/work_index.html" %}
+  </div>
+</section>
+
+{# ── Trayectoria ──────────────────────────────────────────────────── #}
+<section class="section" aria-labelledby="career-title">
+  <div class="wrap split">
+    <div class="split-sticky">
+      <p class="kicker">{{ home.career.kicker | t }}</p>
+      <h2 id="career-title" style="font-size: var(--t-3xl); margin-bottom: 1rem;">{{ home.career.title | t }}</h2>
+      <p style="color: var(--grafito); font-size: var(--t-lg); max-width: 36ch;">{{ home.career.lede | t }}</p>
+      <div class="actions" style="margin-top: 1.75rem;">
+        <a class="btn btn-solid" href="{{ url('cv') }}">{{ home.career.cta | t }}</a>
+        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}PDF</a>
+      </div>
+    </div>
+    <ol class="timeline">
+      {% for job in experience.jobs if job.home is defined %}
+      <li class="tl-item{{ ' is-current' if job.current is defined }}">
+        <span class="tl-when">{{ job.when | t }}</span>
+        <div class="tl-what">
+          <h3>{{ job.role | t }}</h3>
+          <p class="org">{{ job.org }}</p>
+          <p>{{ job.desc | md }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ── Docencia ─────────────────────────────────────────────────────── #}
+{% set tch = home.teaching %}
+<section class="section on-dark" aria-labelledby="teach-title">
+  <div class="wrap talk">
+    <figure class="talk-photo" data-reveal style="margin:0">
+      {{ m.picture('photos/charla', h.photo_alt | t, width=1600, height=1103) }}
+    </figure>
+    <div>
+      <p class="kicker">{{ tch.kicker | t }}</p>
+      <h2 id="teach-title" style="font-size: var(--t-3xl); margin-bottom: 1.25rem;">{{ tch.title | t }}</h2>
+      <p style="color: var(--noche-grafito); font-size: var(--t-lg); line-height: 1.55;">{{ tch.text | t }}</p>
+      <div class="slides" aria-label="{{ tch.slides_label | t }}">
+        <p class="kicker" style="margin-top:1rem">{{ tch.slides_label | t }}</p>
+        <ol class="slides-track" style="list-style:none;margin:0;padding:0 0 .75rem">
+          {% for sl in tch.slides %}
+          <li class="slide-card"><b>{{ sl.title | t }}</b><span>{{ sl.text | t }}</span></li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── Publicaciones ────────────────────────────────────────────────── #}
+{% set pubs = home.publications %}
+{% set feat = publications.groups[0]['items'][0] %}
+<section class="section" aria-labelledby="pubs-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ pubs.kicker | t }}</p>
+        <h2 id="pubs-title">{{ pubs.title | t }}</h2>
+      </div>
+      <p>{{ publications.intro | t }}</p>
+    </div>
+    <a class="pub-feature" href="{{ feat.url }}" target="_blank" rel="noopener" style="text-decoration:none" data-reveal>
+      <div>
+        <h3>{{ feat.title }}</h3>
+        <p>{{ feat.authors }} ({{ feat.year }}). {{ feat.venue }}.</p>
+      </div>
+      <span class="btn btn-solid">{{ ui.read_article }} {{ m.icon('out') }}</span>
+    </a>
+    <div class="pub-counts">
+      {% for c in pubs.counts %}<div><b data-count="{{ c.value }}">{{ c.value }}</b>{{ c.label | t }}</div>{% endfor %}
+      <div style="align-self:end"><a class="btn" href="{{ url('publications') }}">{{ pubs.cta | t }}</a></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block dialogs %}
+{% for w in projects.work %}{{ m.work_modal(w) }}{% endfor %}
+{% endblock %}
