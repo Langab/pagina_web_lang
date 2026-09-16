@@ -2,13 +2,13 @@
 {% set es = lang == 'es' %}
 
 <section id="{{ 'curiosidad' if es else 'curiosity' }}">
-  <h2>{{ 'Una pregunta de domingo' if es else 'A Sunday question' }}</h2>
+  <h2>{{ 'El punto de partida' if es else 'The starting point' }}</h2>
   {% if es %}
-  <p>La app Salud del iPhone guarda todo lo que mide, desde 2017 en mi caso. Pero te lo muestra por día, por semana o por mes. Nunca los nueve años juntos. Un domingo de septiembre me ganó la curiosidad: ¿qué pasa si miro todo de una vez, como miraría una encuesta?</p>
-  <p>Pedí la exportación completa. Llegó un zip con un archivo XML de <strong>1,24 GB</strong>. Ningún Excel lo abre. Con Claude Code de copiloto, en unas horas lo convertimos en un informe.</p>
+  <p>La app Salud del iPhone guarda todo lo que mide, desde 2017 en mi caso. Pero te lo muestra por día, por semana o por mes. Nunca los nueve años juntos. La pregunta era operativa: qué se puede extraer de nueve años de registros si se los trata como una base de datos y no como una aplicación.</p>
+  <p>Pedí la exportación completa. Llegó un zip con un archivo XML de <strong>1,24 GB</strong>. Ningún Excel lo abre. En unas horas lo convertí en un informe navegable, con Claude Code como apoyo.</p>
   {% else %}
-  <p>The iPhone Health app stores everything it measures, since 2017 in my case. But it shows it to you by day, week or month. Never all nine years together. One Sunday in September curiosity won: what happens if I look at all of it at once, the way I'd look at a survey?</p>
-  <p>I requested the full export. A zip arrived with a <strong>1.24 GB</strong> XML file. No spreadsheet opens that. With Claude Code as copilot, we turned it into a report within a few hours.</p>
+  <p>The iPhone Health app stores everything it measures, since 2017 in my case. But it shows it to you by day, week or month. Never all nine years together. The question was operational: what can be extracted from nine years of records if you treat them as a database rather than an app.</p>
+  <p>I requested the full export. A zip arrived with a <strong>1.24 GB</strong> XML file. No spreadsheet opens that. In a few hours I turned it into a navigable report, with Claude Code as support.</p>
   {% endif %}
   <div class="live">
     <div><b data-count="2.74" data-suffix="{{ ' M' }}">2,74 M</b><span>{{ 'registros' if es else 'records' }}</span></div>
@@ -27,14 +27,14 @@
     <li><span class="node">svg</span><div><b>{{ 'Dibujar' if es else 'Draw' }}</b><span>{{ 'Una pequeña librería propia de gráficos SVG, sin dependencias.' if es else 'A tiny home-made SVG chart library with no dependencies.' }}</span></div></li>
     <li><span class="node">html</span><div><b>{{ 'Explicar' if es else 'Explain' }}</b><span>{{ 'Un informe que funciona sin internet. Cada gráfico dice cómo leerlo y compara con rangos de referencia publicados.' if es else 'A report that works offline. Every chart explains how to read it and compares against published reference ranges.' }}</span></div></li>
   </ol>
-  <p>{{ 'El detalle que más me gustó: el iPhone y el reloj cuentan los mismos pasos. Si los sumas, caminaste el doble. La solución fue quedarse, hora por hora, con el dispositivo que más contó.' if es else 'My favorite detail: the iPhone and the watch count the same steps. Add them up and you walked twice as much. The fix was keeping, hour by hour, whichever device counted more.' }}</p>
+  <p>{{ 'Un problema clásico de doble conteo: el teléfono y el reloj registran los mismos pasos. Sumarlos duplica la cifra. La solución fue quedarse, hora por hora, con el dispositivo que más registró.' if es else 'A classic double-counting problem: the phone and the watch record the same steps. Adding them doubles the figure. The fix was keeping, hour by hour, whichever device recorded more.' }}</p>
 <pre class="code"><code><span class="c"># pasos por hora y por dispositivo → el máximo de cada hora → suma del día</span>
 por_hora = df.groupby([<span class="s">"hora"</span>, <span class="s">"fuente"</span>]).pasos.sum()
 pasos_dia = por_hora.groupby(<span class="s">"hora"</span>).max().resample(<span class="s">"D"</span>).sum()</code></pre>
 </section>
 
 <section id="{{ 'pasos' if es else 'steps' }}">
-  <h2>{{ 'Nueve años caminando' if es else 'Nine years of walking' }}</h2>
+  <h2>{{ 'Pasos diarios por año' if es else 'Daily steps per year' }}</h2>
   <p>{{ 'Mediana de pasos diarios por año. La mediana, y no el promedio, para que un día de trekking no infle el año.' if es else 'Median daily steps per year. The median, not the mean, so one hiking day doesn’t inflate the whole year.' }}</p>
   {% set years = [('2017', 6133, ''), ('2018', 8010, ''), ('2019', 8524, ''), ('2020', 3591, 'low'), ('2021', 0, 'gap'), ('2022', 9686, 'thin'), ('2023', 9040, ''), ('2024', 9604, ''), ('2025', 13867, 'top'), ('2026', 9395, '')] %}
   <div class="vbars reveal-bars" role="img" aria-label="{{ 'Pasos diarios por año: 2017 6.133; 2018 8.010; 2019 8.524; 2020 3.591; 2021 sin datos; 2022 9.686; 2023 9.040; 2024 9.604; 2025 13.867; 2026 9.395' if es else 'Daily steps per year: 2017 6,133; 2018 8,010; 2019 8,524; 2020 3,591; 2021 no data; 2022 9,686; 2023 9,040; 2024 9,604; 2025 13,867; 2026 9,395' }}">
@@ -59,7 +59,7 @@ pasos_dia = por_hora.groupby(<span class="s">"hora"</span>).max().resample(<span
 </section>
 
 <section id="{{ 'bici' if es else 'bike' }}">
-  <h2>{{ 'El año de la bicicleta' if es else 'The year of the bike' }}</h2>
+  <h2>{{ 'Actividad registrada por año' if es else 'Recorded activity by year' }}</h2>
   <p>{{ '1.183 entrenamientos registrados, unas 535 horas. El reloj llegó a fines de 2022 y desde ahí se ve cómo cambian las costumbres:' if es else '1,183 recorded workouts, about 535 hours. The watch arrived in late 2022 and from then on you can see habits change:' }}</p>
   {% set wk = [('2022', 15, 7, 2, 0), ('2023', 132, 243, 12, 0), ('2024', 180, 112, 11, 1), ('2025', 349, 17, 2, 2), ('2026', 78, 18, 0, 2)] %}
   <div class="bars">
@@ -75,12 +75,12 @@ pasos_dia = por_hora.groupby(<span class="s">"hora"</span>).max().resample(<span
 </section>
 
 <section id="{{ 'privacidad' if es else 'privacy' }}">
-  <h2>{{ 'Lo que no voy a mostrar' if es else "What I'm not going to show" }}</h2>
+  <h2>{{ 'Qué no se publica' if es else 'What is not published' }}</h2>
   {% if es %}
-  <p>El informe completo también habla de corazón, sueño, oxígeno y ruido. Esos gráficos se quedan entre mi reloj y yo. Las rutas GPS tampoco se usaron, porque dibujan dónde vivo y por dónde me muevo.</p>
+  <p>El informe completo también cubre indicadores cardíacos, sueño, oxígeno y ruido. Esos gráficos no se publican. Las rutas GPS tampoco se usaron, porque permiten reconstruir domicilio y desplazamientos.</p>
   <p class="pull">Trabajar con datos de personas también es decidir qué no publicar. Eso vale para un censo y para mi propio teléfono.</p>
   {% else %}
-  <p>The full report also covers heart, sleep, blood oxygen and noise. Those charts stay between my watch and me. The GPS routes weren’t used either, because they draw where I live and how I move around.</p>
+  <p>The full report also covers cardiac indicators, sleep, blood oxygen and noise. Those charts are not published. The GPS routes weren't used either, because they allow reconstructing home address and daily movement.</p>
   <p class="pull">Working with people’s data also means deciding what not to publish. That goes for a census and for my own phone.</p>
   {% endif %}
 </section>

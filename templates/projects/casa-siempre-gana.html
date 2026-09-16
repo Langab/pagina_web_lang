@@ -1,13 +1,13 @@
 {% set es = lang == 'es' %}
 
 <section id="{{ 'el-favor' if es else 'the-favor' }}">
-  <h2>{{ 'El favor' if es else 'The favor' }}</h2>
+  <h2>{{ 'El encargo' if es else 'The brief' }}</h2>
   {% if es %}
-  <p>Un amigo apuesta al fútbol. Un día me pidió una app para anotar sus boletos, ver cuánta plata tenía y, sobre todo, confirmar lo que él ya sabía: que iba ganando.</p>
-  <p>Le dije que sí, con una condición. La app le iba a decir la verdad, aunque la verdad fuera incómoda. Las plataformas de apuestas muestran el saldo y los boletos ganadores. No muestran cuánto rinde de verdad cada peso apostado ni si una buena racha es habilidad o suerte.</p>
+  <p>Un amigo que apuesta al fútbol me pidió una aplicación para registrar sus boletos, seguir su saldo y confirmar si iba ganando.</p>
+  <p>Acepté con una condición: que la aplicación mostrara el rendimiento real, aunque fuera negativo. Las plataformas muestran el saldo y los boletos ganados, pero no cuánto rinde cada peso apostado ni si una buena racha es habilidad o azar.</p>
   {% else %}
-  <p>A friend of mine bets on football. One day he asked me for an app to log his tickets, see how much money he had and, above all, confirm what he already knew: that he was winning.</p>
-  <p>I said yes, on one condition. The app would tell him the truth, even if the truth was awkward. Betting platforms show your balance and your winning tickets. They don't show what each peso you bet actually returns, or whether a hot streak is skill or luck.</p>
+  <p>A friend who bets on football asked me for an app to log his tickets, track his balance and confirm whether he was winning.</p>
+  <p>I accepted on one condition: the app would show real returns, even if they were negative. Platforms show your balance and your winning tickets, but not what each peso returns, or whether a streak is skill or chance.</p>
   {% endif %}
   <div class="callout">
     <p>{{ 'Aclaración necesaria: no estoy a favor de las casas de apuestas. Este proyecto existe justamente para mirar sus números sin romanticismo. Si el juego te está costando más de lo que quieres, habla con alguien.' if es else "A needed disclaimer: I'm not in favor of betting companies. This project exists precisely to look at their numbers without romance. If gambling is costing you more than you want, talk to someone." }}</p>
@@ -38,7 +38,7 @@
 </section>
 
 <section id="{{ 'simulador' if es else 'simulator' }}">
-  <h2>{{ 'Pruébalo tú' if es else 'Try it yourself' }}</h2>
+  <h2>{{ 'Simulación: 600 apostadores sin ventaja' if es else 'Simulation: 600 bettors with no edge' }}</h2>
   <p>{{ 'Este simulador crea 600 apostadores que no son ni buenos ni malos: aciertan exactamente lo que dicen las probabilidades. Mueve los controles y mira qué les pasa.' if es else "This simulator creates 600 bettors who are neither good nor bad: they win exactly as often as the odds say. Move the controls and watch what happens to them." }}</p>
   <div class="sim" data-sim data-lang="{{ lang }}">
     <div class="sim-controls">
@@ -61,11 +61,11 @@
       <div><b data-res="house">–</b>{{ 'de todo lo apostado se lo queda la casa' if es else 'of everything wagered stays with the house' }}</div>
     </div>
   </div>
-  <p>{{ 'Con margen cero, la mitad gana y la otra mitad pierde: es una moneda. Con el margen real, la nube completa se va hacia abajo. Algunos ganan, y son justo los que después cuentan su historia.' if es else "With zero margin, half win and half lose: it's a coin flip. With a real margin, the whole cloud drifts down. Some people win, and they're exactly the ones who tell their story afterwards." }}</p>
+  <p>{{ 'Con margen cero, la mitad gana y la otra mitad pierde: es una moneda. Con el margen real, la nube completa se va hacia abajo. Algunos ganan, y son justamente los casos visibles: puro sesgo de supervivencia.' if es else "With zero margin, half win and half lose: it's a coin flip. With a real margin, the whole cloud drifts down. Some win, and those are the visible cases: survivorship bias." }}</p>
 </section>
 
 <section id="{{ 'la-app' if es else 'the-app' }}">
-  <h2>{{ 'Lo que construí para él' if es else 'What I built for him' }}</h2>
+  <h2>{{ 'La aplicación' if es else 'The application' }}</h2>
   <ul>
     {% if es %}
     <li><strong>Rendimiento con margen de error.</strong> Cuánto gana o pierde por cada peso apostado, con un intervalo de 95%. Con menos de 15 apuestas ni siquiera lo muestra.</li>
@@ -82,7 +82,7 @@
   <p>{{ 'Todo es HTML, CSS y JavaScript sin librerías, con gráficos SVG dibujados a mano. Se instala en la pantalla del celular, guarda los datos en el teléfono y se sincroniza con una planilla de Google.' if es else 'It’s all HTML, CSS and JavaScript with no libraries, and hand-drawn SVG charts. It installs to the phone’s home screen, stores data on the device and syncs with a Google Sheet.' }}</p>
 
   <h3>{{ 'Con datos de prueba' if es else 'With test data' }}</h3>
-  <p>{{ 'Para probar la app armé 140 apuestas inventadas con las costumbres típicas de un apostador. No son las de mi amigo, pero se parecen bastante a lo que uno escucha en un asado:' if es else "To test the app I made up 140 bets with the typical habits of a bettor. They're not my friend's, but they sound a lot like what you hear at a barbecue:" }}</p>
+  <p>{{ 'Para probar la aplicación construí 140 apuestas sintéticas con las pautas habituales de un apostador. No corresponden a datos de ninguna persona:' if es else "To test the app I built 140 synthetic bets following typical betting habits. They are not anyone's real data:" }}</p>
   <div class="live">
     <div><b style="color:var(--alerta)">−25,8%</b><span>{{ 'rendimiento total' if es else 'overall return' }}</span></div>
     <div><b>21%</b><span>{{ 'de acierto real' if es else 'actual hit rate' }}</span></div>

@@ -4,18 +4,18 @@
 
 hero:
   kicker: { es: Portafolio, en: Portfolio }
-  status: { es: Abierto a nuevos desafíos en datos, en: Open to new data roles }
+  status: { es: "Disponible para nuevos cargos y proyectos", en: "Available for new roles and projects" }
   name: Benjamín Lang Bustos
   role: { es: "Sociólogo, analista de datos e investigador", en: "Sociologist, data analyst and researcher" }
   lede:
-    es: "Sociólogo de la Universidad Diego Portales, titulado con distinción máxima. **Cinco años procesando y analizando datos** en el Instituto Nacional de Estadísticas, el Centro de Estudios Públicos, la Universidad Diego Portales y, hoy, el SLEP Santa Rosa. Trabajo con R, Python, SQL y Power BI, y construyo herramientas que se actualizan solas."
-    en: "Sociologist from Universidad Diego Portales, graduated with highest honors. **Five years processing and analyzing data** at Chile's National Statistics Institute, Centro de Estudios Públicos, Universidad Diego Portales and, today, SLEP Santa Rosa. I work with R, Python, SQL and Power BI, and I build tools that update themselves."
+    es: "Sociólogo de la Universidad Diego Portales, titulado con distinción máxima. **Cinco años procesando y analizando datos** en el Instituto Nacional de Estadísticas, el Centro de Estudios Públicos, la Universidad Diego Portales y, hoy, el SLEP Santa Rosa. Trabajo con R, Python, SQL y Power BI, y desarrollo herramientas propias para automatizar el procesamiento y la entrega de resultados."
+    en: "Sociologist from Universidad Diego Portales, graduated with highest honors. **Five years processing and analyzing data** at Chile's National Statistics Institute, Centro de Estudios Públicos, Universidad Diego Portales and, today, SLEP Santa Rosa. I work with R, Python, SQL and Power BI, and I develop my own tools to automate processing and delivery."
   badges:
     - { es: "R, Python, SQL y Power BI", en: "R, Python, SQL and Power BI" }
     - { es: R Markdown y Quarto, en: R Markdown and Quarto }
     - { es: Automatización, en: Automation }
     - { es: IA aplicada, en: Applied AI }
-  cta_primary: { es: Ver el portafolio, en: See the portfolio }
+  cta_primary: { es: Ver trabajos y proyectos, en: See work and projects }
   cta_secondary: { es: Ver CV completo, en: See full CV }
   cta_third: { es: Escríbeme, en: Get in touch }
   photo_alt: { es: Benjamín Lang presentando frente a un pendón del SLEP Santa Rosa, en: Benjamín Lang presenting next to an SLEP Santa Rosa banner }
@@ -37,7 +37,7 @@ logos:
     - { name: Tironi, src: logos/tironi.png, url: "https://tironi.cl/", square: true }
 
 areas:
-  kicker: { es: Lo que hago, en: What I do }
+  kicker: { es: Especialización, en: Expertise }
   title: { es: Áreas de trabajo, en: Areas of work }
   lede: { es: "Cuatro cosas que he hecho de forma repetida en estadística oficial, centros de estudio, consultoría y educación pública.", en: "Four things I've done repeatedly in official statistics, think tanks, consulting and public education." }
   items:
@@ -63,46 +63,46 @@ areas:
       tags: [{ es: Análisis de texto, en: Text analysis }, { es: Datos electorales, en: Electoral data }, { es: Opinión pública, en: Public opinion }]
 
 story:
-  kicker: { es: Cómo trabajo, en: How I work }
+  kicker: { es: Método de trabajo, en: How I work }
   title: { es: De una pregunta a una decisión, en: From a question to a decision }
   lede: { es: "Cada punto es una persona, un aviso o un documento. Mi trabajo es ordenarlos hasta que digan algo útil.", en: "Every dot is a person, a listing or a document. My job is to arrange them until they say something useful." }
   steps:
     - label: { es: "720 puntos sueltos", en: "720 loose dots" }
       title: { es: Empieza con una pregunta, en: It starts with a question }
       text:
-        es: "¿Por qué las escuelas rurales casi no usan la biblioteca digital? ¿Qué discutía el Banco Central en plena crisis? Antes de abrir R, me siento a entender **qué decisión depende de la respuesta**."
-        en: "Why do rural schools barely use the digital library? What was the Central Bank arguing about in the middle of a crisis? Before opening R, I sit down to understand **which decision depends on the answer**."
+        es: "¿Por qué las escuelas rurales casi no usan la biblioteca digital? ¿Qué discutía el Banco Central en plena crisis? Antes de abrir R defino la pregunta y, sobre todo, **qué decisión depende de la respuesta**. De ahí salen el diseño, las fuentes y la precisión que hace falta."
+        en: "Why do rural schools barely use the digital library? What was the Central Bank discussing during the crisis? Before opening R I define the question and, above all, **which decision depends on the answer**. The design, the sources and the precision needed follow from that."
       tools: [{ es: Diseño metodológico, en: Research design }, { es: Encuestas, en: Surveys }, { es: Entrevistas, en: Interviews }]
     - label: { es: "Una grilla ordenada", en: "An ordered grid" }
       title: { es: "Luego, datos en los que se puede confiar", en: "Then, data you can trust" }
       text:
-        es: Validar el Censo me enseñó que el 80% del trabajo es limpiar, cruzar y documentar. **Reglas explícitas, código que otro puede volver a correr** y nada de planillas mágicas.
-        en: Validating the Census taught me that 80% of the work is cleaning, joining and documenting. **Explicit rules, code someone else can rerun**, no magic spreadsheets.
+        es: "Validar el Censo 2024 me enseñó que la mayor parte del trabajo es limpiar, cruzar y documentar. **Reglas explícitas, código versionado que otra persona puede volver a correr** y los supuestos escritos."
+        en: "Validating the 2024 Census taught me that most of the work is cleaning, joining and documenting. **Explicit rules, versioned code someone else can rerun** and written assumptions."
       tools: [R, SQL, Python, Git]
     - label: { es: "Dos grupos que se comparan", en: "Two groups compared" }
       title: { es: El análisis busca diferencias que importan, en: Analysis looks for differences that matter }
       text:
-        es: Modelos estadísticos, redes, análisis de texto o modelos de lenguaje cuando hay miles de documentos. **La técnica sale de la pregunta**, no al revés.
-        en: Statistical models, networks, text analysis, or language models when there are thousands of documents. **The method follows the question**, not the other way around.
+        es: "Modelos estadísticos, análisis de redes o clasificación automática de texto cuando el corpus es grande. **La técnica se elige por la pregunta** y se reporta con sus límites, incluidos los resultados nulos."
+        en: "Statistical models, network analysis or automated text classification when the corpus is large. **The method is chosen by the question** and reported with its limits, including null results."
       tools: [{ es: Modelos estadísticos, en: Statistical models }, GPT-4o, { es: Análisis de redes, en: Network analysis }, STM]
     - label: { es: "{match} puntos que importan", en: "{match} dots that matter" }
       title: { es: Y termina en algo que alguien usa, en: And it ends in something someone uses }
       text:
-        es: Un dashboard, un informe o una herramienta que se actualiza sola. Mi visor de arriendos parte con más de mil avisos cada mañana y **hoy me dejó {match} para visitar**.
-        en: A dashboard, a report, or a tool that updates itself. My rental finder starts with over a thousand listings every morning and **today it left me {match} to visit**.
+        es: "Un informe, un tablero o una herramienta que se actualiza sola y que el equipo puede auditar. Mi visor de arriendos revisa más de mil avisos cada mañana y **hoy dejó {match} candidatos**."
+        en: "A report, a dashboard or a self-updating tool the team can audit. My rental finder reviews over a thousand listings every morning and **today it left {match} candidates**."
       tools: [Power BI, Quarto, GitHub Actions, Claude Code]
 
 lab:
-  kicker: { es: Portafolio, en: Portfolio }
+  kicker: { es: Desarrollos propios, en: Own developments }
   title: { es: Proyectos de datos de punta a punta, en: End-to-end data projects }
-  lede: { es: "Herramientas que construí por mi cuenta: la pregunta, los datos, el código y la herramienta publicada. Algunas para mí, otras porque un amigo me pidió un favor.", en: "Tools I built on my own: the question, the data, the code and the published tool. Some for me, some because a friend asked for a favor." }
-  more_title: { es: Y otros experimentos, en: And a few more experiments }
-  more_text: { es: "Cuando alguien me cuenta un problema, muchas veces termino armando un visor. Estos están publicados.", en: "When someone tells me about a problem, I often end up building a viewer for it. These are live." }
+  lede: { es: "Proyectos donde me hice cargo del ciclo completo: definir la pregunta, obtener y limpiar los datos, escribir el código y publicar una herramienta que otra persona puede usar.", en: "Projects where I owned the full cycle: defining the question, obtaining and cleaning the data, writing the code and publishing a tool someone else can use." }
+  more_title: { es: Otros desarrollos publicados, en: Other published work }
+  more_text: { es: "Prototipos más chicos, todos en línea y con su código disponible.", en: "Smaller prototypes, all online and with their code available." }
 
 work:
-  kicker: { es: Trayectoria profesional, en: Professional track record }
+  kicker: { es: Experiencia profesional, en: Professional experience }
   title: { es: "Trabajos, proyectos y consultoría", en: "Work, projects and consulting" }
-  lede: { es: "Sector público, sector privado, investigación académica y consultorías. Toca cualquiera para ver qué hice, con qué herramientas y qué salió.", en: "Public sector, private companies, academic research and consulting. Tap any project to see what I did, the tools I used and what came out of it." }
+  lede: { es: "Estadística oficial, centros de estudio, consultoría y educación pública. Cada proyecto abre con lo que hice, las herramientas y los resultados.", en: "Official statistics, think tanks, consulting and public education. Each project opens with what I did, the tools and the results." }
 
 career:
   kicker: { es: CV, en: CV }
@@ -112,10 +112,10 @@ career:
 
 teaching:
   kicker: { es: Enseñar lo que uso, en: Teaching what I use }
-  title: { es: "IA para científicos sociales, sin humo", en: "AI for social scientists, minus the hype" }
+  title: { es: "Inteligencia artificial aplicada a la investigación social", en: "Artificial intelligence applied to social research" }
   text:
-    es: En mayo de 2024, cuando ChatGPT todavía asustaba en las salas de clases, preparé un taller para estudiantes de Sociología de la UDP. La idea era simple. Entender cómo aprende una máquina, qué puede hacer por una investigación y dónde se equivoca.
-    en: In May 2024, when ChatGPT still scared people in classrooms, I prepared a workshop for sociology students at UDP. The goal was simple. Understand how a machine learns, what it can do for research and where it gets things wrong.
+    es: "En mayo de 2024 preparé un taller para estudiantes de Sociología de la Universidad Diego Portales sobre cómo aprende un modelo, qué tareas de investigación puede asumir y cuáles son sus límites y sesgos."
+    en: "In May 2024 I ran a workshop for sociology students at Universidad Diego Portales on how a model learns, which research tasks it can take on, and what its limits and biases are."
   slides_label: { es: "El taller en siete láminas", en: "The workshop in seven slides" }
   slides:
     - { title: { es: Una historia con inviernos, en: A history with winters }, text: { es: De los inviernos de la IA al boom de 2022., en: From the AI winters to the 2022 boom. } }
@@ -137,4 +137,4 @@ publications:
 
 contact:
   title: { es: "¿Conversamos?", en: "Let's talk." }
-  lede: { es: "Busco un equipo donde los datos se usen para decidir. Si tienes un cargo, un proyecto o solo una pregunta difícil, escríbeme.", en: "I'm looking for a team where data actually drives decisions. If you have a role, a project or just a hard question, write to me." }
+  lede: { es: "Estoy disponible para cargos de analista de datos, investigación aplicada y consultoría. Si tienes una vacante o un proyecto, escríbeme y lo conversamos.", en: "I'm available for data analyst roles, applied research and consulting. If you have an opening or a project, write to me and let's talk." }

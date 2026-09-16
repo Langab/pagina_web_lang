@@ -25,7 +25,6 @@ jobs:
       en: I clean, join and visualize data for the public schools of 5 municipalities. I set up the service's data governance and built R Markdown and Power BI reports that can be audited.
   - id: aldeas
     current: true
-    home: true
     when: { es: "2025 – hoy", en: "2025 – now" }
     role: { es: Consultor en habilidades digitales, en: Digital skills consultant }
     org: Aldeas Infantiles SOS Chile con MICELIA
@@ -34,12 +33,13 @@ jobs:
       en: Mixed-methods assessment of digital skills gaps and a 2026 training plan. I lead the workshops at the Quilpué site.
   - id: prieto
     current: true
+    home: true
     when: { es: "2025 – hoy", en: "2025 – now" }
-    role: { es: Asesor metodológico, en: Methods advisor }
-    org: Proyectos de Joaquín Prieto
+    role: { es: "Analista cuantitativo y coautor", en: "Quantitative analyst and co-author" }
+    org: Investigación con Joaquín Prieto
     desc:
-      es: Análisis cuantitativo para *Insecurity amid Recovery* y *Economic Insecurity, Not Inequality?* con datos de panel de ELSOC (COES) y la Encuesta de Bienestar Social (INE).
-      en: Quantitative analysis for *Insecurity amid Recovery* and *Economic Insecurity, Not Inequality?* using ELSOC panel data (COES) and INE's Social Wellbeing Survey.
+      es: "Índice multidimensional de inseguridad económica con el panel ELSOC 2016–2023, modelos logísticos por bloques con imputación múltiple y análisis de mediación. Coautor de *Economic Insecurity, Not Inequality?* y analista en *Insecurity amid Recovery*, con la Encuesta de Bienestar Social del INE."
+      en: "Multidimensional economic insecurity index using the ELSOC 2016–2023 panel, block-wise logistic models with multiple imputation and mediation analysis. Co-author of *Economic Insecurity, Not Inequality?* and analyst on *Insecurity amid Recovery*, using INE's Social Wellbeing Survey."
   - id: ine
     home: true
     when: { es: "2024 – 2025", en: "2024 – 2025" }

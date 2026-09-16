@@ -89,16 +89,18 @@
       {% endif %}
 
       {% if d.bars is defined %}
+      {% for chart in ([d.bars] if d.bars is mapping else d.bars) %}
       <div>
-        <h3>{{ d.bars.title | t }}</h3>
+        <h3>{{ chart.title | t }}</h3>
         <div class="bars reveal-bars">
-          {% set top = d.bars['items'] | map(attribute='value') | max %}
-          {% for b in d.bars['items'] %}
+          {% set top = chart['items'] | map(attribute='value') | max %}
+          {% for b in chart['items'] %}
           <div class="bar"><span>{{ b.label | t }}</span><span class="bar-track"><span class="bar-fill" style="--v: {{ (b.value / top * 100) | round(1) }}%"></span></span><b>{{ b.display | default(b.value) }}</b></div>
           {% endfor %}
         </div>
-        {% if d.bars.note is defined %}<p class="note" style="margin-top:.75rem">{{ d.bars.note | md }}</p>{% endif %}
+        {% if chart.note is defined %}<p class="note" style="margin-top:.75rem">{{ chart.note | md }}</p>{% endif %}
       </div>
+      {% endfor %}
       {% endif %}
 
       {% if d.gallery is defined %}

@@ -18,6 +18,7 @@ import argparse
 import hashlib
 import html
 import http.server
+import os
 import json
 import re
 import shutil
@@ -258,8 +259,9 @@ def build(verbose: bool = True) -> int:
     site = data["site"]
     env = make_env(data, asset_hash())
 
-    # Se construye en una carpeta temporal y solo se reemplaza el sitio si todo salió bien
-    out = OUT.with_name(OUT.name.replace(".nosync", "-tmp.nosync"))
+    # Se construye en una carpeta temporal propia de este proceso (así el servidor
+    # de desarrollo y una construcción manual no se pisan) y solo al final se reemplaza.
+    out = OUT.with_name(f"_site-tmp-{os.getpid()}.nosync")
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
@@ -268,9 +270,11 @@ def build(verbose: bool = True) -> int:
     except Exception:
         shutil.rmtree(out, ignore_errors=True)
         raise
+    anterior = OUT.with_name(f"_site-anterior-{os.getpid()}.nosync")
     if OUT.exists():
-        shutil.rmtree(OUT)
+        OUT.rename(anterior)
     out.rename(OUT)
+    shutil.rmtree(anterior, ignore_errors=True)
     if verbose:
         print(f"✓ {len(routes) * len(LANGS)} páginas ({len(routes)} rutas × {len(LANGS)} idiomas) en {time.time() - started:.1f}s → {OUT.name}/")
     return 0

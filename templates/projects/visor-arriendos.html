@@ -2,17 +2,17 @@
 {% set es = lang == 'es' %}
 
 <section id="{{ 'problema' if es else 'problem' }}">
-  <h2>{{ 'El problema: buscar arriendo es un segundo trabajo' if es else 'The problem: apartment hunting is a second job' }}</h2>
+  <h2>{{ 'El problema' if es else 'The problem' }}</h2>
   {% if es %}
-  <p>Todo partió con una conversación nada técnica. Con mi compañero de casa decidimos mudarnos y teníamos claro lo que queríamos: <strong>tres dormitorios</strong> (dos para dormir y uno de oficina), cerca de <strong>Parque Bustamante, Lastarria, Barrio Italia o Manuel Montt</strong>, y un tope de <strong>$800.000 al mes con gastos comunes incluidos</strong>.</p>
-  <p>Suena razonable. Buscarlo a mano, no tanto:</p>
+  <p>El requerimiento era concreto. Con mi compañero de casa decidimos mudarnos y teníamos definido lo que buscábamos: <strong>tres dormitorios</strong> (dos para dormir y uno de oficina), cerca de <strong>Parque Bustamante, Lastarria, Barrio Italia o Manuel Montt</strong>, y un tope de <strong>$800.000 al mes con gastos comunes incluidos</strong>.</p>
+  <p>Hacerlo a mano tiene varios problemas:</p>
   <ul>
     <li>Los avisos están repartidos en varios portales y el mismo departamento aparece dos o tres veces.</li>
     <li>Casi nadie publica los gastos comunes, así que un arriendo de $700.000 puede terminar costando $850.000.</li>
     <li>Unos precios vienen en UF y otros en pesos.</li>
     <li>Ningún buscador entiende «cerca del metro» ni «un dos dormitorios grande que sirva de tres».</li>
   </ul>
-  <p>Después de una semana de pestañas abiertas y planillas a medio llenar hice lo que haría cualquier analista. Convertí la pregunta en un problema de datos y construí la herramienta que quería usar.</p>
+  <p>Después de una semana de búsquedas manuales convertí el requerimiento en un problema de datos y construí el pipeline que lo resuelve.</p>
   {% else %}
   <p>It started with a very non-technical conversation. My flatmate and I decided to move and we knew exactly what we wanted: <strong>three bedrooms</strong> (two to sleep in, one as an office), near <strong>Parque Bustamante, Lastarria, Barrio Italia or Manuel Montt</strong>, and a cap of <strong>CLP 800,000 a month including building fees</strong>.</p>
   <p>Sounds reasonable. Searching for it by hand, less so:</p>
@@ -22,7 +22,7 @@
     <li>Some prices come in UF (an inflation-indexed unit) and others in pesos.</li>
     <li>No search engine understands "close to the metro" or "a big two-bedroom that works as a three".</li>
   </ul>
-  <p>After a week of open tabs and half-filled spreadsheets I did what any analyst would do. I turned the question into a data problem and built the tool I wanted to use.</p>
+  <p>After a week of manual searching I turned the requirement into a data problem and built the pipeline that solves it.</p>
   {% endif %}
 </section>
 
@@ -98,7 +98,7 @@
 </section>
 
 <section id="{{ 'limpieza' if es else 'cleaning' }}">
-  <h2>{{ 'El mismo departamento con tres caras' if es else 'Same apartment, three faces' }}</h2>
+  <h2>{{ 'Duplicados y geocodificación' if es else 'Duplicates and geocoding' }}</h2>
   {% if es %}
   <p>Con más de mil avisos de varias fuentes, los duplicados son inevitables. La deduplicación va en dos pasos: primero un <strong>id estable</strong> (el hash de la URL) y después una clave de <strong>dirección normalizada más precio</strong>, que atrapa el mismo aviso publicado por dos corredoras.</p>
   <p>Para el mapa hacían falta coordenadas. Nominatim, de OpenStreetMap, es gratis pero acepta una consulta por segundo. Por eso todo pasa por un <strong>caché</strong> que solo consulta direcciones nuevas. Si una dirección no se encuentra, cae en cascada al centro del barrio y luego al de la comuna, con un pequeño desplazamiento para que los pins no se apilen. Esos avisos quedan marcados como ubicación aproximada.</p>
@@ -143,13 +143,13 @@ match_perfecto = sirve <span class="k">and</span> total_con_gastos &lt;= <span c
 </section>
 
 <section id="{{ 'tiempo' if es else 'time' }}">
-  <h2>{{ 'Se actualiza solo y recuerda' if es else 'It updates itself and remembers' }}</h2>
+  <h2>{{ 'Actualización automática e historial' if es else 'Automatic updates and history' }}</h2>
   <p>{{ 'Un LaunchAgent de macOS corre todo cada mañana y hace push a GitHub Pages. Cada corrida guarda una foto completa del mercado, y con 30 días de fotos el visor sabe qué avisos son nuevos, cuáles bajaron de precio y cuáles desaparecieron (probablemente se arrendaron). Hay un selector para ver el mercado de cualquier día del último mes.' if es else 'A macOS LaunchAgent runs everything each morning and pushes to GitHub Pages. Every run stores a full snapshot of the market, and with 30 days of snapshots the finder knows which listings are new, which dropped in price and which disappeared (probably rented). A date picker shows the market on any day of the past month.' }}</p>
-  <p class="pull">{{ 'De mil pestañas abiertas a un par de docenas de candidatos concretos cada mañana.' if es else 'From a thousand open tabs to a couple dozen real candidates every morning.' }}</p>
+  <p class="pull">{{ 'De más de mil avisos diarios a un par de docenas de candidatos concretos cada mañana.' if es else 'From over a thousand daily listings to a couple dozen concrete candidates every morning.' }}</p>
 </section>
 
 <section id="{{ 'aprendizajes' if es else 'lessons' }}">
-  <h2>{{ 'Lo que me llevo' if es else 'What I took away' }}</h2>
+  <h2>{{ 'Aprendizajes técnicos' if es else 'Technical lessons' }}</h2>
   <ul>
     {% if es %}
     <li><strong>Esquema común primero</strong>, scrapers después. Sumar fuentes pasa a ser trivial.</li>
