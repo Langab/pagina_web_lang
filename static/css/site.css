@@ -101,7 +101,7 @@ code, kbd, pre { font-family: var(--f-code); font-size: .9em; }
 .btn-solid { --btn-bg: var(--cobalto); --btn-fg: #fff; --btn-bd: var(--cobalto); }
 .btn-solid:hover { --btn-bg: var(--cobalto-hondo); --btn-bd: var(--cobalto-hondo); --btn-fg: #fff; }
 .btn-small { min-height: 40px; padding: .5em 1.1em; }
-.btn .ico { width: 1.1em; height: 1.1em; flex: none; }
+.ico { width: 1.1em; height: 1.1em; flex: none; }
 .on-dark .btn { --btn-fg: var(--noche-texto); --btn-bd: rgba(230, 232, 245, .45); }
 .on-dark .btn:hover { --btn-bg: var(--noche-texto); --btn-fg: var(--noche); }
 .on-dark .btn-solid { --btn-bg: var(--cobalto); --btn-bd: var(--cobalto); --btn-fg: #fff; }
@@ -721,3 +721,14 @@ pre.code .s { color: #9FE3C3; }
   .btn { white-space: normal; text-align: left; }
   .mail-big a { font-size: 1.35rem; }
 }
+
+/* ── Tarjetas de acceso a cada sección (portada) ─────────────────────── */
+.nav-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
+.nav-card { display: grid; align-content: start; gap: .6rem; padding: clamp(1.5rem, 3vw, 2rem); border: 1px solid var(--linea); border-radius: var(--r-md); background: var(--niebla); text-decoration: none; transition: border-color .25s, transform .4s var(--ease-out), background .25s; }
+.nav-card:hover { border-color: var(--tinta); transform: translateY(-3px); color: var(--tinta); background: #fff; }
+.nav-card h3 { font-size: var(--t-xl); line-height: 1.2; }
+.nav-card p { color: var(--grafito); font-size: var(--t-sm); line-height: 1.6; margin: 0; }
+.nav-card-go { display: inline-flex; align-items: center; gap: .4rem; font-size: var(--t-sm); font-weight: 600; color: var(--cobalto); margin-top: .25rem; }
+.nav-card:hover .nav-card-go .ico { transform: translateX(3px); }
+.nav-card-go .ico { transition: transform .3s var(--ease-out); }
+@media (max-width: 720px) { .nav-cards { grid-template-columns: minmax(0, 1fr); } }

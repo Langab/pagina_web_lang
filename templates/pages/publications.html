@@ -1,25 +1,37 @@
 {% extends "base.html" %}
 {% import "partials/macros.html" as m with context %}
+{% set feat = publications.groups[0]['items'][0] %}
 
 {% block main %}
 <header class="page-intro wrap">
   <p class="kicker">{{ page.title | t }}</p>
-  <h1>{{ home.publications.title | t }}</h1>
+  <h1>{{ home.publications.page_title | t }}</h1>
   <p>{{ publications.intro | t }}</p>
   <div class="pub-counts">
     {% for c in home.publications.counts %}<div><b data-count="{{ c.value }}">{{ c.value }}</b>{{ c.label | t }}</div>{% endfor %}
   </div>
 </header>
 
+<section class="wrap section-tight" style="padding-top:0">
+  <a class="pub-feature" href="{{ feat.url }}" target="_blank" rel="noopener" style="text-decoration:none" data-reveal>
+    <div>
+      <p class="kicker" style="margin:0 0 .75rem">{{ home.publications.kicker | t }}</p>
+      <h3>{{ feat.title }}</h3>
+      <p>{{ feat.authors }} ({{ feat.year }}). {{ feat.venue }}.</p>
+    </div>
+    <span class="btn btn-solid">{{ ui.read_article }} {{ m.icon('out') }}</span>
+  </a>
+</section>
+
 {% for g in publications.groups %}
-<section class="wrap section-tight" aria-labelledby="g-{{ g.id }}">
+<section class="wrap section-tight" style="padding-top:0" aria-labelledby="g-{{ g.id }}">
   <h2 id="g-{{ g.id }}" style="font-size:var(--t-2xl);margin-bottom:1.5rem">{{ g.title | t }}</h2>
   <ul class="pub-list">
     {% for it in g['items'] %}
     <li>
       <span class="y">{{ it.year }}</span>
       <span><span class="t">{{ it.title }}</span><span class="a">{{ it.authors }}. {{ it.venue }}.</span></span>
-      <a class="go" href="{{ it.url }}" target="_blank" rel="noopener">{{ 'Leer' if lang == 'es' else 'Read' }} {{ m.icon('out') }}</a>
+      <a class="go" href="{{ it.url }}" target="_blank" rel="noopener">{{ ui.read }} {{ m.icon('out') }}</a>
     </li>
     {% endfor %}
   </ul>

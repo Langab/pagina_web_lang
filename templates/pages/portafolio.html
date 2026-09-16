@@ -3,9 +3,12 @@
 
 {% block main %}
 <header class="page-intro wrap">
-  <p class="kicker">{{ page.title | t }}</p>
+  <p class="kicker">{{ home.lab.kicker | t }}</p>
   <h1>{{ home.lab.title | t }}</h1>
   <p>{{ home.lab.lede | t }}</p>
+  <div class="callout" style="max-width: 62ch; margin-top: 1.5rem">
+    <p>{{ home.lab.disclaimer | t }}</p>
+  </div>
 </header>
 
 <section class="wrap section-tight" style="padding-top:0">

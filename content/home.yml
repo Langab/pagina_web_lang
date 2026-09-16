@@ -62,19 +62,36 @@ areas:
         en: "Seven CEP policy papers, the weekly 2022 constitutional bulletin for Tironi's clients, and the quantitative report on digital reading for Fondo del Libro."
       tags: [{ es: Análisis de texto, en: Text analysis }, { es: Datos electorales, en: Electoral data }, { es: Opinión pública, en: Public opinion }]
 
+cards:
+  kicker: { es: Secciones, en: Sections }
+  title: { es: Qué hay en este sitio, en: What's on this site }
+  items:
+    - page: trabajos
+      title: { es: "Trabajos, proyectos y consultoría", en: "Work, projects and consulting" }
+      text: { es: "Diez proyectos en estadística oficial, centros de estudio, consultoría y educación pública: Censo 2024, C22 del CEP, SLEP Santa Rosa y Tironi, con lo que hice en cada uno.", en: "Ten projects in official statistics, think tanks, consulting and public education: the 2024 Census, CEP's C22, SLEP Santa Rosa and Tironi, with what I did on each." }
+    - page: cv
+      title: { es: CV completo, en: Full CV }
+      text: { es: "Experiencia, formación, herramientas, idiomas, docencia y referencias, con el PDF para descargar.", en: "Experience, education, tools, languages, teaching and references, with a PDF to download." }
+    - page: publications
+      title: { es: Publicaciones, en: Publications }
+      text: { es: "Un artículo en revista indexada, siete policy papers del Centro de Estudios Públicos y seis notas de investigación de C22.", en: "One peer-reviewed article, seven policy papers for Centro de Estudios Públicos and six C22 research notes." }
+    - page: portafolio
+      title: { es: Portafolio personal, en: Personal portfolio }
+      text: { es: "Proyectos propios, hechos fuera del horario de trabajo para practicar: pipelines de datos, visores y análisis con código abierto.", en: "Personal projects built outside working hours to practice: data pipelines, viewers and open-source analysis." }
+
 story:
   kicker: { es: Método de trabajo, en: How I work }
   title: { es: De una pregunta a una decisión, en: From a question to a decision }
   lede: { es: "Cada punto es una persona, un aviso o un documento. Mi trabajo es ordenarlos hasta que digan algo útil.", en: "Every dot is a person, a listing or a document. My job is to arrange them until they say something useful." }
   steps:
     - label: { es: "720 puntos sueltos", en: "720 loose dots" }
-      title: { es: Empieza con una pregunta, en: It starts with a question }
+      title: { es: Primero la pregunta y la decisión, en: First the question and the decision }
       text:
         es: "¿Por qué las escuelas rurales casi no usan la biblioteca digital? ¿Qué discutía el Banco Central en plena crisis? Antes de abrir R defino la pregunta y, sobre todo, **qué decisión depende de la respuesta**. De ahí salen el diseño, las fuentes y la precisión que hace falta."
         en: "Why do rural schools barely use the digital library? What was the Central Bank discussing during the crisis? Before opening R I define the question and, above all, **which decision depends on the answer**. The design, the sources and the precision needed follow from that."
       tools: [{ es: Diseño metodológico, en: Research design }, { es: Encuestas, en: Surveys }, { es: Entrevistas, en: Interviews }]
     - label: { es: "Una grilla ordenada", en: "An ordered grid" }
-      title: { es: "Luego, datos en los que se puede confiar", en: "Then, data you can trust" }
+      title: { es: "Después, datos en los que se puede confiar", en: Then data you can trust }
       text:
         es: "Validar el Censo 2024 me enseñó que la mayor parte del trabajo es limpiar, cruzar y documentar. **Reglas explícitas, código versionado que otra persona puede volver a correr** y los supuestos escritos."
         en: "Validating the 2024 Census taught me that most of the work is cleaning, joining and documenting. **Explicit rules, versioned code someone else can rerun** and written assumptions."
@@ -85,17 +102,18 @@ story:
         es: "Modelos estadísticos, análisis de redes o clasificación automática de texto cuando el corpus es grande. **La técnica se elige por la pregunta** y se reporta con sus límites, incluidos los resultados nulos."
         en: "Statistical models, network analysis or automated text classification when the corpus is large. **The method is chosen by the question** and reported with its limits, including null results."
       tools: [{ es: Modelos estadísticos, en: Statistical models }, GPT-4o, { es: Análisis de redes, en: Network analysis }, STM]
-    - label: { es: "{match} puntos que importan", en: "{match} dots that matter" }
-      title: { es: Y termina en algo que alguien usa, en: And it ends in something someone uses }
+    - label: { es: "Los que importan", en: "The ones that matter" }
+      title: { es: Y termina en algo que la institución usa, en: And it ends in something the institution uses }
       text:
-        es: "Un informe, un tablero o una herramienta que se actualiza sola y que el equipo puede auditar. Mi visor de arriendos revisa más de mil avisos cada mañana y **hoy dejó {match} candidatos**."
-        en: "A report, a dashboard or a self-updating tool the team can audit. My rental finder reviews over a thousand listings every morning and **today it left {match} candidates**."
+        es: "Un informe, un tablero o un flujo de reportes que el equipo pueda volver a correr sin mí. En el SLEP Santa Rosa eso significa que **las escuelas reciben sus indicadores al día** y que cualquiera puede auditar de dónde sale cada cifra."
+        en: "A report, a dashboard or a reporting pipeline the team can rerun without me. At SLEP Santa Rosa that means **schools get their indicators up to date** and anyone can audit where each figure comes from."
       tools: [Power BI, Quarto, GitHub Actions, Claude Code]
 
 lab:
   kicker: { es: Desarrollos propios, en: Own developments }
   title: { es: Proyectos de datos de punta a punta, en: End-to-end data projects }
   lede: { es: "Proyectos donde me hice cargo del ciclo completo: definir la pregunta, obtener y limpiar los datos, escribir el código y publicar una herramienta que otra persona puede usar.", en: "Projects where I owned the full cycle: defining the question, obtaining and cleaning the data, writing the code and publishing a tool someone else can use." }
+  disclaimer: { es: "Son proyectos personales: los hice fuera del horario de trabajo, por gusto y para practicar herramientas. La experiencia profesional está en la pestaña de trabajos.", en: "These are personal projects: built outside working hours, for fun and to practice tools. The professional experience is in the work tab." }
   more_title: { es: Otros desarrollos publicados, en: Other published work }
   more_text: { es: "Prototipos más chicos, todos en línea y con su código disponible.", en: "Smaller prototypes, all online and with their code available." }
 
@@ -129,6 +147,7 @@ teaching:
 publications:
   kicker: { es: Publicaciones, en: Publications }
   title: { es: Última publicación, en: Latest publication }
+  page_title: { es: "Artículos, policy papers y notas de investigación", en: "Articles, policy papers and research notes" }
   counts:
     - { value: 1, label: { es: artículo en revista académica, en: peer-reviewed article } }
     - { value: 7, label: { es: policy papers del CEP, en: CEP policy papers } }

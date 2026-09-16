@@ -12,6 +12,36 @@
   {% include "partials/work_index.html" %}
 </section>
 
+{# ── Método de trabajo ────────────────────────────────────────────── #}
+{% set s = home.story %}
+<section class="section on-dark" aria-labelledby="story-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ s.kicker | t }}</p>
+        <h2 id="story-title">{{ s.title | t }}</h2>
+      </div>
+      <p>{{ s.lede | t }}</p>
+    </div>
+    <div class="story">
+      <div class="story-stage" data-story>
+        <canvas aria-hidden="true"></canvas>
+        <div class="stage-label"><span data-story-label>{{ s.steps[0].label | t }}</span><span aria-hidden="true">●</span></div>
+      </div>
+      <ol class="story-steps">
+        {% for step in s.steps %}
+        <li class="story-step{{ ' is-active' if loop.first }}" data-step data-label="{{ step.label | t }}">
+          <span class="step-n" aria-hidden="true"></span>
+          <h3>{{ step.title | t }}</h3>
+          <p>{{ step.text | md }}</p>
+          <ul class="chips">{% for tool in step.tools %}<li>{{ tool | t }}</li>{% endfor %}</ul>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section class="section-tight wrap">
   <a class="p-next" href="{{ url('cv') }}" style="text-decoration:none">
     <div>
