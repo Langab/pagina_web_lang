@@ -732,3 +732,10 @@ pre.code .s { color: #9FE3C3; }
 .nav-card:hover .nav-card-go .ico { transform: translateX(3px); }
 .nav-card-go .ico { transition: transform .3s var(--ease-out); }
 @media (max-width: 720px) { .nav-cards { grid-template-columns: minmax(0, 1fr); } }
+
+/* ── CV: rol objetivo y grupos de herramientas ───────────────────────── */
+.target { margin-top: 2rem; padding: clamp(1.25rem, 3vw, 1.75rem); border: 1px solid var(--linea); border-left: 3px solid var(--cobalto); border-radius: var(--r-md); background: var(--papel); max-width: 64ch; }
+.target h2 { font-size: var(--t-xl); margin-bottom: .5rem; }
+.target p { color: var(--grafito); font-size: var(--t-sm); margin-bottom: 1rem; }
+.skill-group { font-size: var(--t-sm); font-weight: 600; color: var(--grafito); margin: 2rem 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--linea); }
+.skill-group:first-child { margin-top: 0; }

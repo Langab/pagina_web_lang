@@ -7,6 +7,12 @@
   <p class="kicker">{{ page.title | t }}</p>
   <h1>{{ site.full_name }}</h1>
   <div class="measure" style="font-size:var(--t-lg);color:var(--grafito)">{{ experience.summary | md }}</div>
+  <div class="target" data-reveal>
+    <p class="kicker" style="margin-bottom:.5rem">{{ experience.target.kicker | t }}</p>
+    <h2>{{ experience.target.title | t }}</h2>
+    <p>{{ experience.target.text | t }}</p>
+    <ul class="chips">{% for i in experience.target['items'] %}<li>{{ i | t }}</li>{% endfor %}</ul>
+  </div>
   <div class="actions" style="margin-top:1.75rem">
     <a class="btn btn-solid" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
     <a class="btn" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
@@ -48,18 +54,30 @@
   <div class="wrap split">
     <div class="split-sticky">
       <h2 style="font-size:var(--t-2xl)">{{ 'Herramientas' if es else 'Tools' }}</h2>
-      <p style="color:var(--grafito);margin-top:.75rem">{{ 'Cinco puntos es uso diario y avanzado.' if es else 'Five dots means daily, advanced use.' }}</p>
+      <p style="color:var(--grafito);margin-top:.75rem">{{ experience.skills.note | t }}</p>
     </div>
     <div>
+      {% for g in experience.skills.groups %}
+      <h3 class="skill-group">{{ g.title | t }}</h3>
       <div class="skills">
-        {% for sk in experience.skills %}
+        {% for sk in g['items'] %}
         <div class="skill">
-          <b>{{ sk.name }}</b>
+          <b>{{ sk.name | t }}</b>
           <span class="skill-dots" role="img" aria-label="{{ sk.level }} / 5">{% for i in range(5) %}<i class="{{ 'on' if i < sk.level }}"></i>{% endfor %}</span>
           <small>{{ sk.note | t }}</small>
         </div>
         {% endfor %}
       </div>
+      {% endfor %}
+
+      <div class="callout" style="margin-top:2rem">
+        <p style="font-weight:600;margin-bottom:.5rem">{{ experience.learning.title | t }}</p>
+        <p style="color:var(--grafito);font-size:var(--t-sm)">{{ experience.learning.text | t }}</p>
+        <ul style="margin:.5rem 0 0;padding-left:1.1rem;color:var(--grafito);font-size:var(--t-sm)">
+          {% for i in experience.learning['items'] %}<li>{{ i | t }}</li>{% endfor %}
+        </ul>
+      </div>
+
       <h3 style="font-size:var(--t-lg);margin:2.5rem 0 1rem">{{ 'Idiomas' if es else 'Languages' }}</h3>
       <ul class="chips">{% for l in experience.languages %}<li>{{ l.name | t }}, {{ l.level | t }}</li>{% endfor %}</ul>
     </div>
