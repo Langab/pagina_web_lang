@@ -3,27 +3,31 @@
 # ─────────────────────────────────────────────────────────────────────────
 
 hero:
+  kicker: { es: Portafolio, en: Portfolio }
   status: { es: Abierto a nuevos desafíos en datos, en: Open to new data roles }
-  title:
-    es: ["Del Censo 2024", "a Claude Code."]
-    en: ["From the 2024 Census", "to Claude Code."]
+  name: Benjamín Lang Bustos
+  role: { es: "Sociólogo, analista de datos e investigador", en: "Sociologist, data analyst and researcher" }
   lede:
-    es: Soy **Benjamín Lang**, sociólogo y analista de datos en Santiago. Validé datos del Censo en el INE, analicé el proceso constitucional en el CEP y hoy ordeno los datos de la educación pública en Santa Rosa. Cuando un problema me intriga, armo la herramienta que lo resuelve.
-    en: I'm **Benjamín Lang**, a sociologist and data analyst in Santiago, Chile. I validated Census data at INE, analyzed the constitutional process at CEP, and today I organize public education data in Santa Rosa. When a problem gets under my skin, I build the tool that solves it.
-  cta_primary: { es: Ver proyectos, en: See projects }
-  cta_secondary: { es: Descargar CV, en: Download CV }
+    es: "Sociólogo de la Universidad Diego Portales, titulado con distinción máxima. **Cinco años procesando y analizando datos** en el Instituto Nacional de Estadísticas, el Centro de Estudios Públicos, la Universidad Diego Portales y, hoy, el SLEP Santa Rosa. Trabajo con R, Python, SQL y Power BI, y construyo herramientas que se actualizan solas."
+    en: "Sociologist from Universidad Diego Portales, graduated with highest honors. **Five years processing and analyzing data** at Chile's National Statistics Institute, Centro de Estudios Públicos, Universidad Diego Portales and, today, SLEP Santa Rosa. I work with R, Python, SQL and Power BI, and I build tools that update themselves."
+  badges:
+    - { es: "R, Python, SQL y Power BI", en: "R, Python, SQL and Power BI" }
+    - { es: R Markdown y Quarto, en: R Markdown and Quarto }
+    - { es: Automatización, en: Automation }
+    - { es: IA aplicada, en: Applied AI }
+  cta_primary: { es: Ver el portafolio, en: See the portfolio }
+  cta_secondary: { es: Ver CV completo, en: See full CV }
+  cta_third: { es: Escríbeme, en: Get in touch }
   photo_alt: { es: Benjamín Lang presentando frente a un pendón del SLEP Santa Rosa, en: Benjamín Lang presenting next to an SLEP Santa Rosa banner }
   photo_caption: { es: "Presentando en el SLEP Santa Rosa", en: "Presenting at SLEP Santa Rosa" }
-  meta:
-    - value: "5"
-      label: { es: "años con datos públicos, académicos y privados", en: "years working with public, academic and private data" }
-    - value: live_total
-      label: { es: avisos de arriendo que mi visor revisó esta mañana, en: rental listings my finder checked this morning }
-    - value: "14"
-      label: { es: publicaciones con el CEP y C22, en: publications with CEP and C22 }
+  stats:
+    - { value: "5", suffix: "+", label: { es: años de experiencia, en: years of experience } }
+    - { value: "14", label: { es: publicaciones, en: publications } }
+    - { value: "4", label: { es: sectores, en: sectors } }
+    - { value: "3", label: { es: idiomas, en: languages } }
 
 logos:
-  label: { es: He trabajado con, en: I've worked with }
+  label: { es: Experiencia en, en: Experience at }
   items:
     - { name: INE, src: logos/ine.png, url: "https://censo2024.ine.gob.cl/" }
     - { name: Centro de Estudios Públicos, src: logos/cep.png, url: "https://www.cepchile.cl/", square: true }
@@ -31,6 +35,32 @@ logos:
     - { name: Universidad Diego Portales, src: logos/udp.png, url: "https://www.udp.cl/" }
     - { name: C22, src: logos/c22.png, url: "https://c22cepchile.cl/", square: true }
     - { name: Tironi, src: logos/tironi.png, url: "https://tironi.cl/", square: true }
+
+areas:
+  kicker: { es: Lo que hago, en: What I do }
+  title: { es: Áreas de trabajo, en: Areas of work }
+  lede: { es: "Cuatro cosas que he hecho de forma repetida en estadística oficial, centros de estudio, consultoría y educación pública.", en: "Four things I've done repeatedly in official statistics, think tanks, consulting and public education." }
+  items:
+    - title: { es: Ciencia de datos y estadística aplicada, en: Data science and applied statistics }
+      text:
+        es: "En el INE validé y edité las variables básicas del Censo 2024, y construí indicadores demográficos comparados con los censos de 2017, 2002 y 1992."
+        en: "At INE I validated and edited the core variables of the 2024 Census, and built demographic indicators compared with the 2017, 2002 and 1992 censuses."
+      tags: [R, R Markdown, Python, { es: Control de calidad, en: Quality control }]
+    - title: { es: Gobernanza de datos en organizaciones, en: Data governance in organizations }
+      text:
+        es: "En el SLEP Santa Rosa definí cómo se capturan, validan y comparten los datos de las escuelas de cinco comunas, con reportes que cualquiera del equipo puede volver a correr."
+        en: "At SLEP Santa Rosa I defined how the schools of five municipalities capture, validate and share data, with reports anyone on the team can rerun."
+      tags: [Power BI, R Markdown, Excel, { es: Capacitación, en: Training }]
+    - title: { es: Diseño y análisis de encuestas, en: Survey design and analysis }
+      text:
+        es: "Revisé el cuestionario y analicé las 1.273 respuestas válidas de la encuesta Radiografía a la Equidad Puertas Adentro, y trabajo datos de panel de ELSOC y de la Encuesta de Bienestar Social."
+        en: "I reviewed the questionnaire and analyzed the 1,273 valid responses of the Radiografía a la Equidad Puertas Adentro survey, and I work with ELSOC panel data and INE's Social Wellbeing Survey."
+      tags: [SPSS, R, { es: Muestreo, en: Sampling }, { es: Tablas cruzadas, en: Cross-tabs }]
+    - title: { es: Informes y análisis para decidir, en: Reports and analysis for decisions }
+      text:
+        es: "Siete Puntos de Referencia del CEP, el boletín constitucional semanal de 2022 para clientes de Tironi y el informe cuantitativo de lectura digital para el Fondo del Libro."
+        en: "Seven CEP policy papers, the weekly 2022 constitutional bulletin for Tironi's clients, and the quantitative report on digital reading for Fondo del Libro."
+      tags: [{ es: Análisis de texto, en: Text analysis }, { es: Datos electorales, en: Electoral data }, { es: Opinión pública, en: Public opinion }]
 
 story:
   kicker: { es: Cómo trabajo, en: How I work }
@@ -63,22 +93,22 @@ story:
       tools: [Power BI, Quarto, GitHub Actions, Claude Code]
 
 lab:
-  kicker: { es: Laboratorio personal, en: Personal lab }
-  title: { es: Cosas que construí porque las necesitaba, en: Things I built because I needed them }
+  kicker: { es: Portafolio, en: Portfolio }
+  title: { es: Proyectos de datos de punta a punta, en: End-to-end data projects }
+  lede: { es: "Herramientas que construí por mi cuenta: la pregunta, los datos, el código y la herramienta publicada. Algunas para mí, otras porque un amigo me pidió un favor.", en: "Tools I built on my own: the question, the data, the code and the published tool. Some for me, some because a friend asked for a favor." }
   more_title: { es: Y otros experimentos, en: And a few more experiments }
   more_text: { es: "Cuando alguien me cuenta un problema, muchas veces termino armando un visor. Estos están publicados.", en: "When someone tells me about a problem, I often end up building a viewer for it. These are live." }
-  lede: { es: "Proyectos propios, de punta a punta: la pregunta, los datos, el código y la herramienta publicada. Algunos para mí, otros porque un amigo me pidió un favor.", en: "End-to-end side projects: the question, the data, the code and the published tool. Some for me, some because a friend asked for a favor." }
 
 work:
-  kicker: { es: Proyectos en los que participé, en: Projects I worked on }
-  title: { es: "Investigación, sector público y consultoría", en: "Research, public sector and consulting" }
-  lede: { es: "Toca cualquier proyecto para ver qué hice, con qué herramientas y qué salió.", en: "Tap any project to see what I did, the tools I used and what came out of it." }
+  kicker: { es: Trayectoria profesional, en: Professional track record }
+  title: { es: "Trabajos, proyectos y consultoría", en: "Work, projects and consulting" }
+  lede: { es: "Sector público, sector privado, investigación académica y consultorías. Toca cualquiera para ver qué hice, con qué herramientas y qué salió.", en: "Public sector, private companies, academic research and consulting. Tap any project to see what I did, the tools I used and what came out of it." }
 
 career:
-  kicker: { es: Trayectoria, en: Experience }
+  kicker: { es: CV, en: CV }
   title: { es: "Cinco años, cuatro mundos", en: "Five years, four worlds" }
   lede: { es: "Estadística oficial, centros de estudio, consultoría estratégica y educación pública. Cada uno me enseñó a hablarle a un público distinto.", en: "Official statistics, think tanks, strategy consulting and public education. Each one taught me to talk to a different audience." }
-  cta: { es: Ver trayectoria completa, en: See full experience }
+  cta: { es: Ver CV completo, en: See full CV }
 
 teaching:
   kicker: { es: Enseñar lo que uso, en: Teaching what I use }
@@ -91,14 +121,14 @@ teaching:
     - { title: { es: Una historia con inviernos, en: A history with winters }, text: { es: De los inviernos de la IA al boom de 2022., en: From the AI winters to the 2022 boom. } }
     - { title: { es: Cómo aprende una máquina, en: How a machine learns }, text: { es: Aprendizaje supervisado y no supervisado., en: Supervised and unsupervised learning. } }
     - { title: { es: Entrenar un algoritmo, en: Training an algorithm }, text: { es: Datos de entrenamiento y de prueba con fotos de perros., en: Training and test data with dog photos. } }
-    - { title: { es: Modelos de lenguaje, en: Language models }, text: { es: Por qué son tan grandes y qué significa «generativa»., en: Why they are so big and what "generative" means. } }
+    - { title: { es: Modelos de lenguaje, en: Language models }, text: { es: "Por qué son tan grandes y qué significa «generativa»." , en: "Why they are so big and what \"generative\" means." } }
     - { title: { es: Herramientas para investigar, en: Tools for research }, text: { es: "Transcribir con Whisper, clasificar texto, revisar literatura y conversar con tus documentos.", en: "Transcribing with Whisper, classifying text, reviewing literature and chatting with your documents." } }
     - { title: { es: Los límites, en: The limits }, text: { es: "Nivel de análisis, trabajo humano-máquina y sesgos.", en: "Level of analysis, human-machine work and bias." } }
     - { title: { es: Manos a la obra, en: Hands on }, text: { es: Segunda parte práctica con las herramientas., en: A hands-on second half with the tools. } }
 
 publications:
   kicker: { es: Publicaciones, en: Publications }
-  title: { es: Lo que escribimos con esos datos, en: What we wrote with that data }
+  title: { es: Última publicación, en: Latest publication }
   counts:
     - { value: 1, label: { es: artículo en revista académica, en: peer-reviewed article } }
     - { value: 7, label: { es: policy papers del CEP, en: CEP policy papers } }

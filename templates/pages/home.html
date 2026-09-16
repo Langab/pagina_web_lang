@@ -12,17 +12,20 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="status"><i aria-hidden="true"></i>{{ h.status | t }}</p>
-      <h1>{% for line in h.title | t %}<span class="line"><span>{{ line }}</span></span>{% endfor %}</h1>
+      <p class="kicker">{{ h.kicker | t }}</p>
+      <h1 class="hero-name">{{ h.name }}</h1>
+      <p class="hero-role">{{ h.role | t }}</p>
       <p class="hero-lede">{{ h.lede | md }}</p>
+      <ul class="chips hero-badges">{% for b in h.badges %}<li>{{ b | t }}</li>{% endfor %}</ul>
       <div class="actions">
-        <a class="btn btn-solid" href="#{{ 'proyectos' if lang == 'es' else 'projects' }}">{{ h.cta_primary | t }}</a>
-        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ h.cta_secondary | t }}</a>
+        <a class="btn btn-solid" href="{{ url('portafolio') }}">{{ h.cta_primary | t }}</a>
+        <a class="btn" href="{{ url('cv') }}">{{ h.cta_secondary | t }}</a>
+        <a class="btn" href="#{{ ui.contact_anchor }}">{{ h.cta_third | t }}</a>
       </div>
+      <p class="status"><i aria-hidden="true"></i>{{ h.status | t }}</p>
       <div class="hero-meta">
-        {% for item in h.meta %}
-        {% set value = live.total if item.value == 'live_total' else item.value | int %}
-        <div><b data-count="{{ value }}">{{ value | num }}</b>{{ item.label | t }}</div>
+        {% for s in h.stats %}
+        <div><b data-count="{{ s.value }}"{% if s.suffix is defined %} data-suffix="{{ s.suffix }}"{% endif %}>{{ s.value }}{{ s.suffix | default('') }}</b>{{ s.label | t }}</div>
         {% endfor %}
       </div>
     </div>
@@ -46,6 +49,29 @@
       <li class="{{ 'is-square' if logo.square is defined }}{{ ' is-dark' if logo.dark is defined }}"><a href="{{ logo.url }}" target="_blank" rel="noopener" title="{{ logo.name }}"><img src="{{ asset('img/' ~ logo.src) }}" alt="{{ logo.name }}" loading="lazy"></a></li>
       {% endfor %}
     </ul>
+  </div>
+</section>
+
+{# ── Áreas de trabajo ─────────────────────────────────────────────── #}
+{% set ar = home.areas %}
+<section class="section" aria-labelledby="areas-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ ar.kicker | t }}</p>
+        <h2 id="areas-title">{{ ar.title | t }}</h2>
+      </div>
+      <p>{{ ar.lede | t }}</p>
+    </div>
+    <div class="area-grid">
+      {% for a in ar['items'] %}
+      <article class="area-card" data-reveal style="--d: {{ loop.index0 * 0.05 }}s">
+        <h3>{{ a.title | t }}</h3>
+        <p>{{ a.text | md }}</p>
+        <ul class="chips">{% for tag in a.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
+      </article>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -79,8 +105,8 @@
   </div>
 </section>
 
-{# ── Laboratorio personal ─────────────────────────────────────────── #}
-<section class="section" id="{{ 'proyectos' if lang == 'es' else 'projects' }}" aria-labelledby="lab-title">
+{# ── Portafolio: proyectos propios ────────────────────────────────── #}
+<section class="section" id="{{ 'portafolio' if lang == 'es' else 'portfolio' }}" aria-labelledby="lab-title">
   <div class="wrap">
     <div class="section-head">
       <div>
@@ -109,20 +135,14 @@
       </article>
       {% endfor %}
     </div>
-
-    <div class="more-experiments" data-reveal>
-      <h3>{{ home.lab.more_title | t }}</h3>
-      <p>{{ home.lab.more_text | t }}</p>
-      <div class="mini-grid">
-        {% for e in projects.experiments %}
-        <a href="{{ e.url }}" target="_blank" rel="noopener"><b>{{ e.title | t }}</b><span>{{ e.text | t }}</span></a>
-        {% endfor %}
-      </div>
+    <div class="actions" style="margin-top: 2.5rem">
+      <a class="btn" href="{{ url('portafolio') }}">{{ ui.all_projects }}</a>
     </div>
   </div>
 </section>
 
-{# ── Proyectos en los que participé ───────────────────────────────── #}
+{# ── Trabajos, proyectos y consultoría (destacados) ───────────────── #}
+{% set destacados = projects.work[:5] %}
 <section class="section on-paper" aria-labelledby="work-title">
   <div class="wrap">
     <div class="section-head">
@@ -132,11 +152,17 @@
       </div>
       <p>{{ home.work.lede | t }}</p>
     </div>
-    {% include "partials/work_index.html" %}
+    <ul class="work-index" id="work-home">
+      {% for w in destacados %}{{ m.work_row(w) }}{% endfor %}
+    </ul>
+    <div class="work-preview" data-preview-box aria-hidden="true"><img alt=""></div>
+    <div class="actions" style="margin-top: 2.5rem">
+      <a class="btn" href="{{ url('trabajos') }}">{{ ui.see_work }}</a>
+    </div>
   </div>
 </section>
 
-{# ── Trayectoria ──────────────────────────────────────────────────── #}
+{# ── CV resumido ──────────────────────────────────────────────────── #}
 <section class="section" aria-labelledby="career-title">
   <div class="wrap split">
     <div class="split-sticky">
@@ -186,7 +212,7 @@
   </div>
 </section>
 
-{# ── Publicaciones ────────────────────────────────────────────────── #}
+{# ── Última publicación ───────────────────────────────────────────── #}
 {% set pubs = home.publications %}
 {% set feat = publications.groups[0]['items'][0] %}
 <section class="section" aria-labelledby="pubs-title">
@@ -214,5 +240,5 @@
 {% endblock %}
 
 {% block dialogs %}
-{% for w in projects.work %}{{ m.work_modal(w) }}{% endfor %}
+{% for w in projects.work[:5] %}{{ m.work_modal(w) }}{% endfor %}
 {% endblock %}

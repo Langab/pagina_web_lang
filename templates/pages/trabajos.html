@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "partials/macros.html" as m with context %}
+
+{% block main %}
+<header class="page-intro wrap">
+  <p class="kicker">{{ home.work.kicker | t }}</p>
+  <h1>{{ page.title | t }}</h1>
+  <p>{{ page.description | t }}</p>
+</header>
+
+<section class="wrap section-tight" style="padding-top:0">
+  {% include "partials/work_index.html" %}
+</section>
+
+<section class="section-tight wrap">
+  <a class="p-next" href="{{ url('cv') }}" style="text-decoration:none">
+    <div>
+      <p class="kicker" style="margin:0 0 .5rem">{{ home.career.kicker | t }}</p>
+      <h2>{{ home.career.title | t }}</h2>
+      <p>{{ home.career.lede | t }}</p>
+    </div>
+    <span class="btn btn-solid">{{ home.career.cta | t }}</span>
+  </a>
+</section>
+{% endblock %}
+
+{% block dialogs %}
+{% for w in projects.work %}{{ m.work_modal(w) }}{% endfor %}
+{% endblock %}

@@ -1,6 +1,8 @@
 # Sitio de Benjamín Lang: instrucciones para trabajar en este proyecto
 
-Lee `README.md` para la arquitectura. Resumen: contenido en `content/*.yml` (bilingüe), plantillas Jinja en `templates/`, estilos y JS sin dependencias en `static/`, `python build.py` genera `_site.nosync/`, GitHub Actions publica en cada push.
+Lee `README.md` para la arquitectura.
+
+Estructura del sitio (heredada del sitio antiguo): **Inicio · Portafolio · Trabajos, proyectos y consultoría · Publicaciones · CV**. La portada resume cada una y se lee como un CV: quién es, qué sabe hacer con evidencia, qué construyó, dónde trabajó y qué publicó. Resumen: contenido en `content/*.yml` (bilingüe), plantillas Jinja en `templates/`, estilos y JS sin dependencias en `static/`, `python build.py` genera `_site.nosync/`, GitHub Actions publica en cada push.
 
 ## Reglas del proyecto
 
@@ -9,6 +11,7 @@ Lee `README.md` para la arquitectura. Resumen: contenido en `content/*.yml` (bil
 - Antes de terminar: `python build.py && python scripts/revisar_enlaces.py`.
 - No subir `_site.nosync/` a git. No volver a Quarto ni a la carpeta `docs/`.
 - Textos pasados por el humanizador: frases directas, datos concretos, nada inventado. Si una cifra no está verificada, no va.
+- Nada de vender humo: cada afirmación va anclada a un trabajo real (institución, cifra o entregable). Sin listas de servicios ni promesas genéricas.
 - Privacidad: no publicar datos de clientes (Aldeas, Francisca Bravo), microdatos del INE, hallazgos no publicados del Fondecyt, datos de salud sensibles (corazón, sueño, rutas GPS), ni nombres de empresas del buscador de trabajo.
 
 ## Sistema visual
