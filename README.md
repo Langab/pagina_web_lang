@@ -10,12 +10,16 @@ Es un sitio estático hecho a mano: los **textos viven en archivos de datos**, l
 content/                 ← TODO el texto del sitio, en español e inglés
   site.yml               ← nombre, contacto, páginas, menú, textos cortos de interfaz
   home.yml               ← portada, sección por sección
-  projects.yml           ← proyectos propios, experimentos y proyectos en los que participé
+  projects.yml           ← portafolio propio, experimentos y trabajos en los que participé
   experience.yml         ← trabajos, formación, habilidades, idiomas, charlas, referencias
   publications.yml       ← publicaciones
 templates/               ← HTML con Jinja2
   base.html              ← estructura común (encabezado, menú, idioma, pie)
-  pages/                 ← una plantilla por tipo de página
+  pages/home.html        ← portada
+  pages/portafolio.html  ← portafolio (proyectos propios)
+  pages/trabajos.html    ← trabajos, proyectos y consultoría
+  pages/cv.html          ← CV
+  pages/publications.html ← publicaciones
   projects/<id>.html     ← el relato largo de cada proyecto propio (ES y EN lado a lado)
   partials/              ← piezas reutilizables: ventanas emergentes, índice, contacto
 static/                  ← se copia tal cual a /assets/
@@ -43,11 +47,13 @@ title: { es: Visor de arriendos, en: Rental finder }
 - Se puede usar `**negrita**`, `*cursiva*` y `[enlaces](https://...)`.
 - Si falta una traducción, `python build.py` se detiene y dice exactamente dónde.
 
-### Agregar un proyecto en el que participaste
+Las páginas y el menú se definen en `content/site.yml`, en `pages:` y `nav:`. Ahí también viven las redirecciones desde las URL antiguas.
+
+### Agregar un trabajo o consultoría
 
 Copia un bloque dentro de `work:` en `content/projects.yml`, cambia el `id` y los textos. Todo lo que va dentro de `modal:` es opcional: `intro`, `numbers`, `flow`, `did`, `bars`, `gallery`, `tools`, `note`, `links`. Se abre solo en una ventana emergente.
 
-### Agregar un proyecto propio con página
+### Agregar un proyecto propio al portafolio
 
 1. Agrega un bloque en `lab:` con `detail: true` y un `slug` para cada idioma.
 2. Crea `templates/projects/<id>.html` con el relato. Cada `<section id="...">` con un `<h2>` aparece solo en el índice lateral.

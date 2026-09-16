@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% set page_title = page.title | t %}
-  <title>{% if route.id == 'home' %}{{ site.name }} | {{ site.tagline | t }}{% else %}{{ page_title }} | {{ site.name }}{% endif %}</title>
+  <title>{% if route.id == 'home' %}{{ site.name }} | {{ site.home_title | t }}{% else %}{{ page_title }} | {{ site.name }}{% endif %}</title>
   <meta name="description" content="{{ page.description | t }}">
   <link rel="canonical" href="{{ canonical }}">
   {% for l, href in alternates.items() %}

@@ -110,7 +110,7 @@ def build_routes(data: dict) -> list[dict]:
             "meta": page,
             "project": None,
         })
-    base = next(p for p in data["site"]["pages"] if p["id"] == "projects")["path"]
+    base = next(p for p in data["site"]["pages"] if p["id"] == "portafolio")["path"]
     for project in data["projects"]["lab"]:
         if not project.get("detail"):
             continue
@@ -304,6 +304,9 @@ def _render_all(data, routes, routes_by_id, site, env, OUT):
     redirect_tpl = env.get_template("redirect.html")
     for old, target_id, lang in site["legacy_redirects"]:
         target = routes_by_id[target_id]["path"][lang]
+        if (OUT / old).exists() or out_file(target) == old:
+            print(f"  (omito la redirección {old}: esa URL ya es una página del sitio)")
+            continue
         write(OUT / old, redirect_tpl.render(target=rel(old, target), absolute=site["url"] + target))
 
     # Código abierto descargable: cada carpeta de static/code/ se empaqueta en un .zip

@@ -22,7 +22,7 @@
     {% endfor %}
   </div>
 
-  <div class="more-experiments more-on-light">
+  <div class="more-experiments">
     <h3>{{ home.lab.more_title | t }}</h3>
     <p>{{ home.lab.more_text | t }}</p>
     <div class="mini-grid">
@@ -33,20 +33,14 @@
   </div>
 </section>
 
-<section class="section on-paper" aria-labelledby="work-title">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ home.work.kicker | t }}</p>
-        <h2 id="work-title">{{ home.work.title | t }}</h2>
-      </div>
+<section class="section-tight wrap" style="padding-top:0">
+  <a class="p-next" href="{{ url('trabajos') }}" style="text-decoration:none">
+    <div>
+      <p class="kicker" style="margin:0 0 .5rem">{{ home.work.kicker | t }}</p>
+      <h2>{{ home.work.title | t }}</h2>
       <p>{{ home.work.lede | t }}</p>
     </div>
-    {% include "partials/work_index.html" %}
-  </div>
+    <span class="btn btn-solid">{{ ui.see_work }}</span>
+  </a>
 </section>
-{% endblock %}
-
-{% block dialogs %}
-{% for w in projects.work %}{{ m.work_modal(w) }}{% endfor %}
 {% endblock %}

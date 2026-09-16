@@ -9,6 +9,9 @@ url: https://langab.github.io/pagina_web_lang/
 tagline:
   es: Sociólogo y analista de datos
   en: Sociologist and data analyst
+home_title:
+  es: "Portafolio de datos e investigación social"
+  en: "Data and social research portfolio"
 description:
   es: Sociólogo y analista de datos en Santiago de Chile. Censo 2024 en el INE, investigación en el CEP y la UDP, datos de educación pública y herramientas propias con Python y agentes de IA.
   en: Sociologist and data analyst based in Santiago, Chile. 2024 Census at INE, research at CEP and UDP, public education data, and self-built tools with Python and AI agents.
@@ -30,48 +33,67 @@ pages:
     path: { es: "", en: "en/" }
     title: { es: Inicio, en: Home }
     description:
-      es: Sociólogo y analista de datos en Santiago de Chile. Censo 2024 en el INE, investigación en el CEP y la UDP, datos de educación pública y herramientas propias con Python y agentes de IA.
-      en: Sociologist and data analyst based in Santiago, Chile. 2024 Census at INE, research at CEP and UDP, public education data, and self-built tools with Python and AI agents.
-  - id: projects
-    template: pages/projects.html
-    path: { es: proyectos/, en: en/projects/ }
-    title: { es: Proyectos, en: Projects }
+      es: "Portafolio de Benjamín Lang, sociólogo y analista de datos en Santiago de Chile. Censo 2024 en el INE, investigación en el CEP y la UDP, datos de educación pública y herramientas propias con Python e IA."
+      en: "Portfolio of Benjamín Lang, sociologist and data analyst in Santiago, Chile. 2024 Census at INE, research at CEP and UDP, public education data, and self-built tools with Python and AI."
+  - id: portafolio
+    template: pages/portafolio.html
+    path: { es: portafolio/, en: en/portfolio/ }
+    title: { es: Portafolio, en: Portfolio }
     description:
-      es: Herramientas que construí por mi cuenta y proyectos de investigación, sector público y consultoría en los que participé.
-      en: Tools I built on my own, plus the research, public-sector and consulting projects I worked on.
-  - id: cv
-    template: pages/cv.html
-    path: { es: trayectoria/, en: en/experience/ }
-    title: { es: Trayectoria, en: Experience }
+      es: "Proyectos de datos de punta a punta que construí por mi cuenta: visores que se actualizan solos, agentes de IA y análisis con código abierto."
+      en: "End-to-end data projects I built on my own: self-updating viewers, AI agents and open-source analysis."
+  - id: trabajos
+    template: pages/trabajos.html
+    path: { es: trabajos/, en: en/work/ }
+    title: { es: "Trabajos, proyectos y consultoría", en: "Work, projects and consulting" }
     description:
-      es: Experiencia laboral, formación, habilidades técnicas y docencia de Benjamín Lang.
-      en: Work experience, education, technical skills and teaching of Benjamín Lang.
+      es: "Experiencia en sector público, sector privado, investigación académica y consultorías. Qué hice en cada proyecto, con qué herramientas y qué salió."
+      en: "Experience across the public sector, private companies, academic research and consulting. What I did on each project, with which tools and what came out of it."
   - id: publications
     template: pages/publications.html
     path: { es: publicaciones/, en: en/publications/ }
     title: { es: Publicaciones, en: Publications }
     description:
-      es: Artículo académico, policy papers del Centro de Estudios Públicos y notas de investigación de C22.
-      en: Peer-reviewed article, policy papers for Centro de Estudios Públicos and C22 research notes.
+      es: "Artículo académico, policy papers del Centro de Estudios Públicos y notas de investigación de C22."
+      en: "Peer-reviewed article, policy papers for Centro de Estudios Públicos and C22 research notes."
+  - id: cv
+    template: pages/cv.html
+    path: { es: cv/, en: en/cv/ }
+    title: { es: CV, en: CV }
+    description:
+      es: "Experiencia laboral, formación, habilidades técnicas y docencia de Benjamín Lang."
+      en: "Work experience, education, technical skills and teaching of Benjamín Lang."
 
 nav:
-  - { id: projects, label: { es: Proyectos, en: Projects } }
-  - { id: cv, label: { es: Trayectoria, en: Experience } }
+  - { id: portafolio, label: { es: Portafolio, en: Portfolio } }
+  - { id: trabajos, label: { es: Trabajos, en: Work } }
   - { id: publications, label: { es: Publicaciones, en: Publications } }
+  - { id: cv, label: { es: CV, en: CV } }
 
-# URL del sitio anterior (Quarto) → página nueva. Así no se rompen enlaces viejos.
+# URL antiguas (sitio Quarto y primera versión de este rediseño) → página nueva.
 legacy_redirects:
   - [index-en.html, home, en]
   - [about.html, cv, es]
   - [about-en.html, cv, en]
-  - [trabajos.html, projects, es]
-  - [trabajos-en.html, projects, en]
+  - [trabajos.html, trabajos, es]
+  - [trabajos-en.html, trabajos, en]
   - [publicaciones.html, publications, es]
   - [publicaciones-en.html, publications, en]
-  - [portafolio/index.html, projects, es]
-  - [portafolio-en/index.html, projects, en]
-  - [blog/index.html, projects, es]
+  - [portafolio-en/index.html, portafolio, en]
+  - [blog/index.html, portafolio, es]
   - [blog/posts/visor-arriendos/index.html, "project:visor-arriendos", es]
+  - [proyectos/index.html, portafolio, es]
+  - [en/projects/index.html, portafolio, en]
+  - [trayectoria/index.html, cv, es]
+  - [en/experience/index.html, cv, en]
+  - [proyectos/visor-de-arriendos/index.html, "project:visor-arriendos", es]
+  - [proyectos/buscador-de-trabajo/index.html, "project:buscador-trabajo", es]
+  - [proyectos/25-millones-de-pasos/index.html, "project:visor-salud", es]
+  - [proyectos/la-casa-siempre-gana/index.html, "project:casa-siempre-gana", es]
+  - [en/projects/rental-finder/index.html, "project:visor-arriendos", en]
+  - [en/projects/job-search-agents/index.html, "project:buscador-trabajo", en]
+  - [en/projects/25-million-steps/index.html, "project:visor-salud", en]
+  - [en/projects/the-house-always-wins/index.html, "project:casa-siempre-gana", en]
 
 # Textos cortos de interfaz
 ui:
@@ -84,7 +106,8 @@ ui:
   close: { es: Cerrar, en: Close }
   see_what_i_did: { es: Ver qué hice, en: See what I did }
   read_story: { es: Leer cómo lo hice, en: Read how I built it }
-  all_projects: { es: Ver todos los proyectos, en: See all projects }
+  see_work: { es: "Ver trabajos, proyectos y consultoría", en: "See work, projects and consulting" }
+  all_projects: { es: Ver todo el portafolio, en: See the full portfolio }
   filter_all: { es: Todos, en: All }
   what_i_did: { es: Qué hice, en: What I did }
   how_it_works: { es: Cómo funciona, en: How it works }
