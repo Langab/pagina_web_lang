@@ -23,8 +23,8 @@ lab:
     year: 2026
     title: { es: Visor de arriendos, en: Rental finder }
     hook:
-      es: Buscar departamento en Santiago se había vuelto un segundo trabajo. Así que armé un sistema que revisa los portales cada mañana y me dice cuáles avisos valen la pena.
-      en: Apartment hunting in Santiago had become a second job. So I built a system that checks the listing sites every morning and tells me which listings are worth it.
+      es: Sistema que consolida a diario la oferta de arriendos de tres portales, la deduplica, la geocodifica y la publica en un visor con filtros, métricas e historial.
+      en: A system that consolidates rental listings from three sites every day, deduplicates and geocodes them, and publishes them in a viewer with filters, metrics and history.
     facts:
       - { es: "Esta mañana revisó {live_total} avisos y {match} calzan con todo lo que buscamos.", en: "This morning it checked {live_total} listings and {match} match everything we want." }
       - { es: "Junta tres portales, elimina duplicados y ubica cada aviso en el mapa con su distancia al metro.", en: "It merges three listing sites, removes duplicates and maps every listing with its distance to the metro." }
@@ -37,14 +37,48 @@ lab:
       - { label: { es: Abrir el visor, en: Open the finder }, url: "https://langab.github.io/visor_arriendos/viewer/" }
       - { label: { es: Código en GitHub, en: Code on GitHub }, url: "https://github.com/Langab/visor_arriendos" }
 
+  - id: visor-salud
+    detail: true
+    slug: { es: 25-millones-de-pasos, en: 25-million-steps }
+    year: 2026
+    title: { es: "Nueve años de datos de actividad física", en: "Nine years of activity data" }
+    hook:
+      es: "Procesamiento de 2,74 millones de registros de Apple Health con Python: lectura en streaming de un XML de 1,2 GB, agregación con pandas e informe HTML sin dependencias."
+      en: "Processing 2.74 million Apple Health records with Python: streaming read of a 1.2 GB XML file, pandas aggregation and a dependency-free HTML report."
+    facts:
+      - { es: "2,74 millones de registros de cinco dispositivos, de 2017 a 2026.", en: "2.74 million records from five devices, 2017 to 2026." }
+      - { es: Un script lee el XML línea a línea sin cargarlo entero en memoria., en: A script reads the XML line by line without loading it all into memory. }
+      - { es: "Puedes probarlo en esta página: tus datos no salen de tu navegador.", en: "You can try it on this page: your data never leaves your browser." }
+    tags: [Python, pandas, SVG, Web Workers, Claude Code]
+    image: projects/visor-salud/pasos
+    address: langab.github.io/pagina_web_lang/proyectos/25-millones-de-pasos
+    status: { es: "Código abierto y reproducible", en: "Open, reproducible code" }
+
+  - id: casa-siempre-gana
+    detail: true
+    slug: { es: la-casa-siempre-gana, en: the-house-always-wins }
+    year: 2026
+    title: { es: "Análisis de apuestas: la casa siempre gana", en: "Betting analysis: the house always wins" }
+    hook:
+      es: Aplicación de registro y análisis de apuestas deportivas que calcula el rendimiento con intervalos de confianza y lo compara con simulaciones sin ventaja, para separar suerte de habilidad.
+      en: A betting log and analysis app that computes returns with confidence intervals and compares them against zero-edge simulations, to tell luck from skill.
+    facts:
+      - { es: Calcula el rendimiento real con su margen de error y la tasa de acierto que necesitas para no perder., en: It computes real returns with a margin of error and the hit rate you need just to break even. }
+      - { es: 600 simulaciones por usuario para separar la suerte de la habilidad., en: 600 simulations per user to tell luck from skill. }
+      - { es: "Sin librerías: HTML, JavaScript y gráficos SVG hechos a mano.", en: "No libraries: HTML, JavaScript and hand-made SVG charts." }
+    tags: [JavaScript, SVG, Monte Carlo, Google Sheets, PWA]
+    image: projects/casa-siempre-gana/simulador
+    address: una-app-para-un-amigo.local
+    status: { es: Encargo privado, en: Private commission }
+
   - id: buscador-trabajo
     detail: true
     slug: { es: buscador-de-trabajo, en: job-search-agents }
     year: 2026
-    title: { es: "Mi búsqueda de trabajo, con agentes", en: "My job search, run by agents" }
+    title: { es: Buscador de empleo con agentes de IA, en: Job search engine with AI agents }
     hook:
-      es: Buscar trabajo es un embudo de datos. Cientos de ofertas, pocas que calzan y cada postulación pide un CV distinto. Lo convertí en un sistema de Claude Code que busca, puntúa, adapta mi CV y lleva la cuenta.
-      en: A job search is a data funnel. Hundreds of openings, a few that fit, and every application wants a different CV. I turned it into a Claude Code system that searches, scores, tailors my CV and keeps track.
+      es: Sistema de agentes que recolecta ofertas laborales de varios portales, las puntúa contra un perfil con criterios explícitos y deja registro de cada postulación.
+      en: An agent system that collects job openings from several sites, scores them against a profile with explicit criteria and keeps a record of every application.
     facts:
       - { es: 468 ofertas de 311 empresas revisadas en 29 búsquedas., en: "468 openings from 311 companies reviewed across 29 search runs." }
       - { es: "Cada oferta recibe un puntaje de 0 a 100 en habilidades, experiencia, cultura y proyección.", en: "Each opening gets a 0–100 score on skills, experience, culture fit and career direction." }
@@ -54,56 +88,20 @@ lab:
     address: langab.github.io/visor_trabajos
     status: { es: En uso, en: In use }
 
-  - id: visor-salud
-    detail: true
-    slug: { es: 25-millones-de-pasos, en: 25-million-steps }
-    year: 2026
-    title: { es: 25 millones de pasos, en: 25 million steps }
-    hook:
-      es: Mi teléfono lleva nueve años contando mis pasos. Un domingo exporté todo, 1,2 GB de datos, para ver qué sabía de mí. El código queda abierto para que lo pruebes con los tuyos.
-      en: My phone has been counting my steps for nine years. One Sunday I exported everything, 1.2 GB of data, to see what it knew about me. The code is open so you can try it with yours.
-    facts:
-      - { es: "2,74 millones de registros de cinco dispositivos, de 2017 a 2026.", en: "2.74 million records from five devices, 2017 to 2026." }
-      - { es: Un script lee el XML línea a línea sin cargarlo entero en memoria., en: A script reads the XML line by line without loading it all into memory. }
-      - { es: "Puedes probarlo en esta página: tus datos no salen de tu navegador.", en: "You can try it on this page: your data never leaves your browser." }
-    tags: [Python, pandas, SVG, Web Workers, Claude Code]
-    image: projects/visor-salud/pasos
-    address: langab.github.io/pagina_web_lang/proyectos/25-millones-de-pasos
-    status: { es: "Código abierto, pruébalo con tus datos", en: "Open code, try it with your data" }
-
-  - id: casa-siempre-gana
-    detail: true
-    slug: { es: la-casa-siempre-gana, en: the-house-always-wins }
-    year: 2026
-    title: { es: La casa siempre gana, en: The house always wins }
-    hook:
-      es: Un amigo me pidió una app para anotar sus apuestas y saber si iba ganando. Se la hice. Lo que no le prometí fue que la respuesta le iba a gustar.
-      en: A friend asked me for an app to log his bets and tell him whether he was winning. I built it. What I didn't promise was that he'd like the answer.
-    facts:
-      - { es: Calcula el rendimiento real con su margen de error y la tasa de acierto que necesitas para no perder., en: It computes real returns with a margin of error and the hit rate you need just to break even. }
-      - { es: 600 simulaciones por usuario para separar la suerte de la habilidad., en: 600 simulations per user to tell luck from skill. }
-      - { es: "Sin librerías: HTML, JavaScript y gráficos SVG hechos a mano.", en: "No libraries: HTML, JavaScript and hand-made SVG charts." }
-    tags: [JavaScript, SVG, Monte Carlo, Google Sheets, PWA]
-    image: projects/casa-siempre-gana/simulador
-    address: una-app-para-un-amigo.local
-    status: { es: Uso privado, en: Private use }
-
 experiments:
-  - title: { es: Un celular para la Romi, en: A phone for Romi }
-    text: { es: Precios diarios de cuatro celulares en tiendas chilenas y cuál conviene por cámara., en: Daily prices for four phones in Chilean stores and which one wins on camera. }
-    url: https://langab.github.io/visor_celulares/
-  - title: { es: Rumbo a Colombia, en: Bound for Colombia }
-    text: { es: Scraper diario de vuelos Santiago–Bogotá–Medellín–Cali con detector de ofertas., en: "Daily flight scraper for Santiago–Bogotá–Medellín–Cali with a deal detector." }
+  - title: { es: Seguimiento de tarifas aéreas, en: Airfare tracking }
+    text: { es: "Scraper diario de vuelos entre Santiago y Colombia, con detección de tarifas bajo el promedio histórico.", en: "Daily scraper of flights between Santiago and Colombia, flagging fares below the historical average." }
     url: https://langab.github.io/visualizador_ofertas_vuelos/
   - title: { es: Loica, en: Loica }
-    text: { es: Mapa de panoramas de Santiago armado a partir de eventos extraídos automáticamente., en: A map of things to do in Santiago built from automatically extracted events. }
+    text: { es: Extracción automatizada de eventos culturales de Santiago y prototipo de mapa web., en: Automated extraction of cultural events in Santiago and a web map prototype. }
     url: https://github.com/Langab/loica
-  - title: { es: Visores de empleo para amigos, en: Job finders for friends }
-    text: { es: Versiones del buscador de trabajo para gestión de personas y para diseño gráfico., en: Versions of my job search tool for HR and for graphic design. }
+  - title: { es: Visores de ofertas por área, en: Job viewers by field }
+    text: { es: "Adaptaciones del buscador de empleo a otras áreas: gestión de personas y diseño gráfico.", en: "Adaptations of the job search engine to other fields: HR and graphic design." }
     url: https://github.com/Langab
 
 work:
   - id: censo-2024
+    home: true
     area: [public]
     years: "2024 – 2025"
     title: { es: Censo de Población y Vivienda 2024, en: 2024 Population and Housing Census }
@@ -135,73 +133,33 @@ work:
       links:
         - { label: { es: Resultados del Censo, en: Census results }, url: "https://censo2024.ine.gob.cl/" }
 
-  - id: fondecyt-bc
+  - id: c22
+    home: true
     area: [research]
-    years: "2024 – 2025"
-    title: { es: "Gobernar la incertidumbre: el Banco Central en la crisis de 1982", en: "Governing uncertainty: Chile's Central Bank in the 1982 crisis" }
-    org: { es: "Fondecyt N° 1231356, Universidad Diego Portales", en: "Fondecyt grant 1231356, Universidad Diego Portales" }
-    role: { es: Investigador, en: Researcher }
-    preview: projects/fondecyt-bc/red.jpg
+    years: "2021 – 2024"
+    title: { es: "C22: el proceso constitucional en datos", en: "C22: the constitutional process in data" }
+    org: { es: Centro de Estudios Públicos (CEP), en: Centro de Estudios Públicos (CEP) }
+    role: { es: Asistente de investigación, en: Research assistant }
+    preview: logos/c22.png
     modal:
       intro:
-        es: ¿Qué hace un banco central cuando todo se viene abajo? El proyecto estudia cómo el Banco Central de Chile produce «estabilidad». Mi parte fue la crisis de 1981 a 1983. Leímos, con ayuda de modelos de lenguaje, todo lo que discutía cada semana su Comité Ejecutivo.
-        en: What does a central bank do when everything falls apart? The project studies how Chile's Central Bank produces "stability". My part was the 1981–1983 crisis. With help from language models, we read everything its Executive Committee discussed week after week.
-      cover:
-        src: projects/fondecyt-bc/red.jpg
-        alt: { es: "Red de co-ocurrencia de problemas, acciones y destinatarios en las actas", en: "Co-occurrence network of problems, actions and targets in the minutes" }
-        caption: { es: "Red de códigos que aparecen juntos en un mismo memorando. Cada color es una comunidad detectada con el algoritmo de Louvain.", en: "Network of codes that appear together in the same memo. Each color is a community detected with the Louvain algorithm." }
+        es: Entre 2021 y 2023 Chile escribió dos propuestas de constitución y rechazó ambas. En C22 seguimos ese proceso con datos. Votaciones, discursos y encuestas convertidos en análisis para el debate público.
+        en: Between 2021 and 2023 Chile drafted two constitutions and rejected both. At C22 we followed the process with data. Votes, speeches and surveys turned into analysis for public debate.
       numbers:
-        - { value: 144, label: { es: actas del Comité Ejecutivo entre 1981 y 1983, en: Executive Committee minutes from 1981 to 1983 } }
-        - { value: 1467, label: { es: memorandos codificados uno por uno, en: memos coded one by one } }
-        - { value: 885, label: { es: memorandos ligados directamente a la crisis, en: memos directly tied to the crisis } }
-        - { value: 23, label: { es: tipos de acción del Banco en el esquema de códigos, en: types of Bank action in the coding scheme } }
-      flow_title: { es: "El método, paso a paso", en: "The method, step by step" }
-      flow:
-        - { title: { es: Del papel al texto, en: From paper to text }, text: { es: Actas escaneadas convertidas a texto con OCR., en: Scanned minutes converted to text with OCR. } }
-        - { title: { es: Codificar con GPT-4o, en: Coding with GPT-4o }, text: { es: "Cada memorando recibe un problema, una acción y un destinatario.", en: "Each memo gets a problem, an action and a target." } }
-        - { title: { es: Filtrar la crisis, en: Filtering the crisis }, text: { es: Un filtro de relevancia separa lo ligado a la crisis., en: A relevance filter keeps what relates to the crisis. } }
-        - { title: { es: Redes, en: Networks }, text: { es: "Co-ocurrencias, centralidad y comunidades.", en: "Co-occurrence, centrality and communities." } }
-        - { title: { es: Temas y lectura fina, en: Topics and close reading }, text: { es: Modelos de tópicos (STM) por grupo y lectura cualitativa con discursos de la época., en: Topic models (STM) per group and close reading alongside speeches from the period. } }
+        - { value: 7, label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
+        - { value: 6, label: { es: research notes en C22, en: C22 research notes } }
+        - { value: 2, label: { es: procesos constitucionales seguidos, en: constitutional processes tracked } }
       did:
-        - { title: { es: Un piloto en 2024, en: A pilot in 2024 }, text: { es: "Un notebook en Python con GPT-3.5 que resumía cada acta y extraía personas, problemas, sanciones y políticas.", en: "A Python notebook with GPT-3.5 that summarized each set of minutes and pulled out people, problems, sanctions and policies." } }
-        - { title: { es: El pipeline de 2025, en: The 2025 pipeline }, text: { es: "Prompts, categorías y controles para codificar 1.467 memorandos de forma consistente con GPT-4o.", en: "Prompts, categories and checks to code 1,467 memos consistently with GPT-4o." } }
-        - { title: { es: Análisis de redes, en: Network analysis }, text: { es: "Qué problemas, acciones y actores aparecen juntos, y cuáles ocupan el centro.", en: "Which problems, actions and actors show up together, and which ones sit at the center." } }
-        - { title: { es: Entregas al equipo, en: Team deliverables }, text: { es: Presentaciones de método y resultados preliminares en mayo y julio de 2025., en: Method and preliminary results presentations in May and July 2025. } }
-      tools: [Python, OpenAI API, GPT-4o, R, STM, Louvain]
-      note: { es: Los hallazgos del equipo aún no están publicados. Por eso aquí muestro el método y no las conclusiones., en: "The team's findings aren't published yet, so here I show the method, not the conclusions." }
-
-  - id: aldeas
-    area: [ngo, consulting]
-    years: { es: "2025 – hoy", en: "2025 – now" }
-    title: { es: Habilidades digitales en Aldeas Infantiles SOS, en: "Digital skills at SOS Children's Villages" }
-    org: { es: "Aldeas Infantiles SOS Chile, con MICELIA", en: "SOS Children's Villages Chile, with MICELIA" }
-    role: { es: Consultor y líder de la sede Quilpué, en: Consultant and Quilpué site lead }
-    preview: projects/aldeas/curvas.jpg
-    modal:
-      intro:
-        es: ¿Qué tan preparados están los equipos y los jóvenes de Aldeas para una vida que pasa por el celular? Primero lo medimos. Ahora, en 2026, damos talleres para cerrar las brechas que encontramos.
-        en: How ready are the staff and young people at SOS Children's Villages for a life that runs through a phone? First we measured it. Now, in 2026, we run workshops to close the gaps we found.
-      cover:
-        src: projects/aldeas/curvas.jpg
-        alt: { es: "Lámina «Las dos curvas del placer» sobre recompensa digital y recompensa de la vida real", en: "Slide «The two pleasure curves» about digital reward versus real-life reward" }
-        caption: { es: "Material de clase: por qué una app engancha más que la vida real y cómo recalibrar.", en: "Class material: why an app hooks you more than real life does, and how to recalibrate." }
-      numbers:
-        - { value: 4, label: { es: aldeas con grupos focales en el diagnóstico, en: villages with focus groups in the assessment } }
-        - { value: 3, label: { es: sedes con talleres durante 2026, en: sites running workshops in 2026 } }
-        - { value: 6, label: { es: sesiones por sede entre agosto y diciembre, en: sessions per site from August to December } }
-      flow_title: { es: Del diagnóstico al taller, en: From assessment to workshop }
-      flow:
-        - { title: { es: Medir, en: Measure }, text: { es: Encuesta basada en el marco europeo DigComp 2.2 y grupos focales., en: Survey based on the European DigComp 2.2 framework plus focus groups. } }
-        - { title: { es: Ajustar, en: Adjust }, text: { es: Puntajes corregidos por el uso real de herramientas para evitar la autoevaluación inflada., en: Scores corrected by actual tool use to avoid inflated self-ratings. } }
-        - { title: { es: Diseñar, en: Design }, text: { es: Clases con una meta de conducta concreta y repaso espaciado., en: Classes with one concrete behavioral goal and spaced review. } }
-        - { title: { es: Enseñar, en: Teach }, text: { es: Talleres para jóvenes de 13 a 18 años y para cuidadores., en: Workshops for young people aged 13 to 18 and for caregivers. } }
-        - { title: { es: Evaluar, en: Evaluate }, text: { es: Se repite la encuesta en diciembre para medir el avance., en: The survey is repeated in December to measure progress. } }
-      gallery:
-        - { src: projects/aldeas/trampa.jpg, caption: { es: "Infografía «La trampa está diseñada», sobre cómo las apps capturan la atención.", en: "Infographic «The trap is designed», on how apps capture attention." } }
-      tools: [Microsoft Forms, Excel, Python, PowerPoint]
-      note: { es: Los resultados del diagnóstico pertenecen a Aldeas Infantiles SOS Chile y no se publican aquí., en: The assessment results belong to SOS Children's Villages Chile and aren't published here. }
+        - { title: { es: Análisis de texto, en: Text analysis }, text: { es: Discursos y documentos de la Convención procesados como datos., en: Convention speeches and documents processed as data. } }
+        - { title: { es: Votaciones, en: Roll-call votes }, text: { es: Polarización y fragmentación en la Convención y en la Cámara., en: Polarization and fragmentation in the Convention and the Chamber. } }
+        - { title: { es: Visualización política, en: Political data viz }, text: { es: Gráficos para las publicaciones y la prensa., en: Charts for publications and the press. } }
+        - { title: { es: Voces del CEP, en: Voces del CEP }, text: { es: "Edición y publicación del boletín entre 2023 y 2024.", en: "Edited and published the bulletin in 2023 and 2024." } }
+      tools: [R, { es: Análisis de texto, en: Text analysis }, { es: Encuestas, en: Surveys }]
+      links:
+        - { label: { es: Sitio de C22, en: C22 website }, url: "https://c22cepchile.cl/" }
 
   - id: slep
+    home: true
     area: [public]
     years: { es: "2025 – hoy", en: "2025 – now" }
     title: { es: Datos para la educación pública del sur de Santiago, en: Data for public schools in southern Santiago }
@@ -225,34 +183,111 @@ work:
         - { title: { es: Capacitación, en: Training }, text: { es: Talleres para que los equipos entiendan y usen sus propios datos., en: Workshops so teams understand and use their own data. } }
       tools: [R, R Markdown, Power BI, Excel]
 
-  - id: radiografia-equidad
+  - id: tironi
+    home: true
     area: [consulting]
-    years: "2024"
-    title: { es: Radiografía a la Equidad Puertas Adentro, en: "An X-ray of equity at home" }
-    org: { es: Consultoría para Francisca Bravo Cox, en: Consulting for Francisca Bravo Cox }
-    role: { es: Consultor técnico, en: Technical consultant }
+    years: "2021 – 2023"
+    title: { es: El boletín constitucional para empresas, en: The constitutional bulletin for companies }
+    org: { es: Tironi y Asociados, en: Tironi y Asociados }
+    role: { es: Analista de asuntos públicos, en: Public affairs analyst }
+    preview: logos/tironi.png
     modal:
       intro:
-        es: ¿Cómo se organiza la plata en una pareja y qué le pasa a la carrera de cada uno cuando llegan los hijos? Francisca Bravo, abogada que trabaja estos temas, quería datos propios para responderlo. Yo me hice cargo de la parte técnica de la encuesta.
-        en: How do couples handle money, and what happens to each partner's career when kids arrive? Francisca Bravo, a lawyer who works on these issues, wanted her own data to answer that. I handled the technical side of the survey.
-      numbers:
-        - { value: 1510, label: { es: respuestas en dos semanas de terreno, en: responses in two weeks of fieldwork } }
-        - { value: 1273, label: { es: casos válidos después de limpiar la base, en: valid cases after cleaning } }
-        - { value: 54, label: { es: preguntas en el cuestionario, en: questions in the questionnaire } }
-        - { value: 61, label: { es: láminas en la presentación de resultados, en: slides in the results deck } }
-      flow_title: { es: Cómo lo hicimos, en: How we did it }
-      flow:
-        - { title: { es: Cuestionario, en: Questionnaire }, text: { es: "Revisión de seis bloques: pareja, dinero cotidiano, carrera e hijos.", en: "Review of six blocks: partner, daily money, career and children." } }
-        - { title: { es: Terreno, en: Fieldwork }, text: { es: "Encuesta online del 23 de abril al 7 de mayo de 2024.", en: "Online survey from April 23 to May 7, 2024." } }
-        - { title: { es: Limpieza, en: Cleaning }, text: { es: Filtro a mujeres que viven con su pareja y control de consistencia., en: Filtered to women living with a partner and checked for consistency. } }
-        - { title: { es: Análisis, en: Analysis }, text: { es: "Tablas cruzadas y pruebas de chi cuadrado en R y SPSS.", en: "Cross-tabs and chi-square tests in R and SPSS." } }
-        - { title: { es: Respuestas abiertas, en: Open answers }, text: { es: Clasificación por tema con GPT-4 a través de la API., en: Topic classification with GPT-4 through the API. } }
+        es: Durante 2022, cada semana, le contaba a clientes corporativos qué pasaba en la Convención Constitucional. Qué se votó, qué cambió y qué podía venir. Además apoyé proyectos de consultoría estratégica con análisis de datos.
+        en: Throughout 2022, every week, I told corporate clients what was happening in the Constitutional Convention. What was voted, what changed and what might come next. I also supported strategy consulting projects with data analysis.
       did:
-        - { title: { es: Informe, en: Report }, text: { es: 25 páginas con resultados y lectura de los datos., en: 25 pages of results and interpretation. } }
-        - { title: { es: Presentación, en: Deck }, text: { es: 61 láminas para comunicar los hallazgos., en: 61 slides to communicate the findings. } }
-        - { title: { es: Base limpia, en: Clean dataset }, text: { es: Base de datos y tablas resumen listas para seguir trabajando., en: Dataset and summary tables ready for further work. } }
-      tools: [R, SPSS, Python, OpenAI API]
-      note: { es: "Muestra no probabilística, difundida por redes sociales. Los resultados pertenecen a la clienta.", en: "Non-probability sample spread through social media. The results belong to the client." }
+        - { title: { es: Boletín semanal, en: Weekly bulletin }, text: { es: Monitoreo del proceso constituyente para clientes públicos y privados., en: Monitoring of the constitutional process for public and private clients. } }
+        - { title: { es: Diagnósticos, en: Diagnostics }, text: { es: Datos para diagnósticos organizacionales y estrategias de comunicación., en: Data for organizational diagnostics and communication strategies. } }
+        - { title: { es: Opinión pública, en: Public opinion }, text: { es: Seguimiento de encuestas y tendencias políticas., en: Tracking polls and political trends. } }
+      tools: [Excel, R, { es: Análisis político, en: Political analysis }]
+
+  - id: fondecyt-bc
+    home: true
+    area: [research]
+    years: "2024 – 2025"
+    title: { es: "Gobernar la incertidumbre: el Banco Central en la crisis de 1982", en: "Governing uncertainty: Chile's Central Bank in the 1982 crisis" }
+    org: { es: "Fondecyt N° 1231356, Universidad Diego Portales", en: "Fondecyt grant 1231356, Universidad Diego Portales" }
+    role: { es: Investigador, en: Researcher }
+    preview: projects/fondecyt-bc/red.jpg
+    modal:
+      intro:
+        es: "El proyecto estudia cómo el Banco Central de Chile produce «estabilidad» económica. Mi parte fue la crisis de 1981 a 1983: convertir tres años de actas del Comité Ejecutivo en una base codificada y analizable, y describir con ella qué problemas discutía el Banco, qué acciones tomaba y a quién iban dirigidas."
+        en: "The project studies how Chile's Central Bank produces economic \"stability\". My part covered the 1981–1983 crisis: turning three years of Executive Committee minutes into a coded, analyzable dataset, and using it to describe which problems the Bank discussed, which actions it took and who those actions targeted."
+      cover:
+        src: projects/fondecyt-bc/red.jpg
+        alt: { es: Red de co-ocurrencia de problemas, en: Co-occurrence network of problems }
+        caption: { es: "Red de co-ocurrencia: cada nodo es una categoría y cada enlace, dos categorías que aparecen en el mismo memorándum. Los colores son las comunidades detectadas con el algoritmo de Louvain.", en: "Co-occurrence network: each node is a category and each link, two categories appearing in the same memo. Colors are the communities detected with the Louvain algorithm." }
+      numbers:
+        - { value: 144, label: { es: "actas del Comité Ejecutivo (1981, 1982 y 1983)", en: "Executive Committee minutes (1981, 1982, 1983)" } }
+        - { value: 1467, label: { es: memorandos codificados como unidad de análisis, en: memos coded as the unit of analysis } }
+        - { value: 885, label: { es: memorandos vinculados a la crisis, en: memos linked to the crisis } }
+        - { value: 3, label: { es: comunidades detectadas en la red de códigos, en: communities detected in the code network } }
+      flow_title: { es: "El procesamiento, paso a paso", en: "The pipeline, step by step" }
+      flow:
+        - { title: { es: Digitalización, en: Digitization }, text: { es: Actas escaneadas convertidas a texto y segmentadas en memorandos con código único., en: Scanned minutes converted to text and segmented into memos with a unique code. } }
+        - { title: { es: Esquema de códigos, en: Coding scheme }, text: { es: "Categorías construidas desde la literatura y desde el propio corpus, luego consolidadas.", en: "Categories built from the literature and from the corpus itself, then consolidated." } }
+        - { title: { es: Clasificación con GPT-4o, en: Classification with GPT-4o }, text: { es: "Cada memorándum recibe un problema, una acción normativa y una entidad destinataria.", en: "Each memo receives a problem, a normative action and a target entity." } }
+        - { title: { es: Análisis de redes, en: Network analysis }, text: { es: "Red de co-ocurrencia entre códigos, medidas de centralidad y comunidades con Louvain.", en: "Co-occurrence network across codes, centrality measures and Louvain communities." } }
+        - { title: { es: Tópicos y lectura cualitativa, en: Topics and close reading }, text: { es: "Modelos estructurales de tópicos (STM) por comunidad y lectura de los discursos del Boletín Mensual entre octubre de 1981 y diciembre de 1983.", en: "Structural topic models (STM) per community and close reading of the Monthly Bulletin speeches from October 1981 to December 1983." } }
+      bars:
+        - title: { es: "Qué discutía el Banco: problemas por memorándum", en: "What the Bank discussed: problems per memo" }
+          items:
+            - { label: { es: "Inversión, comercio exterior y divisas", en: "Investment, foreign trade and currency" }, value: 226 }
+            - { label: { es: Normativas y legislación cambiaria, en: Currency regulation and legislation }, value: 150 }
+            - { label: { es: Manejo de deudas y créditos internos, en: Domestic debt and credit management }, value: 143 }
+            - { label: { es: "Supervisión, regulación y sanciones", en: "Supervision, regulation and sanctions" }, value: 127 }
+            - { label: { es: Financiamiento productivo, en: Productive financing }, value: 73 }
+            - { label: { es: Otros seis problemas, en: Six other problems }, value: 166 }
+          note: { es: "Distribución de los 885 memorandos ligados a la crisis entre las diez categorías del esquema.", en: "Distribution of the 885 crisis-related memos across the ten categories of the scheme." }
+        - title: { es: "A quién se dirigía: entidades mencionadas", en: "Who was addressed: entities mentioned" }
+          items:
+            - { label: { es: El propio Banco Central, en: The Central Bank itself }, value: 467 }
+            - { label: { es: Instituciones públicas, en: Public institutions }, value: 291 }
+            - { label: { es: Bancos privados, en: Private banks }, value: 204 }
+            - { label: { es: Empresas privadas, en: Private companies }, value: 191 }
+            - { label: { es: Personas naturales, en: Individuals }, value: 185 }
+            - { label: { es: Otras doce entidades, en: Twelve other entities }, value: 386 }
+          note: { es: "Las acciones más frecuentes fueron autorizar (453), informar (322) y modificar (311), sobre un total de 2.692 acciones codificadas.", en: "The most frequent actions were authorizing (453), informing (322) and modifying (311), out of 2,692 coded actions." }
+      did:
+        - { title: { es: Pipeline de clasificación, en: Classification pipeline }, text: { es: "Diseñé el prompt, las diez categorías de problemas y los controles para codificar 1.467 memorandos de forma consistente con la API de OpenAI.", en: "I designed the prompt, the ten problem categories and the checks to code 1,467 memos consistently through the OpenAI API." } }
+        - { title: { es: Medidas de red, en: Network measures }, text: { es: "Grado, intermediación, cercanía y centralidad de autovector para identificar qué categorías articulan el discurso normativo.", en: "Degree, betweenness, closeness and eigenvector centrality to identify which categories hold the normative discourse together." } }
+        - { title: { es: Comunidades y tópicos, en: Communities and topics }, text: { es: "Detección de comunidades con Louvain y un modelo STM por comunidad, eligiendo el número de tópicos por coherencia semántica, exclusividad y verosimilitud.", en: "Louvain community detection plus one STM per community, choosing the number of topics by semantic coherence, exclusivity and held-out likelihood." } }
+        - { title: { es: Gráficos y entregas, en: Charts and deliverables }, text: { es: "Frecuencias, redes y tablas de centralidad para el equipo, en dos entregas de método y resultados preliminares (mayo y julio de 2025).", en: "Frequencies, networks and centrality tables for the team, in two method and preliminary-results presentations (May and July 2025)." } }
+      gallery:
+        - { src: projects/fondecyt-bc/red_categorias.jpg, caption: { es: "La misma red con las categorías separadas por tipo: problemas, acciones y entidades.", en: "The same network with categories split by type: problems, actions and entities." } }
+      tools: [Python, OpenAI API, GPT-4o, R, STM, Louvain, igraph]
+      note: { es: "Las conclusiones interpretativas del equipo aún no están publicadas: aquí muestro el método y la descripción del corpus codificado.", en: "The team's interpretive conclusions aren't published yet: what I show here is the method and a description of the coded corpus." }
+
+  - id: prieto
+    home: true
+    area: [research]
+    years: { es: "2025 – hoy", en: "2025 – now" }
+    title: { es: "Inseguridad económica y participación en protesta", en: "Economic insecurity and protest participation" }
+    org: { es: Investigación con Joaquín Prieto, en: Research with Joaquín Prieto }
+    role: { es: "Analista cuantitativo y coautor", en: "Quantitative analyst and co-author" }
+    modal:
+      intro:
+        es: "Dos investigaciones sobre inseguridad económica en Chile. En la primera, *Economic Insecurity, Not Inequality?*, construimos un índice multidimensional con datos de panel para explicar quién participó en las protestas de octubre de 2019. En la segunda, *Insecurity amid Recovery*, trabajamos la Encuesta de Bienestar Social del INE. Soy responsable del análisis cuantitativo y coautor del primer paper."
+        en: "Two research projects on economic insecurity in Chile. In the first, *Economic Insecurity, Not Inequality?*, we built a multidimensional index from panel data to explain who took part in the October 2019 protests. In the second, *Insecurity amid Recovery*, we work with INE's Social Wellbeing Survey. I am responsible for the quantitative analysis and a co-author of the first paper."
+      numbers:
+        - { value: 8, label: { es: "olas del panel ELSOC procesadas (2016–2023)", en: "ELSOC panel waves processed (2016–2023)" } }
+        - { value: 4, label: { es: "subdimensiones del índice de inseguridad económica", en: "sub-dimensions of the economic insecurity index" } }
+        - { value: 9, label: { es: modelos anidados estimados y comparados, en: nested models estimated and compared }  }
+        - { value: 3, label: { es: definiciones del resultado puestas a prueba, en: outcome definitions tested } }
+      flow_title: { es: Cómo se construye el análisis, en: How the analysis is built }
+      flow:
+        - { title: { es: Panel, en: Panel }, text: { es: "Preparación de ELSOC 2016–2023: selección de variables, consistencia entre olas y verificación de la muestra longitudinal.", en: "Preparing ELSOC 2016–2023: variable selection, consistency across waves and checks on the longitudinal sample." } }
+        - { title: { es: Índice, en: Index }, text: { es: "Índice de inseguridad económica con cuatro subdimensiones: sobrecarga financiera, endeudamiento, precariedad laboral y vulnerabilidad económica.", en: "Economic insecurity index with four sub-dimensions: financial strain, debt, labor precarity and economic vulnerability." } }
+        - { title: { es: Resultado, en: Outcome }, text: { es: "Definición y comparación de tres formas de medir la participación en protesta, desde la agregada hasta las acciones de mayor costo.", en: "Defining and comparing three ways of measuring protest participation, from the aggregate to the costlier forms of action." } }
+        - { title: { es: Modelos, en: Models }, text: { es: "Regresiones logísticas por bloques, diagnóstico de valores perdidos e imputación múltiple para probar la robustez.", en: "Block-wise logistic regressions, missing-data diagnostics and multiple imputation to test robustness." } }
+        - { title: { es: Mediación, en: Mediation }, text: { es: "Análisis de mediación para distinguir si la desconfianza institucional es un canal intermedio o paralelo.", en: "Mediation analysis to tell whether institutional distrust is an intermediate or a parallel channel." } }
+      did:
+        - { title: { es: Código reproducible, en: Reproducible code }, text: { es: "Scripts en R numerados por etapa, con resultados exportados a Excel para que el equipo pueda revisarlos sin abrir el código.", en: "R scripts numbered by stage, with results exported to Excel so the team can review them without opening the code." } }
+        - { title: { es: Decisiones metodológicas documentadas, en: Documented methodological decisions }, text: { es: "Memos de método y bitácora del proyecto, donde queda escrito qué se probó, qué se descartó y por qué.", en: "Method memos and a project log recording what was tried, what was discarded and why." } }
+        - { title: { es: Resultados negativos incluidos, en: Negative results included }, text: { es: "Las hipótesis que no se sostuvieron se reportan igual: un resultado nulo también es información para el paper.", en: "Hypotheses that didn't hold are reported as well: a null result is information for the paper too." } }
+        - { title: { es: Figuras y presentaciones, en: Figures and presentations }, text: { es: "Gráficos de probabilidades predichas y de efectos por subdimensión para las presentaciones del equipo.", en: "Predicted-probability and sub-dimension effect plots for the team's presentations." } }
+      tools: [R, ELSOC, { es: Encuesta de Bienestar Social, en: Social Wellbeing Survey }, { es: Imputación múltiple, en: Multiple imputation }, { es: Análisis de mediación, en: Mediation analysis }]
+      note: { es: "Ambos papers están en preparación, así que aquí muestro el método y mi rol, no los resultados.", en: "Both papers are in progress, so what I show here is the method and my role, not the results." }
 
   - id: lectura-digital
     area: [consulting, research]
@@ -288,62 +323,65 @@ work:
       tools: [R, Power BI, { es: Ley de Transparencia, en: FOI requests }]
       note: { es: "Mi parte fue la fase cuantitativa, entre abril y julio de 2024. La fase cualitativa estuvo a cargo de otra persona del equipo.", en: "My part was the quantitative phase, April to July 2024. Another team member led the qualitative phase." }
 
-  - id: c22
-    area: [research]
-    years: "2021 – 2024"
-    title: { es: "C22: el proceso constitucional en datos", en: "C22: the constitutional process in data" }
-    org: { es: Centro de Estudios Públicos (CEP), en: Centro de Estudios Públicos (CEP) }
-    role: { es: Asistente de investigación, en: Research assistant }
-    preview: logos/c22.png
-    modal:
-      intro:
-        es: Entre 2021 y 2023 Chile escribió dos propuestas de constitución y rechazó ambas. En C22 seguimos ese proceso con datos. Votaciones, discursos y encuestas convertidos en análisis para el debate público.
-        en: Between 2021 and 2023 Chile drafted two constitutions and rejected both. At C22 we followed the process with data. Votes, speeches and surveys turned into analysis for public debate.
-      numbers:
-        - { value: 7, label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
-        - { value: 6, label: { es: research notes en C22, en: C22 research notes } }
-        - { value: 2, label: { es: procesos constitucionales seguidos, en: constitutional processes tracked } }
-      did:
-        - { title: { es: Análisis de texto, en: Text analysis }, text: { es: Discursos y documentos de la Convención procesados como datos., en: Convention speeches and documents processed as data. } }
-        - { title: { es: Votaciones, en: Roll-call votes }, text: { es: Polarización y fragmentación en la Convención y en la Cámara., en: Polarization and fragmentation in the Convention and the Chamber. } }
-        - { title: { es: Visualización política, en: Political data viz }, text: { es: Gráficos para las publicaciones y la prensa., en: Charts for publications and the press. } }
-        - { title: { es: Voces del CEP, en: Voces del CEP }, text: { es: "Edición y publicación del boletín entre 2023 y 2024.", en: "Edited and published the bulletin in 2023 and 2024." } }
-      tools: [R, { es: Análisis de texto, en: Text analysis }, { es: Encuestas, en: Surveys }]
-      links:
-        - { label: { es: Sitio de C22, en: C22 website }, url: "https://c22cepchile.cl/" }
-
-  - id: tironi
+  - id: radiografia-equidad
     area: [consulting]
-    years: "2021 – 2023"
-    title: { es: El boletín constitucional para empresas, en: The constitutional bulletin for companies }
-    org: { es: Tironi y Asociados, en: Tironi y Asociados }
-    role: { es: Analista de asuntos públicos, en: Public affairs analyst }
-    preview: logos/tironi.png
+    years: "2024"
+    title: { es: Radiografía a la Equidad Puertas Adentro, en: "An X-ray of equity at home" }
+    org: { es: Consultoría para Francisca Bravo Cox, en: Consulting for Francisca Bravo Cox }
+    role: { es: Consultor técnico, en: Technical consultant }
     modal:
       intro:
-        es: Durante 2022, cada semana, le contaba a clientes corporativos qué pasaba en la Convención Constitucional. Qué se votó, qué cambió y qué podía venir. Además apoyé proyectos de consultoría estratégica con análisis de datos.
-        en: Throughout 2022, every week, I told corporate clients what was happening in the Constitutional Convention. What was voted, what changed and what might come next. I also supported strategy consulting projects with data analysis.
+        es: ¿Cómo se organiza la plata en una pareja y qué le pasa a la carrera de cada uno cuando llegan los hijos? Francisca Bravo, abogada que trabaja estos temas, quería datos propios para responderlo. Yo me hice cargo de la parte técnica de la encuesta.
+        en: How do couples handle money, and what happens to each partner's career when kids arrive? Francisca Bravo, a lawyer who works on these issues, wanted her own data to answer that. I handled the technical side of the survey.
+      numbers:
+        - { value: 1510, label: { es: respuestas en dos semanas de terreno, en: responses in two weeks of fieldwork } }
+        - { value: 1273, label: { es: casos válidos después de limpiar la base, en: valid cases after cleaning } }
+        - { value: 54, label: { es: preguntas en el cuestionario, en: questions in the questionnaire } }
+        - { value: 61, label: { es: láminas en la presentación de resultados, en: slides in the results deck } }
+      flow_title: { es: Cómo lo hicimos, en: How we did it }
+      flow:
+        - { title: { es: Cuestionario, en: Questionnaire }, text: { es: "Revisión de seis bloques: pareja, dinero cotidiano, carrera e hijos.", en: "Review of six blocks: partner, daily money, career and children." } }
+        - { title: { es: Terreno, en: Fieldwork }, text: { es: "Encuesta online del 23 de abril al 7 de mayo de 2024.", en: "Online survey from April 23 to May 7, 2024." } }
+        - { title: { es: Limpieza, en: Cleaning }, text: { es: Filtro a mujeres que viven con su pareja y control de consistencia., en: Filtered to women living with a partner and checked for consistency. } }
+        - { title: { es: Análisis, en: Analysis }, text: { es: "Tablas cruzadas y pruebas de chi cuadrado en R y SPSS.", en: "Cross-tabs and chi-square tests in R and SPSS." } }
+        - { title: { es: Respuestas abiertas, en: Open answers }, text: { es: Clasificación por tema con GPT-4 a través de la API., en: Topic classification with GPT-4 through the API. } }
       did:
-        - { title: { es: Boletín semanal, en: Weekly bulletin }, text: { es: Monitoreo del proceso constituyente para clientes públicos y privados., en: Monitoring of the constitutional process for public and private clients. } }
-        - { title: { es: Diagnósticos, en: Diagnostics }, text: { es: Datos para diagnósticos organizacionales y estrategias de comunicación., en: Data for organizational diagnostics and communication strategies. } }
-        - { title: { es: Opinión pública, en: Public opinion }, text: { es: Seguimiento de encuestas y tendencias políticas., en: Tracking polls and political trends. } }
-      tools: [Excel, R, { es: Análisis político, en: Political analysis }]
+        - { title: { es: Informe, en: Report }, text: { es: 25 páginas con resultados y lectura de los datos., en: 25 pages of results and interpretation. } }
+        - { title: { es: Presentación, en: Deck }, text: { es: 61 láminas para comunicar los hallazgos., en: 61 slides to communicate the findings. } }
+        - { title: { es: Base limpia, en: Clean dataset }, text: { es: Base de datos y tablas resumen listas para seguir trabajando., en: Dataset and summary tables ready for further work. } }
+      tools: [R, SPSS, Python, OpenAI API]
+      note: { es: "Muestra no probabilística, difundida por redes sociales. Los resultados pertenecen a la clienta.", en: "Non-probability sample spread through social media. The results belong to the client." }
 
-  - id: prieto
-    area: [research]
+  - id: aldeas
+    area: [ngo, consulting]
     years: { es: "2025 – hoy", en: "2025 – now" }
-    title: { es: Inseguridad económica con datos de panel, en: Economic insecurity with panel data }
-    org: { es: Proyectos de Joaquín Prieto, en: Joaquín Prieto's research projects }
-    role: { es: Asesor metodológico, en: Methods advisor }
+    title: { es: Habilidades digitales en Aldeas Infantiles SOS, en: "Digital skills at SOS Children's Villages" }
+    org: { es: "Aldeas Infantiles SOS Chile, con MICELIA", en: "SOS Children's Villages Chile, with MICELIA" }
+    role: { es: Consultor y líder de la sede Quilpué, en: Consultant and Quilpué site lead }
+    preview: projects/aldeas/curvas.jpg
     modal:
       intro:
-        es: "Dos investigaciones sobre la inseguridad económica en Chile: *Insecurity amid Recovery* y *Economic Insecurity, Not Inequality?*. Mi trabajo es el análisis cuantitativo."
-        en: "Two research projects on economic insecurity in Chile: *Insecurity amid Recovery* and *Economic Insecurity, Not Inequality?*. I handle the quantitative analysis."
-      did:
-        - { title: { es: Datos de panel, en: Panel data }, text: { es: Procesamiento de la encuesta longitudinal ELSOC del COES., en: Processing COES's ELSOC longitudinal survey. } }
-        - { title: { es: Índice de inseguridad, en: Insecurity index }, text: { es: Construcción de medidas con ELSOC y la Encuesta de Bienestar Social del INE., en: Building measures with ELSOC and INE's Social Wellbeing Survey. } }
-        - { title: { es: Modelos, en: Models }, text: { es: Modelamiento estadístico en R y apoyo al diseño metodológico., en: Statistical modeling in R and support on research design. } }
-      tools: [R, ELSOC, EBS]
+        es: ¿Qué tan preparados están los equipos y los jóvenes de Aldeas para una vida que pasa por el celular? Primero lo medimos. Ahora, en 2026, damos talleres para cerrar las brechas que encontramos.
+        en: How ready are the staff and young people at SOS Children's Villages for a life that runs through a phone? First we measured it. Now, in 2026, we run workshops to close the gaps we found.
+      cover:
+        src: projects/aldeas/curvas.jpg
+        alt: { es: "Lámina «Las dos curvas del placer» sobre recompensa digital y recompensa de la vida real", en: "Slide «The two pleasure curves» about digital reward versus real-life reward" }
+        caption: { es: "Material de clase: por qué una app engancha más que la vida real y cómo recalibrar.", en: "Class material: why an app hooks you more than real life does, and how to recalibrate." }
+      numbers:
+        - { value: 4, label: { es: aldeas con grupos focales en el diagnóstico, en: villages with focus groups in the assessment } }
+        - { value: 3, label: { es: sedes con talleres durante 2026, en: sites running workshops in 2026 } }
+        - { value: 6, label: { es: sesiones por sede entre agosto y diciembre, en: sessions per site from August to December } }
+      flow_title: { es: Del diagnóstico al taller, en: From assessment to workshop }
+      flow:
+        - { title: { es: Medir, en: Measure }, text: { es: Encuesta basada en el marco europeo DigComp 2.2 y grupos focales., en: Survey based on the European DigComp 2.2 framework plus focus groups. } }
+        - { title: { es: Ajustar, en: Adjust }, text: { es: Puntajes corregidos por el uso real de herramientas para evitar la autoevaluación inflada., en: Scores corrected by actual tool use to avoid inflated self-ratings. } }
+        - { title: { es: Diseñar, en: Design }, text: { es: Clases con una meta de conducta concreta y repaso espaciado., en: Classes with one concrete behavioral goal and spaced review. } }
+        - { title: { es: Enseñar, en: Teach }, text: { es: Talleres para jóvenes de 13 a 18 años y para cuidadores., en: Workshops for young people aged 13 to 18 and for caregivers. } }
+        - { title: { es: Evaluar, en: Evaluate }, text: { es: Se repite la encuesta en diciembre para medir el avance., en: The survey is repeated in December to measure progress. } }
+      gallery:
+        - { src: projects/aldeas/trampa.jpg, caption: { es: "Infografía «La trampa está diseñada», sobre cómo las apps capturan la atención.", en: "Infographic «The trap is designed», on how apps capture attention." } }
+      tools: [Microsoft Forms, Excel, Python, PowerPoint]
+      note: { es: Los resultados del diagnóstico pertenecen a Aldeas Infantiles SOS Chile y no se publican aquí., en: The assessment results belong to SOS Children's Villages Chile and aren't published here. }
 
   - id: chiloe
     area: [research]

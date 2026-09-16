@@ -2,18 +2,18 @@
 {% set es = lang == 'es' %}
 
 <section id="{{ 'problema' if es else 'problem' }}">
-  <h2>{{ 'Esta vez el problema era yo' if es else 'This time the problem was me' }}</h2>
+  <h2>{{ 'El problema' if es else 'The problem' }}</h2>
   {% if es %}
-  <p>Ya tenía la costumbre de convertir problemas cotidianos en visores, como el del arriendo. Cuando me tocó buscar trabajo, me di cuenta de que era el mismo tipo de problema. Cientos de ofertas repartidas en portales, la mayoría que no calza, y cada postulación que pide adaptar el CV y escribir una carta.</p>
-  <p>Buscar trabajo mientras trabajas es, además, una cuestión de tiempo. No podía revisar LinkedIn todas las noches. Así que lo traté como lo que es, <strong>un embudo de datos</strong>, y le pedí a Claude Code que hiciera la parte repetitiva conmigo.</p>
+  <p>Buscar trabajo es, en términos operativos, un problema de datos: cientos de ofertas repartidas en varios portales, una minoría que calza con el perfil y un CV que hay que adaptar en cada postulación.</p>
+  <p>Con un trabajo de jornada completa, revisar portales todas las noches no era viable. Lo traté como lo que es, <strong>un embudo de datos</strong>, y automaticé la parte repetitiva.</p>
   {% else %}
-  <p>I already had a habit of turning everyday problems into viewers, like the rental search. When it was my turn to look for a job, I realized it was the same kind of problem. Hundreds of openings spread across sites, most of them a poor fit, and every application asking for a tailored CV and a cover letter.</p>
-  <p>Job hunting while you have a job is also a matter of time. I couldn't go through LinkedIn every night. So I treated it as what it is, <strong>a data funnel</strong>, and had Claude Code do the repetitive part with me.</p>
+  <p>A job search is, operationally, a data problem: hundreds of openings spread across several sites, a minority that fit the profile, and a CV that has to be adapted for each application.</p>
+  <p>With a full-time job, going through listing sites every night wasn't viable. I treated it as what it is, <strong>a data funnel</strong>, and automated the repetitive part.</p>
   {% endif %}
 </section>
 
 <section id="{{ 'base' if es else 'foundation' }}">
-  <h2>{{ 'No partí de cero (y está bien)' if es else "I didn't start from scratch (and that's fine)" }}</h2>
+  <h2>{{ 'Base del sistema' if es else 'Foundation of the system' }}</h2>
   {% if es %}
   <p>La base es <a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">ai-job-search</a>, un framework abierto de Mads Lorentzen pensado para el mercado danés. Lo tomé y lo adapté a Chile:</p>
   <ul>
@@ -117,6 +117,6 @@
     {% endif %}
   </ul>
   <div class="callout callout-cobalto">
-    <p>{{ 'Si llegaste a esta página desde una de esas postulaciones: hola. Ya viste cómo trabajo.' if es else 'If you landed here from one of those applications: hi. Now you know how I work.' }}</p>
+    <p>{{ 'Si llegaste desde una de esas postulaciones, esta página muestra cómo trabajo: criterios explícitos, registro de cada decisión y verificación antes de enviar.' if es else 'If you arrived from one of those applications, this page shows how I work: explicit criteria, a record of every decision and verification before sending.' }}</p>
   </div>
 </section>

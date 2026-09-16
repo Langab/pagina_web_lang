@@ -1,6 +1,7 @@
 # Sitio construido: lo genera build.py y lo publica GitHub Actions
 _site.nosync/
-_site-tmp.nosync/
+_site-tmp-*.nosync/
+_site-anterior-*.nosync/
 
 # Sistema y Python
 .DS_Store

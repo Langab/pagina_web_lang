@@ -18,7 +18,7 @@
       <p class="hero-lede">{{ h.lede | md }}</p>
       <ul class="chips hero-badges">{% for b in h.badges %}<li>{{ b | t }}</li>{% endfor %}</ul>
       <div class="actions">
-        <a class="btn btn-solid" href="{{ url('portafolio') }}">{{ h.cta_primary | t }}</a>
+        <a class="btn btn-solid" href="{{ url('trabajos') }}">{{ h.cta_primary | t }}</a>
         <a class="btn" href="{{ url('cv') }}">{{ h.cta_secondary | t }}</a>
         <a class="btn" href="#{{ ui.contact_anchor }}">{{ h.cta_third | t }}</a>
       </div>
@@ -105,44 +105,8 @@
   </div>
 </section>
 
-{# ── Portafolio: proyectos propios ────────────────────────────────── #}
-<section class="section" id="{{ 'portafolio' if lang == 'es' else 'portfolio' }}" aria-labelledby="lab-title">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ home.lab.kicker | t }}</p>
-        <h2 id="lab-title">{{ home.lab.title | t }}</h2>
-      </div>
-      <p>{{ home.lab.lede | t }}</p>
-    </div>
-    <div class="lab-list">
-      {% for p in projects.lab %}
-      <article class="lab-item" data-reveal>
-        <a class="lab-visual" href="{{ project_url(p) }}" data-tilt tabindex="-1" aria-hidden="true">
-          {{ m.browser(p.image, p.address) }}
-        </a>
-        <div class="lab-body">
-          <p class="kicker">{{ p.status | t }}</p>
-          <h3><a href="{{ project_url(p) }}">{{ p.title | t }}</a></h3>
-          <p class="hook">{{ p.hook | t }}</p>
-          <ul class="facts">{% for f in p.facts %}<li>{{ f | md }}</li>{% endfor %}</ul>
-          <ul class="chips">{% for tag in p.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
-          <div class="actions">
-            <a class="btn btn-solid" href="{{ project_url(p) }}">{{ ui.read_story }}</a>
-            {% if p.links is defined %}<a class="btn" href="{{ p.links[0].url }}" target="_blank" rel="noopener">{{ p.links[0].label | t }} {{ m.icon('out') }}</a>{% endif %}
-          </div>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-    <div class="actions" style="margin-top: 2.5rem">
-      <a class="btn" href="{{ url('portafolio') }}">{{ ui.all_projects }}</a>
-    </div>
-  </div>
-</section>
-
 {# ── Trabajos, proyectos y consultoría (destacados) ───────────────── #}
-{% set destacados = projects.work[:5] %}
+{% set destacados = projects.work | selectattr('home', 'defined') | list %}
 <section class="section on-paper" aria-labelledby="work-title">
   <div class="wrap">
     <div class="section-head">
@@ -186,6 +150,42 @@
       </li>
       {% endfor %}
     </ol>
+  </div>
+</section>
+
+{# ── Portafolio: proyectos propios ────────────────────────────────── #}
+<section class="section" id="{{ 'portafolio' if lang == 'es' else 'portfolio' }}" aria-labelledby="lab-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ home.lab.kicker | t }}</p>
+        <h2 id="lab-title">{{ home.lab.title | t }}</h2>
+      </div>
+      <p>{{ home.lab.lede | t }}</p>
+    </div>
+    <div class="lab-list">
+      {% for p in projects.lab %}
+      <article class="lab-item" data-reveal>
+        <a class="lab-visual" href="{{ project_url(p) }}" data-tilt tabindex="-1" aria-hidden="true">
+          {{ m.browser(p.image, p.address) }}
+        </a>
+        <div class="lab-body">
+          <p class="kicker">{{ p.status | t }}</p>
+          <h3><a href="{{ project_url(p) }}">{{ p.title | t }}</a></h3>
+          <p class="hook">{{ p.hook | t }}</p>
+          <ul class="facts">{% for f in p.facts %}<li>{{ f | md }}</li>{% endfor %}</ul>
+          <ul class="chips">{% for tag in p.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
+          <div class="actions">
+            <a class="btn btn-solid" href="{{ project_url(p) }}">{{ ui.read_story }}</a>
+            {% if p.links is defined %}<a class="btn" href="{{ p.links[0].url }}" target="_blank" rel="noopener">{{ p.links[0].label | t }} {{ m.icon('out') }}</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="actions" style="margin-top: 2.5rem">
+      <a class="btn" href="{{ url('portafolio') }}">{{ ui.all_projects }}</a>
+    </div>
   </div>
 </section>
 
@@ -240,5 +240,5 @@
 {% endblock %}
 
 {% block dialogs %}
-{% for w in projects.work[:5] %}{{ m.work_modal(w) }}{% endfor %}
+{% for w in projects.work | selectattr('home', 'defined') %}{{ m.work_modal(w) }}{% endfor %}
 {% endblock %}
