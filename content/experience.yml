@@ -13,6 +13,18 @@ summary:
 
     Today I'm a data analyst at Servicio Local de Educación Pública Santa Rosa, a public school district in southern Santiago. Before that I validated 2024 Census data at INE, analyzed Chile's constitutional process at CEP and coded Central Bank minutes for a Fondecyt research grant. I like analysis that ends in something another person can use on Monday.
 
+target:
+  kicker: { es: Rol que busco, en: Role I'm looking for }
+  title: { es: "Analista de datos, BI o investigación aplicada", en: "Data analyst, BI or applied research" }
+  text:
+    es: "Cargos de análisis de datos, inteligencia de negocios o investigación aplicada, en instituciones públicas, centros de estudio o empresas que necesiten ordenar sus datos antes de decidir. Base en Santiago de Chile."
+    en: "Roles in data analysis, business intelligence or applied research, in public institutions, think tanks or companies that need to organize their data before deciding. Based in Santiago, Chile."
+  items:
+    - { es: "Procesamiento y validación de datos a gran escala", en: "Large-scale data processing and validation" }
+    - { es: "Tableros e informes que se actualizan solos", en: "Self-updating dashboards and reports" }
+    - { es: "Gobernanza de datos y documentación", en: "Data governance and documentation" }
+    - { es: "Diseño y análisis de encuestas", en: "Survey design and analysis" }
+
 jobs:
   - id: slep
     current: true
@@ -21,16 +33,16 @@ jobs:
     role: { es: Analista de datos, en: Data analyst }
     org: Servicio Local de Educación Pública Santa Rosa
     desc:
-      es: Ordeno, cruzo y visualizo los datos de 5 comunas y sus escuelas públicas. Armé la gobernanza de datos del servicio y reportes en R Markdown y Power BI que se pueden auditar.
-      en: I clean, join and visualize data for the public schools of 5 municipalities. I set up the service's data governance and built R Markdown and Power BI reports that can be audited.
+      es: "Llevo el flujo completo de datos del servicio: captura automatizada desde las plataformas del Ministerio, consolidación en R, validación mensual y diez tableros de Power BI publicados en el sitio interno. Genero además fichas por establecimiento e informes de matrícula, asistencia y trayectoria docente para las cinco comunas."
+      en: "I run the service's full data flow: automated capture from the Ministry's platforms, consolidation in R, monthly validation and ten Power BI dashboards published on the internal site. I also produce school-level fact sheets and enrollment, attendance and teacher trajectory reports for the five municipalities."
   - id: aldeas
     current: true
     when: { es: "2025 – hoy", en: "2025 – now" }
     role: { es: Consultor en habilidades digitales, en: Digital skills consultant }
     org: Aldeas Infantiles SOS Chile con MICELIA
     desc:
-      es: Diagnóstico mixto de brechas digitales y plan de formación 2026. Lidero los talleres de la sede Quilpué.
-      en: Mixed-methods assessment of digital skills gaps and a 2026 training plan. I lead the workshops at the Quilpué site.
+      es: "Diagnóstico mixto de brechas digitales con el marco europeo DigComp 2.2 y grupos focales en cuatro aldeas, y el plan de formación 2026 que salió de ahí. Lidero los talleres de la sede Quilpué."
+      en: "Mixed-methods assessment of digital skills gaps using the European DigComp 2.2 framework and focus groups in four villages, plus the 2026 training plan that followed. I lead the workshops at the Quilpué site."
   - id: prieto
     current: true
     home: true
@@ -46,16 +58,16 @@ jobs:
     role: { es: "Analista metodológico senior, Censo 2024", en: "Senior methods analyst, 2024 Census" }
     org: Instituto Nacional de Estadísticas (INE)
     desc:
-      es: Procesamiento, validación y control de calidad de los datos del Censo de Población y Vivienda 2024.
-      en: Processing, validation and quality control of Chile's 2024 Population and Housing Census data.
+      es: "Validación, edición e imputación de las variables de persona (sexo, edad y parentesco) dentro del código en R del procesamiento censal, más la codificación de respuestas del cuestionario en papel. Construí informes de calidad e indicadores demográficos comparados con los censos de 2017, 2002 y 1992."
+      en: "Validation, editing and imputation of person-level variables (sex, age and relationship) inside the R codebase of census processing, plus coding of paper questionnaire answers. I built quality reports and demographic indicators compared with the 2017, 2002 and 1992 censuses."
   - id: fondecyt-bc
     home: true
     when: { es: "2024 – 2025", en: "2024 – 2025" }
     role: { es: "Investigador, Fondecyt N° 1231356", en: "Researcher, Fondecyt grant 1231356" }
     org: Universidad Diego Portales
     desc:
-      es: Cómo el Banco Central de Chile gobierna la incertidumbre. Diseñé el procesamiento con modelos de lenguaje de las actas de la crisis de 1982.
-      en: How Chile's Central Bank governs uncertainty. I designed the language-model pipeline that coded the minutes from the 1982 crisis.
+      es: "Codifiqué con GPT-4o los 1.467 memorandos del Comité Ejecutivo del Banco Central entre 1981 y 1983, y analicé la base con redes de co-ocurrencia, detección de comunidades y modelos de tópicos. Presenté método y resultados preliminares al equipo en dos entregas."
+      en: "I coded the 1,467 Central Bank Executive Committee memos from 1981 to 1983 with GPT-4o, and analyzed the dataset with co-occurrence networks, community detection and topic models. I presented the method and preliminary results to the team twice."
   - id: voces
     when: { es: "2023 – 2024", en: "2023 – 2024" }
     role: { es: "Investigador asistente, Voces del CEP", en: "Research assistant, Voces del CEP" }
@@ -69,23 +81,23 @@ jobs:
     role: { es: "Asistente de investigación, C22", en: "Research assistant, C22" }
     org: Centro de Estudios Públicos (CEP)
     desc:
-      es: Humanidades digitales sobre el primer proceso constitucional. Análisis de discursos y visualización de datos políticos.
-      en: Digital humanities on Chile's first constitutional process. Discourse analysis and political data visualization.
+      es: "Análisis de votaciones con escalamiento tipo NOMINATE, procesamiento de discursos y prensa, y visualización de datos políticos. Coautor de siete Puntos de Referencia del CEP y seis notas de investigación de C22."
+      en: "Vote analysis with NOMINATE-style scaling, processing of speeches and press coverage, and political data visualization. Co-author of seven CEP policy papers and six C22 research notes."
   - id: tironi
     home: true
     when: { es: "2021 – 2023", en: "2021 – 2023" }
     role: { es: Analista de asuntos públicos, en: Public affairs analyst }
     org: Tironi y Asociados
     desc:
-      es: A cargo del boletín constitucional semanal de 2022 para clientes corporativos. Datos para diagnósticos organizacionales y estrategia.
-      en: Ran the weekly constitutional bulletin for corporate clients in 2022. Data for organizational diagnostics and strategy.
+      es: "A cargo del boletín constitucional semanal de 2022 para clientes corporativos: qué se votó en la Convención, qué cambió y qué implicaba para cada industria. Además procesé encuestas internas y datos secundarios para diagnósticos organizacionales."
+      en: "In charge of the weekly constitutional bulletin for corporate clients in 2022: what the Convention voted, what changed and what it meant for each industry. I also processed internal surveys and secondary data for organizational diagnostics."
   - id: chiloe
     when: { es: "2022 – 2023", en: "2022 – 2023" }
     role: { es: "Asistente de investigación, Fondecyt N° 1190295", en: "Research assistant, Fondecyt grant 1190295" }
     org: Universidad Diego Portales
     desc:
-      es: Transiciones críticas en sistemas socioecológicos en Chiloé. Procesamiento de información cualitativa y cuantitativa.
-      en: Critical transitions in social-ecological systems in Chiloé. Qualitative and quantitative data processing.
+      es: "Transiciones críticas en sistemas socioecológicos en Chiloé. Preparé bases de datos, codifiqué entrevistas en Atlas.ti siguiendo el esquema del proyecto y apoyé la revisión de literatura."
+      en: "Critical transitions in social-ecological systems in Chiloé. I prepared datasets, coded interviews in Atlas.ti following the project's scheme and supported the literature review."
   - id: tesista
     when: { es: "2020 – 2021", en: "2020 – 2021" }
     role: { es: "Tesista, Fondecyt N° 1181585", en: "Thesis researcher, Fondecyt grant 1181585" }
@@ -109,30 +121,42 @@ education:
     note: { es: "Procesamiento, visualización y modelamiento para el Censo 2024.", en: "Processing, visualization and modeling for the 2024 Census." }
 
 skills:
-  - name: R
-    level: 5
-    note: { es: "tidyverse, ggplot2, modelos estadísticos, R Markdown y Quarto", en: "tidyverse, ggplot2, statistical models, R Markdown and Quarto" }
-  - name: Power BI
-    level: 5
-    note: { es: "Dashboards, DAX y reportería institucional", en: "Dashboards, DAX and institutional reporting" }
-  - name: Excel
-    level: 5
-    note: { es: "Modelado de datos, tablas dinámicas y macros", en: "Data modeling, pivot tables and macros" }
-  - name: Git y GitHub
-    level: 4
-    note: { es: "Control de versiones, GitHub Pages y Actions", en: "Version control, GitHub Pages and Actions" }
-  - name: Claude Code
-    level: 4
-    note: { es: "Skills, agentes, tareas programadas y automatización de flujos", en: "Skills, agents, scheduled tasks and workflow automation" }
-  - name: Python
-    level: 3
-    note: { es: "pandas, scraping con Playwright y pipelines que corren solos", en: "pandas, Playwright scraping and self-running pipelines" }
-  - name: SQL
-    level: 3
-    note: { es: "Consultas, joins y agregaciones para análisis", en: "Queries, joins and aggregations for analysis" }
-  - name: Atlas.ti
-    level: 3
-    note: { es: Codificación cualitativa de entrevistas y documentos, en: Qualitative coding of interviews and documents }
+  note: { es: "Ordenadas por lo que más aparece en los avisos de analista de datos y BI que sigo: SQL, Power BI, Python, Excel y control de versiones.", en: "Ordered by what shows up most in the data analyst and BI postings I track: SQL, Power BI, Python, Excel and version control." }
+  groups:
+    - title: { es: Datos y bases, en: Data and databases }
+      items:
+        - { name: SQL, level: 3, note: { es: "Consultas, joins y agregaciones para armar bases de análisis", en: "Queries, joins and aggregations to build analysis datasets" } }
+        - { name: Excel, level: 5, note: { es: "Modelado de datos, tablas dinámicas y macros", en: "Data modeling, pivot tables and macros" } }
+        - { name: { es: "ETL y automatización", en: "ETL and automation" }, level: 4, note: { es: "Pipelines reproducibles, scrapers y tareas programadas", en: "Reproducible pipelines, scrapers and scheduled jobs" } }
+        - { name: { es: "Gobernanza de datos", en: "Data governance" }, level: 4, note: { es: "Estándares de captura, validación, nombres y documentación", en: "Standards for capture, validation, naming and documentation" } }
+    - title: { es: Visualización y reportería, en: Visualization and reporting }
+      items:
+        - { name: Power BI, level: 5, note: { es: "Modelo de datos, DAX, Power Query, publicación y actualización", en: "Data model, DAX, Power Query, publishing and refresh" } }
+        - { name: { es: "R Markdown y Quarto", en: "R Markdown and Quarto" }, level: 5, note: { es: "Informes y fichas reproducibles en HTML y PDF", en: "Reproducible reports and fact sheets in HTML and PDF" } }
+        - { name: { es: "Indicadores y KPI", en: "Indicators and KPIs" }, level: 4, note: { es: "Construcción, documentación y seguimiento en el tiempo", en: "Construction, documentation and tracking over time" } }
+    - title: { es: Análisis estadístico, en: Statistical analysis }
+      items:
+        - { name: R, level: 5, note: { es: "tidyverse, ggplot2, modelos y datos de panel", en: "tidyverse, ggplot2, models and panel data" } }
+        - { name: Python, level: 3, note: { es: "pandas, scraping con Playwright y procesamiento de archivos grandes", en: "pandas, Playwright scraping and large-file processing" } }
+        - { name: { es: "Modelos y métodos", en: "Models and methods" }, level: 4, note: { es: "Regresión logística, imputación múltiple, mediación, análisis de redes", en: "Logistic regression, multiple imputation, mediation, network analysis" } }
+    - title: { es: Investigación social, en: Social research }
+      items:
+        - { name: { es: "Diseño de encuestas", en: "Survey design" }, level: 4, note: { es: "Cuestionarios, escalas validadas, muestreo y pilotaje", en: "Questionnaires, validated scales, sampling and piloting" } }
+        - { name: { es: "Censos y encuestas grandes", en: "Censuses and large surveys" }, level: 5, note: { es: "Validación, edición e imputación con control de calidad", en: "Validation, editing and imputation with quality control" } }
+        - { name: Atlas.ti, level: 3, note: { es: "Codificación cualitativa de entrevistas y documentos", en: "Qualitative coding of interviews and documents" } }
+    - title: { es: IA aplicada y herramientas, en: Applied AI and tooling }
+      items:
+        - { name: Claude Code, level: 4, note: { es: "Skills, agentes, tareas programadas y automatización de flujos", en: "Skills, agents, scheduled tasks and workflow automation" } }
+        - { name: { es: "Clasificación con modelos de lenguaje", en: "Classification with language models" }, level: 4, note: { es: "Prompts, esquemas de códigos y validación de resultados", en: "Prompts, coding schemes and validation of results" } }
+        - { name: { es: "Git y GitHub", en: "Git and GitHub" }, level: 4, note: { es: "Control de versiones, GitHub Pages y Actions", en: "Version control, GitHub Pages and Actions" } }
+
+learning:
+  title: { es: En desarrollo, en: Currently learning }
+  text: { es: "Lo que más me piden los avisos y todavía no domino, con el detalle de dónde estoy:", en: "What the postings ask for most and I haven't mastered yet, with where I stand:" }
+  items:
+    - { es: "Inglés: hoy B2, trabajando para leer y presentar sin fricción", en: "English: B2 today, working toward reading and presenting without friction" }
+    - { es: "DAX y Power Query a nivel avanzado, más allá del uso diario", en: "Advanced DAX and Power Query, beyond everyday use" }
+    - { es: "Entornos cloud y lakehouse (Azure, Databricks), que aparecen cada vez más en las ofertas", en: "Cloud and lakehouse environments (Azure, Databricks), increasingly common in postings" }
 
 languages:
   - { name: { es: Español, en: Spanish }, level: { es: Nativo, en: Native } }

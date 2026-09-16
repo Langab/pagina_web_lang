@@ -127,7 +127,9 @@ work:
         - { title: { es: "Sexo, edad y parentesco", en: "Sex, age and relationship" }, text: { es: "Escribí y corregí reglas en R para validar y completar las variables básicas de cada persona. Por ejemplo, inferir el sexo a partir del nombre cuando faltaba.", en: "I wrote and fixed R rules to validate and fill in each person's core variables. For example, inferring sex from the first name when it was missing." } }
         - { title: { es: Informes de calidad, en: Quality reports }, text: { es: Reportes en R Markdown para revisar la edad y comparar escenarios de edición antes de decidir., en: R Markdown reports to review age data and compare editing scenarios before deciding. } }
         - { title: { es: Comparar con la historia, en: Checking against history }, text: { es: "Indicadores demográficos para contrastar el Censo 2024 con los de 2017, 2002 y 1992.", en: "Demographic indicators to compare the 2024 Census with those of 2017, 2002 and 1992." } }
-        - { title: { es: Cuestionarios en papel, en: Paper questionnaires }, text: { es: Variables del formulario en papel y codificación automática de respuestas abiertas., en: Paper form variables and automatic coding of open answers. } }
+        - { title: { es: Cuestionarios en papel, en: Paper questionnaires }, text: { es: "Variables del formulario en papel y codificación automática de respuestas abiertas contra diccionarios, con revisión de los casos que el diccionario no resolvía.", en: "Paper form variables and automatic coding of open answers against dictionaries, reviewing the cases the dictionary couldn't resolve." } }
+        - { title: { es: Imputación, en: Imputation }, text: { es: "Participé en la etapa de imputación de las variables de personas, donde se probaron distintos métodos antes de fijar el procedimiento definitivo.", en: "I took part in the imputation stage for person-level variables, where several methods were tested before settling the final procedure." } }
+        - { title: { es: Trabajo en un código compartido, en: Working in a shared codebase }, text: { es: "Todo se hizo dentro de un repositorio en R con control de versiones y entorno replicable, junto a un equipo grande y con revisiones cruzadas.", en: "Everything was done inside a version-controlled R repository with a reproducible environment, alongside a large team and with peer review." } }
       tools: [R, R Markdown, renv, GitLab]
       note: { es: "El código y los microdatos son del INE y no se publican. Las cifras son las oficiales de [censo2024.ine.gob.cl](https://censo2024.ine.gob.cl/).", en: "The code and microdata belong to INE and aren't public. Figures are the official ones from [censo2024.ine.gob.cl](https://censo2024.ine.gob.cl/)." }
       links:
@@ -143,20 +145,29 @@ work:
     preview: logos/c22.png
     modal:
       intro:
-        es: Entre 2021 y 2023 Chile escribió dos propuestas de constitución y rechazó ambas. En C22 seguimos ese proceso con datos. Votaciones, discursos y encuestas convertidos en análisis para el debate público.
-        en: Between 2021 and 2023 Chile drafted two constitutions and rejected both. At C22 we followed the process with data. Votes, speeches and surveys turned into analysis for public debate.
+        es: "Entre 2021 y 2024 Chile escribió dos propuestas de constitución y rechazó ambas. C22 fue el proyecto del CEP que siguió ese proceso con datos, dirigido por Aldo Mascareño. Trabajé en el equipo que convirtió votaciones, discursos y encuestas en análisis publicables, y firmé como coautor siete Puntos de Referencia y seis notas de investigación."
+        en: "Between 2021 and 2024 Chile drafted two constitutions and rejected both. C22 was CEP's project tracking that process with data, led by Aldo Mascareño. I worked on the team that turned votes, speeches and surveys into publishable analysis, and co-authored seven policy papers and six research notes."
       numbers:
         - { value: 7, label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
-        - { value: 6, label: { es: research notes en C22, en: C22 research notes } }
-        - { value: 2, label: { es: procesos constitucionales seguidos, en: constitutional processes tracked } }
+        - { value: 6, label: { es: notas de investigación en C22, en: C22 research notes } }
+        - { value: 2, label: { es: procesos constitucionales seguidos de principio a fin, en: constitutional processes tracked end to end } }
+      flow_title: { es: Cómo trabajábamos un tema, en: How we worked on a topic }
+      flow:
+        - { title: { es: Fuente, en: Source }, text: { es: "Votaciones nominales, discursos, prensa o encuestas, según la pregunta.", en: "Roll-call votes, speeches, press or surveys, depending on the question." } }
+        - { title: { es: Base, en: Dataset }, text: { es: "Construcción y limpieza de la base en R, con el detalle de cada decisión.", en: "Building and cleaning the dataset in R, documenting each decision." } }
+        - { title: { es: Método, en: Method }, text: { es: "Escalamiento de votaciones, análisis de texto o estadística descriptiva y modelos.", en: "Vote scaling, text analysis or descriptive statistics and models." } }
+        - { title: { es: Visualización, en: Visualization }, text: { es: "Gráficos en ggplot2 pensados para publicación y prensa.", en: "ggplot2 charts designed for publication and press." } }
+        - { title: { es: Publicación, en: Publication }, text: { es: "Punto de Referencia, nota de investigación o boletín, con datos replicables.", en: "A policy paper, research note or bulletin, with replicable data." } }
       did:
-        - { title: { es: Análisis de texto, en: Text analysis }, text: { es: Discursos y documentos de la Convención procesados como datos., en: Convention speeches and documents processed as data. } }
-        - { title: { es: Votaciones, en: Roll-call votes }, text: { es: Polarización y fragmentación en la Convención y en la Cámara., en: Polarization and fragmentation in the Convention and the Chamber. } }
-        - { title: { es: Visualización política, en: Political data viz }, text: { es: Gráficos para las publicaciones y la prensa., en: Charts for publications and the press. } }
-        - { title: { es: Voces del CEP, en: Voces del CEP }, text: { es: "Edición y publicación del boletín entre 2023 y 2024.", en: "Edited and published the bulletin in 2023 and 2024." } }
-      tools: [R, { es: Análisis de texto, en: Text analysis }, { es: Encuestas, en: Surveys }]
+        - { title: { es: Escalamiento de votaciones, en: Vote scaling }, text: { es: "Análisis de las votaciones del Consejo Constitucional con escalamiento tipo NOMINATE, que permite ubicar a cada consejero en dimensiones latentes y mostrar, por ejemplo, patrones de división dentro de un mismo bloque.", en: "Analysis of Constitutional Council votes with NOMINATE-style scaling, placing each member on latent dimensions and showing, for example, patterns of division within a single bloc." } }
+        - { title: { es: Polarización y fragmentación, en: Polarization and fragmentation }, text: { es: "Indicadores comparados entre la Convención y la Cámara de Diputados para los Puntos de Referencia del CEP.", en: "Comparative indicators between the Convention and the Chamber of Deputies for CEP's policy papers." } }
+        - { title: { es: Análisis de texto y prensa, en: Text and press analysis }, text: { es: "Procesamiento de discursos, documentos y cobertura de prensa como datos, para seguir cómo se instalaban los temas.", en: "Processing speeches, documents and press coverage as data, to track how topics took hold." } }
+        - { title: { es: Encuestas y opinión pública, en: Surveys and public opinion }, text: { es: "Explotación de encuestas propias y externas para caracterizar apruebo y rechazo, expectativas y desconfianza.", en: "Analysis of in-house and external surveys to characterize approval and rejection, expectations and distrust." } }
+        - { title: { es: Voces del CEP, en: Voces del CEP }, text: { es: "Edición y publicación del boletín entre 2023 y 2024, con el seguimiento del segundo proceso constitucional.", en: "Editing and publishing the bulletin in 2023 and 2024, tracking the second constitutional process." } }
+      tools: [R, ggplot2, { es: Escalamiento de votaciones, en: Vote scaling }, { es: Análisis de texto, en: Text analysis }, { es: Encuestas, en: Surveys }]
       links:
         - { label: { es: Sitio de C22, en: C22 website }, url: "https://c22cepchile.cl/" }
+        - { label: { es: Publicaciones del CEP, en: CEP publications }, url: "https://www.cepchile.cl/" }
 
   - id: slep
     home: true
@@ -168,20 +179,32 @@ work:
     preview: photos/charla.jpg
     modal:
       intro:
-        es: El SLEP Santa Rosa administra las escuelas y liceos públicos de La Cisterna, Lo Espejo, Pedro Aguirre Cerda, San Miguel y San Ramón. Mi trabajo es que los datos de esas escuelas lleguen ordenados y a tiempo a quienes toman decisiones.
-        en: SLEP Santa Rosa runs the public schools in La Cisterna, Lo Espejo, Pedro Aguirre Cerda, San Miguel and San Ramón. My job is to make sure those schools' data reaches decision-makers clean and on time.
+        es: "El SLEP Santa Rosa administra las escuelas, liceos y jardines públicos de La Cisterna, Lo Espejo, Pedro Aguirre Cerda, San Miguel y San Ramón. Trabajo en el equipo de Estudio, Monitoreo y Datos: armé el flujo que va desde los datos crudos de las plataformas del Ministerio hasta los tableros que usan las direcciones y los establecimientos."
+        en: "SLEP Santa Rosa runs the public schools, high schools and kindergartens of five municipalities in southern Santiago. I work in the Study, Monitoring and Data team: I built the flow that goes from raw data in the Ministry's platforms to the dashboards used by management and schools."
       cover:
         src: photos/charla
         alt: { es: Benjamín Lang presentando en el SLEP Santa Rosa, en: Benjamín Lang presenting at SLEP Santa Rosa }
-        caption: { es: Presentando en el SLEP Santa Rosa., en: Presenting at SLEP Santa Rosa. }
+        caption: { es: Presentando resultados al equipo del SLEP Santa Rosa., en: Presenting results to the SLEP Santa Rosa team. }
       numbers:
-        - { value: 5, label: { es: comunas en el territorio del servicio, en: municipalities in the district } }
+        - { value: 5, label: { es: comunas del territorio, en: municipalities in the district } }
+        - { value: 10, label: { es: tableros de Power BI publicados y actualizados, en: Power BI dashboards published and maintained } }
+        - { value: 4, label: { es: plataformas del Ministerio automatizadas con scrapers, en: Ministry platforms automated with scrapers } }
+      flow_title: { es: Del dato crudo al tablero, en: From raw data to dashboard }
+      flow:
+        - { title: { es: Captura, en: Capture }, text: { es: "Descargas automatizadas de las plataformas de matrícula, asistencia y evaluación, además de los registros internos del servicio.", en: "Automated downloads from enrollment, attendance and assessment platforms, plus the service's internal records." } }
+        - { title: { es: Consolidación, en: Consolidation }, text: { es: "Un script maestro en R corre los módulos de procesamiento y deja bases con nombre fijo, listas para consumir.", en: "A master R script runs the processing modules and outputs fixed-name datasets, ready to consume." } }
+        - { title: { es: Validación, en: Validation }, text: { es: "Revisión mensual de consistencia antes de que cualquier cifra llegue a un informe.", en: "Monthly consistency checks before any figure reaches a report." } }
+        - { title: { es: Publicación, en: Publishing }, text: { es: "Los tableros se actualizan y se publican sobrescribiendo el informe anterior, para no romper los enlaces incrustados en el sitio interno.", en: "Dashboards are refreshed and republished over the previous report, so the embeds on the internal site never break." } }
+        - { title: { es: Uso, en: Use }, text: { es: "Fichas por establecimiento, minutas e informes para las direcciones y los equipos de cada escuela.", en: "School-level fact sheets, briefs and reports for management and each school's team." } }
       did:
-        - { title: { es: Gobernanza de datos, en: Data governance }, text: { es: "Definí cómo se capturan, validan y comparten los datos del servicio.", en: "I defined how the service captures, validates and shares its data." } }
-        - { title: { es: Reportes que se pueden auditar, en: Auditable reports }, text: { es: Procesamientos en R y R Markdown que cualquier persona del equipo puede volver a correr., en: R and R Markdown pipelines anyone on the team can rerun. } }
-        - { title: { es: Dashboards, en: Dashboards }, text: { es: Tableros en Power BI para seguir indicadores educacionales., en: Power BI dashboards to track education indicators. } }
-        - { title: { es: Capacitación, en: Training }, text: { es: Talleres para que los equipos entiendan y usen sus propios datos., en: Workshops so teams understand and use their own data. } }
-      tools: [R, R Markdown, Power BI, Excel]
+        - { title: { es: Gobernanza de datos, en: Data governance }, text: { es: "Definí cómo se capturan, validan, nombran y comparten los datos del servicio, y dejé el proceso documentado para que no dependa de una persona.", en: "I defined how the service captures, validates, names and shares its data, and documented the process so it doesn't depend on one person." } }
+        - { title: { es: Automatización de la captura, en: Automated data capture }, text: { es: "Scrapers en Python para las plataformas de matrícula, asistencia y evaluación diagnóstica, que antes se descargaban a mano.", en: "Python scrapers for the enrollment, attendance and diagnostic assessment platforms, previously downloaded by hand." } }
+        - { title: { es: Tableros y sitio interno, en: Dashboards and internal site }, text: { es: "Diez tableros en Power BI con su propio orquestador de actualización, incrustados en un sitio interno con logs y respaldos.", en: "Ten Power BI dashboards with their own refresh orchestrator, embedded in an internal site with logs and backups." } }
+        - { title: { es: Informes y fichas, en: Reports and fact sheets }, text: { es: "Fichas por establecimiento y minutas en PDF generadas desde R, más informes de matrícula, asistencia y trayectoria docente.", en: "School fact sheets and PDF briefs generated from R, plus enrollment, attendance and teacher trajectory reports." } }
+        - { title: { es: Análisis educativo, en: Education analysis }, text: { es: "Resultados SIMCE, eficiencia interna, caracterización de establecimientos y perfiles para decisiones de inversión.", en: "National test results, internal efficiency, school profiling and inputs for investment decisions." } }
+        - { title: { es: Comunicación con la red, en: Communicating with the network }, text: { es: "Envíos masivos segmentados a directores, jefaturas técnicas y asesores, generados desde las mismas bases.", en: "Segmented mass mailings to principals, technical leads and advisors, generated from the same datasets." } }
+      tools: [R, R Markdown, Power BI, Python, PowerShell, Excel]
+      note: { es: Los datos y los tableros son internos del servicio. Acá describo el flujo y mi rol., en: The data and dashboards are internal to the service. Here I describe the flow and my role. }
 
   - id: tironi
     home: true
@@ -193,13 +216,15 @@ work:
     preview: logos/tironi.png
     modal:
       intro:
-        es: Durante 2022, cada semana, le contaba a clientes corporativos qué pasaba en la Convención Constitucional. Qué se votó, qué cambió y qué podía venir. Además apoyé proyectos de consultoría estratégica con análisis de datos.
-        en: Throughout 2022, every week, I told corporate clients what was happening in the Constitutional Convention. What was voted, what changed and what might come next. I also supported strategy consulting projects with data analysis.
+        es: "Durante 2022, con la Convención Constitucional en pleno funcionamiento, clientes corporativos necesitaban entender qué se estaba votando y qué implicaba para sus industrias. Estuve a cargo del boletín semanal que respondía eso, además de apoyar con datos otros proyectos de consultoría."
+        en: "Through 2022, with the Constitutional Convention in full swing, corporate clients needed to understand what was being voted and what it meant for their industries. I was in charge of the weekly bulletin that answered that, and supported other consulting projects with data."
       did:
-        - { title: { es: Boletín semanal, en: Weekly bulletin }, text: { es: Monitoreo del proceso constituyente para clientes públicos y privados., en: Monitoring of the constitutional process for public and private clients. } }
-        - { title: { es: Diagnósticos, en: Diagnostics }, text: { es: Datos para diagnósticos organizacionales y estrategias de comunicación., en: Data for organizational diagnostics and communication strategies. } }
-        - { title: { es: Opinión pública, en: Public opinion }, text: { es: Seguimiento de encuestas y tendencias políticas., en: Tracking polls and political trends. } }
-      tools: [Excel, R, { es: Análisis político, en: Political analysis }]
+        - { title: { es: Monitoreo semanal, en: Weekly monitoring }, text: { es: "Seguimiento de las votaciones y los borradores de la Convención, traducido a qué cambiaba, qué quedaba en riesgo y qué venía la semana siguiente.", en: "Tracking the Convention's votes and drafts, translated into what changed, what was at risk and what was coming next week." } }
+        - { title: { es: Audiencia corporativa, en: Corporate audience }, text: { es: "Escribir para gerencias y directorios: sin jerga jurídica, con el impacto concreto para el negocio y el sector.", en: "Writing for executives and boards: no legal jargon, with the concrete impact on the business and the sector." } }
+        - { title: { es: Diagnósticos con datos, en: Data-driven diagnostics }, text: { es: "Procesamiento de encuestas internas y datos secundarios para diagnósticos organizacionales y estrategias de comunicación.", en: "Processing internal surveys and secondary data for organizational diagnostics and communication strategies." } }
+        - { title: { es: Opinión pública, en: Public opinion }, text: { es: "Seguimiento de encuestas y tendencias políticas para anticipar escenarios en las presentaciones a clientes.", en: "Tracking polls and political trends to anticipate scenarios in client presentations." } }
+      tools: [Excel, R, { es: Análisis político, en: Political analysis }, { es: Opinión pública, en: Public opinion }]
+      note: { es: Los boletines y los diagnósticos son material de los clientes de la consultora., en: The bulletins and diagnostics are the consultancy's client material. }
 
   - id: fondecyt-bc
     home: true
@@ -395,5 +420,6 @@ work:
         en: How abrupt changes in a social-ecological system are governed, with Chiloé as the case. I supported the project's qualitative and quantitative data processing.
       did:
         - { title: { es: Información mixta, en: Mixed data }, text: { es: Sistematización de entrevistas y datos cuantitativos., en: Organizing interviews and quantitative data. } }
-        - { title: { es: Apoyo al análisis, en: Analysis support }, text: { es: Insumos para los productos del equipo de investigación., en: Inputs for the research team's outputs. } }
+        - { title: { es: Apoyo al análisis, en: Analysis support }, text: { es: "Insumos para los productos del equipo: revisión de literatura, preparación de bases y apoyo en el trabajo de campo.", en: "Inputs for the team's outputs: literature review, dataset preparation and fieldwork support." } }
+        - { title: { es: Codificación cualitativa, en: Qualitative coding }, text: { es: "Codificación de entrevistas en Atlas.ti siguiendo el esquema del proyecto, con memos para documentar los criterios.", en: "Coding interviews in Atlas.ti following the project's scheme, with memos documenting the criteria." } }
       tools: [Atlas.ti, R]
