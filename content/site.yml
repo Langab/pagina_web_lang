@@ -65,8 +65,9 @@ pages:
       en: "Work experience, education, technical skills and teaching of Benjamín Lang."
 
 nav:
-  - { id: portafolio, label: { es: Portafolio, en: Portfolio } }
+  - { id: home, label: { es: Inicio, en: Home } }
   - { id: trabajos, label: { es: Trabajos, en: Work } }
+  - { id: portafolio, label: { es: Portafolio, en: Portfolio } }
   - { id: publications, label: { es: Publicaciones, en: Publications } }
   - { id: cv, label: { es: CV, en: CV } }
 
@@ -129,4 +130,6 @@ ui:
   back_home: { es: Volver al inicio, en: Back to home }
   read_article: { es: Leer artículo, en: Read article }
   year: { es: Año, en: Year }
+  open_section: { es: Entrar, en: Open }
+  read: { es: Leer, en: Read }
   filter_label: { es: Filtrar proyectos, en: Filter projects }

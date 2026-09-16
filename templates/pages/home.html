@@ -75,170 +75,25 @@
   </div>
 </section>
 
-{# ── Relato con puntos ────────────────────────────────────────────── #}
-{% set s = home.story %}
-<section class="section on-dark" aria-labelledby="story-title">
+{# ── Accesos a cada pestaña ───────────────────────────────────────── #}
+{% set cards = home.cards %}
+<section class="section on-paper" aria-labelledby="cards-title">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <p class="kicker">{{ s.kicker | t }}</p>
-        <h2 id="story-title">{{ s.title | t }}</h2>
-      </div>
-      <p>{{ s.lede | t }}</p>
-    </div>
-    <div class="story">
-      <div class="story-stage" data-story>
-        <canvas aria-hidden="true"></canvas>
-        <div class="stage-label"><span data-story-label>{{ s.steps[0].label | t }}</span><span aria-hidden="true">●</span></div>
-      </div>
-      <ol class="story-steps">
-        {% for step in s.steps %}
-        <li class="story-step{{ ' is-active' if loop.first }}" data-step data-label="{{ step.label | t }}">
-          <span class="step-n" aria-hidden="true"></span>
-          <h3>{{ step.title | t }}</h3>
-          <p>{{ step.text | md }}</p>
-          <ul class="chips">{% for tool in step.tools %}<li>{{ tool | t }}</li>{% endfor %}</ul>
-        </li>
-        {% endfor %}
-      </ol>
-    </div>
-  </div>
-</section>
-
-{# ── Trabajos, proyectos y consultoría (destacados) ───────────────── #}
-{% set destacados = projects.work | selectattr('home', 'defined') | list %}
-<section class="section on-paper" aria-labelledby="work-title">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ home.work.kicker | t }}</p>
-        <h2 id="work-title">{{ home.work.title | t }}</h2>
-      </div>
-      <p>{{ home.work.lede | t }}</p>
-    </div>
-    <ul class="work-index" id="work-home">
-      {% for w in destacados %}{{ m.work_row(w) }}{% endfor %}
-    </ul>
-    <div class="work-preview" data-preview-box aria-hidden="true"><img alt=""></div>
-    <div class="actions" style="margin-top: 2.5rem">
-      <a class="btn" href="{{ url('trabajos') }}">{{ ui.see_work }}</a>
-    </div>
-  </div>
-</section>
-
-{# ── CV resumido ──────────────────────────────────────────────────── #}
-<section class="section" aria-labelledby="career-title">
-  <div class="wrap split">
-    <div class="split-sticky">
-      <p class="kicker">{{ home.career.kicker | t }}</p>
-      <h2 id="career-title" style="font-size: var(--t-3xl); margin-bottom: 1rem;">{{ home.career.title | t }}</h2>
-      <p style="color: var(--grafito); font-size: var(--t-lg); max-width: 36ch;">{{ home.career.lede | t }}</p>
-      <div class="actions" style="margin-top: 1.75rem;">
-        <a class="btn btn-solid" href="{{ url('cv') }}">{{ home.career.cta | t }}</a>
-        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}PDF</a>
+        <p class="kicker">{{ cards.kicker | t }}</p>
+        <h2 id="cards-title">{{ cards.title | t }}</h2>
       </div>
     </div>
-    <ol class="timeline">
-      {% for job in experience.jobs if job.home is defined %}
-      <li class="tl-item{{ ' is-current' if job.current is defined }}">
-        <span class="tl-when">{{ job.when | t }}</span>
-        <div class="tl-what">
-          <h3>{{ job.role | t }}</h3>
-          <p class="org">{{ job.org }}</p>
-          <p>{{ job.desc | md }}</p>
-        </div>
-      </li>
-      {% endfor %}
-    </ol>
-  </div>
-</section>
-
-{# ── Portafolio: proyectos propios ────────────────────────────────── #}
-<section class="section" id="{{ 'portafolio' if lang == 'es' else 'portfolio' }}" aria-labelledby="lab-title">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ home.lab.kicker | t }}</p>
-        <h2 id="lab-title">{{ home.lab.title | t }}</h2>
-      </div>
-      <p>{{ home.lab.lede | t }}</p>
-    </div>
-    <div class="lab-list">
-      {% for p in projects.lab %}
-      <article class="lab-item" data-reveal>
-        <a class="lab-visual" href="{{ project_url(p) }}" data-tilt tabindex="-1" aria-hidden="true">
-          {{ m.browser(p.image, p.address) }}
-        </a>
-        <div class="lab-body">
-          <p class="kicker">{{ p.status | t }}</p>
-          <h3><a href="{{ project_url(p) }}">{{ p.title | t }}</a></h3>
-          <p class="hook">{{ p.hook | t }}</p>
-          <ul class="facts">{% for f in p.facts %}<li>{{ f | md }}</li>{% endfor %}</ul>
-          <ul class="chips">{% for tag in p.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
-          <div class="actions">
-            <a class="btn btn-solid" href="{{ project_url(p) }}">{{ ui.read_story }}</a>
-            {% if p.links is defined %}<a class="btn" href="{{ p.links[0].url }}" target="_blank" rel="noopener">{{ p.links[0].label | t }} {{ m.icon('out') }}</a>{% endif %}
-          </div>
-        </div>
-      </article>
+    <div class="nav-cards">
+      {% for c in cards['items'] %}
+      <a class="nav-card" href="{{ url(c.page) }}" data-reveal style="--d: {{ loop.index0 * 0.05 }}s">
+        <h3>{{ c.title | t }}</h3>
+        <p>{{ c.text | t }}</p>
+        <span class="nav-card-go">{{ ui.open_section }} {{ m.icon('arrow') }}</span>
+      </a>
       {% endfor %}
     </div>
-    <div class="actions" style="margin-top: 2.5rem">
-      <a class="btn" href="{{ url('portafolio') }}">{{ ui.all_projects }}</a>
-    </div>
   </div>
 </section>
-
-{# ── Docencia ─────────────────────────────────────────────────────── #}
-{% set tch = home.teaching %}
-<section class="section on-dark" aria-labelledby="teach-title">
-  <div class="wrap talk">
-    <figure class="talk-photo" data-reveal style="margin:0">
-      {{ m.picture('photos/charla', h.photo_alt | t, width=1600, height=1103) }}
-    </figure>
-    <div>
-      <p class="kicker">{{ tch.kicker | t }}</p>
-      <h2 id="teach-title" style="font-size: var(--t-3xl); margin-bottom: 1.25rem;">{{ tch.title | t }}</h2>
-      <p style="color: var(--noche-grafito); font-size: var(--t-lg); line-height: 1.55;">{{ tch.text | t }}</p>
-      <div class="slides" aria-label="{{ tch.slides_label | t }}">
-        <p class="kicker" style="margin-top:1rem">{{ tch.slides_label | t }}</p>
-        <ol class="slides-track" style="list-style:none;margin:0;padding:0 0 .75rem">
-          {% for sl in tch.slides %}
-          <li class="slide-card"><b>{{ sl.title | t }}</b><span>{{ sl.text | t }}</span></li>
-          {% endfor %}
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
-{# ── Última publicación ───────────────────────────────────────────── #}
-{% set pubs = home.publications %}
-{% set feat = publications.groups[0]['items'][0] %}
-<section class="section" aria-labelledby="pubs-title">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ pubs.kicker | t }}</p>
-        <h2 id="pubs-title">{{ pubs.title | t }}</h2>
-      </div>
-      <p>{{ publications.intro | t }}</p>
-    </div>
-    <a class="pub-feature" href="{{ feat.url }}" target="_blank" rel="noopener" style="text-decoration:none" data-reveal>
-      <div>
-        <h3>{{ feat.title }}</h3>
-        <p>{{ feat.authors }} ({{ feat.year }}). {{ feat.venue }}.</p>
-      </div>
-      <span class="btn btn-solid">{{ ui.read_article }} {{ m.icon('out') }}</span>
-    </a>
-    <div class="pub-counts">
-      {% for c in pubs.counts %}<div><b data-count="{{ c.value }}">{{ c.value }}</b>{{ c.label | t }}</div>{% endfor %}
-      <div style="align-self:end"><a class="btn" href="{{ url('publications') }}">{{ pubs.cta | t }}</a></div>
-    </div>
-  </div>
-</section>
-{% endblock %}
-
-{% block dialogs %}
-{% for w in projects.work | selectattr('home', 'defined') %}{{ m.work_modal(w) }}{% endfor %}
 {% endblock %}
