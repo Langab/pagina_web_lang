@@ -77,7 +77,7 @@
 <section id="scraping">
   <h2>{{ 'Scraping: cada portal es un mundo' if es else 'Scraping: every site is its own world' }}</h2>
   <div style="overflow-x:auto">
-    <table class="margin-table">
+    <div class="table-scroll"><table class="margin-table">
       <thead><tr><th>{{ 'Portal' if es else 'Site' }}</th><th>{{ 'Técnica' if es else 'Technique' }}</th><th>{{ 'Resultado' if es else 'Result' }}</th></tr></thead>
       <tbody>
         <tr><td>Portal Inmobiliario</td><td>requests + HTML</td><td>{{ 'Fuente principal, por barrio' if es else 'Main source, by neighborhood' }}</td></tr>
@@ -85,7 +85,7 @@
         <tr><td>Yapo</td><td>Scrapling / Camoufox</td><td>{{ 'Bloquea bots, unos 40 s por página' if es else 'Blocks bots, about 40 s per page' }}</td></tr>
         <tr><td>Facebook Marketplace</td><td>{{ 'CSV manual' if es else 'Manual CSV' }}</td><td>{{ 'Scrapearlo viola sus términos' if es else 'Scraping it breaks their terms' }}</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </div>
   <p>{{ 'Un clásico chileno: los precios llegan como «$ 750.000», «UF 13,5» o «13,5 UF». La conversión usa el valor de la UF del día desde mindicador.cl, con un respaldo si la API no responde.' if es else 'A Chilean classic: prices arrive as "$ 750.000", "UF 13,5" or "13,5 UF". The conversion uses that day’s UF value from mindicador.cl, with a fallback if the API is down.' }}</p>
 <pre class="code"><code><span class="k">def</span> parse_precio(texto: str) -&gt; int:

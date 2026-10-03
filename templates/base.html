@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}"{% if contar is not defined or contar %} data-vista="/{{ route.path[lang] }}"{% endif %}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -83,5 +83,6 @@
   {% block dialogs %}{% endblock %}
   <script src="{{ asset('js/site.js') }}" defer></script>
   {% block scripts %}{% endblock %}
+  {% if site.analytics_token and (contar is not defined or contar) %}<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.analytics_token }}", "spa": false}'></script>{% endif %}
 </body>
 </html>

@@ -9,7 +9,8 @@
 
 {% macro img(src, alt="", cls="", loading="lazy") %}
 {% if src.endswith('.png') or src.endswith('.svg') or src.endswith('.jpg') %}
-<img src="{{ asset('img/' ~ src) }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %} loading="{{ loading }}" decoding="async">
+{% set dim = img_size('img/' ~ src) %}
+<img src="{{ asset('img/' ~ src) }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %} loading="{{ loading }}" decoding="async"{% if dim %} width="{{ dim[0] }}" height="{{ dim[1] }}"{% endif %}>
 {% else %}
 {{ picture(src, alt, cls, loading) }}
 {% endif %}

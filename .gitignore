@@ -12,3 +12,10 @@ __pycache__/
 # Duplicados que crea iCloud ("archivo 2.html", "carpeta 2/")
 * 2.*
 * 2/
+
+# Cloudflare: caché de wrangler, secretos locales y la clave del visor de métricas (no se publican)
+.wrangler/
+.dev.vars
+privado/
+# Versión «solo redirecciones» para la dirección antigua (la arma el workflow)
+_redirigir.nosync/

@@ -1,0 +1,152 @@
+{% import "partials/macros.html" as m with context %}
+{% set es = lang == 'es' %}
+
+<section id="{{ 'problema' if es else 'problem' }}">
+  <h2>{{ 'El problema' if es else 'The problem' }}</h2>
+  {% if es %}
+  <p>Los bancos y las casas comerciales publican descuentos en restoranes, pero cada uno lo hace en su propia página, con su propio formato y sus propias reglas: unos aplican solo ciertos días, otros tienen tope de devolución, otros valen únicamente con una tarjeta específica. Para saber dónde conviene comer hoy hay que abrir dieciséis sitios distintos y leer la letra chica de cada uno.</p>
+  <p>El problema de fondo no es juntar los datos, es que <strong>caducan sin avisar</strong>. Un banco saca un convenio de su página y no queda registro: el descuento sigue circulando en listados y capturas de pantalla, y uno se entera en la mesa, cuando no se lo respetan.</p>
+  <p>Construí la aplicación para resolver las dos cosas: consolidar la oferta en un solo lugar y, sobre todo, <strong>publicar únicamente lo que se puede verificar contra la fuente</strong>.</p>
+  {% else %}
+  <p>Banks and retail cards publish restaurant discounts, but each one does it on its own page, in its own format, with its own rules: some only apply on certain days, some cap the cashback, some work only with one specific card. To know where it's worth eating today you have to open sixteen different sites and read the fine print on each.</p>
+  <p>The real problem isn't collecting the data, it's that <strong>it expires silently</strong>. A bank pulls a deal from its page and no record remains: the discount keeps circulating in listings and screenshots, and you find out at the table, when they don't honour it.</p>
+  <p>I built the app to solve both: consolidate the offer in one place and, above all, <strong>publish only what can be verified against the source</strong>.</p>
+  {% endif %}
+</section>
+
+<section id="{{ 'cifras' if es else 'numbers' }}">
+  <h2>{{ 'Lo que hay publicado' if es else 'What is published' }}</h2>
+  <div class="numbers">
+    <div><b>540</b><span>{{ 'lugares' if es else 'places' }}</span></div>
+    <div><b>787</b><span>{{ 'descuentos vigentes' if es else 'live discounts' }}</span></div>
+    <div><b>1.285</b><span>{{ 'locales en el mapa' if es else 'branches on the map' }}</span></div>
+    <div><b>16</b><span>{{ 'emisores de tarjetas' if es else 'card issuers' }}</span></div>
+  </div>
+  {% if es %}
+  <p>Los descuentos se reparten muy desigual entre emisores, y eso cambia qué tarjeta conviene tener.</p>
+  {% else %}
+  <p>Discounts are spread very unevenly across issuers, and that changes which card is worth having.</p>
+  {% endif %}
+  <div class="bars reveal-bars">
+    {% for b in [
+      {"l": "Banco de Chile", "v": 182},
+      {"l": "Bci", "v": 85},
+      {"l": "Santander", "v": 81},
+      {"l": "Falabella", "v": 72},
+      {"l": "Scotiabank", "v": 70},
+      {"l": "BICE y Security", "v": 69},
+      {"l": "BancoEstado", "v": 68},
+      {"l": "Itaú", "v": 43}
+    ] %}
+    <div class="bar"><span>{{ b.l }}</span><span class="bar-track"><span class="bar-fill" style="--v: {{ (b.v / 182 * 100) | round(1) }}%"></span></span><b>{{ b.v }}</b></div>
+    {% endfor %}
+  </div>
+  <p class="live-note">{{ 'Ocho de los dieciséis emisores. Los otros ocho suman 117 descuentos entre todos.' if es else 'Eight of the sixteen issuers. The other eight add up to 117 discounts between them.' }}</p>
+</section>
+
+<section id="{{ 'flujo' if es else 'flow' }}">
+  <h2>{{ 'El flujo, de la página del banco a la aplicación' if es else 'The flow, from the bank page to the app' }}</h2>
+  {% if es %}
+  <p>Cada pieza hace una sola cosa y se puede correr por separado. Una vez al mes, después de la extracción, todo lo demás se arma y se publica con un comando.</p>
+  {% else %}
+  <p>Each piece does one thing and can be run on its own. Once a month, after extraction, everything else is built and published with one command.</p>
+  {% endif %}
+  <ol class="pipeline">
+    <li><span class="node">01</span><div><b>{{ 'Extracción' if es else 'Extraction' }}</b><span>{{ 'Un extractor por emisor. Unos leen la API pública del sitio del banco, otros necesitan navegador porque la página responde con un desafío antibot, y uno viene de un PDF mensual de beneficios.' if es else 'One extractor per issuer. Some read the bank site’s public API, others need a browser because the page answers with an anti-bot challenge, and one comes from a monthly benefits PDF.' }}</span></div></li>
+    <li><span class="node">02</span><div><b>{{ 'Verificación contra la fuente' if es else 'Verification against the source' }}</b><span>{{ 'En los emisores que lo permiten, cada convenio se comprueba en la página de su banco y lo que da 404 se cae. Lo que se capturó con navegador vale solo el mes en que se capturó, y un archivo de otro mes no se publica.' if es else 'For issuers that allow it, every deal is checked on its bank’s page and anything returning 404 is dropped. Anything captured with a browser is only valid for the month it was captured, and a file from another month is not published.' }}</span></div></li>
+    <li><span class="node">03</span><div><b>{{ 'Consolidación' if es else 'Consolidation' }}</b><span>{{ 'Un mismo restorán llega con nombres distintos desde varios emisores. Se unifica, se deduplica y se aplican las correcciones hechas a mano, cada una con su motivo escrito.' if es else 'The same restaurant arrives under different names from several issuers. It is unified, deduplicated, and manual corrections are applied, each with its reason written down.' }}</span></div></li>
+    <li><span class="node">04</span><div><b>{{ 'Enriquecimiento' if es else 'Enrichment' }}</b><span>{{ 'Geocodificación de cada local (1.148 de 1.285 con dirección exacta), foto desde el propio sitio del restorán, carta, horario y tipo de cocina.' if es else 'Geocoding of every branch (1,148 of 1,285 with an exact address), a photo from the restaurant’s own site, menu, opening hours and cuisine.' }}</span></div></li>
+    <li><span class="node">05</span><div><b>{{ 'Publicación con frenos' if es else 'Publishing with brakes' }}</b><span>{{ 'El despliegue se detiene solo si un emisor perdió más del 40% de sus descuentos, si un JSON quedó vacío o inválido, o si algo con forma de credencial se coló en la carpeta publicada.' if es else 'The deploy stops by itself if an issuer lost more than 40% of its discounts, if a JSON came out empty or invalid, or if anything shaped like a credential slipped into the published folder.' }}</span></div></li>
+    <li><span class="node">06</span><div><b>{{ 'Uso y vuelta' if es else 'Usage and feedback' }}</b><span>{{ 'Ya publicado, la aplicación recoge opiniones de quienes fueron y cuenta qué se mira, para saber qué datos vale la pena mejorar el mes siguiente.' if es else 'Once live, the app collects opinions from people who went and counts what gets looked at, to know which data is worth improving next month.' }}</span></div></li>
+  </ol>
+  <div class="terminal" data-type='{{ [
+    {"c": "p", "t": "$ ./publicar.sh"},
+    {"c": "dim", "t": "→ " ~ ("leyendo 16 emisores…" if es else "reading 16 issuers…")},
+    {"c": "", "t": ("consolidando 540 lugares, 787 descuentos…" if es else "consolidating 540 places, 787 discounts…")},
+    {"c": "", "t": ("geocodificando 1.285 locales con caché… ok" if es else "geocoding 1,285 branches with cache… ok")},
+    {"c": "dim", "t": ("control: ningún emisor perdió más del 40%" if es else "check: no issuer lost more than 40%")},
+    {"c": "ok", "t": "✓ " ~ ("publicado en Cloudflare Pages" if es else "published to Cloudflare Pages")}
+  ] | tojson }}'>
+    <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="terminal-body"></div>
+  </div>
+</section>
+
+<section id="{{ 'regla' if es else 'rule' }}">
+  <h2>{{ 'La regla que ordena todo el proyecto' if es else 'The rule that governs the whole project' }}</h2>
+  {% if es %}
+  <p>El primer día que estuvo publicada, la aplicación mostraba un 40% los jueves en un restorán, con vigencia hasta fin de mes según el aviso original. El banco ya lo había sacado de su página. Fui, pedí el descuento y no me lo respetaron.</p>
+  <p>De ahí salió la única regla que no se negocia: <strong>se publica solo lo que la página del banco muestra hoy</strong>. No basta con que la fecha de vigencia no haya pasado. Cada descuento guarda el día en que se vio en la fuente, y la ficha lo muestra junto al porcentaje.</p>
+  <p>Es una decisión incómoda, porque borra convenios que probablemente siguen vivos y deja la aplicación con menos contenido del que podría tener. Pero el valor de este dato está en que se pueda usar frente a un garzón, y para eso un falso positivo cuesta mucho más que un vacío.</p>
+  {% else %}
+  <p>On its first day live, the app showed a 40% Thursday discount at a restaurant, valid until the end of the month according to the original listing. The bank had already pulled it from its page. I went, asked for the discount, and they didn't honour it.</p>
+  <p>That produced the one rule that isn't negotiable: <strong>only publish what the bank's page shows today</strong>. It isn't enough that the expiry date hasn't passed. Every discount stores the day it was seen at the source, and the detail sheet shows it next to the percentage.</p>
+  <p>It's an uncomfortable decision, because it deletes deals that are probably still alive and leaves the app with less content than it could have. But the value of this data is that you can use it in front of a waiter, and for that a false positive costs far more than a gap.</p>
+  {% endif %}
+  <figure>
+    {{ m.picture('projects/guaren/ficha', 'Ficha de un restorán con su descripción, nota de Google y acciones' if es else 'Restaurant sheet with its description, Google rating and actions') }}
+    <figcaption>{{ 'La ficha reúne lo que se pudo verificar: descripción, nota de Google, carta y los descuentos de cada emisor con su fecha de revisión.' if es else 'The sheet gathers what could be verified: description, Google rating, menu and each issuer’s discounts with the date they were checked.' }}</figcaption>
+  </figure>
+</section>
+
+<section id="{{ 'indice' if es else 'index' }}">
+  <h2>{{ 'Del catálogo a una decisión' if es else 'From a catalogue to a decision' }}</h2>
+  {% if es %}
+  <p>Un listado de 787 descuentos no responde la pregunta que de verdad importa: <em>¿qué tarjeta me conviene tener?</em> Esa pregunta mezcla tres cosas que la persona sí sabe (cuántas veces sale a comer al mes, cuánto gasta por vez, cuánto gana) con dos que están en los datos (en cuántos lugares sirve cada tarjeta y de cuánto es el descuento) y una que hay que ir a buscar aparte (el costo de mantención y la renta mínima que pide cada tarjeta).</p>
+  <p>El resultado es una estimación de ahorro mensual por emisor, contra su costo, y un veredicto en una línea: qué tarjeta conviene, cuánto ahorra al mes, en cuántos lugares sirve y cuánto cuesta. La página dice de forma explícita que es una estimación y no asesoría financiera, y descarta tarjetas que no le van a dar a quien responde.</p>
+  {% else %}
+  <p>A list of 787 discounts doesn't answer the question that actually matters: <em>which card is worth having?</em> That question mixes three things the person knows (how often they eat out, how much they spend each time, what they earn) with two that live in the data (how many places each card works at, and how big the discount is) and one you have to go and find separately (each card's monthly fee and minimum income).</p>
+  <p>The result is an estimated monthly saving per issuer, against its cost, and a one-line verdict: which card is worth it, how much it saves per month, how many places it works at and what it costs. The page states explicitly that this is an estimate and not financial advice, and discards cards the person won't qualify for.</p>
+  {% endif %}
+  <figure>
+    {{ m.picture('projects/guaren/indice', 'Tres preguntas y un veredicto con el ahorro mensual estimado' if es else 'Three questions and a verdict with the estimated monthly saving') }}
+    <figcaption>{{ 'Tres preguntas, una recomendación con el ahorro estimado, los lugares donde sirve y el costo de la tarjeta.' if es else 'Three questions, one recommendation with the estimated saving, the places it works and the card’s cost.' }}</figcaption>
+  </figure>
+</section>
+
+<section id="{{ 'opiniones' if es else 'opinions' }}">
+  <h2>{{ 'Lo que aporta quien fue' if es else 'What the people who went contribute' }}</h2>
+  {% if es %}
+  <p>Hay un dato que ninguna página de banco publica: si el descuento efectivamente se respetó. Eso solo lo sabe quien fue, así que la ficha de cada restorán permite dejar una nota, etiquetas y un comentario corto, sin cuenta ni registro.</p>
+  <p>Abrir un formulario público a internet obliga a resolver el abuso antes que la funcionalidad. Las opiniones viven en una base SQL en el borde, y cada una pasa por varios filtros: la petición tiene que venir de la propia página, el texto se valida y se rechaza si trae links, correos o teléfonos, y hay límites por conexión y por restorán al día. Los límites se guardan como huella derivada de la IP, nunca la IP completa, y vencen solos.</p>
+  <p>El promedio aparece recién desde tres opiniones, para que una sola no defina la nota de un local.</p>
+  {% else %}
+  <p>There's one piece of data no bank page publishes: whether the discount was actually honoured. Only the person who went knows that, so each restaurant sheet lets you leave a rating, tags and a short comment, with no account and no sign-up.</p>
+  <p>Opening a public form to the internet means solving abuse before features. Opinions live in a SQL database at the edge, and each one passes several filters: the request has to come from the page itself, the text is validated and rejected if it contains links, emails or phone numbers, and there are per-connection and per-restaurant daily limits. Limits are stored as a fingerprint derived from the IP, never the full IP, and they expire on their own.</p>
+  <p>The average only appears from three opinions onwards, so a single one doesn't define a venue's rating.</p>
+  {% endif %}
+</section>
+
+<section id="{{ 'celular' if es else 'mobile' }}">
+  <h2>{{ 'Pensada para el teléfono' if es else 'Built for the phone' }}</h2>
+  {% if es %}
+  <p>Esto se usa de pie, en la calle, decidiendo dónde entrar. Por eso se diseñó primero para el celular, y después de publicarla la revisé en doce tamaños de pantalla, con una revisión de accesibilidad aparte.</p>
+  <p>La ubicación del GPS se usa para ordenar por cercanía y no sale del teléfono. No hay cuentas ni cookies.</p>
+  {% else %}
+  <p>This gets used standing up, on the street, deciding where to walk in. So it was designed for the phone first, and after launch I reviewed it at twelve screen sizes, with a separate accessibility review.</p>
+  <p>The GPS location is used to sort by distance and never leaves the phone. There are no accounts and no cookies.</p>
+  {% endif %}
+  <figure>
+    {{ m.picture('projects/guaren/movil', 'La portada en un teléfono' if es else 'The home screen on a phone', 'phone-shot', 'lazy', '340px', 780, 1688) }}
+    <figcaption>{{ 'La portada en un teléfono: cuántos lugares tienen descuento hoy y las secciones abajo, al alcance del pulgar.' if es else 'The home screen on a phone: how many places have a discount today, with the sections at thumb height.' }}</figcaption>
+  </figure>
+</section>
+
+<section id="{{ 'aprendizajes' if es else 'lessons' }}">
+  <h2>{{ 'Qué me llevo' if es else 'What I took from it' }}</h2>
+  {% if es %}
+  <ul>
+    <li><strong>La frescura es parte de la calidad del dato.</strong> Un dato correcto que ya no está vigente es un dato equivocado. Guardar la fecha de verificación al lado de cada registro, y mostrarla, cambió el proyecto entero.</li>
+    <li><strong>Las validaciones tienen que estar en el proceso, no en la cabeza.</strong> Si un extractor se rompe, lo normal es que devuelva menos filas sin dar error. Por eso la publicación se detiene sola cuando un emisor pierde el 40% de sus descuentos de un mes a otro.</li>
+    <li><strong>Deduplicar entidades sin clave común es el trabajo lento.</strong> Dieciséis fuentes escriben el mismo restorán de dieciséis maneras, y las correcciones a mano, con el motivo escrito, terminaron siendo tan importantes como el código.</li>
+    <li><strong>Los identificadores publicados no se tocan.</strong> De ellos cuelgan los enlaces compartidos y las opiniones: mejorar los datos no puede romper lo que ya está afuera.</li>
+  </ul>
+  {% else %}
+  <ul>
+    <li><strong>Freshness is part of data quality.</strong> A correct value that is no longer current is a wrong value. Storing the verification date next to each record, and showing it, changed the whole project.</li>
+    <li><strong>Validations belong in the process, not in your head.</strong> When an extractor breaks, it usually returns fewer rows without raising an error. That's why publishing stops by itself when an issuer loses 40% of its discounts from one month to the next.</li>
+    <li><strong>Deduplicating entities with no shared key is the slow work.</strong> Sixteen sources write the same restaurant in sixteen ways, and the manual corrections, each with its reason written down, ended up mattering as much as the code.</li>
+    <li><strong>Published identifiers don't change.</strong> Shared links and opinions hang off them: improving the data can't break what is already out there.</li>
+  </ul>
+  {% endif %}
+</section>

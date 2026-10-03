@@ -168,6 +168,39 @@ def inline_markdown(text: str) -> Markup:
     return Markup(out.replace("\n", " "))
 
 
+_sizes: dict[str, tuple[int, int] | None] = {}
+
+
+def img_size(path: str) -> tuple[int, int] | None:
+    """(ancho, alto) de un PNG o JPEG de static/, leído de su cabecera (sin Pillow, que CI no instala).
+
+    Sirve para poner width y height en las <img>: el navegador reserva el espacio antes de bajarla
+    y la página no salta mientras carga. None si no se pudo leer (SVG, archivo raro).
+    """
+    if path in _sizes:
+        return _sizes[path]
+    size = None
+    try:
+        b = (STATIC / path).read_bytes()
+        if b[:8] == b"\x89PNG\r\n\x1a\n":
+            size = int.from_bytes(b[16:20], "big"), int.from_bytes(b[20:24], "big")
+        elif b[:2] == b"\xff\xd8":
+            i = 2
+            while i < len(b) - 9:
+                if b[i] != 0xFF:
+                    i += 1
+                    continue
+                marca, largo = b[i + 1], int.from_bytes(b[i + 2:i + 4], "big")
+                if 0xC0 <= marca <= 0xCF and marca not in (0xC4, 0xC8, 0xCC):
+                    size = int.from_bytes(b[i + 7:i + 9], "big"), int.from_bytes(b[i + 5:i + 7], "big")
+                    break
+                i += 2 + largo
+    except OSError:
+        pass
+    _sizes[path] = size
+    return size
+
+
 def make_env(data: dict, asset_version: str) -> Environment:
     env = Environment(
         loader=FileSystemLoader(TEMPLATES),
@@ -222,7 +255,7 @@ def make_env(data: dict, asset_version: str) -> Environment:
     env.filters["t"] = t
     env.filters["md"] = md
     env.filters["num"] = num
-    env.globals.update(url=url, asset=asset, project_url=project_url, year=date.today().year)
+    env.globals.update(url=url, asset=asset, project_url=project_url, year=date.today().year, img_size=img_size)
     return env
 
 
@@ -233,6 +266,19 @@ def asset_hash() -> str:
     for f in sorted((STATIC / "css").glob("*.css")) + sorted((STATIC / "js").glob("*.js")):
         h.update(f.read_bytes())
     return h.hexdigest()[:8]
+
+
+def write_rutas(routes: list[dict]):
+    """lib/rutas.js: las páginas que el contador de /api/uso acepta (como location.pathname).
+
+    Se escribe solo si cambió, para no tocar la carpeta de funciones en cada construcción.
+    """
+    paths = sorted({"/" + r["path"][lang] for r in routes for lang in LANGS})
+    js = ("// Generado por build.py: las páginas que existen. No editar a mano.\n"
+          f"export const RUTAS = new Set({json.dumps(paths, ensure_ascii=False)});\n")
+    destino = ROOT / "lib" / "rutas.js"
+    if not destino.exists() or destino.read_text(encoding="utf-8") != js:
+        write(destino, js)
 
 
 def write(path: Path, text: str):
@@ -257,6 +303,7 @@ def build(verbose: bool = True) -> int:
     routes = build_routes(data)
     routes_by_id = {r["id"]: r for r in routes}
     site = data["site"]
+    write_rutas(routes)
     env = make_env(data, asset_hash())
 
     # Se construye en una carpeta temporal propia de este proceso (así el servidor
@@ -328,8 +375,26 @@ def _render_all(data, routes, routes_by_id, site, env, OUT):
         page={"title": {"es": "Página no encontrada", "en": "Page not found"}, "description": site["description"]},
         project=None, ui={k: (v["es"] if isinstance(v, dict) else v) for k, v in site["ui"].items()},
         canonical=site["url"], alternates={l: site["url"] for l in LANGS},
-        switch_url=site["url"] + "en/", absolute=True,
+        switch_url=site["url"] + "en/", absolute=True, contar=False,
     ))
+
+    metricas = env.get_template("metricas.html")
+    # Ruta propia (no la de la portada) para que los enlaces relativos tengan la profundidad correcta.
+    ruta_metricas = {"id": "metricas", "path": {l: "metricas/" for l in LANGS}, "meta": {}, "project": None}
+    write(OUT / "metricas" / "index.html", metricas.render(
+        **data, lang="es", other_lang="en", route=ruta_metricas, routes_by_id=routes_by_id,
+        page={"title": {"es": "Métricas", "en": "Metrics"}, "description": site["description"]},
+        project=None, ui={k: (v["es"] if isinstance(v, dict) else v) for k, v in site["ui"].items()},
+        canonical=site["url"] + "metricas/", alternates={l: site["url"] + "metricas/" for l in LANGS},
+        switch_url="./", contar=False,
+    ))
+
+    # Cabeceras de Cloudflare Pages: el visor y la API no se indexan ni se guardan en caché.
+    write(OUT / "_headers", "\n".join([
+        "/*", "  X-Content-Type-Options: nosniff", "  Referrer-Policy: strict-origin-when-cross-origin",
+        "  Permissions-Policy: camera=(), microphone=(), geolocation=()",
+        "/metricas/*", "  X-Robots-Tag: noindex, nofollow", "  Cache-Control: no-store", "  Referrer-Policy: no-referrer", "",
+    ]))
 
     today = date.today().isoformat()
     urls = "".join(
@@ -338,7 +403,7 @@ def _render_all(data, routes, routes_by_id, site, env, OUT):
     )
     write(OUT / "sitemap.xml",
           f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
-    write(OUT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {site['url']}sitemap.xml\n")
+    write(OUT / "robots.txt", f"User-agent: *\nAllow: /\nDisallow: /metricas/\nDisallow: /api/\nSitemap: {site['url']}sitemap.xml\n")
     (OUT / ".nojekyll").touch()
 
 
