@@ -13,8 +13,8 @@ HOSTS = "portafolio-benjamin-lang.pages.dev"
 #   METRICAS_CLAVE la clave del link del visor (copia en privado/metricas-clave.txt)
 #   CF_API_TOKEN   token con permiso «Account Analytics: Read»; lo crea Benjamín en el panel
 CF_ACCOUNT_ID = "643cf87fd2feb0d190eade552a77ce82"
-# Se llena cuando se active Web Analytics para este sitio (Pages → Metrics → Web Analytics).
-CF_SITE_TAG = ""
+# Sitio de Web Analytics creado el 03-10-2026 (el token del script está en content/site.yml).
+CF_SITE_TAG = "ac8a0da8f3304848b3669e759a219e1c"
 
 [[d1_databases]]
 binding = "DB"

@@ -11,7 +11,7 @@ url: https://portafolio-benjamin-lang.pages.dev/
 old_url: https://langab.github.io/pagina_web_lang/
 # Cloudflare Web Analytics: el «token» del beacon que entrega el panel al agregar el sitio.
 # Vacío = no se carga el script. Las visitas igual se cuentan con /api/uso.
-analytics_token: ""
+analytics_token: "8984154d5f2842788f497495a963bb37"  # sitio creado el 03-10-2026 (site tag en wrangler.toml)
 tagline:
   es: Sociólogo y analista de datos
   en: Sociologist and data analyst
