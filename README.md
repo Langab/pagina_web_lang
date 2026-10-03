@@ -1,8 +1,12 @@
 # Sitio personal de Benjamín Lang
 
-Sitio bilingüe (español e inglés) publicado en <https://langab.github.io/pagina_web_lang/>.
+Sitio bilingüe (español e inglés) publicado en <https://portafolio-benjamin-lang.pages.dev/> (Cloudflare Pages).
 
 Es un sitio estático hecho a mano: los **textos viven en archivos de datos**, las **plantillas** arman el HTML y un script de Python lo construye todo. GitHub Actions lo publica solo cada vez que haces `git push` y, además, una vez al día para refrescar las cifras del visor de arriendos.
+
+La dirección anterior, <https://langab.github.io/pagina_web_lang/>, sigue en GitHub Pages pero solo con redirecciones: cada página manda a la misma página en la dirección nueva (`scripts/redirigir_github.py`).
+
+Además del HTML, en Cloudflare corren dos funciones chicas (`functions/api/`) con una base D1: un contador anónimo de visitas y el visor privado de métricas en `/metricas/` (lo mismo que tiene guareneitor).
 
 ## Cómo está ordenado
 
@@ -22,16 +26,25 @@ templates/               ← HTML con Jinja2
   pages/publications.html ← publicaciones
   projects/<id>.html     ← el relato largo de cada proyecto propio (ES y EN lado a lado)
   partials/              ← piezas reutilizables: ventanas emergentes, índice, contacto
+  metricas.html          ← visor privado de métricas (solo en español, fuera del menú)
 static/                  ← se copia tal cual a /assets/
   css/site.css           ← todo el diseño (paleta y tipografía arriba del archivo)
-  js/site.js             ← animaciones, ventanas emergentes, filtros, puntos
-  js/casa.js, salud.js   ← simulador de apuestas y lector de Apple Health
+  js/site.js             ← animaciones, ventanas emergentes, filtros, puntos y el contador anónimo
+  js/metricas.js, css/metricas.css ← el visor de métricas
   img/                   ← fotos, logos y capturas
   docs/                  ← CV en PDF
-  code/                  ← código abierto descargable (se empaqueta en .zip al construir)
+  code/                  ← código abierto descargable, si hay (se empaqueta en .zip al construir)
+functions/api/           ← Cloudflare Pages Functions
+  uso.js                 ← POST /api/uso: suma 1 a una clave del día (página, llegada, clic)
+  metricas.js            ← GET /api/metricas: datos del visor, con clave
+lib/                     ← piezas compartidas de las funciones; rutas.js lo genera build.py
+migraciones/             ← esquema de la base D1 (uso_diario, limites, cloudflare_diario)
+wrangler.toml            ← proyecto de Cloudflare, base D1 y variables
+privado/                 ← clave del visor (no se sube a git)
 scripts/
   capturas.py            ← toma capturas frescas de los proyectos publicados
   revisar_enlaces.py     ← verifica que no haya enlaces ni imágenes rotas
+  redirigir_github.py    ← arma la versión «solo redirecciones» para la dirección antigua
 build.py                 ← construye el sitio en _site.nosync/
 ```
 
@@ -72,6 +85,15 @@ python build.py --serve
 
 Abre <http://localhost:8000>. Cada vez que guardas un archivo, el sitio se reconstruye solo.
 
+Para probar también las funciones y el visor de métricas (con una base local, no la de producción):
+
+```bash
+npx wrangler@4.146.0 d1 migrations apply portafolio-benjamin-lang --local
+npx wrangler@4.146.0 pages dev --port 8788
+```
+
+Las claves de prueba van en `.dev.vars` (no se sube a git).
+
 ## Publicar
 
 ```bash
@@ -80,7 +102,19 @@ git commit -m "Actualizo proyectos"
 git push
 ```
 
-GitHub Actions construye, revisa los enlaces y publica en unos dos minutos. Ya no hay que subir la carpeta `docs/` ni renderizar nada a mano.
+GitHub Actions construye, revisa los enlaces, publica en Cloudflare Pages y deja las redirecciones en la dirección antigua, en unos dos minutos.
+
+Para que Actions publique en Cloudflare, el repositorio necesita el secreto `CLOUDFLARE_API_TOKEN` (un token de Cloudflare con permiso **Cloudflare Pages: Edit**). Mientras no esté, ese paso se salta y se publica a mano:
+
+```bash
+python build.py && npx wrangler@4.146.0 pages deploy --branch=main --commit-dirty=true
+```
+
+## Métricas
+
+`/metricas/` es privada. El link con la clave está en `privado/metricas-link.txt`; abrirlo una vez guarda la clave en ese navegador y hace que sus visitas no se cuenten. Muestra visitas, páginas, desde dónde llegan (LinkedIn, buscadores, portales de empleo), descargas del CV y clics de contacto. No usa cookies ni guarda datos de personas: solo sumas por día.
+
+Para sumar los datos de Cloudflare Web Analytics (países, navegadores, visitas que el contador propio no ve), el visor explica los tres pasos: agregar el sitio en Web Analytics, crear un token con **Account Analytics: Read** y cargarlo con `npx wrangler pages secret put CF_API_TOKEN --project-name portafolio-benjamin-lang`.
 
 ## Sobre iCloud
 

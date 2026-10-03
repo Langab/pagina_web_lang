@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{# Visor privado de métricas. Solo en español y fuera del menú: lo usa Benjamín, nadie más.
+   Los datos llegan de /api/metricas con la clave; sin clave la página no muestra nada. #}
+
+{% block head %}
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="{{ asset('css/metricas.css') }}">
+{% endblock %}
+
+{% block main %}
+{% set titulos = {} %}
+{% for r in routes_by_id.values() %}{% for l in ['es', 'en'] %}
+  {% set _ = titulos.update({'/' ~ r.path[l]: (r.meta.title.es if r.meta.title is mapping else r.meta.title) ~ (' (inglés)' if l == 'en' else '')}) %}
+{% endfor %}{% endfor %}
+<section class="mx wrap" data-metricas data-titulos='{{ titulos | tojson }}'>
+  <header class="mx-head">
+    <p class="kicker">Privado</p>
+    <h1>Quién mira el portafolio</h1>
+    <p class="mx-lede">Visitas, páginas, llegadas y descargas del CV. Sin cookies ni datos de personas: solo cuántas veces pasó cada cosa por día.</p>
+    <p class="mx-gen" data-generado></p>
+  </header>
+
+  <form class="mx-login" data-login hidden>
+    <label for="mx-clave">Clave del visor</label>
+    <div><input id="mx-clave" name="clave" type="password" autocomplete="current-password" required><button class="btn btn-solid" type="submit">Entrar</button></div>
+    <p data-login-error role="alert"></p>
+  </form>
+
+  <div data-panel hidden>
+    <div class="mx-filtros" role="group" aria-label="Período">
+      <button type="button" data-periodo="7">7 días</button>
+      <button type="button" data-periodo="30" aria-pressed="true">30 días</button>
+      <button type="button" data-periodo="90">90 días</button>
+      <button type="button" data-periodo="0">Todo</button>
+    </div>
+
+    <div class="mx-tiles" data-tiles></div>
+
+    <article class="mx-card mx-ancha">
+      <h2>Visitas por día</h2>
+      <p class="mx-sub">Sesiones contadas por la propia página. Una sesión es una pestaña abierta, aunque recorra varias páginas.</p>
+      <div class="mx-columnas" data-dias></div>
+    </article>
+
+    <div class="mx-grid">
+      <article class="mx-card"><h2>Páginas más vistas</h2><div data-lista="paginas"></div></article>
+      <article class="mx-card"><h2>Desde dónde llegan</h2><p class="mx-sub">El sitio anterior a la visita. «Directo» es un link escrito, guardado o abierto desde un PDF.</p><div data-lista="refs"></div></article>
+      <article class="mx-card"><h2>Qué tocan</h2><p class="mx-sub">Clics en descargas y links de contacto, dentro del sitio.</p><div data-lista="clics"></div></article>
+      <article class="mx-card"><h2>Con qué equipo</h2><div data-lista="equipos"></div></article>
+    </div>
+
+    <section class="mx-cf" data-cf>
+      <h2>Cloudflare Web Analytics</h2>
+      <div data-cf-cuerpo></div>
+    </section>
+
+    <details class="mx-tabla">
+      <summary>Ver la tabla por día</summary>
+      <div data-tabla></div>
+    </details>
+  </div>
+  <div class="mx-tip" data-tip role="tooltip" hidden></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('js/metricas.js') }}" defer></script>
+{% endblock %}

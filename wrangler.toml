@@ -1,0 +1,23 @@
+# Cloudflare Pages (proyecto clásico, creado con --force el 2026-10-03, igual que guareneitor).
+# Este archivo manda sobre el panel: el binding de la base y las variables se cambian acá.
+name = "portafolio-benjamin-lang"
+pages_build_output_dir = "./_site.nosync"
+compatibility_date = "2026-09-15"
+
+[vars]
+# Nombres desde los que /api/uso cuenta visitas (las previsualizaciones <hash>.….pages.dev no cuentan).
+HOSTS = "portafolio-benjamin-lang.pages.dev"
+# Visor de métricas (/metricas/). La cuenta y el sitio de Web Analytics no son secretos.
+# Secretos aparte, con `npx wrangler pages secret put … --project-name portafolio-benjamin-lang`:
+#   FIRMA          clave para las huellas de los límites (la generó Claude, no está en disco)
+#   METRICAS_CLAVE la clave del link del visor (copia en privado/metricas-clave.txt)
+#   CF_API_TOKEN   token con permiso «Account Analytics: Read»; lo crea Benjamín en el panel
+CF_ACCOUNT_ID = "643cf87fd2feb0d190eade552a77ce82"
+# Se llena cuando se active Web Analytics para este sitio (Pages → Metrics → Web Analytics).
+CF_SITE_TAG = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "portafolio-benjamin-lang"
+database_id = "7f2eeae9-7017-4a86-b150-d620120ad4f1"
+migrations_dir = "migraciones"

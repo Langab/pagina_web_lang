@@ -5,7 +5,13 @@
 
 name: Benjamín Lang
 full_name: Benjamín Lang Bustos
-url: https://langab.github.io/pagina_web_lang/
+url: https://portafolio-benjamin-lang.pages.dev/
+# Dirección anterior (GitHub Pages). Desde el 03-10-2026 cada página de ahí redirige a la misma
+# página en la dirección nueva (ver scripts/redirigir_github.py y el workflow de publicación).
+old_url: https://langab.github.io/pagina_web_lang/
+# Cloudflare Web Analytics: el «token» del beacon que entrega el panel al agregar el sitio.
+# Vacío = no se carga el script. Las visitas igual se cuentan con /api/uso.
+analytics_token: ""
 tagline:
   es: Sociólogo y analista de datos
   en: Sociologist and data analyst
@@ -40,8 +46,8 @@ pages:
     path: { es: portafolio/, en: en/portfolio/ }
     title: { es: Portafolio, en: Portfolio }
     description:
-      es: "Proyectos de datos de punta a punta que construí por mi cuenta: visores que se actualizan solos, agentes de IA y análisis con código abierto."
-      en: "End-to-end data projects I built on my own: self-updating viewers, AI agents and open-source analysis."
+      es: "Proyectos de datos de punta a punta que construí por mi cuenta: una aplicación web con base de datos, un visor que se actualiza solo y agentes de IA."
+      en: "End-to-end data projects I built on my own: a web app with a database, a self-updating viewer and AI agents."
   - id: trabajos
     template: pages/trabajos.html
     path: { es: trabajos/, en: en/work/ }
@@ -89,12 +95,16 @@ legacy_redirects:
   - [en/experience/index.html, cv, en]
   - [proyectos/visor-de-arriendos/index.html, "project:visor-arriendos", es]
   - [proyectos/buscador-de-trabajo/index.html, "project:buscador-trabajo", es]
-  - [proyectos/25-millones-de-pasos/index.html, "project:visor-salud", es]
-  - [proyectos/la-casa-siempre-gana/index.html, "project:casa-siempre-gana", es]
+  - [proyectos/25-millones-de-pasos/index.html, portafolio, es]
+  - [proyectos/la-casa-siempre-gana/index.html, portafolio, es]
   - [en/projects/rental-finder/index.html, "project:visor-arriendos", en]
   - [en/projects/job-search-agents/index.html, "project:buscador-trabajo", en]
-  - [en/projects/25-million-steps/index.html, "project:visor-salud", en]
-  - [en/projects/the-house-always-wins/index.html, "project:casa-siempre-gana", en]
+  - [en/projects/25-million-steps/index.html, portafolio, en]
+  - [en/projects/the-house-always-wins/index.html, portafolio, en]
+  - [portafolio/25-millones-de-pasos/index.html, portafolio, es]
+  - [portafolio/la-casa-siempre-gana/index.html, portafolio, es]
+  - [en/portfolio/25-million-steps/index.html, portafolio, en]
+  - [en/portfolio/the-house-always-wins/index.html, portafolio, en]
 
 # Textos cortos de interfaz
 ui:
@@ -125,7 +135,7 @@ ui:
   copied: { es: Copiado, en: Copied }
   email: { es: Correo, en: Email }
   phone: { es: Teléfono, en: Phone }
-  footer_note: { es: "Sitio hecho a mano con Python, Jinja y bastante café. Se publica solo con GitHub Actions.", en: "Hand-built with Python, Jinja and plenty of coffee. Deployed automatically with GitHub Actions." }
+  footer_note: { es: "Sitio hecho a mano con Python, Jinja y bastante café. Se publica solo en Cloudflare Pages.", en: "Hand-built with Python, Jinja and plenty of coffee. Deployed automatically to Cloudflare Pages." }
   source_code: { es: Código del sitio, en: Site source }
   back_home: { es: Volver al inicio, en: Back to home }
   read_article: { es: Leer artículo, en: Read article }

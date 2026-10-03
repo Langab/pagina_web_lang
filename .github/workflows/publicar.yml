@@ -1,5 +1,8 @@
 name: Publicar sitio
 
+# El sitio vive en Cloudflare Pages (portafolio-benjamin-lang.pages.dev). La dirección antigua
+# (langab.github.io/pagina_web_lang) queda en GitHub Pages solo con redirecciones a la nueva.
+
 on:
   push:
     branches: [main]
@@ -21,6 +24,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Token de Cloudflare con permiso «Cloudflare Pages: Edit» (secreto del repositorio).
+      # Mientras no exista, el paso de Cloudflare se salta y se publica a mano con wrangler.
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: 643cf87fd2feb0d190eade552a77ce82
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,9 +40,19 @@ jobs:
         run: python build.py
       - name: Revisar enlaces internos
         run: python scripts/revisar_enlaces.py
+      - uses: actions/setup-node@v4
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        with:
+          node-version: "22"
+      - name: Publicar en Cloudflare Pages
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        # Versión fija de wrangler, como en guareneitor: se sube a mano, mirando el cambio.
+        run: npx -y wrangler@4.146.0 pages deploy --branch=main --commit-dirty=true
+      - name: Armar las redirecciones de la dirección antigua
+        run: python scripts/redirigir_github.py
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site.nosync
+          path: _redirigir.nosync
 
   deploy:
     needs: build

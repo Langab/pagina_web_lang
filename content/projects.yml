@@ -17,6 +17,25 @@ areas:
   ngo: { es: ONG y educación, en: Nonprofits and education }
 
 lab:
+  - id: guaren
+    detail: true
+    slug: { es: el-guaren, en: el-guaren }
+    year: 2026
+    title: { es: "El Guarén: descuentos bancarios en restoranes", en: "El Guarén: bank discounts in restaurants" }
+    hook:
+      es: "Aplicación web que consolida en un solo lugar los descuentos en restoranes que publican 16 emisores de tarjetas, los verifica contra la página del banco y los deja buscables por día, comida, cercanía y tarjeta."
+      en: "A web app that consolidates the restaurant discounts published by 16 card issuers, verifies each one against the bank's own page and makes them searchable by day, cuisine, distance and card."
+    facts:
+      - { es: "540 lugares, 787 descuentos y 1.285 locales en el mapa, de 16 emisores distintos.", en: "540 places, 787 discounts and 1,285 branches on the map, from 16 different issuers." }
+      - { es: "Un descuento se publica solo si está hoy en la página del banco, y la ficha muestra el día en que se verificó.", en: "A discount is only published if it is on the bank's page today, and each one shows the date it was checked." }
+      - { es: "El Índice Rata responde con tres preguntas qué tarjeta conviene, cuánto ahorra al mes y cuánto cuesta.", en: "The Índice Rata answers, in three questions, which card pays off, how much it saves per month and what it costs." }
+    tags: [Python, JavaScript, SQL, Cloudflare Pages, D1, MapLibre, Playwright]
+    image: projects/guaren/mapa
+    address: guareneitor.pages.dev
+    status: { es: "En producción desde octubre de 2026", en: "Live since October 2026" }
+    links:
+      - { label: { es: Abrir la aplicación, en: Open the app }, url: "https://guareneitor.pages.dev" }
+
   - id: visor-arriendos
     detail: true
     slug: { es: visor-de-arriendos, en: rental-finder }
@@ -36,40 +55,6 @@ lab:
     links:
       - { label: { es: Abrir el visor, en: Open the finder }, url: "https://langab.github.io/visor_arriendos/viewer/" }
       - { label: { es: Código en GitHub, en: Code on GitHub }, url: "https://github.com/Langab/visor_arriendos" }
-
-  - id: visor-salud
-    detail: true
-    slug: { es: 25-millones-de-pasos, en: 25-million-steps }
-    year: 2026
-    title: { es: "Nueve años de datos de actividad física", en: "Nine years of activity data" }
-    hook:
-      es: "Procesamiento de 2,74 millones de registros de Apple Health con Python: lectura en streaming de un XML de 1,2 GB, agregación con pandas e informe HTML sin dependencias."
-      en: "Processing 2.74 million Apple Health records with Python: streaming read of a 1.2 GB XML file, pandas aggregation and a dependency-free HTML report."
-    facts:
-      - { es: "2,74 millones de registros de cinco dispositivos, de 2017 a 2026.", en: "2.74 million records from five devices, 2017 to 2026." }
-      - { es: Un script lee el XML línea a línea sin cargarlo entero en memoria., en: A script reads the XML line by line without loading it all into memory. }
-      - { es: "Puedes probarlo en esta página: tus datos no salen de tu navegador.", en: "You can try it on this page: your data never leaves your browser." }
-    tags: [Python, pandas, SVG, Web Workers, Claude Code]
-    image: projects/visor-salud/pasos
-    address: langab.github.io/pagina_web_lang/proyectos/25-millones-de-pasos
-    status: { es: "Código abierto y reproducible", en: "Open, reproducible code" }
-
-  - id: casa-siempre-gana
-    detail: true
-    slug: { es: la-casa-siempre-gana, en: the-house-always-wins }
-    year: 2026
-    title: { es: "Análisis de apuestas: la casa siempre gana", en: "Betting analysis: the house always wins" }
-    hook:
-      es: Aplicación de registro y análisis de apuestas deportivas que calcula el rendimiento con intervalos de confianza y lo compara con simulaciones sin ventaja, para separar suerte de habilidad.
-      en: A betting log and analysis app that computes returns with confidence intervals and compares them against zero-edge simulations, to tell luck from skill.
-    facts:
-      - { es: Calcula el rendimiento real con su margen de error y la tasa de acierto que necesitas para no perder., en: It computes real returns with a margin of error and the hit rate you need just to break even. }
-      - { es: 600 simulaciones por usuario para separar la suerte de la habilidad., en: 600 simulations per user to tell luck from skill. }
-      - { es: "Sin librerías: HTML, JavaScript y gráficos SVG hechos a mano.", en: "No libraries: HTML, JavaScript and hand-made SVG charts." }
-    tags: [JavaScript, SVG, Monte Carlo, Google Sheets, PWA]
-    image: projects/casa-siempre-gana/simulador
-    address: una-app-para-un-amigo.local
-    status: { es: Encargo privado, en: Private commission }
 
   - id: buscador-trabajo
     detail: true

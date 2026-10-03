@@ -46,7 +46,7 @@
     <p>{{ home.logos.label | t }}</p>
     <ul class="logos-list">
       {% for logo in home.logos['items'] %}
-      <li class="{{ 'is-square' if logo.square is defined }}{{ ' is-dark' if logo.dark is defined }}"><a href="{{ logo.url }}" target="_blank" rel="noopener" title="{{ logo.name }}"><img src="{{ asset('img/' ~ logo.src) }}" alt="{{ logo.name }}" loading="lazy"></a></li>
+      <li class="{{ 'is-square' if logo.square is defined }}{{ ' is-dark' if logo.dark is defined }}"><a href="{{ logo.url }}" target="_blank" rel="noopener" title="{{ logo.name }}">{% set dim = img_size('img/' ~ logo.src) %}<img src="{{ asset('img/' ~ logo.src) }}" alt="{{ logo.name }}" loading="lazy"{% if dim %} width="{{ dim[0] }}" height="{{ dim[1] }}"{% endif %}></a></li>
       {% endfor %}
     </ul>
   </div>

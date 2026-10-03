@@ -77,7 +77,7 @@ cards:
       text: { es: "Un artículo en revista indexada, siete policy papers del Centro de Estudios Públicos y seis notas de investigación de C22.", en: "One peer-reviewed article, seven policy papers for Centro de Estudios Públicos and six C22 research notes." }
     - page: portafolio
       title: { es: Portafolio personal, en: Personal portfolio }
-      text: { es: "Proyectos propios, hechos fuera del horario de trabajo para practicar: pipelines de datos, visores y análisis con código abierto.", en: "Personal projects built outside working hours to practice: data pipelines, viewers and open-source analysis." }
+      text: { es: "Proyectos propios, hechos fuera del horario de trabajo para practicar: pipelines de datos, verificación contra la fuente, bases de datos y visores.", en: "Personal projects built outside working hours to practice: data pipelines, verification against the source, databases and viewers." }
 
 story:
   kicker: { es: Método de trabajo, en: How I work }

@@ -506,4 +506,50 @@
     footDots.parentElement.addEventListener("pointerleave", () => { mouse = { x: -999, y: -999 }; if (!raf) raf = requestAnimationFrame(draw); });
     window.addEventListener("resize", () => { setup(); draw(); });
   }
+  /* ── Contador anónimo (/api/uso) ─────────────────────────────────────
+     Suma 1 a la página del día y, una vez por sesión, desde dónde llegó y con qué equipo.
+     Sin cookies ni identificadores. No cuenta el navegador
+     de Benjamín (abrir /metricas/ lo marca). Si falla, no pasa nada. */
+  const vista = doc.dataset.vista;
+  let yo = false;
+  try { yo = localStorage.getItem("bl.yo") === "1"; } catch { /* almacenamiento bloqueado */ }
+  // El servidor decide qué nombres cuentan (HOSTS en wrangler.toml); acá solo se evita lo local y las previsualizaciones.
+  if (vista && !yo && location.protocol === "https:" && !/^[0-9a-f]{8}\./.test(location.hostname)) {
+    const enviar = (cuerpo) => {
+      try {
+        fetch("/api/uso", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(cuerpo), keepalive: true }).catch(() => {});
+      } catch { /* sin red */ }
+    };
+    let nueva = false;
+    try { nueva = !sessionStorage.getItem("bl.s"); sessionStorage.setItem("bl.s", "1"); } catch { nueva = true; }
+    const cuerpo = { v: vista };
+    if (nueva) {
+      const tactil = matchMedia("(pointer: coarse)").matches, ancho = Math.min(screen.width, screen.height);
+      cuerpo.s = 1;
+      cuerpo.d = !tactil ? "computador" : ancho >= 600 ? "tablet" : "celular";
+      try { const r = document.referrer && new URL(document.referrer); cuerpo.ref = r && r.hostname !== location.hostname ? r.hostname : ""; } catch { cuerpo.ref = ""; }
+    }
+    enviar(cuerpo);
+
+    // Qué se toca: descargar el CV, escribir, abrir LinkedIn o GitHub, ver un proyecto o una publicación.
+    const tipoDe = (a) => {
+      const h = a.getAttribute("href") || "";
+      if (/CV_[^/]*_ES\.pdf$/i.test(h)) return "cv-es";
+      if (/CV_[^/]*_EN\.pdf$/i.test(h)) return "cv-en";
+      if (h.startsWith("mailto:")) return "correo";
+      if (h.startsWith("tel:")) return "telefono";
+      let u; try { u = new URL(h, location.href); } catch { return null; }
+      if (u.hostname === location.hostname) return null;
+      if (/linkedin\.com$/.test(u.hostname)) return "linkedin";
+      if (/(^|\.)github\.com$/.test(u.hostname)) return "github";
+      if (/\.pages\.dev$|\.github\.io$/.test(u.hostname)) return "proyecto";
+      if (/cepchile\.cl|doi\.org|scielo|revistas?\.|journals?\.|\.edu$|udp\.cl/.test(u.hostname)) return "publicacion";
+      return "otro";
+    };
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest && e.target.closest("a[href]");
+      const tipo = a && tipoDe(a);
+      if (tipo) enviar({ c: tipo });
+    }, { capture: true });
+  }
 })();
