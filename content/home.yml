@@ -35,6 +35,32 @@ logos:
     - { name: C22, src: logos/c22.png, url: "https://c22cepchile.cl/", square: true }
     - { name: Tironi, src: logos/tironi.png, url: "https://tironi.cl/", square: true }
 
+# Mi perfil: lo que me distingue es juntar tres oficios que suelen ser de personas distintas.
+# Se dibuja como tres círculos de puntos; cada uno lleva el lugar donde aprendí ese oficio y el
+# centro, el trabajo donde hoy se juntan. Sin cifras: las cifras van en las tarjetas de trabajos.
+mix:
+  kicker: { es: Mi perfil, en: My profile }
+  title: { es: "Analizo datos, los explico y los diseño para que se usen", en: "I analyze data, explain it and design it so people actually use it" }
+  lede: { es: "Casi siempre son tres personas distintas: quien analiza, quien comunica y quien diseña. Yo aprendí cada oficio en un lugar distinto y hoy los junto en el mismo trabajo.", en: "These are usually three different people: the analyst, the communicator and the designer. I learned each craft in a different place, and today I bring them together in one job." }
+  items:
+    - key: a
+      label: { es: Análisis de datos, en: Data analysis }
+      text: { es: "Validé datos del Censo 2024 en el INE, clasifiqué con IA las actas del Banco Central y hoy armo el gobierno de datos del SLEP Santa Rosa.", en: "I validated 2024 Census data at INE, classified Central Bank minutes with AI and now run data governance at SLEP Santa Rosa." }
+      link: { work: censo-2024, label: { es: Ver el Censo 2024, en: See the 2024 Census } }
+    - key: b
+      label: { es: Comunicación estratégica, en: Strategic communication }
+      text: { es: "En Tironi escribía cada semana para gerencias y directorios, y en el CEP convertía encuestas y votaciones en textos para un público amplio.", en: "At Tironi I wrote every week for executives and boards, and at CEP I turned surveys and votes into pieces for a broad audience." }
+      link: { work: tironi, label: { es: Ver el boletín de Tironi, en: See the Tironi bulletin } }
+    - key: c
+      label: { es: Diseño y visualización, en: Design and visualization }
+      text: { es: "Tableros de Power BI, gráficos para publicaciones y prensa, y sitios web que construyo yo mismo, como este. En la UDP di un seminario sobre cómo trabajar con imágenes.", en: "Power BI dashboards, charts for publications and the press, and websites I build myself, like this one. At UDP I gave a seminar on working with images." }
+      link: { project: guaren, label: { es: Ver El Guarén, en: See El Guarén } }
+  center:
+    label: { es: Donde se juntan, en: Where they meet }
+    text: { es: "En el SLEP Santa Rosa hago las tres cosas a la vez: ordeno los datos, diseño los tableros y presento los resultados a los equipos.", en: "At SLEP Santa Rosa I do all three at once: I organize the data, design the dashboards and present the results to the teams." }
+  # Rótulos dentro del diagrama: dónde aprendí cada oficio
+  places: { a: INE, b: Tironi, c: { es: Sitios propios, en: My own sites }, ab: CEP, abc: SLEP Santa Rosa }
+
 # Lo que sé hacer: cada tarjeta es una capacidad, con lo que le resuelve a una institución, el
 # lugar donde la hice y una cifra; abre la ventana del proyecto en /trabajos/ (`work` = id del
 # trabajo en projects.yml). La primera, con `featured: true`, va grande con lo que incluye.

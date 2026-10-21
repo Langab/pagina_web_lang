@@ -40,15 +40,54 @@
   </div>
 </section>
 
-{# ── Instituciones ────────────────────────────────────────────────── #}
-<section class="logos" aria-label="{{ home.logos.label | t }}">
-  <div class="wrap logos-row">
-    <p>{{ home.logos.label | t }}</p>
-    <ul class="logos-list">
-      {% for logo in home.logos['items'] %}
-      <li class="{{ 'is-square' if logo.square is defined }}{{ ' is-dark' if logo.dark is defined }}"><a href="{{ logo.url }}" target="_blank" rel="noopener" title="{{ logo.name }}">{% set dim = img_size('img/' ~ logo.src) %}<img src="{{ asset('img/' ~ logo.src) }}" alt="{{ logo.name }}" loading="lazy"{% if dim %} width="{{ dim[0] }}" height="{{ dim[1] }}"{% endif %}></a></li>
+{# ── Mi perfil: tres oficios que suelen ser de personas distintas, dibujados como tres
+     círculos de puntos con el lugar donde aprendí cada uno. El texto de la derecha es el
+     mismo contenido en palabras; al pasar el cursor o el foco por un oficio, se enciende su
+     círculo (solo CSS, con :has). ── #}
+{% set mx = home.mix %}
+{% set pl = mx.places %}
+<section class="section-tight on-paper mix" aria-labelledby="mix-title">
+  <div class="wrap mix-grid">
+    <div class="mix-head">
+      <p class="kicker">{{ mx.kicker | t }}</p>
+      <h2 id="mix-title">{{ mx.title | t }}</h2>
+      <p>{{ mx.lede | t }}</p>
+    </div>
+    <figure class="mix-venn" aria-hidden="true">
+      <svg viewBox="0 0 540 500" role="presentation">
+        <defs>
+          <pattern id="dots-a" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.1" class="dot-a"/></pattern>
+          <pattern id="dots-b" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="translate(3.3 3.3)"><circle cx="5" cy="5" r="2.1" class="dot-b"/></pattern>
+          <pattern id="dots-c" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="translate(6.6 6.6)"><circle cx="5" cy="5" r="2.1" class="dot-c"/></pattern>
+        </defs>
+        <circle class="venn-circle venn-a" cx="195" cy="190" r="152" fill="url(#dots-a)"/>
+        <circle class="venn-circle venn-b" cx="345" cy="190" r="152" fill="url(#dots-b)"/>
+        <circle class="venn-circle venn-c" cx="270" cy="320" r="152" fill="url(#dots-c)"/>
+        {% set la = mx['items'][0].label | t %}{% set lb = (mx['items'][1].label | t).split(' ', 1) %}{% set lc = (mx['items'][2].label | t).rsplit(' ', 1) %}
+        <text class="venn-label venn-label-a" x="112" y="150">{{ la }}</text>
+        <text class="venn-place venn-place-a" x="112" y="174">{{ pl.a | t }}</text>
+        <text class="venn-label venn-label-b" x="432" y="138"><tspan x="432">{{ lb[0] }}</tspan><tspan x="432" dy="19">{{ lb[1] if lb | length > 1 else '' }}</tspan></text>
+        <text class="venn-place venn-place-b" x="432" y="182">{{ pl.b | t }}</text>
+        <text class="venn-label venn-label-c" x="270" y="404"><tspan x="270">{{ lc[0] }}</tspan><tspan x="270" dy="19">{{ lc[1] if lc | length > 1 else '' }}</tspan></text>
+        <text class="venn-place venn-place-c" x="270" y="448">{{ pl.c | t }}</text>
+        <text class="venn-place venn-place-ab" x="270" y="112">{{ pl.ab | t }}</text>
+        <text class="venn-center" x="270" y="232">{{ pl.abc | t }}</text>
+      </svg>
+    </figure>
+    <div class="mix-items">
+      {% for it in mx['items'] %}
+      {% if it.link.work is defined %}{% set href = url('trabajos', '#p-' ~ it.link.work) %}{% else %}{% set href = project_url(projects.lab | selectattr('id', 'equalto', it.link.project) | first) %}{% endif %}
+      <div class="mix-item" data-k="{{ it.key }}">
+        <h3><i aria-hidden="true"></i>{{ it.label | t }}</h3>
+        <p>{{ it.text | t }}</p>
+        <a class="link-more" href="{{ href }}">{{ it.link.label | t }}</a>
+      </div>
       {% endfor %}
-    </ul>
+      <div class="mix-item mix-center" data-k="abc">
+        <h3>{{ mx.center.label | t }}</h3>
+        <p>{{ mx.center.text | t }}</p>
+      </div>
+    </div>
   </div>
 </section>
 
