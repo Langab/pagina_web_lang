@@ -2,28 +2,28 @@
 # Portada: textos de cada sección, en el orden en que aparecen.
 # ─────────────────────────────────────────────────────────────────────────
 
+# Portada «ficha»: nombre grande, una frase de lo que hago y, abajo, cuatro datos de registro
+# en vez de cifras sueltas.
 hero:
-  kicker: { es: Portafolio, en: Portfolio }
   status: { es: "Disponible para cargos de análisis de datos, BI e investigación", en: "Open to data analysis, BI and research roles" }
   name: Benjamín Lang Bustos
-  role: { es: "Analista de datos y sociólogo", en: "Data analyst and sociologist" }
+  role: { es: "Analista de datos, sociólogo e investigador", en: "Data analyst, sociologist and researcher" }
   lede:
-    es: "Tomo datos crudos y los dejo listos para decidir: limpios, validados y en un tablero o informe que el equipo entiende. En cinco años lo he hecho en el **Censo 2024 del INE**, en el **CEP** y hoy en el **SLEP Santa Rosa**, con R, Python, SQL y Power BI. Soy sociólogo de la UDP, titulado con distinción máxima."
-    en: "I take raw data and get it ready for a decision: clean, validated and in a dashboard or report the team understands. Over five years I've done it on the **2024 Census at INE**, at **CEP** and now at **SLEP Santa Rosa**, with R, Python, SQL and Power BI. I'm a sociologist from UDP, graduated with highest honors."
-  badges:
-    - { es: "R, Python, SQL y Power BI", en: "R, Python, SQL and Power BI" }
-    - { es: R Markdown y Quarto, en: R Markdown and Quarto }
-    - { es: Automatización, en: Automation }
-    - { es: IA aplicada, en: Applied AI }
-  cta_primary: { es: Ver trabajos y proyectos, en: See work and projects }
-  cta_third: { es: Escríbeme, en: Get in touch }
+    es: "Me encargo de que los datos de una institución lleguen limpios a quien decide: los bajo, los valido y los dejo en tableros e informes que el equipo puede mantener sin mí."
+    en: "I make sure an institution's data reaches the people who decide in good shape: I collect it, validate it and turn it into dashboards and reports the team can maintain without me."
+  cta_primary: { es: Ver casos, en: See cases }
+  cta_anchor: { es: casos, en: cases }
   photo_alt: { es: Benjamín Lang presentando frente a un pendón del SLEP Santa Rosa, en: Benjamín Lang presenting next to an SLEP Santa Rosa banner }
-  photo_caption: { es: "Presentando en el SLEP Santa Rosa", en: "Presenting at SLEP Santa Rosa" }
-  stats:
-    - { value: "5", suffix: "+", label: { es: años trabajando con datos, en: years working with data } }
-    - { value: "10", label: { es: tableros de Power BI publicados, en: Power BI dashboards published } }
-    - { value: "1467", label: { es: documentos clasificados con GPT-4o, en: documents classified with GPT-4o } }
-    - { value: "14", label: { es: publicaciones en coautoría, en: co-authored publications } }
+  photo_caption: { es: "Presentando resultados en el SLEP Santa Rosa.", en: "Presenting results at SLEP Santa Rosa." }
+  ficha:
+    - label: { es: Ahora, en: Now }
+      text: { es: "Analista de datos en el SLEP Santa Rosa, donde armé desde cero el gobierno de datos del servicio.", en: "Data analyst at SLEP Santa Rosa, where I built the service's data governance from scratch." }
+    - label: { es: Antes, en: Before }
+      text: { es: "Censo 2024 en el INE, el proceso constitucional en el CEP y asuntos públicos en Tironi.", en: "The 2024 Census at INE, Chile's constitutional process at CEP and public affairs at Tironi." }
+    - label: { es: Herramientas, en: Tools }
+      text: { es: "R, Power BI, Excel y Git a nivel avanzado; Python y SQL a nivel intermedio.", en: "R, Power BI, Excel and Git at an advanced level; Python and SQL at an intermediate level." }
+    - label: { es: Formación, en: Education }
+      text: { es: "Sociología en la UDP, con distinción máxima y primer lugar en el ranking de egreso.", en: "Sociology at UDP, with highest honors and first in my graduating class." }
 
 logos:
   label: { es: Experiencia en, en: Experience at }
@@ -35,63 +35,97 @@ logos:
     - { name: C22, src: logos/c22.png, url: "https://c22cepchile.cl/", square: true }
     - { name: Tironi, src: logos/tironi.png, url: "https://tironi.cl/", square: true }
 
-# Lo que hago: cada tarjeta es un tipo de trabajo con un caso real, su cifra y el enlace a la
-# ventana del proyecto en /trabajos/ (`work` = id del trabajo en projects.yml).
+# Lo que sé hacer: cada tarjeta es una capacidad, con lo que le resuelve a una institución, el
+# lugar donde la hice y una cifra; abre la ventana del proyecto en /trabajos/ (`work` = id del
+# trabajo en projects.yml). La primera, con `featured: true`, va grande con lo que incluye.
+# Fuente: el CV maestro de buscador_trabajo (perfil, competencias y experiencia).
 areas:
-  kicker: { es: En la práctica, en: In practice }
-  title: { es: "Lo que hago, con ejemplos", en: "What I do, with examples" }
-  lede: { es: "Seis tipos de trabajo que he repetido en distintos equipos. Cada uno abre el proyecto donde se ve en detalle.", en: "Six kinds of work I've done again and again across teams. Each one opens the project where you can see it in detail." }
-  see: { es: Ver el proyecto, en: See the project }
+  kicker: { es: Lo que sé hacer, en: What I do }
+  title: { es: "Gobierno de datos, de la captura al tablero", en: "Data governance, from capture to dashboard" }
+  lede: { es: "Seis cosas que sé hacer en una institución, cada una con el lugar donde la hice. Haz clic en cualquiera para ver el caso completo.", en: "Six things I can do for an organization, each with the place where I did it. Click any of them for the full case." }
+  problem_label: { es: Lo que resuelve, en: What it solves }
+  solution_label: { es: Dónde lo hice, en: Where I did it }
+  result_label: { es: Lo que queda funcionando, en: What keeps running }
+  includes_label: { es: Lo que incluye, en: What it includes }
+  see: { es: Ver el caso, en: See the case }
   items:
-    - title: { es: Automatizo la captura de datos, en: I automate data capture }
-      stat: { value: "4", label: { es: plataformas del Ministerio automatizadas, en: Ministry platforms automated } }
-      text:
-        es: "En el SLEP Santa Rosa cambié las descargas a mano desde cuatro plataformas del Ministerio por scrapers en Python y un script maestro en R que deja las bases listas para la revisión mensual."
-        en: "At SLEP Santa Rosa I replaced manual downloads from four Ministry platforms with Python scrapers and a master R script that leaves the datasets ready for the monthly check."
+    - featured: true
+      org: SLEP Santa Rosa
+      when: { es: "2025 – hoy", en: "2025 – now" }
+      title: { es: "Gobierno de datos, desde cero", en: "Data governance, from scratch" }
+      stats:
+        - { value: "10", label: { es: tableros de Power BI que los equipos directivos consultan cada semana, en: Power BI dashboards management teams check every week } }
+      problem: { es: "Que cada cifra tenga una sola definición, un origen que se puede rastrear y una revisión de calidad antes de llegar a un informe, aunque cambie el equipo.", en: "Every figure gets one definition, a traceable source and a quality check before it reaches a report, even when the team changes." }
+      solution: { es: "En el SLEP Santa Rosa armé el marco completo: cómo se capturan, validan, nombran y comparten los datos, con el proceso documentado para que no dependa de una persona.", en: "At SLEP Santa Rosa I built the whole framework: how data is captured, validated, named and shared, with the process documented so it doesn't depend on one person." }
+      result: { es: "Tableros de Power BI y reportes mensuales automáticos en R Markdown, Quarto y LaTeX, publicados en un sitio interno de reportería que también construí.", en: "Power BI dashboards and automatic monthly reports in R Markdown, Quarto and LaTeX, published on an internal reporting site I also built." }
+      includes: [{ es: Diccionario de datos, en: Data dictionary }, { es: Estándares de calidad, en: Quality standards }, { es: Reglas de captura y nombres, en: Capture and naming rules }, { es: Documentación de cada flujo, en: Documentation for every pipeline }, { es: Sitio de reportería, en: Reporting site }]
+      tags: [Power BI, R, Quarto, Git]
+      work: slep
+    - org: SLEP Santa Rosa
+      when: { es: "2025 – hoy", en: "2025 – now" }
+      title: { es: Flujos de datos automáticos, en: Automated data pipelines }
+      stats:
+        - { value: "4", label: { es: plataformas del Ministerio sin descargas a mano, en: Ministry platforms no longer downloaded by hand } }
+      problem: { es: "Que nadie tenga que bajar y pegar los mismos datos a mano cada mes.", en: "Nobody has to download and paste the same data by hand every month." }
+      solution: { es: "Scrapers en Python para matrícula, asistencia y evaluación, y un script maestro en R que deja las bases listas para revisar.", en: "Python scrapers for enrollment, attendance and assessment, and a master R script that leaves the datasets ready for review." }
       tags: [Python, R, PowerShell]
       work: slep
-    - title: { es: Armo tableros e informes que el equipo usa, en: I build dashboards and reports teams use }
-      stat: { value: "10", label: { es: tableros de Power BI publicados, en: Power BI dashboards published } }
-      text:
-        es: "Diez tableros de Power BI en el sitio interno del SLEP, fichas por escuela generadas desde R y, antes, un tablero público de nueve páginas para el Fondo del Libro."
-        en: "Ten Power BI dashboards on SLEP's internal site, school fact sheets generated from R and, earlier, a nine-page public dashboard for Fondo del Libro."
-      tags: [Power BI, R Markdown, Excel]
-      work: slep
-    - title: { es: Valido bases grandes, en: I validate large datasets }
-      stat: { value: "18.5", label: { es: millones de personas en el Censo 2024, en: million people in the 2024 Census } }
-      text:
-        es: "En el INE escribí y corregí reglas en R para validar sexo, edad y parentesco, y armé informes de calidad para comparar escenarios de edición antes de decidir."
-        en: "At INE I wrote and fixed R rules to validate sex, age and relationship, and built quality reports to compare editing scenarios before a decision was made."
-      tags: [R, R Markdown, renv, GitLab]
+    - org: { es: "INE, Censo 2024", en: "INE, 2024 Census" }
+      when: "2024 – 2025"
+      title: { es: Control de calidad a escala nacional, en: Quality control at national scale }
+      stats:
+        - { value: "18.5", label: { es: millones de personas censadas, en: million people counted } }
+      problem: { es: "Encontrar valores imposibles o incoherentes y corregirlos con métodos documentados antes de publicar.", en: "Finding impossible or inconsistent values and fixing them with documented methods before publication." }
+      solution: { es: "Reglas de validación en R para sexo, edad y parentesco, e informes de calidad para decidir entre escenarios de edición.", en: "Validation rules in R for sex, age and relationship, and quality reports to choose between editing scenarios." }
+      tags: [R, R Markdown, GitLab]
       work: censo-2024
-    - title: { es: Diseño y analizo encuestas, en: I design and analyze surveys }
-      stat: { value: "8", label: { es: olas del panel ELSOC procesadas, en: ELSOC panel waves processed } }
-      text:
-        es: "Con Joaquín Prieto preparé ocho olas del panel ELSOC (2016 a 2023), armé un índice de inseguridad económica y estimé modelos logísticos con imputación múltiple. En consultorías también asesoro el diseño de encuestas antes del terreno."
-        en: "With Joaquín Prieto I prepared eight waves of the ELSOC panel (2016 to 2023), built an economic insecurity index and fit logistic models with multiple imputation. In consulting work I also advise on survey design before fieldwork."
-      tags: [R, ELSOC, { es: Imputación múltiple, en: Multiple imputation }, SPSS]
-      work: prieto
-    - title: { es: Clasifico texto con modelos de lenguaje, en: I classify text with language models }
-      stat: { value: "1467", label: { es: memorandos del Banco Central codificados, en: Central Bank memos coded } }
-      text:
-        es: "Diseñé el prompt y las categorías para codificar con GPT-4o tres años de actas del Banco Central (1981 a 1983), y después analicé la base con redes y modelos de tópicos."
-        en: "I designed the prompt and the categories to code three years of Central Bank minutes (1981 to 1983) with GPT-4o, then analyzed the dataset with networks and topic models."
-      tags: [Python, OpenAI API, R, STM]
-      work: fondecyt-bc
-    - title: { es: Explico los datos a quien decide, en: I explain data to the people who decide }
-      stat: { value: "7", label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
-      text:
-        es: "En el CEP convertí votaciones, discursos y encuestas en análisis publicables, y en 2022 escribí el boletín constitucional semanal que Tironi mandaba a gerencias y directorios."
-        en: "At CEP I turned votes, speeches and surveys into publishable analysis, and in 2022 I wrote the weekly constitutional bulletin Tironi sent to executives and boards."
+    - org: { es: CEP y Tironi, en: CEP and Tironi }
+      when: "2021 – 2024"
+      title: { es: Informes para quien decide, en: Reports for decision-makers }
+      stats:
+        - { value: "7", label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
+      problem: { es: "Que alguien sin formación técnica entienda qué dicen los datos y qué cambia para su decisión.", en: "Someone without a technical background understands what the data says and what it changes for their decision." }
+      solution: { es: "El boletín constitucional semanal para gerencias y directorios en Tironi, y Voces del CEP, que traducía encuestas para un público amplio.", en: "The weekly constitutional bulletin for executives and boards at Tironi, and Voces del CEP, which translated surveys for a broad audience." }
       tags: [R, ggplot2, { es: Opinión pública, en: Public opinion }]
       work: c22
+    - org: { es: Investigación con Joaquín Prieto, en: Research with Joaquín Prieto }
+      when: { es: "2025 – hoy", en: "2025 – now" }
+      title: { es: Encuestas y modelos estadísticos, en: Surveys and statistical models }
+      stats:
+        - { value: "8", label: { es: olas del panel ELSOC procesadas, en: ELSOC panel waves processed } }
+      problem: { es: "Responder preguntas que piden más que una tabla: quién, cuánto y por qué.", en: "Answering questions that need more than a table: who, how much and why." }
+      solution: { es: "Un índice de inseguridad económica con ocho olas de ELSOC, modelos logísticos con imputación múltiple y análisis de mediación.", en: "An economic insecurity index from eight ELSOC waves, logistic models with multiple imputation and mediation analysis." }
+      tags: [R, ELSOC, { es: Imputación múltiple, en: Multiple imputation }]
+      work: prieto
+    - org: { es: "UDP, Fondecyt", en: "UDP, Fondecyt grant" }
+      when: "2024 – 2025"
+      title: { es: "Texto como datos, con IA", en: "Text as data, with AI" }
+      stats:
+        - { value: "1467", label: { es: memorandos codificados con GPT-4o, en: memos coded with GPT-4o } }
+      problem: { es: "Clasificar miles de documentos con un criterio parejo, sin pasar meses codificando a mano.", en: "Classifying thousands of documents with a consistent criterion, without months of hand coding." }
+      solution: { es: "Prompt y categorías propias para GPT-4o con controles de consistencia, y análisis con redes y modelos de tópicos.", en: "My own prompt and categories for GPT-4o with consistency checks, and analysis with networks and topic models." }
+      tags: [Python, OpenAI API, R]
+      work: fondecyt-bc
 
-# Dónde he trabajado: lista corta con los cargos marcados `home: true` en experience.yml
+# Trayectoria: tres etapas que terminan en gobierno de datos. `jobs` son ids de experience.yml.
 where:
   kicker: { es: Trayectoria, en: Career }
-  title: { es: Dónde he trabajado, en: "Where I've worked" }
-  lede: { es: "Cargos, instituciones y años. El detalle de cada uno, con referencias, está en el CV.", en: "Roles, institutions and years. The detail for each one, with references, is in the CV." }
+  title: { es: "De investigar con datos a gobernarlos", en: "From researching with data to governing it" }
+  lede: { es: "Cinco años en tres etapas. Cada una sumó una pieza de lo que hago hoy.", en: "Five years in three stages. Each one added a piece of what I do today." }
   cta: { es: Ver CV completo, en: See full CV }
+  stages:
+    - when: "2021 – 2024"
+      title: { es: Investigación y asuntos públicos, en: Research and public affairs }
+      text: { es: "Aprendí a convertir texto, votaciones y encuestas en datos, y a explicarlos a quien no es técnico. Coautor de 14 publicaciones.", en: "I learned to turn text, votes and surveys into data, and to explain it to non-technical people. Co-author of 14 publications." }
+      jobs: [c22, voces, tironi]
+    - when: "2024 – 2025"
+      title: { es: Estadística oficial, en: Official statistics }
+      text: { es: "Control de calidad a escala nacional en el Censo 2024, dentro de un código compartido con control de versiones y revisión cruzada.", en: "Quality control at national scale on the 2024 Census, inside a shared, version-controlled codebase with peer review." }
+      jobs: [ine, fondecyt-bc]
+    - when: { es: "2025 – hoy", en: "2025 – now" }
+      title: { es: Gobierno de datos, en: Data governance }
+      text: { es: "El gobierno de datos, la automatización y los tableros de una institución pública completa.", en: "Data governance, automation and dashboards for an entire public institution." }
+      jobs: [slep, prieto, aldeas]
 
 cards:
   kicker: { es: Más evidencia, en: More evidence }

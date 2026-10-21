@@ -27,7 +27,8 @@ Desde el 03-10-2026 el sitio vive en **Cloudflare Pages** (`portafolio-benjamin-
 ## Sistema visual
 
 - Motivo: **puntos** (cada punto es una persona, un registro, un aviso). Aparece en la foto del hero, el relato «De una pregunta a una decisión» y el pie.
-- Paleta (variables en `static/css/site.css`): niebla `#ECEDF0` fondo, tinta `#141833` texto, cobalto `#2B3BF5` único acento, noche `#0E1238` secciones oscuras.
+- Paleta (variables en `static/css/site.css`, elegida el 21-10-2026, portada «ficha»): niebla `#F1F2F6` fondo, tinta `#121735` texto, grafito `#4E5470` texto secundario, cobalto `#2B3BF5` acento (botones, enlaces, cifras), madera `#8E4F2B` solo para los rótulos de las fichas (sale de la madera de la foto del hero), noche `#0E1238` secciones oscuras.
+- Portada: nombre grande y angosto, una frase de lo que hace y una ficha de cuatro datos (ahora, antes, herramientas, formación). Sin fila de cifras sueltas: una cifra va pegada a un trabajo concreto.
 - Tipografía: Bricolage Grotesque (títulos), Geist (texto), Geist Mono solo para código.
 - Evitar: etiquetas en mayúsculas, separadores con punto medio, flechas pegadas a los botones, numeración 01/02 si no es una secuencia real.
 - Celular: objetivos táctiles de 44 px o más (si el dibujo es chico, el área crece con `::after`), texto de 12 px como mínimo, nada que desborde a 320 px. Revisado con Playwright a 320, 375, 390 y 414 px el 03-10-2026.

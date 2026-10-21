@@ -8,35 +8,35 @@
 {% block main %}
 {% set h = home.hero %}
 
-{# ── Hero ─────────────────────────────────────────────────────────── #}
+{# ── Hero: ficha. Nombre grande, una frase y cuatro datos de registro abajo ── #}
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="kicker">{{ h.kicker | t }}</p>
-      <h1 class="hero-name">{{ h.name }}</h1>
-      <p class="hero-role">{{ h.role | t }}</p>
-      <p class="hero-lede">{{ h.lede | md }}</p>
-      <ul class="chips hero-badges">{% for b in h.badges %}<li>{{ b | t }}</li>{% endfor %}</ul>
-      <div class="actions">
-        <a class="btn btn-solid" href="{{ url('trabajos') }}">{{ h.cta_primary | t }}</a>
-        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
-        <a class="btn" href="#{{ ui.contact_anchor }}">{{ h.cta_third | t }}</a>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="status"><i aria-hidden="true"></i>{{ h.status | t }}</p>
+        {% set first, rest = h.name.split(' ', 1) %}
+        <h1 class="hero-name"><span class="line"><span>{{ first }}</span></span> <span class="line"><span>{{ rest }}</span></span></h1>
+        <p class="hero-role">{{ h.role | t }}</p>
+        <p class="hero-lede">{{ h.lede | md }}</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="#{{ h.cta_anchor | t }}">{{ h.cta_primary | t }}</a>
+          <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
+        </div>
       </div>
-      <p class="status"><i aria-hidden="true"></i>{{ h.status | t }}</p>
-      <div class="hero-meta">
-        {% for s in h.stats %}
-        <div><b data-count="{{ s.value }}"{% if s.suffix is defined %} data-suffix="{{ s.suffix }}"{% endif %}>{{ s.value | num }}{{ s.suffix | default('') }}</b>{{ s.label | t }}</div>
-        {% endfor %}
-      </div>
+      <figure class="hero-figure">
+        <div class="hero-photo" data-dots-photo>
+          <picture>
+            <source srcset="{{ asset('img/photos/hero.webp') }}" type="image/webp">
+            <img src="{{ asset('img/photos/hero.jpg') }}" alt="{{ h.photo_alt | t }}" width="1100" height="1375" fetchpriority="high">
+          </picture>
+          <canvas aria-hidden="true"></canvas>
+        </div>
+        <figcaption>{{ h.photo_caption | t }}</figcaption>
+      </figure>
     </div>
-    <figure class="hero-photo" data-dots-photo>
-      <picture>
-        <source srcset="{{ asset('img/photos/hero.webp') }}" type="image/webp">
-        <img src="{{ asset('img/photos/hero.jpg') }}" alt="{{ h.photo_alt | t }}" width="1100" height="1375" fetchpriority="high">
-      </picture>
-      <canvas aria-hidden="true"></canvas>
-      <figcaption><span><b>{{ site.full_name }}</b>{{ h.photo_caption | t }}</span></figcaption>
-    </figure>
+    <dl class="hero-ficha">
+      {% for f in h.ficha %}<div><dt>{{ f.label | t }}</dt><dd>{{ f.text | t }}</dd></div>{% endfor %}
+    </dl>
   </div>
 </section>
 
@@ -52,9 +52,9 @@
   </div>
 </section>
 
-{# ── Lo que hago, con un caso real por tarjeta ────────────────────── #}
+{# ── Lo que sé hacer: una capacidad por tarjeta, con dónde la hice; la primera va grande ── #}
 {% set ar = home.areas %}
-<section class="section" aria-labelledby="areas-title">
+<section class="section" id="{{ h.cta_anchor | t }}" aria-labelledby="areas-title">
   <div class="wrap">
     <div class="section-head">
       <div>
@@ -63,45 +63,67 @@
       </div>
       <p>{{ ar.lede | t }}</p>
     </div>
-    <div class="area-grid">
+    <div class="cases">
       {% for a in ar['items'] %}
-      <a class="area-card" href="{{ url('trabajos', '#p-' ~ a.work) }}" data-reveal style="--d: {{ (loop.index0 % 3) * 0.05 }}s">
-        {% set v = a.stat.value %}
-        <p class="area-stat"><b data-count="{{ v }}">{% if '.' in v %}{{ v | replace('.', ',') if lang == 'es' else v }}{% else %}{{ v | num }}{% endif %}</b>{{ a.stat.label | t }}</p>
+      <a class="case{{ ' case-big' if a.featured is defined }}" href="{{ url('trabajos', '#p-' ~ a.work) }}" data-reveal style="--d: {{ (loop.index0 % 3) * 0.05 }}s">
+        <p class="case-org"><span>{{ a.org | t }}</span><span>{{ a.when | t }}</span></p>
         <h3>{{ a.title | t }}</h3>
-        <p>{{ a.text | md }}</p>
-        <ul class="chips">{% for tag in a.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
-        <span class="nav-card-go">{{ ar.see | t }} {{ m.icon('arrow') }}</span>
+        <div class="case-stats">
+          {% for s in a.stats %}
+          <p class="case-stat"><b data-count="{{ s.value }}">{% if '.' in s.value %}{{ s.value | replace('.', ',') if lang == 'es' else s.value }}{% else %}{{ s.value | num }}{% endif %}</b><span>{{ s.label | t }}</span></p>
+          {% endfor %}
+        </div>
+        <dl class="case-text">
+          <div><dt>{{ ar.problem_label | t }}</dt><dd>{{ a.problem | t }}</dd></div>
+          <div><dt>{{ ar.solution_label | t }}</dt><dd>{{ a.solution | t }}</dd></div>
+          {% if a.result is defined %}<div class="case-result"><dt>{{ ar.result_label | t }}</dt><dd>{{ a.result | t }}</dd></div>{% endif %}
+        </dl>
+        {% if a.includes is defined %}
+        <div class="case-includes">
+          <p>{{ ar.includes_label | t }}</p>
+          <ul>{% for it in a.includes %}<li>{{ it | t }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+        <div class="case-foot">
+          <ul class="chips">{% for tag in a.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
+          <span class="nav-card-go">{{ ar.see | t }} {{ m.icon('arrow') }}</span>
+        </div>
       </a>
       {% endfor %}
     </div>
   </div>
 </section>
 
-{# ── Dónde he trabajado ───────────────────────────────────────────── #}
+{# ── Trayectoria: tres etapas, con los cargos de cada una ─────────── #}
 {% set wh = home.where %}
+{% set jobs_by_id = {} %}{% for j in experience.jobs %}{% set _ = jobs_by_id.update({j.id: j}) %}{% endfor %}
 <section class="section-tight on-paper" aria-labelledby="where-title">
-  <div class="wrap split">
-    <div class="split-sticky">
-      <p class="kicker">{{ wh.kicker | t }}</p>
-      <h2 id="where-title" style="font-size:var(--t-2xl)">{{ wh.title | t }}</h2>
-      <p style="color:var(--grafito);margin:.75rem 0 1.5rem">{{ wh.lede | t }}</p>
-      <div class="actions">
-        <a class="btn btn-solid" href="{{ url('cv') }}">{{ wh.cta | t }}</a>
-        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{{ wh.kicker | t }}</p>
+        <h2 id="where-title">{{ wh.title | t }}</h2>
       </div>
+      <p>{{ wh.lede | t }}</p>
     </div>
-    <ol class="timeline timeline-short">
-      {% for job in experience.jobs if job.home is defined %}
-      <li class="tl-item{{ ' is-current' if job.current is defined }}">
-        <span class="tl-when">{{ job.when | t }}{% if job.parallel is defined %}<small>{{ ui.parallel }}</small>{% endif %}</span>
-        <div class="tl-what">
-          <h3>{{ job.role | t }}</h3>
-          <p class="org">{{ job.org }}</p>
-        </div>
+    <ol class="stages">
+      {% for st in wh.stages %}
+      <li class="stage{{ ' is-now' if loop.last }}">
+        <span class="stage-when">{{ st.when | t }}</span>
+        <h3>{{ st.title | t }}</h3>
+        <p>{{ st.text | t }}</p>
+        <ul class="stage-jobs">
+          {% for jid in st.jobs %}{% set job = jobs_by_id[jid] %}
+          <li><b>{{ job.role | t }}</b>{{ job.org }}{% if job.parallel is defined %}<small>{{ ui.parallel }}</small>{% endif %}</li>
+          {% endfor %}
+        </ul>
       </li>
       {% endfor %}
     </ol>
+    <div class="actions" style="margin-top:clamp(2rem, 4vw, 3rem)">
+      <a class="btn btn-solid" href="{{ url('cv') }}">{{ wh.cta | t }}</a>
+      <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
+    </div>
   </div>
 </section>
 
