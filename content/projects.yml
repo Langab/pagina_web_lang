@@ -29,6 +29,9 @@ lab:
       - { es: "540 lugares, 787 descuentos y 1.285 locales en el mapa, de 16 emisores distintos.", en: "540 places, 787 discounts and 1,285 branches on the map, from 16 different issuers." }
       - { es: "Un descuento se publica solo si está hoy en la página del banco, y la ficha muestra el día en que se verificó.", en: "A discount is only published if it is on the bank's page today, and each one shows the date it was checked." }
       - { es: "El Índice Rata responde con tres preguntas qué tarjeta conviene, cuánto ahorra al mes y cuánto cuesta.", en: "The Índice Rata answers, in three questions, which card pays off, how much it saves per month and what it costs." }
+    transfer:
+      es: "Si tu organización depende de información que cambia seguido en sitios de terceros (precios, beneficios, convenios), puedo armar el sistema que la recoge, la verifica contra la fuente y la deja buscable en una aplicación liviana."
+      en: "If your organization depends on information that changes often on third-party sites (prices, benefits, agreements), I can build the system that collects it, checks it against the source and makes it searchable in a lightweight app."
     tags: [Python, JavaScript, SQL, Cloudflare Pages, D1, MapLibre, Playwright]
     image: projects/guaren/mapa
     address: guareneitor.pages.dev
@@ -48,6 +51,9 @@ lab:
       - { es: "Esta mañana revisó {live_total} avisos y {match} calzan con todo lo que buscamos.", en: "This morning it checked {live_total} listings and {match} match everything we want." }
       - { es: "Junta tres portales, elimina duplicados y ubica cada aviso en el mapa con su distancia al metro.", en: "It merges three listing sites, removes duplicates and maps every listing with its distance to the metro." }
       - { es: Se actualiza solo a las 10 de la mañana y guarda 30 días de historia., en: It updates itself at 10 a.m. and keeps 30 days of history. }
+    transfer:
+      es: "Si necesitas juntar datos de varias fuentes que no se hablan entre sí, puedo escribir los scrapers, eliminar duplicados, ubicar cada registro en el mapa y dejar un visor que se actualiza solo y guarda historial."
+      en: "If you need to combine data from several sources that don't talk to each other, I can write the scrapers, remove duplicates, put every record on a map and leave a viewer that updates itself and keeps a history."
     tags: [Python, Playwright, Leaflet, OpenStreetMap, launchd, GitHub Pages]
     image: projects/visor-arriendos/mapa
     address: langab.github.io/visor_arriendos
@@ -67,7 +73,10 @@ lab:
     facts:
       - { es: 468 ofertas de 311 empresas revisadas en 29 búsquedas., en: "468 openings from 311 companies reviewed across 29 search runs." }
       - { es: "Cada oferta recibe un puntaje de 0 a 100 en habilidades, experiencia, cultura y proyección.", en: "Each opening gets a 0–100 score on skills, experience, culture fit and career direction." }
-      - { es: Un agente redacta el CV y la carta; otro los revisa antes de que yo los lea., en: One agent drafts the CV and cover letter; another reviews them before I read them. }
+      - { es: "Un agente propone el CV y la carta para cada oferta, otro los revisa y al final los leo yo antes de postular.", en: "One agent proposes the CV and cover letter for each opening, another reviews them, and I read them myself before applying." }
+    transfer:
+      es: "Si tu equipo repite una revisión con criterios claros (postulaciones, licitaciones, avisos), puedo convertir esos criterios en un puntaje explícito y armar agentes que hagan el primer filtro, con una persona revisando al final."
+      en: "If your team repeats a review with clear criteria (applications, tenders, listings), I can turn those criteria into an explicit score and build agents that do the first pass, with a person reviewing at the end."
     tags: [Claude Code, Skills, { es: Subagentes, en: Subagents }, Python, TypeScript, GitHub Pages]
     image: projects/buscador-trabajo/visor
     address: langab.github.io/visor_trabajos
@@ -85,6 +94,46 @@ experiments:
     url: https://github.com/Langab
 
 work:
+  - id: slep
+    home: true
+    area: [public]
+    years: { es: "2025 – hoy", en: "2025 – now" }
+    title: { es: Datos para la educación pública del sur de Santiago, en: Data for public schools in southern Santiago }
+    org: { es: Servicio Local de Educación Pública Santa Rosa, en: Santa Rosa Local Public Education Service }
+    role: { es: Analista de datos, en: Data analyst }
+    preview: photos/charla.jpg
+    modal:
+      intro:
+        es: "El SLEP Santa Rosa administra las escuelas, liceos y jardines públicos de La Cisterna, Lo Espejo, Pedro Aguirre Cerda, San Miguel y San Ramón. Los datos de matrícula, asistencia y evaluación se bajaban a mano desde las plataformas del Ministerio, y cada informe dependía de quien lo armara. En el equipo de Estudio, Monitoreo y Datos me tocó ordenar ese flujo, desde el dato crudo hasta los tableros que usan las direcciones y las escuelas."
+        en: "SLEP Santa Rosa runs the public schools, high schools and kindergartens of five municipalities in southern Santiago. Enrollment, attendance and assessment data were downloaded by hand from the Ministry's platforms, and every report depended on whoever put it together. In the Study, Monitoring and Data team my job was to sort out that flow, from raw data to the dashboards used by management and schools."
+      transfer:
+        es: "Si tu equipo baja datos a mano desde plataformas externas y arma los mismos informes cada mes, puedo automatizar la captura, dejar las reglas de validación escritas y publicar tableros que otra persona puede mantener."
+        en: "If your team downloads data by hand from external platforms and rebuilds the same reports every month, I can automate the capture, write down the validation rules and publish dashboards someone else can maintain."
+      cover:
+        src: photos/charla
+        alt: { es: Benjamín Lang presentando en el SLEP Santa Rosa, en: Benjamín Lang presenting at SLEP Santa Rosa }
+        caption: { es: Presentando resultados al equipo del SLEP Santa Rosa., en: Presenting results to the SLEP Santa Rosa team. }
+      numbers:
+        - { value: 5, label: { es: comunas del territorio, en: municipalities in the district } }
+        - { value: 10, label: { es: tableros de Power BI publicados y actualizados, en: Power BI dashboards published and maintained } }
+        - { value: 4, label: { es: plataformas del Ministerio automatizadas con scrapers, en: Ministry platforms automated with scrapers } }
+      flow_title: { es: Del dato crudo al tablero, en: From raw data to dashboard }
+      flow:
+        - { title: { es: Captura, en: Capture }, text: { es: "Descargas automatizadas de las plataformas de matrícula, asistencia y evaluación, además de los registros internos del servicio.", en: "Automated downloads from enrollment, attendance and assessment platforms, plus the service's internal records." } }
+        - { title: { es: Consolidación, en: Consolidation }, text: { es: "Un script maestro en R corre los módulos de procesamiento y deja bases con nombre fijo, listas para consumir.", en: "A master R script runs the processing modules and outputs fixed-name datasets, ready to consume." } }
+        - { title: { es: Validación, en: Validation }, text: { es: "Revisión mensual de consistencia antes de que cualquier cifra llegue a un informe.", en: "Monthly consistency checks before any figure reaches a report." } }
+        - { title: { es: Publicación, en: Publishing }, text: { es: "Los tableros se actualizan y se publican sobrescribiendo el informe anterior, para no romper los enlaces incrustados en el sitio interno.", en: "Dashboards are refreshed and republished over the previous report, so the embeds on the internal site never break." } }
+        - { title: { es: Uso, en: Use }, text: { es: "Fichas por establecimiento, minutas e informes para las direcciones y los equipos de cada escuela.", en: "School-level fact sheets, briefs and reports for management and each school's team." } }
+      did:
+        - { title: { es: Gobernanza de datos, en: Data governance }, text: { es: "Definí cómo se capturan, validan, nombran y comparten los datos del servicio, y dejé el proceso documentado para que no dependa de una persona.", en: "I defined how the service captures, validates, names and shares its data, and documented the process so it doesn't depend on one person." } }
+        - { title: { es: Automatización de la captura, en: Automated data capture }, text: { es: "Scrapers en Python para las plataformas de matrícula, asistencia y evaluación diagnóstica, que antes se descargaban a mano.", en: "Python scrapers for the enrollment, attendance and diagnostic assessment platforms, previously downloaded by hand." } }
+        - { title: { es: Tableros y sitio interno, en: Dashboards and internal site }, text: { es: "Diez tableros en Power BI con su propio orquestador de actualización, incrustados en un sitio interno con logs y respaldos.", en: "Ten Power BI dashboards with their own refresh orchestrator, embedded in an internal site with logs and backups." } }
+        - { title: { es: Informes y fichas, en: Reports and fact sheets }, text: { es: "Fichas por establecimiento y minutas en PDF generadas desde R, más informes de matrícula, asistencia y trayectoria docente.", en: "School fact sheets and PDF briefs generated from R, plus enrollment, attendance and teacher trajectory reports." } }
+        - { title: { es: Análisis educativo, en: Education analysis }, text: { es: "Resultados SIMCE, eficiencia interna, caracterización de establecimientos y perfiles para decisiones de inversión.", en: "National test results, internal efficiency, school profiling and inputs for investment decisions." } }
+        - { title: { es: Comunicación con la red, en: Communicating with the network }, text: { es: "Envíos masivos segmentados a directores, jefaturas técnicas y asesores, generados desde las mismas bases.", en: "Segmented mass mailings to principals, technical leads and advisors, generated from the same datasets." } }
+      tools: [R, R Markdown, Power BI, Python, PowerShell, Excel]
+      note: { es: Los datos y los tableros son internos del servicio. Acá describo el flujo y mi rol., en: The data and dashboards are internal to the service. Here I describe the flow and my role. }
+
   - id: censo-2024
     home: true
     area: [public]
@@ -95,8 +144,11 @@ work:
     preview: logos/censo_2024.svg
     modal:
       intro:
-        es: Contar a todo un país es la parte fácil de explicar. Lo difícil es que 18 millones de respuestas lleguen limpias y coherentes a las tablas finales. Trabajé en el equipo de procesamiento del INE, dentro del código en R que lleva cada dato desde la recolección hasta los indicadores.
-        en: Counting an entire country is the easy part to explain. The hard part is getting 18 million answers to the final tables clean and consistent. I worked on INE's processing team, inside the R codebase that carries every data point from collection to indicators.
+        es: "El Censo 2024 contó 18,5 millones de personas, con respuestas en tablet, web y papel. Antes de publicar había que detectar los valores imposibles o incoherentes y corregirlos con métodos documentados, sin perder la comparación con los censos anteriores. Trabajé en ese equipo de procesamiento del INE, dentro del código en R que lleva cada dato desde la recolección hasta los tabulados."
+        en: "The 2024 Census counted 18.5 million people, with answers collected on tablets, online and on paper. Before publication, impossible or inconsistent values had to be caught and fixed with documented methods, without losing comparability with past censuses. I worked on that processing team at INE, inside the R codebase that carries every data point from collection to the final tables."
+      transfer:
+        es: "Si tienes una base grande con errores de captura, puedo escribir reglas de validación en R, documentar cada corrección y comparar escenarios antes de que alguien decida, en un repositorio compartido y con control de versiones."
+        en: "If you have a large dataset with capture errors, I can write validation rules in R, document every fix and compare scenarios before anyone decides, in a shared, version-controlled repository."
       numbers:
         - { value: 18480432, label: { es: personas censadas en el resultado oficial, en: people counted in the official result } }
         - { value: 10, label: { es: etapas de procesamiento entre la integración y los tabulados, en: processing stages from integration to final tables } }
@@ -130,8 +182,11 @@ work:
     preview: logos/c22.png
     modal:
       intro:
-        es: "Entre 2021 y 2024 Chile escribió dos propuestas de constitución y rechazó ambas. C22 fue el proyecto del CEP que siguió ese proceso con datos, dirigido por Aldo Mascareño. Trabajé en el equipo que convirtió votaciones, discursos y encuestas en análisis publicables, y firmé como coautor siete Puntos de Referencia y seis notas de investigación."
-        en: "Between 2021 and 2024 Chile drafted two constitutions and rejected both. C22 was CEP's project tracking that process with data, led by Aldo Mascareño. I worked on the team that turned votes, speeches and surveys into publishable analysis, and co-authored seven policy papers and six research notes."
+        es: "Entre 2021 y 2024 Chile escribió dos propuestas de constitución y rechazó ambas. El CEP quería seguir ese proceso con datos y publicar análisis mientras la discusión avanzaba, no meses después. C22, dirigido por Aldo Mascareño, fue ese proyecto: trabajé en el equipo que convirtió votaciones, discursos y encuestas en análisis publicables, y firmé como coautor siete Puntos de Referencia y seis notas de investigación."
+        en: "Between 2021 and 2024 Chile drafted two constitutions and rejected both. CEP wanted to follow that process with data and publish analysis while the debate was still going, not months later. C22, led by Aldo Mascareño, was that project: I worked on the team that turned votes, speeches and surveys into publishable analysis, and co-authored seven policy papers and six research notes."
+      transfer:
+        es: "Si necesitas convertir votaciones, discursos, prensa o encuestas en análisis que se puedan publicar, puedo armar la base, elegir el método (escalamiento, análisis de texto o modelos) y dejar gráficos listos para un informe o para la prensa."
+        en: "If you need to turn votes, speeches, press coverage or surveys into publishable analysis, I can build the dataset, pick the method (scaling, text analysis or models) and deliver charts ready for a report or the press."
       numbers:
         - { value: 7, label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
         - { value: 6, label: { es: notas de investigación en C22, en: C22 research notes } }
@@ -154,43 +209,6 @@ work:
         - { label: { es: Sitio de C22, en: C22 website }, url: "https://c22cepchile.cl/" }
         - { label: { es: Publicaciones del CEP, en: CEP publications }, url: "https://www.cepchile.cl/" }
 
-  - id: slep
-    home: true
-    area: [public]
-    years: { es: "2025 – hoy", en: "2025 – now" }
-    title: { es: Datos para la educación pública del sur de Santiago, en: Data for public schools in southern Santiago }
-    org: { es: Servicio Local de Educación Pública Santa Rosa, en: Santa Rosa Local Public Education Service }
-    role: { es: Analista de datos, en: Data analyst }
-    preview: photos/charla.jpg
-    modal:
-      intro:
-        es: "El SLEP Santa Rosa administra las escuelas, liceos y jardines públicos de La Cisterna, Lo Espejo, Pedro Aguirre Cerda, San Miguel y San Ramón. Trabajo en el equipo de Estudio, Monitoreo y Datos: armé el flujo que va desde los datos crudos de las plataformas del Ministerio hasta los tableros que usan las direcciones y los establecimientos."
-        en: "SLEP Santa Rosa runs the public schools, high schools and kindergartens of five municipalities in southern Santiago. I work in the Study, Monitoring and Data team: I built the flow that goes from raw data in the Ministry's platforms to the dashboards used by management and schools."
-      cover:
-        src: photos/charla
-        alt: { es: Benjamín Lang presentando en el SLEP Santa Rosa, en: Benjamín Lang presenting at SLEP Santa Rosa }
-        caption: { es: Presentando resultados al equipo del SLEP Santa Rosa., en: Presenting results to the SLEP Santa Rosa team. }
-      numbers:
-        - { value: 5, label: { es: comunas del territorio, en: municipalities in the district } }
-        - { value: 10, label: { es: tableros de Power BI publicados y actualizados, en: Power BI dashboards published and maintained } }
-        - { value: 4, label: { es: plataformas del Ministerio automatizadas con scrapers, en: Ministry platforms automated with scrapers } }
-      flow_title: { es: Del dato crudo al tablero, en: From raw data to dashboard }
-      flow:
-        - { title: { es: Captura, en: Capture }, text: { es: "Descargas automatizadas de las plataformas de matrícula, asistencia y evaluación, además de los registros internos del servicio.", en: "Automated downloads from enrollment, attendance and assessment platforms, plus the service's internal records." } }
-        - { title: { es: Consolidación, en: Consolidation }, text: { es: "Un script maestro en R corre los módulos de procesamiento y deja bases con nombre fijo, listas para consumir.", en: "A master R script runs the processing modules and outputs fixed-name datasets, ready to consume." } }
-        - { title: { es: Validación, en: Validation }, text: { es: "Revisión mensual de consistencia antes de que cualquier cifra llegue a un informe.", en: "Monthly consistency checks before any figure reaches a report." } }
-        - { title: { es: Publicación, en: Publishing }, text: { es: "Los tableros se actualizan y se publican sobrescribiendo el informe anterior, para no romper los enlaces incrustados en el sitio interno.", en: "Dashboards are refreshed and republished over the previous report, so the embeds on the internal site never break." } }
-        - { title: { es: Uso, en: Use }, text: { es: "Fichas por establecimiento, minutas e informes para las direcciones y los equipos de cada escuela.", en: "School-level fact sheets, briefs and reports for management and each school's team." } }
-      did:
-        - { title: { es: Gobernanza de datos, en: Data governance }, text: { es: "Definí cómo se capturan, validan, nombran y comparten los datos del servicio, y dejé el proceso documentado para que no dependa de una persona.", en: "I defined how the service captures, validates, names and shares its data, and documented the process so it doesn't depend on one person." } }
-        - { title: { es: Automatización de la captura, en: Automated data capture }, text: { es: "Scrapers en Python para las plataformas de matrícula, asistencia y evaluación diagnóstica, que antes se descargaban a mano.", en: "Python scrapers for the enrollment, attendance and diagnostic assessment platforms, previously downloaded by hand." } }
-        - { title: { es: Tableros y sitio interno, en: Dashboards and internal site }, text: { es: "Diez tableros en Power BI con su propio orquestador de actualización, incrustados en un sitio interno con logs y respaldos.", en: "Ten Power BI dashboards with their own refresh orchestrator, embedded in an internal site with logs and backups." } }
-        - { title: { es: Informes y fichas, en: Reports and fact sheets }, text: { es: "Fichas por establecimiento y minutas en PDF generadas desde R, más informes de matrícula, asistencia y trayectoria docente.", en: "School fact sheets and PDF briefs generated from R, plus enrollment, attendance and teacher trajectory reports." } }
-        - { title: { es: Análisis educativo, en: Education analysis }, text: { es: "Resultados SIMCE, eficiencia interna, caracterización de establecimientos y perfiles para decisiones de inversión.", en: "National test results, internal efficiency, school profiling and inputs for investment decisions." } }
-        - { title: { es: Comunicación con la red, en: Communicating with the network }, text: { es: "Envíos masivos segmentados a directores, jefaturas técnicas y asesores, generados desde las mismas bases.", en: "Segmented mass mailings to principals, technical leads and advisors, generated from the same datasets." } }
-      tools: [R, R Markdown, Power BI, Python, PowerShell, Excel]
-      note: { es: Los datos y los tableros son internos del servicio. Acá describo el flujo y mi rol., en: The data and dashboards are internal to the service. Here I describe the flow and my role. }
-
   - id: tironi
     home: true
     area: [consulting]
@@ -201,8 +219,11 @@ work:
     preview: logos/tironi.png
     modal:
       intro:
-        es: "Durante 2022, con la Convención Constitucional en pleno funcionamiento, clientes corporativos necesitaban entender qué se estaba votando y qué implicaba para sus industrias. Estuve a cargo del boletín semanal que respondía eso, además de apoyar con datos otros proyectos de consultoría."
-        en: "Through 2022, with the Constitutional Convention in full swing, corporate clients needed to understand what was being voted and what it meant for their industries. I was in charge of the weekly bulletin that answered that, and supported other consulting projects with data."
+        es: "Durante 2022, con la Convención Constitucional en pleno funcionamiento, las empresas clientes de Tironi necesitaban entender cada semana qué se estaba votando y qué significaba para su industria, sin tener que seguir la Convención día a día. Estuve a cargo del boletín semanal que respondía eso, y además apoyé con datos otros proyectos de consultoría."
+        en: "Through 2022, with the Constitutional Convention in full swing, Tironi's corporate clients needed to understand every week what was being voted and what it meant for their industry, without following the Convention day by day. I was in charge of the weekly bulletin that answered that, and supported other consulting projects with data."
+      transfer:
+        es: "Si tu equipo tiene que explicarle a una gerencia o a un directorio algo técnico que cambia rápido, puedo hacer el seguimiento y escribirlo corto, sin jerga y con el impacto concreto para el negocio."
+        en: "If your team has to explain something technical and fast-moving to executives or a board, I can track it and write it up short, without jargon and with the concrete impact on the business."
       did:
         - { title: { es: Monitoreo semanal, en: Weekly monitoring }, text: { es: "Seguimiento de las votaciones y los borradores de la Convención, traducido a qué cambiaba, qué quedaba en riesgo y qué venía la semana siguiente.", en: "Tracking the Convention's votes and drafts, translated into what changed, what was at risk and what was coming next week." } }
         - { title: { es: Audiencia corporativa, en: Corporate audience }, text: { es: "Escribir para gerencias y directorios: sin jerga jurídica, con el impacto concreto para el negocio y el sector.", en: "Writing for executives and boards: no legal jargon, with the concrete impact on the business and the sector." } }
@@ -221,8 +242,11 @@ work:
     preview: projects/fondecyt-bc/red.jpg
     modal:
       intro:
-        es: "El proyecto estudia cómo el Banco Central de Chile produce «estabilidad» económica. Mi parte fue la crisis de 1981 a 1983: convertir tres años de actas del Comité Ejecutivo en una base codificada y analizable, y describir con ella qué problemas discutía el Banco, qué acciones tomaba y a quién iban dirigidas."
-        en: "The project studies how Chile's Central Bank produces economic \"stability\". My part covered the 1981–1983 crisis: turning three years of Executive Committee minutes into a coded, analyzable dataset, and using it to describe which problems the Bank discussed, which actions it took and who those actions targeted."
+        es: "El proyecto estudia cómo el Banco Central de Chile produce «estabilidad» económica. Para la crisis de 1981 a 1983 había 144 actas escaneadas del Comité Ejecutivo, demasiado texto para codificarlo a mano con un criterio parejo. Mi parte fue convertirlas en una base codificada y analizable, y describir con ella qué problemas discutía el Banco, qué acciones tomaba y a quién iban dirigidas."
+        en: "The project studies how Chile's Central Bank produces economic \"stability\". For the 1981–1983 crisis there were 144 scanned Executive Committee minutes, too much text to code by hand with a consistent criterion. My part was turning them into a coded, analyzable dataset, and using it to describe which problems the Bank discussed, which actions it took and who those actions targeted."
+      transfer:
+        es: "Si tienes miles de documentos que nadie alcanza a leer (actas, reclamos, respuestas abiertas, prensa), puedo diseñar el esquema de códigos, clasificarlos con un modelo de lenguaje con controles de consistencia y analizarlos con redes o modelos de tópicos."
+        en: "If you have thousands of documents nobody has time to read (minutes, complaints, open-ended answers, press), I can design the coding scheme, classify them with a language model with consistency checks and analyze them with networks or topic models."
       cover:
         src: projects/fondecyt-bc/red.jpg
         alt: { es: Red de co-ocurrencia de problemas, en: Co-occurrence network of problems }
@@ -277,8 +301,11 @@ work:
     role: { es: "Analista cuantitativo y coautor", en: "Quantitative analyst and co-author" }
     modal:
       intro:
-        es: "Dos investigaciones sobre inseguridad económica en Chile. En la primera, *Economic Insecurity, Not Inequality?*, construimos un índice multidimensional con datos de panel para explicar quién participó en las protestas de octubre de 2019. En la segunda, *Insecurity amid Recovery*, trabajamos la Encuesta de Bienestar Social del INE. Soy responsable del análisis cuantitativo y coautor del primer paper."
-        en: "Two research projects on economic insecurity in Chile. In the first, *Economic Insecurity, Not Inequality?*, we built a multidimensional index from panel data to explain who took part in the October 2019 protests. In the second, *Insecurity amid Recovery*, we work with INE's Social Wellbeing Survey. I am responsible for the quantitative analysis and a co-author of the first paper."
+        es: "¿Qué explica mejor quién salió a protestar en octubre de 2019: la desigualdad o la inseguridad económica? Para responderlo hacía falta un índice de inseguridad económica construido con datos de panel. Con Joaquín Prieto lo armamos con ELSOC en *Economic Insecurity, Not Inequality?*, y en *Insecurity amid Recovery* trabajamos la Encuesta de Bienestar Social del INE. Soy responsable del análisis cuantitativo y coautor del primer paper."
+        en: "What better explains who took to the streets in October 2019: inequality or economic insecurity? Answering that required an economic insecurity index built from panel data. With Joaquín Prieto we built it from ELSOC in *Economic Insecurity, Not Inequality?*, and in *Insecurity amid Recovery* we work with INE's Social Wellbeing Survey. I am responsible for the quantitative analysis and a co-author of the first paper."
+      transfer:
+        es: "Si tienes datos de encuestas o de panel y una pregunta que pide más que tablas descriptivas, puedo construir índices, estimar modelos tratando bien los valores perdidos y dejar el código ordenado por etapas para que el equipo lo revise."
+        en: "If you have survey or panel data and a question that needs more than descriptive tables, I can build indices, fit models that handle missing data properly and leave the code organized by stage so the team can review it."
       numbers:
         - { value: 8, label: { es: "olas del panel ELSOC procesadas (2016–2023)", en: "ELSOC panel waves processed (2016–2023)" } }
         - { value: 4, label: { es: "subdimensiones del índice de inseguridad económica", en: "sub-dimensions of the economic insecurity index" } }
@@ -308,8 +335,11 @@ work:
     preview: projects/lectura-digital/regiones.jpg
     modal:
       intro:
-        es: El Estado tiene dos bibliotecas digitales, una para escuelas y otra para todo público. Con datos pedidos por Ley de Transparencia medí quién las usa, desde qué dispositivo y a dónde no están llegando.
-        en: Chile's government runs two digital libraries, one for schools and one for everyone. Using data obtained through freedom-of-information requests, I measured who uses them, on which devices and where they aren't reaching.
+        es: "El Estado tiene dos bibliotecas digitales, una para escuelas y otra para todo público. La pregunta del estudio era quién las usa y a quién no están llegando. Con datos pedidos por Ley de Transparencia medí el uso, desde qué dispositivo se lee y qué escuelas quedan fuera."
+        en: "Chile's government runs two digital libraries, one for schools and one for everyone. The study's question was who uses them and who they aren't reaching. Using data obtained through freedom-of-information requests, I measured usage, which devices people read on and which schools are left out."
+      transfer:
+        es: "Si tu institución tiene registros de uso que nadie ha cruzado con otras fuentes, puedo conseguirlos, limpiarlos, unirlos con datos administrativos y dejar un tablero que muestre dónde no está llegando el servicio."
+        en: "If your institution has usage records nobody has linked to other sources, I can obtain them, clean them, join them with administrative data and deliver a dashboard showing where the service isn't reaching."
       numbers:
         - { value: 608978, label: { es: "usuarios de la Biblioteca Digital Escolar (2019–2022)", en: "School Digital Library users (2019–2022)" } }
         - { value: 464649, label: { es: "usuarios de la Biblioteca Pública Digital (2018–2022)", en: "Public Digital Library users (2018–2022)" } }
@@ -340,27 +370,26 @@ work:
     org: { es: Consultoría para Francisca Bravo Cox, en: Consulting for Francisca Bravo Cox }
     role: { es: Consultor técnico, en: Technical consultant }
     modal:
+      # Sin cifras de la encuesta: los datos y resultados son de la clienta (ver CLAUDE.md, privacidad).
       intro:
-        es: ¿Cómo se organiza la plata en una pareja y qué le pasa a la carrera de cada uno cuando llegan los hijos? Francisca Bravo, abogada que trabaja estos temas, quería datos propios para responderlo. Yo me hice cargo de la parte técnica de la encuesta.
-        en: How do couples handle money, and what happens to each partner's career when kids arrive? Francisca Bravo, a lawyer who works on these issues, wanted her own data to answer that. I handled the technical side of the survey.
-      numbers:
-        - { value: 1510, label: { es: respuestas en dos semanas de terreno, en: responses in two weeks of fieldwork } }
-        - { value: 1273, label: { es: casos válidos después de limpiar la base, en: valid cases after cleaning } }
-        - { value: 54, label: { es: preguntas en el cuestionario, en: questions in the questionnaire } }
-        - { value: 61, label: { es: láminas en la presentación de resultados, en: slides in the results deck } }
-      flow_title: { es: Cómo lo hicimos, en: How we did it }
+        es: "Francisca Bravo, abogada que trabaja estos temas, quería datos propios para responder dos preguntas: cómo se organiza la plata en una pareja y qué le pasa a la carrera de cada uno cuando llegan los hijos. Me pidió apoyo en las dos partes técnicas de la encuesta: la asesoría metodológica antes de salir a terreno y el análisis de los datos después."
+        en: "Francisca Bravo, a lawyer who works on these issues, wanted her own data to answer two questions: how couples handle money, and what happens to each partner's career when kids arrive. She asked me to cover the two technical parts of the survey: methodological advice before fieldwork and the data analysis afterwards."
+      transfer:
+        es: "Si quieres hacer una encuesta propia, puedo revisar el cuestionario antes del terreno, decirte qué se puede concluir con la muestra que vas a tener y hacer el análisis completo, incluidas las respuestas abiertas."
+        en: "If you want to run your own survey, I can review the questionnaire before fieldwork, tell you what you can conclude from the sample you'll get, and do the full analysis, open-ended answers included."
+      flow_title: { es: Cómo lo hice, en: How I did it }
       flow:
-        - { title: { es: Cuestionario, en: Questionnaire }, text: { es: "Revisión de seis bloques: pareja, dinero cotidiano, carrera e hijos.", en: "Review of six blocks: partner, daily money, career and children." } }
-        - { title: { es: Terreno, en: Fieldwork }, text: { es: "Encuesta online del 23 de abril al 7 de mayo de 2024.", en: "Online survey from April 23 to May 7, 2024." } }
-        - { title: { es: Limpieza, en: Cleaning }, text: { es: Filtro a mujeres que viven con su pareja y control de consistencia., en: Filtered to women living with a partner and checked for consistency. } }
+        - { title: { es: Cuestionario, en: Questionnaire }, text: { es: "Revisión de los bloques de preguntas: pareja, dinero cotidiano, carrera e hijos.", en: "Review of the question blocks: partner, daily money, career and children." } }
+        - { title: { es: Terreno, en: Fieldwork }, text: { es: "Encuesta online difundida por redes sociales, con muestra no probabilística.", en: "Online survey spread through social media, with a non-probability sample." } }
+        - { title: { es: Limpieza, en: Cleaning }, text: { es: Filtro a mujeres que viven con su pareja y controles de consistencia., en: Filtered to women living with a partner and checked for consistency. } }
         - { title: { es: Análisis, en: Analysis }, text: { es: "Tablas cruzadas y pruebas de chi cuadrado en R y SPSS.", en: "Cross-tabs and chi-square tests in R and SPSS." } }
-        - { title: { es: Respuestas abiertas, en: Open answers }, text: { es: Clasificación por tema con GPT-4 a través de la API., en: Topic classification with GPT-4 through the API. } }
+        - { title: { es: Respuestas abiertas, en: Open answers }, text: { es: "Clasificación por tema con GPT-4, a través de la API.", en: "Topic classification with GPT-4, through the API." } }
       did:
-        - { title: { es: Informe, en: Report }, text: { es: 25 páginas con resultados y lectura de los datos., en: 25 pages of results and interpretation. } }
-        - { title: { es: Presentación, en: Deck }, text: { es: 61 láminas para comunicar los hallazgos., en: 61 slides to communicate the findings. } }
-        - { title: { es: Base limpia, en: Clean dataset }, text: { es: Base de datos y tablas resumen listas para seguir trabajando., en: Dataset and summary tables ready for further work. } }
+        - { title: { es: Asesoría metodológica, en: Methodological advice }, text: { es: "Revisé el cuestionario antes del terreno y asesoré a la clienta en el diseño de la encuesta y en lo que se puede concluir con una muestra difundida por redes sociales.", en: "I reviewed the questionnaire before fieldwork and advised the client on the survey design and on what can be concluded from a sample spread through social media." } }
+        - { title: { es: Análisis de datos, en: Data analysis }, text: { es: "Limpié la base, armé las tablas cruzadas con sus pruebas de significación y clasifiqué las respuestas abiertas con un modelo de lenguaje.", en: "I cleaned the dataset, built the cross-tabs with their significance tests and classified the open answers with a language model." } }
+        - { title: { es: Entrega, en: Deliverables }, text: { es: "Un informe con los resultados y su lectura, una presentación para comunicarlos y la base limpia con tablas resumen para que la clienta siguiera trabajando.", en: "A report with the results and how to read them, a deck to present them, and the clean dataset with summary tables so the client could keep working." } }
       tools: [R, SPSS, Python, OpenAI API]
-      note: { es: "Muestra no probabilística, difundida por redes sociales. Los resultados pertenecen a la clienta.", en: "Non-probability sample spread through social media. The results belong to the client." }
+      note: { es: "Muestra no probabilística, difundida por redes sociales. Los datos y los resultados pertenecen a la clienta y no se publican aquí.", en: "Non-probability sample spread through social media. The data and results belong to the client and aren't published here." }
 
   - id: aldeas
     area: [ngo, consulting]
@@ -371,8 +400,11 @@ work:
     preview: projects/aldeas/curvas.jpg
     modal:
       intro:
-        es: ¿Qué tan preparados están los equipos y los jóvenes de Aldeas para una vida que pasa por el celular? Primero lo medimos. Ahora, en 2026, damos talleres para cerrar las brechas que encontramos.
-        en: How ready are the staff and young people at SOS Children's Villages for a life that runs through a phone? First we measured it. Now, in 2026, we run workshops to close the gaps we found.
+        es: "Aldeas Infantiles SOS quería saber qué tan preparados están sus equipos y sus jóvenes para una vida que pasa por el celular, y qué enseñarles. Primero lo medimos con una encuesta y grupos focales. Ahora, en 2026, damos talleres para cerrar las brechas que encontramos."
+        en: "SOS Children's Villages wanted to know how ready their staff and young people are for a life that runs through a phone, and what to teach them. First we measured it with a survey and focus groups. Now, in 2026, we run workshops to close the gaps we found."
+      transfer:
+        es: "Si necesitas diagnosticar habilidades en una organización y convertir el resultado en un plan de formación que se pueda evaluar, puedo diseñar la medición, corregir la autoevaluación inflada y repetirla al final para ver el avance."
+        en: "If you need to assess skills across an organization and turn the result into a training plan you can evaluate, I can design the measurement, correct for inflated self-ratings and repeat it at the end to see the progress."
       cover:
         src: projects/aldeas/curvas.jpg
         alt: { es: "Lámina «Las dos curvas del placer» sobre recompensa digital y recompensa de la vida real", en: "Slide «The two pleasure curves» about digital reward versus real-life reward" }
@@ -401,8 +433,11 @@ work:
     role: { es: Asistente de investigación, en: Research assistant }
     modal:
       intro:
-        es: Cómo se gobiernan los cambios bruscos en un sistema socioecológico, con Chiloé como caso. Apoyé el procesamiento de información cualitativa y cuantitativa del proyecto.
-        en: How abrupt changes in a social-ecological system are governed, with Chiloé as the case. I supported the project's qualitative and quantitative data processing.
+        es: "El proyecto estudia cómo se gobiernan los cambios bruscos en un sistema socioecológico, con Chiloé como caso. El equipo tenía entrevistas y datos cuantitativos que había que ordenar y codificar con un mismo criterio. Apoyé ese procesamiento."
+        en: "The project studies how abrupt changes in a social-ecological system are governed, with Chiloé as the case. The team had interviews and quantitative data that needed to be organized and coded with one shared criterion. I supported that processing."
+      transfer:
+        es: "Si tu equipo tiene entrevistas o material cualitativo acumulado, puedo codificarlo en Atlas.ti con un esquema común y dejar memos con los criterios para que otra persona pueda seguir."
+        en: "If your team has a backlog of interviews or qualitative material, I can code it in Atlas.ti with a shared scheme and leave memos with the criteria so someone else can pick it up."
       did:
         - { title: { es: Información mixta, en: Mixed data }, text: { es: Sistematización de entrevistas y datos cuantitativos., en: Organizing interviews and quantitative data. } }
         - { title: { es: Apoyo al análisis, en: Analysis support }, text: { es: "Insumos para los productos del equipo: revisión de literatura, preparación de bases y apoyo en el trabajo de campo.", en: "Inputs for the team's outputs: literature review, dataset preparation and fieldwork support." } }

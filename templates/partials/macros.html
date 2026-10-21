@@ -62,7 +62,10 @@
     </figure>
     {% endif %}
     <div class="modal-body">
-      <p class="intro">{{ d.intro | md }}</p>
+      <div>
+        <h3>{{ ui.the_problem }}</h3>
+        <p class="intro">{{ d.intro | md }}</p>
+      </div>
 
       {% if d.numbers is defined %}
       <div class="numbers">
@@ -110,6 +113,13 @@
         {% for g in d.gallery %}
         <figure>{{ img(g.src, g.caption | t) }}<figcaption>{{ g.caption | md }}</figcaption></figure>
         {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if d.transfer is defined %}
+      <div class="transfer">
+        <h3>{{ ui.for_you }}</h3>
+        <p>{{ d.transfer | md }}</p>
       </div>
       {% endif %}
 

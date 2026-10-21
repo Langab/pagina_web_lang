@@ -56,7 +56,7 @@ groups:
         url: https://www.cepchile.cl/cep/puntos-de-referencia/puntos-de-referencia2010-2021/zona-de-curvas-la-convencion-y-la-camara-en-comparacion
 
   - id: notes
-    title: { es: Research Notes de C22, en: C22 research notes }
+    title: { es: Notas de investigación de C22, en: C22 research notes }
     items:
       - year: 2022
         title: "Nuevo estilo de baile: 4/7"

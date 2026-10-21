@@ -31,6 +31,12 @@
     </nav>
     <div class="article">
       {% include "projects/" ~ p.id ~ ".html" %}
+      {% if p.transfer is defined %}
+      <section id="{{ ui.for_you_anchor }}">
+        <h2>{{ ui.for_you }}</h2>
+        <div class="callout callout-cobalto"><p>{{ p.transfer | md }}</p></div>
+      </section>
+      {% endif %}
     </div>
   </div>
 

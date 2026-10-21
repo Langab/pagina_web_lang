@@ -27,7 +27,7 @@
     <ol class="timeline">
       {% for job in experience.jobs %}
       <li class="tl-item{{ ' is-current' if job.current is defined }}">
-        <span class="tl-when">{{ job.when | t }}</span>
+        <span class="tl-when">{{ job.when | t }}{% if job.parallel is defined %}<small>{{ ui.parallel }}</small>{% endif %}</span>
         <div class="tl-what">
           <h3>{{ job.role | t }}</h3>
           <p class="org">{{ job.org }}</p>

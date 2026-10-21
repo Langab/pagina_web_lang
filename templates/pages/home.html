@@ -19,13 +19,13 @@
       <ul class="chips hero-badges">{% for b in h.badges %}<li>{{ b | t }}</li>{% endfor %}</ul>
       <div class="actions">
         <a class="btn btn-solid" href="{{ url('trabajos') }}">{{ h.cta_primary | t }}</a>
-        <a class="btn" href="{{ url('cv') }}">{{ h.cta_secondary | t }}</a>
+        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
         <a class="btn" href="#{{ ui.contact_anchor }}">{{ h.cta_third | t }}</a>
       </div>
       <p class="status"><i aria-hidden="true"></i>{{ h.status | t }}</p>
       <div class="hero-meta">
         {% for s in h.stats %}
-        <div><b data-count="{{ s.value }}"{% if s.suffix is defined %} data-suffix="{{ s.suffix }}"{% endif %}>{{ s.value }}{{ s.suffix | default('') }}</b>{{ s.label | t }}</div>
+        <div><b data-count="{{ s.value }}"{% if s.suffix is defined %} data-suffix="{{ s.suffix }}"{% endif %}>{{ s.value | num }}{{ s.suffix | default('') }}</b>{{ s.label | t }}</div>
         {% endfor %}
       </div>
     </div>
@@ -52,7 +52,7 @@
   </div>
 </section>
 
-{# ── Áreas de trabajo ─────────────────────────────────────────────── #}
+{# ── Lo que hago, con un caso real por tarjeta ────────────────────── #}
 {% set ar = home.areas %}
 <section class="section" aria-labelledby="areas-title">
   <div class="wrap">
@@ -65,19 +65,49 @@
     </div>
     <div class="area-grid">
       {% for a in ar['items'] %}
-      <article class="area-card" data-reveal style="--d: {{ loop.index0 * 0.05 }}s">
+      <a class="area-card" href="{{ url('trabajos', '#p-' ~ a.work) }}" data-reveal style="--d: {{ (loop.index0 % 3) * 0.05 }}s">
+        {% set v = a.stat.value %}
+        <p class="area-stat"><b data-count="{{ v }}">{% if '.' in v %}{{ v | replace('.', ',') if lang == 'es' else v }}{% else %}{{ v | num }}{% endif %}</b>{{ a.stat.label | t }}</p>
         <h3>{{ a.title | t }}</h3>
         <p>{{ a.text | md }}</p>
         <ul class="chips">{% for tag in a.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
-      </article>
+        <span class="nav-card-go">{{ ar.see | t }} {{ m.icon('arrow') }}</span>
+      </a>
       {% endfor %}
     </div>
   </div>
 </section>
 
-{# ── Accesos a cada pestaña ───────────────────────────────────────── #}
+{# ── Dónde he trabajado ───────────────────────────────────────────── #}
+{% set wh = home.where %}
+<section class="section-tight on-paper" aria-labelledby="where-title">
+  <div class="wrap split">
+    <div class="split-sticky">
+      <p class="kicker">{{ wh.kicker | t }}</p>
+      <h2 id="where-title" style="font-size:var(--t-2xl)">{{ wh.title | t }}</h2>
+      <p style="color:var(--grafito);margin:.75rem 0 1.5rem">{{ wh.lede | t }}</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="{{ url('cv') }}">{{ wh.cta | t }}</a>
+        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
+      </div>
+    </div>
+    <ol class="timeline timeline-short">
+      {% for job in experience.jobs if job.home is defined %}
+      <li class="tl-item{{ ' is-current' if job.current is defined }}">
+        <span class="tl-when">{{ job.when | t }}{% if job.parallel is defined %}<small>{{ ui.parallel }}</small>{% endif %}</span>
+        <div class="tl-what">
+          <h3>{{ job.role | t }}</h3>
+          <p class="org">{{ job.org }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ── Portafolio propio y publicaciones ────────────────────────────── #}
 {% set cards = home.cards %}
-<section class="section on-paper" aria-labelledby="cards-title">
+<section class="section" aria-labelledby="cards-title">
   <div class="wrap">
     <div class="section-head">
       <div>

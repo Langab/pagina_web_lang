@@ -5,10 +5,10 @@
   <h2>{{ 'El problema' if es else 'The problem' }}</h2>
   {% if es %}
   <p>Buscar trabajo es, en términos operativos, un problema de datos: cientos de ofertas repartidas en varios portales, una minoría que calza con el perfil y un CV que hay que adaptar en cada postulación.</p>
-  <p>Con un trabajo de jornada completa, revisar portales todas las noches no era viable. Lo traté como lo que es, <strong>un embudo de datos</strong>, y automaticé la parte repetitiva.</p>
+  <p>Revisar portales todas las noches no era viable. Lo traté como lo que es, <strong>un embudo de datos</strong>, y automaticé la parte repetitiva.</p>
   {% else %}
   <p>A job search is, operationally, a data problem: hundreds of openings spread across several sites, a minority that fit the profile, and a CV that has to be adapted for each application.</p>
-  <p>With a full-time job, going through listing sites every night wasn't viable. I treated it as what it is, <strong>a data funnel</strong>, and automated the repetitive part.</p>
+  <p>Going through listing sites every night wasn't viable. I treated it as what it is, <strong>a data funnel</strong>, and automated the repetitive part.</p>
   {% endif %}
 </section>
 
@@ -39,7 +39,7 @@
     <li><span class="node">/scrape</span><div><b>{{ 'Buscar' if es else 'Search' }}</b><span>{{ 'Búsquedas guardadas en cinco grupos: datos y BI, sector público, investigación aplicada y académica.' if es else 'Saved searches in five groups: data and BI, public sector, applied and academic research.' }}</span></div></li>
     <li><span class="node">seen</span><div><b>{{ 'No repetir' if es else 'Skip repeats' }}</b><span>{{ 'Lo ya visto queda en seen_jobs.json y se omite en la siguiente pasada.' if es else 'Anything already seen goes into seen_jobs.json and is skipped next time.' }}</span></div></li>
     <li><span class="node">0–100</span><div><b>{{ 'Puntuar' if es else 'Score' }}</b><span>{{ 'Primero un calce rápido (alto, medio, bajo) y después un puntaje detallado.' if es else 'First a quick fit rating (high, medium, low), then a detailed score.' }}</span></div></li>
-    <li><span class="node">/apply</span><div><b>{{ 'Postular' if es else 'Apply' }}</b><span>{{ 'Un agente redacta CV y carta a medida; otro revisa. LibreOffice los pasa a PDF y el CV no puede pasar de dos páginas.' if es else 'One agent drafts a tailored CV and cover letter; another reviews them. LibreOffice converts them to PDF and the CV can’t exceed two pages.' }}</span></div></li>
+    <li><span class="node">/apply</span><div><b>{{ 'Postular' if es else 'Apply' }}</b><span>{{ 'Un agente propone CV y carta a medida, otro los revisa y yo los leo antes de enviar. LibreOffice los pasa a PDF y el CV no puede pasar de dos páginas.' if es else 'One agent proposes a tailored CV and cover letter, another reviews them, and I read them before sending. LibreOffice converts them to PDF and the CV can’t exceed two pages.' }}</span></div></li>
     <li><span class="node">csv</span><div><b>{{ 'Seguir' if es else 'Track' }}</b><span>{{ 'Registro por oferta, planilla de seguimiento y fichas para preparar entrevistas.' if es else 'One record per opening, a tracking sheet and interview prep notes.' }}</span></div></li>
     <li><span class="node">push</span><div><b>{{ 'Publicar' if es else 'Publish' }}</b><span>{{ 'Un script junta todo en un JSON y actualiza mi visor en GitHub Pages.' if es else 'A script merges everything into JSON and updates my viewer on GitHub Pages.' }}</span></div></li>
   </ol>
