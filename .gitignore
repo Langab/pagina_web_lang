@@ -19,3 +19,6 @@ __pycache__/
 privado/
 # Versión «solo redirecciones» para la dirección antigua (la arma el workflow)
 _redirigir.nosync/
+
+# Fotos originales (traen GPS en los metadatos): al sitio van solo las versiones procesadas
+chambeando visual/

@@ -4,27 +4,26 @@
 
 hero:
   kicker: { es: Portafolio, en: Portfolio }
-  status: { es: "Disponible para nuevos cargos y proyectos", en: "Available for new roles and projects" }
+  status: { es: "Disponible para cargos de análisis de datos, BI e investigación", en: "Open to data analysis, BI and research roles" }
   name: Benjamín Lang Bustos
-  role: { es: "Sociólogo, analista de datos e investigador", en: "Sociologist, data analyst and researcher" }
+  role: { es: "Analista de datos y sociólogo", en: "Data analyst and sociologist" }
   lede:
-    es: "Sociólogo de la Universidad Diego Portales, titulado con distinción máxima. **Cinco años procesando y analizando datos** en el Instituto Nacional de Estadísticas, el Centro de Estudios Públicos, la Universidad Diego Portales y, hoy, el SLEP Santa Rosa. Trabajo con R, Python, SQL y Power BI, y desarrollo herramientas propias para automatizar el procesamiento y la entrega de resultados."
-    en: "Sociologist from Universidad Diego Portales, graduated with highest honors. **Five years processing and analyzing data** at Chile's National Statistics Institute, Centro de Estudios Públicos, Universidad Diego Portales and, today, SLEP Santa Rosa. I work with R, Python, SQL and Power BI, and I develop my own tools to automate processing and delivery."
+    es: "Tomo datos crudos y los dejo listos para decidir: limpios, validados y en un tablero o informe que el equipo entiende. En cinco años lo he hecho en el **Censo 2024 del INE**, en el **CEP** y hoy en el **SLEP Santa Rosa**, con R, Python, SQL y Power BI. Soy sociólogo de la UDP, titulado con distinción máxima."
+    en: "I take raw data and get it ready for a decision: clean, validated and in a dashboard or report the team understands. Over five years I've done it on the **2024 Census at INE**, at **CEP** and now at **SLEP Santa Rosa**, with R, Python, SQL and Power BI. I'm a sociologist from UDP, graduated with highest honors."
   badges:
     - { es: "R, Python, SQL y Power BI", en: "R, Python, SQL and Power BI" }
     - { es: R Markdown y Quarto, en: R Markdown and Quarto }
     - { es: Automatización, en: Automation }
     - { es: IA aplicada, en: Applied AI }
   cta_primary: { es: Ver trabajos y proyectos, en: See work and projects }
-  cta_secondary: { es: Ver CV completo, en: See full CV }
   cta_third: { es: Escríbeme, en: Get in touch }
   photo_alt: { es: Benjamín Lang presentando frente a un pendón del SLEP Santa Rosa, en: Benjamín Lang presenting next to an SLEP Santa Rosa banner }
   photo_caption: { es: "Presentando en el SLEP Santa Rosa", en: "Presenting at SLEP Santa Rosa" }
   stats:
-    - { value: "5", suffix: "+", label: { es: años de experiencia, en: years of experience } }
-    - { value: "14", label: { es: publicaciones, en: publications } }
-    - { value: "4", label: { es: sectores, en: sectors } }
-    - { value: "3", label: { es: idiomas, en: languages } }
+    - { value: "5", suffix: "+", label: { es: años trabajando con datos, en: years working with data } }
+    - { value: "10", label: { es: tableros de Power BI publicados, en: Power BI dashboards published } }
+    - { value: "1467", label: { es: documentos clasificados con GPT-4o, en: documents classified with GPT-4o } }
+    - { value: "14", label: { es: publicaciones en coautoría, en: co-authored publications } }
 
 logos:
   label: { es: Experiencia en, en: Experience at }
@@ -36,53 +35,79 @@ logos:
     - { name: C22, src: logos/c22.png, url: "https://c22cepchile.cl/", square: true }
     - { name: Tironi, src: logos/tironi.png, url: "https://tironi.cl/", square: true }
 
+# Lo que hago: cada tarjeta es un tipo de trabajo con un caso real, su cifra y el enlace a la
+# ventana del proyecto en /trabajos/ (`work` = id del trabajo en projects.yml).
 areas:
-  kicker: { es: Especialización, en: Expertise }
-  title: { es: Áreas de trabajo, en: Areas of work }
-  lede: { es: "Cuatro cosas que he hecho de forma repetida en estadística oficial, centros de estudio, consultoría y educación pública.", en: "Four things I've done repeatedly in official statistics, think tanks, consulting and public education." }
+  kicker: { es: En la práctica, en: In practice }
+  title: { es: "Lo que hago, con ejemplos", en: "What I do, with examples" }
+  lede: { es: "Seis tipos de trabajo que he repetido en distintos equipos. Cada uno abre el proyecto donde se ve en detalle.", en: "Six kinds of work I've done again and again across teams. Each one opens the project where you can see it in detail." }
+  see: { es: Ver el proyecto, en: See the project }
   items:
-    - title: { es: Ciencia de datos y estadística aplicada, en: Data science and applied statistics }
+    - title: { es: Automatizo la captura de datos, en: I automate data capture }
+      stat: { value: "4", label: { es: plataformas del Ministerio automatizadas, en: Ministry platforms automated } }
       text:
-        es: "En el INE validé y edité las variables básicas del Censo 2024, y construí indicadores demográficos comparados con los censos de 2017, 2002 y 1992."
-        en: "At INE I validated and edited the core variables of the 2024 Census, and built demographic indicators compared with the 2017, 2002 and 1992 censuses."
-      tags: [R, R Markdown, Python, { es: Control de calidad, en: Quality control }]
-    - title: { es: Gobernanza de datos en organizaciones, en: Data governance in organizations }
+        es: "En el SLEP Santa Rosa cambié las descargas a mano desde cuatro plataformas del Ministerio por scrapers en Python y un script maestro en R que deja las bases listas para la revisión mensual."
+        en: "At SLEP Santa Rosa I replaced manual downloads from four Ministry platforms with Python scrapers and a master R script that leaves the datasets ready for the monthly check."
+      tags: [Python, R, PowerShell]
+      work: slep
+    - title: { es: Armo tableros e informes que el equipo usa, en: I build dashboards and reports teams use }
+      stat: { value: "10", label: { es: tableros de Power BI publicados, en: Power BI dashboards published } }
       text:
-        es: "En el SLEP Santa Rosa definí cómo se capturan, validan y comparten los datos de las escuelas de cinco comunas, con reportes que cualquiera del equipo puede volver a correr."
-        en: "At SLEP Santa Rosa I defined how the schools of five municipalities capture, validate and share data, with reports anyone on the team can rerun."
-      tags: [Power BI, R Markdown, Excel, { es: Capacitación, en: Training }]
-    - title: { es: Diseño y análisis de encuestas, en: Survey design and analysis }
+        es: "Diez tableros de Power BI en el sitio interno del SLEP, fichas por escuela generadas desde R y, antes, un tablero público de nueve páginas para el Fondo del Libro."
+        en: "Ten Power BI dashboards on SLEP's internal site, school fact sheets generated from R and, earlier, a nine-page public dashboard for Fondo del Libro."
+      tags: [Power BI, R Markdown, Excel]
+      work: slep
+    - title: { es: Valido bases grandes, en: I validate large datasets }
+      stat: { value: "18.5", label: { es: millones de personas en el Censo 2024, en: million people in the 2024 Census } }
       text:
-        es: "Revisé el cuestionario y analicé las 1.273 respuestas válidas de la encuesta Radiografía a la Equidad Puertas Adentro, y trabajo datos de panel de ELSOC y de la Encuesta de Bienestar Social."
-        en: "I reviewed the questionnaire and analyzed the 1,273 valid responses of the Radiografía a la Equidad Puertas Adentro survey, and I work with ELSOC panel data and INE's Social Wellbeing Survey."
-      tags: [SPSS, R, { es: Muestreo, en: Sampling }, { es: Tablas cruzadas, en: Cross-tabs }]
-    - title: { es: Informes y análisis para decidir, en: Reports and analysis for decisions }
+        es: "En el INE escribí y corregí reglas en R para validar sexo, edad y parentesco, y armé informes de calidad para comparar escenarios de edición antes de decidir."
+        en: "At INE I wrote and fixed R rules to validate sex, age and relationship, and built quality reports to compare editing scenarios before a decision was made."
+      tags: [R, R Markdown, renv, GitLab]
+      work: censo-2024
+    - title: { es: Diseño y analizo encuestas, en: I design and analyze surveys }
+      stat: { value: "8", label: { es: olas del panel ELSOC procesadas, en: ELSOC panel waves processed } }
       text:
-        es: "Siete Puntos de Referencia del CEP, el boletín constitucional semanal de 2022 para clientes de Tironi y el informe cuantitativo de lectura digital para el Fondo del Libro."
-        en: "Seven CEP policy papers, the weekly 2022 constitutional bulletin for Tironi's clients, and the quantitative report on digital reading for Fondo del Libro."
-      tags: [{ es: Análisis de texto, en: Text analysis }, { es: Datos electorales, en: Electoral data }, { es: Opinión pública, en: Public opinion }]
+        es: "Con Joaquín Prieto preparé ocho olas del panel ELSOC (2016 a 2023), armé un índice de inseguridad económica y estimé modelos logísticos con imputación múltiple. En consultorías también asesoro el diseño de encuestas antes del terreno."
+        en: "With Joaquín Prieto I prepared eight waves of the ELSOC panel (2016 to 2023), built an economic insecurity index and fit logistic models with multiple imputation. In consulting work I also advise on survey design before fieldwork."
+      tags: [R, ELSOC, { es: Imputación múltiple, en: Multiple imputation }, SPSS]
+      work: prieto
+    - title: { es: Clasifico texto con modelos de lenguaje, en: I classify text with language models }
+      stat: { value: "1467", label: { es: memorandos del Banco Central codificados, en: Central Bank memos coded } }
+      text:
+        es: "Diseñé el prompt y las categorías para codificar con GPT-4o tres años de actas del Banco Central (1981 a 1983), y después analicé la base con redes y modelos de tópicos."
+        en: "I designed the prompt and the categories to code three years of Central Bank minutes (1981 to 1983) with GPT-4o, then analyzed the dataset with networks and topic models."
+      tags: [Python, OpenAI API, R, STM]
+      work: fondecyt-bc
+    - title: { es: Explico los datos a quien decide, en: I explain data to the people who decide }
+      stat: { value: "7", label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
+      text:
+        es: "En el CEP convertí votaciones, discursos y encuestas en análisis publicables, y en 2022 escribí el boletín constitucional semanal que Tironi mandaba a gerencias y directorios."
+        en: "At CEP I turned votes, speeches and surveys into publishable analysis, and in 2022 I wrote the weekly constitutional bulletin Tironi sent to executives and boards."
+      tags: [R, ggplot2, { es: Opinión pública, en: Public opinion }]
+      work: c22
+
+# Dónde he trabajado: lista corta con los cargos marcados `home: true` en experience.yml
+where:
+  kicker: { es: Trayectoria, en: Career }
+  title: { es: Dónde he trabajado, en: "Where I've worked" }
+  lede: { es: "Cargos, instituciones y años. El detalle de cada uno, con referencias, está en el CV.", en: "Roles, institutions and years. The detail for each one, with references, is in the CV." }
+  cta: { es: Ver CV completo, en: See full CV }
 
 cards:
-  kicker: { es: Secciones, en: Sections }
-  title: { es: Qué hay en este sitio, en: What's on this site }
+  kicker: { es: Más evidencia, en: More evidence }
+  title: { es: "Lo que construí y lo que publiqué", en: "What I built and what I published" }
   items:
-    - page: trabajos
-      title: { es: "Trabajos, proyectos y consultoría", en: "Work, projects and consulting" }
-      text: { es: "Diez proyectos en estadística oficial, centros de estudio, consultoría y educación pública: Censo 2024, C22 del CEP, SLEP Santa Rosa y Tironi, con lo que hice en cada uno.", en: "Ten projects in official statistics, think tanks, consulting and public education: the 2024 Census, CEP's C22, SLEP Santa Rosa and Tironi, with what I did on each." }
-    - page: cv
-      title: { es: CV completo, en: Full CV }
-      text: { es: "Experiencia, formación, herramientas, idiomas, docencia y referencias, con el PDF para descargar.", en: "Experience, education, tools, languages, teaching and references, with a PDF to download." }
+    - page: portafolio
+      title: { es: Proyectos propios, en: Personal projects }
+      text: { es: "Tres sistemas que hice por mi cuenta y están en uso: El Guarén, con 787 descuentos de 16 emisores verificados contra la página del banco; un visor que junta los arriendos de tres portales, y un buscador de empleo con agentes de IA.", en: "Three systems I built on my own that are in use: El Guarén, with 787 discounts from 16 issuers checked against each bank's page; a viewer that merges rental listings from three sites; and a job search engine with AI agents." }
     - page: publications
       title: { es: Publicaciones, en: Publications }
-      text: { es: "Un artículo en revista indexada, siete policy papers del Centro de Estudios Públicos y seis notas de investigación de C22.", en: "One peer-reviewed article, seven policy papers for Centro de Estudios Públicos and six C22 research notes." }
-    - page: portafolio
-      title: { es: Portafolio personal, en: Personal portfolio }
-      text: { es: "Proyectos propios, hechos fuera del horario de trabajo para practicar: pipelines de datos, verificación contra la fuente, bases de datos y visores.", en: "Personal projects built outside working hours to practice: data pipelines, verification against the source, databases and viewers." }
+      text: { es: "Un artículo en el Journal of Language and Politics, siete Puntos de Referencia del CEP y seis notas de investigación de C22, todos en coautoría.", en: "One article in the Journal of Language and Politics, seven CEP policy papers and six C22 research notes, all co-authored." }
 
 story:
   kicker: { es: Método de trabajo, en: How I work }
   title: { es: De una pregunta a una decisión, en: From a question to a decision }
-  lede: { es: "Cada punto es una persona, un aviso o un documento. Mi trabajo es ordenarlos hasta que digan algo útil.", en: "Every dot is a person, a listing or a document. My job is to arrange them until they say something useful." }
+  lede: { es: "Los puntos de la animación son registros: personas, avisos o documentos. Así paso de una base desordenada a algo que una institución usa.", en: "The dots in the animation are records: people, listings or documents. This is how I get from a messy dataset to something an institution uses." }
   steps:
     - label: { es: "720 puntos sueltos", en: "720 loose dots" }
       title: { es: Primero la pregunta y la decisión, en: First the question and the decision }
@@ -97,23 +122,23 @@ story:
         en: "Validating the 2024 Census taught me that most of the work is cleaning, joining and documenting. **Explicit rules, versioned code someone else can rerun** and written assumptions."
       tools: [R, SQL, Python, Git]
     - label: { es: "Dos grupos que se comparan", en: "Two groups compared" }
-      title: { es: El análisis busca diferencias que importan, en: Analysis looks for differences that matter }
+      title: { es: Luego el método que pide la pregunta, en: Then the method the question calls for }
       text:
-        es: "Modelos estadísticos, análisis de redes o clasificación automática de texto cuando el corpus es grande. **La técnica se elige por la pregunta** y se reporta con sus límites, incluidos los resultados nulos."
-        en: "Statistical models, network analysis or automated text classification when the corpus is large. **The method is chosen by the question** and reported with its limits, including null results."
+        es: "Regresiones logísticas con imputación múltiple para el panel ELSOC; redes y modelos de tópicos para los memorandos del Banco Central. **Cada resultado va con sus límites**, y los nulos también se informan."
+        en: "Logistic regressions with multiple imputation for the ELSOC panel; networks and topic models for the Central Bank memos. **Every result comes with its limits**, and null results get reported too."
       tools: [{ es: Modelos estadísticos, en: Statistical models }, GPT-4o, { es: Análisis de redes, en: Network analysis }, STM]
     - label: { es: "Los que importan", en: "The ones that matter" }
       title: { es: Y termina en algo que la institución usa, en: And it ends in something the institution uses }
       text:
-        es: "Un informe, un tablero o un flujo de reportes que el equipo pueda volver a correr sin mí. En el SLEP Santa Rosa eso significa que **las escuelas reciben sus indicadores al día** y que cualquiera puede auditar de dónde sale cada cifra."
-        en: "A report, a dashboard or a reporting pipeline the team can rerun without me. At SLEP Santa Rosa that means **schools get their indicators up to date** and anyone can audit where each figure comes from."
+        es: "Un informe, un tablero o un flujo de reportes que el equipo pueda volver a correr sin mí. En el SLEP Santa Rosa son **diez tableros de Power BI con revisión mensual** y fichas por escuela que se vuelven a generar desde R."
+        en: "A report, a dashboard or a reporting pipeline the team can rerun without me. At SLEP Santa Rosa that's **ten Power BI dashboards checked every month** and school fact sheets that can be regenerated from R."
       tools: [Power BI, Quarto, GitHub Actions, Claude Code]
 
 lab:
   kicker: { es: Desarrollos propios, en: Own developments }
   title: { es: Proyectos de datos de punta a punta, en: End-to-end data projects }
   lede: { es: "Proyectos donde me hice cargo del ciclo completo: definir la pregunta, obtener y limpiar los datos, escribir el código y publicar una herramienta que otra persona puede usar.", en: "Projects where I owned the full cycle: defining the question, obtaining and cleaning the data, writing the code and publishing a tool someone else can use." }
-  disclaimer: { es: "Son proyectos personales: los hice fuera del horario de trabajo, por gusto y para practicar herramientas. La experiencia profesional está en la pestaña de trabajos.", en: "These are personal projects: built outside working hours, for fun and to practice tools. The professional experience is in the work tab." }
+  disclaimer: { es: "Son proyectos personales, hechos fuera del horario de trabajo. Están publicados y los mantengo yo. La experiencia profesional está en la pestaña de trabajos.", en: "These are personal projects, built outside working hours. They are live and I maintain them myself. The professional experience is in the work tab." }
   more_title: { es: Otros desarrollos publicados, en: Other published work }
   more_text: { es: "Prototipos más chicos, todos en línea y con su código disponible.", en: "Smaller prototypes, all online and with their code available." }
 
@@ -124,8 +149,8 @@ work:
 
 career:
   kicker: { es: CV, en: CV }
-  title: { es: "Cinco años, cuatro mundos", en: "Five years, four worlds" }
-  lede: { es: "Estadística oficial, centros de estudio, consultoría estratégica y educación pública. Cada uno me enseñó a hablarle a un público distinto.", en: "Official statistics, think tanks, strategy consulting and public education. Each one taught me to talk to a different audience." }
+  title: { es: "Todo el recorrido, en orden", en: "The full track record, in order" }
+  lede: { es: "INE, CEP, Tironi, UDP y el SLEP Santa Rosa: cargos, fechas, herramientas y referencias con correo.", en: "INE, CEP, Tironi, UDP and SLEP Santa Rosa: roles, dates, tools and references with their email." }
   cta: { es: Ver CV completo, en: See full CV }
 
 teaching:
@@ -151,9 +176,9 @@ publications:
   counts:
     - { value: 1, label: { es: artículo en revista académica, en: peer-reviewed article } }
     - { value: 7, label: { es: policy papers del CEP, en: CEP policy papers } }
-    - { value: 6, label: { es: research notes de C22, en: C22 research notes } }
+    - { value: 6, label: { es: notas de investigación de C22, en: C22 research notes } }
   cta: { es: Ver todas las publicaciones, en: See all publications }
 
 contact:
   title: { es: "¿Conversamos?", en: "Let's talk." }
-  lede: { es: "Estoy disponible para cargos de analista de datos, investigación aplicada y consultoría. Si tienes una vacante o un proyecto, escríbeme y lo conversamos.", en: "I'm available for data analyst roles, applied research and consulting. If you have an opening or a project, write to me and let's talk." }
+  lede: { es: "Busco cargos de analista de datos, BI o investigación aplicada, con base en Santiago. Si tienes una vacante o un proyecto, escríbeme o llámame.", en: "I'm looking for data analyst, BI or applied research roles, based in Santiago. If you have an opening or a project, email or call me." }

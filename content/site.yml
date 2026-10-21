@@ -13,8 +13,8 @@ old_url: https://langab.github.io/pagina_web_lang/
 # Vacío = no se carga el script. Las visitas igual se cuentan con /api/uso.
 analytics_token: "8984154d5f2842788f497495a963bb37"  # sitio creado el 03-10-2026 (site tag en wrangler.toml)
 tagline:
-  es: Sociólogo y analista de datos
-  en: Sociologist and data analyst
+  es: Analista de datos y sociólogo
+  en: Data analyst and sociologist
 home_title:
   es: "Portafolio de datos e investigación social"
   en: "Data and social research portfolio"
@@ -23,7 +23,7 @@ description:
   en: Sociologist and data analyst based in Santiago, Chile. 2024 Census at INE, research at CEP and UDP, public education data, and self-built tools with Python and AI agents.
 
 contact:
-  email: benjalang1997@gmail.com
+  email: benjamin.lang.bustos@gmail.com
   phone: "+56 9 6309 5562"
   phone_href: "+56963095562"
   linkedin: https://www.linkedin.com/in/benjamin-lang-a78229207/
@@ -121,6 +121,10 @@ ui:
   all_projects: { es: Ver todo el portafolio, en: See the full portfolio }
   filter_all: { es: Todos, en: All }
   what_i_did: { es: Qué hice, en: What I did }
+  the_problem: { es: El problema, en: The problem }
+  for_you: { es: Lo que puedo hacer en tu equipo, en: What I can do for your team }
+  for_you_anchor: { es: en-tu-equipo, en: for-your-team }
+  parallel: { es: En paralelo, en: Alongside }
   how_it_works: { es: Cómo funciona, en: How it works }
   tools: { es: Herramientas, en: Tools }
   in_numbers: { es: En números, en: In numbers }
@@ -135,7 +139,7 @@ ui:
   copied: { es: Copiado, en: Copied }
   email: { es: Correo, en: Email }
   phone: { es: Teléfono, en: Phone }
-  footer_note: { es: "Sitio hecho a mano con Python, Jinja y bastante café. Se publica solo en Cloudflare Pages.", en: "Hand-built with Python, Jinja and plenty of coffee. Deployed automatically to Cloudflare Pages." }
+  footer_note: { es: "Sitio hecho a mano con Python y Jinja. Se publica solo en Cloudflare Pages.", en: "Hand-built with Python and Jinja. It deploys itself to Cloudflare Pages." }
   source_code: { es: Código del sitio, en: Site source }
   back_home: { es: Volver al inicio, en: Back to home }
   read_article: { es: Leer artículo, en: Read article }

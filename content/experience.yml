@@ -1,17 +1,18 @@
 # ─────────────────────────────────────────────────────────────────────────
 # Trayectoria: trabajos, formación, habilidades, idiomas, docencia.
 # `current: true` marca lo que sigue en curso. `home: true` lo muestra en la portada.
+# `parallel: true` marca lo que hice al mismo tiempo que el cargo principal de esos años.
 # ─────────────────────────────────────────────────────────────────────────
 
 summary:
   es: |
-    Soy sociólogo de la Universidad Diego Portales, titulado con distinción máxima y primero de mi generación. Me muevo entre la metodología cuantitativa, la investigación cualitativa y el código.
+    Soy sociólogo de la Universidad Diego Portales, titulado con distinción máxima y primero de mi generación. Hago análisis cuantitativo y cualitativo, y escribo el código para que otra persona pueda repetirlo.
 
-    Hoy trabajo como analista de datos en el Servicio Local de Educación Pública Santa Rosa. Antes validé datos del Censo 2024 en el INE, analicé el proceso constitucional en el CEP y codifiqué actas del Banco Central para un Fondecyt. Me gusta que un análisis termine en algo que otra persona pueda usar el lunes.
+    Hoy trabajo como analista de datos en el Servicio Local de Educación Pública Santa Rosa. Antes validé datos del Censo 2024 en el INE, analicé el proceso constitucional en el CEP y codifiqué actas del Banco Central para un Fondecyt. Lo que más me gusta es que un análisis termine en algo que el equipo usa: un tablero, una ficha o un informe.
   en: |
-    I'm a sociologist from Universidad Diego Portales, graduated with highest honors and first in my class. I work where quantitative methods, qualitative research and code meet.
+    I'm a sociologist from Universidad Diego Portales, graduated with highest honors and first in my class. I do quantitative and qualitative analysis, and I write the code so someone else can repeat it.
 
-    Today I'm a data analyst at Servicio Local de Educación Pública Santa Rosa, a public school district in southern Santiago. Before that I validated 2024 Census data at INE, analyzed Chile's constitutional process at CEP and coded Central Bank minutes for a Fondecyt research grant. I like analysis that ends in something another person can use on Monday.
+    Today I'm a data analyst at Servicio Local de Educación Pública Santa Rosa, a public school district in southern Santiago. Before that I validated 2024 Census data at INE, analyzed Chile's constitutional process at CEP and coded Central Bank minutes for a Fondecyt research grant. What I like most is when an analysis ends in something the team uses: a dashboard, a fact sheet or a report.
 
 target:
   kicker: { es: Rol que busco, en: Role I'm looking for }
@@ -21,7 +22,7 @@ target:
     en: "Roles in data analysis, business intelligence or applied research, in public institutions, think tanks or companies that need to organize their data before deciding. Based in Santiago, Chile."
   items:
     - { es: "Procesamiento y validación de datos a gran escala", en: "Large-scale data processing and validation" }
-    - { es: "Tableros e informes que se actualizan solos", en: "Self-updating dashboards and reports" }
+    - { es: "Tableros e informes que se pueden volver a generar", en: "Dashboards and reports that can be regenerated" }
     - { es: "Gobernanza de datos y documentación", en: "Data governance and documentation" }
     - { es: "Diseño y análisis de encuestas", en: "Survey design and analysis" }
 
@@ -36,6 +37,7 @@ jobs:
       es: "Llevo el flujo completo de datos del servicio: captura automatizada desde las plataformas del Ministerio, consolidación en R, validación mensual y diez tableros de Power BI publicados en el sitio interno. Genero además fichas por establecimiento e informes de matrícula, asistencia y trayectoria docente para las cinco comunas."
       en: "I run the service's full data flow: automated capture from the Ministry's platforms, consolidation in R, monthly validation and ten Power BI dashboards published on the internal site. I also produce school-level fact sheets and enrollment, attendance and teacher trajectory reports for the five municipalities."
   - id: aldeas
+    parallel: true
     current: true
     when: { es: "2025 – hoy", en: "2025 – now" }
     role: { es: Consultor en habilidades digitales, en: Digital skills consultant }
@@ -44,6 +46,7 @@ jobs:
       es: "Diagnóstico mixto de brechas digitales con el marco europeo DigComp 2.2 y grupos focales en cuatro aldeas, y el plan de formación 2026 que salió de ahí. Lidero los talleres de la sede Quilpué."
       en: "Mixed-methods assessment of digital skills gaps using the European DigComp 2.2 framework and focus groups in four villages, plus the 2026 training plan that followed. I lead the workshops at the Quilpué site."
   - id: prieto
+    parallel: true
     current: true
     home: true
     when: { es: "2025 – hoy", en: "2025 – now" }
@@ -61,6 +64,7 @@ jobs:
       es: "Validación, edición e imputación de las variables de persona (sexo, edad y parentesco) dentro del código en R del procesamiento censal, más la codificación de respuestas del cuestionario en papel. Construí informes de calidad e indicadores demográficos comparados con los censos de 2017, 2002 y 1992."
       en: "Validation, editing and imputation of person-level variables (sex, age and relationship) inside the R codebase of census processing, plus coding of paper questionnaire answers. I built quality reports and demographic indicators compared with the 2017, 2002 and 1992 censuses."
   - id: fondecyt-bc
+    parallel: true
     home: true
     when: { es: "2024 – 2025", en: "2024 – 2025" }
     role: { es: "Investigador, Fondecyt N° 1231356", en: "Researcher, Fondecyt grant 1231356" }
@@ -121,17 +125,11 @@ education:
     note: { es: "Procesamiento, visualización y modelamiento para el Censo 2024.", en: "Processing, visualization and modeling for the 2024 Census." }
 
 skills:
-  note: { es: "Ordenadas por lo que más aparece en los avisos de analista de datos y BI que sigo: SQL, Power BI, Python, Excel y control de versiones.", en: "Ordered by what shows up most in the data analyst and BI postings I track: SQL, Power BI, Python, Excel and version control." }
+  note: { es: "Agrupadas por tipo de trabajo. Los puntos son mi propia evaluación, de 1 a 5.", en: "Grouped by kind of work. The dots are my own rating, from 1 to 5." }
   groups:
-    - title: { es: Datos y bases, en: Data and databases }
-      items:
-        - { name: SQL, level: 3, note: { es: "Consultas, joins y agregaciones para armar bases de análisis", en: "Queries, joins and aggregations to build analysis datasets" } }
-        - { name: Excel, level: 5, note: { es: "Modelado de datos, tablas dinámicas y macros", en: "Data modeling, pivot tables and macros" } }
-        - { name: { es: "ETL y automatización", en: "ETL and automation" }, level: 4, note: { es: "Pipelines reproducibles, scrapers y tareas programadas", en: "Reproducible pipelines, scrapers and scheduled jobs" } }
-        - { name: { es: "Gobernanza de datos", en: "Data governance" }, level: 4, note: { es: "Estándares de captura, validación, nombres y documentación", en: "Standards for capture, validation, naming and documentation" } }
     - title: { es: Visualización y reportería, en: Visualization and reporting }
       items:
-        - { name: Power BI, level: 5, note: { es: "Modelo de datos, DAX, Power Query, publicación y actualización", en: "Data model, DAX, Power Query, publishing and refresh" } }
+        - { name: Power BI, level: 4, note: { es: "Modelo de datos, Power Query, DAX de uso diario, publicación y actualización", en: "Data model, Power Query, everyday DAX, publishing and refresh" } }
         - { name: { es: "R Markdown y Quarto", en: "R Markdown and Quarto" }, level: 5, note: { es: "Informes y fichas reproducibles en HTML y PDF", en: "Reproducible reports and fact sheets in HTML and PDF" } }
         - { name: { es: "Indicadores y KPI", en: "Indicators and KPIs" }, level: 4, note: { es: "Construcción, documentación y seguimiento en el tiempo", en: "Construction, documentation and tracking over time" } }
     - title: { es: Análisis estadístico, en: Statistical analysis }
@@ -139,6 +137,12 @@ skills:
         - { name: R, level: 5, note: { es: "tidyverse, ggplot2, modelos y datos de panel", en: "tidyverse, ggplot2, models and panel data" } }
         - { name: Python, level: 3, note: { es: "pandas, scraping con Playwright y procesamiento de archivos grandes", en: "pandas, Playwright scraping and large-file processing" } }
         - { name: { es: "Modelos y métodos", en: "Models and methods" }, level: 4, note: { es: "Regresión logística, imputación múltiple, mediación, análisis de redes", en: "Logistic regression, multiple imputation, mediation, network analysis" } }
+    - title: { es: Datos y bases, en: Data and databases }
+      items:
+        - { name: Excel, level: 5, note: { es: "Modelado de datos, tablas dinámicas y macros", en: "Data modeling, pivot tables and macros" } }
+        - { name: { es: "ETL y automatización", en: "ETL and automation" }, level: 4, note: { es: "Pipelines reproducibles, scrapers y tareas programadas", en: "Reproducible pipelines, scrapers and scheduled jobs" } }
+        - { name: { es: "Gobernanza de datos", en: "Data governance" }, level: 4, note: { es: "Estándares de captura, validación, nombres y documentación", en: "Standards for capture, validation, naming and documentation" } }
+        - { name: SQL, level: 3, note: { es: "Consultas, joins y agregaciones para armar bases de análisis", en: "Queries, joins and aggregations to build analysis datasets" } }
     - title: { es: Investigación social, en: Social research }
       items:
         - { name: { es: "Diseño de encuestas", en: "Survey design" }, level: 4, note: { es: "Cuestionarios, escalas validadas, muestreo y pilotaje", en: "Questionnaires, validated scales, sampling and piloting" } }

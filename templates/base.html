@@ -65,11 +65,14 @@
   <div class="menu-overlay" id="menu-overlay" hidden data-menu>
     <nav class="wrap" aria-label="{{ ui.menu }}">
       <ul>
-        <li><a href="{{ url('home') }}">{{ ui.home }}</a></li>
         {% for item in site.nav %}
         <li><a href="{{ url(item.id, item.anchor | default('')) }}">{{ item.label | t }}</a></li>
         {% endfor %}
       </ul>
+      <div class="menu-actions">
+        <a class="btn btn-solid" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
+        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ ui.download_cv }}</a>
+      </div>
       <a class="lang-switch lang-switch-big" href="{{ switch_url }}" hreflang="{{ other_lang }}">{{ ui.switch_label }}</a>
     </nav>
   </div>
