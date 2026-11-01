@@ -18,7 +18,7 @@
       <div class="cover">{{ m.picture(p.image, '') }}</div>
       <div class="body">
         <span class="kicker" style="margin:0">{{ p.status | t }}</span>
-        <h3>{{ p.title | t }}</h3>
+        <h2>{{ p.title | t }}</h2>
         <p>{{ p.hook | t }}</p>
       </div>
     </a>
@@ -26,7 +26,7 @@
   </div>
 
   <div class="more-experiments">
-    <h3>{{ home.lab.more_title | t }}</h3>
+    <h2>{{ home.lab.more_title | t }}</h2>
     <p>{{ home.lab.more_text | t }}</p>
     <div class="mini-grid">
       {% for e in projects.experiments %}

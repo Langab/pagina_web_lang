@@ -30,10 +30,10 @@
   <h2>{{ 'Lo que encontró esta mañana' if es else 'What it found this morning' }}</h2>
   <p>{{ 'Estas cifras se leen del visor real cada vez que se publica este sitio.' if es else 'These numbers are read from the live finder every time this site is published.' }}</p>
   <div class="live">
-    <div><b data-count="{{ live.total }}">{{ live.total | num }}</b><span>{{ 'avisos revisados' if es else 'listings checked' }}</span></div>
-    <div><b data-count="{{ live.new }}">{{ live.new | num }}</b><span>{{ 'nuevos desde la corrida anterior' if es else 'new since the previous run' }}</span></div>
-    <div><b data-count="{{ live.days }}">{{ live.days }}</b><span>{{ 'días de historia guardados' if es else 'days of history kept' }}</span></div>
-    <div><b data-count="{{ live.match }}" style="color:#1FA971">{{ live.match }}</b><span>{{ 'match perfecto' if es else 'perfect matches' }}</span></div>
+    <div><b>{{ live.total | num }}</b><span>{{ 'avisos revisados' if es else 'listings checked' }}</span></div>
+    <div><b>{{ live.new | num }}</b><span>{{ 'nuevos desde la corrida anterior' if es else 'new since the previous run' }}</span></div>
+    <div><b>{{ live.days }}</b><span>{{ 'días de historia guardados' if es else 'days of history kept' }}</span></div>
+    <div><b style="color:#157F54">{{ live.match }}</b><span>{{ 'match perfecto' if es else 'perfect matches' }}</span></div>
   </div>
   <p class="live-note"><i aria-hidden="true"></i>{{ 'Actualizado' if es else 'Updated' }} {{ live.generated }}</p>
 
@@ -69,7 +69,7 @@
     {"c": "ok", "t": "✓ " ~ live.match ~ (" match perfecto · visor publicado" if es else " perfect matches · viewer published")}
   ] | tojson }}'>
     <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="terminal-body" aria-label="{{ 'Salida del comando run_all.py' if es else 'Output of run_all.py' }}"></div>
+    <div class="terminal-body" role="group" aria-label="{{ 'Salida del comando run_all.py' if es else 'Output of run_all.py' }}"></div>
   </div>
   <p>{{ 'La decisión más importante fue definir un esquema común antes de escribir el primer scraper. Cada portal tiene su HTML, pero todos devuelven la misma estructura. Agregar un portal nuevo es escribir un archivo que devuelva una lista de avisos y nada más.' if es else 'The most important decision was defining a shared schema before writing the first scraper. Every site has its own HTML, but all of them return the same structure. Adding a new site means writing one file that returns a list of listings, nothing else.' }}</p>
 </section>
@@ -167,6 +167,6 @@ match_perfecto = sirve <span class="k">and</span> total_con_gastos &lt;= <span c
   </ul>
   <div class="callout callout-cobalto">
     <p>{{ '¿Lo quieres para tu búsqueda? Todos los criterios viven en config.py: cambia comunas, presupuesto y barrios, corre python run_all.py y tienes tu propio visor.' if es else 'Want it for your own search? All the criteria live in config.py: change the municipalities, budget and neighborhoods, run python run_all.py and you have your own finder.' }}</p>
-    <div class="actions" style="margin-top:1rem"><a class="btn btn-small btn-solid" href="https://github.com/Langab/visor_arriendos" target="_blank" rel="noopener">{{ 'Ver el código' if es else 'See the code' }} {{ m.icon('out') }}</a></div>
+    <div class="actions" style="margin-top:1rem"><a class="btn btn-small btn-solid" href="https://github.com/Langab/visor_arriendos" target="_blank" rel="noopener">{{ 'Ver el código' if es else 'See the code' }}</a></div>
   </div>
 </section>

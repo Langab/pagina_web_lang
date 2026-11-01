@@ -10,7 +10,7 @@
     <p class="hook">{{ p.hook | t }}</p>
     {% if p.links is defined %}
     <div class="actions" style="margin-top:1.75rem">
-      {% for l in p.links %}<a class="btn{{ ' btn-solid' if loop.first }}" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | t }} {{ m.icon('out') }}</a>{% endfor %}
+      {% for l in p.links %}<a class="btn{{ ' btn-solid' if loop.first }}" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | t }}</a>{% endfor %}
     </div>
     {% endif %}
     <dl class="p-meta">

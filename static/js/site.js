@@ -1,50 +1,25 @@
 /* Benjamín Lang — interacciones del sitio. Sin dependencias. */
 (() => {
   const doc = document.documentElement;
-  const lang = doc.lang || "es";
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
   const css = (name) => getComputedStyle(doc).getPropertyValue(name).trim();
-  const fmt = new Intl.NumberFormat(lang === "es" ? "es-CL" : "en-US");
 
-  /* ── Encabezado: estado al hacer scroll y barra de progreso ───────── */
+  /* ── Encabezado: la línea de abajo aparece al bajar ───────────────── */
   const header = $("[data-header]");
-  const progress = $("[data-progress]");
   let ticking = false;
   const onScroll = () => {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
-      const y = window.scrollY;
-      header?.classList.toggle("is-scrolled", y > 8);
-      if (progress) {
-        const max = doc.scrollHeight - window.innerHeight;
-        progress.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
-      }
+      header?.classList.toggle("is-scrolled", window.scrollY > 8);
       ticking = false;
     });
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-
-  /* ── Menú móvil a pantalla completa ───────────────────────────────── */
-  const toggle = $("[data-menu-toggle]");
-  const menu = $("[data-menu]");
-  const setMenu = (open) => {
-    toggle.setAttribute("aria-expanded", String(open));
-    menu.hidden = !open;
-    doc.classList.toggle("modal-open", open);
-  };
-  toggle?.addEventListener("click", () => setMenu(toggle.getAttribute("aria-expanded") !== "true"));
-  menu?.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && menu && !menu.hidden) setMenu(false); });
-
-  /* ── Entrada del hero ─────────────────────────────────────────────── */
-  const ready = () => requestAnimationFrame(() => doc.classList.add("is-ready"));
-  if (document.fonts && !reduced) document.fonts.ready.then(ready); else ready();
-  setTimeout(ready, 1200);
 
   /* ── Aparición al entrar en pantalla ──────────────────────────────── */
   const io = new IntersectionObserver((entries) => {
@@ -55,26 +30,7 @@
       io.unobserve(entry.target);
     });
   }, { rootMargin: "0px 0px -12% 0px", threshold: 0.05 });
-  $$("[data-reveal], .funnel, .reveal-bars, [data-count], [data-type], .pipeline").forEach((el) => io.observe(el));
-
-  /* ── Contadores ───────────────────────────────────────────────────── */
-  const countUp = (el) => {
-    const target = parseFloat(el.dataset.count);
-    const decimals = (el.dataset.count.split(".")[1] || "").length;
-    const prefix = el.dataset.prefix || "";
-    const suffix = el.dataset.suffix || "";
-    const show = (v) => { el.textContent = prefix + (decimals ? v.toFixed(decimals).replace(".", lang === "es" ? "," : ".") : fmt.format(Math.round(v))) + suffix; };
-    if (reduced || isNaN(target)) return show(target || 0);
-    const t0 = performance.now();
-    const dur = Math.min(2200, 900 + Math.log10(Math.abs(target) + 1) * 350);
-    const step = (now) => {
-      const p = Math.min(1, (now - t0) / dur);
-      show(target * (1 - Math.pow(1 - p, 4)));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-  $$("[data-count]").forEach((el) => el.addEventListener("in", () => countUp(el), { once: true }));
+  $$("[data-reveal], .funnel, .reveal-bars, [data-type], .pipeline").forEach((el) => io.observe(el));
 
   /* ── Terminal que escribe ─────────────────────────────────────────── */
   $$("[data-type]").forEach((term) => {
@@ -127,7 +83,6 @@
     doc.classList.add("modal-open");
     dialog.scrollTop = 0;
     history.replaceState(null, "", `#${dialog.id}`);
-    $$("[data-count]", dialog).forEach((el) => countUp(el));
     $$(".reveal-bars", dialog).forEach((el) => setTimeout(() => el.classList.add("is-in"), 150));
   };
   const closeModal = (dialog) => {
@@ -172,22 +127,32 @@
   /* ── Vista previa flotante al pasar sobre un proyecto ─────────────── */
   const preview = $("[data-preview-box]");
   if (preview && fineHover) {
-    const img = $("img", preview);
-    let x = 0, y = 0, px = 0, py = 0, raf = null;
+    const img = new Image();
+    img.alt = ""; img.decoding = "async";
+    let x = 0, y = 0, px = 0, py = 0, raf = null, encima = null;
     const loop = () => {
       px += (x - px) * 0.18; py += (y - py) * 0.18;
       preview.style.left = `${px + 170}px`; preview.style.top = `${py}px`;
       raf = preview.classList.contains("is-on") || Math.abs(x - px) > 0.5 ? requestAnimationFrame(loop) : null;
     };
     $$("[data-preview]").forEach((row) => {
-      row.addEventListener("pointerenter", (e) => {
-        img.src = row.dataset.preview; img.alt = "";
-        x = px = e.clientX; y = py = e.clientY;
+      // El cuadro aparece solo cuando su imagen ya cargó y el cursor sigue sobre la fila.
+      const mostrar = () => {
+        if (encima !== row) return;
+        if (!img.isConnected) preview.append(img);
         preview.classList.add("is-on");
         if (!raf) raf = requestAnimationFrame(loop);
+      };
+      row.addEventListener("pointerenter", (e) => {
+        encima = row;
+        x = px = e.clientX; y = py = e.clientY;
+        if (img.getAttribute("src") === row.dataset.preview && img.complete) return mostrar();
+        preview.classList.remove("is-on");
+        img.onload = mostrar;
+        img.src = row.dataset.preview;
       });
       row.addEventListener("pointermove", (e) => { x = e.clientX; y = e.clientY; });
-      row.addEventListener("pointerleave", () => preview.classList.remove("is-on"));
+      row.addEventListener("pointerleave", () => { encima = null; preview.classList.remove("is-on"); });
     });
   }
 
@@ -253,98 +218,293 @@
   });
 
   /* ================================================================== */
-  /* Puntos: la foto del hero se arma con puntos                         */
+  /* Portada: fuentes, entrada, la «a» viva y la cinta                   */
   /* ================================================================== */
-  const heroPhoto = $("[data-dots-photo]");
-  if (heroPhoto) {
-    const img = $("img", heroPhoto);
-    const canvas = $("canvas", heroPhoto);
-    const ctx = canvas.getContext("2d");
-    const cobalt = css("--cobalto-claro") || "#93A0FF";
-    let dots = [], W = 0, H = 0, dpr = 1, step = 11, phase = "idle", t0 = 0, pointer = null, raf = null;
+  const portada = $("[data-portada]");
+  if (portada) {
+    const recorte = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+    const suave = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+    const salida = (p) => 1 - Math.pow(1 - p, 3);
+    const cinta = $("[data-cinta]");
 
-    const sample = () => {
-      const r = heroPhoto.getBoundingClientRect();
-      dpr = Math.min(2, window.devicePixelRatio || 1);
-      W = r.width; H = r.height;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      step = W < 420 ? 9 : 11;
-      const cols = Math.ceil(W / step), rows = Math.ceil(H / step);
-      const off = document.createElement("canvas");
-      off.width = cols; off.height = rows;
-      const o = off.getContext("2d");
-      // replicar object-fit: cover
-      const scale = Math.max(cols / img.naturalWidth, rows / img.naturalHeight);
-      const dw = img.naturalWidth * scale, dh = img.naturalHeight * scale;
-      const pos = getComputedStyle(img).objectPosition.split(" ").map((v) => parseFloat(v) / 100);
-      o.drawImage(img, (cols - dw) * (pos[0] || 0.5), (rows - dh) * (pos[1] || 0.5), dw, dh);
-      let pixels;
-      try { pixels = o.getImageData(0, 0, cols, rows).data; } catch { return false; }
-      dots = [];
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          const i = (y * cols + x) * 4;
-          const lum = (0.2126 * pixels[i] + 0.7152 * pixels[i + 1] + 0.0722 * pixels[i + 2]) / 255;
-          const tx = x * step + step / 2, ty = y * step + step / 2;
-          const angle = Math.random() * Math.PI * 2, dist = Math.max(W, H) * (0.4 + Math.random() * 0.6);
-          dots.push({ tx, ty, sx: W / 2 + Math.cos(angle) * dist, sy: H / 2 + Math.sin(angle) * dist, r: Math.max(0.6, (1 - lum) * step * 0.52), delay: Math.random() * 0.35 + (ty / H) * 0.25 });
-        }
-      }
-      return true;
+    // 1. Fuentes: la carrera «fuente del nombre o 400 ms» parte en el <head> (base.html), apenas
+    //    carga el CSS; ahí se ponen «listo» y «entra». Aquí solo se espera su resultado.
+    const fuentes = window.blFuentes || Promise.resolve(false);
+    if (!window.blFuentes) doc.classList.add("listo");
+
+    // 2. Lo que se mueve solo corre únicamente si se ve: portada en pantalla, pestaña activa y
+    //    sin la pausa del botón de la cinta (WCAG 2.2.2; la elección se recuerda en este navegador).
+    let detenido = false;
+    try { detenido = localStorage.getItem("bl.quieto") === "1"; } catch { /* almacenamiento bloqueado */ }
+    let enPantalla = true, pestana = !document.hidden, visible = !detenido;
+    const oyentes = new Set();
+    const avisar = () => {
+      const v = enPantalla && pestana && !detenido;
+      if (v === visible) return;
+      visible = v;
+      oyentes.forEach((fn) => fn(v));
+    };
+    new IntersectionObserver(([e]) => { enPantalla = e.isIntersecting; avisar(); }).observe(portada);
+    document.addEventListener("visibilitychange", () => { pestana = !document.hidden; avisar(); });
+
+    // Bucle con reloj propio: al pausar, el tiempo se congela y retoma donde quedó.
+    const bucle = (dibujar) => {
+      let id = 0, ultimo = 0, t = 0, activo = false;
+      const paso = (ahora) => {
+        t += Math.min(ahora - ultimo, 50) / 1000;
+        ultimo = ahora;
+        dibujar(t);
+        if (activo) id = requestAnimationFrame(paso);
+      };
+      const cambiar = (v) => {
+        if (v && !activo) { activo = true; ultimo = performance.now(); id = requestAnimationFrame(paso); }
+        if (!v) { activo = false; cancelAnimationFrame(id); }
+      };
+      oyentes.add(cambiar);
+      cambiar(visible);
     };
 
-    const ease = (p) => 1 - Math.pow(1 - p, 3);
-    const draw = (now) => {
-      ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = cobalt;
-      if (phase === "intro") {
-        const elapsed = (now - t0) / 1000;
-        const fade = Math.max(0, Math.min(1, (elapsed - 1.25) / 0.7));
-        ctx.globalAlpha = 1 - fade;
-        for (const d of dots) {
-          const p = ease(Math.max(0, Math.min(1, (elapsed - d.delay) / 1.0)));
-          ctx.beginPath();
-          ctx.arc(d.sx + (d.tx - d.sx) * p, d.sy + (d.ty - d.sy) * p, d.r, 0, 6.283);
-          ctx.fill();
-        }
-        if (elapsed > 0.95) heroPhoto.classList.add("is-photo");
-        if (fade >= 1) { phase = "idle"; ctx.clearRect(0, 0, W, H); }
-      }
-      if (phase === "idle" && pointer) {
-        const R = Math.min(120, W * 0.28);
-        for (const d of dots) {
-          const dx = d.tx - pointer.x, dy = d.ty - pointer.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist > R) continue;
-          ctx.globalAlpha = Math.pow(1 - dist / R, 0.8) * 0.95;
-          ctx.beginPath();
-          ctx.arc(d.tx, d.ty, Math.max(0.8, d.r * 0.9), 0, 6.283);
-          ctx.fill();
-        }
-      }
-      ctx.globalAlpha = 1;
-      raf = phase === "intro" || pointer ? requestAnimationFrame(draw) : null;
-    };
+    // 3. La «a» de Lang: se vuelve puntos, se pone líquida (los avisos se tiñen de cobalto),
+    //    se ordena en una columna de registros con los avisos arriba y vuelve a ser letra.
+    //    Canvas 2D, un lienzo del tamaño de la letra con margen. Si el canvas no dibuja la
+    //    letra igual que la página, no se hace nada y queda la «a» normal.
+    const viva = $("[data-viva]", portada);
+    const letraViva = () => {
+      const lienzo = document.createElement("canvas");
+      const ctx = lienzo.getContext("2d");
+      if (!ctx) return;
+      lienzo.className = "lienzo-letra";
+      lienzo.setAttribute("aria-hidden", "true");
+      portada.append(lienzo);
+      const TINTA = css("--tinta") || "#121735";
+      const COBALTO = css("--cobalto") || "#2B3BF5";
+      const ESTIRAR = { "62.5%": "extra-condensed", "75%": "condensed", "87.5%": "semi-condensed", "100%": "normal" };
+      let G = null;
 
-    const start = () => {
-      if (!sample()) { heroPhoto.classList.add("is-photo"); return; }
-      if (reduced) { heroPhoto.classList.add("is-photo"); return; }
-      phase = "intro"; t0 = performance.now();
-      raf = requestAnimationFrame(draw);
-    };
-    if (img.complete && img.naturalWidth) start(); else img.addEventListener("load", start, { once: true });
+      const posicion = (el) => {
+        let x = 0, y = 0, n = el;
+        while (n && n !== portada) { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; }
+        return { x, y };
+      };
+      const azar = (semilla) => () => {
+        semilla |= 0; semilla = (semilla + 0x6D2B79F5) | 0;
+        let t = Math.imul(semilla ^ (semilla >>> 15), 1 | semilla);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
 
-    if (fineHover && !reduced) {
-      heroPhoto.addEventListener("pointermove", (e) => {
-        const r = heroPhoto.getBoundingClientRect();
-        pointer = { x: e.clientX - r.left, y: e.clientY - r.top };
-        if (!raf) raf = requestAnimationFrame(draw);
+      const medir = () => {
+        const cs = getComputedStyle(viva);
+        const fs = parseFloat(cs.fontSize);
+        const estirar = ESTIRAR[cs.fontStretch] || "normal";
+        const { x, y } = posicion(viva);
+        const w = viva.offsetWidth, h = viva.offsetHeight;
+        const pad = Math.round(fs * 0.7);
+        const W = w + pad * 2, H = h + pad * 2;
+        const dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth <= 900 ? 1.75 : 2);
+        Object.assign(lienzo.style, { left: `${x - pad}px`, top: `${y - pad}px`, width: `${W}px`, height: `${H}px` });
+        lienzo.width = Math.round(W * dpr);
+        lienzo.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        // La letra en un lienzo aparte, con la misma fuente y la misma línea base.
+        const oc = document.createElement("canvas");
+        oc.width = Math.ceil(W); oc.height = Math.ceil(H);
+        const o = oc.getContext("2d", { willReadFrequently: true });
+        o.font = `${estirar} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+        const conAncho = "fontStretch" in o;
+        if (conAncho) o.fontStretch = estirar;
+        o.textBaseline = "alphabetic";
+        const m = o.measureText("a");
+        const ls = parseFloat(cs.letterSpacing) || 0;
+        const avance = w - ls;
+        if (!m.width) return false;
+        // WebKit (Safari, iPhone): el canvas no tiene fontStretch y bota el ancho del shorthand,
+        // así que dibuja la «a» ancha. Se angosta en X hasta el ancho que tiene en la página.
+        let sx = 1;
+        if (Math.abs(m.width - avance) > Math.max(2, w * 0.04)) {
+          if (conAncho) return false;
+          sx = avance / m.width;
+          if (sx < 0.7 || sx > 1.02) return false;
+        }
+        const bx = pad, by = pad + m.fontBoundingBoxAscent;
+        o.setTransform(sx, 0, 0, 1, bx * (1 - sx), 0);
+        o.fillText("a", bx, by);
+        o.setTransform(1, 0, 0, 1, 0, 0);
+        const datos = o.getImageData(0, 0, oc.width, oc.height).data;
+        const hay = (px, py) => {
+          px = Math.round(px); py = Math.round(py);
+          if (px < 0 || py < 0 || px >= oc.width || py >= oc.height) return false;
+          return datos[(py * oc.width + px) * 4 + 3] > 110;
+        };
+        const izq = bx - m.actualBoundingBoxLeft * sx, der = bx + m.actualBoundingBoxRight * sx;
+        const arr = by - m.actualBoundingBoxAscent, aba = by + m.actualBoundingBoxDescent;
+        const cx = (izq + der) / 2, cy = (arr + aba) / 2;
+        const paso = Math.max(3.6, fs / 28);
+        const nx = Math.floor((der - izq) / paso), ny = Math.floor((aba - arr) / paso);
+        const ox = cx - (nx * paso) / 2, oy = cy - (ny * paso) / 2;
+
+        const r = azar(11);
+        const pts = [];
+        for (let j = 0; j <= ny; j++) {
+          for (let i = 0; i <= nx; i++) {
+            const lx = ox + i * paso, ly = oy + j * paso;
+            if (hay(lx, ly)) pts.push({ lx, ly });
+          }
+        }
+        const N = pts.length;
+        if (N < 12) return false;
+        // Uno de cada nueve puntos es un aviso (cobalto).
+        pts.forEach((p) => { p.aviso = r() < 0.11; p.fase = r() * Math.PI * 2; p.dC = r(); });
+
+        // Columna de registros: de la línea base a la altura de las mayúsculas. Se llena de
+        // abajo hacia arriba: primero los registros comunes, al final los avisos.
+        const altoMay = o.measureText("H").actualBoundingBoxAscent;
+        const anchoU = (der - izq) - paso * 1.4, altoU = altoMay - paso * 0.6;
+        const cols = Math.max(3, Math.round(Math.sqrt((N * anchoU) / altoU)));
+        const filas = Math.ceil(N / cols);
+        const pasoG = Math.min(anchoU / (cols - 1), altoU / Math.max(1, filas - 1));
+        const gx0 = cx - ((cols - 1) * pasoG) / 2;
+        const gyBase = by - paso * 0.3;
+        [...pts].sort((a, b) => (a.aviso - b.aviso) || (b.ly - a.ly) || (a.lx - b.lx)).forEach((p, k) => {
+          p.gx = gx0 + (k % cols) * pasoG;
+          p.gy = gyBase - Math.floor(k / cols) * pasoG;
+          p.dB = k / N;
+        });
+        G = { pts, paso, pasoG, cx, cy, W, H, k: (Math.PI * 2) / (Math.max(der - izq, aba - arr) * 0.95) };
+        return true;
+      };
+
+      // Letra líquida: dos ondas lentas cruzan la letra; con amplitud a (0 a 1) ondula sin moverse de lugar.
+      const liquido = (p, t, a, out) => {
+        const u = p.lx - G.cx, v = p.ly - G.cy, k = G.k, A = G.paso * 2.4 * a;
+        out.x = p.lx + A * (Math.sin(v * k + t * 1.1) * 0.65 + Math.sin((u + v) * k * 0.7 - t * 0.8 + p.fase * 0.12) * 0.35);
+        out.y = p.ly + A * (Math.cos(u * k - t * 0.9) * 0.55 + Math.sin((u - v) * k * 0.8 + t * 1.3) * 0.45);
+      };
+      // Mezcla escalonada entre dos estados, con un leve arco en el camino.
+      const tramo = (cic, ini, dur, d) => suave(recorte((cic - ini - d * dur * 0.4) / (dur * 0.6)));
+      const mezclar = (ax, ay, bx, by, e, out) => {
+        const dx = bx - ax, dy = by - ay, arco = Math.sin(Math.PI * e) * 0.18;
+        out.x = ax + dx * e - dy * arco;
+        out.y = ay + dy * e + dx * arco;
+      };
+
+      // Ciclo de 16 s: 0–0,8 la letra se hace puntos; 2–5 se pone líquida; 5–6,4 se ordena;
+      // 6,4–7,8 columna; 7,8–9,4 vuelve; 10,4–11,2 vuelve a ser letra sólida; quieta hasta 16.
+      const CICLO = 16, SOLIDA = 10.4;
+      const tmp = { x: 0, y: 0 };
+      let ultimo = "", enPuntos = false;
+      const dibujar = (t) => {
+        if (!G) return;
+        const cic = t % CICLO;
+        const puntos = cic < SOLIDA;
+        if (puntos !== enPuntos) { enPuntos = puntos; viva.classList.toggle("es-puntos", puntos); }
+        const quieto = (cic >= 0.95 && cic < 2) || (cic >= 9.4 && cic < SOLIDA) ? "letra"
+          : cic >= 6.4 && cic < 7.8 ? "tabla" : cic >= SOLIDA + 0.9 ? "vacio" : "";
+        if (quieto && quieto === ultimo) return;
+        ultimo = quieto;
+        ctx.clearRect(0, 0, G.W, G.H);
+        if (quieto === "vacio") return;
+        const rL = G.paso * 0.44, rT = G.paso * 0.38, rG = Math.min(G.paso * 0.4, G.pasoG * 0.31);
+        const comunes = new Path2D();
+        const tinte = [null, new Path2D(), new Path2D(), new Path2D(), new Path2D()];
+        for (const p of G.pts) {
+          let x, y, r, c = 0;
+          if (cic < 2) {
+            x = p.lx; y = p.ly; r = rL * salida(recorte((cic - p.dC * 0.35) / 0.55));
+          } else if (cic < 5) {
+            const a = suave(recorte((cic - 2) / 1.4));
+            liquido(p, t, a, tmp);
+            x = tmp.x; y = tmp.y; r = rL + (rT - rL) * a; c = a;
+          } else if (cic < 6.4) {
+            liquido(p, t, 1, tmp);
+            const e = tramo(cic, 5, 1.4, p.dB);
+            mezclar(tmp.x, tmp.y, p.gx, p.gy, e, tmp);
+            x = tmp.x; y = tmp.y; r = rT + (rG - rT) * e; c = 1;
+          } else if (cic < 7.8) {
+            x = p.gx; y = p.gy; r = rG; c = 1;
+          } else if (cic < 9.4) {
+            const e = tramo(cic, 7.8, 1.6, p.dC);
+            mezclar(p.gx, p.gy, p.lx, p.ly, e, tmp);
+            x = tmp.x; y = tmp.y; r = rG + (rL - rG) * e; c = 1 - e;
+          } else {
+            // la letra sólida vuelve debajo y los puntos se apagan
+            x = p.lx; y = p.ly; r = rL * (1 - salida(recorte((cic - SOLIDA - 0.15) / 0.7)));
+          }
+          if (r <= 0.05) continue;
+          comunes.moveTo(x + r, y);
+          comunes.arc(x, y, r, 0, Math.PI * 2);
+          const nivel = p.aviso ? Math.round(c * 4) : 0;
+          if (nivel) { tinte[nivel].moveTo(x + r, y); tinte[nivel].arc(x, y, r, 0, Math.PI * 2); }
+        }
+        ctx.fillStyle = TINTA; ctx.fill(comunes);
+        ctx.fillStyle = COBALTO;
+        for (let k = 1; k <= 4; k++) { ctx.globalAlpha = k / 4; ctx.fill(tinte[k]); }
+        ctx.globalAlpha = 1;
+      };
+
+      if (!medir()) { lienzo.remove(); return; }
+      // En pausa la «a» vuelve a ser letra.
+      oyentes.add((v) => {
+        if (v || !detenido) return;
+        ctx.clearRect(0, 0, lienzo.width, lienzo.height);
+        viva.classList.remove("es-puntos");
+        enPuntos = false; ultimo = "";
       });
-      heroPhoto.addEventListener("pointerleave", () => { pointer = null; });
+      const rehacer = () => {
+        if (medir()) { ultimo = ""; return; }
+        G = null;
+        ctx.clearRect(0, 0, lienzo.width, lienzo.height);
+        viva.classList.remove("es-puntos");
+        enPuntos = false;
+      };
+      let espera = 0;
+      window.addEventListener("resize", () => { clearTimeout(espera); espera = setTimeout(rehacer, 150); });
+      // Si la fuente llegó tarde, la «a» cambió de forma: se vuelve a medir.
+      if (document.fonts) document.fonts.ready.then(rehacer);
+      // La letra se vuelve puntos cuando el nombre terminó de enfocarse.
+      setTimeout(() => bucle(dibujar), 1100);
+    };
+    if (viva && !reduced) fuentes.then(letraViva);
+
+    // 4. Cinta: completa la pista para pantallas anchas, fija la velocidad (~60 px/s) y se
+    //    detiene cuando no se ve. Con movimiento reducido queda quieta (CSS).
+    if (cinta && !reduced) {
+      const pista = $(".cinta-pista", cinta);
+      const ajustar = () => {
+        const trozos = [...pista.children];
+        const mitad = trozos.length / 2;
+        let ancho = 0;
+        for (let i = 0; i < mitad; i++) ancho += trozos[i].offsetWidth;
+        if (ancho && ancho < window.innerWidth + 200) {
+          const extra = Math.ceil((window.innerWidth + 200) / (ancho / mitad)) - mitad;
+          const nuevos = Array.from({ length: extra }, () => trozos[0].cloneNode(true));
+          pista.prepend(...nuevos.map((n) => n.cloneNode(true)));
+          pista.append(...nuevos);
+          ancho += extra * trozos[0].offsetWidth;
+        }
+        if (ancho) pista.style.setProperty("--cinta-dur", `${Math.round(ancho / 60)}s`);
+      };
+      fuentes.then(ajustar);
+      if (document.fonts) document.fonts.ready.then(ajustar);
+      let enCinta = true;
+      const pausa = () => { pista.style.animationPlayState = enCinta && !document.hidden && !detenido ? "" : "paused"; };
+      new IntersectionObserver(([e]) => { enCinta = e.isIntersecting; pausa(); }).observe(cinta);
+      document.addEventListener("visibilitychange", pausa);
+      pausa();
+      const boton = $("[data-pausa]", cinta);
+      if (boton) {
+        boton.hidden = false;
+        boton.setAttribute("aria-pressed", String(detenido));
+        boton.addEventListener("click", () => {
+          detenido = !detenido;
+          boton.setAttribute("aria-pressed", String(detenido));
+          try { localStorage.setItem("bl.quieto", detenido ? "1" : "0"); } catch { /* sin almacenamiento */ }
+          pausa();
+          avisar();
+        });
+      }
     }
-    let resizeTimer;
-    window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(sample, 200); });
   }
 
   /* ================================================================== */

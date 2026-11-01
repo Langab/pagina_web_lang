@@ -23,12 +23,14 @@
 </div>
 {% endmacro %}
 
+{# La marca de 3 × 3 puntos (logo y separador de la cinta) #}
+{% macro marca(cls="brand-mark") %}
+<svg class="{{ cls }}" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">{% for y in range(3) %}{% for x in range(3) %}<circle cx="{{ 4 + x * 8 }}" cy="{{ 4 + y * 8 }}" r="{{ 3 if (x + y) % 2 == 0 else 1.6 }}"/>{% endfor %}{% endfor %}</svg>
+{%- endmacro %}
+
 {% macro icon(name) %}
 {% if name == 'plus' %}<svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12"/></svg>
 {% elif name == 'close' %}<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14"/></svg>
-{% elif name == 'out' %}<svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12"/></svg>
-{% elif name == 'arrow' %}<svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-{% elif name == 'down' %}<svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v10M3.5 7.5L8 12l4.5-4.5M3 14h10"/></svg>
 {% endif %}
 {% endmacro %}
 
@@ -70,7 +72,7 @@
       {% if d.numbers is defined %}
       <div class="numbers">
         {% for n in d.numbers %}
-        <div><b data-count="{{ n.value }}"{% if n.suffix is defined %} data-suffix="{{ n.suffix }}"{% endif %}>{{ n.value }}{{ n.suffix | default('') }}</b><span>{{ n.label | t }}</span></div>
+        <div><b>{{ n.value }}{{ n.suffix | default('') }}</b><span>{{ n.label | t }}</span></div>
         {% endfor %}
       </div>
       {% endif %}
@@ -130,7 +132,7 @@
         </div>
         {% if d.links is defined %}
         <div class="actions">
-          {% for l in d.links %}<a class="btn btn-small" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | t }} {{ icon('out') }}</a>{% endfor %}
+          {% for l in d.links %}<a class="btn btn-small" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | t }}</a>{% endfor %}
         </div>
         {% endif %}
       </div>

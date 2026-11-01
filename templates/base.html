@@ -18,7 +18,7 @@
   <meta property="og:image" content="{{ site.url }}assets/img/photos/og.jpg">
   <meta property="og:locale" content="{{ 'es_CL' if lang == 'es' else 'en_US' }}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#F1F2F6">
+  <meta name="theme-color" content="#F7F7F9">
   <link rel="icon" href="{{ asset('img/favicon.svg') }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,29 @@
   <link rel="stylesheet" href="{{ asset('css/site.css') }}">
   {% block head %}{% endblock %}
   <script>document.documentElement.classList.add('js')</script>
+  {% if route.id == 'home' %}
+  {# Portada: el texto espera sus fuentes como mucho 400 ms desde que cargó el CSS. Si no
+     llegaron, la portada se queda con las del sistema en esta visita (.sin-fuente), como
+     font-display: optional: nada salta cuando llegan. La próxima vez ya están en caché. #}
+  <script>
+  (function (d, h) {
+    var F = ['580 100px "Bricolage Grotesque"', '400 16px "Geist"'], T = 'Benjamín Lang', hecho = false;
+    window.blFuentes = new Promise(function (avisar) {
+      var fin = function () {
+        if (hecho) return;
+        hecho = true;
+        var llego = !d.fonts || F.every(function (f) { return d.fonts.check(f, T); });
+        h.classList.add('listo');
+        if (!llego) h.classList.add('sin-fuente');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('entra');
+        avisar(llego);
+      };
+      if (d.fonts && d.fonts.load) Promise.all(F.map(function (f) { return d.fonts.load(f, T); })).then(fin, fin); else fin();
+      setTimeout(fin, 400);
+    });
+  })(document, document.documentElement);
+  </script>
+  {% endif %}
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"{{ site.full_name }}","jobTitle":"{{ site.tagline | t }}","url":"{{ site.url }}","email":"mailto:{{ site.contact.email }}","sameAs":["{{ site.contact.linkedin }}","{{ site.contact.github }}"],"alumniOf":"Universidad Diego Portales","address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"}}
   </script>
@@ -33,6 +56,9 @@
 <body class="page-{{ route.id | replace(':', '-') }}{% block body_class %}{% endblock %}">
   <a class="skip" href="#main">{{ ui.skip }}</a>
 
+  {# Encabezado-índice: la marca a la izquierda, el índice en texto chico con barras de 1 px y,
+     a la derecha, el idioma y un solo botón. Bajo 960 px el índice pasa a una segunda fila a
+     todo el ancho (no se esconde en un menú). #}
   <header class="site-header" data-header>
     <div class="wrap header-row">
       <a class="brand" href="{{ url('home') }}" aria-label="{{ site.name }}, {{ ui.home }}">
@@ -43,39 +69,22 @@
       <nav class="nav" aria-label="{{ ui.menu }}">
         <ul class="nav-list">
           {% for item in site.nav %}
-          {% set active = route.id == item.id or (item.id == 'projects' and route.id.startswith('project:')) %}
-          <li><a href="{{ url(item.id, item.anchor | default('')) }}"{% if active %} aria-current="page"{% endif %}>{{ item.label | t }}</a></li>
+          {% set active = route.id == item.id or (item.id == 'portafolio' and route.id.startswith('project:')) %}
+          <li><a href="{{ url(item.id, item.anchor | default('')) }}"{% if active %} aria-current="page"{% endif %}>{% if item.short is defined %}<span class="nav-long">{{ item.label | t }}</span><span class="nav-short" aria-hidden="true">{{ item.short | t }}</span>{% else %}{{ item.label | t }}{% endif %}</a></li>
           {% endfor %}
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a class="lang-switch" href="{{ switch_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-lang-switch aria-label="{{ ui.switch_label }}">
-          <span{% if lang == 'es' %} class="is-on"{% endif %}>ES</span><span{% if lang == 'en' %} class="is-on"{% endif %}>EN</span>
-        </a>
+        <div class="lang" role="group" aria-label="{{ ui.language }}">
+          {% for l in ['es', 'en'] %}
+          {% if l == lang %}<span class="lang-on" aria-current="true">{{ l }}</span>{% else %}<a href="{{ switch_url }}" hreflang="{{ l }}" lang="{{ l }}" data-lang-switch aria-label="{{ l }}, {{ ui.switch_label }}">{{ l }}</a>{% endif %}
+          {% endfor %}
+        </div>
         <a class="btn btn-small btn-solid header-cta" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" data-menu-toggle>
-          <span class="sr-only">{{ ui.menu }}</span><span class="menu-icon" aria-hidden="true"></span>
-        </button>
       </div>
     </div>
-    <div class="progress" aria-hidden="true"><span data-progress></span></div>
   </header>
-
-  <div class="menu-overlay" id="menu-overlay" hidden data-menu>
-    <nav class="wrap" aria-label="{{ ui.menu }}">
-      <ul>
-        {% for item in site.nav %}
-        <li><a href="{{ url(item.id, item.anchor | default('')) }}">{{ item.label | t }}</a></li>
-        {% endfor %}
-      </ul>
-      <div class="menu-actions">
-        <a class="btn btn-solid" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
-        <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ ui.download_cv }}</a>
-      </div>
-      <a class="lang-switch lang-switch-big" href="{{ switch_url }}" hreflang="{{ other_lang }}">{{ ui.switch_label }}</a>
-    </nav>
-  </div>
 
   <main id="main">
     {% block main %}{% endblock %}

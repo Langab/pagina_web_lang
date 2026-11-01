@@ -55,7 +55,7 @@
     {"c": "ok", "t": ("  ✓ PDF de 2 páginas y registro guardado" if es else "  ✓ 2-page PDF and application record saved")}
   ] | tojson }}'>
     <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="terminal-body" aria-label="{{ 'Ejemplo de sesión en Claude Code' if es else 'Example Claude Code session' }}"></div>
+    <div class="terminal-body" role="group" aria-label="{{ 'Ejemplo de sesión en Claude Code' if es else 'Example Claude Code session' }}"></div>
   </div>
 
   <h3>{{ '¿Cómo se puntúa una oferta?' if es else 'How is an opening scored?' }}</h3>
@@ -83,10 +83,10 @@
   <h2>{{ 'Diez semanas en números' if es else 'Ten weeks in numbers' }}</h2>
   <p>{{ 'Del 6 de julio al 15 de septiembre de 2026.' if es else 'From July 6 to September 15, 2026.' }}</p>
   <div class="live">
-    <div><b data-count="468">468</b><span>{{ 'ofertas revisadas' if es else 'openings reviewed' }}</span></div>
-    <div><b data-count="311">311</b><span>{{ 'empresas distintas' if es else 'different companies' }}</span></div>
-    <div><b data-count="29">29</b><span>{{ 'pasadas de búsqueda' if es else 'search runs' }}</span></div>
-    <div><b data-count="34">34</b><span>{{ 'CV adaptados' if es else 'tailored CVs' }}</span></div>
+    <div><b>468</b><span>{{ 'ofertas revisadas' if es else 'openings reviewed' }}</span></div>
+    <div><b>311</b><span>{{ 'empresas distintas' if es else 'different companies' }}</span></div>
+    <div><b>29</b><span>{{ 'pasadas de búsqueda' if es else 'search runs' }}</span></div>
+    <div><b>34</b><span>{{ 'CV adaptados' if es else 'tailored CVs' }}</span></div>
   </div>
   <h3>{{ 'Cuántas calzan de verdad' if es else 'How many actually fit' }}</h3>
   <div class="bars reveal-bars">

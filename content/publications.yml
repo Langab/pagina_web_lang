@@ -12,6 +12,7 @@ groups:
     items:
       - year: 2024
         title: "Claims of ownership, claims of dignity: Moral narratives on the right to housing in Chile's constitutional referendum"
+        lang: en  # idioma del título si no es español (atributo lang, WCAG 3.1.2)
         authors: Frei, R., Cordero, R., Lang, B., Rozas, J., & Rodríguez, J. P.
         venue: Journal of Language and Politics, 23(5), 723–746
         url: https://doi.org/10.1075/jlp.24097.fre
