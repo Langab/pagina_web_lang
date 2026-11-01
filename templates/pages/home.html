@@ -1,190 +1,231 @@
 {% extends "base.html" %}
 {% import "partials/macros.html" as m with context %}
 
-{% block head %}
-<link rel="preload" as="image" href="{{ asset('img/photos/hero.webp') }}" type="image/webp">
-{% endblock %}
-
 {% block main %}
 {% set h = home.hero %}
+{% set first, last = h.name.split(' ', 1) %}
 
-{# ── Hero: ficha. Nombre grande, una frase y cuatro datos de registro abajo ── #}
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <p class="status"><i aria-hidden="true"></i>{{ h.status | t }}</p>
-        {% set first, rest = h.name.split(' ', 1) %}
-        <h1 class="hero-name"><span class="line"><span>{{ first }}</span></span> <span class="line"><span>{{ rest }}</span></span></h1>
-        <p class="hero-role">{{ h.role | t }}</p>
-        <p class="hero-lede">{{ h.lede | md }}</p>
-        <div class="actions">
-          <a class="btn btn-solid" href="#{{ h.cta_anchor | t }}">{{ h.cta_primary | t }}</a>
-          <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
-        </div>
-      </div>
-      <figure class="hero-figure">
-        <div class="hero-photo" data-dots-photo>
-          <picture>
-            <source srcset="{{ asset('img/photos/hero.webp') }}" type="image/webp">
-            <img src="{{ asset('img/photos/hero.jpg') }}" alt="{{ h.photo_alt | t }}" width="1100" height="1375" fetchpriority="high">
-          </picture>
-          <canvas aria-hidden="true"></canvas>
-        </div>
-        <figcaption>{{ h.photo_caption | t }}</figcaption>
-      </figure>
+{# ── Primera pantalla ─────────────────────────────────────────────────
+   Lo único que se mueve solo: el nombre entra desenfocado y después la «a» de Lang se vuelve
+   puntos que se ordenan en registros (static/js/site.js, «Portada»). Las manchas lima son
+   puntos enormes fuera de foco. #}
+<section class="portada" data-portada aria-labelledby="nombre">
+  <div class="manchas" aria-hidden="true">{% for i in range(7) %}<i></i>{% endfor %}</div>
+  <div class="portada-centro">
+    <p class="estado"><i aria-hidden="true"></i>{{ h.status | t }}</p>
+    <h1 class="nombre" id="nombre"><span class="pal">{{ first }}</span> <span class="pal">{{ last[:1] }}<span class="viva" data-viva>{{ last[1:2] }}</span>{{ last[2:] }}</span></h1>
+    <p class="frase">{{ h.title | t }}</p>
+    <p class="bajada">{{ h.lede | t }}</p>
+    <div class="actions portada-acciones">
+      <a class="btn btn-solid" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
+      <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener" type="application/pdf">{{ h.cta_cv | t }}</a>
     </div>
-    <dl class="hero-ficha">
-      {% for f in h.ficha %}<div><dt>{{ f.label | t }}</dt><dd>{{ f.text | t }}</dd></div>{% endfor %}
-    </dl>
   </div>
-</section>
-
-{# ── Mi perfil: tres oficios que suelen ser de personas distintas, dibujados como tres
-     círculos de puntos con el lugar donde aprendí cada uno. El texto de la derecha es el
-     mismo contenido en palabras; al pasar el cursor o el foco por un oficio, se enciende su
-     círculo (solo CSS, con :has). ── #}
-{% set mx = home.mix %}
-{% set pl = mx.places %}
-<section class="section-tight on-paper mix" aria-labelledby="mix-title">
-  <div class="wrap mix-grid">
-    <div class="mix-head">
-      <p class="kicker">{{ mx.kicker | t }}</p>
-      <h2 id="mix-title">{{ mx.title | t }}</h2>
-      <p>{{ mx.lede | t }}</p>
-    </div>
-    <figure class="mix-venn" aria-hidden="true">
-      <svg viewBox="0 0 540 500" role="presentation">
-        <defs>
-          <pattern id="dots-a" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.1" class="dot-a"/></pattern>
-          <pattern id="dots-b" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="translate(3.3 3.3)"><circle cx="5" cy="5" r="2.1" class="dot-b"/></pattern>
-          <pattern id="dots-c" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="translate(6.6 6.6)"><circle cx="5" cy="5" r="2.1" class="dot-c"/></pattern>
-        </defs>
-        <circle class="venn-circle venn-a" cx="195" cy="190" r="152" fill="url(#dots-a)"/>
-        <circle class="venn-circle venn-b" cx="345" cy="190" r="152" fill="url(#dots-b)"/>
-        <circle class="venn-circle venn-c" cx="270" cy="320" r="152" fill="url(#dots-c)"/>
-        {% set la = mx['items'][0].label | t %}{% set lb = (mx['items'][1].label | t).split(' ', 1) %}{% set lc = (mx['items'][2].label | t).rsplit(' ', 1) %}
-        <text class="venn-label venn-label-a" x="112" y="150">{{ la }}</text>
-        <text class="venn-place venn-place-a" x="112" y="174">{{ pl.a | t }}</text>
-        <text class="venn-label venn-label-b" x="432" y="138"><tspan x="432">{{ lb[0] }}</tspan><tspan x="432" dy="19">{{ lb[1] if lb | length > 1 else '' }}</tspan></text>
-        <text class="venn-place venn-place-b" x="432" y="182">{{ pl.b | t }}</text>
-        <text class="venn-label venn-label-c" x="270" y="404"><tspan x="270">{{ lc[0] }}</tspan><tspan x="270" dy="19">{{ lc[1] if lc | length > 1 else '' }}</tspan></text>
-        <text class="venn-place venn-place-c" x="270" y="448">{{ pl.c | t }}</text>
-        <text class="venn-place venn-place-ab" x="270" y="112">{{ pl.ab | t }}</text>
-        <text class="venn-center" x="270" y="232">{{ pl.abc | t }}</text>
-      </svg>
-    </figure>
-    <div class="mix-items">
-      {% for it in mx['items'] %}
-      {% if it.link.work is defined %}{% set href = url('trabajos', '#p-' ~ it.link.work) %}{% else %}{% set href = project_url(projects.lab | selectattr('id', 'equalto', it.link.project) | first) %}{% endif %}
-      <div class="mix-item" data-k="{{ it.key }}">
-        <h3><i aria-hidden="true"></i>{{ it.label | t }}</h3>
-        <p>{{ it.text | t }}</p>
-        <a class="link-more" href="{{ href }}">{{ it.link.label | t }}</a>
-      </div>
+  {% set lg = home.logos %}
+  <div class="portada-lugares">
+    <p id="lugares-rotulo">{{ lg.label | t }}</p>
+    <ul aria-labelledby="lugares-rotulo">
+      {% for it in lg['items'] %}
+      {% set dim = img_size('img/' ~ it.src) %}
+      <li><a href="{{ url('trabajos', '#p-' ~ it.work) }}" aria-label="{{ it.label | t }}"><img src="{{ asset('img/' ~ it.src) }}" alt="" width="{{ dim[0] }}" height="{{ dim[1] }}" style="--h: {{ it.h }}px" decoding="async">{% if it.word is defined %}<span class="portada-lugar-texto">{{ it.word }}</span>{% endif %}</a></li>
       {% endfor %}
-      <div class="mix-item mix-center" data-k="abc">
-        <h3>{{ mx.center.label | t }}</h3>
-        <p>{{ mx.center.text | t }}</p>
-      </div>
-    </div>
+    </ul>
   </div>
 </section>
 
-{# ── Lo que sé hacer: una capacidad por tarjeta, con dónde la hice; la primera va grande ── #}
-{% set ar = home.areas %}
-<section class="section" id="{{ h.cta_anchor | t }}" aria-labelledby="areas-title">
+<div class="cinta" data-cinta>
+  <p class="sr-only">{{ home.ribbon | t }}</p>
+  <div class="cinta-pista" aria-hidden="true">{% for i in range(6) %}<span class="cinta-trozo">{{ home.ribbon | t }}{{ m.marca('cinta-marca') }}</span>{% endfor %}</div>
+  {# Pausa de la cinta y de la «a» (WCAG 2.2.2). Oculto hasta que el JS echa a andar el movimiento. #}
+  <button class="cinta-pausa" type="button" aria-pressed="false" data-pausa hidden><svg class="cinta-pausa-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg><svg class="cinta-seguir-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.5 2.5l9 5.5-9 5.5z"/></svg><span class="sr-only">{{ home.ribbon_pause | t }}</span></button>
+</div>
+
+{# ── Dónde he trabajado: un carril por lugar sobre un eje de meses ─────
+   Funciona sin JS y con teclado (<details>). El eje y «hoy» salen de build.py (make_eje). #}
+{% set pl = home.places %}
+<section class="bloque bloque-lima lugares" aria-labelledby="lugares-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ ar.kicker | t }}</p>
-        <h2 id="areas-title">{{ ar.title | t }}</h2>
-      </div>
-      <p>{{ ar.lede | t }}</p>
+    <div class="sec-head">
+      <h2 id="lugares-title">{{ pl.title | t }}</h2>
+      <p>{{ pl.lede | t }}</p>
     </div>
-    <div class="cases">
-      {% for a in ar['items'] %}
-      <a class="case{{ ' case-big' if a.featured is defined }}" href="{{ url('trabajos', '#p-' ~ a.work) }}" data-reveal style="--d: {{ (loop.index0 % 3) * 0.05 }}s">
-        <p class="case-org"><span>{{ a.org | t }}</span><span>{{ a.when | t }}</span></p>
-        <h3>{{ a.title | t }}</h3>
-        <div class="case-stats">
-          {% for s in a.stats %}
-          <p class="case-stat"><b data-count="{{ s.value }}">{% if '.' in s.value %}{{ s.value | replace('.', ',') if lang == 'es' else s.value }}{% else %}{{ s.value | num }}{% endif %}</b><span>{{ s.label | t }}</span></p>
+
+    <div class="lt" style="--m: {{ eje.total }}">
+      <div class="lt-eje">
+        <p class="lt-pista-hint">{{ pl.hint | t }}</p>
+        <span class="lt-pista" aria-hidden="true">
+          <span class="lt-hoy-rotulo" style="grid-column: {{ eje.hoy - 1 }} / {{ eje.hoy + 1 }}">{{ pl.now | t }}</span>
+          {% for an in eje.anios %}<span class="lt-anio" style="grid-column: {{ an.a }} / {{ an.b }}">{{ an.y }}</span>{% endfor %}
+          <span class="lt-hoy" style="--c: {{ eje.hoy }}"></span>
+        </span>
+      </div>
+
+      {% for s in pl.sectors %}
+      <h3 class="lt-sector">{{ s.name | t }}</h3>
+      {% for r in s.rows %}
+      {% set ini = r.tracks | map(attribute='start') | min %}
+      {% set fines = r.tracks | map(attribute='end') | list %}
+      {% set fin = 'hoy' if 'hoy' in fines else fines | max %}
+      <details class="lt-fila" id="lugar-{{ r.id }}"{% if r.open is defined %} open{% endif %}>
+        <summary>
+          <span class="lt-nombre"><b>{{ r.name | t }}</b><span>{{ ini | mes }} – {{ fin | mes }}</span></span>
+          <span class="lt-pista{{ ' lt-rotulada' if r.tracks | length > 1 }}" aria-hidden="true">
+            {% for tr in r.tracks %}{% set p = tramo(tr.start, tr.end) %}
+            <span class="lt-barra{{ ' es-vigente' if p.vigente }}" style="grid-column: {{ p.a }} / {{ p.b }}; grid-row: {{ loop.index }}">{% if r.tracks | length > 1 %}<em>{{ tr.label | t }}</em>{% endif %}</span>
+            {% endfor %}
+            <span class="lt-hoy" style="--c: {{ eje.hoy }}"></span>
+          </span>
+          <span class="lt-mas" aria-hidden="true"></span>
+        </summary>
+        <div class="lt-detalle">
+          {% for tr in r.tracks %}
+          <div class="lt-cargo">
+            <h4>{{ tr.role | t }}</h4>
+            <p class="lt-cuando">{{ tr.start | mes }} – {{ tr.end | mes }}</p>
+            <p>{{ tr.win | md }}</p>
+            {% if loop.first or tr.work != r.tracks[loop.index0 - 1].work %}
+            <a class="link-more" href="{{ url('trabajos', '#p-' ~ tr.work) }}" aria-label="{{ pl.see | t }}, {{ r.name | t }}">{{ pl.see | t }}</a>
+            {% endif %}
+          </div>
           {% endfor %}
         </div>
-        <dl class="case-text">
-          <div><dt>{{ ar.problem_label | t }}</dt><dd>{{ a.problem | t }}</dd></div>
-          <div><dt>{{ ar.solution_label | t }}</dt><dd>{{ a.solution | t }}</dd></div>
-          {% if a.result is defined %}<div class="case-result"><dt>{{ ar.result_label | t }}</dt><dd>{{ a.result | t }}</dd></div>{% endif %}
-        </dl>
-        {% if a.includes is defined %}
-        <div class="case-includes">
-          <p>{{ ar.includes_label | t }}</p>
-          <ul>{% for it in a.includes %}<li>{{ it | t }}</li>{% endfor %}</ul>
-        </div>
-        {% endif %}
-        <div class="case-foot">
-          <ul class="chips">{% for tag in a.tags %}<li>{{ tag | t }}</li>{% endfor %}</ul>
-          <span class="nav-card-go">{{ ar.see | t }} {{ m.icon('arrow') }}</span>
-        </div>
-      </a>
+      </details>
       {% endfor %}
+      {% endfor %}
+    </div>
+
+    <div class="lt-pie">
+      <p>{{ pl.also | t }} <a href="{{ url('cv') }}">{{ pl.also_link | t }}</a></p>
+      <p class="lt-nota">{{ pl.note | t }}</p>
     </div>
   </div>
 </section>
 
-{# ── Trayectoria: tres etapas, con los cargos de cada una ─────────── #}
-{% set wh = home.where %}
-{% set jobs_by_id = {} %}{% for j in experience.jobs %}{% set _ = jobs_by_id.update({j.id: j}) %}{% endfor %}
-<section class="section-tight on-paper" aria-labelledby="where-title">
+{# ── Reportería automática: tres piezas en secuencia y la franja que las cruza ──
+   Los dibujos son quietos (no suman otro bucle): registros sueltos que se ordenan en una grilla,
+   la grilla que sale como fichas por escuela y como un gráfico. Al pasar el cursor por una pieza,
+   lo de entrada se apaga y queda lo que sale. #}
+{% set rp = home.reporting %}
+<section class="bloque bloque-lavanda reporteria" aria-labelledby="reporteria-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ wh.kicker | t }}</p>
-        <h2 id="where-title">{{ wh.title | t }}</h2>
-      </div>
-      <p>{{ wh.lede | t }}</p>
+    <div class="sec-head">
+      <h2 id="reporteria-title">{{ rp.title | t }}</h2>
+      <p>{{ rp.lede | t }}</p>
     </div>
-    <ol class="stages">
-      {% for st in wh.stages %}
-      <li class="stage{{ ' is-now' if loop.last }}">
-        <span class="stage-when">{{ st.when | t }}</span>
-        <h3>{{ st.title | t }}</h3>
-        <p>{{ st.text | t }}</p>
-        <ul class="stage-jobs">
-          {% for jid in st.jobs %}{% set job = jobs_by_id[jid] %}
-          <li><b>{{ job.role | t }}</b>{{ job.org }}{% if job.parallel is defined %}<small>{{ ui.parallel }}</small>{% endif %}</li>
-          {% endfor %}
-        </ul>
+    <ol class="piezas">
+      {% for pz in rp.pieces %}
+      <li class="pieza">
+        <svg class="pieza-dibujo" viewBox="0 0 240 124" aria-hidden="true" focusable="false">
+          {% if loop.index == 1 %}
+          <g class="p-antes">{% for i in range(30) %}<circle cx="{{ 12 + (i * 41) % 92 }}" cy="{{ 14 + (i * 67) % 96 }}" r="2.6"/>{% endfor %}</g>
+          <g class="p-paso">{% for i in range(5) %}<circle cx="{{ 116 + i * 6 }}" cy="62" r="1"/>{% endfor %}</g>
+          <g class="p-despues">{% for i in range(30) %}<circle cx="{{ 160 + (i % 5) * 15 }}" cy="{{ 25 + (i // 5) * 15 }}" r="2.6"{% if i in [8, 21] %} class="p-aviso"{% endif %}/>{% endfor %}</g>
+          {% elif loop.index == 2 %}
+          <g class="p-antes">{% for i in range(24) %}<circle cx="{{ 14 + (i % 4) * 12 }}" cy="{{ 32 + (i // 4) * 12 }}" r="2.4"/>{% endfor %}</g>
+          <g class="p-paso">{% for i in range(4) %}<circle cx="{{ 72 + i * 6 }}" cy="62" r="1"/>{% endfor %}</g>
+          <g class="p-despues">{% for k in range(5) %}{% set x = 104 + k * 22 %}{% set y = 34 - k * 4 %}
+            <rect class="p-ficha" x="{{ x }}" y="{{ y }}" width="46" height="66" rx="3"/>
+            <circle class="p-aviso" cx="{{ x + 9 }}" cy="{{ y + 11 }}" r="3"/><rect x="{{ x + 16 }}" y="{{ y + 10 }}" width="20" height="2" rx="1"/>
+            {% for j in range(3) %}{% for c in range(5 - (j + k) % 3) %}<circle cx="{{ x + 9 + c * 6 }}" cy="{{ y + 26 + j * 10 }}" r="1.7"/>{% endfor %}{% endfor %}
+            <rect x="{{ x + 7 }}" y="{{ y + 54 }}" width="{{ 14 + (k * 7) % 22 }}" height="4" rx="1.5"/>{% endfor %}
+          </g>
+          {% else %}
+          <g class="p-antes">{% for i in range(18) %}<circle cx="{{ 14 + (i % 3) * 12 }}" cy="{{ 32 + (i // 3) * 12 }}" r="2.4"/>{% endfor %}</g>
+          <g class="p-paso">{% for i in range(4) %}<circle cx="{{ 60 + i * 6 }}" cy="62" r="1"/>{% endfor %}</g>
+          <g class="p-despues">
+            <rect class="p-ficha" x="92" y="10" width="140" height="104" rx="4"/>
+            <line x1="92" y1="22" x2="232" y2="22"/>
+            {% for c in range(7) %}{% set alto = [3, 4, 4, 6, 5, 7, 8][c] %}{% for k in range(alto) %}<circle cx="{{ 110 + c * 18 }}" cy="{{ 98 - k * 9 }}" r="2.7"{% if c == 6 %} class="p-aviso"{% endif %}/>{% endfor %}{% endfor %}
+            <line x1="102" y1="104" x2="222" y2="104"/>
+          </g>
+          {% endif %}
+        </svg>
+        <h3>{{ pz.name | t }}</h3>
+        <p class="pieza-por">{{ pz.why | t }}</p>
+        <p class="pieza-donde">{{ pz.where | t }}</p>
       </li>
       {% endfor %}
     </ol>
-    <div class="actions" style="margin-top:clamp(2rem, 4vw, 3rem)">
-      <a class="btn btn-solid" href="{{ url('cv') }}">{{ wh.cta | t }}</a>
-      <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
+
+    {% set au = rp.audit %}
+    <div class="auditable">
+      <div class="auditable-cab">
+        <h3>{{ au.title | t }}</h3>
+        <p>{{ au.text | t }}</p>
+        <a class="link-more" href="{{ url('trabajos', '#p-' ~ rp.work) }}">{{ rp.see | t }}</a>
+      </div>
+      <dl class="auditable-lista">
+        {% for it in au['items'] %}<div><dt>{{ it.label | t }}</dt><dd>{{ it.text | t }}</dd></div>{% endfor %}
+      </dl>
     </div>
   </div>
 </section>
 
-{# ── Portafolio propio y publicaciones ────────────────────────────── #}
-{% set cards = home.cards %}
-<section class="section" aria-labelledby="cards-title">
+{# ── Lo que hice y lo que quedó: tres casos, cifra quieta y el lugar como firma ── #}
+{% set cs = home.cases %}
+<section class="bloque casos" aria-labelledby="casos-title">
   <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{{ cards.kicker | t }}</p>
-        <h2 id="cards-title">{{ cards.title | t }}</h2>
-      </div>
+    <div class="sec-head">
+      <h2 id="casos-title">{{ cs.title | t }}</h2>
     </div>
-    <div class="nav-cards">
-      {% for c in cards['items'] %}
-      <a class="nav-card" href="{{ url(c.page) }}" data-reveal style="--d: {{ loop.index0 * 0.05 }}s">
-        <h3>{{ c.title | t }}</h3>
-        <p>{{ c.text | t }}</p>
-        <span class="nav-card-go">{{ ui.open_section }} {{ m.icon('arrow') }}</span>
-      </a>
+    <div class="casos-grid">
+      {% for c in cs['items'] %}
+      <article class="caso" aria-labelledby="caso-{{ loop.index }}">
+        <h3 id="caso-{{ loop.index }}">{{ c.title | t }}</h3>
+        <p class="caso-cifra"><b>{{ c.value | t }}</b><span>{{ c.unit | t }}</span></p>
+        <p class="caso-texto">{{ c.text | t }}</p>
+        <p class="caso-pie"><span>{{ c.place | t }}</span><a class="link-more" href="{{ url('trabajos', '#p-' ~ c.work) }}" aria-label="{{ cs.see | t }}, {{ c.title | t }}">{{ cs.see | t }}</a></p>
+      </article>
       {% endfor %}
     </div>
   </div>
 </section>
+
+{# ── En breve: la foto real y lo que revisa un reclutador ──────────── #}
+{% set br = home.brief %}
+<section class="bloque bloque-lavanda breve" aria-labelledby="breve-title">
+  <div class="wrap breve-grid">
+    <figure class="breve-foto">
+      {{ m.picture('photos/hero', br.photo_alt | t, width=1100, height=1375) }}
+      <figcaption>{{ br.photo_caption | t }}</figcaption>
+    </figure>
+    <div class="breve-texto">
+      <h2 id="breve-title">{{ br.title | t }}</h2>
+      <p class="breve-frase">{{ br.text | t }}</p>
+      <dl class="ficha">
+        {% for it in br['items'] %}<div><dt>{{ it.label | t }}</dt><dd>{{ it.text | t }}</dd></div>{% endfor %}
+      </dl>
+      <a class="btn" href="{{ url('cv') }}">{{ home.career.cta | t }}</a>
+    </div>
+  </div>
+</section>
+
+{# ── Por mi cuenta y publicaciones ─────────────────────────────────── #}
+{% set ow = home.own %}
+{% set pb = home.pubs %}
+{% set feat = publications.groups[0]['items'][0] %}
+<div class="bloque propios">
+  <div class="wrap propios-grid">
+    <section class="propio" aria-labelledby="own-title">
+      <h2 id="own-title">{{ ow.title | t }}</h2>
+      <p class="propio-lede">{{ ow.text | t }}</p>
+      <ul class="propio-lista">
+        {% for it in ow['items'] %}
+        {% set pr = projects.lab | selectattr('id', 'equalto', it.project) | first %}
+        <li><a href="{{ project_url(pr) }}">{{ it.name | t }}</a><span>{{ it.text | t }}</span></li>
+        {% endfor %}
+      </ul>
+      <a class="btn" href="{{ url('portafolio') }}">{{ ow.cta | t }}</a>
+    </section>
+    <section class="propio" aria-labelledby="pubs-title">
+      <h2 id="pubs-title">{{ pb.title | t }}</h2>
+      <p class="propio-lede">{{ pb.text | t }}</p>
+      <ul class="pub-cifras">
+        {% for c in home.publications.counts %}<li><b>{{ c.value }}</b><span>{{ c.label | t }}</span></li>{% endfor %}
+      </ul>
+      <p class="pub-ultimo"><span>{{ pb.latest | t }}</span><a href="{{ feat.url }}" target="_blank" rel="noopener"{% if (feat.lang | default('es')) != lang %} lang="{{ feat.lang | default('es') }}"{% endif %}>{{ feat.title }}</a><small>{{ feat.venue.split(',')[0] }}, {{ feat.year }}</small></p>
+      <a class="btn" href="{{ url('publications') }}">{{ pb.cta | t }}</a>
+    </section>
+  </div>
+</div>
 {% endblock %}

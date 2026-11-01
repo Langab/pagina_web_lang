@@ -14,7 +14,7 @@
     <ul class="chips">{% for i in experience.target['items'] %}<li>{{ i | t }}</li>{% endfor %}</ul>
   </div>
   <div class="actions" style="margin-top:1.75rem">
-    <a class="btn btn-solid" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ m.icon('down') }}{{ ui.download_cv }}</a>
+    <a class="btn btn-solid" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ ui.download_cv }}</a>
     <a class="btn" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
   </div>
 </header>
@@ -90,13 +90,14 @@
     <div>
       <div class="talk" style="grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start">
         <figure class="talk-photo" style="margin:0">
-          {{ m.picture('photos/charla', home.hero.photo_alt | t, width=1600, height=1103) }}
+          {{ m.picture('photos/charla', home.brief.photo_alt | t, width=1600, height=1103) }}
         </figure>
         <div>
           <h3 style="font-size:var(--t-xl);margin-bottom:.75rem">{{ home.teaching.title | t }}</h3>
           <p style="color:var(--grafito)">{{ home.teaching.text | t }}</p>
-          <p class="kicker" style="margin-top:1rem">{{ home.teaching.slides_label | t }}</p>
-          <ol class="slides-track" style="list-style:none;margin:0;padding:0 0 .75rem">
+          <p class="kicker" id="slides-label" style="margin-top:1rem">{{ home.teaching.slides_label | t }}</p>
+          {# tabindex: la fila se desplaza de lado y tiene que poder moverse con el teclado #}
+          <ol class="slides-track" tabindex="0" aria-labelledby="slides-label" style="list-style:none;margin:0;padding:0 0 .75rem">
             {% for sl in home.teaching.slides %}
             <li class="slide-card"><b>{{ sl.title | t }}</b><span>{{ sl.text | t }}</span></li>
             {% endfor %}

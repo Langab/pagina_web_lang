@@ -1,168 +1,205 @@
 # ─────────────────────────────────────────────────────────────────────────
 # Portada: textos de cada sección, en el orden en que aparecen.
+# Las claves de más abajo (story, lab, work, career, teaching, publications) no salen en la
+# portada: las usan trabajos.html, portafolio.html, cv.html y publications.html.
 # ─────────────────────────────────────────────────────────────────────────
 
-# Portada «ficha»: nombre grande, una frase de lo que hago y, abajo, cuatro datos de registro
-# en vez de cifras sueltas.
+# Primera pantalla: el nombre grande (la «a» de Lang se vuelve puntos), una frase de lo que
+# hago, una bajada corta, dos acciones y la fila de lugares donde trabajé.
 hero:
-  status: { es: "Disponible para cargos de análisis de datos, BI e investigación", en: "Open to data analysis, BI and research roles" }
-  name: Benjamín Lang Bustos
-  role: { es: "Analista de datos, sociólogo e investigador", en: "Data analyst, sociologist and researcher" }
+  status: { es: "Analista de datos y sociólogo, abierto a cargos de análisis, BI e investigación en Santiago", en: "Data analyst and sociologist, open to analytics, BI and research roles in Santiago" }
+  name: Benjamín Lang
+  title: { es: "Analizo datos sobre personas y se los explico a quien decide.", en: "I analyze data about people and explain it to decision-makers." }
   lede:
-    es: "Me encargo de que los datos de una institución lleguen limpios a quien decide: los bajo, los valido y los dejo en tableros e informes que el equipo puede mantener sin mí."
-    en: "I make sure an institution's data reaches the people who decide in good shape: I collect it, validate it and turn it into dashboards and reports the team can maintain without me."
-  cta_primary: { es: Ver casos, en: See cases }
-  cta_anchor: { es: casos, en: cases }
-  photo_alt: { es: Benjamín Lang presentando frente a un pendón del SLEP Santa Rosa, en: Benjamín Lang presenting next to an SLEP Santa Rosa banner }
-  photo_caption: { es: "Presentando resultados en el SLEP Santa Rosa.", en: "Presenting results at SLEP Santa Rosa." }
-  ficha:
-    - label: { es: Ahora, en: Now }
-      text: { es: "Analista de datos en el SLEP Santa Rosa, donde armé desde cero el gobierno de datos del servicio.", en: "Data analyst at SLEP Santa Rosa, where I built the service's data governance from scratch." }
-    - label: { es: Antes, en: Before }
-      text: { es: "Censo 2024 en el INE, el proceso constitucional en el CEP y asuntos públicos en Tironi.", en: "The 2024 Census at INE, Chile's constitutional process at CEP and public affairs at Tironi." }
-    - label: { es: Herramientas, en: Tools }
-      text: { es: "R, Power BI, Excel y Git a nivel avanzado; Python y SQL a nivel intermedio.", en: "R, Power BI, Excel and Git at an advanced level; Python and SQL at an intermediate level." }
-    - label: { es: Formación, en: Education }
-      text: { es: "Sociología en la UDP, con distinción máxima y primer lugar en el ranking de egreso.", en: "Sociology at UDP, with highest honors and first in my graduating class." }
+    es: "Validé datos del Censo 2024 en el INE y analicé el proceso constitucional para el CEP y Tironi. Hoy llevo los datos de educación pública del SLEP Santa Rosa."
+    en: "I validated 2024 Census data at INE and analyzed Chile's constitutional process for CEP and Tironi. Today I lead data work for public schools at SLEP Santa Rosa."
+  cta_cv: { es: Descargar CV, en: Download CV }
 
+# Logos en una sola tinta (scripts/logos_tinta.py). Cada uno lleva a su caso en /trabajos/:
+# quien llega quiere ver qué hice ahí, no la página de la institución. `h` es el alto en px,
+# para que los cuadrados y los alargados pesen parecido.
 logos:
-  label: { es: Experiencia en, en: Experience at }
+  label: { es: He trabajado en, en: "I've worked at" }
   items:
-    - { name: INE, src: logos/ine.png, url: "https://censo2024.ine.gob.cl/" }
-    - { name: Centro de Estudios Públicos, src: logos/cep.png, url: "https://www.cepchile.cl/", square: true }
-    - { name: SLEP Santa Rosa, src: logos/santa_rosa.png, url: "https://slepsantarosa.gob.cl/", dark: true }
-    - { name: Universidad Diego Portales, src: logos/udp.png, url: "https://www.udp.cl/" }
-    - { name: C22, src: logos/c22.png, url: "https://c22cepchile.cl/", square: true }
-    - { name: Tironi, src: logos/tironi.png, url: "https://tironi.cl/", square: true }
+    - { name: INE, src: logos/tinta/ine.png, h: 34, work: censo-2024, label: { es: "INE, Censo 2024: ver el caso", en: "INE, 2024 Census: see the case" } }
+    - { name: Centro de Estudios Públicos, src: logos/tinta/cep.png, h: 38, work: c22, label: { es: "CEP, Centro de Estudios Públicos: ver el caso", en: "CEP, Centro de Estudios Públicos: see the case" } }
+    - { name: Tironi y Asociados, src: logos/tinta/tironi.png, h: 30, word: Tironi, work: tironi, label: { es: "Tironi y Asociados: ver el caso", en: "Tironi y Asociados: see the case" } }
+    - { name: SLEP Santa Rosa, src: logos/tinta/santa_rosa.png, h: 30, work: slep, label: { es: "SLEP Santa Rosa: ver el caso", en: "SLEP Santa Rosa: see the case" } }
+    - { name: Universidad Diego Portales, src: logos/tinta/udp.png, h: 28, work: fondecyt-bc, label: { es: "Universidad Diego Portales: ver el caso", en: "Universidad Diego Portales: see the case" } }
 
-# Mi perfil: lo que me distingue es juntar tres oficios que suelen ser de personas distintas.
-# Se dibuja como tres círculos de puntos; cada uno lleva el lugar donde aprendí ese oficio y el
-# centro, el trabajo donde hoy se juntan. Sin cifras: las cifras van en las tarjetas de trabajos.
-mix:
-  kicker: { es: Mi perfil, en: My profile }
-  title: { es: "Analizo datos, los explico y los diseño para que se usen", en: "I analyze data, explain it and design it so people actually use it" }
-  lede: { es: "Casi siempre son tres personas distintas: quien analiza, quien comunica y quien diseña. Yo aprendí cada oficio en un lugar distinto y hoy los junto en el mismo trabajo.", en: "These are usually three different people: the analyst, the communicator and the designer. I learned each craft in a different place, and today I bring them together in one job." }
-  items:
-    - key: a
-      label: { es: Análisis de datos, en: Data analysis }
-      text: { es: "Validé datos del Censo 2024 en el INE, clasifiqué con IA las actas del Banco Central y hoy armo el gobierno de datos del SLEP Santa Rosa.", en: "I validated 2024 Census data at INE, classified Central Bank minutes with AI and now run data governance at SLEP Santa Rosa." }
-      link: { work: censo-2024, label: { es: Ver el Censo 2024, en: See the 2024 Census } }
-    - key: b
-      label: { es: Comunicación estratégica, en: Strategic communication }
-      text: { es: "En Tironi escribía cada semana para gerencias y directorios, y en el CEP convertía encuestas y votaciones en textos para un público amplio.", en: "At Tironi I wrote every week for executives and boards, and at CEP I turned surveys and votes into pieces for a broad audience." }
-      link: { work: tironi, label: { es: Ver el boletín de Tironi, en: See the Tironi bulletin } }
-    - key: c
-      label: { es: Diseño y visualización, en: Design and visualization }
-      text: { es: "Tableros de Power BI, gráficos para publicaciones y prensa, y sitios web que construyo yo mismo, como este. En la UDP di un seminario sobre cómo trabajar con imágenes.", en: "Power BI dashboards, charts for publications and the press, and websites I build myself, like this one. At UDP I gave a seminar on working with images." }
-      link: { project: guaren, label: { es: Ver El Guarén, en: See El Guarén } }
-  center:
-    label: { es: Donde se juntan, en: Where they meet }
-    text: { es: "En el SLEP Santa Rosa hago las tres cosas a la vez: ordeno los datos, diseño los tableros y presento los resultados a los equipos.", en: "At SLEP Santa Rosa I do all three at once: I organize the data, design the dashboards and present the results to the teams." }
-  # Rótulos dentro del diagrama: dónde aprendí cada oficio
-  places: { a: INE, b: Tironi, c: { es: Sitios propios, en: My own sites }, ab: CEP, abc: SLEP Santa Rosa }
+# Cinta al pie de la primera pantalla. «Contar» en sus dos sentidos: contar personas y contar
+# lo que pasó. Se repite separada por la marca de 3 × 3 puntos, nunca por «·».
+ribbon: { es: Contar bien y contarlo claro, en: "Count it right, tell it clearly" }
+# Botón que detiene la cinta y la «a» del nombre (WCAG 2.2.2). Lo lee el lector de pantalla.
+ribbon_pause: { es: Pausar el movimiento, en: Pause the motion }
 
-# Lo que sé hacer: cada tarjeta es una capacidad, con lo que le resuelve a una institución, el
-# lugar donde la hice y una cifra; abre la ventana del proyecto en /trabajos/ (`work` = id del
-# trabajo en projects.yml). La primera, con `featured: true`, va grande con lo que incluye.
-# Fuente: el CV maestro de buscador_trabajo (perfil, competencias y experiencia).
-areas:
-  kicker: { es: Lo que sé hacer, en: What I do }
-  title: { es: "Gobierno de datos, de la captura al tablero", en: "Data governance, from capture to dashboard" }
-  lede: { es: "Seis cosas que sé hacer en una institución, cada una con el lugar donde la hice. Haz clic en cualquiera para ver el caso completo.", en: "Six things I can do for an organization, each with the place where I did it. Click any of them for the full case." }
-  problem_label: { es: Lo que resuelve, en: What it solves }
-  solution_label: { es: Dónde lo hice, en: Where I did it }
-  result_label: { es: Lo que queda funcionando, en: What keeps running }
-  includes_label: { es: Lo que incluye, en: What it includes }
+# Dónde he trabajado: un carril por lugar, agrupado por sector, sobre un eje de meses que
+# parte en `desde` y termina en el día del build («hoy»). `start` y `end` van en AAAA-MM;
+# `end: hoy` marca lo vigente. `work` es el id del trabajo en projects.yml. Una fila con dos
+# pistas (CEP) rotula cada barra con `label`.
+places:
+  title: { es: Dónde he trabajado, en: "Where I've worked" }
+  lede: { es: "Desde 2021 he pasado por el Estado, centros de estudio, la universidad y la consultoría, muchas veces con dos trabajos a la vez.", en: "Since 2021 I've worked in government, think tanks, academia and consulting, often holding two jobs at once." }
+  hint: { es: Abre una fila para ver el cargo y lo que hice, en: Open a row to see the role and what I did }
+  now: { es: hoy, en: now }
+  see: { es: Ver el caso, en: See the case }
+  desde: "2021-01"
+  sectors:
+    - name: { es: Estado, en: Government }
+      rows:
+        - id: slep
+          name: SLEP Santa Rosa
+          open: true
+          tracks:
+            - start: "2025-10"
+              end: hoy
+              role: { es: Analista de datos, en: Data analyst }
+              win: { es: "Armé desde cero el gobierno de datos del servicio y llevo su flujo completo, de la captura en las plataformas del Ministerio a **10 tableros de Power BI**.", en: "I built the service's data governance from scratch and run its full data flow, from capture on the Ministry's platforms to **10 Power BI dashboards**." }
+              work: slep
+        - id: ine
+          name: { es: "INE, Censo 2024", en: "INE, 2024 Census" }
+          tracks:
+            - start: "2024-06"
+              end: "2025-04"
+              role: { es: Analista metodológico senior, en: Senior methods analyst }
+              win: { es: "Validé sexo, edad y parentesco en un censo de **18,5 millones** de personas y comparé sus indicadores con los censos de 2017, 2002 y 1992.", en: "I validated sex, age and relationship in a census of **18.5 million** people and compared its indicators with the 2017, 2002 and 1992 censuses." }
+              work: censo-2024
+    - name: { es: Centros de estudio, en: Think tanks }
+      rows:
+        - id: cep
+          name: Centro de Estudios Públicos (CEP)
+          tracks:
+            - label: C22
+              start: "2021-08"
+              end: "2024-04"
+              role: { es: "Asistente de investigación, C22", en: "Research assistant, C22" }
+              win: { es: "Coautor de **7 Puntos de Referencia** del CEP y **6 notas** de investigación de C22, con análisis de votaciones, discursos y prensa.", en: "Co-author of **7 CEP policy papers** and **6 C22 research notes**, analyzing votes, speeches and press coverage." }
+              work: c22
+            - label: Voces del CEP
+              start: "2023-04"
+              end: "2024-04"
+              role: { es: "Investigador asistente, Voces del CEP", en: "Research assistant, Voces del CEP" }
+              win: { es: "Edité el boletín *Voces del CEP* sobre el segundo proceso constitucional, con datos electorales y de opinión pública.", en: "I edited the *Voces del CEP* bulletin on the second constitutional process, with electoral and public opinion data." }
+              work: c22
+    - name: { es: Universidad, en: University }
+      rows:
+        - id: udp
+          name: Universidad Diego Portales
+          tracks:
+            - start: "2024-05"
+              end: "2025-08"
+              role: { es: "Investigador, Fondecyt N° 1231356", en: "Researcher, Fondecyt grant 1231356" }
+              win: { es: "Codifiqué con GPT-4o **1.467 memorandos** del Banco Central, de 1981 a 1983, y los analicé con redes y modelos de tópicos.", en: "I coded **1,467 Central Bank memos** from 1981 to 1983 with GPT-4o and analyzed them with networks and topic models." }
+              work: fondecyt-bc
+    - name: { es: Consultoría, en: Consulting }
+      rows:
+        - id: tironi
+          name: Tironi y Asociados
+          tracks:
+            - start: "2021-08"
+              end: "2023-03"
+              role: { es: Analista de asuntos públicos, en: Public affairs analyst }
+              win: { es: "Durante 2022 estuve a cargo del boletín constitucional semanal para gerencias: qué se votó y qué cambiaba para cada industria.", en: "Throughout 2022 I ran the weekly constitutional bulletin for executives: what was voted and what it changed for each industry." }
+              work: tironi
+  also: { es: "Además, desde 2025 y en paralelo, investigo con Joaquín Prieto y hago consultoría para Aldeas Infantiles SOS.", en: "Since 2025 I've also done research with Joaquín Prieto and consulting for Aldeas Infantiles SOS, alongside my main job." }
+  also_link: { es: Todo el detalle está en el CV., en: Full details are in the CV. }
+  note: { es: "Cada barra va del mes de inicio al de término; no indica horas de dedicación.", en: "Each bar runs from the start month to the end month; it doesn't show hours worked." }
+
+# Reportería automática: lo que más le piden. Tres piezas en secuencia real (extracción,
+# minutas, visores) y una franja que las cruza (auditable y reproducible). Todo verificado en
+# projects.yml (slep, censo-2024, c22, fondecyt-bc, visor-arriendos) y experience.yml.
+# No nombrar a nadie del buscador de trabajo.
+reporting:
+  title: { es: "Reportería automática, de\u00a0la\u00a0descarga a la decisión", en: "Automated reporting, from\u00a0download to decision" }
+  lede: { es: "Es lo que hago cada día en el SLEP Santa Rosa y por lo que más me han llamado este año. Un informe armado a mano depende de quien lo arma; un flujo baja los datos solo, los revisa con reglas escritas y entrega lo mismo cada vez.", en: "It's what I do every day at SLEP Santa Rosa and what employers have contacted me about most this year. A report built by hand depends on whoever builds it; a pipeline pulls the data itself, checks it against written rules and delivers the same thing every time." }
+  pieces:
+    - name: { es: Extracción automática, en: Automated extraction }
+      why: { es: "Bajar y pegar los mismos datos cada mes mete errores, atrasa el informe y lo deja dependiendo de una persona.", en: "Downloading and pasting the same data every month lets errors in, delays the report and leaves it depending on one person." }
+      where: { es: "En el SLEP Santa Rosa: scrapers en Python para 4 plataformas del Ministerio (matrícula, asistencia y evaluación) y un script maestro en R que deja las bases listas para revisar.", en: "At SLEP Santa Rosa: Python scrapers for 4 Ministry platforms (enrollment, attendance and assessment) and a master R script that leaves the datasets ready for review." }
+    - name: { es: Minutas por escuela, en: A brief for each school }
+      why: { es: "Cada director necesita los datos de su escuela, no el promedio del servicio. Si todas las minutas salen del mismo código, cambia la escuela pero no la definición de las cifras, y se vuelven a generar cuando llegan datos nuevos.", en: "Each principal needs their own school's data, not the service average. When every brief comes from the same code, the school changes but the definition of each figure doesn't, and they can be rebuilt when new data arrives." }
+      where: { es: "Fichas por establecimiento y minutas en PDF generadas desde R, reportes mensuales automáticos en R Markdown, Quarto y LaTeX para las 5 comunas, y envíos segmentados a directores y jefaturas técnicas desde las mismas bases.", en: "School fact sheets and PDF briefs generated from R, automatic monthly reports in R Markdown, Quarto and LaTeX for the 5 municipalities, and segmented mailings to principals and technical leads from the same datasets." }
+    - name: { es: Visores de datos, en: Dashboards }
+      why: { es: "Un tablero bien armado responde las preguntas de cada semana sin que nadie pida un Excel, y todos miran la misma cifra.", en: "A well-built dashboard answers each week's questions without anyone asking for a spreadsheet, and everyone looks at the same number." }
+      where: { es: "10 tableros de Power BI que los equipos directivos consultan cada semana, incrustados en un sitio interno que también armé.", en: "10 Power BI dashboards that management teams check every week, embedded in an internal site I also built." }
+  audit:
+    title: { es: Auditable y reproducible, en: Auditable and reproducible }
+    text: { es: "Cada cifra tiene una definición escrita, un origen que se puede rastrear y código que otra persona puede volver a correr.", en: "Every figure has a written definition, a traceable source and code someone else can rerun." }
+    items:
+      - label: { es: Servicio público, en: Public service }
+        text: { es: "SLEP Santa Rosa: gobierno de datos desde cero, con diccionario, estándares de calidad y documentación de cada flujo, para que no dependa de una persona.", en: "SLEP Santa Rosa: data governance from scratch, with a data dictionary, quality standards and documentation for every pipeline, so it doesn't depend on one person." }
+      - label: { es: Estadística oficial, en: Official statistics }
+        text: { es: "INE, Censo 2024: reglas de validación en R dentro de un código compartido en GitLab, con entorno replicable y revisión cruzada.", en: "INE, 2024 Census: validation rules in R inside a shared GitLab codebase, with a replicable environment and cross-review." }
+      - label: { es: Investigación, en: Research }
+        text: { es: "CEP y Fondecyt: bases armadas en R con cada decisión anotada, y un esquema de códigos con controles de consistencia, para que el análisis se pueda replicar.", en: "CEP and Fondecyt: datasets built in R with every decision recorded, and a coding scheme with consistency checks, so the analysis can be replicated." }
+      - label: { es: Proyectos propios, en: Personal projects }
+        text: { es: "El visor de arriendos corre solo cada mañana, guarda una foto del día y publica el resultado. El código está abierto en GitHub.", en: "The rental finder runs itself every morning, saves a daily snapshot and publishes the result. The code is open on GitHub." }
+  see: { es: Ver el caso completo del SLEP, en: See the full SLEP case }
+  work: slep
+
+# Lo que hice y lo que quedó: tres casos (el del SLEP vive en «Reportería automática»), cada uno con su cifra quieta y el lugar como firma.
+# `work` es el id del trabajo en projects.yml (abre la ventana del caso en /trabajos/).
+cases:
+  title: { es: Lo que hice y lo que quedó, en: What I did and what came of it }
   see: { es: Ver el caso, en: See the case }
   items:
-    - featured: true
-      org: SLEP Santa Rosa
-      when: { es: "2025 – hoy", en: "2025 – now" }
-      title: { es: "Gobierno de datos, desde cero", en: "Data governance, from scratch" }
-      stats:
-        - { value: "10", label: { es: tableros de Power BI que los equipos directivos consultan cada semana, en: Power BI dashboards management teams check every week } }
-      problem: { es: "Que cada cifra tenga una sola definición, un origen que se puede rastrear y una revisión de calidad antes de llegar a un informe, aunque cambie el equipo.", en: "Every figure gets one definition, a traceable source and a quality check before it reaches a report, even when the team changes." }
-      solution: { es: "En el SLEP Santa Rosa armé el marco completo: cómo se capturan, validan, nombran y comparten los datos, con el proceso documentado para que no dependa de una persona.", en: "At SLEP Santa Rosa I built the whole framework: how data is captured, validated, named and shared, with the process documented so it doesn't depend on one person." }
-      result: { es: "Tableros de Power BI y reportes mensuales automáticos en R Markdown, Quarto y LaTeX, publicados en un sitio interno de reportería que también construí.", en: "Power BI dashboards and automatic monthly reports in R Markdown, Quarto and LaTeX, published on an internal reporting site I also built." }
-      includes: [{ es: Diccionario de datos, en: Data dictionary }, { es: Estándares de calidad, en: Quality standards }, { es: Reglas de captura y nombres, en: Capture and naming rules }, { es: Documentación de cada flujo, en: Documentation for every pipeline }, { es: Sitio de reportería, en: Reporting site }]
-      tags: [Power BI, R, Quarto, Git]
-      work: slep
-    - org: SLEP Santa Rosa
-      when: { es: "2025 – hoy", en: "2025 – now" }
-      title: { es: Flujos de datos automáticos, en: Automated data pipelines }
-      stats:
-        - { value: "4", label: { es: plataformas del Ministerio sin descargas a mano, en: Ministry platforms no longer downloaded by hand } }
-      problem: { es: "Que nadie tenga que bajar y pegar los mismos datos a mano cada mes.", en: "Nobody has to download and paste the same data by hand every month." }
-      solution: { es: "Scrapers en Python para matrícula, asistencia y evaluación, y un script maestro en R que deja las bases listas para revisar.", en: "Python scrapers for enrollment, attendance and assessment, and a master R script that leaves the datasets ready for review." }
-      tags: [Python, R, PowerShell]
-      work: slep
-    - org: { es: "INE, Censo 2024", en: "INE, 2024 Census" }
-      when: "2024 – 2025"
-      title: { es: Control de calidad a escala nacional, en: Quality control at national scale }
-      stats:
-        - { value: "18.5", label: { es: millones de personas censadas, en: million people counted } }
-      problem: { es: "Encontrar valores imposibles o incoherentes y corregirlos con métodos documentados antes de publicar.", en: "Finding impossible or inconsistent values and fixing them with documented methods before publication." }
-      solution: { es: "Reglas de validación en R para sexo, edad y parentesco, e informes de calidad para decidir entre escenarios de edición.", en: "Validation rules in R for sex, age and relationship, and quality reports to choose between editing scenarios." }
-      tags: [R, R Markdown, GitLab]
+    - title: { es: Control de calidad a escala nacional, en: Quality control at national scale }
+      value: { es: "18,5", en: "18.5" }
+      unit: { es: millones de personas en el censo, en: million people in the census }
+      text: { es: "Validación de sexo, edad y parentesco en un censo de 18,5 millones de personas. Escribí las reglas en R, dentro del código compartido del procesamiento, y los informes de calidad para decidir cómo corregir.", en: "Validating sex, age and relationship in a census of 18.5 million people. I wrote the rules in R, inside the shared processing codebase, plus the quality reports used to decide how to fix errors." }
+      place: { es: "INE, Censo 2024", en: "INE, 2024 Census" }
       work: censo-2024
-    - org: { es: CEP y Tironi, en: CEP and Tironi }
-      when: "2021 – 2024"
-      title: { es: Informes para quien decide, en: Reports for decision-makers }
-      stats:
-        - { value: "7", label: { es: Puntos de Referencia del CEP como coautor, en: CEP policy papers as co-author } }
-      problem: { es: "Que alguien sin formación técnica entienda qué dicen los datos y qué cambia para su decisión.", en: "Someone without a technical background understands what the data says and what it changes for their decision." }
-      solution: { es: "El boletín constitucional semanal para gerencias y directorios en Tironi, y Voces del CEP, que traducía encuestas para un público amplio.", en: "The weekly constitutional bulletin for executives and boards at Tironi, and Voces del CEP, which translated surveys for a broad audience." }
-      tags: [R, ggplot2, { es: Opinión pública, en: Public opinion }]
-      work: c22
-    - org: { es: Investigación con Joaquín Prieto, en: Research with Joaquín Prieto }
-      when: { es: "2025 – hoy", en: "2025 – now" }
-      title: { es: Encuestas y modelos estadísticos, en: Surveys and statistical models }
-      stats:
-        - { value: "8", label: { es: olas del panel ELSOC procesadas, en: ELSOC panel waves processed } }
-      problem: { es: "Responder preguntas que piden más que una tabla: quién, cuánto y por qué.", en: "Answering questions that need more than a table: who, how much and why." }
-      solution: { es: "Un índice de inseguridad económica con ocho olas de ELSOC, modelos logísticos con imputación múltiple y análisis de mediación.", en: "An economic insecurity index from eight ELSOC waves, logistic models with multiple imputation and mediation analysis." }
-      tags: [R, ELSOC, { es: Imputación múltiple, en: Multiple imputation }]
-      work: prieto
-    - org: { es: "UDP, Fondecyt", en: "UDP, Fondecyt grant" }
-      when: "2024 – 2025"
-      title: { es: "Texto como datos, con IA", en: "Text as data, with AI" }
-      stats:
-        - { value: "1467", label: { es: memorandos codificados con GPT-4o, en: memos coded with GPT-4o } }
-      problem: { es: "Clasificar miles de documentos con un criterio parejo, sin pasar meses codificando a mano.", en: "Classifying thousands of documents with a consistent criterion, without months of hand coding." }
-      solution: { es: "Prompt y categorías propias para GPT-4o con controles de consistencia, y análisis con redes y modelos de tópicos.", en: "My own prompt and categories for GPT-4o with consistency checks, and analysis with networks and topic models." }
-      tags: [Python, OpenAI API, R]
+    - title: { es: "Texto como datos, con IA", en: "Text as data, with AI" }
+      value: { es: "1.467", en: "1,467" }
+      unit: { es: "memorandos del Banco Central, de 1981 a 1983", en: "Central Bank memos from 1981 to 1983" }
+      text: { es: "Diseñé el prompt, las diez categorías y los controles para codificarlos con GPT-4o de forma pareja. Después analicé la base con redes y modelos de tópicos.", en: "I designed the prompt, the ten categories and the checks to code them consistently with GPT-4o, then analyzed the dataset with networks and topic models." }
+      place: { es: "UDP, Fondecyt N° 1231356", en: "UDP, Fondecyt grant 1231356" }
       work: fondecyt-bc
+    - title: { es: Informes para quien decide, en: Reports for decision-makers }
+      value: "7"
+      unit: { es: "Puntos de Referencia del CEP como coautor, más 6 notas de C22", en: "CEP policy papers as co-author, plus 6 C22 research notes" }
+      text: { es: "En el CEP analicé votaciones, discursos y encuestas de los dos procesos constitucionales y los convertí en textos para un público amplio. En Tironi, el boletín constitucional semanal de 2022 para gerencias y directorios.", en: "At CEP I analyzed votes, speeches and polls from both constitutional processes and turned them into pieces for a broad audience. At Tironi, the weekly 2022 constitutional bulletin for executives and boards." }
+      place: { es: CEP y Tironi, en: CEP and Tironi }
+      work: c22
 
-# Trayectoria: tres etapas que terminan en gobierno de datos. `jobs` son ids de experience.yml.
-where:
-  kicker: { es: Trayectoria, en: Career }
-  title: { es: "De investigar con datos a gobernarlos", en: "From researching with data to governing it" }
-  lede: { es: "Cinco años en tres etapas. Cada una sumó una pieza de lo que hago hoy.", en: "Five years in three stages. Each one added a piece of what I do today." }
-  cta: { es: Ver CV completo, en: See full CV }
-  stages:
-    - when: "2021 – 2024"
-      title: { es: Investigación y asuntos públicos, en: Research and public affairs }
-      text: { es: "Aprendí a convertir texto, votaciones y encuestas en datos, y a explicarlos a quien no es técnico. Coautor de 14 publicaciones.", en: "I learned to turn text, votes and surveys into data, and to explain it to non-technical people. Co-author of 14 publications." }
-      jobs: [c22, voces, tironi]
-    - when: "2024 – 2025"
-      title: { es: Estadística oficial, en: Official statistics }
-      text: { es: "Control de calidad a escala nacional en el Censo 2024, dentro de un código compartido con control de versiones y revisión cruzada.", en: "Quality control at national scale on the 2024 Census, inside a shared, version-controlled codebase with peer review." }
-      jobs: [ine, fondecyt-bc]
-    - when: { es: "2025 – hoy", en: "2025 – now" }
-      title: { es: Gobierno de datos, en: Data governance }
-      text: { es: "El gobierno de datos, la automatización y los tableros de una institución pública completa.", en: "Data governance, automation and dashboards for an entire public institution." }
-      jobs: [slep, prieto, aldeas]
-
-cards:
-  kicker: { es: Más evidencia, en: More evidence }
-  title: { es: "Lo que construí y lo que publiqué", en: "What I built and what I published" }
+# En breve: lo que revisa un reclutador, con la foto real. La frase recoge la idea del antiguo
+# diagrama de tres oficios.
+brief:
+  title: { es: En breve, en: In short }
+  text: { es: "Analizo, explico y diseño. En el SLEP Santa Rosa hago las tres cosas: ordeno los datos, armo los tableros y presento los resultados a los equipos.", en: "I analyze, explain and design. At SLEP Santa Rosa I do all three: I organize the data, build the dashboards and present the results to the teams." }
+  photo_alt: { es: Benjamín Lang presentando frente a un pendón del SLEP Santa Rosa, en: Benjamín Lang presenting next to an SLEP Santa Rosa banner }
+  photo_caption: { es: "Presentando resultados en el SLEP Santa Rosa.", en: "Presenting results at SLEP Santa Rosa." }
   items:
-    - page: portafolio
-      title: { es: Proyectos propios, en: Personal projects }
-      text: { es: "Tres sistemas que hice por mi cuenta y están en uso: El Guarén, con 787 descuentos de 16 emisores verificados contra la página del banco; un visor que junta los arriendos de tres portales, y un buscador de empleo con agentes de IA.", en: "Three systems I built on my own that are in use: El Guarén, with 787 discounts from 16 issuers checked against each bank's page; a viewer that merges rental listings from three sites; and a job search engine with AI agents." }
-    - page: publications
-      title: { es: Publicaciones, en: Publications }
-      text: { es: "Un artículo en el Journal of Language and Politics, siete Puntos de Referencia del CEP y seis notas de investigación de C22, todos en coautoría.", en: "One article in the Journal of Language and Politics, seven CEP policy papers and six C22 research notes, all co-authored." }
+    - label: { es: Herramientas, en: Tools }
+      text: { es: "R, Power BI, Excel, Git, Python y SQL.", en: "R, Power BI, Excel, Git, Python and SQL." }
+    - label: { es: Formación, en: Education }
+      text: { es: "Sociología en la Universidad Diego Portales, con distinción máxima.", en: "Sociology at Universidad Diego Portales, with highest honors." }
+    - label: { es: Idiomas, en: Languages }
+      text: { es: "Español nativo, italiano C1 e inglés B2.", en: "Native Spanish, Italian C1 and English B2." }
+    - label: { es: Qué busco, en: "What I'm looking for" }
+      text: { es: "Un cargo de analista de datos, BI o investigación aplicada en Santiago.", en: "A data analyst, BI or applied research role in Santiago." }
+
+# Por mi cuenta: los proyectos propios (`project` es el id en projects.yml, para el enlace a
+# su página) y, al lado, las publicaciones (cifras de `publications.counts`).
+own:
+  title: { es: Por mi cuenta, en: On my own }
+  text: { es: "Fuera del trabajo hago aplicaciones con datos que cambian todos los días.", en: "Outside work I build apps on data that changes every day." }
+  items:
+    - project: guaren
+      name: El Guarén
+      text: { es: "Junta 787 descuentos de 16 emisores y solo muestra los que siguen en la página del banco.", en: "Gathers 787 discounts from 16 card issuers and only shows the ones still listed on the bank's page." }
+    - project: visor-arriendos
+      name: { es: Visor de arriendos, en: Rental finder }
+      text: { es: "Los arriendos de tres portales en un solo visor que se actualiza solo.", en: "Rental listings from three sites in one viewer that updates itself." }
+    - project: buscador-trabajo
+      name: { es: Buscador de empleo, en: Job-search agents }
+      text: { es: "Agentes de IA que recolectan y puntúan ofertas de varios portales. Ya van más de 500 procesadas.", en: "AI agents that collect and score openings from several job sites. Over 500 processed so far." }
+  cta: { es: Ver proyectos propios, en: See personal projects }
+pubs:
+  title: { es: Publicaciones, en: Publications }
+  text: { es: "Todas en coautoría, sobre el proceso constitucional, la polarización y el voto.", en: "All co-authored, on Chile's constitutional process, polarization and voting." }
+  latest: { es: Último artículo, en: Latest article }
+  cta: { es: Ver publicaciones, en: See publications }
 
 story:
   kicker: { es: Método de trabajo, en: How I work }
@@ -240,5 +277,5 @@ publications:
   cta: { es: Ver todas las publicaciones, en: See all publications }
 
 contact:
-  title: { es: "¿Conversamos?", en: "Let's talk." }
-  lede: { es: "Busco cargos de analista de datos, BI o investigación aplicada, con base en Santiago. Si tienes una vacante o un proyecto, escríbeme o llámame.", en: "I'm looking for data analyst, BI or applied research roles, based in Santiago. If you have an opening or a project, email or call me." }
+  title: { es: "¿Conversamos?", en: "Let's talk" }
+  lede: { es: "Busco un cargo de analista de datos, BI o investigación aplicada en Santiago. Si tu equipo tiene datos que ordenar o explicar, escríbeme.", en: "I'm looking for a data analyst, BI or applied research role in Santiago. If your team has data to sort out or explain, get in touch." }

@@ -6,11 +6,11 @@
 
 summary:
   es: |
-    Soy sociólogo de la Universidad Diego Portales, titulado con distinción máxima y primero de mi generación. Hago análisis cuantitativo y cualitativo, y escribo el código para que otra persona pueda repetirlo.
+    Soy sociólogo de la Universidad Diego Portales, titulado con distinción máxima y primer lugar de mi promoción de titulación. Hago análisis cuantitativo y cualitativo, y escribo el código para que otra persona pueda repetirlo.
 
     Hoy trabajo como analista de datos en el Servicio Local de Educación Pública Santa Rosa. Antes validé datos del Censo 2024 en el INE, analicé el proceso constitucional en el CEP y codifiqué actas del Banco Central para un Fondecyt. Lo que más me gusta es que un análisis termine en algo que el equipo usa: un tablero, una ficha o un informe.
   en: |
-    I'm a sociologist from Universidad Diego Portales, graduated with highest honors and first in my class. I do quantitative and qualitative analysis, and I write the code so someone else can repeat it.
+    I'm a sociologist from Universidad Diego Portales, graduated with highest honors and first in my graduating cohort. I do quantitative and qualitative analysis, and I write the code so someone else can repeat it.
 
     Today I'm a data analyst at Servicio Local de Educación Pública Santa Rosa, a public school district in southern Santiago. Before that I validated 2024 Census data at INE, analyzed Chile's constitutional process at CEP and coded Central Bank minutes for a Fondecyt research grant. What I like most is when an analysis ends in something the team uses: a dashboard, a fact sheet or a report.
 
@@ -34,8 +34,8 @@ jobs:
     role: { es: Analista de datos, en: Data analyst }
     org: Servicio Local de Educación Pública Santa Rosa
     desc:
-      es: "Llevo el flujo completo de datos del servicio: captura automatizada desde las plataformas del Ministerio, consolidación en R, validación mensual y diez tableros de Power BI publicados en el sitio interno. Genero además fichas por establecimiento e informes de matrícula, asistencia y trayectoria docente para las cinco comunas."
-      en: "I run the service's full data flow: automated capture from the Ministry's platforms, consolidation in R, monthly validation and ten Power BI dashboards published on the internal site. I also produce school-level fact sheets and enrollment, attendance and teacher trajectory reports for the five municipalities."
+      es: "Armé desde cero el marco de gobierno de datos del servicio (diccionario de datos, estándares de calidad y documentación de cada flujo) y llevo el flujo completo: captura automatizada desde las plataformas del Ministerio, consolidación en R, validación mensual y diez tableros de Power BI que los equipos directivos consultan cada semana. Genero reportes mensuales automáticos en R Markdown, Quarto y LaTeX, fichas por establecimiento e informes de matrícula, asistencia, SIMCE y PAES para las cinco comunas, y capacito a los equipos en el uso de los tableros."
+      en: "I built the service's data governance framework from scratch (data dictionary, quality standards and documentation for every pipeline) and run the full data flow: automated capture from the Ministry's platforms, consolidation in R, monthly validation and ten Power BI dashboards that management teams check every week. I produce automatic monthly reports in R Markdown, Quarto and LaTeX, school fact sheets and enrollment, attendance, SIMCE and PAES reports for the five municipalities, and I train teams to use the dashboards."
   - id: aldeas
     parallel: true
     current: true
@@ -61,8 +61,8 @@ jobs:
     role: { es: "Analista metodológico senior, Censo 2024", en: "Senior methods analyst, 2024 Census" }
     org: Instituto Nacional de Estadísticas (INE)
     desc:
-      es: "Validación, edición e imputación de las variables de persona (sexo, edad y parentesco) dentro del código en R del procesamiento censal, más la codificación de respuestas del cuestionario en papel. Construí informes de calidad e indicadores demográficos comparados con los censos de 2017, 2002 y 1992."
-      en: "Validation, editing and imputation of person-level variables (sex, age and relationship) inside the R codebase of census processing, plus coding of paper questionnaire answers. I built quality reports and demographic indicators compared with the 2017, 2002 and 1992 censuses."
+      es: "Validación, edición e imputación de las variables de persona (sexo, edad y parentesco) dentro del código en R del procesamiento censal, más la codificación de respuestas del cuestionario en papel. Construí informes de calidad e indicadores demográficos comparados con los censos de 2017, 2002 y 1992, y participé en el diseño del cuestionario censal y en el análisis de las pruebas preparativas."
+      en: "Validation, editing and imputation of person-level variables (sex, age and relationship) inside the R codebase of census processing, plus coding of paper questionnaire answers. I built quality reports and demographic indicators compared with the 2017, 2002 and 1992 censuses, and took part in designing the census questionnaire and analyzing the pretests."
   - id: fondecyt-bc
     parallel: true
     home: true
@@ -85,8 +85,8 @@ jobs:
     role: { es: "Asistente de investigación, C22", en: "Research assistant, C22" }
     org: Centro de Estudios Públicos (CEP)
     desc:
-      es: "Análisis de votaciones con escalamiento tipo NOMINATE, procesamiento de discursos y prensa, y visualización de datos políticos. Coautor de siete Puntos de Referencia del CEP y seis notas de investigación de C22."
-      en: "Vote analysis with NOMINATE-style scaling, processing of speeches and press coverage, and political data visualization. Co-author of seven CEP policy papers and six C22 research notes."
+      es: "Análisis de votaciones con escalamiento tipo NOMINATE, minería de texto y redes sobre discursos y prensa, y visualización de datos políticos. También analicé los resultados educativos de los Servicios Locales de Educación Pública y el SIMCE de sus escuelas. Coautor de siete Puntos de Referencia del CEP y seis notas de investigación de C22."
+      en: "Vote analysis with NOMINATE-style scaling, text mining and network analysis of speeches and press coverage, and political data visualization. I also analyzed the learning outcomes of Chile's new local public education services and the SIMCE results of their schools. Co-author of seven CEP policy papers and six C22 research notes."
   - id: tironi
     home: true
     when: { es: "2021 – 2023", en: "2021 – 2023" }
@@ -114,7 +114,7 @@ education:
   - title: { es: "Sociólogo, distinción máxima", en: "B.A. in Sociology, highest honors" }
     org: Universidad Diego Portales
     when: "2017 – 2021"
-    note: { es: Primer lugar en el ranking de egreso de mi generación., en: Ranked first in my graduating class. }
+    note: { es: "Primer lugar de 57 en la promoción de titulación 2022 y segundo de 49 en la cohorte de ingreso 2017.", en: "Ranked first of 57 in the 2022 graduating cohort and second of 49 in the 2017 entering cohort." }
   - title: { es: Diplomado de honor en movilidad y transporte, en: Honors diploma in mobility and transport }
     org: Universidad Diego Portales
     when: "2019 – 2020"
@@ -186,6 +186,6 @@ references:
   - name: Aldo Mascareño
     role: { es: "Investigador senior del CEP, editor de Estudios Públicos e investigador principal de C22.", en: "Senior researcher at CEP, editor of Estudios Públicos and principal investigator of C22." }
     email: amascareno@cepchile.cl
-  - name: Francisco Espinoza
-    role: { es: "Consultor en Tironi y Asociados. Magíster en Ciencia Política, Universidad de Chile.", en: "Consultant at Tironi y Asociados. MA in Political Science, Universidad de Chile." }
-    email: francisco.espinoza@tironi.cl
+  - name: Patricia Mauna
+    role: { es: Consultora en Tironi y Asociados., en: Consultant at Tironi y Asociados. }
+    email: pamaunam@ine.gob.cl

@@ -6,7 +6,7 @@
     <p class="contact-lede">{{ home.contact.lede | t }}</p>
     <div class="mail-big">
       <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
-      <button class="copy-btn" type="button" data-copy="{{ site.contact.email }}" data-done="{{ ui.copied }}">{{ ui.copy_email }}</button>
+      <button class="copy-btn" type="button" aria-live="polite" data-copy="{{ site.contact.email }}" data-done="{{ ui.copied }}">{{ ui.copy_email }}</button>
     </div>
     <div class="contact-grid">
       <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener"><span>LinkedIn</span><b>benjamin-lang</b></a>

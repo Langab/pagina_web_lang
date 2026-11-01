@@ -252,11 +252,57 @@ def make_env(data: dict, asset_version: str) -> Environment:
     def project_url(ctx, project: dict):
         return url(ctx, f"project:{project['id']}")
 
+    eje = make_eje(data["home"]["places"]["desde"], date.today())
+
+    @pass_context
+    def mes(ctx, value):
+        """'2024-06' → 'jun 2024' / 'Jun 2024'; 'hoy' → el rótulo de hoy del idioma."""
+        if value == "hoy":
+            return t(ctx, data["home"]["places"]["now"])
+        y, m = value.split("-")
+        return f"{MESES[ctx['lang']][int(m) - 1]} {y}"
+
     env.filters["t"] = t
     env.filters["md"] = md
     env.filters["num"] = num
-    env.globals.update(url=url, asset=asset, project_url=project_url, year=date.today().year, img_size=img_size)
+    env.filters["mes"] = mes
+    env.globals.update(url=url, asset=asset, project_url=project_url, year=date.today().year, img_size=img_size,
+                       eje=eje, tramo=eje["tramo"])
     return env
+
+
+# ── Eje de tiempo de «Dónde he trabajado» ───────────────────────────────────
+
+MESES = {
+    "es": "ene feb mar abr may jun jul ago sep oct nov dic".split(),
+    "en": "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(),
+}
+MARGEN_MESES = 2  # aire a la derecha de «hoy», para que quepa el punto de lo vigente
+
+
+def make_eje(desde: str, hoy: date) -> dict:
+    """Columnas de una grilla CSS con una columna por mes, desde `desde` (AAAA-MM) hasta el mes
+    del build más un margen. «Hoy» se calcula aquí: el sitio se construye todos los días.
+
+    Las barras usan líneas de grilla (`grid-column: a / b`): un trabajo de jun 2024 a abr 2025
+    ocupa desde el inicio de junio hasta el final de abril."""
+    y0, m0 = (int(x) for x in desde.split("-"))
+
+    def idx(valor: str) -> int:
+        y, m = (hoy.year, hoy.month) if valor == "hoy" else (int(x) for x in valor.split("-"))
+        return (y - y0) * 12 + (m - m0)
+
+    hoy_fin = idx("hoy") + 2  # línea de grilla al final del mes en curso
+    total = hoy_fin - 1 + MARGEN_MESES
+    anios = []
+    for y in range(y0 if m0 == 1 else y0 + 1, hoy.year + 1):
+        a = idx(f"{y}-01") + 1
+        anios.append({"y": y, "a": a, "b": min(a + 12, total + 1)})
+
+    def tramo(start: str, end: str) -> dict:
+        return {"a": idx(start) + 1, "b": idx(end) + 2, "vigente": end == "hoy"}
+
+    return {"total": total, "hoy": hoy_fin, "anios": anios, "tramo": tramo}
 
 
 # ── Construcción ───────────────────────────────────────────────────────────

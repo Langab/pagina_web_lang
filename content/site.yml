@@ -44,7 +44,7 @@ pages:
   - id: portafolio
     template: pages/portafolio.html
     path: { es: portafolio/, en: en/portfolio/ }
-    title: { es: Portafolio, en: Portfolio }
+    title: { es: Proyectos propios, en: Personal projects }
     description:
       es: "Proyectos de datos de punta a punta que construí por mi cuenta: una aplicación web con base de datos, un visor que se actualiza solo y agentes de IA."
       en: "End-to-end data projects I built on my own: a web app with a database, a self-updating viewer and AI agents."
@@ -70,10 +70,12 @@ pages:
       es: "Experiencia laboral, formación, habilidades técnicas y docencia de Benjamín Lang."
       en: "Work experience, education, technical skills and teaching of Benjamín Lang."
 
+# Índice del encabezado. Sin «Inicio»: el nombre de la izquierda ya lleva a la portada.
+# `short` es la versión que se ve en celular, donde el índice va en una segunda fila a todo
+# el ancho; el lector de pantalla siempre lee `label`.
 nav:
-  - { id: home, label: { es: Inicio, en: Home } }
   - { id: trabajos, label: { es: Trabajos, en: Work } }
-  - { id: portafolio, label: { es: Portafolio, en: Portfolio } }
+  - { id: portafolio, label: { es: Proyectos propios, en: Personal projects }, short: { es: Proyectos, en: Projects } }
   - { id: publications, label: { es: Publicaciones, en: Publications } }
   - { id: cv, label: { es: CV, en: CV } }
 
@@ -110,7 +112,8 @@ legacy_redirects:
 ui:
   skip: { es: Saltar al contenido, en: Skip to content }
   home: { es: Inicio, en: Home }
-  menu: { es: Menú, en: Menu }
+  menu: { es: Secciones, en: Sections }
+  language: { es: Idioma, en: Language }
   switch_label: { es: Read in English, en: Leer en español }
   cta_contact: { es: Escríbeme, en: Get in touch }
   contact_anchor: { es: contacto, en: contact }
@@ -144,6 +147,5 @@ ui:
   back_home: { es: Volver al inicio, en: Back to home }
   read_article: { es: Leer artículo, en: Read article }
   year: { es: Año, en: Year }
-  open_section: { es: Entrar, en: Open }
   read: { es: Leer, en: Read }
   filter_label: { es: Filtrar proyectos, en: Filter projects }
