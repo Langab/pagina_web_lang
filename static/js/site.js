@@ -218,14 +218,13 @@
   });
 
   /* ================================================================== */
-  /* Portada: fuentes, entrada, la «a» viva y la cinta                   */
+  /* Portada: fuentes, entrada, la «a» viva y su pausa                   */
   /* ================================================================== */
   const portada = $("[data-portada]");
   if (portada) {
     const recorte = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
     const suave = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
     const salida = (p) => 1 - Math.pow(1 - p, 3);
-    const cinta = $("[data-cinta]");
 
     // 1. Fuentes: la carrera «fuente del nombre o 400 ms» parte en el <head> (base.html), apenas
     //    carga el CSS; ahí se ponen «listo» y «entra». Aquí solo se espera su resultado.
@@ -233,7 +232,7 @@
     if (!window.blFuentes) doc.classList.add("listo");
 
     // 2. Lo que se mueve solo corre únicamente si se ve: portada en pantalla, pestaña activa y
-    //    sin la pausa del botón de la cinta (WCAG 2.2.2; la elección se recuerda en este navegador).
+    //    sin la pausa del botón (WCAG 2.2.2; la elección se recuerda en este navegador).
     let detenido = false;
     try { detenido = localStorage.getItem("bl.quieto") === "1"; } catch { /* almacenamiento bloqueado */ }
     let enPantalla = true, pestana = !document.hidden, visible = !detenido;
@@ -444,6 +443,7 @@
       };
 
       if (!medir()) { lienzo.remove(); return; }
+      activarPausa();
       // En pausa la «a» vuelve a ser letra.
       oyentes.add((v) => {
         if (v || !detenido) return;
@@ -465,46 +465,20 @@
       // La letra se vuelve puntos cuando el nombre terminó de enfocarse.
       setTimeout(() => bucle(dibujar), 1100);
     };
-    if (viva && !reduced) fuentes.then(letraViva);
-
-    // 4. Cinta: completa la pista para pantallas anchas, fija la velocidad (~60 px/s) y se
-    //    detiene cuando no se ve. Con movimiento reducido queda quieta (CSS).
-    if (cinta && !reduced) {
-      const pista = $(".cinta-pista", cinta);
-      const ajustar = () => {
-        const trozos = [...pista.children];
-        const mitad = trozos.length / 2;
-        let ancho = 0;
-        for (let i = 0; i < mitad; i++) ancho += trozos[i].offsetWidth;
-        if (ancho && ancho < window.innerWidth + 200) {
-          const extra = Math.ceil((window.innerWidth + 200) / (ancho / mitad)) - mitad;
-          const nuevos = Array.from({ length: extra }, () => trozos[0].cloneNode(true));
-          pista.prepend(...nuevos.map((n) => n.cloneNode(true)));
-          pista.append(...nuevos);
-          ancho += extra * trozos[0].offsetWidth;
-        }
-        if (ancho) pista.style.setProperty("--cinta-dur", `${Math.round(ancho / 60)}s`);
-      };
-      fuentes.then(ajustar);
-      if (document.fonts) document.fonts.ready.then(ajustar);
-      let enCinta = true;
-      const pausa = () => { pista.style.animationPlayState = enCinta && !document.hidden && !detenido ? "" : "paused"; };
-      new IntersectionObserver(([e]) => { enCinta = e.isIntersecting; pausa(); }).observe(cinta);
-      document.addEventListener("visibilitychange", pausa);
-      pausa();
-      const boton = $("[data-pausa]", cinta);
-      if (boton) {
-        boton.hidden = false;
+    // 4. Pausa: el botón aparece solo cuando la «a» se mueve de verdad.
+    const activarPausa = () => {
+      const boton = $("[data-pausa]", portada);
+      if (!boton) return;
+      boton.hidden = false;
+      boton.setAttribute("aria-pressed", String(detenido));
+      boton.addEventListener("click", () => {
+        detenido = !detenido;
         boton.setAttribute("aria-pressed", String(detenido));
-        boton.addEventListener("click", () => {
-          detenido = !detenido;
-          boton.setAttribute("aria-pressed", String(detenido));
-          try { localStorage.setItem("bl.quieto", detenido ? "1" : "0"); } catch { /* sin almacenamiento */ }
-          pausa();
-          avisar();
-        });
-      }
-    }
+        try { localStorage.setItem("bl.quieto", detenido ? "1" : "0"); } catch { /* sin almacenamiento */ }
+        avisar();
+      });
+    };
+    if (viva && !reduced) fuentes.then(letraViva);
   }
 
   /* ================================================================== */

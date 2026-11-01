@@ -27,11 +27,8 @@ logos:
     - { name: SLEP Santa Rosa, src: logos/tinta/santa_rosa.png, h: 30, work: slep, label: { es: "SLEP Santa Rosa: ver el caso", en: "SLEP Santa Rosa: see the case" } }
     - { name: Universidad Diego Portales, src: logos/tinta/udp.png, h: 28, work: fondecyt-bc, label: { es: "Universidad Diego Portales: ver el caso", en: "Universidad Diego Portales: see the case" } }
 
-# Cinta al pie de la primera pantalla. «Contar» en sus dos sentidos: contar personas y contar
-# lo que pasó. Se repite separada por la marca de 3 × 3 puntos, nunca por «·».
-ribbon: { es: Contar bien y contarlo claro, en: "Count it right, tell it clearly" }
-# Botón que detiene la cinta y la «a» del nombre (WCAG 2.2.2). Lo lee el lector de pantalla.
-ribbon_pause: { es: Pausar el movimiento, en: Pause the motion }
+# Botón que detiene la «a» del nombre (WCAG 2.2.2). Lo lee el lector de pantalla.
+motion_pause: { es: Pausar el movimiento, en: Pause the motion }
 
 # Dónde he trabajado: un carril por lugar, agrupado por sector, sobre un eje de meses que
 # parte en `desde` y termina en el día del build («hoy»). `start` y `end` van en AAAA-MM;
@@ -49,6 +46,7 @@ places:
       rows:
         - id: slep
           name: SLEP Santa Rosa
+          logo: logos/tinta/santa_rosa.png
           open: true
           tracks:
             - start: "2025-10"
@@ -58,6 +56,7 @@ places:
               work: slep
         - id: ine
           name: { es: "INE, Censo 2024", en: "INE, 2024 Census" }
+          logo: logos/tinta/ine.png
           tracks:
             - start: "2024-06"
               end: "2025-04"
@@ -68,6 +67,7 @@ places:
       rows:
         - id: cep
           name: Centro de Estudios Públicos (CEP)
+          logo: logos/tinta/cep.png
           tracks:
             - label: C22
               start: "2021-08"
@@ -85,6 +85,7 @@ places:
       rows:
         - id: udp
           name: Universidad Diego Portales
+          logo: logos/tinta/udp.png
           tracks:
             - start: "2024-05"
               end: "2025-08"
@@ -95,13 +96,14 @@ places:
       rows:
         - id: tironi
           name: Tironi y Asociados
+          logo: logos/tinta/tironi.png
           tracks:
             - start: "2021-08"
               end: "2023-03"
               role: { es: Analista de asuntos públicos, en: Public affairs analyst }
               win: { es: "Durante 2022 estuve a cargo del boletín constitucional semanal para gerencias: qué se votó y qué cambiaba para cada industria.", en: "Throughout 2022 I ran the weekly constitutional bulletin for executives: what was voted and what it changed for each industry." }
               work: tironi
-  also: { es: "Además, desde 2025 y en paralelo, investigo con Joaquín Prieto y hago consultoría para Aldeas Infantiles SOS.", en: "Since 2025 I've also done research with Joaquín Prieto and consulting for Aldeas Infantiles SOS, alongside my main job." }
+  also: { es: "Además, desde 2025 y en paralelo, hago consultoría para Aldeas Infantiles SOS.", en: "Since 2025 I've also done consulting for Aldeas Infantiles SOS, alongside my main job." }
   also_link: { es: Todo el detalle está en el CV., en: Full details are in the CV. }
   note: { es: "Cada barra va del mes de inicio al de término; no indica horas de dedicación.", en: "Each bar runs from the start month to the end month; it doesn't show hours worked." }
 
@@ -136,31 +138,6 @@ reporting:
         text: { es: "El visor de arriendos corre solo cada mañana, guarda una foto del día y publica el resultado. El código está abierto en GitHub.", en: "The rental finder runs itself every morning, saves a daily snapshot and publishes the result. The code is open on GitHub." }
   see: { es: Ver el caso completo del SLEP, en: See the full SLEP case }
   work: slep
-
-# Lo que hice y lo que quedó: tres casos (el del SLEP vive en «Reportería automática»), cada uno con su cifra quieta y el lugar como firma.
-# `work` es el id del trabajo en projects.yml (abre la ventana del caso en /trabajos/).
-cases:
-  title: { es: Lo que hice y lo que quedó, en: What I did and what came of it }
-  see: { es: Ver el caso, en: See the case }
-  items:
-    - title: { es: Control de calidad a escala nacional, en: Quality control at national scale }
-      value: { es: "18,5", en: "18.5" }
-      unit: { es: millones de personas en el censo, en: million people in the census }
-      text: { es: "Validación de sexo, edad y parentesco en un censo de 18,5 millones de personas. Escribí las reglas en R, dentro del código compartido del procesamiento, y los informes de calidad para decidir cómo corregir.", en: "Validating sex, age and relationship in a census of 18.5 million people. I wrote the rules in R, inside the shared processing codebase, plus the quality reports used to decide how to fix errors." }
-      place: { es: "INE, Censo 2024", en: "INE, 2024 Census" }
-      work: censo-2024
-    - title: { es: "Texto como datos, con IA", en: "Text as data, with AI" }
-      value: { es: "1.467", en: "1,467" }
-      unit: { es: "memorandos del Banco Central, de 1981 a 1983", en: "Central Bank memos from 1981 to 1983" }
-      text: { es: "Diseñé el prompt, las diez categorías y los controles para codificarlos con GPT-4o de forma pareja. Después analicé la base con redes y modelos de tópicos.", en: "I designed the prompt, the ten categories and the checks to code them consistently with GPT-4o, then analyzed the dataset with networks and topic models." }
-      place: { es: "UDP, Fondecyt N° 1231356", en: "UDP, Fondecyt grant 1231356" }
-      work: fondecyt-bc
-    - title: { es: Informes para quien decide, en: Reports for decision-makers }
-      value: "7"
-      unit: { es: "Puntos de Referencia del CEP como coautor, más 6 notas de C22", en: "CEP policy papers as co-author, plus 6 C22 research notes" }
-      text: { es: "En el CEP analicé votaciones, discursos y encuestas de los dos procesos constitucionales y los convertí en textos para un público amplio. En Tironi, el boletín constitucional semanal de 2022 para gerencias y directorios.", en: "At CEP I analyzed votes, speeches and polls from both constitutional processes and turned them into pieces for a broad audience. At Tironi, the weekly 2022 constitutional bulletin for executives and boards." }
-      place: { es: CEP y Tironi, en: CEP and Tironi }
-      work: c22
 
 # En breve: lo que revisa un reclutador, con la foto real. La frase recoge la idea del antiguo
 # diagrama de tres oficios.

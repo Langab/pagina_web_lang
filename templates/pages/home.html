@@ -7,7 +7,7 @@
 
 {# ── Primera pantalla ─────────────────────────────────────────────────
    Lo único que se mueve solo: el nombre entra desenfocado y después la «a» de Lang se vuelve
-   puntos que se ordenan en registros (static/js/site.js, «Portada»). Las manchas lima son
+   puntos que se ordenan en registros (static/js/site.js, «Portada»). Las manchas azules son
    puntos enormes fuera de foco. #}
 <section class="portada" data-portada aria-labelledby="nombre">
   <div class="manchas" aria-hidden="true">{% for i in range(7) %}<i></i>{% endfor %}</div>
@@ -31,19 +31,14 @@
       {% endfor %}
     </ul>
   </div>
+  {# Pausa de la «a» (WCAG 2.2.2). Oculto hasta que el JS echa a andar el movimiento. #}
+  <button class="pausa" type="button" aria-pressed="false" data-pausa hidden><svg class="pausa-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg><svg class="seguir-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.5 2.5l9 5.5-9 5.5z"/></svg><span class="sr-only">{{ home.motion_pause | t }}</span></button>
 </section>
-
-<div class="cinta" data-cinta>
-  <p class="sr-only">{{ home.ribbon | t }}</p>
-  <div class="cinta-pista" aria-hidden="true">{% for i in range(6) %}<span class="cinta-trozo">{{ home.ribbon | t }}{{ m.marca('cinta-marca') }}</span>{% endfor %}</div>
-  {# Pausa de la cinta y de la «a» (WCAG 2.2.2). Oculto hasta que el JS echa a andar el movimiento. #}
-  <button class="cinta-pausa" type="button" aria-pressed="false" data-pausa hidden><svg class="cinta-pausa-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg><svg class="cinta-seguir-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.5 2.5l9 5.5-9 5.5z"/></svg><span class="sr-only">{{ home.ribbon_pause | t }}</span></button>
-</div>
 
 {# ── Dónde he trabajado: un carril por lugar sobre un eje de meses ─────
    Funciona sin JS y con teclado (<details>). El eje y «hoy» salen de build.py (make_eje). #}
 {% set pl = home.places %}
-<section class="bloque bloque-lima lugares" aria-labelledby="lugares-title">
+<section class="bloque bloque-lavanda lugares" aria-labelledby="lugares-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="lugares-title">{{ pl.title | t }}</h2>
@@ -68,7 +63,7 @@
       {% set fin = 'hoy' if 'hoy' in fines else fines | max %}
       <details class="lt-fila" id="lugar-{{ r.id }}"{% if r.open is defined %} open{% endif %}>
         <summary>
-          <span class="lt-nombre"><b>{{ r.name | t }}</b><span>{{ ini | mes }} – {{ fin | mes }}</span></span>
+          <span class="lt-nombre">{% if r.logo is defined %}{% set dim = img_size('img/' ~ r.logo) %}<img class="lt-logo" src="{{ asset('img/' ~ r.logo) }}" alt="" width="{{ dim[0] }}" height="{{ dim[1] }}" loading="lazy" decoding="async">{% endif %}<span class="lt-texto"><b>{{ r.name | t }}</b><span>{{ ini | mes }} – {{ fin | mes }}</span></span></span>
           <span class="lt-pista{{ ' lt-rotulada' if r.tracks | length > 1 }}" aria-hidden="true">
             {% for tr in r.tracks %}{% set p = tramo(tr.start, tr.end) %}
             <span class="lt-barra{{ ' es-vigente' if p.vigente }}" style="grid-column: {{ p.a }} / {{ p.b }}; grid-row: {{ loop.index }}">{% if r.tracks | length > 1 %}<em>{{ tr.label | t }}</em>{% endif %}</span>
@@ -106,7 +101,7 @@
    la grilla que sale como fichas por escuela y como un gráfico. Al pasar el cursor por una pieza,
    lo de entrada se apaga y queda lo que sale. #}
 {% set rp = home.reporting %}
-<section class="bloque bloque-lavanda reporteria" aria-labelledby="reporteria-title">
+<section class="bloque reporteria" aria-labelledby="reporteria-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="reporteria-title">{{ rp.title | t }}</h2>
@@ -157,26 +152,6 @@
       <dl class="auditable-lista">
         {% for it in au['items'] %}<div><dt>{{ it.label | t }}</dt><dd>{{ it.text | t }}</dd></div>{% endfor %}
       </dl>
-    </div>
-  </div>
-</section>
-
-{# ── Lo que hice y lo que quedó: tres casos, cifra quieta y el lugar como firma ── #}
-{% set cs = home.cases %}
-<section class="bloque casos" aria-labelledby="casos-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="casos-title">{{ cs.title | t }}</h2>
-    </div>
-    <div class="casos-grid">
-      {% for c in cs['items'] %}
-      <article class="caso" aria-labelledby="caso-{{ loop.index }}">
-        <h3 id="caso-{{ loop.index }}">{{ c.title | t }}</h3>
-        <p class="caso-cifra"><b>{{ c.value | t }}</b><span>{{ c.unit | t }}</span></p>
-        <p class="caso-texto">{{ c.text | t }}</p>
-        <p class="caso-pie"><span>{{ c.place | t }}</span><a class="link-more" href="{{ url('trabajos', '#p-' ~ c.work) }}" aria-label="{{ cs.see | t }}, {{ c.title | t }}">{{ cs.see | t }}</a></p>
-      </article>
-      {% endfor %}
     </div>
   </div>
 </section>

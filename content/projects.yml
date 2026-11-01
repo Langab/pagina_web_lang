@@ -295,14 +295,14 @@ work:
   - id: prieto
     home: true
     area: [research]
-    years: { es: "2025 – hoy", en: "2025 – now" }
+    years: { es: "2025 – 2026", en: "2025 – 2026" }
     title: { es: "Inseguridad económica y participación en protesta", en: "Economic insecurity and protest participation" }
     org: { es: Investigación con Joaquín Prieto, en: Research with Joaquín Prieto }
     role: { es: "Analista cuantitativo y coautor", en: "Quantitative analyst and co-author" }
     modal:
       intro:
-        es: "¿Qué explica mejor quién salió a protestar en octubre de 2019: la desigualdad o la inseguridad económica? Para responderlo hacía falta un índice de inseguridad económica construido con datos de panel. Con Joaquín Prieto lo armamos con ELSOC en *Economic Insecurity, Not Inequality?*, y en *Insecurity amid Recovery* trabajamos la Encuesta de Bienestar Social del INE. Soy responsable del análisis cuantitativo y coautor del primer paper."
-        en: "What better explains who took to the streets in October 2019: inequality or economic insecurity? Answering that required an economic insecurity index built from panel data. With Joaquín Prieto we built it from ELSOC in *Economic Insecurity, Not Inequality?*, and in *Insecurity amid Recovery* we work with INE's Social Wellbeing Survey. I am responsible for the quantitative analysis and a co-author of the first paper."
+        es: "¿Qué explica mejor quién salió a protestar en octubre de 2019: la desigualdad o la inseguridad económica? Para responderlo hacía falta un índice de inseguridad económica construido con datos de panel. Con Joaquín Prieto lo armamos con ELSOC en *Economic Insecurity, Not Inequality?*, y en *Insecurity amid Recovery* trabajamos la Encuesta de Bienestar Social del INE. Fui responsable del análisis cuantitativo y coautor del primer paper."
+        en: "What better explains who took to the streets in October 2019: inequality or economic insecurity? Answering that required an economic insecurity index built from panel data. With Joaquín Prieto we built it from ELSOC in *Economic Insecurity, Not Inequality?*, and in *Insecurity amid Recovery* we worked with INE's Social Wellbeing Survey. I was responsible for the quantitative analysis and a co-author of the first paper."
       transfer:
         es: "Si tienes datos de encuestas o de panel y una pregunta que pide más que tablas descriptivas, puedo construir índices, estimar modelos tratando bien los valores perdidos y dejar el código ordenado por etapas para que el equipo lo revise."
         en: "If you have survey or panel data and a question that needs more than descriptive tables, I can build indices, fit models that handle missing data properly and leave the code organized by stage so the team can review it."
