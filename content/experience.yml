@@ -47,9 +47,8 @@ jobs:
       en: "Mixed-methods assessment of digital skills gaps using the European DigComp 2.2 framework and focus groups in four villages, plus the 2026 training plan that followed. I lead the workshops at the Quilpué site."
   - id: prieto
     parallel: true
-    current: true
     home: true
-    when: { es: "2025 – hoy", en: "2025 – now" }
+    when: { es: "2025 – 2026", en: "2025 – 2026" }
     role: { es: "Analista cuantitativo y coautor", en: "Quantitative analyst and co-author" }
     org: Investigación con Joaquín Prieto
     desc:
