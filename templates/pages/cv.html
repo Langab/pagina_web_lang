@@ -56,6 +56,28 @@
   </div>
 </section>
 
+<section class="section-tight wrap" aria-labelledby="personal">
+  <div class="split">
+    <div class="split-sticky">
+      <h2 id="personal" style="font-size:var(--t-2xl)">{{ lb.personal | t }}</h2>
+    </div>
+    <ol class="timeline">
+      {% for it in experience.personal['items'] %}
+      {% set pr = projects.lab | selectattr('id', 'equalto', it.project) | first %}
+      <li class="tl-item{{ ' is-current' if it.current is defined }}">
+        <span class="tl-when">{{ it.when | t }}</span>
+        <div class="tl-what">
+          <h3>{{ it.title | t }}</h3>
+          <p class="org">{{ it.org | t }}</p>
+          <p>{{ it.desc | md }}</p>
+          <p style="margin-top:.75rem"><a class="link-more" href="{{ project_url(pr) }}">{{ experience.personal.cta | t }}</a></p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
 <section class="section-tight on-paper" aria-labelledby="education">
   <div class="wrap split">
     <div class="split-sticky"><h2 id="education" style="font-size:var(--t-2xl)">{{ lb.education | t }}</h2></div>
