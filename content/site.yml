@@ -29,8 +29,11 @@ contact:
   linkedin: https://www.linkedin.com/in/benjamin-lang-a78229207/
   github: https://github.com/Langab
   cv:
-    es: CV_Lang_DataAnalyst_ES.pdf
-    en: CV_Lang_DataAnalyst_EN.pdf
+    es: CV_BenjaminLang_2026.pdf
+    en: CV_BenjaminLang_2026.pdf
+
+# Nombres de versiones anteriores del CV: redirigen al actual (build.py escribe _redirects).
+cv_anteriores: [CV_Lang_DataAnalyst_ES.pdf, CV_Lang_DataAnalyst_EN.pdf, cv_Benjamin_Lang_2026.pdf]
 
 # Páginas: la misma página existe en ambos idiomas con su propia URL.
 pages:
@@ -137,7 +140,7 @@ ui:
   status: { es: Estado, en: Status }
   on_this_page: { es: En esta página, en: On this page }
   next_project: { es: Siguiente proyecto, en: Next project }
-  download_cv: { es: Descargar CV (PDF), en: Download CV (PDF) }
+  download_cv: { es: Descargar CV (PDF), en: "Download CV (PDF, in Spanish)" }
   copy_email: { es: Copiar correo, en: Copy email }
   copied: { es: Copiado, en: Copied }
   email: { es: Correo, en: Email }

@@ -13,7 +13,7 @@ hero:
   lede:
     es: "Validé datos del Censo 2024 en el INE y analicé el proceso constitucional para el CEP y Tironi. Hoy llevo los datos de educación pública del SLEP Santa Rosa."
     en: "I validated 2024 Census data at INE and analyzed Chile's constitutional process for CEP and Tironi. Today I lead data work for public schools at SLEP Santa Rosa."
-  cta_cv: { es: Descargar CV, en: Download CV }
+  cta_cv: { es: Descargar CV, en: Download CV (in Spanish) }
 
 # Logos en una sola tinta (scripts/logos_tinta.py). Cada uno lleva a su caso en /trabajos/:
 # quien llega quiere ver qué hice ahí, no la página de la institución. `h` es el alto en px,
@@ -72,14 +72,14 @@ places:
             - label: C22
               start: "2021-08"
               end: "2024-04"
-              role: { es: "Asistente de investigación, C22", en: "Research assistant, C22" }
-              win: { es: "Coautor de **7 Puntos de Referencia** del CEP y **6 notas** de investigación de C22, con análisis de votaciones, discursos y prensa.", en: "Co-author of **7 CEP policy papers** and **6 C22 research notes**, analyzing votes, speeches and press coverage." }
+              role: { es: "Asistente de investigación C22, humanidades digitales", en: "C22 research assistant, digital humanities" }
+              win: { es: "Apliqué minería de texto y análisis de redes a documentos políticos. Coautor de **13 publicaciones**: 7 Puntos de Referencia del CEP y 6 notas de C22.", en: "I applied text mining and network analysis to political documents. Co-author of **13 publications**: 7 CEP policy papers and 6 C22 research notes." }
               work: c22
             - label: Voces del CEP
               start: "2023-04"
               end: "2024-04"
-              role: { es: "Investigador asistente, Voces del CEP", en: "Research assistant, Voces del CEP" }
-              win: { es: "Edité el boletín *Voces del CEP* sobre el segundo proceso constitucional, con datos electorales y de opinión pública.", en: "I edited the *Voces del CEP* bulletin on the second constitutional process, with electoral and public opinion data." }
+              role: { es: "Asistente de investigación, análisis estadístico", en: "Research assistant, statistical analysis" }
+              win: { es: "Sistematicé datos electorales y de opinión pública (Encuesta CEP, votaciones constitucionales 2023) y elaboré el boletín *Voces del CEP*.", en: "I systematized electoral and public opinion data (CEP Survey, 2023 constitutional votes) and produced the *Voces del CEP* bulletin." }
               work: c22
     - name: { es: Universidad, en: University }
       rows:
@@ -89,8 +89,8 @@ places:
           tracks:
             - start: "2024-05"
               end: "2025-08"
-              role: { es: "Investigador, Fondecyt N° 1231356", en: "Researcher, Fondecyt grant 1231356" }
-              win: { es: "Codifiqué con GPT-4o **1.467 memorandos** del Banco Central, de 1981 a 1983, y los analicé con redes y modelos de tópicos.", en: "I coded **1,467 Central Bank memos** from 1981 to 1983 with GPT-4o and analyzed them with networks and topic models." }
+              role: { es: "Investigador y analista de datos, Fondecyt N° 1231356", en: "Researcher and data analyst, Fondecyt grant 1231356" }
+              win: { es: "Estructuré y analicé un corpus de **16 años** de documentos de política económica (2006–2022) con métodos mixtos, y dejé el pipeline reproducible en Git.", en: "I structured and analyzed a **16-year** corpus of economic policy documents (2006–2022) using mixed methods, and kept the pipeline reproducible in Git." }
               work: fondecyt-bc
     - name: { es: Consultoría, en: Consulting }
       rows:
@@ -101,10 +101,10 @@ places:
             - start: "2021-08"
               end: "2023-03"
               role: { es: Analista de asuntos públicos, en: Public affairs analyst }
-              win: { es: "Durante 2022 estuve a cargo del boletín constitucional semanal para gerencias: qué se votó y qué cambiaba para cada industria.", en: "Throughout 2022 I ran the weekly constitutional bulletin for executives: what was voted and what it changed for each industry." }
+              win: { es: "Recopilé, limpié y analicé datos políticos y electorales para el **Boletín Constitucional 2022** y proyectos de consultoría estratégica.", en: "I collected, cleaned and analyzed political and electoral data for the **2022 Constitutional Bulletin** and strategic consulting projects." }
               work: tironi
   also: { es: "Además, desde 2025 y en paralelo, hago consultoría para Aldeas Infantiles SOS.", en: "Since 2025 I've also done consulting for Aldeas Infantiles SOS, alongside my main job." }
-  also_link: { es: Todo el detalle está en el CV., en: Full details are in the CV. }
+  also_link: { es: Ver el CV completo., en: See the full CV. }
   note: { es: "Cada barra va del mes de inicio al de término; no indica horas de dedicación.", en: "Each bar runs from the start month to the end month; it doesn't show hours worked." }
 
 # Reportería automática: lo que más le piden. Tres piezas en secuencia real (extracción,
@@ -133,7 +133,7 @@ reporting:
       - label: { es: Estadística oficial, en: Official statistics }
         text: { es: "INE, Censo 2024: reglas de validación en R dentro de un código compartido en GitLab, con entorno replicable y revisión cruzada.", en: "INE, 2024 Census: validation rules in R inside a shared GitLab codebase, with a replicable environment and cross-review." }
       - label: { es: Investigación, en: Research }
-        text: { es: "CEP y Fondecyt: bases armadas en R con cada decisión anotada, y un esquema de códigos con controles de consistencia, para que el análisis se pueda replicar.", en: "CEP and Fondecyt: datasets built in R with every decision recorded, and a coding scheme with consistency checks, so the analysis can be replicated." }
+        text: { es: "CEP y Fondecyt: bases armadas en R con cada decisión anotada y, en el Fondecyt, control de versiones y documentación de datos en Git, para que el análisis se pueda reproducir.", en: "CEP and Fondecyt: datasets built in R with every decision recorded and, on the Fondecyt, version control and data documentation in Git, so the analysis can be reproduced." }
       - label: { es: Proyectos propios, en: Personal projects }
         text: { es: "El visor de arriendos corre solo cada mañana, guarda una foto del día y publica el resultado. El código está abierto en GitHub.", en: "The rental finder runs itself every morning, saves a daily snapshot and publishes the result. The code is open on GitHub." }
   see: { es: Ver el caso completo del SLEP, en: See the full SLEP case }

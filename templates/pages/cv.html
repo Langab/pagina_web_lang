@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% import "partials/macros.html" as m with context %}
-{% set es = lang == 'es' %}
+{% set lb = experience.labels %}
 
+{# Sigue el CV guía, sección por sección (CLAUDE.md, «CV guía»). «Rol que busco» y «Docencia y
+   charlas» no están en el documento: son lo único propio de esta página. #}
 {% block main %}
 <header class="page-intro wrap">
   <p class="kicker">{{ page.title | t }}</p>
   <h1>{{ site.full_name }}</h1>
+  <p style="font-size:var(--t-lg);font-weight:600;margin-bottom:1rem">{{ experience.headline | t }}</p>
   <div class="measure" style="font-size:var(--t-lg);color:var(--grafito)">{{ experience.summary | md }}</div>
   <div class="target" data-reveal>
     <p class="kicker" style="margin-bottom:.5rem">{{ experience.target.kicker | t }}</p>
@@ -14,15 +17,29 @@
     <ul class="chips">{% for i in experience.target['items'] %}<li>{{ i | t }}</li>{% endfor %}</ul>
   </div>
   <div class="actions" style="margin-top:1.75rem">
-    <a class="btn btn-solid" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener">{{ ui.download_cv }}</a>
+    <a class="btn btn-solid" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" download type="application/pdf">{{ ui.download_cv }}</a>
     <a class="btn" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
   </div>
 </header>
 
+<section class="section-tight on-paper" aria-labelledby="skills">
+  <div class="wrap split">
+    <div class="split-sticky"><h2 id="skills" style="font-size:var(--t-2xl)">{{ lb.skills | t }}</h2></div>
+    <div>
+      <div class="skills">
+        {% for sk in experience.skills.tools %}
+        <div class="skill"><b>{{ sk.name }}</b><span>{{ sk.level | t }}</span></div>
+        {% endfor %}
+      </div>
+      <ul class="chips" style="margin-top:1.75rem">{% for a in experience.skills.areas %}<li>{{ a | t }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+
 <section class="section-tight wrap" aria-labelledby="jobs">
   <div class="split">
     <div class="split-sticky">
-      <h2 id="jobs" style="font-size:var(--t-2xl)">{{ 'Experiencia' if es else 'Work experience' }}</h2>
+      <h2 id="jobs" style="font-size:var(--t-2xl)">{{ lb.jobs | t }}</h2>
     </div>
     <ol class="timeline">
       {% for job in experience.jobs %}
@@ -30,7 +47,7 @@
         <span class="tl-when">{{ job.when | t }}{% if job.parallel is defined %}<small>{{ ui.parallel }}</small>{% endif %}</span>
         <div class="tl-what">
           <h3>{{ job.role | t }}</h3>
-          <p class="org">{{ job.org }}</p>
+          <p class="org">{{ job.org | t }}</p>
           <p>{{ job.desc | md }}</p>
         </div>
       </li>
@@ -39,54 +56,40 @@
   </div>
 </section>
 
-<section class="section-tight on-paper">
+<section class="section-tight on-paper" aria-labelledby="education">
   <div class="wrap split">
-    <div class="split-sticky"><h2 style="font-size:var(--t-2xl)">{{ 'Formación' if es else 'Education' }}</h2></div>
+    <div class="split-sticky"><h2 id="education" style="font-size:var(--t-2xl)">{{ lb.education | t }}</h2></div>
     <div class="cv-grid">
       {% for ed in experience.education %}
-      <div class="cv-card"><p style="margin-bottom:.4rem">{{ ed.when }}</p><h3>{{ ed.title | t }}</h3><p>{{ ed.org }}. {{ ed.note | t }}</p></div>
+      <div class="cv-card"><p style="margin-bottom:.4rem">{{ ed.when }}</p><h3>{{ ed.title | t }}</h3><p>{{ ed.org }}.{% if ed.note is defined %} {{ ed.note | t }}{% endif %}</p></div>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="section-tight">
+<section class="section-tight" aria-labelledby="languages">
   <div class="wrap split">
-    <div class="split-sticky">
-      <h2 style="font-size:var(--t-2xl)">{{ 'Herramientas' if es else 'Tools' }}</h2>
-      <p style="color:var(--grafito);margin-top:.75rem">{{ experience.skills.note | t }}</p>
-    </div>
+    <div class="split-sticky"><h2 id="languages" style="font-size:var(--t-2xl)">{{ lb.languages | t }}</h2></div>
+    <ul class="chips">{% for l in experience.languages %}<li>{{ l.name | t }}, {{ l.level | t }}</li>{% endfor %}</ul>
+  </div>
+</section>
+
+<section class="section-tight on-paper" aria-labelledby="publications">
+  <div class="wrap split">
+    <div class="split-sticky"><h2 id="publications" style="font-size:var(--t-2xl)">{{ lb.publications | t }}</h2></div>
     <div>
-      {% for g in experience.skills.groups %}
-      <h3 class="skill-group">{{ g.title | t }}</h3>
-      <div class="skills">
-        {% for sk in g['items'] %}
-        <div class="skill">
-          <b>{{ sk.name | t }}</b>
-          <span class="skill-dots" role="img" aria-label="{{ sk.level }} / 5">{% for i in range(5) %}<i class="{{ 'on' if i < sk.level }}"></i>{% endfor %}</span>
-          <small>{{ sk.note | t }}</small>
-        </div>
-        {% endfor %}
-      </div>
+      {% for pb in experience.publications['items'] %}
+      <h3 style="font-size:var(--t-lg);margin-bottom:.4rem">{{ pb.title | t }}</h3>
+      <p style="color:var(--grafito);margin-bottom:1.5rem">{{ pb.text | md }}</p>
       {% endfor %}
-
-      <div class="callout" style="margin-top:2rem">
-        <p style="font-weight:600;margin-bottom:.5rem">{{ experience.learning.title | t }}</p>
-        <p style="color:var(--grafito);font-size:var(--t-sm)">{{ experience.learning.text | t }}</p>
-        <ul style="margin:.5rem 0 0;padding-left:1.1rem;color:var(--grafito);font-size:var(--t-sm)">
-          {% for i in experience.learning['items'] %}<li>{{ i | t }}</li>{% endfor %}
-        </ul>
-      </div>
-
-      <h3 style="font-size:var(--t-lg);margin:2.5rem 0 1rem">{{ 'Idiomas' if es else 'Languages' }}</h3>
-      <ul class="chips">{% for l in experience.languages %}<li>{{ l.name | t }}, {{ l.level | t }}</li>{% endfor %}</ul>
+      <a class="link-more" href="{{ url('publications') }}">{{ experience.publications.cta | t }}</a>
     </div>
   </div>
 </section>
 
-<section class="section-tight on-paper">
+<section class="section-tight" aria-labelledby="teaching">
   <div class="wrap split">
-    <div class="split-sticky"><h2 style="font-size:var(--t-2xl)">{{ 'Docencia y charlas' if es else 'Teaching and talks' }}</h2></div>
+    <div class="split-sticky"><h2 id="teaching" style="font-size:var(--t-2xl)">{{ lb.teaching | t }}</h2></div>
     <div>
       <div class="talk" style="grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start">
         <figure class="talk-photo" style="margin:0">
@@ -112,9 +115,9 @@
   </div>
 </section>
 
-<section class="section-tight">
+<section class="section-tight on-paper" aria-labelledby="references">
   <div class="wrap split">
-    <div class="split-sticky"><h2 style="font-size:var(--t-2xl)">{{ 'Referencias' if es else 'References' }}</h2></div>
+    <div class="split-sticky"><h2 id="references" style="font-size:var(--t-2xl)">{{ lb.references | t }}</h2></div>
     <div class="refs">
       {% for r in experience.references %}
       <div><b>{{ r.name }}</b>{{ r.role | t }}<br><a href="mailto:{{ r.email }}">{{ r.email }}</a></div>

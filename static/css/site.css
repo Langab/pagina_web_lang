@@ -890,11 +890,7 @@ pre.code .s { color: #9FE3C3; }
 .skills { display: grid; gap: 1.1rem; }
 .skill { display: grid; grid-template-columns: minmax(8rem, 12rem) 1fr; gap: 1rem; align-items: center; }
 .skill b { font-weight: 600; }
-.skill-dots { display: flex; gap: 5px; }
-.skill-dots i { width: 14px; height: 14px; border-radius: 50%; background: var(--linea); }
-.skill-dots i.on { background: var(--cobalto); }
-.skill small { grid-column: 2; font-size: var(--t-sm); color: var(--grafito); margin-top: -.6rem; }
-@media (max-width: 560px) { .skill { grid-template-columns: 1fr; gap: .4rem; } .skill small { grid-column: 1; margin: 0; } }
+.skill span { color: var(--grafito); }
 .refs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
 .refs div { padding: 1.25rem; border-radius: var(--r-md); border: 1px solid var(--linea); font-size: var(--t-sm); line-height: 1.5; }
 .refs b { display: block; font-size: var(--t-md); }
@@ -946,8 +942,6 @@ pre.code .s { color: #9FE3C3; }
 .target { margin-top: 2rem; padding: 1.25rem 0 0; border-top: 1px solid var(--tinta); max-width: 64ch; }
 .target h2 { font-size: var(--t-xl); margin-bottom: .5rem; }
 .target p { color: var(--grafito); font-size: var(--t-sm); margin-bottom: 1rem; }
-.skill-group { font-size: var(--t-sm); font-weight: 600; color: var(--grafito); margin: 2rem 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--linea); }
-.skill-group:first-child { margin-top: 0; }
 
 /* Captura de teléfono dentro de un artículo: a su tamaño, no a lo ancho de la columna */
 .article figure img.phone-shot { width: min(340px, 100%); margin-inline: auto; display: block; }

@@ -18,7 +18,7 @@
     <p class="bajada">{{ h.lede | t }}</p>
     <div class="actions portada-acciones">
       <a class="btn btn-solid" href="#{{ ui.contact_anchor }}">{{ ui.cta_contact }}</a>
-      <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener" type="application/pdf">{{ h.cta_cv | t }}</a>
+      <a class="btn" href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" download type="application/pdf">{{ h.cta_cv | t }}</a>
     </div>
   </div>
   {% set lg = home.logos %}
