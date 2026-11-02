@@ -21,6 +21,7 @@ Desde el 03-10-2026 el sitio vive en **Cloudflare Pages** (`portafolio-benjamin-
 - El CV guía es `../buscador_trabajo/ai-job-search/documents/cv/CV_BenjaminLang_2026.docx` y su `.pdf` (pedido de Benjamín, 02-11-2026). Manda sobre el resto del sitio: cargos, fechas, ranking, niveles, idiomas, publicaciones y referencias se escriben como ahí.
 - El PDF se copia sin tocar a `static/docs/CV_BenjaminLang_2026.pdf`. Es el único y se descarga desde español e inglés (está en español; la etiqueta en inglés lo avisa). Los nombres anteriores redirigen a él (`cv_anteriores` en `content/site.yml`).
 - `/cv/` sigue el documento sección por sección. Solo «Rol que busco» y «Docencia y charlas» son propios de la página. Trabajos puede contar más que el CV, pero no contradecirlo.
+- El caso de los memorandos del Banco Central (1981–1983) salió del sitio el 02-11-2026 porque no calzaba con el corpus 2006–2022 del CV: no volver a ponerlo.
 
 ## Cloudflare (funciones, base y métricas)
 
