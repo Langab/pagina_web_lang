@@ -8,23 +8,24 @@
 labels:
   skills: { es: Competencias técnicas, en: Technical skills }
   jobs: { es: Experiencia profesional, en: Professional experience }
+  personal: { es: Proyectos personales con IA, en: Personal AI projects }
   education: { es: Educación, en: Education }
   languages: { es: Idiomas, en: Languages }
   publications: { es: Publicaciones seleccionadas, en: Selected publications }
   teaching: { es: Docencia y charlas, en: Teaching and talks }
   references: { es: Referencias, en: References }
 
-headline: { es: "Analista de datos, business intelligence y análisis estadístico", en: "Data analyst, business intelligence and statistical analysis" }
+headline: { es: "Sociólogo, analista de datos, monitoreo y evaluación, business intelligence", en: "Sociologist, data analyst, monitoring and evaluation, business intelligence" }
 
 summary:
   es: |
-    Soy analista de datos, con más de 5 años de experiencia en organizaciones del sector público, el privado y la investigación académica. Manejo R, Power BI y Excel a nivel avanzado, y tengo bases sólidas en Python y control de versiones con Git.
+    Soy sociólogo (Universidad Diego Portales, distinción máxima) y analista de datos, con más de 5 años de experiencia en sector público, investigación aplicada y consultoría. Tengo experiencia en procesamiento de datos a gran escala (Censo Nacional 2024, INE), monitoreo y evaluación de programas educativos (SLEP Santa Rosa), gobernanza de datos, tableros en Power BI y reportes automatizados en R.
 
-    He armado flujos de datos de punta a punta, tableros interactivos y modelos estadísticos para proyectos de gran escala, incluido el Censo Nacional de Chile 2024, y explico los resultados con claridad a audiencias no técnicas.
+    Soy coautor de publicaciones académicas y de política pública. Uso la IA de forma aplicada y responsable para automatizar procesos con datos sensibles, y comunico resultados con claridad a equipos directivos y audiencias no técnicas.
   en: |
-    I'm a data analyst with more than 5 years of experience in public sector, private sector and academic research organizations. I work with R, Power BI and Excel at an advanced level, with a solid base in Python and version control with Git.
+    I'm a sociologist (Universidad Diego Portales, highest honors) and data analyst with more than 5 years of experience in the public sector, applied research and consulting. My experience covers large-scale data processing (2024 National Census, INE), monitoring and evaluation of education programs (SLEP Santa Rosa), data governance, Power BI dashboards and automated reports in R.
 
-    I've built end-to-end data pipelines, interactive dashboards and statistical models for large-scale projects, including Chile's 2024 National Census, and I explain results clearly to non-technical audiences.
+    I'm a co-author of academic and public policy publications. I use AI in an applied, responsible way to automate processes involving sensitive data, and I communicate results clearly to management teams and non-technical audiences.
 
 target:
   kicker: { es: Rol que busco, en: Role I'm looking for }
@@ -45,15 +46,15 @@ jobs:
     role: { es: Analista de datos, en: Data analyst }
     org: { es: "SLEP Santa Rosa, Departamento de Estudios, Monitoreo y Datos", en: "SLEP Santa Rosa, Studies, Monitoring and Data Department" }
     desc:
-      es: "Lidero flujos de datos de punta a punta (extracción, limpieza, transformación y visualización) para datos educacionales de múltiples escuelas. Diseño y mantengo tableros interactivos en Power BI que los equipos directivos y educativos consultan cada semana, complementados con reportes automáticos mensuales construidos en R Markdown, Quarto y LaTeX. Construí e implementé desde cero el marco de gobernanza de datos de la organización: diccionario de datos, estándares de calidad y documentación de pipelines. También construí la [página web institucional para reportería de datos](https://datos.slepsantarosa.workers.dev/)."
-      en: "I lead end-to-end data pipelines (extraction, cleaning, transformation and visualization) for education data from multiple schools. I design and maintain interactive Power BI dashboards that management and teaching teams check every week, complemented by automatic monthly reports built in R Markdown, Quarto and LaTeX. I built and implemented the organization's data governance framework from scratch: data dictionary, quality standards and pipeline documentation. I also built the [institutional website for data reporting](https://datos.slepsantarosa.workers.dev/)."
+      es: "Lidero los flujos de datos de punta a punta (extracción, limpieza, transformación y visualización) de datos educacionales de múltiples escuelas públicas. Diseño y mantengo tableros interactivos en Power BI que los equipos directivos y educativos consultan cada semana, complementados con reportes automáticos mensuales construidos en R Markdown, Quarto y LaTeX. Proceso y analizo resultados educativos (SIMCE, PAES), matrícula, asistencia y trayectorias, y construyo indicadores de gestión y de implementación de programas. Construí e implementé desde cero el marco de gobernanza de datos de la organización: diccionario de datos, estándares de calidad y documentación de pipelines. Desarrollé una [página web institucional para la reportería de datos](https://datos.slepsantarosa.workers.dev/), y capacito a equipos en el uso de tableros y herramientas de datos."
+      en: "I lead end-to-end data pipelines (extraction, cleaning, transformation and visualization) for education data from multiple public schools. I design and maintain interactive Power BI dashboards that management and teaching teams check every week, complemented by automatic monthly reports built in R Markdown, Quarto and LaTeX. I process and analyze education results (SIMCE, PAES), enrollment, attendance and student pathways, and I build indicators for management and program implementation. I built and implemented the organization's data governance framework from scratch: data dictionary, quality standards and pipeline documentation. I developed an [institutional website for data reporting](https://datos.slepsantarosa.workers.dev/), and I train teams to use dashboards and data tools."
   - id: ine
     when: { es: "jun 2024 – abr 2025", en: "Jun 2024 – Apr 2025" }
     role: { es: Analista metodológico senior, en: Senior methods analyst }
     org: { es: "INE Chile, Censo de Población y Vivienda 2024", en: "INE Chile, 2024 Population and Housing Census" }
     desc:
-      es: "Procesé y validé microdatos a gran escala para el Censo Nacional. Diseñé pipelines automatizados de control de calidad estadística. Elaboré reportes técnicos y briefs analíticos que se usaron directamente para la planificación estratégica institucional y la difusión pública."
-      en: "I processed and validated large-scale microdata for the National Census. I designed automated statistical quality control pipelines. I wrote technical reports and analytical briefs used directly for institutional strategic planning and public communication."
+      es: "Procesé y validé microdatos a gran escala para el Censo Nacional. Diseñé pipelines automatizados de control de calidad estadística. Elaboré reportes técnicos y briefs analíticos que se usaron directamente para la planificación estratégica institucional y la difusión pública. Participé en el diseño del cuestionario censal y en el análisis de pruebas preparativas, siguiendo estándares internacionales."
+      en: "I processed and validated large-scale microdata for the National Census. I designed automated statistical quality control pipelines. I wrote technical reports and analytical briefs used directly for institutional strategic planning and public communication. I took part in designing the census questionnaire and analyzing its preparatory tests, following international standards."
   - id: fondecyt-bc
     parallel: true
     when: { es: "may 2024 – ago 2025", en: "May 2024 – Aug 2025" }
@@ -74,8 +75,8 @@ jobs:
     role: { es: "Asistente de investigación C22, humanidades digitales", en: "C22 research assistant, digital humanities" }
     org: { es: "CEP, proyecto C22", en: "CEP, C22 project" }
     desc:
-      es: "Apliqué minería de texto y análisis de redes a grandes colecciones de documentos políticos para investigación socio-constitucional. Coautor de 13 publicaciones académicas basadas en análisis cuantitativo y computacional de datos legislativos y constitucionales."
-      en: "I applied text mining and network analysis to large collections of political documents for socio-constitutional research. Co-author of 13 academic publications based on quantitative and computational analysis of legislative and constitutional data."
+      es: "Apliqué minería de texto y análisis de redes a grandes colecciones de documentos políticos para investigación socio-constitucional. Analicé los resultados educativos de los Servicios Locales de Educación Pública (SLEP) y el SIMCE de sus establecimientos, con minutas y reportes de investigación. Coautor de 13 publicaciones académicas basadas en análisis cuantitativo y computacional de datos legislativos y constitucionales."
+      en: "I applied text mining and network analysis to large collections of political documents for socio-constitutional research. I analyzed the education results of the Local Public Education Services (SLEP) and the SIMCE scores of their schools, with briefs and research reports. Co-author of 13 academic publications based on quantitative and computational analysis of legislative and constitutional data."
   - id: tironi
     when: { es: "ago 2021 – mar 2023", en: "Aug 2021 – Mar 2023" }
     role: { es: Analista de asuntos públicos, en: Public affairs analyst }
@@ -84,8 +85,21 @@ jobs:
       es: "Recopilé, limpié y analicé datos políticos y electorales para el Boletín Constitucional 2022 y proyectos de consultoría estratégica. Entregué diagnósticos basados en datos en contextos políticos de alta velocidad."
       en: "I collected, cleaned and analyzed political and electoral data for the 2022 Constitutional Bulletin and strategic consulting projects. I delivered data-based assessments in fast-moving political contexts."
 
+# `project` es el id en projects.yml, para el enlace a su página.
+personal:
+  cta: { es: Ver el proyecto, en: See the project }
+  items:
+    - project: buscador-trabajo
+      current: true
+      when: { es: "jul 2026 – actualidad", en: "Jul 2026 – present" }
+      title: { es: Asistente de búsqueda de empleo con agentes de IA, en: Job-search assistant with AI agents }
+      org: { es: Proyecto personal, en: Personal project }
+      desc:
+        es: "Adapté al mercado chileno un framework open-source de agentes sobre Claude Code, creado para Dinamarca: la IA evalúa el encaje con cada oferta, redacta un CV adaptado en Word y lo revisa contra un checklist. Construí scrapers para Empleos Públicos (API interna), más de 25 centros de estudios y el muro de LinkedIn, además de un visor web público de ofertas publicado en GitHub Pages. En tres meses procesé más de 500 ofertas y 33 postulaciones con CV adaptado. Diseñé reglas que impiden a la IA afirmar experiencia que no se pueda defender en una entrevista."
+        en: "I adapted to the Chilean market an open-source agent framework on Claude Code, originally built for Denmark: the AI assesses the fit with each opening, drafts a tailored CV in Word and checks it against a checklist. I built scrapers for Empleos Públicos (its internal API), more than 25 think tanks and the LinkedIn feed, plus a public job viewer published on GitHub Pages. In three months I processed more than 500 openings and 33 applications with a tailored CV. I designed rules that stop the AI from claiming experience that couldn't be defended in an interview."
+
 education:
-  - title: { es: Licenciatura en Sociología, en: B.A. in Sociology }
+  - title: { es: Sociólogo, en: Sociologist }
     org: Universidad Diego Portales
     when: "2017 – 2021"
     note: { es: "Distinción máxima, 2° de 49 titulados.", en: "Highest honors, 2nd of 49 graduates." }
@@ -102,12 +116,16 @@ skills:
     - { name: Python, level: { es: Intermedio, en: Intermediate } }
     - { name: SQL, level: { es: Intermedio, en: Intermediate } }
   areas:
+    - { es: IA aplicada y automatización, en: Applied AI and automation }
+    - Claude Code
+    - Web scraping
+    - ETL
+    - Quarto / R Markdown / LaTeX
+    - { es: Gobernanza de datos, en: Data governance }
+    - { es: Monitoreo y evaluación, en: Monitoring and evaluation }
     - { es: Modelado estadístico, en: Statistical modeling }
     - { es: Análisis de encuestas, en: Survey analysis }
-    - { es: ETL a gran escala, en: Large-scale ETL }
-    - { es: Gobernanza de datos, en: Data governance }
-    - { es: Visualización, en: Visualization }
-    - { es: Dashboards e informes, en: Dashboards and reports }
+    - { es: Métodos mixtos, en: Mixed methods }
 
 publications:
   items:
@@ -144,5 +162,5 @@ references:
     role: { es: "Investigador senior, CEP", en: "Senior researcher, CEP" }
     email: amascareno@cepchile.cl
   - name: Patricia Mauna
-    role: INE
+    role: { es: "Analista metodóloga senior, jefa de proyecto de integración de registros, INE", en: "Senior methods analyst, head of the records integration project, INE" }
     email: pamaunam@ine.gob.cl
