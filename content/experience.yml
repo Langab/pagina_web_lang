@@ -1,18 +1,30 @@
 # ─────────────────────────────────────────────────────────────────────────
-# Trayectoria: trabajos, formación, habilidades, idiomas, docencia.
-# `current: true` marca lo que sigue en curso. `home: true` lo muestra en la portada.
+# La página CV. Sigue el CV guía, sección por sección: cargos, fechas, ranking, niveles, idiomas,
+# publicaciones y referencias se copian de ahí (ver CLAUDE.md, «CV guía»).
+# `current: true` marca lo que sigue en curso.
 # `parallel: true` marca lo que hice al mismo tiempo que el cargo principal de esos años.
 # ─────────────────────────────────────────────────────────────────────────
 
+labels:
+  skills: { es: Competencias técnicas, en: Technical skills }
+  jobs: { es: Experiencia profesional, en: Professional experience }
+  education: { es: Educación, en: Education }
+  languages: { es: Idiomas, en: Languages }
+  publications: { es: Publicaciones seleccionadas, en: Selected publications }
+  teaching: { es: Docencia y charlas, en: Teaching and talks }
+  references: { es: Referencias, en: References }
+
+headline: { es: "Analista de datos, business intelligence y análisis estadístico", en: "Data analyst, business intelligence and statistical analysis" }
+
 summary:
   es: |
-    Soy sociólogo de la Universidad Diego Portales, titulado con distinción máxima y primer lugar de mi promoción de titulación. Hago análisis cuantitativo y cualitativo, y escribo el código para que otra persona pueda repetirlo.
+    Soy analista de datos, con más de 5 años de experiencia en organizaciones del sector público, el privado y la investigación académica. Manejo R, Power BI y Excel a nivel avanzado, y tengo bases sólidas en Python y control de versiones con Git.
 
-    Hoy trabajo como analista de datos en el Servicio Local de Educación Pública Santa Rosa. Antes validé datos del Censo 2024 en el INE, analicé el proceso constitucional en el CEP y codifiqué actas del Banco Central para un Fondecyt. Lo que más me gusta es que un análisis termine en algo que el equipo usa: un tablero, una ficha o un informe.
+    He armado flujos de datos de punta a punta, tableros interactivos y modelos estadísticos para proyectos de gran escala, incluido el Censo Nacional de Chile 2024, y explico los resultados con claridad a audiencias no técnicas.
   en: |
-    I'm a sociologist from Universidad Diego Portales, graduated with highest honors and first in my graduating cohort. I do quantitative and qualitative analysis, and I write the code so someone else can repeat it.
+    I'm a data analyst with more than 5 years of experience in public sector, private sector and academic research organizations. I work with R, Power BI and Excel at an advanced level, with a solid base in Python and version control with Git.
 
-    Today I'm a data analyst at Servicio Local de Educación Pública Santa Rosa, a public school district in southern Santiago. Before that I validated 2024 Census data at INE, analyzed Chile's constitutional process at CEP and coded Central Bank minutes for a Fondecyt research grant. What I like most is when an analysis ends in something the team uses: a dashboard, a fact sheet or a report.
+    I've built end-to-end data pipelines, interactive dashboards and statistical models for large-scale projects, including Chile's 2024 National Census, and I explain results clearly to non-technical audiences.
 
 target:
   kicker: { es: Rol que busco, en: Role I'm looking for }
@@ -29,142 +41,88 @@ target:
 jobs:
   - id: slep
     current: true
-    home: true
-    when: { es: "2025 – hoy", en: "2025 – now" }
+    when: { es: "oct 2025 – actualidad", en: "Oct 2025 – present" }
     role: { es: Analista de datos, en: Data analyst }
-    org: Servicio Local de Educación Pública Santa Rosa
+    org: { es: "SLEP Santa Rosa, Departamento de Estudios, Monitoreo y Datos", en: "SLEP Santa Rosa, Studies, Monitoring and Data Department" }
     desc:
-      es: "Armé desde cero el marco de gobierno de datos del servicio (diccionario de datos, estándares de calidad y documentación de cada flujo) y llevo el flujo completo: captura automatizada desde las plataformas del Ministerio, consolidación en R, validación mensual y diez tableros de Power BI que los equipos directivos consultan cada semana. Genero reportes mensuales automáticos en R Markdown, Quarto y LaTeX, fichas por establecimiento e informes de matrícula, asistencia, SIMCE y PAES para las cinco comunas, y capacito a los equipos en el uso de los tableros."
-      en: "I built the service's data governance framework from scratch (data dictionary, quality standards and documentation for every pipeline) and run the full data flow: automated capture from the Ministry's platforms, consolidation in R, monthly validation and ten Power BI dashboards that management teams check every week. I produce automatic monthly reports in R Markdown, Quarto and LaTeX, school fact sheets and enrollment, attendance, SIMCE and PAES reports for the five municipalities, and I train teams to use the dashboards."
-  - id: aldeas
-    parallel: true
-    current: true
-    when: { es: "2025 – hoy", en: "2025 – now" }
-    role: { es: Consultor en habilidades digitales, en: Digital skills consultant }
-    org: Aldeas Infantiles SOS Chile con MICELIA
-    desc:
-      es: "Diagnóstico mixto de brechas digitales con el marco europeo DigComp 2.2 y grupos focales en cuatro aldeas, y el plan de formación 2026 que salió de ahí. Lidero los talleres de la sede Quilpué."
-      en: "Mixed-methods assessment of digital skills gaps using the European DigComp 2.2 framework and focus groups in four villages, plus the 2026 training plan that followed. I lead the workshops at the Quilpué site."
-  - id: prieto
-    parallel: true
-    home: true
-    when: { es: "2025 – 2026", en: "2025 – 2026" }
-    role: { es: "Analista cuantitativo y coautor", en: "Quantitative analyst and co-author" }
-    org: Investigación con Joaquín Prieto
-    desc:
-      es: "Índice multidimensional de inseguridad económica con el panel ELSOC 2016–2023, modelos logísticos por bloques con imputación múltiple y análisis de mediación. Coautor de *Economic Insecurity, Not Inequality?* y analista en *Insecurity amid Recovery*, con la Encuesta de Bienestar Social del INE."
-      en: "Multidimensional economic insecurity index using the ELSOC 2016–2023 panel, block-wise logistic models with multiple imputation and mediation analysis. Co-author of *Economic Insecurity, Not Inequality?* and analyst on *Insecurity amid Recovery*, using INE's Social Wellbeing Survey."
+      es: "Lidero flujos de datos de punta a punta (extracción, limpieza, transformación y visualización) para datos educacionales de múltiples escuelas. Diseño y mantengo tableros interactivos en Power BI que los equipos directivos y educativos consultan cada semana, complementados con reportes automáticos mensuales construidos en R Markdown, Quarto y LaTeX. Construí e implementé desde cero el marco de gobernanza de datos de la organización: diccionario de datos, estándares de calidad y documentación de pipelines. También construí la [página web institucional para reportería de datos](https://datos.slepsantarosa.workers.dev/)."
+      en: "I lead end-to-end data pipelines (extraction, cleaning, transformation and visualization) for education data from multiple schools. I design and maintain interactive Power BI dashboards that management and teaching teams check every week, complemented by automatic monthly reports built in R Markdown, Quarto and LaTeX. I built and implemented the organization's data governance framework from scratch: data dictionary, quality standards and pipeline documentation. I also built the [institutional website for data reporting](https://datos.slepsantarosa.workers.dev/)."
   - id: ine
-    home: true
-    when: { es: "2024 – 2025", en: "2024 – 2025" }
-    role: { es: "Analista metodológico senior, Censo 2024", en: "Senior methods analyst, 2024 Census" }
-    org: Instituto Nacional de Estadísticas (INE)
+    when: { es: "jun 2024 – abr 2025", en: "Jun 2024 – Apr 2025" }
+    role: { es: Analista metodológico senior, en: Senior methods analyst }
+    org: { es: "INE Chile, Censo de Población y Vivienda 2024", en: "INE Chile, 2024 Population and Housing Census" }
     desc:
-      es: "Validación, edición e imputación de las variables de persona (sexo, edad y parentesco) dentro del código en R del procesamiento censal, más la codificación de respuestas del cuestionario en papel. Construí informes de calidad e indicadores demográficos comparados con los censos de 2017, 2002 y 1992, y participé en el diseño del cuestionario censal y en el análisis de las pruebas preparativas."
-      en: "Validation, editing and imputation of person-level variables (sex, age and relationship) inside the R codebase of census processing, plus coding of paper questionnaire answers. I built quality reports and demographic indicators compared with the 2017, 2002 and 1992 censuses, and took part in designing the census questionnaire and analyzing the pretests."
+      es: "Procesé y validé microdatos a gran escala para el Censo Nacional. Diseñé pipelines automatizados de control de calidad estadística. Elaboré reportes técnicos y briefs analíticos que se usaron directamente para la planificación estratégica institucional y la difusión pública."
+      en: "I processed and validated large-scale microdata for the National Census. I designed automated statistical quality control pipelines. I wrote technical reports and analytical briefs used directly for institutional strategic planning and public communication."
   - id: fondecyt-bc
     parallel: true
-    home: true
-    when: { es: "2024 – 2025", en: "2024 – 2025" }
-    role: { es: "Investigador, Fondecyt N° 1231356", en: "Researcher, Fondecyt grant 1231356" }
-    org: Universidad Diego Portales
+    when: { es: "may 2024 – ago 2025", en: "May 2024 – Aug 2025" }
+    role: { es: "Investigador, analista de datos", en: "Researcher, data analyst" }
+    org: { es: Fondecyt N° 1231356, en: Fondecyt grant 1231356 }
     desc:
-      es: "Codifiqué con GPT-4o los 1.467 memorandos del Comité Ejecutivo del Banco Central entre 1981 y 1983, y analicé la base con redes de co-ocurrencia, detección de comunidades y modelos de tópicos. Presenté método y resultados preliminares al equipo en dos entregas."
-      en: "I coded the 1,467 Central Bank Executive Committee memos from 1981 to 1983 with GPT-4o, and analyzed the dataset with co-occurrence networks, community detection and topic models. I presented the method and preliminary results to the team twice."
+      es: "Estructuré y analicé un corpus longitudinal de 16 años de documentos de política económica (2006–2022) con métodos mixtos: codificación cuantitativa y análisis cualitativo. Gestioné el control de versiones y la documentación de datos en Git, para asegurar la reproducibilidad del pipeline de investigación. Entregué datasets estructurados y resúmenes analíticos para publicación académica revisada por pares."
+      en: "I structured and analyzed a 16-year longitudinal corpus of economic policy documents (2006–2022) using mixed methods: quantitative coding and qualitative analysis. I managed version control and data documentation in Git to keep the research pipeline reproducible. I delivered structured datasets and analytical summaries for peer-reviewed publication."
   - id: voces
-    when: { es: "2023 – 2024", en: "2023 – 2024" }
-    role: { es: "Investigador asistente, Voces del CEP", en: "Research assistant, Voces del CEP" }
+    when: { es: "abr 2023 – abr 2024", en: "Apr 2023 – Apr 2024" }
+    role: { es: "Asistente de investigación, análisis estadístico", en: "Research assistant, statistical analysis" }
     org: Centro de Estudios Públicos (CEP)
     desc:
-      es: Edición y publicación del boletín *Voces del CEP*, seguimiento del segundo proceso constitucional y datos electorales y de opinión pública.
-      en: Editing and publishing the *Voces del CEP* bulletin, tracking the second constitutional process, plus electoral and public opinion data.
+      es: "Sistematicé datos electorales y de opinión pública (Encuesta CEP, votaciones constitucionales 2023): limpieza, codificación y análisis descriptivo e inferencial. Elaboré el boletín *Voces del CEP*, traduciendo hallazgos de encuestas complejas en narrativas accesibles para audiencias de política pública."
+      en: "I systematized electoral and public opinion data (CEP Survey, 2023 constitutional votes): cleaning, coding, and descriptive and inferential analysis. I produced the *Voces del CEP* bulletin, turning complex survey findings into accessible narratives for public policy audiences."
   - id: c22
-    home: true
-    when: { es: "2021 – 2024", en: "2021 – 2024" }
-    role: { es: "Asistente de investigación, C22", en: "Research assistant, C22" }
-    org: Centro de Estudios Públicos (CEP)
+    when: { es: "ago 2021 – abr 2024", en: "Aug 2021 – Apr 2024" }
+    role: { es: "Asistente de investigación C22, humanidades digitales", en: "C22 research assistant, digital humanities" }
+    org: { es: "CEP, proyecto C22", en: "CEP, C22 project" }
     desc:
-      es: "Análisis de votaciones con escalamiento tipo NOMINATE, minería de texto y redes sobre discursos y prensa, y visualización de datos políticos. También analicé los resultados educativos de los Servicios Locales de Educación Pública y el SIMCE de sus escuelas. Coautor de siete Puntos de Referencia del CEP y seis notas de investigación de C22."
-      en: "Vote analysis with NOMINATE-style scaling, text mining and network analysis of speeches and press coverage, and political data visualization. I also analyzed the learning outcomes of Chile's new local public education services and the SIMCE results of their schools. Co-author of seven CEP policy papers and six C22 research notes."
+      es: "Apliqué minería de texto y análisis de redes a grandes colecciones de documentos políticos para investigación socio-constitucional. Coautor de 13 publicaciones académicas basadas en análisis cuantitativo y computacional de datos legislativos y constitucionales."
+      en: "I applied text mining and network analysis to large collections of political documents for socio-constitutional research. Co-author of 13 academic publications based on quantitative and computational analysis of legislative and constitutional data."
   - id: tironi
-    home: true
-    when: { es: "2021 – 2023", en: "2021 – 2023" }
+    when: { es: "ago 2021 – mar 2023", en: "Aug 2021 – Mar 2023" }
     role: { es: Analista de asuntos públicos, en: Public affairs analyst }
     org: Tironi y Asociados
     desc:
-      es: "A cargo del boletín constitucional semanal de 2022 para clientes corporativos: qué se votó en la Convención, qué cambió y qué implicaba para cada industria. Además procesé encuestas internas y datos secundarios para diagnósticos organizacionales."
-      en: "In charge of the weekly constitutional bulletin for corporate clients in 2022: what the Convention voted, what changed and what it meant for each industry. I also processed internal surveys and secondary data for organizational diagnostics."
-  - id: chiloe
-    when: { es: "2022 – 2023", en: "2022 – 2023" }
-    role: { es: "Asistente de investigación, Fondecyt N° 1190295", en: "Research assistant, Fondecyt grant 1190295" }
-    org: Universidad Diego Portales
-    desc:
-      es: "Transiciones críticas en sistemas socioecológicos en Chiloé. Preparé bases de datos, codifiqué entrevistas en Atlas.ti siguiendo el esquema del proyecto y apoyé la revisión de literatura."
-      en: "Critical transitions in social-ecological systems in Chiloé. I prepared datasets, coded interviews in Atlas.ti following the project's scheme and supported the literature review."
-  - id: tesista
-    when: { es: "2020 – 2021", en: "2020 – 2021" }
-    role: { es: "Tesista, Fondecyt N° 1181585", en: "Thesis researcher, Fondecyt grant 1181585" }
-    org: Universidad Diego Portales
-    desc:
-      es: Tesis de pregrado dentro de un proyecto Fondecyt de investigación sociológica.
-      en: Undergraduate thesis within a funded Fondecyt sociology project.
+      es: "Recopilé, limpié y analicé datos políticos y electorales para el Boletín Constitucional 2022 y proyectos de consultoría estratégica. Entregué diagnósticos basados en datos en contextos políticos de alta velocidad."
+      en: "I collected, cleaned and analyzed political and electoral data for the 2022 Constitutional Bulletin and strategic consulting projects. I delivered data-based assessments in fast-moving political contexts."
 
 education:
-  - title: { es: "Sociólogo, distinción máxima", en: "B.A. in Sociology, highest honors" }
+  - title: { es: Licenciatura en Sociología, en: B.A. in Sociology }
     org: Universidad Diego Portales
     when: "2017 – 2021"
-    note: { es: "Primer lugar de 57 en la promoción de titulación 2022 y segundo de 49 en la cohorte de ingreso 2017.", en: "Ranked first of 57 in the 2022 graduating cohort and second of 49 in the 2017 entering cohort." }
+    note: { es: "Distinción máxima, 2° de 49 titulados.", en: "Highest honors, 2nd of 49 graduates." }
   - title: { es: Diplomado de honor en movilidad y transporte, en: Honors diploma in mobility and transport }
     org: Universidad Diego Portales
     when: "2019 – 2020"
-    note: { es: Programa de honor para estudiantes destacados., en: Honors program for top students. }
-  - title: { es: Curso de R avanzado, en: Advanced R course }
-    org: Instituto Nacional de Estadísticas (INE)
-    when: "2024"
-    note: { es: "Procesamiento, visualización y modelamiento para el Censo 2024.", en: "Processing, visualization and modeling for the 2024 Census." }
 
 skills:
-  note: { es: "Agrupadas por tipo de trabajo. Los puntos son mi propia evaluación, de 1 a 5.", en: "Grouped by kind of work. The dots are my own rating, from 1 to 5." }
-  groups:
-    - title: { es: Visualización y reportería, en: Visualization and reporting }
-      items:
-        - { name: Power BI, level: 4, note: { es: "Modelo de datos, Power Query, DAX de uso diario, publicación y actualización", en: "Data model, Power Query, everyday DAX, publishing and refresh" } }
-        - { name: { es: "R Markdown y Quarto", en: "R Markdown and Quarto" }, level: 5, note: { es: "Informes y fichas reproducibles en HTML y PDF", en: "Reproducible reports and fact sheets in HTML and PDF" } }
-        - { name: { es: "Indicadores y KPI", en: "Indicators and KPIs" }, level: 4, note: { es: "Construcción, documentación y seguimiento en el tiempo", en: "Construction, documentation and tracking over time" } }
-    - title: { es: Análisis estadístico, en: Statistical analysis }
-      items:
-        - { name: R, level: 5, note: { es: "tidyverse, ggplot2, modelos y datos de panel", en: "tidyverse, ggplot2, models and panel data" } }
-        - { name: Python, level: 3, note: { es: "pandas, scraping con Playwright y procesamiento de archivos grandes", en: "pandas, Playwright scraping and large-file processing" } }
-        - { name: { es: "Modelos y métodos", en: "Models and methods" }, level: 4, note: { es: "Regresión logística, imputación múltiple, mediación, análisis de redes", en: "Logistic regression, multiple imputation, mediation, network analysis" } }
-    - title: { es: Datos y bases, en: Data and databases }
-      items:
-        - { name: Excel, level: 5, note: { es: "Modelado de datos, tablas dinámicas y macros", en: "Data modeling, pivot tables and macros" } }
-        - { name: { es: "ETL y automatización", en: "ETL and automation" }, level: 4, note: { es: "Pipelines reproducibles, scrapers y tareas programadas", en: "Reproducible pipelines, scrapers and scheduled jobs" } }
-        - { name: { es: "Gobernanza de datos", en: "Data governance" }, level: 4, note: { es: "Estándares de captura, validación, nombres y documentación", en: "Standards for capture, validation, naming and documentation" } }
-        - { name: SQL, level: 3, note: { es: "Consultas, joins y agregaciones para armar bases de análisis", en: "Queries, joins and aggregations to build analysis datasets" } }
-    - title: { es: Investigación social, en: Social research }
-      items:
-        - { name: { es: "Diseño de encuestas", en: "Survey design" }, level: 4, note: { es: "Cuestionarios, escalas validadas, muestreo y pilotaje", en: "Questionnaires, validated scales, sampling and piloting" } }
-        - { name: { es: "Censos y encuestas grandes", en: "Censuses and large surveys" }, level: 5, note: { es: "Validación, edición e imputación con control de calidad", en: "Validation, editing and imputation with quality control" } }
-        - { name: Atlas.ti, level: 3, note: { es: "Codificación cualitativa de entrevistas y documentos", en: "Qualitative coding of interviews and documents" } }
-    - title: { es: IA aplicada y herramientas, en: Applied AI and tooling }
-      items:
-        - { name: Claude Code, level: 4, note: { es: "Skills, agentes, tareas programadas y automatización de flujos", en: "Skills, agents, scheduled tasks and workflow automation" } }
-        - { name: { es: "Clasificación con modelos de lenguaje", en: "Classification with language models" }, level: 4, note: { es: "Prompts, esquemas de códigos y validación de resultados", en: "Prompts, coding schemes and validation of results" } }
-        - { name: { es: "Git y GitHub", en: "Git and GitHub" }, level: 4, note: { es: "Control de versiones, GitHub Pages y Actions", en: "Version control, GitHub Pages and Actions" } }
+  tools:
+    - { name: R / RStudio, level: { es: Avanzado, en: Advanced } }
+    - { name: Power BI, level: { es: Avanzado, en: Advanced } }
+    - { name: Excel, level: { es: Avanzado, en: Advanced } }
+    - { name: Git / GitLab, level: { es: Avanzado, en: Advanced } }
+    - { name: Python, level: { es: Intermedio, en: Intermediate } }
+    - { name: SQL, level: { es: Intermedio, en: Intermediate } }
+  areas:
+    - { es: Modelado estadístico, en: Statistical modeling }
+    - { es: Análisis de encuestas, en: Survey analysis }
+    - { es: ETL a gran escala, en: Large-scale ETL }
+    - { es: Gobernanza de datos, en: Data governance }
+    - { es: Visualización, en: Visualization }
+    - { es: Dashboards e informes, en: Dashboards and reports }
 
-learning:
-  title: { es: En desarrollo, en: Currently learning }
-  text: { es: "Lo que más me piden los avisos y todavía no domino, con el detalle de dónde estoy:", en: "What the postings ask for most and I haven't mastered yet, with where I stand:" }
+publications:
   items:
-    - { es: "Inglés: hoy B2, trabajando para leer y presentar sin fricción", en: "English: B2 today, working toward reading and presenting without friction" }
-    - { es: "DAX y Power Query a nivel avanzado, más allá del uso diario", en: "Advanced DAX and Power Query, beyond everyday use" }
-    - { es: "Entornos cloud y lakehouse (Azure, Databricks), que aparecen cada vez más en las ofertas", en: "Cloud and lakehouse environments (Azure, Databricks), increasingly common in postings" }
+    - title: { es: Artículo revisado por pares, en: Peer-reviewed article }
+      text: "Frei, R., Cordero, R., Lang, B. et al. (2024). *Claims of ownership, claims of dignity*. Journal of Language and Politics, 23(5), 723–746."
+    - title: { es: Policy papers y notas de investigación, en: Policy papers and research notes }
+      text:
+        es: "13 publicaciones (2022–2023) sobre política constitucional chilena, polarización y opinión pública. Coautor junto a Mascareño, A. et al., Centro de Estudios Públicos (CEP). Disponibles en [cepchile.cl](https://www.cepchile.cl/)."
+        en: "13 publications (2022–2023) on Chilean constitutional politics, polarization and public opinion. Co-authored with Mascareño, A. et al., Centro de Estudios Públicos (CEP). Available at [cepchile.cl](https://www.cepchile.cl/)."
+  cta: { es: Ver todas las publicaciones, en: See all publications }
 
 languages:
   - { name: { es: Español, en: Spanish }, level: { es: Nativo, en: Native } }
-  - { name: { es: Italiano, en: Italian }, level: C1 }
-  - { name: { es: Inglés, en: English }, level: B2 }
+  - { name: { es: Italiano, en: Italian }, level: { es: C1 avanzado, en: C1 advanced } }
+  - { name: { es: Inglés, en: English }, level: { es: B2 intermedio alto, en: B2 upper intermediate } }
 
 teaching:
   - when: "2020 – 2021"
@@ -180,11 +138,11 @@ talks:
 
 references:
   - name: Verónica Canales
-    role: { es: "Jefa de metodología y procesamiento, Censo 2024, INE. Magíster en Investigación Social (LSE).", en: "Head of methods and processing, 2024 Census, INE. MSc in Social Research (LSE)." }
+    role: { es: "Jefa de metodología, Censo 2024, INE", en: "Head of methods, 2024 Census, INE" }
     email: vacanalesg@ine.gob.cl
   - name: Aldo Mascareño
-    role: { es: "Investigador senior del CEP, editor de Estudios Públicos e investigador principal de C22.", en: "Senior researcher at CEP, editor of Estudios Públicos and principal investigator of C22." }
+    role: { es: "Investigador senior, CEP", en: "Senior researcher, CEP" }
     email: amascareno@cepchile.cl
   - name: Patricia Mauna
-    role: { es: Consultora en Tironi y Asociados., en: Consultant at Tironi y Asociados. }
+    role: INE
     email: pamaunam@ine.gob.cl

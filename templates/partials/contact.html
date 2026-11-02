@@ -12,7 +12,7 @@
       <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener"><span>LinkedIn</span><b>benjamin-lang</b></a>
       <a href="{{ site.contact.github }}" target="_blank" rel="noopener"><span>GitHub</span><b>Langab</b></a>
       <a href="tel:{{ site.contact.phone_href }}"><span>{{ ui.phone }}</span><b>{{ site.contact.phone }}</b></a>
-      <a href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" target="_blank" rel="noopener"><span>CV</span><b>{{ ui.download_cv }}</b></a>
+      <a href="{{ asset('docs/' ~ (site.contact.cv | t)) }}" download type="application/pdf"><span>CV</span><b>{{ ui.download_cv }}</b></a>
     </div>
     <div class="footer-bottom">
       <span>© {{ year }} {{ site.full_name }}. {{ ui.footer_note }}</span>

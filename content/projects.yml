@@ -219,8 +219,8 @@ work:
     preview: logos/tironi.png
     modal:
       intro:
-        es: "Durante 2022, con la Convención Constitucional en pleno funcionamiento, las empresas clientes de Tironi necesitaban entender cada semana qué se estaba votando y qué significaba para su industria, sin tener que seguir la Convención día a día. Estuve a cargo del boletín semanal que respondía eso, y además apoyé con datos otros proyectos de consultoría."
-        en: "Through 2022, with the Constitutional Convention in full swing, Tironi's corporate clients needed to understand every week what was being voted and what it meant for their industry, without following the Convention day by day. I was in charge of the weekly bulletin that answered that, and supported other consulting projects with data."
+        es: "Durante 2022, con la Convención Constitucional en pleno funcionamiento, las empresas clientes de Tironi necesitaban entender cada semana qué se estaba votando y qué significaba para su industria, sin tener que seguir la Convención día a día. Recopilé, limpié y analicé los datos políticos y electorales del boletín semanal que respondía eso, y además apoyé con datos otros proyectos de consultoría."
+        en: "Through 2022, with the Constitutional Convention in full swing, Tironi's corporate clients needed to understand every week what was being voted and what it meant for their industry, without following the Convention day by day. I collected, cleaned and analyzed the political and electoral data for the weekly bulletin that answered that, and supported other consulting projects with data."
       transfer:
         es: "Si tu equipo tiene que explicarle a una gerencia o a un directorio algo técnico que cambia rápido, puedo hacer el seguimiento y escribirlo corto, sin jerga y con el impacto concreto para el negocio."
         en: "If your team has to explain something technical and fast-moving to executives or a board, I can track it and write it up short, without jargon and with the concrete impact on the business."
@@ -238,7 +238,7 @@ work:
     years: "2024 – 2025"
     title: { es: "Gobernar la incertidumbre: el Banco Central en la crisis de 1982", en: "Governing uncertainty: Chile's Central Bank in the 1982 crisis" }
     org: { es: "Fondecyt N° 1231356, Universidad Diego Portales", en: "Fondecyt grant 1231356, Universidad Diego Portales" }
-    role: { es: Investigador, en: Researcher }
+    role: { es: "Investigador, analista de datos", en: "Researcher, data analyst" }
     preview: projects/fondecyt-bc/red.jpg
     modal:
       intro:

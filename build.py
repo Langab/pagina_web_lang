@@ -414,6 +414,13 @@ def _render_all(data, routes, routes_by_id, site, env, OUT):
     for pdf in (STATIC / "docs").glob("CV_*.pdf"):
         shutil.copy2(pdf, OUT / pdf.name)
 
+    # El CV es uno solo: los nombres de versiones anteriores llevan a él (Cloudflare Pages)
+    cv = site["contact"]["cv"]["es"]
+    write(OUT / "_redirects", "".join(
+        f"/{carpeta}{viejo} /assets/docs/{cv} 301\n"
+        for viejo in site["cv_anteriores"] for carpeta in ("", "assets/docs/", "documentos/", "docs/documentos/")
+    ))
+
     # 404, sitemap y robots
     page404 = env.get_template("404.html")
     write(OUT / "404.html", page404.render(

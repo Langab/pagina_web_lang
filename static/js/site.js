@@ -668,8 +668,8 @@
     // Qué se toca: descargar el CV, escribir, abrir LinkedIn o GitHub, ver un proyecto o una publicación.
     const tipoDe = (a) => {
       const h = a.getAttribute("href") || "";
-      if (/CV_[^/]*_ES\.pdf$/i.test(h)) return "cv-es";
-      if (/CV_[^/]*_EN\.pdf$/i.test(h)) return "cv-en";
+      // El PDF es uno solo: el idioma que se cuenta es el de la página desde la que se bajó.
+      if (/CV_[^/]*\.pdf$/i.test(h)) return document.documentElement.lang === "en" ? "cv-en" : "cv-es";
       if (h.startsWith("mailto:")) return "correo";
       if (h.startsWith("tel:")) return "telefono";
       let u; try { u = new URL(h, location.href); } catch { return null; }

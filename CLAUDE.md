@@ -16,6 +16,12 @@ Desde el 03-10-2026 el sitio vive en **Cloudflare Pages** (`portafolio-benjamin-
 - Nada de vender humo: cada afirmación va anclada a un trabajo real (institución, cifra o entregable). Sin listas de servicios ni promesas genéricas.
 - Privacidad: no publicar datos de clientes (Aldeas, Francisca Bravo), microdatos del INE, hallazgos no publicados del Fondecyt, datos de salud sensibles (corazón, sueño, rutas GPS), ni nombres de empresas del buscador de trabajo.
 
+## CV guía
+
+- El CV guía es `../buscador_trabajo/ai-job-search/documents/cv/CV_BenjaminLang_2026.docx` y su `.pdf` (pedido de Benjamín, 02-11-2026). Manda sobre el resto del sitio: cargos, fechas, ranking, niveles, idiomas, publicaciones y referencias se escriben como ahí.
+- El PDF se copia sin tocar a `static/docs/CV_BenjaminLang_2026.pdf`. Es el único y se descarga desde español e inglés (está en español; la etiqueta en inglés lo avisa). Los nombres anteriores redirigen a él (`cv_anteriores` en `content/site.yml`).
+- `/cv/` sigue el documento sección por sección. Solo «Rol que busco» y «Docencia y charlas» son propios de la página. Trabajos puede contar más que el CV, pero no contradecirlo.
+
 ## Cloudflare (funciones, base y métricas)
 
 - `functions/api/uso.js` cuenta páginas, llegadas y clics por día; `functions/api/metricas.js` alimenta `/metricas/` con clave. Base D1 `portafolio-benjamin-lang` (esquema en `migraciones/`). Copiado de guareneitor: mismo `lib/comun.js`, mismos límites por HMAC(IP + día).
