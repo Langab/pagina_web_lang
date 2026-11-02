@@ -222,6 +222,11 @@
   /* ================================================================== */
   const portada = $("[data-portada]");
   if (portada) {
+    // Un logo sin caso propio (la UDP) lleva a su fila de «Dónde he trabajado» y la deja abierta.
+    $$('a[href^="#lugar-"]', portada).forEach((a) => a.addEventListener("click", () => {
+      const fila = document.querySelector(a.getAttribute("href"));
+      if (fila) fila.open = true;
+    }));
     const recorte = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
     const suave = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
     const salida = (p) => 1 - Math.pow(1 - p, 3);

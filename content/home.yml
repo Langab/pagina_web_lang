@@ -25,7 +25,7 @@ logos:
     - { name: Centro de Estudios Públicos, src: logos/tinta/cep.png, h: 38, work: c22, label: { es: "CEP, Centro de Estudios Públicos: ver el caso", en: "CEP, Centro de Estudios Públicos: see the case" } }
     - { name: Tironi y Asociados, src: logos/tinta/tironi.png, h: 30, word: Tironi, work: tironi, label: { es: "Tironi y Asociados: ver el caso", en: "Tironi y Asociados: see the case" } }
     - { name: SLEP Santa Rosa, src: logos/tinta/santa_rosa.png, h: 30, work: slep, label: { es: "SLEP Santa Rosa: ver el caso", en: "SLEP Santa Rosa: see the case" } }
-    - { name: Universidad Diego Portales, src: logos/tinta/udp.png, h: 28, work: fondecyt-bc, label: { es: "Universidad Diego Portales: ver el caso", en: "Universidad Diego Portales: see the case" } }
+    - { name: Universidad Diego Portales, src: logos/tinta/udp.png, h: 28, lugar: udp, label: { es: "Universidad Diego Portales: ver en Dónde he trabajado", en: "Universidad Diego Portales: see in Where I've worked" } }
 
 # Botón que detiene la «a» del nombre (WCAG 2.2.2). Lo lee el lector de pantalla.
 motion_pause: { es: Pausar el movimiento, en: Pause the motion }
@@ -91,7 +91,6 @@ places:
               end: "2025-08"
               role: { es: "Investigador y analista de datos, Fondecyt N° 1231356", en: "Researcher and data analyst, Fondecyt grant 1231356" }
               win: { es: "Estructuré y analicé un corpus de **16 años** de documentos de política económica (2006–2022) con métodos mixtos, y dejé el pipeline reproducible en Git.", en: "I structured and analyzed a **16-year** corpus of economic policy documents (2006–2022) using mixed methods, and kept the pipeline reproducible in Git." }
-              work: fondecyt-bc
     - name: { es: Consultoría, en: Consulting }
       rows:
         - id: tironi
@@ -109,7 +108,7 @@ places:
 
 # Reportería automática: lo que más le piden. Tres piezas en secuencia real (extracción,
 # minutas, visores) y una franja que las cruza (auditable y reproducible). Todo verificado en
-# projects.yml (slep, censo-2024, c22, fondecyt-bc, visor-arriendos) y experience.yml.
+# projects.yml (slep, censo-2024, c22, visor-arriendos) y experience.yml.
 # No nombrar a nadie del buscador de trabajo.
 reporting:
   title: { es: "Reportería automática, de\u00a0la\u00a0descarga a la decisión", en: "Automated reporting, from\u00a0download to decision" }
@@ -186,8 +185,8 @@ story:
     - label: { es: "720 puntos sueltos", en: "720 loose dots" }
       title: { es: Primero la pregunta y la decisión, en: First the question and the decision }
       text:
-        es: "¿Por qué las escuelas rurales casi no usan la biblioteca digital? ¿Qué discutía el Banco Central en plena crisis? Antes de abrir R defino la pregunta y, sobre todo, **qué decisión depende de la respuesta**. De ahí salen el diseño, las fuentes y la precisión que hace falta."
-        en: "Why do rural schools barely use the digital library? What was the Central Bank discussing during the crisis? Before opening R I define the question and, above all, **which decision depends on the answer**. The design, the sources and the precision needed follow from that."
+        es: "¿Por qué las escuelas rurales casi no usan la biblioteca digital? Antes de abrir R defino la pregunta y, sobre todo, **qué decisión depende de la respuesta**. De ahí salen el diseño, las fuentes y la precisión que hace falta."
+        en: "Why do rural schools barely use the digital library? Before opening R I define the question and, above all, **which decision depends on the answer**. The design, the sources and the precision needed follow from that."
       tools: [{ es: Diseño metodológico, en: Research design }, { es: Encuestas, en: Surveys }, { es: Entrevistas, en: Interviews }]
     - label: { es: "Una grilla ordenada", en: "An ordered grid" }
       title: { es: "Después, datos en los que se puede confiar", en: Then data you can trust }
@@ -198,9 +197,9 @@ story:
     - label: { es: "Dos grupos que se comparan", en: "Two groups compared" }
       title: { es: Luego el método que pide la pregunta, en: Then the method the question calls for }
       text:
-        es: "Regresiones logísticas con imputación múltiple para el panel ELSOC; redes y modelos de tópicos para los memorandos del Banco Central. **Cada resultado va con sus límites**, y los nulos también se informan."
-        en: "Logistic regressions with multiple imputation for the ELSOC panel; networks and topic models for the Central Bank memos. **Every result comes with its limits**, and null results get reported too."
-      tools: [{ es: Modelos estadísticos, en: Statistical models }, GPT-4o, { es: Análisis de redes, en: Network analysis }, STM]
+        es: "Regresiones logísticas con imputación múltiple para el panel ELSOC; minería de texto y análisis de redes para los documentos políticos de C22. **Cada resultado va con sus límites**, y los nulos también se informan."
+        en: "Logistic regressions with multiple imputation for the ELSOC panel; text mining and network analysis for C22's political documents. **Every result comes with its limits**, and null results get reported too."
+      tools: [{ es: Modelos estadísticos, en: Statistical models }, { es: Minería de texto, en: Text mining }, { es: Análisis de redes, en: Network analysis }]
     - label: { es: "Los que importan", en: "The ones that matter" }
       title: { es: Y termina en algo que la institución usa, en: And it ends in something the institution uses }
       text:
